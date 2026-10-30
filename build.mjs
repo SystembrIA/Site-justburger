@@ -634,7 +634,7 @@ const blocoAvaliacoes = () => `
 const logoMarca = (c) => (existsSync(join(RAIZ, 'assets/img/marcas', `${c.slug}.webp`)) ? `assets/img/marcas/${c.slug}.webp` : null);
 const cartaoCulinaria = (c, base) => {
   const logo = logoMarca(c);
-  return `<a class="culinaria" href="${base}culinarias/${c.slug}/">${logo ? `<img src="${base}${logo}" width="320" height="320" loading="lazy" alt="Logo ${esc(c.nome)}">` : ''}<p class="culinaria-nome">${esc(c.nome)}</p><p class="culinaria-tipo">${esc(c.tipo)}</p>${c.conteudo ? '' : '<p class="culinaria-breve">Em breve</p>'}</a>`;
+  return `<a class="culinaria" href="${base}culinarias/${c.slug}/">${logo ? `<img src="${base}${logo}" width="320" height="320" loading="lazy" alt="${esc(c.nome)}">` : `<p class="culinaria-nome">${esc(c.nome)}</p>`}<p class="culinaria-tipo">${esc(c.tipo)}</p>${c.conteudo ? '' : '<p class="culinaria-breve">Em breve</p>'}</a>`;
 };
 // Cartão de uma culinária na página Unidades: mesmo padrão das lojas Burger, uma linha por operação.
 const cartaoMarca = (c, base) => `
