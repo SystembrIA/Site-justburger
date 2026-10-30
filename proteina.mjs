@@ -2,7 +2,7 @@
 // e tabela TACO/Unicamp). O site usa isto só enquanto a descrição do iFood não traz o bloco
 // "Proteína (aproximada) por ...:" — quando traz, vale o texto do iFood.
 // Pesos sem gramatura na descrição (frango do Just Chicken e do Just Pic, carne seca do Just Farm):
-// médias aprovadas pelo Michael em 30/10/2026.
+// médias aprovadas pelo Maikon em 30/10/2026.
 
 const I = {
   carne: ['Carne 150g', 28],
