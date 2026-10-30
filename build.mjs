@@ -888,7 +888,7 @@ ${site.contador ? blocoContador() : ''}
     <div class="titulo-secao">
       <h2>Nossas unidades</h2>
     </div>
-    <div class="grade-lojas">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
+    <div class="grade-lojas lojas-centro">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
   </div>
 </section>
 
@@ -1323,7 +1323,7 @@ paginas.push({
 <section class="secao">
   <div class="largura">
     <h2>Ou escolha a unidade</h2>
-    <div class="grade-lojas">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
+    <div class="grade-lojas lojas-centro">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
   </div>
 </section>`,
   md: () => `# Faça seu pedido na ${site.nome}\n\n${lojas.map((l) => `- ${l.nome} (${l.endereco}, ${l.bairro}, ${l.cidade}): ${l.ifood}`).join('\n')}\n${site.telefoneCentral ? `\nWhatsApp e telefone: ${site.telefoneCentral}\n` : ''}`,
