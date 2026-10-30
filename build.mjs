@@ -459,8 +459,8 @@ const blocoContador = () => {
     <div class="placar-linha">${placarHtml(c.basePedidos, c.rotuloPedidos)}<p class="numero-rotulo">${esc(c.rotuloPedidos)}</p></div>
     <div class="placar-linha">${placarHtml(c.basePedidos * c.lanchesPorPedido, c.rotuloLanches)}<p class="numero-rotulo">${esc(c.rotuloLanches)}</p></div>
     <div class="numeros-extra">
-      ${n ? `<p><span class="numero"><span data-geral-nota>${nota1(n)}</span><span class="estrela" aria-hidden="true">★</span></span><span class="numero-rotulo" data-geral-texto>nota no iFood</span></p>` : ''}
-      <p><span class="numero">${lojas.length}</span><span class="numero-rotulo">unidades na Grande SP</span></p>
+      ${n ? `<p><span class="numero"><span data-geral-nota>${nota1(n)}</span><span class="estrela" aria-hidden="true">★</span></span><span class="numero-rotulo" data-geral-texto>no iFood${site.avaliacoes.avaliacoesInformadas ? ` · mais de ${fmtInt(site.avaliacoes.avaliacoesInformadas)} avaliações em todas as lojas` : ''}</span></p>` : ''}
+      <p><span class="numero">${lojas.length}</span><span class="numero-rotulo">unidades na Grande São Paulo</span></p>
     </div>
   </div>
 </section>
@@ -1195,7 +1195,7 @@ const historia = [
   `A Just Burger nasceu em ${new Date(site.fundacaoData + 'T12:00:00').toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}, na Zona Leste de São Paulo, com uma aposta clara: fazer o melhor hambúrguer de delivery de uma região carente de qualidade na entrega. Começamos pequenos, com 12 pessoas e foco 100% no delivery: um hambúrguer de 150 g no pão brioche, feito para chegar quentinho e no tempo certo. À frente da Just estão Maikon e Juliana.`,
   `Deu certo: só no primeiro ano as vendas dobraram. Crescemos para São Bernardo do Campo (2021), Guarulhos (2022) e Pirituba, passamos de ${fmtInt(site.contador.basePedidos)} pedidos, e as quatro unidades têm o selo Super Restaurante no iFood, com uma das entregas mais rápidas da cidade.`,
   'Da Just Burger nasceu um grupo. Em 2020 veio a Just Gourmet, de comida brasileira, que hoje está entre as maiores do grupo em pedidos e em faturamento. Em 2024 chegou a Aham, com pizza e esfiha, e em 2025 o Aham Sushi. Hoje são 11 operações abertas no iFood e na Keeta.',
-  'Em 2026, as lojas do grupo chegaram também à Keeta, plataforma da Meituan, líder do delivery na China e uma das maiores do mundo. É uma nova fase, com novos desafios e espaço para crescer no mercado brasileiro nos próximos anos.',
+  'Em 2026, as lojas do grupo chegaram também à Keeta, plataforma da Meituan, líder do delivery na China e a maior plataforma de delivery do mundo. É uma nova fase, com novos desafios e espaço para crescer no mercado brasileiro nos próximos anos.',
   'Seguimos com a mesma ideia do primeiro dia: comida boa de verdade, na casa de cada cliente.',
 ];
 const videosHistoria = () => midia.filter((m) => m.youtube && /falando de delivery/i.test(m.veiculo));
