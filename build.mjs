@@ -444,7 +444,7 @@ const cartaoLoja = (l, base) => `
   <p class="loja-regiao">${esc(l.regiao)}</p>
   <h3><a href="${base}unidades/${l.slug}/">${esc(l.nome.replace('Just Burger ', ''))}</a></h3>
   <p>${pendente(l.endereco) ? esc(l.bairro) : `${esc(l.endereco)} · ${esc(l.bairro)}`}<br>${esc(l.cidade)}</p>
-  <p class="loja-hora">${esc(textoHorario(l.horarios[0]))}</p>
+  <p class="loja-hora">${l.horarios.map((h) => esc(textoHorario(h))).join('<br>')}</p>
   ${site.avaliacoes && site.avaliacoes.notaInformada ? `<p class="loja-nota" data-nota-loja="${esc(l.nome)}">${nota1(site.avaliacoes.notaInformada)} ★ no iFood</p>` : ''}
   <p class="loja-acoes"><a class="botao" href="${esc(l.ifood)}" rel="noopener">Pedir no iFood</a><a class="link" href="${base}unidades/${l.slug}/">Ver unidade</a></p>
 </article>`;
