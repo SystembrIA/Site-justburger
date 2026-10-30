@@ -462,6 +462,7 @@ const blocoContador = () => {
       ${n ? `<p><span class="numero"><span data-geral-nota>${nota1(n)}</span><span class="estrela" aria-hidden="true">★</span></span><span class="numero-rotulo" data-geral-texto>no iFood${site.avaliacoes.avaliacoesInformadas ? ` · mais de ${Math.floor(site.avaliacoes.avaliacoesInformadas / 1000)} mil avaliações em todas as lojas` : ''}</span></p>` : ''}
       <p><span class="numero">${lojas.length}</span><span class="numero-rotulo">unidades na Grande São Paulo</span></p>
     </div>
+    <p class="numeros-som"><button type="button" class="botao-som" data-som hidden></button></p>
   </div>
 </section>
 <script>
@@ -471,12 +472,43 @@ const blocoContador = () => {
   var vivo = el.querySelector('[data-vivo]'), hora = el.querySelector('[data-hora]'), d = {};
   var calmo = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var pronto = false, girando = false;
+  // Som de plaquinha virando: gerado no navegador (ruído curto filtrado), sem arquivo de áudio.
+  // O navegador só libera som depois de um toque/clique na página; no celular respeita o modo silencioso.
+  var som = { ctx: null, ruido: null, ultimo: 0, liga: true };
+  try { som.liga = localStorage.getItem('just-som') !== '0'; } catch (e) {}
+  function destrava() {
+    var A = window.AudioContext || window.webkitAudioContext; if (!A) return;
+    if (!som.ctx) {
+      som.ctx = new A();
+      var b = som.ctx.createBuffer(1, Math.round(som.ctx.sampleRate * 0.035), som.ctx.sampleRate), x = b.getChannelData(0);
+      for (var i = 0; i < x.length; i++) x[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / x.length, 5);
+      som.ruido = b;
+    }
+    if (som.ctx.state === 'suspended') som.ctx.resume();
+  }
+  ['pointerdown', 'touchstart', 'keydown'].forEach(function (t) { window.addEventListener(t, destrava, { passive: true }); });
+  function clique(forte) {
+    var c = som.ctx, agora = performance.now();
+    if (!som.liga || !c || c.state !== 'running' || agora - som.ultimo < 26) return;
+    som.ultimo = agora;
+    var f = c.createBufferSource(), filtro = c.createBiquadFilter(), g = c.createGain();
+    f.buffer = som.ruido; filtro.type = 'bandpass'; filtro.frequency.value = 1700 + Math.random() * 1100; filtro.Q.value = 1.4;
+    g.gain.value = forte ? 0.55 : 0.2;
+    f.connect(filtro); filtro.connect(g); g.connect(c.destination); f.start();
+  }
+  var botaoSom = el.querySelector('[data-som]');
+  function rotuloSom() { botaoSom.textContent = som.liga ? '🔊 Som ligado' : '🔇 Som desligado'; botaoSom.setAttribute('aria-pressed', som.liga ? 'true' : 'false'); }
+  if (botaoSom) {
+    rotuloSom(); botaoSom.hidden = false;
+    botaoSom.addEventListener('click', function () { som.liga = !som.liga; try { localStorage.setItem('just-som', som.liga ? '1' : '0'); } catch (e) {} rotuloSom(); });
+  }
   function texto(f, sel, v) { f.querySelector(sel + ' span').textContent = v; }
   function vira(f, novo, rapido) {
     var velho = f.dataset.d; if (velho === novo) return;
     texto(f, '.cima', novo); texto(f, '.baixo', velho); texto(f, '.aba-cima', velho); texto(f, '.aba-baixo', novo);
     f.classList.remove('virando', 'rapido'); void f.offsetWidth; f.classList.add('virando'); if (rapido) f.classList.add('rapido');
     f.dataset.d = novo;
+    clique(!rapido);
     clearTimeout(f._t); f._t = setTimeout(function () { texto(f, '.baixo', novo); f.classList.remove('virando', 'rapido'); }, rapido ? 130 : 340);
   }
   function mostra(pl, v) {
@@ -486,17 +518,24 @@ const blocoContador = () => {
     if (flaps.length !== dig.length) { pl.dataset.valor = Math.round(v); return; } // muda de casa: fica para o próximo build
     dig.split('').forEach(function (c, i) { vira(flaps[i], c); });
   }
-  // Entrada: todas giram e vão parando da esquerda para a direita no valor certo.
+  // Entrada: todas giram rápido e vão desacelerando; param da esquerda para a direita, o último bem devagar.
+  // Cada plaquinha começa num dígito calculado para, contando os passos, parar exatamente no valor certo.
+  var DURACAO = 5200;
+  function paradaDe(i, n) { return 1300 + (DURACAO - 1300) * Math.pow(n > 1 ? i / (n - 1) : 1, 1.6); }
   function entrada(pl, fim) {
-    var flaps = [].slice.call(pl.querySelectorAll('.flap')), alvo = String(fim).split('');
-    flaps.forEach(function (f, i) { vira(f, '0', true); });
+    var flaps = [].slice.call(pl.querySelectorAll('.flap')), alvo = String(fim).split(''), n = flaps.length;
     flaps.forEach(function (f, i) {
-      var para = 700 + i * 220, ini = performance.now();
-      (function gira() {
-        if (performance.now() - ini >= para) { vira(f, alvo[i]); return; }
-        vira(f, String((+f.dataset.d + 1) % 10), true);
-        setTimeout(gira, 85);
-      })();
+      var para = paradaDe(i, n), passos = [], t = 0;
+      while (t < para) { passos.push(t); t += 55 + 560 * Math.pow(t / para, 3); }
+      var d = (+alvo[i] - passos.length % 10 + 10) % 10;
+      vira(f, String(d), true);
+      passos.forEach(function (quando, k) {
+        setTimeout(function () {
+          d = (d + 1) % 10;
+          var lento = k > 0 && passos[k] - passos[k - 1] > 150;
+          vira(f, String(d), !lento);
+        }, quando + 60);
+      });
     });
   }
   function valores() {
@@ -512,7 +551,7 @@ const blocoContador = () => {
   // Toda vez que o placar entra na tela: todas as plaquinhas giram juntas e param da esquerda para a direita.
   function comeca() {
     if (girando) return; pronto = true; girando = true;
-    setTimeout(function () { girando = false; atualiza(); }, 700 + 9 * 220 + 400);
+    setTimeout(function () { girando = false; atualiza(); }, DURACAO + 900);
     var v = valores();
     [0, 1].forEach(function (k) {
       var fim = Math.round(v[k]).toLocaleString('pt-BR').replace(/\\D/g, '');
