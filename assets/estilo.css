@@ -506,3 +506,26 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .citacao + .video-midia, .video-midia { margin-top: 18px; }
 .video-midia { position: relative; aspect-ratio: 16 / 9; margin: 0 0 26px; border-radius: 14px; overflow: hidden; background: #000; }
 .video-midia iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* Rodapé: Siga a gente menor, unidades e culinárias organizadas */
+.rodape-siga { margin: 18px 0 8px !important; font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--suave); }
+.rodape-redes a { width: 36px; height: 36px; }
+.rodape-redes svg { width: 18px; height: 18px; }
+.rodape-lojas li, .rodape-marcas li { min-width: 0; }
+.rodape-loja-nome { display: block; color: var(--laranja) !important; font-weight: 800 !important; }
+.rodape-lojas .rodape-endereco { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--suave); font-size: .85rem; }
+.rodape-marcas a { display: flex; align-items: center; gap: 10px; }
+.rodape-marcas img { width: 32px; height: 32px; object-fit: contain; border-radius: 8px; }
+.rodape-marcas .submenu-marca { width: 32px; height: 32px; flex: none; font-size: .9rem; }
+.rodape-marcas strong { display: block; color: var(--laranja); font-weight: 800; }
+.rodape-marcas small { display: block; color: var(--suave); font-size: .82rem; font-weight: 500; }
+.rodape > .insta-grade { margin-bottom: 30px; }
+@media (min-width: 1000px) { .rodape-grade { grid-template-columns: 1.2fr 1.1fr 1.1fr .9fr .9fr; } }
+/* Culinárias na página Unidades */
+.marca-inicial { width: 56px; height: 56px; margin: 0 auto 10px; font-size: 1.5rem; border-radius: 14px; }
+.marca-logo-peq { width: 72px; height: 72px; object-fit: contain; margin: 0 auto 10px; display: block; }
+.marca-operacao { padding: 14px 0 6px; border-top: 1px solid var(--linha); margin-top: 12px; }
+.marca-regiao { margin: 0 0 4px !important; color: var(--branco) !important; font-weight: 800; }
+.lojas-centro .loja-marca .loja-acoes { justify-content: center; }
+.loja-marca .loja-acoes .botao { flex: 0 0 auto; padding: 0 22px !important; }
+.rodape-marcas .submenu-marca { display: grid; place-items: center; color: #000; font-size: .9rem; font-weight: 900; }
