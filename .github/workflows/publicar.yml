@@ -1,0 +1,55 @@
+name: Publicar site
+
+# Gera o site (node build.mjs) e publica a pasta publico/ no GitHub Pages.
+# Todo dia, depois do robô do just-burger-producao (06:17), traz antes o cardápio,
+# as fotos tratadas e a nota do iFood (importar-cardapio.py). Sem dado novo, publica o que já tem.
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '47 9 * * *'   # 06:47 em São Paulo
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Cardápio e fotos do iFood (via robô do Hub)
+        continue-on-error: true
+        run: |
+          pip install --quiet pillow
+          python3 importar-cardapio.py
+
+      - name: Gerar o site
+        run: node build.mjs
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: publico
+
+      - id: deploy
+        uses: actions/deploy-pages@v4

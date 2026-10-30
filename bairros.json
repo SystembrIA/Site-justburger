@@ -1,0 +1,5635 @@
+{
+ "geradoEm": "2026-10-30",
+ "fontes": [
+  "OpenStreetMap (Nominatim), varredura de pontos a cada 1,2 km",
+  "Prefeitura de São Paulo (GeoSampa), distritos municipais"
+ ],
+ "raioKm": 10.0,
+ "lojas": {
+  "zona-leste-vila-buenos-aires": {
+   "lat": -23.5125411,
+   "lon": -46.5049994
+  },
+  "pirituba": {
+   "lat": -23.502633,
+   "lon": -46.7204837
+  },
+  "guarulhos": {
+   "lat": -23.4859083,
+   "lon": -46.5518263
+  },
+  "sao-bernardo-do-campo": {
+   "lat": -23.6909846,
+   "lon": -46.5406792
+  }
+ },
+ "bairros": [
+  {
+   "slug": "itapegica-guarulhos",
+   "nome": "Itapegica",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.48365,
+   "lon": -46.5544,
+   "loja": "guarulhos",
+   "distanciaKm": 0.4,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 6.0
+    }
+   ],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "vila-augusta-guarulhos",
+    "tranquilidade-guarulhos",
+    "ponte-grande-guarulhos",
+    "gopouva-guarulhos",
+    "vila-medeiros",
+    "porto-da-igreja-guarulhos"
+   ]
+  },
+  {
+   "slug": "vila-augusta-guarulhos",
+   "nome": "Vila Augusta",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.47826,
+   "lon": -46.54264,
+   "loja": "guarulhos",
+   "distanciaKm": 1.3,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 5.4
+    }
+   ],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "gopouva-guarulhos",
+    "itapegica-guarulhos",
+    "centro-guarulhos",
+    "porto-da-igreja-guarulhos",
+    "tranquilidade-guarulhos",
+    "ponte-grande-guarulhos"
+   ]
+  },
+  {
+   "slug": "ponte-grande-guarulhos",
+   "nome": "Ponte Grande",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.49982,
+   "lon": -46.54852,
+   "loja": "guarulhos",
+   "distanciaKm": 1.6,
+   "inteiroNoRaio": true,
+   "direcao": "sul",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 4.7
+    }
+   ],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "itapegica-guarulhos",
+    "porto-da-igreja-guarulhos",
+    "vila-augusta-guarulhos",
+    "cangaiba",
+    "vila-medeiros",
+    "penha"
+   ]
+  },
+  {
+   "slug": "porto-da-igreja-guarulhos",
+   "nome": "Porto da Igreja",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.48545,
+   "lon": -46.53088,
+   "loja": "guarulhos",
+   "distanciaKm": 2.1,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 4.0
+    }
+   ],
+   "variacoes": [],
+   "pontos": 3,
+   "vizinhos": [
+    "centro-guarulhos",
+    "vila-augusta-guarulhos",
+    "cangaiba",
+    "gopouva-guarulhos",
+    "macedo-guarulhos",
+    "ponte-grande-guarulhos"
+   ]
+  },
+  {
+   "slug": "tranquilidade-guarulhos",
+   "nome": "Tranquilidade",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.46748,
+   "lon": -46.5544,
+   "loja": "guarulhos",
+   "distanciaKm": 2.1,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 7.1
+    }
+   ],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "gopouva-guarulhos",
+    "torres-tibagy-guarulhos",
+    "vila-augusta-guarulhos",
+    "itapegica-guarulhos",
+    "vila-galvao-guarulhos",
+    "jacana"
+   ]
+  },
+  {
+   "slug": "gopouva-guarulhos",
+   "nome": "Gopoúva",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.46748,
+   "lon": -46.54264,
+   "loja": "guarulhos",
+   "distanciaKm": 2.3,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 6.3
+    }
+   ],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-augusta-guarulhos",
+    "tranquilidade-guarulhos",
+    "torres-tibagy-guarulhos",
+    "centro-guarulhos",
+    "maia-guarulhos",
+    "itapegica-guarulhos"
+   ]
+  },
+  {
+   "slug": "vila-medeiros",
+   "nome": "Vila Medeiros",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.48904,
+   "lon": -46.57557,
+   "loja": "guarulhos",
+   "distanciaKm": 2.4,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 7.7
+    }
+   ],
+   "variacoes": [
+    "Vila Sabrina",
+    "Vila Ede",
+    "Jardim Brasil"
+   ],
+   "pontos": 5,
+   "vizinhos": [
+    "itapegica-guarulhos",
+    "jacana",
+    "vila-maria",
+    "ponte-grande-guarulhos",
+    "tranquilidade-guarulhos",
+    "tucuruvi"
+   ]
+  },
+  {
+   "slug": "centro-guarulhos",
+   "nome": "Centro",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.47287,
+   "lon": -46.53088,
+   "loja": "guarulhos",
+   "distanciaKm": 2.6,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 5.1
+    }
+   ],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "vila-augusta-guarulhos",
+    "gopouva-guarulhos",
+    "macedo-guarulhos",
+    "porto-da-igreja-guarulhos",
+    "maia-guarulhos",
+    "sao-roque-guarulhos"
+   ]
+  },
+  {
+   "slug": "jacana",
+   "nome": "Jaçanã",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.46748,
+   "lon": -46.57557,
+   "loja": "guarulhos",
+   "distanciaKm": 3.2,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 8.8
+    }
+   ],
+   "variacoes": [
+    "Jardim Modelo",
+    "Parque Edu Chaves",
+    "Parque Vitória",
+    "Vila Nilo"
+   ],
+   "pontos": 5,
+   "vizinhos": [
+    "tranquilidade-guarulhos",
+    "vila-medeiros",
+    "vila-galvao-guarulhos",
+    "itapegica-guarulhos",
+    "torres-tibagy-guarulhos",
+    "tucuruvi"
+   ]
+  },
+  {
+   "slug": "torres-tibagy-guarulhos",
+   "nome": "Torres Tibagy",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.4567,
+   "lon": -46.54852,
+   "loja": "guarulhos",
+   "distanciaKm": 3.3,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 7.6
+    }
+   ],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "tranquilidade-guarulhos",
+    "gopouva-guarulhos",
+    "picanco-guarulhos",
+    "vila-galvao-guarulhos",
+    "maia-guarulhos",
+    "vila-rio-guarulhos"
+   ]
+  },
+  {
+   "slug": "macedo-guarulhos",
+   "nome": "Macedo",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.46748,
+   "lon": -46.51912,
+   "loja": "guarulhos",
+   "distanciaKm": 3.9,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 5.2
+    }
+   ],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "sao-roque-guarulhos",
+    "centro-guarulhos",
+    "fatima-guarulhos",
+    "maia-guarulhos",
+    "bom-clima-guarulhos",
+    "varzea-do-palacio-guarulhos"
+   ]
+  },
+  {
+   "slug": "maia-guarulhos",
+   "nome": "Maia",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.4567,
+   "lon": -46.53088,
+   "loja": "guarulhos",
+   "distanciaKm": 3.9,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 6.7
+    }
+   ],
+   "variacoes": [
+    "Vila Lanzara"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "bom-clima-guarulhos",
+    "gopouva-guarulhos",
+    "macedo-guarulhos",
+    "picanco-guarulhos",
+    "centro-guarulhos",
+    "torres-tibagy-guarulhos"
+   ]
+  },
+  {
+   "slug": "vila-maria",
+   "nome": "Vila Maria",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.51195,
+   "lon": -46.57939,
+   "loja": "guarulhos",
+   "distanciaKm": 4.0,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 7.6
+    }
+   ],
+   "variacoes": [
+    "Jardim Japão",
+    "Parque Novo Mundo"
+   ],
+   "pontos": 8,
+   "vizinhos": [
+    "vila-medeiros",
+    "vila-guilherme",
+    "belem",
+    "tatuape",
+    "ponte-grande-guarulhos",
+    "itapegica-guarulhos"
+   ]
+  },
+  {
+   "slug": "vila-galvao-guarulhos",
+   "nome": "Vila Galvão",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.44951,
+   "lon": -46.56224,
+   "loja": "guarulhos",
+   "distanciaKm": 4.2,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 9.1
+    }
+   ],
+   "variacoes": [],
+   "pontos": 3,
+   "vizinhos": [
+    "torres-tibagy-guarulhos",
+    "picanco-guarulhos",
+    "tranquilidade-guarulhos",
+    "jacana",
+    "gopouva-guarulhos",
+    "vila-rio-guarulhos"
+   ]
+  },
+  {
+   "slug": "picanco-guarulhos",
+   "nome": "Picanço",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.44592,
+   "lon": -46.54264,
+   "loja": "guarulhos",
+   "distanciaKm": 4.5,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 8.3
+    }
+   ],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-rio-guarulhos",
+    "torres-tibagy-guarulhos",
+    "maia-guarulhos",
+    "vila-galvao-guarulhos",
+    "gopouva-guarulhos",
+    "bom-clima-guarulhos"
+   ]
+  },
+  {
+   "slug": "sao-roque-guarulhos",
+   "nome": "São Roque",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.46748,
+   "lon": -46.50737,
+   "loja": "guarulhos",
+   "distanciaKm": 5.0,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 5.0
+    }
+   ],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "varzea-do-palacio-guarulhos",
+    "macedo-guarulhos",
+    "fatima-guarulhos",
+    "cecap-guarulhos",
+    "bom-clima-guarulhos",
+    "vila-barros-guarulhos"
+   ]
+  },
+  {
+   "slug": "bom-clima-guarulhos",
+   "nome": "Bom Clima",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.45131,
+   "lon": -46.51912,
+   "loja": "guarulhos",
+   "distanciaKm": 5.1,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 7.0
+    }
+   ],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "fatima-guarulhos",
+    "maia-guarulhos",
+    "macedo-guarulhos",
+    "cocaia-guarulhos",
+    "vila-barros-guarulhos",
+    "vila-rio-guarulhos"
+   ]
+  },
+  {
+   "slug": "vila-rio-guarulhos",
+   "nome": "Vila Rio",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.43873,
+   "lon": -46.5348,
+   "loja": "guarulhos",
+   "distanciaKm": 5.5,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 8.8
+    }
+   ],
+   "variacoes": [],
+   "pontos": 3,
+   "vizinhos": [
+    "picanco-guarulhos",
+    "cocaia-guarulhos",
+    "morros-guarulhos",
+    "maia-guarulhos",
+    "bom-clima-guarulhos",
+    "torres-tibagy-guarulhos"
+   ]
+  },
+  {
+   "slug": "fatima-guarulhos",
+   "nome": "Fátima",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.4567,
+   "lon": -46.50737,
+   "loja": "guarulhos",
+   "distanciaKm": 5.6,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 6.2
+    }
+   ],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "sao-roque-guarulhos",
+    "cecap-guarulhos",
+    "bom-clima-guarulhos",
+    "vila-barros-guarulhos",
+    "macedo-guarulhos",
+    "varzea-do-palacio-guarulhos"
+   ]
+  },
+  {
+   "slug": "tucuruvi",
+   "nome": "Tucuruvi",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.47518,
+   "lon": -46.60648,
+   "loja": "guarulhos",
+   "distanciaKm": 5.7,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim França",
+    "Vila Gustavo",
+    "Parada Inglesa",
+    "Jardim Leonor Mendes de Barros",
+    "Vila Mazzei"
+   ],
+   "pontos": 7,
+   "vizinhos": [
+    "jacana",
+    "vila-medeiros",
+    "mandaqui",
+    "santana",
+    "vila-guilherme",
+    "tremembe"
+   ]
+  },
+  {
+   "slug": "tatuape",
+   "nome": "Tatuapé",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.53935,
+   "lon": -46.56616,
+   "loja": "guarulhos",
+   "distanciaKm": 6.1,
+   "inteiroNoRaio": true,
+   "direcao": "sul",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 6.9
+    }
+   ],
+   "variacoes": [
+    "Vila Azevedo",
+    "Parque São Jorge",
+    "Vila Gomes Cardim"
+   ],
+   "pontos": 6,
+   "vizinhos": [
+    "agua-rasa",
+    "belem",
+    "carrao",
+    "vila-maria",
+    "mooca",
+    "vila-formosa"
+   ]
+  },
+  {
+   "slug": "vila-guilherme",
+   "nome": "Vila Guilherme",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.5106,
+   "lon": -46.60732,
+   "loja": "guarulhos",
+   "distanciaKm": 6.3,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Bairro da Coroa",
+    "Vila Isolina Mazzei"
+   ],
+   "pontos": 6,
+   "vizinhos": [
+    "pari",
+    "vila-maria",
+    "santana",
+    "belem",
+    "bom-retiro",
+    "tucuruvi"
+   ]
+  },
+  {
+   "slug": "cocaia-guarulhos",
+   "nome": "Cocaia",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.43514,
+   "lon": -46.51912,
+   "loja": "guarulhos",
+   "distanciaKm": 6.6,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 8.7
+    }
+   ],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "bela-vista-guarulhos",
+    "morros-guarulhos",
+    "vila-rio-guarulhos",
+    "bom-clima-guarulhos",
+    "vila-barros-guarulhos",
+    "taboao-guarulhos"
+   ]
+  },
+  {
+   "slug": "vila-barros-guarulhos",
+   "nome": "Vila Barros",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.44592,
+   "lon": -46.50149,
+   "loja": "guarulhos",
+   "distanciaKm": 6.8,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 7.4
+    }
+   ],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "cecap-guarulhos",
+    "fatima-guarulhos",
+    "bela-vista-guarulhos",
+    "bom-clima-guarulhos",
+    "cocaia-guarulhos",
+    "sao-roque-guarulhos"
+   ]
+  },
+  {
+   "slug": "bela-vista-guarulhos",
+   "nome": "Bela Vista",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.43514,
+   "lon": -46.50737,
+   "loja": "guarulhos",
+   "distanciaKm": 7.2,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 8.6
+    }
+   ],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "cocaia-guarulhos",
+    "vila-barros-guarulhos",
+    "taboao-guarulhos",
+    "bom-clima-guarulhos",
+    "morros-guarulhos",
+    "fatima-guarulhos"
+   ]
+  },
+  {
+   "slug": "belem",
+   "nome": "Belém",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.53755,
+   "lon": -46.59556,
+   "loja": "guarulhos",
+   "distanciaKm": 7.3,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [
+    {
+     "loja": "zona-leste-vila-buenos-aires",
+     "distanciaKm": 9.6
+    }
+   ],
+   "variacoes": [
+    "Vila Operária Maria Zélia"
+   ],
+   "pontos": 4,
+   "vizinhos": [
+    "mooca",
+    "bras",
+    "pari",
+    "tatuape",
+    "vila-guilherme",
+    "vila-maria"
+   ]
+  },
+  {
+   "slug": "morros-guarulhos",
+   "nome": "Morros",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.42436,
+   "lon": -46.525,
+   "loja": "guarulhos",
+   "distanciaKm": 7.4,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "cocaia-guarulhos",
+    "vila-rio-guarulhos",
+    "bela-vista-guarulhos",
+    "cabucu-guarulhos",
+    "taboao-guarulhos",
+    "picanco-guarulhos"
+   ]
+  },
+  {
+   "slug": "tremembe",
+   "nome": "Tremembé",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.43342,
+   "lon": -46.59768,
+   "loja": "guarulhos",
+   "distanciaKm": 7.5,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Albertina",
+    "Furnas",
+    "Jardim Fontalis",
+    "Horto Florestal",
+    "Bortolândia",
+    "Jardim Guapira",
+    "Mandaqui"
+   ],
+   "pontos": 25,
+   "vizinhos": [
+    "vila-galvao-guarulhos",
+    "jacana",
+    "tucuruvi",
+    "mandaqui",
+    "torres-tibagy-guarulhos",
+    "cabucu-guarulhos"
+   ]
+  },
+  {
+   "slug": "cabucu-guarulhos",
+   "nome": "Cabuçu",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.41607,
+   "lon": -46.54445,
+   "loja": "guarulhos",
+   "distanciaKm": 7.8,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 13,
+   "vizinhos": [
+    "morros-guarulhos",
+    "vila-rio-guarulhos",
+    "picanco-guarulhos",
+    "cocaia-guarulhos",
+    "vila-galvao-guarulhos",
+    "bela-vista-guarulhos"
+   ]
+  },
+  {
+   "slug": "santana",
+   "nome": "Santana",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.49862,
+   "lon": -46.6328,
+   "loja": "guarulhos",
+   "distanciaKm": 8.4,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [
+    {
+     "loja": "pirituba",
+     "distanciaKm": 9.0
+    }
+   ],
+   "variacoes": [
+    "Carandiru",
+    "Alto de Santana",
+    "Jardim São Bento",
+    "Imirim",
+    "Santa Teresinha",
+    "Vila Paulicéia"
+   ],
+   "pontos": 9,
+   "vizinhos": [
+    "casa-verde",
+    "vila-guilherme",
+    "bom-retiro",
+    "pari",
+    "mandaqui",
+    "tucuruvi"
+   ]
+  },
+  {
+   "slug": "pari",
+   "nome": "Pari",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.52857,
+   "lon": -46.62104,
+   "loja": "guarulhos",
+   "distanciaKm": 8.5,
+   "inteiroNoRaio": false,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Canindé"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "bras",
+    "bom-retiro",
+    "vila-guilherme",
+    "belem",
+    "santa-cecilia",
+    "santana"
+   ]
+  },
+  {
+   "slug": "taboao-guarulhos",
+   "nome": "Taboão",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.4222,
+   "lon": -46.50031,
+   "loja": "guarulhos",
+   "distanciaKm": 8.8,
+   "inteiroNoRaio": false,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Paraiso",
+    "Vila Jardim São Domingos"
+   ],
+   "pontos": 5,
+   "vizinhos": [
+    "bela-vista-guarulhos",
+    "cocaia-guarulhos",
+    "morros-guarulhos",
+    "vila-barros-guarulhos",
+    "aeroporto-internacional-governador-andre-franco-montoro-guarulhos",
+    "bom-clima-guarulhos"
+   ]
+  },
+  {
+   "slug": "mooca",
+   "nome": "Mooca",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.55731,
+   "lon": -46.5936,
+   "loja": "guarulhos",
+   "distanciaKm": 9.0,
+   "inteiroNoRaio": false,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Parque da Mooca"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "belem",
+    "agua-rasa",
+    "bras",
+    "tatuape",
+    "pari",
+    "vila-formosa"
+   ]
+  },
+  {
+   "slug": "bras",
+   "nome": "Brás",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.54653,
+   "lon": -46.61712,
+   "loja": "guarulhos",
+   "distanciaKm": 9.5,
+   "inteiroNoRaio": false,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 3,
+   "vizinhos": [
+    "pari",
+    "belem",
+    "mooca",
+    "bela-vista",
+    "bom-retiro",
+    "santa-cecilia"
+   ]
+  },
+  {
+   "slug": "jaguara",
+   "nome": "Jaguara",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Oeste",
+   "lat": -23.5106,
+   "lon": -46.74255,
+   "loja": "pirituba",
+   "distanciaKm": 2.4,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Jaguara"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "vila-dos-remedios-osasco",
+    "vila-leopoldina",
+    "sao-domingos",
+    "vila-menck-osasco",
+    "vila-sao-jose-osasco",
+    "jardim-rochdale-osasco"
+   ]
+  },
+  {
+   "slug": "lapa",
+   "nome": "Lapa",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Oeste",
+   "lat": -23.52138,
+   "lon": -46.70727,
+   "loja": "pirituba",
+   "distanciaKm": 2.5,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Água Branca",
+    "Vila Ipojuca",
+    "Vila Romana",
+    "Vila Anastácio",
+    "Vila Hamburguesa",
+    "Bairro Siciliano"
+   ],
+   "pontos": 9,
+   "vizinhos": [
+    "alto-de-pinheiros",
+    "vila-leopoldina",
+    "barra-funda",
+    "perdizes",
+    "jaguara",
+    "limao"
+   ]
+  },
+  {
+   "slug": "pirituba",
+   "nome": "Pirituba",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.47924,
+   "lon": -46.72544,
+   "loja": "pirituba",
+   "distanciaKm": 2.6,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [
+    "Piqueri",
+    "Grand Reserva Paulista",
+    "Jardim Líbano",
+    "Vila Pereira Barreto",
+    "Vila Pirituba",
+    "City Pinheirinho",
+    "Vila Renato",
+    "Jardim Regina",
+    "Vila Mirante"
+   ],
+   "pontos": 11,
+   "vizinhos": [
+    "freguesia-do-o",
+    "sao-domingos",
+    "jaguara",
+    "jaragua",
+    "brasilandia",
+    "lapa"
+   ]
+  },
+  {
+   "slug": "freguesia-do-o",
+   "nome": "Freguesia do Ó",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.48365,
+   "lon": -46.70139,
+   "loja": "pirituba",
+   "distanciaKm": 2.9,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Parque Monteiro Soares",
+    "Pirituba"
+   ],
+   "pontos": 6,
+   "vizinhos": [
+    "pirituba",
+    "limao",
+    "brasilandia",
+    "lapa",
+    "cachoeirinha",
+    "casa-verde"
+   ]
+  },
+  {
+   "slug": "vila-leopoldina",
+   "nome": "Vila Leopoldina",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Oeste",
+   "lat": -23.52677,
+   "lon": -46.73667,
+   "loja": "pirituba",
+   "distanciaKm": 3.2,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Hamburguesa",
+    "Bela Aliança"
+   ],
+   "pontos": 4,
+   "vizinhos": [
+    "jaguara",
+    "vila-dos-remedios-osasco",
+    "jaguare",
+    "lapa",
+    "alto-de-pinheiros",
+    "presidente-altino-osasco"
+   ]
+  },
+  {
+   "slug": "sao-domingos",
+   "nome": "São Domingos",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.49039,
+   "lon": -46.75137,
+   "loja": "pirituba",
+   "distanciaKm": 3.4,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Parque São Domingos",
+    "City América",
+    "Jardim Maristela",
+    "Jardim Mangalot"
+   ],
+   "pontos": 8,
+   "vizinhos": [
+    "vila-menck-osasco",
+    "jaguara",
+    "jardim-santa-rita-de-cassia-osasco",
+    "pirituba",
+    "jardim-rochdale-osasco",
+    "vila-dos-remedios-osasco"
+   ]
+  },
+  {
+   "slug": "vila-dos-remedios-osasco",
+   "nome": "Vila dos Remédios",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.52138,
+   "lon": -46.75431,
+   "loja": "pirituba",
+   "distanciaKm": 4.0,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jaguara",
+    "vila-sao-jose-osasco",
+    "vila-leopoldina",
+    "vila-menck-osasco",
+    "presidente-altino-osasco",
+    "jaguare"
+   ]
+  },
+  {
+   "slug": "limao",
+   "nome": "Limão",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.49766,
+   "lon": -46.67669,
+   "loja": "pirituba",
+   "distanciaKm": 4.5,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "VIla Prado"
+   ],
+   "pontos": 5,
+   "vizinhos": [
+    "casa-verde",
+    "barra-funda",
+    "freguesia-do-o",
+    "lapa",
+    "cachoeirinha",
+    "santa-cecilia"
+   ]
+  },
+  {
+   "slug": "vila-menck-osasco",
+   "nome": "Vila Menck",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.50521,
+   "lon": -46.76607,
+   "loja": "pirituba",
+   "distanciaKm": 4.7,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "jardim-rochdale-osasco",
+    "vila-sao-jose-osasco",
+    "vila-dos-remedios-osasco",
+    "jardim-santa-rita-de-cassia-osasco",
+    "sao-domingos",
+    "terra-nossa-osasco"
+   ]
+  },
+  {
+   "slug": "alto-de-pinheiros",
+   "nome": "Alto de Pinheiros",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Oeste",
+   "lat": -23.54653,
+   "lon": -46.71315,
+   "loja": "pirituba",
+   "distanciaKm": 4.9,
+   "inteiroNoRaio": true,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Boaçava",
+    "Vila Beatriz",
+    "Vila Ida"
+   ],
+   "pontos": 6,
+   "vizinhos": [
+    "lapa",
+    "butanta",
+    "pinheiros",
+    "vila-leopoldina",
+    "perdizes",
+    "jaguare"
+   ]
+  },
+  {
+   "slug": "barra-funda",
+   "nome": "Barra Funda",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Oeste",
+   "lat": -23.52138,
+   "lon": -46.67434,
+   "loja": "pirituba",
+   "distanciaKm": 5.1,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Pompéia"
+   ],
+   "pontos": 5,
+   "vizinhos": [
+    "perdizes",
+    "santa-cecilia",
+    "limao",
+    "casa-verde",
+    "consolacao",
+    "lapa"
+   ]
+  },
+  {
+   "slug": "jaguare",
+   "nome": "Jaguaré",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Oeste",
+   "lat": -23.5451,
+   "lon": -46.74961,
+   "loja": "pirituba",
+   "distanciaKm": 5.6,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Parque Continental",
+    "Vila Nova Jaguaré"
+   ],
+   "pontos": 5,
+   "vizinhos": [
+    "presidente-altino-osasco",
+    "vila-leopoldina",
+    "jardim-d-abril-osasco",
+    "vila-dos-remedios-osasco",
+    "jardim-bela-vista-osasco",
+    "rio-pequeno"
+   ]
+  },
+  {
+   "slug": "vila-sao-jose-osasco",
+   "nome": "Vila São José",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.52138,
+   "lon": -46.77195,
+   "loja": "pirituba",
+   "distanciaKm": 5.6,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "presidente-altino-osasco",
+    "vila-dos-remedios-osasco",
+    "vila-menck-osasco",
+    "jardim-rochdale-osasco",
+    "terra-nossa-osasco",
+    "jardim-bela-vista-osasco"
+   ]
+  },
+  {
+   "slug": "perdizes",
+   "nome": "Perdizes",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Oeste",
+   "lat": -23.53935,
+   "lon": -46.67983,
+   "loja": "pirituba",
+   "distanciaKm": 5.8,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Sumaré",
+    "Pompéia"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "barra-funda",
+    "consolacao",
+    "santa-cecilia",
+    "pinheiros",
+    "jardim-paulista",
+    "lapa"
+   ]
+  },
+  {
+   "slug": "jardim-rochdale-osasco",
+   "nome": "Jardim Rochdale",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.50521,
+   "lon": -46.77783,
+   "loja": "pirituba",
+   "distanciaKm": 5.9,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "vila-menck-osasco",
+    "terra-nossa-osasco",
+    "helena-maria-osasco",
+    "jardim-santa-rita-de-cassia-osasco",
+    "vila-sao-jose-osasco",
+    "jardim-bonanca-ii-osasco"
+   ]
+  },
+  {
+   "slug": "jardim-santa-rita-de-cassia-osasco",
+   "nome": "Jardim Santa Rita de Cássia",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.48904,
+   "lon": -46.77783,
+   "loja": "pirituba",
+   "distanciaKm": 6.0,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-bonanca-ii-osasco",
+    "helena-maria-osasco",
+    "jardim-tres-montanhas-osasco",
+    "jardim-rochdale-osasco",
+    "vila-simoes-de-almeida-osasco",
+    "vila-menck-osasco"
+   ]
+  },
+  {
+   "slug": "presidente-altino-osasco",
+   "nome": "Presidente Altino",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.53575,
+   "lon": -46.76999,
+   "loja": "pirituba",
+   "distanciaKm": 6.2,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 3,
+   "vizinhos": [
+    "jardim-bela-vista-osasco",
+    "vila-sao-jose-osasco",
+    "jardim-das-flores-osasco",
+    "jardim-d-abril-osasco",
+    "vila-dos-remedios-osasco",
+    "jaguare"
+   ]
+  },
+  {
+   "slug": "casa-verde",
+   "nome": "Casa Verde",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.49982,
+   "lon": -46.65729,
+   "loja": "pirituba",
+   "distanciaKm": 6.5,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Casa Verde Alta"
+   ],
+   "pontos": 4,
+   "vizinhos": [
+    "limao",
+    "santana",
+    "barra-funda",
+    "bom-retiro",
+    "santa-cecilia",
+    "mandaqui"
+   ]
+  },
+  {
+   "slug": "brasilandia",
+   "nome": "Brasilândia",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.45172,
+   "lon": -46.68737,
+   "loja": "pirituba",
+   "distanciaKm": 6.6,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Penteado"
+   ],
+   "pontos": 13,
+   "vizinhos": [
+    "cachoeirinha",
+    "freguesia-do-o",
+    "pirituba",
+    "mandaqui",
+    "limao",
+    "jaragua"
+   ]
+  },
+  {
+   "slug": "jaragua",
+   "nome": "Jaraguá",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.4443,
+   "lon": -46.73843,
+   "loja": "pirituba",
+   "distanciaKm": 6.7,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [
+    "Parque Nações Unidas",
+    "City Jaraguá",
+    "Vila Souza",
+    "Parada de Taípas",
+    "Jardim Pirituba"
+   ],
+   "pontos": 20,
+   "vizinhos": [
+    "perus",
+    "pirituba",
+    "anhanguera",
+    "brasilandia",
+    "sao-domingos",
+    "vila-simoes-de-almeida-osasco"
+   ]
+  },
+  {
+   "slug": "terra-nossa-osasco",
+   "nome": "Terra Nossa",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.5106,
+   "lon": -46.78958,
+   "loja": "pirituba",
+   "distanciaKm": 7.1,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-piratininga-osasco",
+    "helena-maria-osasco",
+    "jardim-rochdale-osasco",
+    "jardim-elvira-osasco",
+    "vila-sao-jose-osasco",
+    "jardim-bonanca-ii-osasco"
+   ]
+  },
+  {
+   "slug": "helena-maria-osasco",
+   "nome": "Helena Maria",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.49982,
+   "lon": -46.78958,
+   "loja": "pirituba",
+   "distanciaKm": 7.1,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-bonanca-ii-osasco",
+    "terra-nossa-osasco",
+    "jardim-elvira-osasco",
+    "jardim-rochdale-osasco",
+    "jardim-santa-rita-de-cassia-osasco",
+    "colinas-d-oeste-setor-c-osasco"
+   ]
+  },
+  {
+   "slug": "jardim-bonanca-ii-osasco",
+   "nome": "Jardim Bonança II",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.48904,
+   "lon": -46.78958,
+   "loja": "pirituba",
+   "distanciaKm": 7.2,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-santa-rita-de-cassia-osasco",
+    "helena-maria-osasco",
+    "jardim-tres-montanhas-osasco",
+    "colinas-d-oeste-setor-c-osasco",
+    "jardim-elvira-osasco",
+    "colinas-d-oeste-setor-e-barueri"
+   ]
+  },
+  {
+   "slug": "vila-simoes-de-almeida-osasco",
+   "nome": "Vila Simões de Almeida",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.47107,
+   "lon": -46.78175,
+   "loja": "pirituba",
+   "distanciaKm": 7.2,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 3,
+   "vizinhos": [
+    "jardim-tres-montanhas-osasco",
+    "jardim-santa-rita-de-cassia-osasco",
+    "jardim-bonanca-ii-osasco",
+    "colinas-d-oeste-setor-e-barueri",
+    "colinas-d-oeste-setor-c-osasco",
+    "anhanguera"
+   ]
+  },
+  {
+   "slug": "jardim-bela-vista-osasco",
+   "nome": "Jardim Bela Vista",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.54294,
+   "lon": -46.77783,
+   "loja": "pirituba",
+   "distanciaKm": 7.4,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "presidente-altino-osasco",
+    "jardim-das-flores-osasco",
+    "jardim-d-abril-osasco",
+    "vila-sao-jose-osasco",
+    "vila-quitauna-osasco",
+    "jaguare"
+   ]
+  },
+  {
+   "slug": "cachoeirinha",
+   "nome": "Cachoeirinha",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.46209,
+   "lon": -46.66317,
+   "loja": "pirituba",
+   "distanciaKm": 7.4,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Amélia",
+    "Jardim Peri"
+   ],
+   "pontos": 8,
+   "vizinhos": [
+    "mandaqui",
+    "brasilandia",
+    "limao",
+    "casa-verde",
+    "freguesia-do-o",
+    "santana"
+   ]
+  },
+  {
+   "slug": "butanta",
+   "nome": "Butantã",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Oeste",
+   "lat": -23.56989,
+   "lon": -46.72491,
+   "loja": "pirituba",
+   "distanciaKm": 7.5,
+   "inteiroNoRaio": true,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Caxingui"
+   ],
+   "pontos": 8,
+   "vizinhos": [
+    "vila-sonia",
+    "morumbi",
+    "alto-de-pinheiros",
+    "rio-pequeno",
+    "pinheiros",
+    "jaguare"
+   ]
+  },
+  {
+   "slug": "santa-cecilia",
+   "nome": "Santa Cecília",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Centro",
+   "lat": -23.53216,
+   "lon": -46.65435,
+   "loja": "pirituba",
+   "distanciaKm": 7.5,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Campos Elísios"
+   ],
+   "pontos": 2,
+   "vizinhos": [
+    "bom-retiro",
+    "consolacao",
+    "barra-funda",
+    "bela-vista",
+    "perdizes",
+    "pari"
+   ]
+  },
+  {
+   "slug": "jardim-tres-montanhas-osasco",
+   "nome": "Jardim Três Montanhas",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.47826,
+   "lon": -46.78958,
+   "loja": "pirituba",
+   "distanciaKm": 7.5,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-simoes-de-almeida-osasco",
+    "jardim-bonanca-ii-osasco",
+    "colinas-d-oeste-setor-e-barueri",
+    "jardim-santa-rita-de-cassia-osasco",
+    "colinas-d-oeste-setor-c-osasco",
+    "helena-maria-osasco"
+   ]
+  },
+  {
+   "slug": "pinheiros",
+   "nome": "Pinheiros",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Oeste",
+   "lat": -23.5645,
+   "lon": -46.68963,
+   "loja": "pirituba",
+   "distanciaKm": 7.6,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Madalena",
+    "Jardim Europa"
+   ],
+   "pontos": 6,
+   "vizinhos": [
+    "jardim-paulista",
+    "perdizes",
+    "morumbi",
+    "alto-de-pinheiros",
+    "consolacao",
+    "butanta"
+   ]
+  },
+  {
+   "slug": "jardim-d-abril-osasco",
+   "nome": "Jardim D'Abril",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.55372,
+   "lon": -46.77195,
+   "loja": "pirituba",
+   "distanciaKm": 7.7,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "jardim-bela-vista-osasco",
+    "presidente-altino-osasco",
+    "rio-pequeno",
+    "jaguare",
+    "jardim-das-flores-osasco",
+    "vila-sao-jose-osasco"
+   ]
+  },
+  {
+   "slug": "consolacao",
+   "nome": "Consolação",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Centro",
+   "lat": -23.54833,
+   "lon": -46.66023,
+   "loja": "pirituba",
+   "distanciaKm": 8.0,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Higienópolis",
+    "Vila Madalena"
+   ],
+   "pontos": 4,
+   "vizinhos": [
+    "bela-vista",
+    "santa-cecilia",
+    "perdizes",
+    "jardim-paulista",
+    "bom-retiro",
+    "barra-funda"
+   ]
+  },
+  {
+   "slug": "jardim-das-flores-osasco",
+   "nome": "Jardim das Flòres",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.53755,
+   "lon": -46.78958,
+   "loja": "pirituba",
+   "distanciaKm": 8.0,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "jardim-bela-vista-osasco",
+    "vila-quitauna-osasco",
+    "presidente-altino-osasco",
+    "jardim-piratininga-osasco",
+    "jardim-d-abril-osasco",
+    "vila-sao-jose-osasco"
+   ]
+  },
+  {
+   "slug": "jardim-piratininga-osasco",
+   "nome": "Jardim Piratininga",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.51779,
+   "lon": -46.79742,
+   "loja": "pirituba",
+   "distanciaKm": 8.0,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 3,
+   "vizinhos": [
+    "terra-nossa-osasco",
+    "vila-quitauna-osasco",
+    "jardim-elvira-osasco",
+    "helena-maria-osasco",
+    "jardim-das-flores-osasco",
+    "jardim-rochdale-osasco"
+   ]
+  },
+  {
+   "slug": "jardim-elvira-osasco",
+   "nome": "Jardim Elvira",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.49982,
+   "lon": -46.80134,
+   "loja": "pirituba",
+   "distanciaKm": 8.3,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "colinas-d-oeste-setor-c-osasco",
+    "helena-maria-osasco",
+    "terra-nossa-osasco",
+    "jardim-bonanca-ii-osasco",
+    "jardim-piratininga-osasco",
+    "colinas-d-oeste-setor-e-barueri"
+   ]
+  },
+  {
+   "slug": "colinas-d-oeste-setor-c-osasco",
+   "nome": "Colinas d'Oeste Setor C",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.48904,
+   "lon": -46.80134,
+   "loja": "pirituba",
+   "distanciaKm": 8.4,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-elvira-osasco",
+    "colinas-d-oeste-setor-e-barueri",
+    "jardim-bonanca-ii-osasco",
+    "helena-maria-osasco",
+    "jardim-tres-montanhas-osasco",
+    "jardim-santa-rita-de-cassia-osasco"
+   ]
+  },
+  {
+   "slug": "rio-pequeno",
+   "nome": "Rio Pequeno",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Oeste",
+   "lat": -23.57066,
+   "lon": -46.75767,
+   "loja": "pirituba",
+   "distanciaKm": 8.5,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 7,
+   "vizinhos": [
+    "jardim-d-abril-osasco",
+    "vila-sonia",
+    "jaguare",
+    "butanta",
+    "jardim-bela-vista-osasco",
+    "presidente-altino-osasco"
+   ]
+  },
+  {
+   "slug": "bom-retiro",
+   "nome": "Bom Retiro",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Centro",
+   "lat": -23.52497,
+   "lon": -46.64064,
+   "loja": "pirituba",
+   "distanciaKm": 8.5,
+   "inteiroNoRaio": false,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Bairro da Luz"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "santa-cecilia",
+    "pari",
+    "santana",
+    "casa-verde",
+    "consolacao",
+    "bela-vista"
+   ]
+  },
+  {
+   "slug": "colinas-d-oeste-setor-e-barueri",
+   "nome": "Colinas d'Oeste Setor E",
+   "tipo": "bairro",
+   "cidade": "Barueri",
+   "zona": "",
+   "lat": -23.47826,
+   "lon": -46.80134,
+   "loja": "pirituba",
+   "distanciaKm": 8.7,
+   "inteiroNoRaio": false,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "colinas-d-oeste-setor-c-osasco",
+    "jardim-tres-montanhas-osasco",
+    "jardim-bonanca-ii-osasco",
+    "vila-simoes-de-almeida-osasco",
+    "jardim-elvira-osasco",
+    "jardim-santa-rita-de-cassia-osasco"
+   ]
+  },
+  {
+   "slug": "vila-quitauna-osasco",
+   "nome": "Vila Quitauna",
+   "tipo": "bairro",
+   "cidade": "Osasco",
+   "zona": "",
+   "lat": -23.53216,
+   "lon": -46.80134,
+   "loja": "pirituba",
+   "distanciaKm": 8.9,
+   "inteiroNoRaio": false,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-das-flores-osasco",
+    "jardim-piratininga-osasco",
+    "jardim-bela-vista-osasco",
+    "terra-nossa-osasco",
+    "presidente-altino-osasco",
+    "vila-sao-jose-osasco"
+   ]
+  },
+  {
+   "slug": "anhanguera",
+   "nome": "Anhanguera",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.44457,
+   "lon": -46.78077,
+   "loja": "pirituba",
+   "distanciaKm": 8.9,
+   "inteiroNoRaio": false,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Morro Doce",
+    "Jardim Britânia"
+   ],
+   "pontos": 8,
+   "vizinhos": [
+    "vila-simoes-de-almeida-osasco",
+    "jardim-tres-montanhas-osasco",
+    "colinas-d-oeste-setor-e-barueri",
+    "jaragua",
+    "jardim-santa-rita-de-cassia-osasco",
+    "jardim-bonanca-ii-osasco"
+   ]
+  },
+  {
+   "slug": "jardim-paulista",
+   "nome": "Jardim Paulista",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Oeste",
+   "lat": -23.56809,
+   "lon": -46.66807,
+   "loja": "pirituba",
+   "distanciaKm": 9.0,
+   "inteiroNoRaio": false,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Cerqueira César",
+    "Jardim Europa"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "pinheiros",
+    "consolacao",
+    "bela-vista",
+    "perdizes",
+    "santa-cecilia",
+    "morumbi"
+   ]
+  },
+  {
+   "slug": "mandaqui",
+   "nome": "Mandaqui",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.46594,
+   "lon": -46.64008,
+   "loja": "pirituba",
+   "distanciaKm": 9.2,
+   "inteiroNoRaio": false,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 9.3
+    }
+   ],
+   "variacoes": [
+    "Lauzane Paulista",
+    "Vila Aurora",
+    "Parque Mandaqui",
+    "Cachoeirinha"
+   ],
+   "pontos": 7,
+   "vizinhos": [
+    "cachoeirinha",
+    "tucuruvi",
+    "santana",
+    "casa-verde",
+    "brasilandia",
+    "limao"
+   ]
+  },
+  {
+   "slug": "bela-vista",
+   "nome": "Bela Vista",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Centro",
+   "lat": -23.55372,
+   "lon": -46.64847,
+   "loja": "pirituba",
+   "distanciaKm": 9.3,
+   "inteiroNoRaio": false,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Bixiga"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "consolacao",
+    "santa-cecilia",
+    "jardim-paulista",
+    "bras",
+    "bom-retiro",
+    "perdizes"
+   ]
+  },
+  {
+   "slug": "vila-sonia",
+   "nome": "Vila Sônia",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Oeste",
+   "lat": -23.58606,
+   "lon": -46.73667,
+   "loja": "pirituba",
+   "distanciaKm": 9.4,
+   "inteiroNoRaio": false,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Butantã"
+   ],
+   "pontos": 2,
+   "vizinhos": [
+    "butanta",
+    "rio-pequeno",
+    "morumbi",
+    "jaguare",
+    "alto-de-pinheiros",
+    "jardim-d-abril-osasco"
+   ]
+  },
+  {
+   "slug": "morumbi",
+   "nome": "Morumbi",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Oeste",
+   "lat": -23.58606,
+   "lon": -46.70727,
+   "loja": "pirituba",
+   "distanciaKm": 9.4,
+   "inteiroNoRaio": false,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Cidade Jardim"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "butanta",
+    "vila-sonia",
+    "pinheiros",
+    "alto-de-pinheiros",
+    "jardim-paulista",
+    "rio-pequeno"
+   ]
+  },
+  {
+   "slug": "perus",
+   "nome": "Perus",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Norte",
+   "lat": -23.41897,
+   "lon": -46.73079,
+   "loja": "pirituba",
+   "distanciaKm": 9.4,
+   "inteiroNoRaio": false,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Souza",
+    "Vila Caiuba",
+    "Parque Taipas"
+   ],
+   "pontos": 4,
+   "vizinhos": [
+    "jaragua",
+    "brasilandia",
+    "anhanguera",
+    "pirituba",
+    "vila-simoes-de-almeida-osasco",
+    "freguesia-do-o"
+   ]
+  },
+  {
+   "slug": "jardim-stella-santo-andre",
+   "nome": "Jardim Stella",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.68308,
+   "lon": -46.54264,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 0.9,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Pilar"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-jamaica-santo-andre",
+    "vila-floresta-santo-andre",
+    "jardim-las-vegas-santo-andre",
+    "paraiso-santo-andre",
+    "anchieta-sao-bernardo-do-campo",
+    "baeta-neves-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "jardim-las-vegas-santo-andre",
+   "nome": "Jardim Las Vegas",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.69386,
+   "lon": -46.53088,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 1.0,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Milena"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "baeta-neves-sao-bernardo-do-campo",
+    "jardim-do-estadio-santo-andre",
+    "jardim-jamaica-santo-andre",
+    "jardim-stella-santo-andre",
+    "vila-helena-santo-andre",
+    "nova-petropolis-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "jardim-jamaica-santo-andre",
+   "nome": "Jardim Jamaica",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.68308,
+   "lon": -46.53088,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 1.3,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-stella-santo-andre",
+    "vila-helena-santo-andre",
+    "paraiso-santo-andre",
+    "jardim-las-vegas-santo-andre",
+    "jardim-do-estadio-santo-andre",
+    "vila-floresta-santo-andre"
+   ]
+  },
+  {
+   "slug": "baeta-neves-sao-bernardo-do-campo",
+   "nome": "Baeta Neves",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.70105,
+   "lon": -46.53088,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 1.5,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Industrial"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "jardim-las-vegas-santo-andre",
+    "nova-petropolis-sao-bernardo-do-campo",
+    "jardim-do-estadio-santo-andre",
+    "jardim-cipreste-santo-andre",
+    "jardim-jamaica-santo-andre",
+    "centro-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "centro-sao-bernardo-do-campo",
+   "nome": "Centro",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.70248,
+   "lon": -46.55205,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 1.7,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Santa Rita de Cássia",
+    "Vila Álvaro Marques",
+    "Vila Dusi",
+    "Jardim das Américas",
+    "Jardim Três Marias"
+   ],
+   "pontos": 5,
+   "vizinhos": [
+    "nova-petropolis-sao-bernardo-do-campo",
+    "planalto-sao-bernardo-do-campo",
+    "baeta-neves-sao-bernardo-do-campo",
+    "jardim-las-vegas-santo-andre",
+    "jardim-stella-santo-andre",
+    "independencia-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "vila-floresta-santo-andre",
+   "nome": "Vila Floresta",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.6723,
+   "lon": -46.54264,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 2.1,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Lilica"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "paraiso-santo-andre",
+    "jardim-stella-santo-andre",
+    "vila-alice-santo-andre",
+    "jardim-jamaica-santo-andre",
+    "vila-bastos-santo-andre",
+    "vila-principe-de-gales-santo-andre"
+   ]
+  },
+  {
+   "slug": "nova-petropolis-sao-bernardo-do-campo",
+   "nome": "Nova Petrópolis",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.71003,
+   "lon": -46.53676,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 2.2,
+   "inteiroNoRaio": true,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Nova Petrópolis"
+   ],
+   "pontos": 2,
+   "vizinhos": [
+    "baeta-neves-sao-bernardo-do-campo",
+    "centro-sao-bernardo-do-campo",
+    "jardim-cipreste-santo-andre",
+    "santa-terezinha-sao-bernardo-do-campo",
+    "ferrazopolis-sao-bernardo-do-campo",
+    "jardim-las-vegas-santo-andre"
+   ]
+  },
+  {
+   "slug": "jardim-do-estadio-santo-andre",
+   "nome": "Jardim do Estádio",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.69386,
+   "lon": -46.51912,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 2.2,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-telles-de-menezes-santo-andre",
+    "jardim-las-vegas-santo-andre",
+    "vila-helena-santo-andre",
+    "baeta-neves-sao-bernardo-do-campo",
+    "vila-luzita-santo-andre",
+    "vila-pires-santo-andre"
+   ]
+  },
+  {
+   "slug": "paraiso-santo-andre",
+   "nome": "Paraíso",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.6723,
+   "lon": -46.53088,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 2.3,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-floresta-santo-andre",
+    "vila-alzira-santo-andre",
+    "jardim-jamaica-santo-andre",
+    "vila-bastos-santo-andre",
+    "jardim-stella-santo-andre",
+    "vila-helena-santo-andre"
+   ]
+  },
+  {
+   "slug": "vila-helena-santo-andre",
+   "nome": "Vila Helena",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.68308,
+   "lon": -46.51912,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 2.4,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Marina"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-pires-santo-andre",
+    "jardim-jamaica-santo-andre",
+    "vila-alzira-santo-andre",
+    "jardim-do-estadio-santo-andre",
+    "jardim-telles-de-menezes-santo-andre",
+    "vila-america-santo-andre"
+   ]
+  },
+  {
+   "slug": "anchieta-sao-bernardo-do-campo",
+   "nome": "Anchieta",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.67589,
+   "lon": -46.56224,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 2.8,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Parque Anchieta",
+    "Jardim Hollywood",
+    "Jardim Silvestre"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "jordanopolis-sao-bernardo-do-campo",
+    "vila-principe-de-gales-santo-andre",
+    "vila-floresta-santo-andre",
+    "jardim-stella-santo-andre",
+    "piraporinha-diadema",
+    "planalto-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "vila-alzira-santo-andre",
+   "nome": "Vila Alzira",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.6723,
+   "lon": -46.51912,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 3.0,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Leopoldina"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-america-santo-andre",
+    "paraiso-santo-andre",
+    "vila-helena-santo-andre",
+    "casa-branca-santo-andre",
+    "vila-pires-santo-andre",
+    "jardim-jamaica-santo-andre"
+   ]
+  },
+  {
+   "slug": "planalto-sao-bernardo-do-campo",
+   "nome": "Planalto",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.69745,
+   "lon": -46.57008,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 3.1,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Conjunto Habitacional Vila São Salvério",
+    "Vila Washington"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "independencia-sao-bernardo-do-campo",
+    "jordanopolis-sao-bernardo-do-campo",
+    "centro-sao-bernardo-do-campo",
+    "alves-dias-sao-bernardo-do-campo",
+    "anchieta-sao-bernardo-do-campo",
+    "piraporinha-diadema"
+   ]
+  },
+  {
+   "slug": "vila-alice-santo-andre",
+   "nome": "Vila Alice",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.66152,
+   "lon": -46.54264,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 3.3,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-bastos-santo-andre",
+    "vila-principe-de-gales-santo-andre",
+    "vila-floresta-santo-andre",
+    "jardim-santo-andre",
+    "paraiso-santo-andre",
+    "vila-aquilino-santo-andre"
+   ]
+  },
+  {
+   "slug": "jardim-telles-de-menezes-santo-andre",
+   "nome": "Jardim Telles de Menezes",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.69386,
+   "lon": -46.50737,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 3.4,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Mazzei"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-do-estadio-santo-andre",
+    "condominio-maracana-santo-andre",
+    "vila-luzita-santo-andre",
+    "vila-pires-santo-andre",
+    "vila-helena-santo-andre",
+    "jardim-santo-andre-cdhu-santo-andre"
+   ]
+  },
+  {
+   "slug": "vila-bastos-santo-andre",
+   "nome": "Vila Bastos",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.66152,
+   "lon": -46.53088,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 3.4,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-alice-santo-andre",
+    "casa-branca-santo-andre",
+    "paraiso-santo-andre",
+    "jardim-santo-andre",
+    "vila-floresta-santo-andre",
+    "vila-alzira-santo-andre"
+   ]
+  },
+  {
+   "slug": "jardim-cipreste-santo-andre",
+   "nome": "Jardim Cipreste",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.71542,
+   "lon": -46.51912,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 3.5,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-joao-ramalho-santo-andre",
+    "cata-preta-santo-andre",
+    "santa-terezinha-sao-bernardo-do-campo",
+    "vila-luzita-santo-andre",
+    "nova-petropolis-sao-bernardo-do-campo",
+    "baeta-neves-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "vila-pires-santo-andre",
+   "nome": "Vila Pires",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.68308,
+   "lon": -46.50737,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 3.5,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-helena-santo-andre",
+    "vila-guaraciaba-santo-andre",
+    "vila-america-santo-andre",
+    "jardim-telles-de-menezes-santo-andre",
+    "jardim-do-estadio-santo-andre",
+    "vila-alzira-santo-andre"
+   ]
+  },
+  {
+   "slug": "vila-principe-de-gales-santo-andre",
+   "nome": "Vila Príncipe de Gales",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.66152,
+   "lon": -46.5544,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 3.6,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-alice-santo-andre",
+    "vila-aquilino-santo-andre",
+    "vila-floresta-santo-andre",
+    "rudge-ramos-sao-bernardo-do-campo",
+    "anchieta-sao-bernardo-do-campo",
+    "jardim-santo-andre"
+   ]
+  },
+  {
+   "slug": "vila-luzita-santo-andre",
+   "nome": "Vila Luzita",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.70464,
+   "lon": -46.50737,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 3.7,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-santo-andre-cdhu-santo-andre",
+    "vila-joao-ramalho-santo-andre",
+    "jardim-telles-de-menezes-santo-andre",
+    "jardim-cipreste-santo-andre",
+    "jardim-do-estadio-santo-andre",
+    "condominio-maracana-santo-andre"
+   ]
+  },
+  {
+   "slug": "ferrazopolis-sao-bernardo-do-campo",
+   "nome": "Ferrazópolis",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.72619,
+   "lon": -46.54264,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 3.9,
+   "inteiroNoRaio": true,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Ferrazópolis"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "santa-terezinha-sao-bernardo-do-campo",
+    "demarchi-sao-bernardo-do-campo",
+    "nova-petropolis-sao-bernardo-do-campo",
+    "jardim-cipreste-santo-andre",
+    "bairro-dos-casa-sao-bernardo-do-campo",
+    "centro-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "jordanopolis-sao-bernardo-do-campo",
+   "nome": "Jordanópolis",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.68308,
+   "lon": -46.57792,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 3.9,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "piraporinha-diadema",
+    "anchieta-sao-bernardo-do-campo",
+    "planalto-sao-bernardo-do-campo",
+    "pauliceia-sao-bernardo-do-campo",
+    "vila-nogueira-diadema",
+    "independencia-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "casa-branca-santo-andre",
+   "nome": "Casa Branca",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.66152,
+   "lon": -46.51912,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 3.9,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Vilma"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-bastos-santo-andre",
+    "vila-alzira-santo-andre",
+    "parque-jacatuba-santo-andre",
+    "vila-america-santo-andre",
+    "parque-joao-ramalho-santo-andre",
+    "paraiso-santo-andre"
+   ]
+  },
+  {
+   "slug": "santa-terezinha-sao-bernardo-do-campo",
+   "nome": "Santa Terezinha",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.72619,
+   "lon": -46.53088,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 4.0,
+   "inteiroNoRaio": true,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Tiradentes"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "ferrazopolis-sao-bernardo-do-campo",
+    "jardim-cipreste-santo-andre",
+    "nova-petropolis-sao-bernardo-do-campo",
+    "cata-preta-santo-andre",
+    "vila-joao-ramalho-santo-andre",
+    "demarchi-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "vila-america-santo-andre",
+   "nome": "Vila América",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.6723,
+   "lon": -46.50737,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 4.0,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Parque Industriário"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-alzira-santo-andre",
+    "jardim-marek-santo-andre",
+    "vila-pires-santo-andre",
+    "novo-homero-thon-santo-andre",
+    "vila-helena-santo-andre",
+    "casa-branca-santo-andre"
+   ]
+  },
+  {
+   "slug": "independencia-sao-bernardo-do-campo",
+   "nome": "Independência",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.70464,
+   "lon": -46.57792,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 4.1,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "planalto-sao-bernardo-do-campo",
+    "alves-dias-sao-bernardo-do-campo",
+    "assuncao-sao-bernardo-do-campo",
+    "vila-nogueira-diadema",
+    "jordanopolis-sao-bernardo-do-campo",
+    "casa-grande-diadema"
+   ]
+  },
+  {
+   "slug": "vila-joao-ramalho-santo-andre",
+   "nome": "Vila João Ramalho",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.71542,
+   "lon": -46.50737,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 4.3,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-cipreste-santo-andre",
+    "cata-preta-santo-andre",
+    "vila-luzita-santo-andre",
+    "parque-do-pedroso-santo-andre",
+    "jardim-santo-andre-cdhu-santo-andre",
+    "recreio-da-borda-do-campo-maua"
+   ]
+  },
+  {
+   "slug": "jardim-santo-andre",
+   "nome": "Jardim",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.65074,
+   "lon": -46.53676,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 4.5,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "vila-bastos-santo-andre",
+    "vila-alice-santo-andre",
+    "vila-aquilino-santo-andre",
+    "parque-jacatuba-santo-andre",
+    "campestre-santo-andre",
+    "vila-principe-de-gales-santo-andre"
+   ]
+  },
+  {
+   "slug": "assuncao-sao-bernardo-do-campo",
+   "nome": "Assunção",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.7208,
+   "lon": -46.57204,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 4.6,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Artuelia",
+    "Vila Simone"
+   ],
+   "pontos": 4,
+   "vizinhos": [
+    "independencia-sao-bernardo-do-campo",
+    "jardim-ipe-sao-bernardo-do-campo",
+    "bairro-dos-casa-sao-bernardo-do-campo",
+    "alves-dias-sao-bernardo-do-campo",
+    "demarchi-sao-bernardo-do-campo",
+    "planalto-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "condominio-maracana-santo-andre",
+   "nome": "Condominío Maracanã",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.69386,
+   "lon": -46.49561,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 4.6,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Carla"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "condominio-maracana-maua",
+    "jardim-telles-de-menezes-santo-andre",
+    "jardim-santo-andre-cdhu-santo-andre",
+    "vila-guaraciaba-santo-andre",
+    "vila-carlina-maua",
+    "vila-luzita-santo-andre"
+   ]
+  },
+  {
+   "slug": "piraporinha-diadema",
+   "nome": "Piraporinha",
+   "tipo": "bairro",
+   "cidade": "Diadema",
+   "zona": "",
+   "lat": -23.67769,
+   "lon": -46.5838,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 4.6,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Padre Anchieta"
+   ],
+   "pontos": 2,
+   "vizinhos": [
+    "jordanopolis-sao-bernardo-do-campo",
+    "pauliceia-sao-bernardo-do-campo",
+    "canhema-diadema",
+    "vila-nogueira-diadema",
+    "anchieta-sao-bernardo-do-campo",
+    "planalto-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "vila-guaraciaba-santo-andre",
+   "nome": "Vila Guaraciaba",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.68308,
+   "lon": -46.49561,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 4.7,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Silvana"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-pires-santo-andre",
+    "jardim-marek-santo-andre",
+    "condominio-maracana-santo-andre",
+    "cidade-sao-jorge-santo-andre",
+    "condominio-maracana-maua",
+    "jardim-telles-de-menezes-santo-andre"
+   ]
+  },
+  {
+   "slug": "vila-aquilino-santo-andre",
+   "nome": "Vila Aquilino",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.65074,
+   "lon": -46.5544,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 4.7,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-principe-de-gales-santo-andre",
+    "rudge-ramos-sao-bernardo-do-campo",
+    "vila-alice-santo-andre",
+    "nova-gerty-sao-caetano-do-sul",
+    "jardim-santo-andre",
+    "santa-maria-sao-caetano-do-sul"
+   ]
+  },
+  {
+   "slug": "jardim-santo-andre-cdhu-santo-andre",
+   "nome": "Jardim Santo André - CDHU",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.70464,
+   "lon": -46.49561,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 4.8,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Lamartine"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-carlina-maua",
+    "vila-luzita-santo-andre",
+    "condominio-maracana-santo-andre",
+    "recreio-da-borda-do-campo-maua",
+    "vila-joao-ramalho-santo-andre",
+    "condominio-maracana-maua"
+   ]
+  },
+  {
+   "slug": "jardim-marek-santo-andre",
+   "nome": "Jardim Marek",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.6723,
+   "lon": -46.49561,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 5.0,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-america-santo-andre",
+    "vila-guaraciaba-santo-andre",
+    "cidade-sao-jorge-santo-andre",
+    "novo-homero-thon-santo-andre",
+    "vila-pires-santo-andre",
+    "capuava-maua"
+   ]
+  },
+  {
+   "slug": "parque-jacatuba-santo-andre",
+   "nome": "Parque Jaçatuba",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.65074,
+   "lon": -46.51912,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 5.0,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "parque-joao-ramalho-santo-andre",
+    "casa-branca-santo-andre",
+    "parque-erasmo-assuncao-santo-andre",
+    "vila-bastos-santo-andre",
+    "jardim-santo-andre",
+    "novo-homero-thon-santo-andre"
+   ]
+  },
+  {
+   "slug": "rudge-ramos-sao-bernardo-do-campo",
+   "nome": "Rudge Ramos",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.65433,
+   "lon": -46.57008,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 5.1,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Dourados",
+    "Jardim Orlandina"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "vila-aquilino-santo-andre",
+    "nova-gerty-sao-caetano-do-sul",
+    "vila-principe-de-gales-santo-andre",
+    "jardim-sao-caetano-sao-caetano-do-sul",
+    "pauliceia-sao-bernardo-do-campo",
+    "anchieta-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "cata-preta-santo-andre",
+   "nome": "Cata Preta",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.72619,
+   "lon": -46.50737,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 5.2,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "parque-do-pedroso-santo-andre",
+    "vila-joao-ramalho-santo-andre",
+    "jardim-cipreste-santo-andre",
+    "jardim-riviera-santo-andre",
+    "santa-terezinha-sao-bernardo-do-campo",
+    "vila-luzita-santo-andre"
+   ]
+  },
+  {
+   "slug": "novo-homero-thon-santo-andre",
+   "nome": "Novo Homero Thon",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.66152,
+   "lon": -46.50149,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 5.2,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "jardim-marek-santo-andre",
+    "vila-america-santo-andre",
+    "jardim-alzira-franco-santo-andre",
+    "parque-joao-ramalho-santo-andre",
+    "casa-branca-santo-andre",
+    "capuava-maua"
+   ]
+  },
+  {
+   "slug": "demarchi-sao-bernardo-do-campo",
+   "nome": "Demarchi",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.73697,
+   "lon": -46.5544,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 5.3,
+   "inteiroNoRaio": true,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Nossa Senhora de Fátima"
+   ],
+   "pontos": 4,
+   "vizinhos": [
+    "bairro-dos-casa-sao-bernardo-do-campo",
+    "ferrazopolis-sao-bernardo-do-campo",
+    "botujuru-sao-bernardo-do-campo",
+    "jardim-ipe-sao-bernardo-do-campo",
+    "assuncao-sao-bernardo-do-campo",
+    "santa-terezinha-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "alves-dias-sao-bernardo-do-campo",
+   "nome": "Alves Dias",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.71003,
+   "lon": -46.58968,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 5.4,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "casa-grande-diadema",
+    "independencia-sao-bernardo-do-campo",
+    "vila-nogueira-diadema",
+    "assuncao-sao-bernardo-do-campo",
+    "cooperativa-sao-bernardo-do-campo",
+    "planalto-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "pauliceia-sao-bernardo-do-campo",
+   "nome": "Paulicéia",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.66511,
+   "lon": -46.58576,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 5.4,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 3,
+   "vizinhos": [
+    "piraporinha-diadema",
+    "taboao-sao-bernardo-do-campo",
+    "rudge-ramos-sao-bernardo-do-campo",
+    "canhema-diadema",
+    "jordanopolis-sao-bernardo-do-campo",
+    "anchieta-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "vila-nogueira-diadema",
+   "nome": "Vila Nogueira",
+   "tipo": "bairro",
+   "cidade": "Diadema",
+   "zona": "",
+   "lat": -23.69386,
+   "lon": -46.59556,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 5.6,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Ana Sofia"
+   ],
+   "pontos": 2,
+   "vizinhos": [
+    "conceicao-diadema",
+    "casa-grande-diadema",
+    "alves-dias-sao-bernardo-do-campo",
+    "canhema-diadema",
+    "serraria-diadema",
+    "independencia-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "parque-joao-ramalho-santo-andre",
+   "nome": "Parque João Ramalho",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.65074,
+   "lon": -46.50737,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 5.6,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Santa Maria"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "parque-jacatuba-santo-andre",
+    "jardim-alzira-franco-santo-andre",
+    "parque-erasmo-assuncao-santo-andre",
+    "novo-homero-thon-santo-andre",
+    "casa-branca-santo-andre",
+    "parque-novo-oratorio-santo-andre"
+   ]
+  },
+  {
+   "slug": "bairro-dos-casa-sao-bernardo-do-campo",
+   "nome": "Bairro dos Casa",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.73697,
+   "lon": -46.56616,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 5.7,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-ipe-sao-bernardo-do-campo",
+    "demarchi-sao-bernardo-do-campo",
+    "parque-esmeralda-sao-bernardo-do-campo",
+    "assuncao-sao-bernardo-do-campo",
+    "ferrazopolis-sao-bernardo-do-campo",
+    "botujuru-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "parque-do-pedroso-santo-andre",
+   "nome": "Parque do Pedroso",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.72619,
+   "lon": -46.49953,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 5.7,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 3,
+   "vizinhos": [
+    "cata-preta-santo-andre",
+    "vila-joao-ramalho-santo-andre",
+    "jardim-riviera-santo-andre",
+    "recreio-da-borda-do-campo-maua",
+    "jardim-cipreste-santo-andre",
+    "recreio-da-borda-do-campo-santo-andre"
+   ]
+  },
+  {
+   "slug": "condominio-maracana-maua",
+   "nome": "Condominío Maracanã",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.69386,
+   "lon": -46.48385,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 5.8,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "loteamento-industrial-coral-maua",
+    "condominio-maracana-santo-andre",
+    "vila-carlina-maua",
+    "sertaozinho-maua",
+    "jardim-santo-andre-cdhu-santo-andre",
+    "vila-assis-brasil-maua"
+   ]
+  },
+  {
+   "slug": "vila-carlina-maua",
+   "nome": "Vila Carlina",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.70464,
+   "lon": -46.48385,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 6.0,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "sertaozinho-maua",
+    "jardim-santo-andre-cdhu-santo-andre",
+    "recreio-da-borda-do-campo-maua",
+    "condominio-maracana-maua",
+    "loteamento-industrial-coral-maua",
+    "condominio-maracana-santo-andre"
+   ]
+  },
+  {
+   "slug": "cidade-sao-jorge-santo-andre",
+   "nome": "Cidade São Jorge",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.67769,
+   "lon": -46.48385,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 6.0,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "vila-assis-brasil-maua",
+    "vila-guaraciaba-santo-andre",
+    "parque-sao-vicente-maua",
+    "jardim-marek-santo-andre",
+    "condominio-maracana-maua",
+    "loteamento-industrial-coral-maua"
+   ]
+  },
+  {
+   "slug": "nova-gerty-sao-caetano-do-sul",
+   "nome": "Nova Gerty",
+   "tipo": "bairro",
+   "cidade": "São Caetano do Sul",
+   "zona": "",
+   "lat": -23.63996,
+   "lon": -46.56616,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 6.2,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-sao-caetano-sao-caetano-do-sul",
+    "oswaldo-cruz-sao-caetano-do-sul",
+    "santa-maria-sao-caetano-do-sul",
+    "rudge-ramos-sao-bernardo-do-campo",
+    "vila-aquilino-santo-andre",
+    "sao-jose-sao-caetano-do-sul"
+   ]
+  },
+  {
+   "slug": "campestre-santo-andre",
+   "nome": "Campestre",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.63457,
+   "lon": -46.54264,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 6.3,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Martha"
+   ],
+   "pontos": 2,
+   "vizinhos": [
+    "santa-maria-sao-caetano-do-sul",
+    "2o-subdistrito-santo-andre",
+    "jardim-santo-andre",
+    "vila-aquilino-santo-andre",
+    "nova-gerty-sao-caetano-do-sul",
+    "jardim-santo-antonio-santo-andre"
+   ]
+  },
+  {
+   "slug": "jardim-ipe-sao-bernardo-do-campo",
+   "nome": "Jardim Ipê",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.73697,
+   "lon": -46.57792,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 6.4,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim do Lago"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "parque-esmeralda-sao-bernardo-do-campo",
+    "bairro-dos-casa-sao-bernardo-do-campo",
+    "assuncao-sao-bernardo-do-campo",
+    "cooperativa-sao-bernardo-do-campo",
+    "demarchi-sao-bernardo-do-campo",
+    "bairro-dos-alvarenga-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "recreio-da-borda-do-campo-maua",
+   "nome": "Recreio da Borda do Campo",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.71542,
+   "lon": -46.48385,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 6.4,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-carlina-maua",
+    "sertaozinho-maua",
+    "jardim-santo-andre-cdhu-santo-andre",
+    "parque-do-pedroso-santo-andre",
+    "recreio-da-borda-do-campo-santo-andre",
+    "vila-joao-ramalho-santo-andre"
+   ]
+  },
+  {
+   "slug": "canhema-diadema",
+   "nome": "Canhema",
+   "tipo": "bairro",
+   "cidade": "Diadema",
+   "zona": "",
+   "lat": -23.67769,
+   "lon": -46.60144,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 6.4,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "taboao-diadema",
+    "piraporinha-diadema",
+    "vila-nogueira-diadema",
+    "pauliceia-sao-bernardo-do-campo",
+    "conceicao-diadema",
+    "taboao-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "jardim-alzira-franco-santo-andre",
+   "nome": "Jardim Alzira Franco",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.65074,
+   "lon": -46.49561,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 6.4,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "parque-joao-ramalho-santo-andre",
+    "parque-novo-oratorio-santo-andre",
+    "capuava-maua",
+    "novo-homero-thon-santo-andre",
+    "polo-petroquimico-de-capuava-santo-andre",
+    "parque-erasmo-assuncao-santo-andre"
+   ]
+  },
+  {
+   "slug": "santa-maria-sao-caetano-do-sul",
+   "nome": "Santa Maria",
+   "tipo": "bairro",
+   "cidade": "São Caetano do Sul",
+   "zona": "",
+   "lat": -23.63457,
+   "lon": -46.5544,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 6.4,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "campestre-santo-andre",
+    "nova-gerty-sao-caetano-do-sul",
+    "oswaldo-cruz-sao-caetano-do-sul",
+    "vila-aquilino-santo-andre",
+    "santa-paula-sao-caetano-do-sul",
+    "jardim-sao-caetano-sao-caetano-do-sul"
+   ]
+  },
+  {
+   "slug": "casa-grande-diadema",
+   "nome": "Casa Grande",
+   "tipo": "bairro",
+   "cidade": "Diadema",
+   "zona": "",
+   "lat": -23.71003,
+   "lon": -46.60144,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 6.5,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "alves-dias-sao-bernardo-do-campo",
+    "serraria-diadema",
+    "vila-nogueira-diadema",
+    "eldorado-diadema",
+    "conceicao-diadema",
+    "cooperativa-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "parque-erasmo-assuncao-santo-andre",
+   "nome": "Parque Erasmo Assunção",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.63996,
+   "lon": -46.50737,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 6.6,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "parque-novo-oratorio-santo-andre",
+    "parque-joao-ramalho-santo-andre",
+    "parque-jacatuba-santo-andre",
+    "jardim-santo-antonio-santo-andre",
+    "jardim-alzira-franco-santo-andre",
+    "jardim-santo-alberto-santo-andre"
+   ]
+  },
+  {
+   "slug": "montanhao-sao-bernardo-do-campo",
+   "nome": "Montanhão",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.74775,
+   "lon": -46.51795,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 6.7,
+   "inteiroNoRaio": true,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila São Bernardo Novo",
+    "Vila Areião",
+    "Jardim Baraldi",
+    "Parque Residencial Selecta",
+    "Golden Park"
+   ],
+   "pontos": 10,
+   "vizinhos": [
+    "jardim-riviera-santo-andre",
+    "rio-grande-sao-bernardo-do-campo",
+    "varginha-sao-bernardo-do-campo",
+    "cata-preta-santo-andre",
+    "santa-terezinha-sao-bernardo-do-campo",
+    "parque-do-pedroso-santo-andre"
+   ]
+  },
+  {
+   "slug": "jardim-sao-caetano-sao-caetano-do-sul",
+   "nome": "Jardim São Caetano",
+   "tipo": "bairro",
+   "cidade": "São Caetano do Sul",
+   "zona": "",
+   "lat": -23.63996,
+   "lon": -46.57792,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 6.8,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "nova-gerty-sao-caetano-do-sul",
+    "sao-jose-sao-caetano-do-sul",
+    "oswaldo-cruz-sao-caetano-do-sul",
+    "rudge-ramos-sao-bernardo-do-campo",
+    "sacoma",
+    "santo-antonio-sao-caetano-do-sul"
+   ]
+  },
+  {
+   "slug": "loteamento-industrial-coral-maua",
+   "nome": "Loteamento Industrial Coral",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.69386,
+   "lon": -46.47209,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.0,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "condominio-maracana-maua",
+    "sertaozinho-maua",
+    "vila-assis-brasil-maua",
+    "jardim-anchieta-maua",
+    "vila-carlina-maua",
+    "jardim-primavera-maua"
+   ]
+  },
+  {
+   "slug": "vila-assis-brasil-maua",
+   "nome": "Vila Assis Brasil",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.68308,
+   "lon": -46.47209,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.0,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "parque-sao-vicente-maua",
+    "loteamento-industrial-coral-maua",
+    "jardim-anchieta-maua",
+    "cidade-sao-jorge-santo-andre",
+    "condominio-maracana-maua",
+    "bairro-da-matriz-maua"
+   ]
+  },
+  {
+   "slug": "capuava-maua",
+   "nome": "Capuava",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.65613,
+   "lon": -46.48385,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.0,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "jardim-oratorio-maua",
+    "jardim-alzira-franco-santo-andre",
+    "polo-petroquimico-de-capuava-santo-andre",
+    "novo-homero-thon-santo-andre",
+    "jardim-sonia-maria-maua",
+    "parque-sao-vicente-maua"
+   ]
+  },
+  {
+   "slug": "sertaozinho-maua",
+   "nome": "Sertãozinho",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.70464,
+   "lon": -46.47209,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.1,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-carlina-maua",
+    "jardim-primavera-maua",
+    "loteamento-industrial-coral-maua",
+    "recreio-da-borda-do-campo-maua",
+    "condominio-maracana-maua",
+    "jardim-anchieta-maua"
+   ]
+  },
+  {
+   "slug": "parque-esmeralda-sao-bernardo-do-campo",
+   "nome": "Parque Esmeralda",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.74236,
+   "lon": -46.5838,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.2,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Thelma"
+   ],
+   "pontos": 2,
+   "vizinhos": [
+    "jardim-ipe-sao-bernardo-do-campo",
+    "bairro-dos-casa-sao-bernardo-do-campo",
+    "bairro-dos-alvarenga-sao-bernardo-do-campo",
+    "cooperativa-sao-bernardo-do-campo",
+    "batistini-sao-bernardo-do-campo",
+    "assuncao-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "cooperativa-sao-bernardo-do-campo",
+   "nome": "Cooperativa",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.72978,
+   "lon": -46.59752,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.2,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Belas Artes",
+    "Jardim Satelite"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "parque-esmeralda-sao-bernardo-do-campo",
+    "eldorado-diadema",
+    "jardim-ipe-sao-bernardo-do-campo",
+    "casa-grande-diadema",
+    "alves-dias-sao-bernardo-do-campo",
+    "bairro-dos-alvarenga-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "taboao-sao-bernardo-do-campo",
+   "nome": "Taboão",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.65793,
+   "lon": -46.60144,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.2,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 3,
+   "vizinhos": [
+    "pauliceia-sao-bernardo-do-campo",
+    "taboao-diadema",
+    "canhema-diadema",
+    "cursino",
+    "sacoma",
+    "campanario-diadema"
+   ]
+  },
+  {
+   "slug": "2o-subdistrito-santo-andre",
+   "nome": "2º Subdistrito",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.62764,
+   "lon": -46.52584,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.2,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [
+    "Casas Populares",
+    "Jardim Oratório",
+    "Vila Sá"
+   ],
+   "pontos": 7,
+   "vizinhos": [
+    "jardim-santo-antonio-santo-andre",
+    "campestre-santo-andre",
+    "parque-erasmo-assuncao-santo-andre",
+    "parque-jacatuba-santo-andre",
+    "jardim-santo-andre",
+    "santa-maria-sao-caetano-do-sul"
+   ]
+  },
+  {
+   "slug": "jardim-santo-antonio-santo-andre",
+   "nome": "Jardim Santo Antônio",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.62918,
+   "lon": -46.51912,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.2,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Alto de Santo André"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "2o-subdistrito-santo-andre",
+    "parque-erasmo-assuncao-santo-andre",
+    "jardim-santo-alberto-santo-andre",
+    "parque-jacatuba-santo-andre",
+    "campestre-santo-andre",
+    "parque-novo-oratorio-santo-andre"
+   ]
+  },
+  {
+   "slug": "botujuru-sao-bernardo-do-campo",
+   "nome": "Botujuru",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.75637,
+   "lon": -46.5497,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.3,
+   "inteiroNoRaio": true,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Capivari",
+    "Jardim Arco Iris"
+   ],
+   "pontos": 5,
+   "vizinhos": [
+    "balnearia-sao-bernardo-do-campo",
+    "demarchi-sao-bernardo-do-campo",
+    "batistini-sao-bernardo-do-campo",
+    "bairro-dos-casa-sao-bernardo-do-campo",
+    "rio-grande-sao-bernardo-do-campo",
+    "montanhao-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "jardim-riviera-santo-andre",
+   "nome": "Jardim Riviera",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.74236,
+   "lon": -46.49561,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.3,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "waisberg-santo-andre",
+    "parque-do-pedroso-santo-andre",
+    "recreio-da-borda-do-campo-santo-andre",
+    "cata-preta-santo-andre",
+    "montanhao-sao-bernardo-do-campo",
+    "recreio-da-borda-do-campo-ribeirao-pires"
+   ]
+  },
+  {
+   "slug": "parque-sao-vicente-maua",
+   "nome": "Parque São Vicente",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.6723,
+   "lon": -46.47209,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.3,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "bairro-da-matriz-maua",
+    "vila-assis-brasil-maua",
+    "jardim-oratorio-maua",
+    "cidade-sao-jorge-santo-andre",
+    "vila-magini-maua",
+    "jardim-anchieta-maua"
+   ]
+  },
+  {
+   "slug": "parque-novo-oratorio-santo-andre",
+   "nome": "Parque Novo Oratório",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.63996,
+   "lon": -46.49561,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.3,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "polo-petroquimico-de-capuava-santo-andre",
+    "parque-erasmo-assuncao-santo-andre",
+    "jardim-alzira-franco-santo-andre",
+    "jardim-santo-alberto-santo-andre",
+    "parque-joao-ramalho-santo-andre",
+    "jardim-sonia-maria-maua"
+   ]
+  },
+  {
+   "slug": "oswaldo-cruz-sao-caetano-do-sul",
+   "nome": "Oswaldo Cruz",
+   "tipo": "bairro",
+   "cidade": "São Caetano do Sul",
+   "zona": "",
+   "lat": -23.62918,
+   "lon": -46.56616,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.3,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "sao-jose-sao-caetano-do-sul",
+    "nova-gerty-sao-caetano-do-sul",
+    "santa-maria-sao-caetano-do-sul",
+    "santa-paula-sao-caetano-do-sul",
+    "jardim-sao-caetano-sao-caetano-do-sul",
+    "santo-antonio-sao-caetano-do-sul"
+   ]
+  },
+  {
+   "slug": "conceicao-diadema",
+   "nome": "Conceição",
+   "tipo": "bairro",
+   "cidade": "Diadema",
+   "zona": "",
+   "lat": -23.69386,
+   "lon": -46.6132,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.4,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "centro-diadema",
+    "serraria-diadema",
+    "vila-nogueira-diadema",
+    "pedreira",
+    "casa-grande-diadema",
+    "canhema-diadema"
+   ]
+  },
+  {
+   "slug": "serraria-diadema",
+   "nome": "Serraria",
+   "tipo": "bairro",
+   "cidade": "Diadema",
+   "zona": "",
+   "lat": -23.70464,
+   "lon": -46.6132,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.5,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "conceicao-diadema",
+    "casa-grande-diadema",
+    "pedreira",
+    "eldorado-diadema",
+    "centro-diadema",
+    "vila-nogueira-diadema"
+   ]
+  },
+  {
+   "slug": "taboao-diadema",
+   "nome": "Taboão",
+   "tipo": "bairro",
+   "cidade": "Diadema",
+   "zona": "",
+   "lat": -23.6723,
+   "lon": -46.6132,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.7,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "canhema-diadema",
+    "campanario-diadema",
+    "centro-diadema",
+    "taboao-sao-bernardo-do-campo",
+    "conceicao-diadema",
+    "pauliceia-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "jardim-oratorio-maua",
+   "nome": "Jardim Oratório",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.66152,
+   "lon": -46.47209,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.7,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-magini-maua",
+    "parque-sao-vicente-maua",
+    "capuava-maua",
+    "bairro-da-matriz-maua",
+    "cidade-sao-jorge-santo-andre",
+    "vila-assis-brasil-maua"
+   ]
+  },
+  {
+   "slug": "sao-jose-sao-caetano-do-sul",
+   "nome": "São José",
+   "tipo": "bairro",
+   "cidade": "São Caetano do Sul",
+   "zona": "",
+   "lat": -23.62918,
+   "lon": -46.57792,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 7.8,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "oswaldo-cruz-sao-caetano-do-sul",
+    "jardim-sao-caetano-sao-caetano-do-sul",
+    "santo-antonio-sao-caetano-do-sul",
+    "nova-gerty-sao-caetano-do-sul",
+    "santa-paula-sao-caetano-do-sul",
+    "sacoma"
+   ]
+  },
+  {
+   "slug": "recreio-da-borda-do-campo-santo-andre",
+   "nome": "Recreio da Borda do Campo",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.73428,
+   "lon": -46.47797,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.0,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 4,
+   "vizinhos": [
+    "recreio-da-borda-do-campo-ribeirao-pires",
+    "waisberg-santo-andre",
+    "jardim-riviera-santo-andre",
+    "recreio-da-borda-do-campo-maua",
+    "parque-do-pedroso-santo-andre",
+    "cata-preta-santo-andre"
+   ]
+  },
+  {
+   "slug": "polo-petroquimico-de-capuava-santo-andre",
+   "nome": "Polo Petroquímico de Capuava",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.63996,
+   "lon": -46.48385,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.1,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-sonia-maria-maua",
+    "parque-novo-oratorio-santo-andre",
+    "jardim-alzira-franco-santo-andre",
+    "jardim-santo-alberto-santo-andre",
+    "capuava-maua",
+    "parque-erasmo-assuncao-santo-andre"
+   ]
+  },
+  {
+   "slug": "centro-diadema",
+   "nome": "Centro",
+   "tipo": "bairro",
+   "cidade": "Diadema",
+   "zona": "",
+   "lat": -23.68667,
+   "lon": -46.62104,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.2,
+   "inteiroNoRaio": true,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 3,
+   "vizinhos": [
+    "conceicao-diadema",
+    "taboao-diadema",
+    "serraria-diadema",
+    "canhema-diadema",
+    "campanario-diadema",
+    "pedreira"
+   ]
+  },
+  {
+   "slug": "jardim-anchieta-maua",
+   "nome": "Jardim Anchieta",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.68847,
+   "lon": -46.46033,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.2,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim São Judas"
+   ],
+   "pontos": 2,
+   "vizinhos": [
+    "loteamento-industrial-coral-maua",
+    "vila-assis-brasil-maua",
+    "bairro-da-matriz-maua",
+    "jardim-primavera-maua",
+    "sertaozinho-maua",
+    "parque-sao-vicente-maua"
+   ]
+  },
+  {
+   "slug": "jardim-primavera-maua",
+   "nome": "Jardim Primavera",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.70464,
+   "lon": -46.46033,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.3,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim São Jorge"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "sertaozinho-maua",
+    "loteamento-industrial-coral-maua",
+    "jardim-anchieta-maua",
+    "vila-carlina-maua",
+    "recreio-da-borda-do-campo-maua",
+    "condominio-maracana-maua"
+   ]
+  },
+  {
+   "slug": "jardim-santo-alberto-santo-andre",
+   "nome": "Jardim Santo Alberto",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.62918,
+   "lon": -46.49561,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.3,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "parque-novo-oratorio-santo-andre",
+    "polo-petroquimico-de-capuava-santo-andre",
+    "parque-erasmo-assuncao-santo-andre",
+    "jardim-sonia-maria-maua",
+    "jardim-santo-antonio-santo-andre",
+    "jardim-alzira-franco-santo-andre"
+   ]
+  },
+  {
+   "slug": "santa-paula-sao-caetano-do-sul",
+   "nome": "Santa Paula",
+   "tipo": "bairro",
+   "cidade": "São Caetano do Sul",
+   "zona": "",
+   "lat": -23.6184,
+   "lon": -46.56028,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.3,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "oswaldo-cruz-sao-caetano-do-sul",
+    "vila-prudente",
+    "santo-antonio-sao-caetano-do-sul",
+    "santa-maria-sao-caetano-do-sul",
+    "sao-jose-sao-caetano-do-sul",
+    "nova-gerty-sao-caetano-do-sul"
+   ]
+  },
+  {
+   "slug": "bairro-da-matriz-maua",
+   "nome": "Bairro da Matriz",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.6723,
+   "lon": -46.46033,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.4,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "parque-sao-vicente-maua",
+    "vila-magini-maua",
+    "vila-assis-brasil-maua",
+    "jardim-oratorio-maua",
+    "jardim-anchieta-maua",
+    "cidade-sao-jorge-santo-andre"
+   ]
+  },
+  {
+   "slug": "sacoma",
+   "nome": "Sacomã",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Sul",
+   "lat": -23.63688,
+   "lon": -46.59808,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.4,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Santa Cruz",
+    "Jardim Imperador (Zona Sul)",
+    "Vila Arapuã",
+    "Vila das Mercês",
+    "São João Climaco",
+    "Vila Conde do Pinhal"
+   ],
+   "pontos": 7,
+   "vizinhos": [
+    "jardim-sao-caetano-sao-caetano-do-sul",
+    "sao-jose-sao-caetano-do-sul",
+    "cursino",
+    "taboao-sao-bernardo-do-campo",
+    "santo-antonio-sao-caetano-do-sul",
+    "nova-gerty-sao-caetano-do-sul"
+   ]
+  },
+  {
+   "slug": "eldorado-diadema",
+   "nome": "Eldorado",
+   "tipo": "bairro",
+   "cidade": "Diadema",
+   "zona": "",
+   "lat": -23.7226,
+   "lon": -46.61712,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.5,
+   "inteiroNoRaio": false,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Imbaúva"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "serraria-diadema",
+    "casa-grande-diadema",
+    "cooperativa-sao-bernardo-do-campo",
+    "pedreira",
+    "alves-dias-sao-bernardo-do-campo",
+    "conceicao-diadema"
+   ]
+  },
+  {
+   "slug": "waisberg-santo-andre",
+   "nome": "Waisberg",
+   "tipo": "bairro",
+   "cidade": "Santo André",
+   "zona": "",
+   "lat": -23.74775,
+   "lon": -46.48385,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.6,
+   "inteiroNoRaio": false,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-riviera-santo-andre",
+    "recreio-da-borda-do-campo-santo-andre",
+    "recreio-da-borda-do-campo-ribeirao-pires",
+    "parque-do-pedroso-santo-andre",
+    "varginha-sao-bernardo-do-campo",
+    "cata-preta-santo-andre"
+   ]
+  },
+  {
+   "slug": "batistini-sao-bernardo-do-campo",
+   "nome": "Batistini",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.76392,
+   "lon": -46.57204,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.7,
+   "inteiroNoRaio": false,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Norma"
+   ],
+   "pontos": 4,
+   "vizinhos": [
+    "botujuru-sao-bernardo-do-campo",
+    "parque-esmeralda-sao-bernardo-do-campo",
+    "balnearia-sao-bernardo-do-campo",
+    "bairro-dos-alvarenga-sao-bernardo-do-campo",
+    "jardim-ipe-sao-bernardo-do-campo",
+    "bairro-dos-casa-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "balnearia-sao-bernardo-do-campo",
+   "nome": "Balneária",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.76931,
+   "lon": -46.54264,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.7,
+   "inteiroNoRaio": false,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "botujuru-sao-bernardo-do-campo",
+    "rio-grande-sao-bernardo-do-campo",
+    "batistini-sao-bernardo-do-campo",
+    "montanhao-sao-bernardo-do-campo",
+    "varginha-sao-bernardo-do-campo",
+    "demarchi-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "recreio-da-borda-do-campo-ribeirao-pires",
+   "nome": "Recreio da Borda do Campo",
+   "tipo": "bairro",
+   "cidade": "Ribeirão Pires",
+   "zona": "",
+   "lat": -23.73697,
+   "lon": -46.47209,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.7,
+   "inteiroNoRaio": false,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "recreio-da-borda-do-campo-santo-andre",
+    "waisberg-santo-andre",
+    "jardim-riviera-santo-andre",
+    "recreio-da-borda-do-campo-maua",
+    "parque-do-pedroso-santo-andre",
+    "sertaozinho-maua"
+   ]
+  },
+  {
+   "slug": "jardim-sonia-maria-maua",
+   "nome": "Jardim Sonia Maria",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.63996,
+   "lon": -46.47601,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.7,
+   "inteiroNoRaio": false,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 3,
+   "vizinhos": [
+    "polo-petroquimico-de-capuava-santo-andre",
+    "capuava-maua",
+    "parque-novo-oratorio-santo-andre",
+    "jardim-alzira-franco-santo-andre",
+    "jardim-santo-alberto-santo-andre",
+    "jardim-oratorio-maua"
+   ]
+  },
+  {
+   "slug": "vila-magini-maua",
+   "nome": "Vila Magini",
+   "tipo": "bairro",
+   "cidade": "Mauá",
+   "zona": "",
+   "lat": -23.66152,
+   "lon": -46.46033,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.8,
+   "inteiroNoRaio": false,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-oratorio-maua",
+    "bairro-da-matriz-maua",
+    "parque-sao-vicente-maua",
+    "capuava-maua",
+    "vila-assis-brasil-maua",
+    "jardim-sonia-maria-maua"
+   ]
+  },
+  {
+   "slug": "rio-grande-sao-bernardo-do-campo",
+   "nome": "Rio Grande",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "Riacho Grande",
+   "lat": -23.76931,
+   "lon": -46.525,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.9,
+   "inteiroNoRaio": false,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Jurubatuba"
+   ],
+   "pontos": 2,
+   "vizinhos": [
+    "varginha-sao-bernardo-do-campo",
+    "balnearia-sao-bernardo-do-campo",
+    "montanhao-sao-bernardo-do-campo",
+    "botujuru-sao-bernardo-do-campo",
+    "jardim-riviera-santo-andre",
+    "demarchi-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "santo-antonio-sao-caetano-do-sul",
+   "nome": "Santo Antônio",
+   "tipo": "bairro",
+   "cidade": "São Caetano do Sul",
+   "zona": "",
+   "lat": -23.6184,
+   "lon": -46.57792,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 8.9,
+   "inteiroNoRaio": false,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "sao-jose-sao-caetano-do-sul",
+    "oswaldo-cruz-sao-caetano-do-sul",
+    "santa-paula-sao-caetano-do-sul",
+    "jardim-sao-caetano-sao-caetano-do-sul",
+    "vila-prudente",
+    "nova-gerty-sao-caetano-do-sul"
+   ]
+  },
+  {
+   "slug": "bairro-dos-alvarenga-sao-bernardo-do-campo",
+   "nome": "Bairro dos Alvarenga",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "",
+   "lat": -23.75206,
+   "lon": -46.59909,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 9.0,
+   "inteiroNoRaio": false,
+   "direcao": "sudoeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Anna Falletti",
+    "Jardim Diana"
+   ],
+   "pontos": 5,
+   "vizinhos": [
+    "parque-esmeralda-sao-bernardo-do-campo",
+    "cooperativa-sao-bernardo-do-campo",
+    "jardim-ipe-sao-bernardo-do-campo",
+    "batistini-sao-bernardo-do-campo",
+    "bairro-dos-casa-sao-bernardo-do-campo",
+    "eldorado-diadema"
+   ]
+  },
+  {
+   "slug": "campanario-diadema",
+   "nome": "Campanário",
+   "tipo": "bairro",
+   "cidade": "Diadema",
+   "zona": "",
+   "lat": -23.66691,
+   "lon": -46.62496,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 9.0,
+   "inteiroNoRaio": false,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "taboao-diadema",
+    "centro-diadema",
+    "cursino",
+    "taboao-sao-bernardo-do-campo",
+    "canhema-diadema",
+    "conceicao-diadema"
+   ]
+  },
+  {
+   "slug": "varginha-sao-bernardo-do-campo",
+   "nome": "Varginha",
+   "tipo": "bairro",
+   "cidade": "São Bernardo do Campo",
+   "zona": "Riacho Grande",
+   "lat": -23.76931,
+   "lon": -46.50737,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 9.3,
+   "inteiroNoRaio": false,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Borda do Campo"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "rio-grande-sao-bernardo-do-campo",
+    "montanhao-sao-bernardo-do-campo",
+    "jardim-riviera-santo-andre",
+    "waisberg-santo-andre",
+    "balnearia-sao-bernardo-do-campo",
+    "botujuru-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "pedreira",
+   "nome": "Pedreira",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Sul",
+   "lat": -23.70464,
+   "lon": -46.63084,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 9.3,
+   "inteiroNoRaio": false,
+   "direcao": "oeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 4,
+   "vizinhos": [
+    "serraria-diadema",
+    "conceicao-diadema",
+    "centro-diadema",
+    "eldorado-diadema",
+    "casa-grande-diadema",
+    "vila-nogueira-diadema"
+   ]
+  },
+  {
+   "slug": "vila-prudente",
+   "nome": "Vila Prudente",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.60762,
+   "lon": -46.5544,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 9.4,
+   "inteiroNoRaio": false,
+   "direcao": "norte",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Alpina"
+   ],
+   "pontos": 1,
+   "vizinhos": [
+    "santa-paula-sao-caetano-do-sul",
+    "santo-antonio-sao-caetano-do-sul",
+    "oswaldo-cruz-sao-caetano-do-sul",
+    "santa-maria-sao-caetano-do-sul",
+    "campestre-santo-andre",
+    "sao-jose-sao-caetano-do-sul"
+   ]
+  },
+  {
+   "slug": "cursino",
+   "nome": "Cursino",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Sul",
+   "lat": -23.64535,
+   "lon": -46.61908,
+   "loja": "sao-bernardo-do-campo",
+   "distanciaKm": 9.5,
+   "inteiroNoRaio": false,
+   "direcao": "noroeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Cidade Vargas",
+    "Jardim Imperador (Zona Sul)"
+   ],
+   "pontos": 2,
+   "vizinhos": [
+    "taboao-sao-bernardo-do-campo",
+    "sacoma",
+    "campanario-diadema",
+    "taboao-diadema",
+    "canhema-diadema",
+    "pauliceia-sao-bernardo-do-campo"
+   ]
+  },
+  {
+   "slug": "ponte-rasa",
+   "nome": "Ponte Rasa",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.51491,
+   "lon": -46.49326,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 1.2,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 6.8
+    }
+   ],
+   "variacoes": [
+    "Jardim Lisboa",
+    "Burgo Paulista",
+    "Vila Costa Melo",
+    "Vila Rio Branco",
+    "Vila São Francisco"
+   ],
+   "pontos": 5,
+   "vizinhos": [
+    "ermelino-matarazzo",
+    "cangaiba",
+    "artur-alvim",
+    "vila-matilde",
+    "vila-jacui",
+    "penha"
+   ]
+  },
+  {
+   "slug": "cangaiba",
+   "nome": "Cangaíba",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.50102,
+   "lon": -46.51912,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 1.9,
+   "inteiroNoRaio": true,
+   "direcao": "noroeste",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 3.7
+    }
+   ],
+   "variacoes": [
+    "Chacara Cruzeiro do Sul",
+    "Jardim Piratininga",
+    "Vila Piratininga",
+    "Engenheiro Goulart",
+    "Jardim Danfer",
+    "Vila Buenos Aires"
+   ],
+   "pontos": 9,
+   "vizinhos": [
+    "porto-da-igreja-guarulhos",
+    "penha",
+    "ponte-grande-guarulhos",
+    "ponte-rasa",
+    "centro-guarulhos",
+    "vila-augusta-guarulhos"
+   ]
+  },
+  {
+   "slug": "penha",
+   "nome": "Penha",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.52273,
+   "lon": -46.53088,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 2.9,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 4.6
+    }
+   ],
+   "variacoes": [
+    "Vila Laís",
+    "Vila Granada",
+    "Vila Ré",
+    "Vila Esperança"
+   ],
+   "pontos": 8,
+   "vizinhos": [
+    "vila-matilde",
+    "cangaiba",
+    "ponte-grande-guarulhos",
+    "carrao",
+    "ponte-rasa",
+    "tatuape"
+   ]
+  },
+  {
+   "slug": "vila-matilde",
+   "nome": "Vila Matilde",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.53832,
+   "lon": -46.51576,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 3.1,
+   "inteiroNoRaio": true,
+   "direcao": "sul",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 6.9
+    }
+   ],
+   "variacoes": [
+    "Vila Dalila",
+    "Jardim Assunção",
+    "Jardim Triana",
+    "Vila Aricanduva",
+    "Vila Guilhermina",
+    "Cidade Patriarca"
+   ],
+   "pontos": 7,
+   "vizinhos": [
+    "penha",
+    "carrao",
+    "artur-alvim",
+    "cidade-lider",
+    "ponte-rasa",
+    "aricanduva"
+   ]
+  },
+  {
+   "slug": "ermelino-matarazzo",
+   "nome": "Ermelino Matarazzo",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.48904,
+   "lon": -46.48385,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 3.4,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 6.9
+    }
+   ],
+   "variacoes": [
+    "Parque Boturussu",
+    "Jardim Keralux"
+   ],
+   "pontos": 7,
+   "vizinhos": [
+    "varzea-do-palacio-guarulhos",
+    "ponte-rasa",
+    "vila-jacui",
+    "cumbica-guarulhos",
+    "sao-roque-guarulhos",
+    "cecap-guarulhos"
+   ]
+  },
+  {
+   "slug": "artur-alvim",
+   "nome": "Artur Alvim",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.54294,
+   "lon": -46.48385,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 4.0,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 9.4
+    }
+   ],
+   "variacoes": [
+    "Conjunto Habitacional Padre Manoel da Nobrega",
+    "Cidade Rui Barbosa",
+    "Jardim Nordeste"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "cidade-lider",
+    "itaquera",
+    "ponte-rasa",
+    "vila-matilde",
+    "parque-do-carmo",
+    "aricanduva"
+   ]
+  },
+  {
+   "slug": "varzea-do-palacio-guarulhos",
+   "nome": "Várzea do Palácio",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.47287,
+   "lon": -46.50149,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 4.4,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 5.3
+    }
+   ],
+   "variacoes": [],
+   "pontos": 2,
+   "vizinhos": [
+    "sao-roque-guarulhos",
+    "cecap-guarulhos",
+    "fatima-guarulhos",
+    "macedo-guarulhos",
+    "ermelino-matarazzo",
+    "vila-barros-guarulhos"
+   ]
+  },
+  {
+   "slug": "vila-jacui",
+   "nome": "Vila Jacuí",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.50341,
+   "lon": -46.45837,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 4.9,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 9.7
+    }
+   ],
+   "variacoes": [
+    "Limoeiro",
+    "Jardim Pedro José Nunes",
+    "União de Vila Nova"
+   ],
+   "pontos": 6,
+   "vizinhos": [
+    "sao-miguel",
+    "jardim-santo-afonso-guarulhos",
+    "ermelino-matarazzo",
+    "itaquera",
+    "ponte-rasa",
+    "vila-curuca"
+   ]
+  },
+  {
+   "slug": "carrao",
+   "nome": "Carrão",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.55192,
+   "lon": -46.53676,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 5.4,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 7.5
+    }
+   ],
+   "variacoes": [
+    "Vila Formosa"
+   ],
+   "pontos": 6,
+   "vizinhos": [
+    "vila-formosa",
+    "vila-matilde",
+    "penha",
+    "tatuape",
+    "aricanduva",
+    "agua-rasa"
+   ]
+  },
+  {
+   "slug": "itaquera",
+   "nome": "Itaquera",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.53412,
+   "lon": -46.45712,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 5.4,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Parque Guarani",
+    "Vila Campanela São Paulo",
+    "Cidade Antônio Estêvão de Carvalho",
+    "Parada XV de Novembro"
+   ],
+   "pontos": 11,
+   "vizinhos": [
+    "artur-alvim",
+    "vila-jacui",
+    "jose-bonifacio",
+    "lajeado",
+    "sao-miguel",
+    "ponte-rasa"
+   ]
+  },
+  {
+   "slug": "cidade-lider",
+   "nome": "Cidade Líder",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.56142,
+   "lon": -46.49393,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 5.6,
+   "inteiroNoRaio": true,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Parque Savoy City",
+    "Jardim Brasília",
+    "Jardim Ipanema",
+    "Vila Carlo Maderna"
+   ],
+   "pontos": 7,
+   "vizinhos": [
+    "artur-alvim",
+    "aricanduva",
+    "parque-do-carmo",
+    "vila-matilde",
+    "sao-mateus",
+    "carrao"
+   ]
+  },
+  {
+   "slug": "cecap-guarulhos",
+   "nome": "CECAP",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.4567,
+   "lon": -46.49561,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 6.3,
+   "inteiroNoRaio": true,
+   "direcao": "norte",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 6.6
+    }
+   ],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "fatima-guarulhos",
+    "vila-barros-guarulhos",
+    "sao-roque-guarulhos",
+    "varzea-do-palacio-guarulhos",
+    "bom-clima-guarulhos",
+    "bela-vista-guarulhos"
+   ]
+  },
+  {
+   "slug": "cumbica-guarulhos",
+   "nome": "Cumbica",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.46532,
+   "lon": -46.46621,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 6.6,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 9.0
+    }
+   ],
+   "variacoes": [],
+   "pontos": 10,
+   "vizinhos": [
+    "vila-jardim-sao-manoel-guarulhos",
+    "jardim-santo-afonso-guarulhos",
+    "jardim-otawa-guarulhos",
+    "cecap-guarulhos",
+    "ermelino-matarazzo",
+    "aeroporto-internacional-governador-andre-franco-montoro-guarulhos"
+   ]
+  },
+  {
+   "slug": "sao-miguel",
+   "nome": "São Miguel",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.50198,
+   "lon": -46.43916,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 6.8,
+   "inteiroNoRaio": true,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Progresso",
+    "Vila Chavantes",
+    "Vila Pantanal 2",
+    "Vila Roland Berigan"
+   ],
+   "pontos": 5,
+   "vizinhos": [
+    "vila-jacui",
+    "vila-curuca",
+    "jardim-helena",
+    "jardim-santo-afonso-guarulhos",
+    "lajeado",
+    "itaquera"
+   ]
+  },
+  {
+   "slug": "jardim-santo-afonso-guarulhos",
+   "nome": "Jardim Santo Afonso",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.47826,
+   "lon": -46.44857,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 6.9,
+   "inteiroNoRaio": true,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "pimentas-guarulhos",
+    "cumbica-guarulhos",
+    "sao-miguel",
+    "jardim-helena",
+    "vila-jacui",
+    "jardim-otawa-guarulhos"
+   ]
+  },
+  {
+   "slug": "aricanduva",
+   "nome": "Aricanduva",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.57528,
+   "lon": -46.51324,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 7.0,
+   "inteiroNoRaio": true,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 4,
+   "vizinhos": [
+    "cidade-lider",
+    "carrao",
+    "sao-mateus",
+    "vila-formosa",
+    "vila-matilde",
+    "artur-alvim"
+   ]
+  },
+  {
+   "slug": "vila-formosa",
+   "nome": "Vila Formosa",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.56809,
+   "lon": -46.54852,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 7.6,
+   "inteiroNoRaio": true,
+   "direcao": "sudoeste",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 9.1
+    }
+   ],
+   "variacoes": [
+    "Jardim Anália Franco"
+   ],
+   "pontos": 6,
+   "vizinhos": [
+    "carrao",
+    "agua-rasa",
+    "tatuape",
+    "aricanduva",
+    "vila-prudente",
+    "vila-matilde"
+   ]
+  },
+  {
+   "slug": "parque-do-carmo",
+   "nome": "Parque do Carmo",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.57438,
+   "lon": -46.46425,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 8.0,
+   "inteiroNoRaio": true,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 12,
+   "vizinhos": [
+    "sao-mateus",
+    "cidade-lider",
+    "jose-bonifacio",
+    "artur-alvim",
+    "itaquera",
+    "aricanduva"
+   ]
+  },
+  {
+   "slug": "lajeado",
+   "nome": "Lajeado",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.52857,
+   "lon": -46.42113,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 8.7,
+   "inteiroNoRaio": false,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Etelvina"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "vila-curuca",
+    "jose-bonifacio",
+    "sao-miguel",
+    "itaquera",
+    "vila-jacui",
+    "jardim-helena"
+   ]
+  },
+  {
+   "slug": "vila-jardim-sao-manoel-guarulhos",
+   "nome": "Vila Jardim São Manoel",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.44592,
+   "lon": -46.46033,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 8.7,
+   "inteiroNoRaio": false,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "jardim-otawa-guarulhos",
+    "aeroporto-internacional-governador-andre-franco-montoro-guarulhos",
+    "cumbica-guarulhos",
+    "pimentas-guarulhos",
+    "jardim-santo-afonso-guarulhos",
+    "cecap-guarulhos"
+   ]
+  },
+  {
+   "slug": "aeroporto-internacional-governador-andre-franco-montoro-guarulhos",
+   "nome": "Aeroporto Internacional Governador André Franco Montoro",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.4373,
+   "lon": -46.47915,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 8.8,
+   "inteiroNoRaio": false,
+   "direcao": "norte",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 9.2
+    }
+   ],
+   "variacoes": [],
+   "pontos": 5,
+   "vizinhos": [
+    "vila-jardim-sao-manoel-guarulhos",
+    "vila-barros-guarulhos",
+    "cecap-guarulhos",
+    "taboao-guarulhos",
+    "bela-vista-guarulhos",
+    "jardim-otawa-guarulhos"
+   ]
+  },
+  {
+   "slug": "agua-rasa",
+   "nome": "Água Rasa",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.5645,
+   "lon": -46.57204,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 8.9,
+   "inteiroNoRaio": false,
+   "direcao": "sudoeste",
+   "outrasLojas": [
+    {
+     "loja": "guarulhos",
+     "distanciaKm": 9.0
+    }
+   ],
+   "variacoes": [],
+   "pontos": 4,
+   "vizinhos": [
+    "mooca",
+    "vila-formosa",
+    "tatuape",
+    "belem",
+    "carrao",
+    "bras"
+   ]
+  },
+  {
+   "slug": "jose-bonifacio",
+   "nome": "José Bonifácio",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.5568,
+   "lon": -46.43177,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 8.9,
+   "inteiroNoRaio": false,
+   "direcao": "sudeste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Gleba do Pêssego",
+    "COHAB 2"
+   ],
+   "pontos": 7,
+   "vizinhos": [
+    "lajeado",
+    "itaquera",
+    "parque-do-carmo",
+    "artur-alvim",
+    "vila-curuca",
+    "sao-miguel"
+   ]
+  },
+  {
+   "slug": "vila-curuca",
+   "nome": "Vila Curuçá",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.50844,
+   "lon": -46.41799,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 8.9,
+   "inteiroNoRaio": false,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Nova Curuça",
+    "Jardim Ipê",
+    "Jardim Robru",
+    "Vila Parque Guaianases"
+   ],
+   "pontos": 5,
+   "vizinhos": [
+    "lajeado",
+    "sao-miguel",
+    "jardim-helena",
+    "vila-jacui",
+    "jardim-santo-afonso-guarulhos",
+    "itaquera"
+   ]
+  },
+  {
+   "slug": "jardim-helena",
+   "nome": "Jardim Helena",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.48545,
+   "lon": -46.42113,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 9.1,
+   "inteiroNoRaio": false,
+   "direcao": "leste",
+   "outrasLojas": [],
+   "variacoes": [
+    "Vila Grão Mogol",
+    "Chacára Três Meninas"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "vila-curuca",
+    "sao-miguel",
+    "pimentas-guarulhos",
+    "jardim-santo-afonso-guarulhos",
+    "vila-jacui",
+    "lajeado"
+   ]
+  },
+  {
+   "slug": "pimentas-guarulhos",
+   "nome": "Pimentas",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.46389,
+   "lon": -46.43289,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 9.1,
+   "inteiroNoRaio": false,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 3,
+   "vizinhos": [
+    "jardim-santo-afonso-guarulhos",
+    "jardim-otawa-guarulhos",
+    "jardim-helena",
+    "cumbica-guarulhos",
+    "vila-jardim-sao-manoel-guarulhos",
+    "sao-miguel"
+   ]
+  },
+  {
+   "slug": "sao-mateus",
+   "nome": "São Mateus",
+   "tipo": "distrito",
+   "cidade": "São Paulo",
+   "zona": "Zona Leste",
+   "lat": -23.59325,
+   "lon": -46.48385,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 9.2,
+   "inteiroNoRaio": false,
+   "direcao": "sul",
+   "outrasLojas": [],
+   "variacoes": [
+    "Jardim Imperador"
+   ],
+   "pontos": 3,
+   "vizinhos": [
+    "parque-do-carmo",
+    "aricanduva",
+    "cidade-lider",
+    "jardim-santo-alberto-santo-andre",
+    "polo-petroquimico-de-capuava-santo-andre",
+    "jardim-sonia-maria-maua"
+   ]
+  },
+  {
+   "slug": "jardim-otawa-guarulhos",
+   "nome": "Jardim Otawa",
+   "tipo": "bairro",
+   "cidade": "Guarulhos",
+   "zona": "",
+   "lat": -23.44592,
+   "lon": -46.44857,
+   "loja": "zona-leste-vila-buenos-aires",
+   "distanciaKm": 9.4,
+   "inteiroNoRaio": false,
+   "direcao": "nordeste",
+   "outrasLojas": [],
+   "variacoes": [],
+   "pontos": 1,
+   "vizinhos": [
+    "vila-jardim-sao-manoel-guarulhos",
+    "pimentas-guarulhos",
+    "cumbica-guarulhos",
+    "aeroporto-internacional-governador-andre-franco-montoro-guarulhos",
+    "jardim-santo-afonso-guarulhos",
+    "cecap-guarulhos"
+   ]
+  }
+ ]
+}
