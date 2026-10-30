@@ -2,7 +2,7 @@
 // Saída em ./publico (é essa pasta que vai para o servidor/domínio).
 // Além do HTML, cada página ganha uma versão em Markdown (index.md) e o site ganha
 // llms.txt, llms-full.txt e dados.json — formatos que assistentes de IA e agentes leem melhor.
-import { mkdirSync, writeFileSync, cpSync, rmSync, existsSync, readFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, cpSync, rmSync, existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { site, diferenciais, lojas, cardapio as cardapioDados, perfis, faq, midia } from './dados.mjs';
@@ -127,8 +127,19 @@ const naoEncontrados = new Set();
 const acha = (id) => itens.get(id) || [...itens.values()].find((i) => i.id.startsWith(`${id}-`));
 const produtosDe = (p) => p.produtos.map((id) => acha(id) || (naoEncontrados.add(`${p.slug}: ${id}`), null)).filter(Boolean);
 const destaquesHome = () => (produtosDe(perfis[0]).length ? produtosDe(perfis[0]) : [...itens.values()].filter((i) => foto(i.id)).slice(0, 3));
-const foto = (id) => (existsSync(join(RAIZ, 'assets/img/cardapio', `${id}.webp`)) ? `assets/img/cardapio/${id}.webp` : null);
-const temFoto600 = (id) => existsSync(join(RAIZ, 'assets/img/cardapio', `${id}-600.webp`));
+// Fotos próprias da Just (assets/img/proprias/<começo do id>.webp, -600.webp e -recorte.webp) valem
+// mais que as do iFood que o robô baixa todo dia. Original em fotos-proprias/, tratamento em ferramentas/foto-propria.py.
+const PASTA_PROPRIAS = join(RAIZ, 'assets/img/proprias');
+const proprias = existsSync(PASTA_PROPRIAS)
+  ? readdirSync(PASTA_PROPRIAS).filter((f) => f.endsWith('.webp') && !/-(600|recorte)\.webp$/.test(f)).map((f) => f.slice(0, -5))
+  : [];
+const pastaFoto = (id) => {
+  const p = proprias.find((x) => id === x || id.startsWith(`${x}-`));
+  return p ? { pasta: 'assets/img/proprias', nome: p } : { pasta: 'assets/img/cardapio', nome: id };
+};
+const arqFoto = (id, sufixo = '') => { const f = pastaFoto(id); const c = `${f.pasta}/${f.nome}${sufixo}.webp`; return existsSync(join(RAIZ, c)) ? c : null; };
+const foto = (id) => arqFoto(id);
+const temFoto600 = (id) => !!arqFoto(id, '-600');
 const textoPreco = (i) => (site.mostrarPrecos && i.preco ? `R$ ${i.preco}` : 'Preço no iFood');
 
 // ---------- Schema.org (JSON-LD) ----------
@@ -381,14 +392,14 @@ const respostaRapida = (texto) => `<p class="lead resumo">${esc(texto)}</p>`;
 const migalhas = (base, lista) =>
   `<nav class="migalhas" aria-label="Você está em">${lista.map(([n, c], i) => (i === lista.length - 1 ? esc(n) : `<a href="${base}${c}">${esc(n)}</a>`)).join(' / ')}</nav>`;
 
-// Destaque flutuante da home: o recorte (sem fundo) do produto indicado em site.heroi.produto,
-// gerado pelo robô a partir da foto do iFood; senão a imagem manual; senão o logo.
+// Destaque flutuante da home: o recorte (sem fundo) do produto indicado em site.heroi.produto
+// (foto própria ou a do iFood tratada pelo robô); senão a imagem manual; senão o logo.
 const semAcento = (t) => String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 const itemHeroi = site.heroi && site.heroi.produto
-  ? [...itens.values()].find((i) => semAcento(i.nome).includes(semAcento(site.heroi.produto)) && existsSync(join(RAIZ, 'assets/img/cardapio', `${i.id}-recorte.webp`)))
+  ? [...itens.values()].find((i) => semAcento(i.nome).includes(semAcento(site.heroi.produto)) && arqFoto(i.id, '-recorte'))
   : null;
 const imagemHeroi = itemHeroi
-  ? `assets/img/cardapio/${itemHeroi.id}-recorte.webp`
+  ? arqFoto(itemHeroi.id, '-recorte')
   : site.heroi && site.heroi.imagem && existsSync(join(RAIZ, site.heroi.imagem)) ? site.heroi.imagem : null;
 const temHeroi = !!imagemHeroi;
 
@@ -485,7 +496,7 @@ const cartaoLoja = (l, base) => `
 const imgProduto = (i, base, sizes) => {
   const img = foto(i.id);
   return img
-    ? `<img class="produto-foto" src="${base}${img}"${temFoto600(i.id) ? ` srcset="${base}assets/img/cardapio/${i.id}-600.webp 600w, ${base}${img} 1200w" sizes="${sizes}"` : ''} width="1200" height="900" loading="lazy" decoding="async" alt="${esc(i.nome)}">`
+    ? `<img class="produto-foto" src="${base}${img}"${temFoto600(i.id) ? ` srcset="${base}${arqFoto(i.id, '-600')} 600w, ${base}${img} 1200w" sizes="${sizes}"` : ''} width="1200" height="900" loading="lazy" decoding="async" alt="${esc(i.nome)}">`
     : `<div class="produto-foto produto-sem-foto" role="img" aria-label="${esc(i.nome)}"><span>${esc(i.nome)}</span></div>`;
 };
 // No cardápio cada item é uma linha de menu com âncora (#id); fora dele, um cartão que aponta para essa âncora.
