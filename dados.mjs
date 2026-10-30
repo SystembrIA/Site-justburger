@@ -312,6 +312,31 @@ export const faq = [
 export const midia = [
   {
     tipo: 'materia',
+    veiculo: 'iFood · Blog de Parceiros',
+    titulo: 'Especialista indica como montar uma hamburgueria delivery',
+    data: '2023-11-28',
+    url: 'https://blog-parceiros.ifood.com.br/hamburgueria-delivery/',
+    resumo: 'Maikon Rangel, diretor da Just Burger e Expert iFood, dá dicas para montar uma hamburgueria de delivery.',
+  },
+  {
+    tipo: 'materia',
+    veiculo: 'Portal Sabores',
+    titulo: 'Empresas que atuam com delivery terão um dia de imersão para potencializar negócios em Fortaleza',
+    data: '2022-11-22',
+    url: 'https://portalsabores.com.br/empresas-que-atuam-com-delivery-terao-um-dia-de-imersao-para-potencializar-negocios-em-fortaleza/',
+    resumo: 'Maikon Rangel, da Just Burger, entre os palestrantes de um dia de imersão em delivery em Fortaleza.',
+  },
+  {
+    tipo: 'video',
+    veiculo: 'Consumer · YouTube',
+    titulo: 'O Consumer é bom mesmo? Depoimento real do Maikon',
+    data: '',
+    url: 'https://www.youtube.com/watch?v=ZUOb0NR34hE',
+    youtube: 'ZUOb0NR34hE',
+    resumo: 'Maikon Rangel, da Just Burger, conta como usa o sistema Consumer na operação.',
+  },
+  {
+    tipo: 'materia',
     veiculo: 'iFood · Notícias',
     titulo: 'O que são as dark kitchens e como elas estão se expandindo?',
     data: '2023-10-30',
@@ -369,14 +394,6 @@ export const midia = [
     data: '2021-05-28',
     url: 'https://www.meioemensagem.com.br/comunicacao/coca-cola-estampa-qr-code-em-hamburguer-em-acao-contra-fome',
     resumo: 'No Dia do Hambúrguer, a Coca-Cola e a Just Burger lançaram o combo "Not Just a Burger" com QR code no pão, levando à campanha Brasil Sem Fome.',
-  },
-  {
-    tipo: 'materia',
-    veiculo: 'Clube de Criação',
-    titulo: 'Combate à fome',
-    data: '2021-05-28',
-    url: 'https://clubedecriacao.com.br/ultimas/combate-a-fome-2/',
-    resumo: 'Registro da campanha "Por Todas as Mesas", que teve o hambúrguer com QR code da Just Burger como ativação.',
   },
   {
     tipo: 'guia',
