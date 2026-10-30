@@ -47,6 +47,16 @@ const limpaDescricao = (d) =>
     .replace(/\s*prote[ií]na\s*\(estimativa\)[\s\S]*$/i, '')
     .split(/\n+/).map((l) => l.trim().replace(/[,;]$/, '')).filter(Boolean)
     .join(', ').replace(/\s+,/g, ',').replace(/\s{2,}/g, ' ').replace(/^combo,\s*/i, '').replace(/[,.\s]+$/, '');
+// Bloco "Proteína (estimativa) por lanche:" que a Just põe na descrição do iFood:
+// linhas "~28g  Carne 150g" e uma linha "Total". Vira uma tabela no site.
+function proteinaDe(texto) {
+  const m = (texto || '').match(/prote[ií]na[^\n:]*:\s*\n([\s\S]*?)(?:\n\s*\n|n[ãa]o (?:fazemos|removemos)|$)/i);
+  if (!m) return null;
+  const linhas = m[1].split('\n').map((l) => l.trim().match(/^~?\s*(\d+(?:[.,]\d+)?)\s*g\s+(.+)$/i)).filter(Boolean)
+    .map(([, g, nome]) => ({ g: `~${g} g`, nome: nome.replace(/(\d)\s*g\b/gi, '$1 g').trim() }));
+  const total = linhas.find((l) => /^total$/i.test(l.nome));
+  return total ? { total: total.g, linhas: linhas.filter((l) => l !== total) } : null;
+}
 function limpaItem(i) {
   const bruto = i.nome.replace(/\s*-?\s*(hits|queridinhos)\s*$/i, '').replace(/\s+/g, ' ').trim();
   const [nome, ...resto] = bruto.split(/\s+-\s+/);
@@ -54,7 +64,7 @@ function limpaItem(i) {
   const selo = (detalhe.match(/top\s*\d+\s*mais vendido/i) || [''])[0];
   if (selo) detalhe = detalhe.replace(selo, '').replace(/^[-\s]+|[-\s]+$/g, '');
   detalhe = detalhe.charAt(0).toUpperCase() + detalhe.slice(1);
-  return { id: i.id, nome: nome.trim(), detalhe, selo: selo && selo.replace(/^top\s*(\d+)/i, 'Top $1'), descricao: limpaDescricao(i.descricao), preco: reais(i.preco) };
+  return { id: i.id, nome: nome.trim(), detalhe, selo: selo && selo.replace(/^top\s*(\d+)/i, 'Top $1'), descricao: limpaDescricao(i.descricao), proteina: proteinaDe(i.descricao), preco: reais(i.preco) };
 }
 function cardapioDoIfood(dados) {
   const vistos = new Map();
@@ -440,17 +450,25 @@ const imgProduto = (i, base, sizes) => {
     : `<div class="produto-foto produto-sem-foto" role="img" aria-label="${esc(i.nome)}"><span>${esc(i.nome)}</span></div>`;
 };
 // No cardápio cada item é uma linha de menu com âncora (#id); fora dele, um cartão que aponta para essa âncora.
+const tabelaProteina = (p) => `
+<table class="proteina">
+  <caption>Proteína por porção (estimativa)</caption>
+  <tbody>${p.linhas.map((l) => `<tr><td>${esc(l.nome)}</td><td>${esc(l.g)}</td></tr>`).join('')}</tbody>
+  <tfoot><tr><th scope="row">Total</th><td>${esc(p.total)}</td></tr></tfoot>
+</table>`;
 const cartaoProduto = (i, base, { ancora = false } = {}) => ancora
   ? `
 <article class="item-menu" id="${i.id}">
-  ${imgProduto(i, base, '(min-width: 900px) 220px, 34vw')}
+  <button type="button" class="item-ampliar" aria-label="Ver ${esc(i.nome)} em tamanho grande">${imgProduto(i, base, '(min-width: 900px) 220px, 34vw')}</button>
   <div>
     ${i.selo ? `<p class="produto-selo">${esc(i.selo)}</p>` : ''}
     <h3>${esc(i.nome)}</h3>
     ${i.detalhe ? `<p class="produto-detalhe">${esc(i.detalhe)}</p>` : ''}
     ${i.descricao ? `<p class="produto-descricao">${esc(i.descricao)}</p>` : ''}
+    ${i.proteina ? `<p class="proteina-total">Proteína: ${esc(i.proteina.total)} por porção <span>(estimativa)</span></p>` : ''}
     ${site.mostrarPrecos && i.preco ? `<p class="preco">${esc(textoPreco(i))}</p>` : ''}
   </div>
+  ${i.proteina ? `<div class="item-extra" hidden>${tabelaProteina(i.proteina)}</div>` : ''}
 </article>`
   : `
 <a class="produto" href="${base}cardapio/#${i.id}">
@@ -528,7 +546,7 @@ const schemaMidia = () => ({
 // ---------- Markdown (versão para IA) ----------
 
 const mdLink = (texto, caminho) => `[${texto}](${abs(caminho)})`;
-const mdItem = (i) => `- **${i.nome}**${i.detalhe ? ` — ${i.detalhe}` : ''}${i.selo ? ` (${i.selo})` : ''} (${i.categoria}): ${i.descricao} ${mdLink('ver no cardápio', `cardapio/#${i.id}`)}`;
+const mdItem = (i) => `- **${i.nome}**${i.detalhe ? ` — ${i.detalhe}` : ''}${i.selo ? ` (${i.selo})` : ''} (${i.categoria}): ${i.descricao}${i.proteina ? ` Proteína (estimativa): ${i.proteina.total} por porção.` : ''} ${mdLink('ver no cardápio', `cardapio/#${i.id}`)}`;
 const mdFaq = (lista) => lista.map((f) => `### ${f.p}\n\n${f.r}`).join('\n\n');
 const mdLoja = (l) =>
   [
@@ -559,6 +577,42 @@ const citacaoMidia = (base) => {
   const trecho = m && m.tipo === 'case' ? m.titulo.replace(/^.*?(ajudou a just burger)/i, '…$1') : m && m.titulo;
   return m ? `<figure class="citacao"><blockquote>“${esc(trecho)}”</blockquote><figcaption>${esc(m.veiculo)}${m.data ? `, ${dataMidia(m.data)}` : ''} · <a href="${base}na-midia/">ver todas as matérias</a></figcaption></figure>` : '';
 };
+
+// Janela da foto grande do cardápio: toque na linha (ou na foto) abre o lanche no tamanho dos "mais pedidos".
+const janelaFoto = (base) => `
+<dialog class="janela" id="janela" aria-labelledby="janela-nome">
+  <button type="button" class="janela-fechar" aria-label="Fechar">×</button>
+  <img class="janela-foto" alt="" width="1200" height="900">
+  <div class="janela-texto">
+    <p class="produto-selo" data-j="selo"></p>
+    <h2 id="janela-nome" data-j="nome"></h2>
+    <p class="produto-detalhe" data-j="detalhe"></p>
+    <p class="produto-descricao" data-j="descricao"></p>
+    <div data-j="extra"></div>
+    <a class="botao" href="${base}unidades/">Peça no iFood</a>
+  </div>
+</dialog>
+<script>
+(function () {
+  var j = document.getElementById('janela'); if (!j || !j.showModal) return;
+  var campo = function (k) { return j.querySelector('[data-j="' + k + '"]'); };
+  function abre(item) {
+    var img = item.querySelector('img.produto-foto'), foto = j.querySelector('.janela-foto');
+    if (img) { foto.src = img.getAttribute('src'); foto.alt = img.alt; foto.hidden = false; } else foto.hidden = true;
+    ['selo', 'detalhe', 'descricao'].forEach(function (k) {
+      var o = item.querySelector('.produto-' + k); campo(k).textContent = o ? o.textContent : ''; campo(k).hidden = !o;
+    });
+    campo('nome').textContent = item.querySelector('h3').textContent;
+    var extra = item.querySelector('.item-extra'); campo('extra').innerHTML = extra ? extra.innerHTML : '';
+    j.showModal();
+  }
+  document.querySelectorAll('.item-menu').forEach(function (item) {
+    item.addEventListener('click', function (e) { if (!e.target.closest('a')) abre(item); });
+  });
+  j.querySelector('.janela-fechar').addEventListener('click', function () { j.close(); });
+  j.addEventListener('click', function (e) { if (e.target === j) j.close(); });
+})();
+</script>`;
 
 // ---------- Páginas ----------
 
@@ -697,6 +751,7 @@ paginas.push({
   <div class="largura">
     ${cardapio.map((c) => `<h2 class="categoria-titulo" id="${slug(c.categoria)}">${esc(c.categoria)}</h2><div class="lista-menu">${c.itens.map((i) => cartaoProduto({ ...i, categoria: c.categoria }, base, { ancora: true })).join('')}</div>`).join('\n')}
     <div class="acoes"><a class="botao" href="${base}unidades/">Peça no iFood</a></div>
+${janelaFoto(base)}
   </div>
 </section>`,
   md: () => `# Cardápio ${site.nome}
