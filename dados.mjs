@@ -46,6 +46,14 @@ export const site = {
   // Burger flutuando no topo da home: recorte (sem fundo) do produto com este nome, gerado pelo robô
   // a partir da foto do iFood. Sem recorte, usa `imagem` (PNG/WebP transparente) e, sem ela, o logo.
   heroi: { produto: 'Dolce Gabana', imagem: 'assets/img/heroi-dolce-gabana.webp', alt: 'Dolce Gabana, burger da Just Burger' },
+  // Bloco de destaque da home, logo depois dos números (texto da diretoria, 30/10/2026).
+  // Nome sempre como no iFood ("Dolce Gabana"), sem a grafia da marca de moda.
+  destaque: {
+    produto: 'Dolce Gabana',
+    titulo: 'Uma explosão de sabores',
+    texto: 'O gorgonzola cremoso derrete sobre o hambúrguer de 150 g e encontra a geleia de damasco: o doce que equilibra o salgado. Por cima, bacon fatiado e farofa de bacon crocante, tudo no pão brioche com mayo e Molho Just.',
+    frase: 'Gorgonzola e geleia de damasco: a combinação perfeita.',
+  },
 };
 
 // Diferenciais da home. Só o que for verdade e verificável.

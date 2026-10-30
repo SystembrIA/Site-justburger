@@ -609,6 +609,27 @@ const mdLoja = (l) =>
   ].join('\n');
 
 // Mais pedidos: os itens com selo "Top N mais vendido", na ordem; sem selo, os destaques do 1º perfil.
+// Destaque da home (site.destaque): foto do produto, texto da diretoria e botões.
+const itemDestaque = () => site.destaque && [...itens.values()].find((i) => semAcento(i.nome).includes(semAcento(site.destaque.produto)) && foto(i.id));
+const blocoDestaque = (base) => {
+  const d = site.destaque, i = itemDestaque();
+  if (!i) return '';
+  return `
+<section class="secao destaque" aria-labelledby="destaque-titulo">
+  <div class="largura destaque-grade">
+    <img class="destaque-foto" src="${base}${foto(i.id)}" width="1200" height="900" loading="lazy" decoding="async" alt="${esc(i.nome)}, burger da Just Burger">
+    <div class="destaque-texto">
+      <p class="sobretitulo">${esc(i.nome)}${i.selo ? ` · ${esc(i.selo)}` : ''}</p>
+      <h2 id="destaque-titulo">${esc(d.titulo)}</h2>
+      <p class="lead">${esc(d.texto)}</p>
+      <p class="destaque-frase">${esc(d.frase)}</p>
+      ${i.proteina ? `<p class="suave">Proteína (aproximada): ${esc(i.proteina.total)} por ${esc(i.proteina.por)}</p>` : ''}
+      <div class="acoes">${botaoPedido(base)}<a class="botao botao-contorno" href="${base}cardapio/#${i.id}">Ver no cardápio</a></div>
+    </div>
+  </div>
+</section>`;
+};
+
 const maisPedidos = () => {
   const top = [...itens.values()].filter((i) => i.selo).sort((a, b) => parseInt(a.selo.replace(/\D/g, '')) - parseInt(b.selo.replace(/\D/g, '')));
   return (top.length >= 3 ? top : destaquesHome()).slice(0, 3);
@@ -696,6 +717,7 @@ paginas.push({
 </section>
 
 ${site.contador ? blocoContador() : ''}
+${blocoDestaque(base)}
 
 <section class="secao">
   <div class="largura">
@@ -765,7 +787,7 @@ ${site.avaliacoes ? blocoAvaliacoes() : ''}`,
 > ${site.descricaoCurta}. Pedidos pelo iFood (${site.nomeIfood}).
 ${site.contador ? `\nMais de ${fmtInt(site.contador.basePedidos)} pedidos e ${fmtInt(site.contador.basePedidos * site.contador.lanchesPorPedido)} lanches vendidos desde a abertura.\n` : ''}
 ${diferenciais.map((d) => `- **${d.titulo}:** ${d.texto}`).join('\n')}
-
+${itemDestaque() ? `\n## Destaque: ${itemDestaque().nome}\n\n${site.destaque.texto} ${site.destaque.frase}\n` : ''}
 ## Qual é o seu pedido?
 
 ${perfis.map((p) => `- ${mdLink(p.nome, `para-voce/${p.slug}/`)}: ${p.resposta}`).join('\n')}
