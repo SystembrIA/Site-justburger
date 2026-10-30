@@ -474,10 +474,9 @@ const blocoContador = () => {
     <div class="placar-linha">${placarHtml(c.basePedidos, c.rotuloPedidos)}<p class="numero-rotulo">${esc(c.rotuloPedidos)}</p></div>
     <div class="placar-linha">${placarHtml(c.basePedidos * c.lanchesPorPedido, c.rotuloLanches)}<p class="numero-rotulo">${esc(c.rotuloLanches)}</p></div>
     <div class="numeros-extra">
-      ${n ? `<p><span class="numero"><span data-geral-nota>${nota1(n)}</span><span class="estrela" aria-hidden="true">★</span></span><span class="numero-rotulo" data-geral-texto>no iFood${site.avaliacoes.avaliacoesInformadas ? ` · mais de ${Math.floor(site.avaliacoes.avaliacoesInformadas / 1000)} mil avaliações em todas as lojas` : ''}</span></p>` : ''}
+      ${n ? `<p><span class="numero"><span data-geral-nota>${nota1(n)}</span><span class="estrela" aria-hidden="true">★</span></span><span class="numero-rotulo">no iFood</span></p>${site.avaliacoes.avaliacoesInformadas ? `<p class="numeros-avaliacoes" data-geral-texto>mais de ${Math.floor(site.avaliacoes.avaliacoesInformadas / 1000)} mil avaliações em todas as lojas</p>` : ''}` : ''}
       <p><span class="numero">${lojas.length}</span><span class="numero-rotulo">unidades na Grande São Paulo</span></p>
     </div>
-    <p class="numeros-som"><button type="button" class="botao-som" data-som hidden></button></p>
   </div>
 </section>
 <script>
@@ -490,7 +489,6 @@ const blocoContador = () => {
   // Som de plaquinha virando: gerado no navegador (ruído curto filtrado), sem arquivo de áudio.
   // O navegador só libera som depois de um toque/clique na página; no celular respeita o modo silencioso.
   var som = { ctx: null, ruido: null, ultimo: 0, liga: true };
-  try { som.liga = localStorage.getItem('just-som') !== '0'; } catch (e) {}
   function destrava() {
     var A = window.AudioContext || window.webkitAudioContext; if (!A) return;
     if (!som.ctx) {
@@ -510,12 +508,6 @@ const blocoContador = () => {
     f.buffer = som.ruido; filtro.type = 'bandpass'; filtro.frequency.value = 1700 + Math.random() * 1100; filtro.Q.value = 1.4;
     g.gain.value = forte ? 0.55 : 0.2;
     f.connect(filtro); filtro.connect(g); g.connect(c.destination); f.start();
-  }
-  var botaoSom = el.querySelector('[data-som]');
-  function rotuloSom() { botaoSom.textContent = som.liga ? '🔊 Som ligado' : '🔇 Som desligado'; botaoSom.setAttribute('aria-pressed', som.liga ? 'true' : 'false'); }
-  if (botaoSom) {
-    rotuloSom(); botaoSom.hidden = false;
-    botaoSom.addEventListener('click', function () { som.liga = !som.liga; try { localStorage.setItem('just-som', som.liga ? '1' : '0'); } catch (e) {} rotuloSom(); });
   }
   function texto(f, sel, v) { f.querySelector(sel + ' span').textContent = v; }
   function vira(f, novo, rapido) {
