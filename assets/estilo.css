@@ -445,3 +445,21 @@ a.heroi-burger-caixa { display: block; }
 .loja-acoes .botao, .acoes-loja .botao { min-height: 34px; }
 
 .botao-mapa svg { width: 26px; height: 24px; }
+
+/* Nota (com avaliações) e unidades: texto na mesma linha do número, um pouco maior */
+.numeros-extra p { align-items: baseline; white-space: nowrap; }
+.numeros-extra .numero-rotulo { max-width: none; text-transform: none; letter-spacing: .01em; font-weight: 600; color: var(--branco); font-size: clamp(.74rem, 3.2vw, 1.05rem); }
+.numeros-extra .numero { font-size: clamp(1.7rem, 6vw, 2.6rem); }
+/* Visto em: nomes em tamanhos alternados */
+.visto-em { align-items: baseline; gap: 6px 26px; }
+.visto-em a { opacity: .85; line-height: 1.1; }
+.visto-em li:nth-child(5n+1) a { font-size: 2rem; }
+.visto-em li:nth-child(5n+2) a { font-size: 1.15rem; }
+.visto-em li:nth-child(5n+3) a { font-size: 1.6rem; }
+.visto-em li:nth-child(5n+4) a { font-size: 1rem; }
+.visto-em li:nth-child(5n) a { font-size: 1.8rem; }
+@media (max-width: 520px) {
+  .numeros-extra p { gap: 6px; }
+  .numeros-extra .numero { font-size: 1.5rem; }
+  .numeros-extra .numero-rotulo { font-size: 2.85vw; }
+}

@@ -30,7 +30,7 @@ const juntar = (lista) => (lista.length > 1 ? `${lista.slice(0, -1).join(', ')} 
 
 function textoHorario(h) {
   const dias = h.dias.length === 7 ? 'Todos os dias' : h.dias.map((d) => DIAS[d]).join(', ');
-  return `${dias}, das ${h.abre} às ${h.fecha}`;
+  return h.fecha === '00:00' ? `${dias}, das ${h.abre} até meia-noite` : `${dias}, das ${h.abre} às ${h.fecha}`;
 }
 
 // Cardápio real do iFood (importar-cardapio.py) tem prioridade sobre o de dados.mjs.
@@ -202,7 +202,7 @@ function schemaLoja(l) {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: h.dias.map((d) => DIAS_SCHEMA[d]),
       opens: h.abre,
-      closes: h.fecha,
+      closes: h.fecha === '00:00' ? '23:59' : h.fecha,
     })),
     areaServed: geo
       ? bairrosDaLoja(l).map((b) => ({ '@type': 'Place', name: b.tipo === 'cidade' ? b.cidade : `${b.nome}, ${b.cidade}`, url: abs(`entrega/${b.slug}/`) }))
@@ -367,7 +367,7 @@ ${site.whatsapp ? `<a class="whats-flutuante" href="${linkWhats}" rel="noopener"
 // "Faça seu pedido": abre a janela da busca por CEP (assets/pedido.js). Sem JavaScript, vai para /pedir/.
 const RAIO_KM = 10;
 const iconePin = '<svg viewBox="0 0 100 94" width="26" height="24" aria-hidden="true"><defs><clipPath id="mapa-dobra"><path d="M6 48L32 38L52 48L72 38L94 46L94 88L72 80L52 90L32 80L6 90Z"/></clipPath></defs><g clip-path="url(#mapa-dobra)"><path d="M6 48L32 38L32 80L6 90Z" fill="#4cd964"/><path d="M32 38L52 48L52 90L32 80Z" fill="#1da1f2"/><path d="M52 48L72 38L72 80L52 90Z" fill="#4cd964"/><path d="M72 38L94 46L94 88L72 80Z" fill="#1da1f2"/><path d="M6 90L6 70L32 60L32 80Z" fill="#8ee6ff"/><path d="M0 64L32 52L52 64L72 54L100 64" fill="none" stroke="#ffc83d" stroke-width="7"/><path d="M38 36L64 96" fill="none" stroke="#ffc83d" stroke-width="7"/></g><path d="M50 66C50 66 25 42 25 27A25 25 0 0 1 75 27C75 42 50 66 50 66Z" fill="#ff4b4b"/><path d="M50 2A25 25 0 0 1 75 27C75 42 50 66 50 66C58 50 66 38 66 27A25 25 0 0 0 50 2Z" fill="#e2363b"/><circle cx="50" cy="27" r="10" fill="#fff"/></svg>';
-const iconeInstagram = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 7.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21.9 8.2c0-1.7-.5-3.2-1.7-4.4C19 2.6 17.5 2.2 15.8 2.1 14 2 10 2 8.2 2.1 6.5 2.2 5 2.6 3.8 3.8 2.6 5 2.2 6.5 2.1 8.2 2 10 2 14 2.1 15.8c.1 1.7.5 3.2 1.7 4.4 1.2 1.2 2.7 1.6 4.4 1.7 1.8.1 5.8.1 7.6 0 1.7-.1 3.2-.5 4.4-1.7 1.2-1.2 1.6-2.7 1.7-4.4.1-1.8.1-5.8 0-7.6zM19.6 17.7a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.9.4s-4.7.1-5.9-.4a3 3 0 0 1-1.7-1.7c-.5-1.2-.4-4-.4-5.7s-.1-4.6.4-5.7a3 3 0 0 1 1.7-1.7c1.2-.5 4-.4 5.9-.4s4.7-.1 5.9.4a3 3 0 0 1 1.7 1.7c.5 1.2.4 4 .4 5.7s.1 4.6-.4 5.7z"/></svg>';
+const iconeInstagram = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><defs><radialGradient id="ig-cor" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#fdf497"/><stop offset=".05" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset=".9" stop-color="#285aeb"/></radialGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#ig-cor)"/><rect x="5.2" y="5.2" width="13.6" height="13.6" rx="4.2" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.3" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1.05" fill="#fff"/></svg>';
 const iconeFacebook = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>';
 const iconeTiktok = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.8a5.7 5.7 0 1 0 4.9 5.6V9.1a7.3 7.3 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6z"/></svg>';
 // Redes oficiais (site.instagram / facebook / tiktok): só aparecem as preenchidas.
@@ -459,7 +459,7 @@ const blocoContador = () => {
     <div class="placar-linha">${placarHtml(c.basePedidos, c.rotuloPedidos)}<p class="numero-rotulo">${esc(c.rotuloPedidos)}</p></div>
     <div class="placar-linha">${placarHtml(c.basePedidos * c.lanchesPorPedido, c.rotuloLanches)}<p class="numero-rotulo">${esc(c.rotuloLanches)}</p></div>
     <div class="numeros-extra">
-      ${n ? `<p><span class="numero"><span data-geral-nota>${nota1(n)}</span><span class="estrela" aria-hidden="true">★</span></span><span class="numero-rotulo" data-geral-texto>no iFood${site.avaliacoes.avaliacoesInformadas ? ` · mais de ${fmtInt(site.avaliacoes.avaliacoesInformadas)} avaliações em todas as lojas` : ''}</span></p>` : ''}
+      ${n ? `<p><span class="numero"><span data-geral-nota>${nota1(n)}</span><span class="estrela" aria-hidden="true">★</span></span><span class="numero-rotulo" data-geral-texto>no iFood${site.avaliacoes.avaliacoesInformadas ? ` · mais de ${Math.floor(site.avaliacoes.avaliacoesInformadas / 1000)} mil avaliações em todas as lojas` : ''}</span></p>` : ''}
       <p><span class="numero">${lojas.length}</span><span class="numero-rotulo">unidades na Grande São Paulo</span></p>
     </div>
   </div>
