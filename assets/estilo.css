@@ -443,3 +443,5 @@ a.heroi-burger-caixa { display: block; }
 .loja-reputacao .selo-super em { font-size: 1.15rem; }
 .loja-reputacao .selo-super span { font-size: .62rem; }
 .loja-acoes .botao, .acoes-loja .botao { min-height: 34px; }
+
+.botao-mapa svg { width: 26px; height: 24px; }
