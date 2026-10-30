@@ -540,3 +540,9 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .rodape-marcas img { width: 52px; height: 36px; border-radius: 0; }
 .marca-logo-peq { width: 170px; height: 110px; }
 .marca-logo { width: 240px; height: 160px; }
+
+/* Página de cada culinária: a marca escolhida em destaque */
+.marca-destaque { max-width: 640px; margin: 0 auto; }
+.marca-destaque .loja { border-top: 0; }
+.marca-destaque .marca-logo-peq { width: 240px; height: 150px; }
+.marca-destaque h3 { font-size: 2.4rem; }
