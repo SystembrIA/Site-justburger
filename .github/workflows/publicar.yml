@@ -46,6 +46,8 @@ jobs:
         run: node build.mjs
 
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true   # liga o Pages (fonte: GitHub Actions) se ainda estiver desligado
 
       - uses: actions/upload-pages-artifact@v3
         with:
