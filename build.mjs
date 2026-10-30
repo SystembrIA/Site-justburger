@@ -264,6 +264,7 @@ function pagina({ caminho, titulo, descricao, corpo, schema = [], profundidade, 
     ['Unidades', 'unidades/'],
     ['Na mídia', 'na-midia/'],
     ['Nossa história', 'sobre/'],
+    ['Culinárias', 'culinarias/'],
   ];
   return `<!doctype html>
 <html lang="pt-BR">
@@ -310,7 +311,7 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
     <details class="menu-celular">
       <summary aria-label="Abrir menu"><span></span><span></span><span></span></summary>
       <nav aria-label="Menu">
-        <ul><li><a href="${base}">Início</a></li>${nav.map(([n, c]) => `<li><a href="${base}${c}">${n}</a></li>`).join('')}<li><a href="${base}entrega/">Onde entregamos</a></li></ul>
+        <ul><li><a href="${base}">Início</a></li>${nav.filter(([, c]) => c !== 'culinarias/').map(([n, c]) => `<li><a href="${base}${c}">${n}</a></li>`).join('')}<li><a href="${base}entrega/">Onde entregamos</a></li>${culinarias.length ? `<li><details class="submenu"><summary>Conheça nossas culinárias</summary><ul>${culinarias.map((c) => { const logo = logoMarca(c); return `<li><a href="${base}culinarias/${c.slug}/">${logo ? `<img src="${base}${logo}" width="36" height="36" alt="">` : `<span class="submenu-marca" aria-hidden="true">${esc(c.nome.split(' ').pop()[0])}</span>`}${esc(c.nome)}</a></li>`; }).join('')}</ul></details></li>` : ''}</ul>
         ${botaoPedido(base)}
       </nav>
     </details>
@@ -345,6 +346,7 @@ ${corpo(base)}
         <li><a href="${base}na-midia/">Na mídia</a></li>
         ${geo ? `<li><a href="${base}entrega/">Onde entregamos</a></li>` : ''}
         <li><a href="${base}pedir/">Faça seu pedido</a></li>
+        <li><a href="${base}culinarias/">Nossas culinárias</a></li>
       </ul>
     </div>
   </div>
@@ -603,14 +605,16 @@ const blocoAvaliacoes = () => `
 
 // Outras marcas do grupo (dados.mjs → culinarias). Logo em assets/img/marcas/<slug>.webp quando houver;
 // sem logo, o nome escrito. Página de cada marca: em breve (material da diretoria).
-const blocoCulinarias = () => (culinarias.length ? `
+const logoMarca = (c) => (existsSync(join(RAIZ, 'assets/img/marcas', `${c.slug}.webp`)) ? `assets/img/marcas/${c.slug}.webp` : null);
+const cartaoCulinaria = (c, base) => {
+  const logo = logoMarca(c);
+  return `<a class="culinaria" href="${base}culinarias/${c.slug}/">${logo ? `<img src="${base}${logo}" width="320" height="320" loading="lazy" alt="Logo ${esc(c.nome)}">` : ''}<p class="culinaria-nome">${esc(c.nome)}</p><p class="culinaria-tipo">${esc(c.tipo)}</p>${c.conteudo ? '' : '<p class="culinaria-breve">Em breve</p>'}</a>`;
+};
+const blocoCulinarias = (base) => (culinarias.length ? `
 <section class="secao culinarias" aria-labelledby="culinarias-titulo">
   <div class="largura">
     <h2 id="culinarias-titulo">Conheça nossas culinárias</h2>
-    <div class="grade-culinarias">${culinarias.map((c) => {
-      const logo = existsSync(join(RAIZ, 'assets/img/marcas', `${c.slug}.webp`)) ? `assets/img/marcas/${c.slug}.webp` : null;
-      return `<div class="culinaria">${logo ? `<img src="./${logo}" width="320" height="320" loading="lazy" alt="${esc(c.nome)}">` : `<p class="culinaria-nome">${esc(c.nome)}</p>`}<p class="culinaria-tipo">${esc(c.tipo)}</p><p class="culinaria-breve">Em breve</p></div>`;
-    }).join('')}</div>
+    <div class="grade-culinarias">${culinarias.map((c) => cartaoCulinaria(c, base)).join('')}</div>
   </div>
 </section>` : '');
 // Selo Super Restaurante iFood (só nas lojas com superIfood: nível 5 de 5 no painel do iFood).
@@ -872,7 +876,7 @@ ${site.contador ? blocoContador() : ''}
   </div>
 </section>
 
-${blocoCulinarias()}
+${blocoCulinarias(base)}
 
 <section class="secao">
   <div class="largura dividido">
@@ -1306,6 +1310,50 @@ paginas.push({
 </section>`,
   md: () => `# Faça seu pedido na ${site.nome}\n\n${lojas.map((l) => `- ${l.nome} (${l.endereco}, ${l.bairro}, ${l.cidade}): ${l.ifood}`).join('\n')}\n${site.telefoneCentral ? `\nWhatsApp e telefone: ${site.telefoneCentral}\n` : ''}`,
 });
+
+// Culinárias do grupo: índice e uma página por marca. Sem conteúdo ainda (culinarias[].conteudo),
+// a página sai com noindex e fora do sitemap.
+paginas.push({
+  caminho: 'culinarias/',
+  profundidade: 1,
+  titulo: `Nossas culinárias | ${site.nome}`,
+  descricao: `As marcas do grupo da Just Burger: ${culinarias.map((c) => `${c.nome} (${c.tipo.toLowerCase()})`).join(', ')}.`,
+  noindex: !culinarias.some((c) => c.conteudo),
+  schema: [schemaBreadcrumb([['Início', ''], ['Culinárias', 'culinarias/']])],
+  corpo: (base) => `
+<section class="secao">
+  <div class="largura">
+    ${migalhas(base, [['Início', ''], ['Culinárias', 'culinarias/']])}
+    <h1>Conheça nossas culinárias</h1>
+    <p class="lead">Da Just Burger nasceu um grupo. Conheça as outras marcas.</p>
+    <div class="grade-culinarias">${culinarias.map((c) => cartaoCulinaria(c, base)).join('')}</div>
+  </div>
+</section>`,
+  md: () => `# Nossas culinárias\n\n${culinarias.map((c) => `- ${c.nome}: ${c.tipo}`).join('\n')}\n`,
+});
+for (const c of culinarias) {
+  const trilha = [['Início', ''], ['Culinárias', 'culinarias/'], [c.nome, `culinarias/${c.slug}/`]];
+  paginas.push({
+    caminho: `culinarias/${c.slug}/`,
+    profundidade: 2,
+    titulo: `${c.nome} | ${c.tipo} do grupo Just Burger`,
+    descricao: `${c.nome}: ${c.tipo.toLowerCase()} do grupo Just Burger.`,
+    noindex: !c.conteudo,
+    schema: [schemaBreadcrumb(trilha)],
+    corpo: (base) => `
+<section class="secao">
+  <div class="largura estreita">
+    ${migalhas(base, trilha)}
+    ${logoMarca(c) ? `<img class="marca-logo" src="${base}${logoMarca(c)}" width="320" height="320" alt="Logo ${esc(c.nome)}">` : ''}
+    <p class="sobretitulo">${esc(c.tipo)}</p>
+    <h1>${esc(c.nome)}</h1>
+    ${c.conteudo ? c.conteudo.map((t) => `<p>${esc(t)}</p>`).join('') : `<p class="lead">Em breve, tudo sobre a ${esc(c.nome)} aqui: cardápio, unidades e história.</p>`}
+    <div class="acoes"><a class="botao botao-contorno" href="${base}culinarias/">Ver as outras culinárias</a></div>
+  </div>
+</section>`,
+    md: () => `# ${c.nome}\n\n${c.tipo} do grupo Just Burger.\n`,
+  });
+}
 
 // ---------- Escrita ----------
 

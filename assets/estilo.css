@@ -471,3 +471,23 @@ a.heroi-burger-caixa { display: block; }
 /* Google Maps: mesmo formato dos outros botões, mapinha maior */
 .loja-acoes .botao-mapa, .acoes-loja .botao-mapa { min-width: 62px; padding: 0 14px !important; }
 .botao-mapa svg { width: 34px !important; height: 31px !important; }
+
+/* Culinárias: cartões clicáveis e submenu */
+a.culinaria { color: inherit; text-decoration: none; transition: border-color .15s, transform .15s; }
+a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
+.marca-logo { width: 140px; height: 140px; object-fit: contain; margin-bottom: 12px; }
+.submenu summary { cursor: pointer; list-style: none; }
+.submenu summary::-webkit-details-marker { display: none; }
+.submenu summary::after { content: ' +'; color: var(--laranja); }
+.submenu[open] summary::after { content: ' –'; }
+.submenu ul { list-style: none; margin: 10px 0 0; padding: 0 0 0 4px; }
+.submenu li a { display: flex; align-items: center; gap: 12px; padding: 8px 0; font-size: 1.15rem; }
+.submenu li img { width: 36px; height: 36px; object-fit: contain; border-radius: 8px; }
+.submenu-marca { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 8px; background: var(--laranja); color: #000; font-weight: 900; font-size: 1rem; }
+.menu-celular .submenu summary { display: block; padding: 14px 0; border-bottom: 1px solid var(--linha); font-size: 1.6rem; font-weight: 900; font-stretch: 75%; text-transform: uppercase; color: var(--branco); }
+.menu-celular .submenu li a { display: flex; align-items: center; gap: 12px; padding: 10px 0; font-size: 1.15rem; }
+.menu-celular .submenu ul { margin: 4px 0 0; }
+.menu-celular .submenu summary { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.menu-celular .submenu summary::after { content: '+'; flex: none; font-size: 1.8rem; }
+.menu-celular .submenu[open] summary::after { content: '–'; }
+.menu-celular .submenu summary { font-size: 1.4rem; white-space: nowrap; }
