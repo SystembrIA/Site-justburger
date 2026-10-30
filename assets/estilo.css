@@ -533,3 +533,10 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 
 /* Operações das culinárias: mesmo padrão das lojas Burger */
 .marca-regiao { font-size: 1.35rem; font-stretch: 80%; color: var(--laranja) !important; }
+
+/* Logos das culinárias (largos): caixas no formato do logo */
+.culinaria img { width: 150px; height: 96px; object-fit: contain; margin-bottom: 6px; }
+.submenu li img { width: 58px; height: 38px; border-radius: 0; }
+.rodape-marcas img { width: 52px; height: 36px; border-radius: 0; }
+.marca-logo-peq { width: 170px; height: 110px; }
+.marca-logo { width: 240px; height: 160px; }
