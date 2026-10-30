@@ -575,7 +575,7 @@ const blocoCulinarias = () => (culinarias.length ? `
   </div>
 </section>` : '');
 // Selo Super Restaurante iFood (só nas lojas com superIfood: nível 5 de 5 no painel do iFood).
-const seloSuper = `<div class="selo-super" role="img" aria-label="Somos um Super Restaurante no iFood"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#ea1d2c"/><path d="M50.0,24.0 L56.8,42.7 L76.6,43.3 L60.9,55.6 L66.5,74.7 L50.0,63.5 L33.5,74.7 L39.1,55.6 L23.4,43.3 L43.2,42.7Z" fill="#fff"/></svg><p><span>Somos um</span> <em>super</em> <span>restaurante</span></p></div>`;
+const seloSuper = `<div class="selo-super" role="img" aria-label="Super Restaurante no iFood"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#ea1d2c"/><path d="M50.0,24.0 L56.8,42.7 L76.6,43.3 L60.9,55.6 L66.5,74.7 L50.0,63.5 L33.5,74.7 L39.1,55.6 L23.4,43.3 L43.2,42.7Z" fill="#fff"/></svg><p><em>super</em> <span>restaurante</span></p></div>`;
 // Botões de cada loja: pedido no iFood da loja, WhatsApp e Google Maps.
 const acoesLoja = (l) => `<a class="botao" href="${esc(l.ifood)}" rel="noopener">Faça seu pedido</a>${linkWhats ? `<a class="botao botao-whats" href="${linkWhats}" rel="noopener">${iconeWhats}WhatsApp</a>` : ''}<a class="botao botao-contorno botao-mapa" href="${esc(l.googleMaps)}" rel="noopener" aria-label="Abrir ${esc(l.nome)} no Google Maps" title="Abrir no Google Maps">${iconePin}</a>`;
 // Endereço numa linha só: com o bairro quando cabe; senão, só rua e número (a cidade já está no nome da loja).

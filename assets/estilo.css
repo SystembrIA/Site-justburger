@@ -437,3 +437,9 @@ a.heroi-burger-caixa { display: block; }
 .culinaria-nome { margin: 0; font-stretch: 75%; font-weight: 900; font-size: 1.5rem; text-transform: uppercase; line-height: 1; }
 .culinaria-tipo { margin: .5em 0 0; color: var(--suave); font-size: .85rem; }
 .culinaria-breve { margin: .6em 0 0; font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--laranja); }
+
+/* Selo menor ("super restaurante") e botões da loja mais baixos (mesma fonte) */
+.loja-reputacao .selo-super svg { width: 24px; height: 24px; }
+.loja-reputacao .selo-super em { font-size: 1.15rem; }
+.loja-reputacao .selo-super span { font-size: .62rem; }
+.loja-acoes .botao, .acoes-loja .botao { min-height: 34px; }
