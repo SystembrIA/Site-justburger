@@ -1377,32 +1377,37 @@ paginas.push({
     ${migalhas(base, [['Início', ''], ['Culinárias', 'culinarias/']])}
     <h1>Conheça nossas culinárias</h1>
     <p class="lead">Da Just Burger nasceu um grupo. Conheça as outras marcas.</p>
-    <div class="grade-culinarias">${culinarias.map((c) => cartaoCulinaria(c, base)).join('')}</div>
+    <div class="grade-2 lojas-centro">${culinarias.map((c) => cartaoMarca(c, base)).join('')}</div>
   </div>
 </section>`,
   md: () => `# Nossas culinárias\n\n${culinarias.map((c) => `- ${c.nome}: ${c.tipo}`).join('\n')}\n`,
 });
 for (const c of culinarias) {
   const trilha = [['Início', ''], ['Culinárias', 'culinarias/'], [c.nome, `culinarias/${c.slug}/`]];
+  const outras = culinarias.filter((o) => o !== c);
   paginas.push({
     caminho: `culinarias/${c.slug}/`,
     profundidade: 2,
-    titulo: `${c.nome} | ${c.tipo} do grupo Just Burger`,
-    descricao: `${c.nome}: ${c.tipo.toLowerCase()} do grupo Just Burger.`,
+    titulo: `${c.nome} | ${c.tipo} do grupo Just Burger: unidades e pedido`,
+    descricao: `${c.nome}: ${c.tipo.toLowerCase()} do grupo Just Burger em ${(c.lojas || []).map((x) => x.regiao).join(' e ')}. Endereço, horário e pedido no iFood.`,
     noindex: !c.conteudo,
     schema: [schemaBreadcrumb(trilha)],
     corpo: (base) => `
 <section class="secao">
-  <div class="largura estreita">
+  <div class="largura">
     ${migalhas(base, trilha)}
-    ${logoMarca(c) ? `<img class="marca-logo" src="${base}${logoMarca(c)}" width="320" height="320" alt="Logo ${esc(c.nome)}">` : ''}
-    <p class="sobretitulo">${esc(c.tipo)}</p>
-    <h1>${esc(c.nome)}</h1>
-    ${c.conteudo ? c.conteudo.map((t) => `<p>${esc(t)}</p>`).join('') : `<p class="lead">Em breve, tudo sobre a ${esc(c.nome)} aqui: cardápio, unidades e história.</p>`}
-    <div class="acoes"><a class="botao botao-contorno" href="${base}culinarias/">Ver as outras culinárias</a></div>
+    <h1 class="so-leitor">${esc(c.nome)}: ${esc(c.tipo.toLowerCase())} do grupo Just Burger</h1>
+    <div class="marca-destaque lojas-centro">${cartaoMarca(c, base)}</div>
+    ${c.conteudo ? `<div class="largura estreita">${c.conteudo.map((t) => `<p>${esc(t)}</p>`).join('')}</div>` : ''}
+  </div>
+</section>
+<section class="secao">
+  <div class="largura">
+    <h2>Conheça também</h2>
+    <div class="grade-2 lojas-centro">${outras.map((o) => cartaoMarca(o, base)).join('')}</div>
   </div>
 </section>`,
-    md: () => `# ${c.nome}\n\n${c.tipo} do grupo Just Burger.\n`,
+    md: () => `# ${c.nome}\n\n${c.tipo} do grupo Just Burger.\n\n${(c.lojas || []).map((x) => `- ${x.regiao}${x.endereco ? `: ${x.endereco}` : ''} · pedido: ${x.ifood}`).join('\n')}\n`,
   });
 }
 
