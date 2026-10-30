@@ -78,9 +78,12 @@ function cardapioDoIfood(dados) {
   const categorias = [];
   for (const c of dados.categorias) {
     if (/queridinhos/i.test(c.categoria)) continue;
+    if ((site.cardapioOcultar || []).some((o) => semAcentoMin(limpaCategoria(c.categoria)) === semAcentoMin(o))) continue;
+    const soEstes = Object.entries(site.cardapioSoEstes || {}).find(([cat]) => semAcentoMin(limpaCategoria(c.categoria)) === semAcentoMin(cat));
     const itensCat = [];
     for (const bruto of c.itens) {
       const i = limpaItem(bruto);
+      if (soEstes && !soEstes[1].some((t) => semAcentoMin(i.nome).includes(semAcentoMin(t)))) continue;
       const chave = semAcentoMin(`${i.nome} ${i.detalhe}`);
       const ja = vistos.get(chave);
       if (ja) {
@@ -102,6 +105,8 @@ const geo = existsSync(ARQ_BAIRROS) ? JSON.parse(readFileSync(ARQ_BAIRROS, 'utf8
 const bairros = geo ? geo.bairros : [];
 const bairroPorSlug = new Map(bairros.map((b) => [b.slug, b]));
 const bairrosDaLoja = (l) => bairros.filter((b) => b.loja === l.slug);
+// Link do Google Maps pelo endereço da loja (o mesmo do CNPJ e do site).
+for (const l of lojas) if (!pendente(l.endereco)) l.googleMaps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Just Burger, ${l.endereco}, ${l.cidade} - SP`)}`;
 if (geo) for (const l of lojas) l.bairrosAtendidos = bairrosDaLoja(l).slice(0, 8).map((b) => b.nome);
 // Nomes que a vizinhança usa para o bairro da loja entram na página do distrito oficial dela.
 for (const l of lojas) {
@@ -318,13 +323,13 @@ ${corpo(base)}
   <div class="largura rodape-grade">
     <div class="rodape-marca">
       <img src="${base}assets/img/logo-320.webp" width="140" height="117" alt="Just Burger Hamburgueria" loading="lazy">
-      <p>Hambúrguer de 150 g no pão brioche, desde ${esc(site.fundacao)}. Pedidos pelo iFood.</p>
-      ${site.telefoneCentral ? `<p><a class="rodape-social" href="${linkWhats}" rel="noopener">WhatsApp e telefone ${esc(site.telefoneCentral)}</a></p>` : ''}
+      <p>Desde ${esc(site.fundacao)} fazendo o seu burger, o melhor burger de São Paulo.</p>
+      ${site.telefoneCentral ? `<p><a class="rodape-social rodape-whats" href="${linkWhats}" rel="noopener">WhatsApp e telefone<br><strong>${esc(site.telefoneCentral)}</strong></a></p>` : ''}
       ${!pendente(site.instagram) ? `<p><a class="rodape-social" href="${site.instagram}" rel="noopener">Instagram @justburgersp</a></p>` : ''}
     </div>
     <div>
       <h2>Unidades</h2>
-      <ul>${lojas.map((l) => `<li><a href="${base}unidades/${l.slug}/">${esc(l.nome.replace('Just Burger ', ''))}</a><span>${esc(pendente(l.endereco) ? l.bairro : l.endereco)} · ${esc(l.cidade)}</span></li>`).join('')}</ul>
+      <ul>${lojas.map((l) => `<li><a href="${base}unidades/${l.slug}/">${esc(l.nome.replace('Just Burger ', ''))}</a><a class="rodape-endereco" href="${esc(l.googleMaps)}" rel="noopener">${esc(pendente(l.endereco) ? l.bairro : l.endereco)} · ${esc(l.cidade)}</a></li>`).join('')}</ul>
     </div>
     <div>
       <h2>Cardápio</h2>
@@ -349,7 +354,7 @@ ${corpo(base)}
   </div>
 </footer>
 ${janelaPedido(base)}
-${site.whatsapp ? `<a class="whats-flutuante" href="${linkWhats}" rel="noopener" aria-label="Falar com a Just Burger no WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5v-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8 0 1.6 1.2 3.2 1.4 3.4.2.2 2.3 3.6 5.7 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.6-.4z"/></svg></a>` : ''}
+${site.whatsapp ? `<a class="whats-flutuante" href="${linkWhats}" rel="noopener" aria-label="Falar com a Just Burger no WhatsApp">${iconeWhats}</a>` : ''}
 <script src="${base}assets/pedido-dados.js" defer></script>
 <script src="${base}assets/pedido.js" defer></script>
 </body>
@@ -361,6 +366,7 @@ ${site.whatsapp ? `<a class="whats-flutuante" href="${linkWhats}" rel="noopener"
 
 // "Faça seu pedido": abre a janela da busca por CEP (assets/pedido.js). Sem JavaScript, vai para /pedir/.
 const RAIO_KM = 10;
+const iconeWhats = '<svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5v-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8 0 1.6 1.2 3.2 1.4 3.4.2.2 2.3 3.6 5.7 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.6-.4z"/></svg>';
 const linkWhats = site.whatsapp ? `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Olá! Vim pelo site da Just Burger.')}` : '';
 const botaoPedido = (base, classe = 'botao') => `<a class="${classe}" href="${base}pedir/" data-pedido>Faça seu pedido</a>`;
 const buscaCep = (id) => `
@@ -489,7 +495,8 @@ const cartaoLoja = (l, base) => `
   <p>${pendente(l.endereco) ? esc(l.bairro) : `${esc(l.endereco)} · ${esc(l.bairro)}`}<br>${esc(l.cidade)}</p>
   <p class="loja-hora">${l.horarios.map((h) => esc(textoHorario(h))).join('<br>')}</p>
   ${site.avaliacoes && site.avaliacoes.notaInformada ? `<p class="loja-nota" data-nota-loja="${esc(l.nome)}">${nota1(site.avaliacoes.notaInformada)} ★ no iFood</p>` : ''}
-  <p class="loja-acoes"><a class="botao" href="${esc(l.ifood)}" rel="noopener">Fazer pedido</a><a class="link" href="${base}unidades/${l.slug}/">Ver unidade</a></p>
+  ${l.superIfood ? '<p class="selo-super">Super Restaurante iFood</p>' : ''}
+  <p class="loja-acoes"><a class="botao" href="${esc(l.ifood)}" rel="noopener">Fazer pedido</a><a class="link" href="${base}unidades/${l.slug}/">Ver unidade</a>${linkWhats ? `<a class="whats-bolinha" href="${linkWhats}" rel="noopener" aria-label="WhatsApp ${esc(site.telefoneCentral)}">${iconeWhats}</a>` : ''}</p>
 </article>`;
 
 // No cardápio o cartão é a âncora (#id); nos perfis ele aponta para essa âncora.
@@ -609,27 +616,8 @@ const mdLoja = (l) =>
   ].join('\n');
 
 // Mais pedidos: os itens com selo "Top N mais vendido", na ordem; sem selo, os destaques do 1º perfil.
-// Destaque da home (site.destaque): foto do produto, texto da diretoria e botões.
+// Produto do destaque do topo da home (site.destaque).
 const itemDestaque = () => site.destaque && [...itens.values()].find((i) => semAcento(i.nome).includes(semAcento(site.destaque.produto)) && foto(i.id));
-const blocoDestaque = (base) => {
-  const d = site.destaque, i = itemDestaque();
-  if (!i) return '';
-  return `
-<section class="secao destaque" aria-labelledby="destaque-titulo">
-  <div class="largura destaque-grade">
-    <img class="destaque-foto" src="${base}${foto(i.id)}" width="1200" height="900" loading="lazy" decoding="async" alt="${esc(i.nome)}, burger da Just Burger">
-    <div class="destaque-texto">
-      <p class="sobretitulo">${esc(i.nome)}${i.selo ? ` · ${esc(i.selo)}` : ''}</p>
-      <h2 id="destaque-titulo">${esc(d.titulo)}</h2>
-      <p class="lead">${esc(d.texto)}</p>
-      <p class="destaque-frase">${esc(d.frase)}</p>
-      ${i.proteina ? `<p class="suave">Proteína (aproximada): ${esc(i.proteina.total)} por ${esc(i.proteina.por)}</p>` : ''}
-      <div class="acoes">${botaoPedido(base)}<a class="botao botao-contorno" href="${base}cardapio/#${i.id}">Ver no cardápio</a></div>
-    </div>
-  </div>
-</section>`;
-};
-
 const maisPedidos = () => {
   const top = [...itens.values()].filter((i) => i.selo).sort((a, b) => parseInt(a.selo.replace(/\D/g, '')) - parseInt(b.selo.replace(/\D/g, '')));
   return (top.length >= 3 ? top : destaquesHome()).slice(0, 3);
@@ -703,21 +691,19 @@ paginas.push({
   <div class="largura heroi-grade">
     <div class="heroi-texto">
       <p class="sobretitulo">Desde ${esc(site.fundacao)} · Grande São Paulo</p>
-      <h1>150 g de carne.<br>Pão brioche.<br><span>Molho Just.</span></h1>
-      <p class="lead">Hambúrguer feito na hora nas unidades da Zona Leste, Pirituba, Guarulhos e São Bernardo do Campo, com entrega pelo iFood.</p>
-      <div class="acoes">
-        ${botaoPedido(base)}
-        <a class="botao botao-contorno" href="${base}cardapio/">Ver o cardápio</a>
-      </div>
+      ${site.destaque ? `<h1><span class="so-leitor">Just Burger, hamburgueria em São Paulo: </span>${esc(site.destaque.produto)}</h1>
+      <p class="heroi-ingredientes">${site.destaque.ingredientes.map((t, k, a) => k === a.length - 1 ? `<span>${esc(t)}.</span>` : `${esc(t)}.`).join('<br>')}</p>
+      <h2 class="heroi-sub">${esc(site.destaque.titulo)}</h2>
+      <p class="lead">${esc(site.destaque.texto)}</p>
+      <p class="destaque-frase">${esc(site.destaque.frase)}</p>` : `<h1>150 g de carne.<br>Pão brioche.<br><span>Molho Just.</span></h1>`}
     </div>
     ${temHeroi
-      ? `<figure class="heroi-burger-caixa"><img class="heroi-burger" src="${base}${imagemHeroi}" width="1000" height="1000" alt="${esc(itemHeroi ? `${itemHeroi.nome}, burger da Just Burger` : site.heroi.alt)}" fetchpriority="high">${itemHeroi ? `<figcaption>${esc(itemHeroi.nome)}${itemHeroi.selo ? ` · ${esc(itemHeroi.selo)}` : ''}</figcaption>` : ''}</figure>`
+      ? `<figure class="heroi-burger-caixa"><img class="heroi-burger" src="${base}${imagemHeroi}" width="1000" height="1000" alt="${esc(itemHeroi ? `${itemHeroi.nome}, burger da Just Burger` : site.heroi.alt)}" fetchpriority="high">${itemHeroi ? `<figcaption>${esc(itemHeroi.nome)}</figcaption>` : ''}</figure>`
       : `<img class="heroi-logo" src="${base}assets/img/logo-640.webp" srcset="${base}assets/img/logo-320.webp 320w, ${base}assets/img/logo-640.webp 640w" sizes="(min-width: 900px) 420px, 70vw" width="640" height="536" alt="Just Burger Hamburgueria" fetchpriority="high">`}
   </div>
 </section>
 
 ${site.contador ? blocoContador() : ''}
-${blocoDestaque(base)}
 
 <section class="secao">
   <div class="largura">
@@ -748,7 +734,6 @@ ${blocoDestaque(base)}
   <div class="largura">
     <div class="titulo-secao">
       <h2>Nossas unidades</h2>
-      ${geo ? `<a class="link" href="${base}entrega/">Entregamos em ${bairros.length} bairros</a>` : ''}
     </div>
     <div class="grade-lojas">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
   </div>
@@ -1129,6 +1114,15 @@ ${midiaOrdenada.map((m) => `- **${m.titulo}** — ${m.veiculo}${m.data ? `, ${da
 `,
 });
 
+// Nossa história: só fatos confirmados pela diretoria ou em fonte pública. Os episódios do
+// Falando de Delivery (midia) contam o resto, até a transcrição virar texto aqui.
+const historia = [
+  `A Just Burger nasceu em ${new Date(site.fundacaoData + 'T12:00:00').toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}, na Zona Leste de São Paulo, pensada desde o primeiro dia para o delivery. Por trás dela estão Maikon e Juliana, casal que toca o negócio junto.`,
+  `A base de tudo é hambúrguer de 150 g, pão brioche e o Molho Just, montado na hora. Da matriz na Vila Buenos Aires, a Just chegou a Pirituba, Guarulhos e São Bernardo do Campo, e já passou de ${fmtInt(site.contador.basePedidos)} pedidos.`,
+  'No iFood, a nota é 4,9, e as unidades de Pirituba e São Bernardo do Campo têm o selo Super Restaurante. Em 2021, no Dia do Hambúrguer, a Just Burger e a Coca-Cola lançaram um lanche com QR code no pão para incentivar doações contra a fome.',
+];
+const videosHistoria = () => midia.filter((m) => m.youtube && /falando de delivery/i.test(m.veiculo));
+
 paginas.push({
   caminho: 'sobre/',
   profundidade: 1,
@@ -1141,10 +1135,16 @@ paginas.push({
     ${migalhas(base, [['Início', ''], ['Sobre', 'sobre/']])}
     <h1>Sobre a Just Burger</h1>
     <p class="lead">A Just Burger começou em ${esc(site.fundacao)} na Zona Leste de São Paulo, no delivery, e hoje tem quatro unidades na Grande São Paulo.</p>
-    <p>PREENCHER: a história em 2 ou 3 parágrafos — como começou, quem está por trás, o que mudou na receita, quantas pessoas fazem a Just Burger hoje. Texto próprio e verdadeiro pesa mais para o Google (e para quem lê) do que qualquer frase de efeito.</p>
+    ${historia.map((t) => `<p>${esc(t)}</p>`).join('')}
   </div>
-</section>`,
-  md: () => `# Sobre a ${site.nome}\n\nA Just Burger começou em ${site.fundacao} na Zona Leste de São Paulo, no delivery, e hoje tem quatro unidades na Grande São Paulo.\n`,
+</section>
+${videosHistoria().length ? `<section class="secao">
+  <div class="largura">
+    <h2>Assista à nossa história</h2>
+    <div class="grade-midia">${videosHistoria().map((m) => cartaoMidia(m, base)).join('')}</div>
+  </div>
+</section>` : ''}`,
+  md: () => `# Sobre a ${site.nome}\n\nA Just Burger começou em ${site.fundacao} na Zona Leste de São Paulo, no delivery, e hoje tem quatro unidades na Grande São Paulo.\n\n${historia.join('\n\n')}\n\n${videosHistoria().map((m) => `- ${m.titulo}: ${m.url}`).join('\n')}\n`,
 });
 
 paginas.push({

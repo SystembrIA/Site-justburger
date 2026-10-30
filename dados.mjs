@@ -23,6 +23,9 @@ export const site = {
   // Preço em site é oferta (CDC art. 30) e envelhece rápido. Com false, o site mostra
   // "ver preço no iFood"; os preços continuam só nos dados para robôs (dados.json).
   mostrarPrecos: false,
+  // Cardápio do site (diretoria, 30/10/2026): sem energéticos; em Bebidas, só a Pink Lemonade.
+  cardapioOcultar: ['Energéticos'],
+  cardapioSoEstes: { Bebidas: ['pink lemonade'] },
   faixaPreco: '$$',
   googleSiteVerification: '',
   // Páginas de bairro pequeno sem sub-bairros saem com noindex (risco de "página-isca" no Google).
@@ -46,10 +49,11 @@ export const site = {
   // Burger flutuando no topo da home: recorte (sem fundo) do produto com este nome, gerado pelo robô
   // a partir da foto do iFood. Sem recorte, usa `imagem` (PNG/WebP transparente) e, sem ela, o logo.
   heroi: { produto: 'Dolce Gabana', imagem: 'assets/img/heroi-dolce-gabana.webp', alt: 'Dolce Gabana, burger da Just Burger' },
-  // Bloco de destaque da home, logo depois dos números (texto da diretoria, 30/10/2026).
+  // Destaque do topo da home (texto da diretoria, 30/10/2026).
   // Nome sempre como no iFood ("Dolce Gabana"), sem a grafia da marca de moda.
   destaque: {
     produto: 'Dolce Gabana',
+    ingredientes: ['150 g de carne', 'Pão brioche', 'Gorgonzola', 'Geleia de damasco'],
     titulo: 'Uma explosão de sabores',
     texto: 'O gorgonzola cremoso derrete sobre o hambúrguer de 150 g e encontra a geleia de damasco: o doce que equilibra o salgado. Por cima, bacon fatiado e farofa de bacon crocante, tudo no pão brioche com mayo e Molho Just.',
     frase: 'Gorgonzola e geleia de damasco: a combinação perfeita.',
@@ -104,6 +108,7 @@ export const lojas = [
     bairro: 'Pirituba',
     preposicao: 'em',
     termoBusca: 'em Pirituba',
+    superIfood: true, // Super Restaurante iFood (nível 5 de 5, jun-ago/2026, painel do Hub)
     cidade: 'São Paulo',
     regiao: 'Zona Norte', // Prefeitura de SP (GeoSampa): distrito Pirituba, região Norte 2
     endereco: 'Av. Raimundo Pereira de Magalhães, 3850', // CNPJ 31.394.735/0004-13 (Receita Federal), Jardim Íris
@@ -142,6 +147,7 @@ export const lojas = [
     bairro: 'Baeta Neves',
     preposicao: 'em',
     termoBusca: 'em São Bernardo do Campo',
+    superIfood: true, // Super Restaurante iFood (nível 5 de 5, jun-ago/2026, painel do Hub)
     cidade: 'São Bernardo do Campo',
     regiao: 'ABC Paulista',
     endereco: 'Av. Getúlio Vargas, 600', // CNPJ 31.394.735/0002-51 (Receita Federal), lotes 38 e 39
@@ -304,6 +310,42 @@ export const faq = [
 // tipo: 'materia' | 'video' | 'guia' | 'case'. Para vídeo do YouTube, preencher youtube: '<id>' (a capa vem sozinha).
 // imagem: só foto PRÓPRIA da Just (assets/img/midia/...) ou com autorização do veículo.
 export const midia = [
+  {
+    tipo: 'video',
+    veiculo: 'Falando de Delivery · YouTube',
+    titulo: 'Ep 01 | Just Burger e Kitchen Central: como bombar de vender no delivery da forma certa',
+    data: '2021',
+    url: 'https://www.youtube.com/watch?v=xjfp81p9lsE',
+    youtube: 'xjfp81p9lsE',
+    resumo: 'O primeiro episódio do podcast Falando de Delivery conta a história da Just Burger.',
+  },
+  {
+    tipo: 'video',
+    veiculo: 'Falando de Delivery · YouTube',
+    titulo: 'Ep 44 | Como empreender em casal ou família? (Juliana e Maikon da Just Burger)',
+    data: '2023',
+    url: 'https://www.youtube.com/watch?v=9rHGvTRfxHs',
+    youtube: '9rHGvTRfxHs',
+    resumo: 'Juliana e Maikon, fundadores da Just Burger, falam sobre tocar o negócio juntos.',
+  },
+  {
+    tipo: 'video',
+    veiculo: 'iFood para Parceiros · YouTube',
+    titulo: 'Como a Just Burger se diferenciou da concorrência e escalou no delivery',
+    data: '2025',
+    url: 'https://www.youtube.com/watch?v=3LWBLZ1NZ-8',
+    youtube: '3LWBLZ1NZ-8',
+    resumo: 'O canal oficial do iFood para restaurantes mostra como a Just Burger cresceu no delivery.',
+  },
+  {
+    tipo: 'video',
+    veiculo: 'Hambúrguer Perfeito · YouTube',
+    titulo: 'Invadimos o Just Burger, sensação do delivery paulistano',
+    data: '2021',
+    url: 'https://www.youtube.com/watch?v=a742uPTdHss',
+    youtube: 'a742uPTdHss',
+    resumo: 'Visita à cozinha da Just Burger na Zona Leste de São Paulo.',
+  },
   {
     tipo: 'case',
     veiculo: 'iFood · Blog de Parceiros',

@@ -110,9 +110,9 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 .numero { margin: 0; font-size: clamp(2rem, 5.4vw, 3.6rem); line-height: 1; font-weight: 900; font-stretch: 70%; font-variant-numeric: tabular-nums; letter-spacing: -.01em; white-space: nowrap; }
 .numero .estrela { color: var(--laranja); font-size: .7em; margin-left: .12em; vertical-align: .12em; }
 .numero-rotulo { margin: .35em 0 0; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--suave); }
-.numeros-vivo { margin: 20px auto 0; display: flex; align-items: center; gap: 8px; font-size: .8rem; font-weight: 600; color: var(--suave); }
+.numeros-vivo { margin: 26px auto 0; display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.05rem; font-weight: 700; color: var(--branco); text-align: center; }
 .numeros-vivo[hidden] { display: none; }
-.ao-vivo { width: 8px; height: 8px; border-radius: 50%; background: #d4291f; animation: pulsa 1.6s ease-in-out infinite; }
+.ao-vivo { flex: none; width: 14px; height: 14px; box-shadow: 0 0 12px rgba(212, 41, 31, .8); border-radius: 50%; background: #d4291f; animation: pulsa 1.6s ease-in-out infinite; }
 @keyframes pulsa { 50% { opacity: .25; } }
 
 /* ---------- Produtos (destaques) ---------- */
@@ -315,9 +315,24 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 .whats-flutuante { position: fixed; right: 16px; bottom: 16px; z-index: 50; display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%; background: #25d366; color: #fff; box-shadow: 0 6px 20px rgba(0, 0, 0, .45); }
 .whats-flutuante:hover { background: #1ebe5a; }
 
-/* ---------- Destaque da home ---------- */
-.destaque-grade { display: grid; gap: 28px; align-items: center; }
-.destaque-foto { width: 100%; height: auto; border-radius: 14px; }
-.destaque-texto h2 { font-size: clamp(2.2rem, 7vw, 3.6rem); margin: .1em 0 .35em; }
-.destaque-frase { margin: 1em 0; font-stretch: 75%; font-weight: 900; text-transform: uppercase; font-size: clamp(1.3rem, 4vw, 1.8rem); line-height: 1.1; color: var(--laranja); }
-@media (min-width: 900px) { .destaque-grade { grid-template-columns: 1.1fr 1fr; gap: 56px; } }
+/* ---------- Destaque do topo (produto) ---------- */
+.so-leitor { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.heroi-ingredientes { margin: .2em 0 .6em; font-stretch: 70%; font-weight: 900; text-transform: uppercase; font-size: clamp(1.7rem, 4.6vw, 3rem); line-height: 1.02; color: var(--branco); }
+.heroi-ingredientes span { color: var(--laranja); }
+.heroi-sub { margin: 1.2em 0 .3em; font-size: clamp(1.5rem, 3.6vw, 2.1rem); }
+.destaque-frase { margin: 1em 0 0; font-stretch: 75%; font-weight: 900; text-transform: uppercase; font-size: clamp(1.2rem, 3.4vw, 1.6rem); line-height: 1.1; color: var(--laranja); }
+
+/* ---------- Unidades: selo e WhatsApp ---------- */
+.selo-super { display: inline-flex; align-items: center; gap: 6px; margin: .5em 0 0 !important; padding: 5px 12px; border-radius: 999px; background: #ea1d2c; color: #fff !important; font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.selo-super::before { content: '★'; }
+.whats-bolinha { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #25d366; color: #fff; flex: none; }
+.whats-bolinha svg { width: 24px; height: 24px; }
+.whats-bolinha:hover { background: #1ebe5a; }
+.rodape-whats strong { font-size: 1.15em; letter-spacing: .02em; }
+.rodape-endereco { color: inherit; text-decoration: none; }
+.rodape-endereco:hover { text-decoration: underline; }
+
+/* Dois botões sempre lado a lado, também no celular */
+.acoes { flex-wrap: nowrap; }
+.acoes .botao { flex: 0 1 auto; white-space: nowrap; }
+@media (max-width: 520px) { .acoes .botao { padding-inline: 16px; font-size: .78rem; min-height: 46px; } }
