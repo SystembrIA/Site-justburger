@@ -28,6 +28,22 @@ const pendente = (v) => !v || String(v).includes('PREENCHER');
 const listaCidades = 'São Paulo, Guarulhos e São Bernardo do Campo';
 const juntar = (lista) => (lista.length > 1 ? `${lista.slice(0, -1).join(', ')} e ${lista.at(-1)}` : lista.join(''));
 
+// Horário curto para o cartão da loja: dias em sequência viram faixa ("Dom a qui · 11h às 23h").
+const SEMANA = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+const CURTO = { Su: 'Dom', Mo: 'Seg', Tu: 'Ter', We: 'Qua', Th: 'Qui', Fr: 'Sex', Sa: 'Sáb' };
+const hora = (t) => (t === '00:00' ? 'meia-noite' : t.endsWith(':00') ? `${+t.slice(0, 2)}h` : `${+t.slice(0, 2)}h${t.slice(3)}`);
+function textoHorarioCurto(h) {
+  if (h.dias.length === 7) return `Todos os dias · ${hora(h.abre)} ${h.fecha === '00:00' ? 'à' : 'às'} ${hora(h.fecha)}`;
+  const tem = SEMANA.map((d) => h.dias.includes(d));
+  const ini = tem.findIndex((x, i) => x && !tem[(i + 6) % 7]); // começo de uma sequência (a semana é circular)
+  const faixas = [];
+  for (let k = 0, i = ini; k < 7; k++, i = (i + 1) % 7) {
+    if (!tem[i]) continue;
+    if (faixas.length && faixas.at(-1).fim === (i + 6) % 7) faixas.at(-1).fim = i; else faixas.push({ ini: i, fim: i });
+  }
+  const dias = faixas.map(({ ini: a, fim: b }) => (a === b ? CURTO[SEMANA[a]] : (b - a + 7) % 7 === 1 ? `${CURTO[SEMANA[a]]} e ${CURTO[SEMANA[b]].toLowerCase()}` : `${CURTO[SEMANA[a]]} a ${CURTO[SEMANA[b]].toLowerCase()}`)).join(', ');
+  return `${dias} · ${hora(h.abre)} ${h.fecha === '00:00' ? 'à' : 'às'} ${hora(h.fecha)}`;
+}
 function textoHorario(h) {
   const dias = h.dias.length === 7 ? 'Todos os dias' : h.dias.map((d) => DIAS[d]).join(', ');
   return h.fecha === '00:00' ? `${dias}, das ${h.abre} até meia-noite` : `${dias}, das ${h.abre} às ${h.fecha}`;
@@ -627,7 +643,7 @@ const cartaoLoja = (l, base) => `
 <article class="loja">
   <h3><a href="${base}unidades/${l.slug}/">${esc(l.nome.replace('Just Burger ', ''))}</a></h3>
   <p class="loja-endereco">${esc(enderecoCurto(l))}</p>
-  <p class="loja-hora">${l.horarios.map((h) => esc(textoHorario(h))).join('<br>')}</p>
+  <p class="loja-hora">${l.horarios.map((h) => `<span>${esc(textoHorarioCurto(h))}</span>`).join('')}</p>
   <div class="loja-reputacao">
     ${site.avaliacoes && site.avaliacoes.notaInformada ? `<p class="loja-nota" data-nota-loja="${esc(l.nome)}">${nota1(site.avaliacoes.notaInformada)} <span class="estrela-dourada" aria-hidden="true">★</span> no iFood</p>` : ''}
     ${l.superIfood ? seloSuper : ''}
@@ -890,7 +906,9 @@ ${blocoCulinarias(base)}
 
 <section class="secao secao-clara">
   <div class="largura">
+    <h2 class="midia-titulo">Na mídia</h2>
     ${citacaoMidia(base)}
+    ${midia.find((m) => m.youtube === site.videoMidia) ? `<div class="video-midia"><iframe src="https://www.youtube-nocookie.com/embed/${site.videoMidia}" title="${esc(midia.find((m) => m.youtube === site.videoMidia).titulo)}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>` : ''}
     <p class="visto-em-rotulo">Visto em</p>
     <ul class="visto-em">${[...new Map(midiaOrdenada.map((m) => [m.veiculo.split(' · ')[0], m])).values()].map((m) => `<li><a href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.veiculo.split(' · ')[0])}</a></li>`).join('')}</ul>
   </div>

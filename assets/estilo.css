@@ -491,3 +491,18 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .menu-celular .submenu summary::after { content: '+'; flex: none; font-size: 1.8rem; }
 .menu-celular .submenu[open] summary::after { content: '–'; }
 .menu-celular .submenu summary { font-size: 1.4rem; white-space: nowrap; }
+
+/* Cartão da loja: horário curto, uma linha por faixa */
+.loja-hora span { display: block; white-space: nowrap; }
+/* Três botões da loja do mesmo tamanho */
+.loja-acoes .botao, .acoes-loja .botao { flex: 1 1 0; min-width: 0; }
+.loja-acoes .botao-mapa, .acoes-loja .botao-mapa { min-width: 0; }
+/* Modelo centralizado (site.lojasCentralizadas) */
+.lojas-centro .loja { text-align: center; }
+.lojas-centro .loja-reputacao { justify-content: center; }
+.lojas-centro .loja-acoes { justify-content: center; }
+/* Na mídia: título e vídeo */
+.midia-titulo { margin: 0 0 .6em; }
+.citacao + .video-midia, .video-midia { margin-top: 18px; }
+.video-midia { position: relative; aspect-ratio: 16 / 9; margin: 0 0 26px; border-radius: 14px; overflow: hidden; background: #000; }
+.video-midia iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }

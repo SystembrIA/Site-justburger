@@ -23,6 +23,8 @@ export const site = {
   tiktok: '', // PREENCHER: link do perfil oficial no TikTok (vazio = não aparece)
   // 4 últimas postagens do Instagram (robô instagram-site.py do just-burger-producao, API oficial).
   // Sem o arquivo (robô sem token), a home mostra só o botão para seguir.
+  // Vídeo que aparece tocável em "Na mídia" na home (os outros ficam como links).
+  videoMidia: 'a742uPTdHss', // Hambúrguer Perfeito: "Invadimos o Just Burger"
   instagramPosts: 'https://systembria.github.io/just-burger-producao/site-dados/instagram-just-burger.json',
   pedidoMinimo: '20,00', // conferir: valor mostrado no iFood
   // Preço em site é oferta (CDC art. 30) e envelhece rápido. Com false, o site mostra
