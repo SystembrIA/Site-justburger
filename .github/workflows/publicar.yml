@@ -1,6 +1,6 @@
 name: Publicar site
 
-# Gera o site (node build.mjs) e publica a pasta publico/ no GitHub Pages.
+# Gera o site (node build.mjs) e publica a pasta publico/ na branch gh-pages (GitHub Pages).
 # Todo dia, depois do robô do just-burger-producao (06:17), traz antes o cardápio,
 # as fotos tratadas e a nota do iFood (importar-cardapio.py). Sem dado novo, publica o que já tem.
 on:
@@ -11,19 +11,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write   # publica o site pronto na branch gh-pages
 
 concurrency:
-  group: pages
+  group: publicar
   cancel-in-progress: false
 
 jobs:
   publicar:
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -45,13 +40,14 @@ jobs:
       - name: Gerar o site
         run: node build.mjs
 
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true   # liga o Pages (fonte: GitHub Actions) se ainda estiver desligado
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: publico
-
-      - id: deploy
-        uses: actions/deploy-pages@v4
+      # O GitHub Pages serve a branch gh-pages (Settings → Pages → Source: Deploy from a branch, gh-pages).
+      - name: Publicar na branch gh-pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd publico
+          touch .nojekyll
+          git init -q -b gh-pages
+          git add -A
+          git -c user.name="Robo Site Just Burger" -c user.email="robo@justburger.com.br" commit -q -m "Site gerado de ${GITHUB_SHA::7}"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages

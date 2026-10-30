@@ -5,7 +5,7 @@ e sem JavaScript no navegador. Isso é o que deixa o site rápido (nota máxima 
 
 ## Publicação
 
-O workflow `.github/workflows/publicar.yml` gera o site e publica no GitHub Pages a cada push na `main`
+O workflow `.github/workflows/publicar.yml` gera o site e publica na branch `gh-pages` (GitHub Pages) a cada push na `main`
 e todo dia às 06:47 (depois do robô do `just-burger-producao`, trazendo cardápio, fotos e nota do iFood).
 A pasta `publico/` não vai para o repositório: é gerada na publicação.
 
