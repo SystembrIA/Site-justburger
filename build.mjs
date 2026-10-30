@@ -309,7 +309,9 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="${base}assets/img/favicon.ico" sizes="any">
 <link rel="icon" href="${base}assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="${base}assets/img/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="${base}assets/img/apple-touch-icon.png">
 <link rel="manifest" href="${base}site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
