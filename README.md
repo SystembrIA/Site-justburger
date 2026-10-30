@@ -9,7 +9,7 @@ O workflow `.github/workflows/publicar.yml` gera o site e publica na branch `gh-
 e todo dia às 06:47 (depois do robô do `just-burger-producao`, trazendo cardápio, fotos e nota do iFood).
 A pasta `publico/` não vai para o repositório: é gerada na publicação.
 
-- Endereço provisório: https://systembria.github.io/site-justburger/ (com `noindex` até `site.publicado = true`).
+- Endereço provisório: https://systembria.github.io/Site-justburger/ (o caminho diferencia maiúsculas) (com `noindex` até `site.publicado = true`).
 - Domínio: Settings → Pages → Custom domain (publicando por Actions, o domínio fica nas configurações do
   repositório, sem arquivo CNAME) e apontar o DNS do domínio para o GitHub Pages.
 

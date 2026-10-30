@@ -87,7 +87,7 @@ function schemaOrganizacao() {
     alternateName: site.nomeIfood,
     url: abs(''),
     logo: abs('assets/img/icon-512.png'),
-    ...(site.fundacao && { foundingDate: site.fundacao }),
+    ...((site.fundacaoData || site.fundacao) && { foundingDate: site.fundacaoData || site.fundacao }),
     ...(!pendente(site.instagram) && { sameAs: [site.instagram] }),
     ...(site.emailContato && { email: site.emailContato }),
     ...(site.telefoneCentral && { telephone: site.telefoneCentral }),

@@ -11,7 +11,8 @@ export const site = {
   // false = páginas saem com "noindex" (Google não indexa). Só trocar para true
   // quando todos os PREENCHER estiverem resolvidos e o domínio estiver no ar.
   publicado: false,
-  fundacao: '2018', // conferir: CNPJ 31.394.735/0001-70 aberto em 31/08/2018; o blog do iFood fala em "início da pandemia" (2020)
+  fundacao: '2018', // ano que aparece nos textos ("desde 2018")
+  fundacaoData: '2018-10-04', // data de nascimento da Just Burger, informada pela diretoria (vai no schema)
   telefoneCentral: '', // PREENCHER (formato +55 11 9XXXX-XXXX) ou deixar vazio
   emailContato: '', // PREENCHER (ex.: contato@justburger.com.br) ou deixar vazio
   instagram: 'https://www.instagram.com/justburgersp/',
@@ -28,8 +29,8 @@ export const site = {
   // lanches = (base de pedidos + pedidos prontos desde então) × lanchesPorPedido.
   contador: {
     url: 'https://justburger-producao-e9b27-default-rtdb.firebaseio.com/site_publico/contador.json',
-    basePedidos: 3100000, // informado pelo Maikon em 30/10/2026
-    lanchesPorPedido: 2.4, // conferir: 2,4 ou 2,5? (as duas aparecem no pedido)
+    basePedidos: 3100000, // informado pela diretoria em 30/10/2026
+    lanchesPorPedido: 2.5, // média informada pela diretoria
     rotuloPedidos: 'pedidos feitos',
     rotuloLanches: 'lanches vendidos',
   },
@@ -37,7 +38,7 @@ export const site = {
   // notaInformada: aparece já no HTML (todas as lojas) até o robô trazer a nota e a quantidade do iFood.
   avaliacoes: {
     url: 'https://systembria.github.io/just-burger-producao/site-dados/avaliacoes-just-burger.json',
-    notaInformada: 4.9, // nota no iFood das 4 lojas, informada pelo Maikon em 30/10/2026
+    notaInformada: 4.9, // nota no iFood das 4 lojas, informada pela diretoria em 30/10/2026
   },
   // Burger flutuando no topo da home: recorte (sem fundo) do produto com este nome, gerado pelo robô
   // a partir da foto do iFood. Sem recorte, usa `imagem` (PNG/WebP transparente) e, sem ela, o logo.
@@ -75,10 +76,10 @@ export const lojas = [
     termoBusca: 'na Zona Leste', // como a página se apresenta no título
     cidade: 'São Paulo',
     regiao: 'Zona Leste',
-    endereco: 'PREENCHER', // conflito na internet: Rua Santa Germana, 152 (Guia do Hambúrguer) x Rua Peixoto, 156 (Delivery Direto) — definir UM e corrigir nos outros
-    cep: 'PREENCHER',
+    endereco: 'Rua Peixoto, 156', // endereço oficial (diretoria, 30/10/2026); corrigir o Guia do Hambúrguer, que mostra R. Santa Germana, 152
+    cep: '03627-010',
     telefone: '(11) 2682-0227', // conferir: telefone do Guia do Hambúrguer
-    geo: { lat: -23.5125411, lng: -46.5049994 }, // conferir: coordenadas do Guia do Hambúrguer
+    geo: { lat: -23.5114779, lng: -46.5052967 }, // Rua Peixoto (OpenStreetMap); conferir o pino exato no Google Maps
     ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-hamburgueria-lanches--dog-vila-buenos-aires/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de',
     googleMaps: 'https://maps.google.com/?q=Just+Burger+Hamburgueria+Vila+Buenos+Aires+São+Paulo',
     horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '18:00', fecha: '23:30' }], // PREENCHER: o iFood mostra abertura às 18h; confirmar fechamento
