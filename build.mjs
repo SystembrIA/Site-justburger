@@ -5,7 +5,7 @@
 import { mkdirSync, writeFileSync, cpSync, rmSync, existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { site, diferenciais, lojas, cardapio as cardapioDados, perfis, faq, midia } from './dados.mjs';
+import { site, diferenciais, lojas, cardapio as cardapioDados, perfis, faq, midia, culinarias } from './dados.mjs';
 import { receitaDe } from './proteina.mjs';
 
 const RAIZ = dirname(fileURLToPath(import.meta.url));
@@ -310,7 +310,7 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
     <details class="menu-celular">
       <summary aria-label="Abrir menu"><span></span><span></span><span></span></summary>
       <nav aria-label="Menu">
-        <ul>${nav.map(([n, c]) => `<li><a href="${base}${c}">${n}</a></li>`).join('')}<li><a href="${base}entrega/">Onde entregamos</a></li></ul>
+        <ul><li><a href="${base}">Início</a></li>${nav.map(([n, c]) => `<li><a href="${base}${c}">${n}</a></li>`).join('')}<li><a href="${base}entrega/">Onde entregamos</a></li></ul>
         ${botaoPedido(base)}
       </nav>
     </details>
@@ -445,8 +445,8 @@ const fmtInt = (v) => Math.round(v).toLocaleString('pt-BR');
 const nota1 = (v) => Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 const slug = (t) => semAcentoMin(t).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 // Placar de aeroporto: cada dígito é uma plaquinha que vira. No HTML já vai o número base (Google, IA
-// e quem está sem JavaScript leem). Ao aparecer na tela, todas as plaquinhas giram e param da esquerda
-// para a direita; depois, a cada pedido ao vivo, só viram as que mudaram.
+// e quem está sem JavaScript leem). Toda vez que aparece na tela, todas as plaquinhas giram e param da
+// esquerda para a direita; entre uma e outra, a cada pedido ao vivo, só viram as que mudaram.
 const placarHtml = (n, rotulo) => `<div class="placar" role="img" aria-label="${fmtInt(n)} ${esc(rotulo)}" data-valor="${Math.round(n)}">${
   fmtInt(n).split('').map((c) => (c === '.' ? '<span class="ponto">.</span>' : `<span class="flap" data-d="${c}"><span class="metade cima"><span>${c}</span></span><span class="metade baixo"><span>${c}</span></span><span class="aba aba-cima"><span>${c}</span></span><span class="aba aba-baixo"><span>${c}</span></span></span>`)).join('')
 }</div>`;
@@ -470,7 +470,7 @@ const blocoContador = () => {
   var el = document.getElementById('contador'), placares = el.querySelectorAll('.placar');
   var vivo = el.querySelector('[data-vivo]'), hora = el.querySelector('[data-hora]'), d = {};
   var calmo = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var pronto = false, pendente = null;
+  var pronto = false, girando = false;
   function texto(f, sel, v) { f.querySelector(sel + ' span').textContent = v; }
   function vira(f, novo, rapido) {
     var velho = f.dataset.d; if (velho === novo) return;
@@ -506,11 +506,13 @@ const blocoContador = () => {
     if (!d || !d.atualizadoEm) return;
     hora.textContent = new Date(d.atualizadoEm).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' });
     vivo.hidden = false;
-    if (!pronto) return;
+    if (!pronto || girando) return;
     var v = valores(); mostra(placares[0], v[0]); mostra(placares[1], v[1]);
   }
+  // Toda vez que o placar entra na tela: todas as plaquinhas giram juntas e param da esquerda para a direita.
   function comeca() {
-    if (pronto) return; pronto = true;
+    if (girando) return; pronto = true; girando = true;
+    setTimeout(function () { girando = false; atualiza(); }, 700 + 9 * 220 + 400);
     var v = valores();
     [0, 1].forEach(function (k) {
       var fim = Math.round(v[k]).toLocaleString('pt-BR').replace(/\\D/g, '');
@@ -519,7 +521,7 @@ const blocoContador = () => {
     });
   }
   if ('IntersectionObserver' in window && !calmo) {
-    var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); comeca(); } }, { threshold: 0.4 });
+    var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) comeca(); }, { threshold: 0.4 });
     io.observe(el);
   } else pronto = true;
   function evento(e) {
@@ -560,18 +562,33 @@ const blocoAvaliacoes = () => `
 })();
 </script>`;
 
+// Outras marcas do grupo (dados.mjs → culinarias). Logo em assets/img/marcas/<slug>.webp quando houver;
+// sem logo, o nome escrito. Página de cada marca: em breve (material da diretoria).
+const blocoCulinarias = () => (culinarias.length ? `
+<section class="secao culinarias" aria-labelledby="culinarias-titulo">
+  <div class="largura">
+    <h2 id="culinarias-titulo">Conheça nossas culinárias</h2>
+    <div class="grade-culinarias">${culinarias.map((c) => {
+      const logo = existsSync(join(RAIZ, 'assets/img/marcas', `${c.slug}.webp`)) ? `assets/img/marcas/${c.slug}.webp` : null;
+      return `<div class="culinaria">${logo ? `<img src="./${logo}" width="320" height="320" loading="lazy" alt="${esc(c.nome)}">` : `<p class="culinaria-nome">${esc(c.nome)}</p>`}<p class="culinaria-tipo">${esc(c.tipo)}</p><p class="culinaria-breve">Em breve</p></div>`;
+    }).join('')}</div>
+  </div>
+</section>` : '');
 // Selo Super Restaurante iFood (só nas lojas com superIfood: nível 5 de 5 no painel do iFood).
-const seloSuper = `<div class="selo-super" role="img" aria-label="Somos um Super Restaurante no iFood"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#ea1d2c"/><path d="M50.0,24.0 L56.8,42.7 L76.6,43.3 L60.9,55.6 L66.5,74.7 L50.0,63.5 L33.5,74.7 L39.1,55.6 L23.4,43.3 L43.2,42.7Z" fill="#fff"/></svg><p><span>Somos um</span><em>super</em><span>restaurante</span></p></div>`;
+const seloSuper = `<div class="selo-super" role="img" aria-label="Somos um Super Restaurante no iFood"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#ea1d2c"/><path d="M50.0,24.0 L56.8,42.7 L76.6,43.3 L60.9,55.6 L66.5,74.7 L50.0,63.5 L33.5,74.7 L39.1,55.6 L23.4,43.3 L43.2,42.7Z" fill="#fff"/></svg><p><span>Somos um</span> <em>super</em> <span>restaurante</span></p></div>`;
 // Botões de cada loja: pedido no iFood da loja, WhatsApp e Google Maps.
 const acoesLoja = (l) => `<a class="botao" href="${esc(l.ifood)}" rel="noopener">Faça seu pedido</a>${linkWhats ? `<a class="botao botao-whats" href="${linkWhats}" rel="noopener">${iconeWhats}WhatsApp</a>` : ''}<a class="botao botao-contorno botao-mapa" href="${esc(l.googleMaps)}" rel="noopener" aria-label="Abrir ${esc(l.nome)} no Google Maps" title="Abrir no Google Maps">${iconePin}</a>`;
+// Endereço numa linha só: com o bairro quando cabe; senão, só rua e número (a cidade já está no nome da loja).
+const enderecoCurto = (l) => (pendente(l.endereco) ? l.bairro : `${l.endereco} · ${l.bairro}`.length <= 38 ? `${l.endereco} · ${l.bairro}` : l.endereco);
 const cartaoLoja = (l, base) => `
 <article class="loja">
-  <p class="loja-regiao">${esc(l.regiao)}</p>
   <h3><a href="${base}unidades/${l.slug}/">${esc(l.nome.replace('Just Burger ', ''))}</a></h3>
-  <p>${pendente(l.endereco) ? esc(l.bairro) : `${esc(l.endereco)} · ${esc(l.bairro)}`}<br>${esc(l.cidade)}</p>
+  <p class="loja-endereco">${esc(enderecoCurto(l))}</p>
   <p class="loja-hora">${l.horarios.map((h) => esc(textoHorario(h))).join('<br>')}</p>
-  ${site.avaliacoes && site.avaliacoes.notaInformada ? `<p class="loja-nota" data-nota-loja="${esc(l.nome)}">${nota1(site.avaliacoes.notaInformada)} <span class="estrela-dourada" aria-hidden="true">★</span> no iFood</p>` : ''}
-  ${l.superIfood ? seloSuper : ''}
+  <div class="loja-reputacao">
+    ${site.avaliacoes && site.avaliacoes.notaInformada ? `<p class="loja-nota" data-nota-loja="${esc(l.nome)}">${nota1(site.avaliacoes.notaInformada)} <span class="estrela-dourada" aria-hidden="true">★</span> no iFood</p>` : ''}
+    ${l.superIfood ? seloSuper : ''}
+  </div>
   <p class="loja-acoes">${acoesLoja(l)}</p>
   <p class="loja-ver"><a class="link" href="${base}unidades/${l.slug}/">Ver unidade →</a></p>
 </article>`;
@@ -767,15 +784,15 @@ paginas.push({
 <section class="heroi">
   <div class="largura heroi-grade">
     <div class="heroi-texto">
-      <p class="sobretitulo">Desde ${esc(site.fundacao)} · Grande São Paulo</p>
-      ${site.destaque ? `<h1><span class="so-leitor">Just Burger, hamburgueria em São Paulo: </span>${esc(site.destaque.produto)}</h1>
+      <p class="sobretitulo">Desde ${esc(site.fundacao)} fazendo sucesso</p>
+      ${site.destaque ? `<h1><a class="heroi-nome" href="${base}cardapio/${itemHeroi ? `#${itemHeroi.id}` : ''}"><span class="so-leitor">Just Burger, hamburgueria em São Paulo: </span>${esc(site.destaque.produto)}</a></h1>
       <p class="heroi-ingredientes">${site.destaque.ingredientes.map((t, k, a) => k === a.length - 1 ? `<span>${esc(t)}.</span>` : `${esc(t)}.`).join('<br>')}</p>
       <h2 class="heroi-sub">${esc(site.destaque.titulo)}</h2>
       <p class="lead">${esc(site.destaque.texto)}</p>
       <p class="destaque-frase">${esc(site.destaque.frase)}</p>` : `<h1>150 g de carne.<br>Pão brioche.<br><span>Molho Just.</span></h1>`}
     </div>
     ${temHeroi
-      ? `<figure class="heroi-burger-caixa"><img class="heroi-burger" src="${base}${imagemHeroi}" width="1000" height="1000" alt="${esc(itemHeroi ? `${itemHeroi.nome}, burger da Just Burger` : site.heroi.alt)}" fetchpriority="high">${itemHeroi ? `<figcaption>${esc(itemHeroi.nome)}</figcaption>` : ''}</figure>`
+      ? `<a class="heroi-burger-caixa" href="${base}cardapio/${itemHeroi ? `#${itemHeroi.id}` : ''}" aria-label="Ver ${esc(itemHeroi ? itemHeroi.nome : 'o destaque')} no cardápio"><img class="heroi-burger" src="${base}${imagemHeroi}" width="1000" height="1000" alt="${esc(itemHeroi ? `${itemHeroi.nome}, burger da Just Burger` : site.heroi.alt)}" fetchpriority="high"></a>`
       : `<img class="heroi-logo" src="${base}assets/img/logo-640.webp" srcset="${base}assets/img/logo-320.webp 320w, ${base}assets/img/logo-640.webp 640w" sizes="(min-width: 900px) 420px, 70vw" width="640" height="536" alt="Just Burger Hamburgueria" fetchpriority="high">`}
   </div>
 </section>
@@ -815,6 +832,8 @@ ${site.contador ? blocoContador() : ''}
     <div class="grade-lojas">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
   </div>
 </section>
+
+${blocoCulinarias()}
 
 <section class="secao">
   <div class="largura dividido">
