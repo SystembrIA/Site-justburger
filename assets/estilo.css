@@ -208,20 +208,20 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 .item-menu { cursor: pointer; }
 .item-ampliar { padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 8px; }
 .item-menu:hover h3 { color: var(--laranja); }
-.proteina-total { margin: .5em 0 0; font-size: .85rem; font-weight: 700; color: var(--branco); }
-.proteina-total span { font-weight: 400; color: var(--suave); }
+.item-proteina .proteina { margin-top: 10px; font-size: .82rem; }
+.item-proteina .proteina td, .item-proteina .proteina th { padding: 3px 0; }
 .janela { width: min(760px, 100% - 24px); max-height: calc(100% - 24px); padding: 0; border: 1px solid var(--linha); border-radius: 14px; background: var(--carvao); color: var(--branco); overflow: auto; }
 .janela::backdrop { background: rgba(0, 0, 0, .8); backdrop-filter: blur(4px); }
 .janela-foto { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #000; }
 .janela-texto { padding: 22px 24px 26px; }
 .janela-texto h2 { margin: .1em 0 .3em; font-size: clamp(2rem, 6vw, 2.8rem); }
-.janela-texto .produto-descricao { color: var(--suave); }
+.janela-texto .produto-descricao { color: var(--suave); display: block; -webkit-line-clamp: unset; overflow: visible; }
 .janela-texto .botao { margin-top: 18px; }
 .janela-fechar { position: absolute; top: 10px; right: 10px; z-index: 1; width: 42px; height: 42px; border: 0; border-radius: 50%; background: rgba(0, 0, 0, .65); color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; }
 .proteina { width: 100%; margin-top: 16px; border-collapse: collapse; font-size: .92rem; }
 .proteina caption { text-align: left; margin-bottom: 6px; font-size: .74rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--laranja); }
 .proteina td, .proteina th { padding: 7px 0; border-bottom: 1px solid var(--linha); text-align: left; font-weight: 400; }
-.proteina td:last-child, .proteina tfoot td { text-align: right; white-space: nowrap; }
+.proteina td:first-child { width: 4.2em; white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--branco); }
 .proteina tfoot th, .proteina tfoot td { font-weight: 800; border-bottom: 0; }
 
 /* ---------- Páginas internas ---------- */

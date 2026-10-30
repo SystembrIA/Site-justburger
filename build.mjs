@@ -6,6 +6,7 @@ import { mkdirSync, writeFileSync, cpSync, rmSync, existsSync, readFileSync } fr
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { site, diferenciais, lojas, cardapio as cardapioDados, perfis, faq, midia } from './dados.mjs';
+import { receitaDe } from './proteina.mjs';
 
 const RAIZ = dirname(fileURLToPath(import.meta.url));
 const SAIDA = join(RAIZ, 'publico');
@@ -44,18 +45,24 @@ const limpaCategoria = (n) => n.replace(/\s*-?\s*\d+\s*%\s*off.*$/i, '').split(/
 const limpaDescricao = (d) =>
   (d || '')
     .replace(/\s*n[ãa]o (fazemos|removemos)[^.\n]*[.!]?/gi, '')
-    .replace(/\s*prote[ií]na\s*\(estimativa\)[\s\S]*$/i, '')
+    .replace(/\s*prote[ií]na\s*\((estimativa|aproximada)\)[\s\S]*$/i, '')
     .split(/\n+/).map((l) => l.trim().replace(/[,;]$/, '')).filter(Boolean)
     .join(', ').replace(/\s+,/g, ',').replace(/\s{2,}/g, ' ').replace(/^combo,\s*/i, '').replace(/[,.\s]+$/, '');
-// Bloco "Proteína (estimativa) por lanche:" que a Just põe na descrição do iFood:
-// linhas "~28g  Carne 150g" e uma linha "Total". Vira uma tabela no site.
+// Bloco "Proteína (aproximada) por lanche:" que a Just põe na descrição do iFood:
+// linhas "28g  Carne 150g" e uma linha "Total". Vira a tabela do site. Sem o bloco no iFood,
+// usa a conta de proteina.mjs (médias da Just) para os lanches.
+const comEspaco = (t) => t.replace(/(\d)\s*g\b/gi, '$1 g').trim();
 function proteinaDe(texto) {
-  const m = (texto || '').match(/prote[ií]na[^\n:]*:\s*\n([\s\S]*?)(?:\n\s*\n|n[ãa]o (?:fazemos|removemos)|$)/i);
+  const m = (texto || '').match(/prote[ií]na[^\n:]*?por ([^\n:]+):\s*\n([\s\S]*?)(?:\n\s*\n|n[ãa]o (?:fazemos|removemos)|$)/i);
   if (!m) return null;
-  const linhas = m[1].split('\n').map((l) => l.trim().match(/^~?\s*(\d+(?:[.,]\d+)?)\s*g\s+(.+)$/i)).filter(Boolean)
-    .map(([, g, nome]) => ({ g: `~${g} g`, nome: nome.replace(/(\d)\s*g\b/gi, '$1 g').trim() }));
+  const linhas = m[2].split('\n').map((l) => l.trim().match(/^~?\s*(\d+(?:[.,]\d+)?)\s*g\s+(.+)$/i)).filter(Boolean)
+    .map(([, g, nome]) => ({ g: `${g} g`, nome: comEspaco(nome) }));
   const total = linhas.find((l) => /^total$/i.test(l.nome));
-  return total ? { total: total.g, linhas: linhas.filter((l) => l !== total) } : null;
+  return total ? { por: m[1].trim().toLowerCase(), total: total.g, linhas: linhas.filter((l) => l !== total) } : null;
+}
+function proteinaReceita(nome) {
+  const r = receitaDe(nome);
+  return r && { por: r.por, total: `${r.total} g`, linhas: r.linhas.map((l) => ({ g: `${l.g} g`, nome: comEspaco(l.nome) })) };
 }
 function limpaItem(i) {
   const bruto = i.nome.replace(/\s*-?\s*(hits|queridinhos)\s*$/i, '').replace(/\s+/g, ' ').trim();
@@ -64,7 +71,7 @@ function limpaItem(i) {
   const selo = (detalhe.match(/top\s*\d+\s*mais vendido/i) || [''])[0];
   if (selo) detalhe = detalhe.replace(selo, '').replace(/^[-\s]+|[-\s]+$/g, '');
   detalhe = detalhe.charAt(0).toUpperCase() + detalhe.slice(1);
-  return { id: i.id, nome: nome.trim(), detalhe, selo: selo && selo.replace(/^top\s*(\d+)/i, 'Top $1'), descricao: limpaDescricao(i.descricao), proteina: proteinaDe(i.descricao), preco: reais(i.preco) };
+  return { id: i.id, nome: nome.trim(), detalhe, selo: selo && selo.replace(/^top\s*(\d+)/i, 'Top $1'), descricao: limpaDescricao(i.descricao), proteina: proteinaDe(i.descricao) || proteinaReceita(nome), preco: reais(i.preco) };
 }
 function cardapioDoIfood(dados) {
   const vistos = new Map();
@@ -452,9 +459,9 @@ const imgProduto = (i, base, sizes) => {
 // No cardápio cada item é uma linha de menu com âncora (#id); fora dele, um cartão que aponta para essa âncora.
 const tabelaProteina = (p) => `
 <table class="proteina">
-  <caption>Proteína por porção (estimativa)</caption>
-  <tbody>${p.linhas.map((l) => `<tr><td>${esc(l.nome)}</td><td>${esc(l.g)}</td></tr>`).join('')}</tbody>
-  <tfoot><tr><th scope="row">Total</th><td>${esc(p.total)}</td></tr></tfoot>
+  <caption>Proteína (aproximada) por ${esc(p.por)}</caption>
+  <tbody>${p.linhas.map((l) => `<tr><td>${esc(l.g)}</td><td>${esc(l.nome)}</td></tr>`).join('')}</tbody>
+  <tfoot><tr><td>${esc(p.total)}</td><th scope="row">Total</th></tr></tfoot>
 </table>`;
 const cartaoProduto = (i, base, { ancora = false } = {}) => ancora
   ? `
@@ -465,10 +472,9 @@ const cartaoProduto = (i, base, { ancora = false } = {}) => ancora
     <h3>${esc(i.nome)}</h3>
     ${i.detalhe ? `<p class="produto-detalhe">${esc(i.detalhe)}</p>` : ''}
     ${i.descricao ? `<p class="produto-descricao">${esc(i.descricao)}</p>` : ''}
-    ${i.proteina ? `<p class="proteina-total">Proteína: ${esc(i.proteina.total)} por porção <span>(estimativa)</span></p>` : ''}
+    ${i.proteina ? `<div class="item-proteina">${tabelaProteina(i.proteina)}</div>` : ''}
     ${site.mostrarPrecos && i.preco ? `<p class="preco">${esc(textoPreco(i))}</p>` : ''}
   </div>
-  ${i.proteina ? `<div class="item-extra" hidden>${tabelaProteina(i.proteina)}</div>` : ''}
 </article>`
   : `
 <a class="produto" href="${base}cardapio/#${i.id}">
@@ -546,7 +552,7 @@ const schemaMidia = () => ({
 // ---------- Markdown (versão para IA) ----------
 
 const mdLink = (texto, caminho) => `[${texto}](${abs(caminho)})`;
-const mdItem = (i) => `- **${i.nome}**${i.detalhe ? ` — ${i.detalhe}` : ''}${i.selo ? ` (${i.selo})` : ''} (${i.categoria}): ${i.descricao}${i.proteina ? ` Proteína (estimativa): ${i.proteina.total} por porção.` : ''} ${mdLink('ver no cardápio', `cardapio/#${i.id}`)}`;
+const mdItem = (i) => `- **${i.nome}**${i.detalhe ? ` — ${i.detalhe}` : ''}${i.selo ? ` (${i.selo})` : ''} (${i.categoria}): ${i.descricao}${i.proteina ? ` Proteína (aproximada) por ${i.proteina.por}: ${i.proteina.linhas.map((l) => `${l.g} ${l.nome}`).join(', ')}; total ${i.proteina.total}.` : ''} ${mdLink('ver no cardápio', `cardapio/#${i.id}`)}`;
 const mdFaq = (lista) => lista.map((f) => `### ${f.p}\n\n${f.r}`).join('\n\n');
 const mdLoja = (l) =>
   [
@@ -603,7 +609,7 @@ const janelaFoto = (base) => `
       var o = item.querySelector('.produto-' + k); campo(k).textContent = o ? o.textContent : ''; campo(k).hidden = !o;
     });
     campo('nome').textContent = item.querySelector('h3').textContent;
-    var extra = item.querySelector('.item-extra'); campo('extra').innerHTML = extra ? extra.innerHTML : '';
+    var extra = item.querySelector('.item-proteina'); campo('extra').innerHTML = extra ? extra.innerHTML : '';
     j.showModal();
   }
   document.querySelectorAll('.item-menu').forEach(function (item) {
