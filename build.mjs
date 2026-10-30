@@ -60,8 +60,8 @@ function proteinaDe(texto) {
   const total = linhas.find((l) => /^total$/i.test(l.nome));
   return total ? { por: m[1].trim().toLowerCase(), total: total.g, linhas: linhas.filter((l) => l !== total) } : null;
 }
-function proteinaReceita(nome) {
-  const r = receitaDe(nome);
+function proteinaReceita(nome, descricao) {
+  const r = receitaDe(nome, descricao);
   return r && { por: r.por, total: `${r.total} g`, linhas: r.linhas.map((l) => ({ g: `${l.g} g`, nome: comEspaco(l.nome) })) };
 }
 function limpaItem(i) {
@@ -71,7 +71,7 @@ function limpaItem(i) {
   const selo = (detalhe.match(/top\s*\d+\s*mais vendido/i) || [''])[0];
   if (selo) detalhe = detalhe.replace(selo, '').replace(/^[-\s]+|[-\s]+$/g, '');
   detalhe = detalhe.charAt(0).toUpperCase() + detalhe.slice(1);
-  return { id: i.id, nome: nome.trim(), detalhe, selo: selo && selo.replace(/^top\s*(\d+)/i, 'Top $1'), descricao: limpaDescricao(i.descricao), proteina: proteinaDe(i.descricao) || proteinaReceita(nome), preco: reais(i.preco) };
+  return { id: i.id, nome: nome.trim(), detalhe, selo: selo && selo.replace(/^top\s*(\d+)/i, 'Top $1'), descricao: limpaDescricao(i.descricao), proteina: proteinaDe(i.descricao) || proteinaReceita(nome, i.descricao), preco: reais(i.preco) };
 }
 function cardapioDoIfood(dados) {
   const vistos = new Map();
