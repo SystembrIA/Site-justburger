@@ -104,7 +104,7 @@ export const lojas = [
     geo: { lat: -23.5114779, lng: -46.5052967 }, // Rua Peixoto (OpenStreetMap); conferir o pino exato no Google Maps
     ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-hamburgueria-lanches--dog-vila-buenos-aires/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de',
     googleMaps: 'https://maps.google.com/?q=Just+Burger+Hamburgueria+Vila+Buenos+Aires+São+Paulo',
-    horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '11:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '11:00', fecha: '00:00' }], // horário oficial (diretoria, 30/10/2026); 00:00 = meia-noite
+    horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '11:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '11:00', fecha: '00:00' }], // por loja, como no iFood (ifood_horarios do Hub, 30/10/2026); 00:00 = meia-noite
     bairrosAtendidos: ['Vila Buenos Aires', 'Penha', 'Cangaíba', 'Vila Matilde', 'Ermelino Matarazzo'], // raio de 10 km (lista completa em bairros.json)
     intro:
       'A matriz da Just Burger fica na Vila Buenos Aires, que muita gente da vizinhança chama de Vila Fidelis Ribeiro ou Jardim Popular, na região da Penha, Zona Leste de São Paulo. Foi aqui que a receita da Just foi acertada e é daqui que sai o padrão das outras lojas.',
@@ -124,7 +124,7 @@ export const lojas = [
     geo: { lat: -23.4940394, lng: -46.7310058 }, // OpenStreetMap (avenida no CEP); conferir o pino no Google Maps
     ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-pirituba-jardim-iris/b1f195b5-8ec5-4b9a-ae71-cd55d969a4df', // merchant do iFood (Hub)
     googleMaps: 'https://maps.google.com/?q=Just+Burger+Pirituba',
-    horarios: [{ dias: ['Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], // horário oficial (diretoria, 30/10/2026); 00:00 = meia-noite
+    horarios: [{ dias: ['Tu', 'We', 'Th'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }, { dias: ['Su'], abre: '17:30', fecha: '23:00' }], // por loja, como no iFood (ifood_horarios do Hub, 30/10/2026); 00:00 = meia-noite
     bairrosAtendidos: ['Pirituba', 'Jaraguá', 'São Domingos', 'Vila Mangalot', 'Parque São Domingos'],
     intro:
       'Pirituba é a unidade mais nova da Just Burger e leva para a região a mesma receita da matriz, preparada na hora e entregue pelo iFood.',
@@ -144,7 +144,7 @@ export const lojas = [
     geo: { lat: -23.4833176, lng: -46.5482269 }, // OpenStreetMap (rua); conferir o pino no Google Maps
     ifood: 'https://www.ifood.com.br/delivery/guarulhos-sp/just-burger-hamburgueria-lanches--dog-vila-endres/8432b620-27ea-48fb-bf3b-a0b76bbf3516',
     googleMaps: 'https://maps.google.com/?q=Just+Burger+Hamburgueria+Vila+Endres+Guarulhos',
-    horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], // horário oficial (diretoria, 30/10/2026); 00:00 = meia-noite
+    horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '17:00', fecha: '23:00' }], // por loja, como no iFood (ifood_horarios do Hub, 30/10/2026); 00:00 = meia-noite
     bairrosAtendidos: ['Vila Endres', 'Itapegica', 'Vila Augusta', 'Ponte Grande', 'Porto da Igreja', 'Tranquilidade'],
     intro:
       'A unidade de Guarulhos fica na Vila Endres e leva o burger da Just para quem mora e trabalha em Guarulhos, com entrega pelo iFood.',
@@ -164,7 +164,7 @@ export const lojas = [
     geo: { lat: -23.6857582, lng: -46.5448592 }, // OpenStreetMap (avenida); conferir o pino no Google Maps
     ifood: 'https://www.ifood.com.br/delivery/sao-bernardo-do-campo-sp/just-burger-hamburgueria-lanches--dog-baeta-neves/aa6576e8-574e-42c5-8d38-0d7df31f3fcc',
     googleMaps: 'https://maps.google.com/?q=Just+Burger+Hamburgueria+Baeta+Neves+São+Bernardo+do+Campo',
-    horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], // horário oficial (diretoria, 30/10/2026); 00:00 = meia-noite
+    horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '17:00', fecha: '23:00' }], // por loja, como no iFood (ifood_horarios do Hub, 30/10/2026); 00:00 = meia-noite
     bairrosAtendidos: ['Baeta Neves', 'Centro de São Bernardo', 'Nova Petrópolis', 'Anchieta', 'Jardim Stella (Santo André)', 'Jardim Las Vegas (Santo André)'], // o iFood mostra a mesma loja atendendo parte de Santo André
     intro:
       'No ABC, a Just Burger fica no Baeta Neves e atende São Bernardo do Campo (e parte de Santo André) com a mesma receita da matriz.',
@@ -310,7 +310,7 @@ export const faq = [
   },
   {
     p: 'Qual o horário da Just Burger?',
-    r: 'A matriz, na Zona Leste, abre às 11h; as outras unidades abrem às 18h. De domingo a quinta, até as 23h; sexta e sábado, até meia-noite. Pirituba não abre às segundas.',
+    r: 'Cada unidade tem o seu horário. Zona Leste: todos os dias a partir das 11h, até 23h (sexta e sábado até meia-noite). Pirituba: de terça a domingo a partir das 18h (domingo às 17h30), fechada às segundas. Guarulhos e São Bernardo do Campo: todos os dias das 17h às 23h.',
   },
 ];
 
