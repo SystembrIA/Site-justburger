@@ -317,12 +317,13 @@ export const faq = [
 // Na mídia (/na-midia/). Só links para o original — o texto e as fotos são de cada veículo.
 // tipo: 'materia' | 'video' | 'guia' | 'case'. Para vídeo do YouTube, preencher youtube: '<id>' (a capa vem sozinha).
 // imagem: só foto PRÓPRIA da Just (assets/img/midia/...) ou com autorização do veículo.
-// Outras culinárias do grupo, na ordem da diretoria (30/10/2026). Logo: assets/img/marcas/<slug>.webp.
+// Outras culinárias do grupo, na ordem da diretoria (30/10/2026). No site, todas com o nome Just
+// (no iFood ainda aparecem como Aham Forneria, Aham Sushi e Aham Esfiha). Logo: assets/img/marcas/<slug>.webp.
 export const culinarias = [
   { slug: 'just-gourmet', nome: 'Just Gourmet', tipo: 'Comida brasileira' },
-  { slug: 'aham-forneria', nome: 'Aham Forneria', tipo: 'Pizza' },
-  { slug: 'aham-sushi', nome: 'Aham Sushi', tipo: 'Sushi' },
-  { slug: 'aham-esfiha', nome: 'Aham Esfiha', tipo: 'Esfiha' },
+  { slug: 'just-forneria', nome: 'Just Forneria', tipo: 'Pizza' },
+  { slug: 'just-sushi', nome: 'Just Sushi', tipo: 'Sushi' },
+  { slug: 'just-esfiha', nome: 'Just Esfiha', tipo: 'Esfiha' },
 ];
 
 export const midia = [
