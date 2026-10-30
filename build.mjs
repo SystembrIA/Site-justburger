@@ -292,7 +292,7 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
 <link rel="manifest" href="${base}site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Dancing+Script:wght@700&display=swap">
 <link rel="stylesheet" href="${base}assets/estilo.css">
 <script type="application/ld+json">${JSON.stringify(grafo)}</script>
 </head>
@@ -424,6 +424,7 @@ const blocoContador = () => {
   const c = site.contador, n = site.avaliacoes && site.avaliacoes.notaInformada;
   return `
 <section class="numeros" id="contador" aria-label="Just Burger em números">
+  <p class="largura numeros-vivo" data-vivo hidden><span class="ao-vivo" aria-hidden="true"></span>Contagem ao vivo · atualizado às <span data-hora>--:--</span></p>
   <div class="largura">
     <div class="placar-linha">${placarHtml(c.basePedidos, c.rotuloPedidos)}<p class="numero-rotulo">${esc(c.rotuloPedidos)}</p></div>
     <div class="placar-linha">${placarHtml(c.basePedidos * c.lanchesPorPedido, c.rotuloLanches)}<p class="numero-rotulo">${esc(c.rotuloLanches)}</p></div>
@@ -432,7 +433,6 @@ const blocoContador = () => {
       <p><span class="numero">${lojas.length}</span><span class="numero-rotulo">unidades na Grande SP</span></p>
     </div>
   </div>
-  <p class="largura numeros-vivo" data-vivo hidden><span class="ao-vivo" aria-hidden="true"></span>Contagem ao vivo · atualizado às <span data-hora>--:--</span></p>
 </section>
 <script>
 (function () {
@@ -524,24 +524,26 @@ const blocoAvaliacoes = () => `
     var g = document.querySelector('[data-geral-nota]'); if (g) g.textContent = n1(a.geral.nota);
     var t = document.querySelector('[data-geral-texto]'); if (t) t.textContent = mil(a.geral.avaliacoes) + ' avaliações no iFood';
     a.lojas.forEach(function (l) {
-      document.querySelectorAll('[data-nota-loja="' + l.loja + '"]').forEach(function (e) { e.textContent = n1(l.nota) + ' ★ · ' + mil(l.avaliacoes) + ' avaliações'; });
+      document.querySelectorAll('[data-nota-loja="' + l.loja + '"]').forEach(function (e) { e.innerHTML = n1(l.nota) + ' <span class="estrela-dourada" aria-hidden="true">★</span> · ' + mil(l.avaliacoes) + ' avaliações'; });
     });
   }).catch(function () {});
 })();
 </script>`;
 
+// Selo Super Restaurante iFood (só nas lojas com superIfood: nível 5 de 5 no painel do iFood).
+const seloSuper = `<div class="selo-super" role="img" aria-label="Somos um Super Restaurante no iFood"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#ea1d2c"/><path d="M50.0,24.0 L56.8,42.7 L76.6,43.3 L60.9,55.6 L66.5,74.7 L50.0,63.5 L33.5,74.7 L39.1,55.6 L23.4,43.3 L43.2,42.7Z" fill="#fff"/></svg><p><span>Somos um</span><em>super</em><span>restaurante</span></p></div>`;
 // Botões de cada loja: pedido no iFood da loja, WhatsApp e Google Maps.
-const acoesLoja = (l) => `<a class="botao" href="${esc(l.ifood)}" rel="noopener">Faça seu pedido</a>${linkWhats ? `<a class="botao botao-whats" href="${linkWhats}" rel="noopener">${iconeWhats}WhatsApp</a>` : ''}<a class="botao botao-contorno" href="${esc(l.googleMaps)}" rel="noopener">Abrir no Google Maps</a>`;
+const acoesLoja = (l) => `<a class="botao" href="${esc(l.ifood)}" rel="noopener">Faça seu pedido</a>${linkWhats ? `<a class="botao botao-whats" href="${linkWhats}" rel="noopener">${iconeWhats}WhatsApp</a>` : ''}<a class="botao botao-contorno" href="${esc(l.googleMaps)}" rel="noopener">Google Maps</a>`;
 const cartaoLoja = (l, base) => `
 <article class="loja">
   <p class="loja-regiao">${esc(l.regiao)}</p>
   <h3><a href="${base}unidades/${l.slug}/">${esc(l.nome.replace('Just Burger ', ''))}</a></h3>
   <p>${pendente(l.endereco) ? esc(l.bairro) : `${esc(l.endereco)} · ${esc(l.bairro)}`}<br>${esc(l.cidade)}</p>
   <p class="loja-hora">${l.horarios.map((h) => esc(textoHorario(h))).join('<br>')}</p>
-  ${site.avaliacoes && site.avaliacoes.notaInformada ? `<p class="loja-nota" data-nota-loja="${esc(l.nome)}">${nota1(site.avaliacoes.notaInformada)} ★ no iFood</p>` : ''}
-  ${l.superIfood ? '<p class="selo-super">Super Restaurante iFood</p>' : ''}
+  ${site.avaliacoes && site.avaliacoes.notaInformada ? `<p class="loja-nota" data-nota-loja="${esc(l.nome)}">${nota1(site.avaliacoes.notaInformada)} <span class="estrela-dourada" aria-hidden="true">★</span> no iFood</p>` : ''}
+  ${l.superIfood ? seloSuper : ''}
   <p class="loja-acoes">${acoesLoja(l)}</p>
-  <p><a class="link" href="${base}unidades/${l.slug}/">Ver unidade →</a></p>
+  <p class="loja-ver"><a class="link" href="${base}unidades/${l.slug}/">Ver unidade →</a></p>
 </article>`;
 
 // No cardápio o cartão é a âncora (#id); nos perfis ele aponta para essa âncora.
@@ -1161,7 +1163,8 @@ ${midiaOrdenada.map((m) => `- **${m.titulo}** — ${m.veiculo}${m.data ? `, ${da
 const historia = [
   `A Just Burger nasceu em ${new Date(site.fundacaoData + 'T12:00:00').toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}, na Zona Leste de São Paulo, com uma aposta clara: fazer o melhor hambúrguer de delivery de uma região carente de qualidade na entrega. Começamos pequenos, com 12 pessoas e foco 100% no delivery: um hambúrguer de 150 g no pão brioche, feito para chegar quentinho e no tempo certo. À frente da Just estão Maikon e Juliana.`,
   `Deu certo: só no primeiro ano as vendas dobraram. Crescemos para São Bernardo do Campo (2021), Guarulhos (2022) e Pirituba, passamos de ${fmtInt(site.contador.basePedidos)} pedidos, e as quatro unidades têm o selo Super Restaurante no iFood, com uma das entregas mais rápidas da cidade.`,
-  'Da Just Burger nasceu um grupo. Em 2020 veio a Just Gourmet, de comida brasileira, que hoje está entre as maiores do grupo em pedidos e em faturamento. Em 2024 chegou a Aham, com pizza e esfiha, e em 2025 o Aham Sushi.',
+  'Da Just Burger nasceu um grupo. Em 2020 veio a Just Gourmet, de comida brasileira, que hoje está entre as maiores do grupo em pedidos e em faturamento. Em 2024 chegou a Aham, com pizza e esfiha, e em 2025 o Aham Sushi. Hoje são 11 operações abertas no iFood e na Keeta.',
+  'Em 2026, as lojas do grupo chegaram também à Keeta, plataforma da Meituan, líder do delivery na China e uma das maiores do mundo. É uma nova fase, com novos desafios e espaço para crescer no mercado brasileiro nos próximos anos.',
   'Seguimos com a mesma ideia do primeiro dia: comida boa de verdade, na casa de cada cliente.',
 ];
 const videosHistoria = () => midia.filter((m) => m.youtube && /falando de delivery/i.test(m.veiculo));

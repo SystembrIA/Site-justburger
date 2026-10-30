@@ -108,7 +108,7 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 .numeros-grade > div { padding: 0 16px; border-left: 1px solid var(--linha); }
 .numeros-grade > div:nth-child(odd) { border-left: 0; padding-left: 0; }
 .numero { margin: 0; font-size: clamp(2rem, 5.4vw, 3.6rem); line-height: 1; font-weight: 900; font-stretch: 70%; font-variant-numeric: tabular-nums; letter-spacing: -.01em; white-space: nowrap; }
-.numero .estrela { color: var(--laranja); font-size: .7em; margin-left: .12em; vertical-align: .12em; }
+.numero .estrela { color: #f2c14e; font-size: .7em; margin-left: .12em; vertical-align: .12em; }
 .numero-rotulo { margin: .35em 0 0; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--suave); }
 .numeros-vivo { margin: 26px auto 0; display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.05rem; font-weight: 700; color: var(--branco); text-align: center; }
 .numeros-vivo[hidden] { display: none; }
@@ -323,8 +323,13 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 .destaque-frase { margin: 1em 0 0; font-stretch: 75%; font-weight: 900; text-transform: uppercase; font-size: clamp(1.2rem, 3.4vw, 1.6rem); line-height: 1.1; color: var(--laranja); }
 
 /* ---------- Unidades: selo e WhatsApp ---------- */
-.selo-super { display: inline-flex; align-items: center; gap: 6px; margin: .5em 0 0 !important; padding: 5px 12px; border-radius: 999px; background: #ea1d2c; color: #fff !important; font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.selo-super::before { content: '★'; }
+/* Selo Super Restaurante (modelo 2 escolhido pela diretoria) */
+.selo-super { display: flex; align-items: center; gap: 12px; margin: .7em 0 .2em; }
+.selo-super svg { width: 52px; height: 52px; flex: none; }
+.selo-super p { margin: 0 !important; display: flex; flex-direction: column; line-height: 1; }
+.selo-super span { color: var(--branco); font-size: .74rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.selo-super em { font-family: 'Dancing Script', cursive; font-style: normal; font-weight: 700; font-size: 1.9rem; line-height: .95; color: #d9b45a; }
+.estrela-dourada { color: #f2c14e; }
 .botao-whats { gap: 8px; background: #25d366; border-color: #25d366; color: #fff; }
 .botao-whats:hover { background: #1ebe5a; border-color: #1ebe5a; color: #fff; }
 .botao-whats svg { width: 20px; height: 20px; flex: none; }
@@ -366,3 +371,20 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 .numeros-extra p { margin: 0; display: flex; align-items: baseline; gap: 12px; }
 .numeros-extra .numero { font-size: clamp(1.8rem, 5vw, 2.6rem); }
 .numeros-extra .numero-rotulo { margin: 0; }
+
+/* Contador: centralizado, ao vivo em cima, nota e unidades na mesma linha */
+.numeros .placar-linha { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.numeros .placar { justify-content: center; }
+.numeros .numeros-vivo { margin: 0 auto 22px; }
+.numeros-extra { justify-content: center; flex-wrap: nowrap; gap: 0 28px; }
+.numeros-extra p { white-space: nowrap; gap: 8px; }
+@media (max-width: 520px) {
+  .numeros-extra { gap: 0 16px; }
+  .numeros-extra .numero { font-size: 1.55rem; }
+  .numeros-extra .numero-rotulo { font-size: .62rem; letter-spacing: .06em; }
+}
+/* Botões da loja: os três na mesma linha */
+.loja-acoes { flex-wrap: nowrap !important; gap: 8px !important; }
+.loja-acoes .botao, .acoes-loja .botao { min-height: 40px; padding: 0 12px; font-size: .7rem; letter-spacing: .04em; white-space: nowrap; }
+.loja-acoes .botao-whats svg, .acoes-loja .botao-whats svg { width: 16px; height: 16px; }
+.loja-ver { text-align: center; margin-top: 14px !important; }
