@@ -311,6 +311,14 @@ export const faq = [
 // imagem: só foto PRÓPRIA da Just (assets/img/midia/...) ou com autorização do veículo.
 export const midia = [
   {
+    tipo: 'materia',
+    veiculo: 'iFood · Notícias',
+    titulo: 'O que são as dark kitchens e como elas estão se expandindo?',
+    data: '2023-10-30',
+    url: 'https://institucional.ifood.com.br/noticias/o-que-sao-as-dark-kitchens-e-como-elas-estao-se-expandindo/',
+    resumo: 'Maikon Rangel conta por que a Just Burger nasceu 100% delivery: um estudo mostrou que a região não tinha delivery de qualidade.',
+  },
+  {
     tipo: 'video',
     veiculo: 'Falando de Delivery · YouTube',
     titulo: 'Ep 01 | Just Burger e Kitchen Central: como bombar de vender no delivery da forma certa',
@@ -364,43 +372,11 @@ export const midia = [
   },
   {
     tipo: 'materia',
-    veiculo: 'GKPB – Geek Publicitário',
-    titulo: 'Coca-Cola faz ação solidária com QR Code em hambúrguer',
-    data: '2021-05-28',
-    url: 'https://gkpb.com.br/66630/coca-cola-qr-code-hamburguer/',
-    resumo: 'A ação com a Just Burger, na Zona Leste de São Paulo, estampou um QR code no pão do lanche para incentivar doações.',
-  },
-  {
-    tipo: 'materia',
-    veiculo: 'Grandes Nomes da Propaganda',
-    titulo: 'Coca-Cola apoia hambúrguer com QR Code que incentiva doação de alimentos',
-    data: '2021-05-28',
-    url: 'https://grandesnomesdapropaganda.com.br/anunciantes/coca-cola-apoia-hamburguer-com-qr-code-que-incentiva-doacao-de-alimentos/',
-    resumo: 'Edição especial vendida pelo iFood, com QR code no pão que leva à campanha Por Todas as Mesas.',
-  },
-  {
-    tipo: 'materia',
-    veiculo: 'Publicitários Criativos',
-    titulo: 'Coca-Cola lança hambúrguer com QR Code para convidar público a conhecer campanha de combate à fome',
-    data: '2021-05',
-    url: 'https://www.publicitarioscriativos.com/coca-cola-lanca-hamburguer-com-qr-code-para-convidar-publico-a-conhecer-campanha-de-combate-a-fome/',
-    resumo: 'O combo especial da Just Burger convidava o cliente a escanear o pão e doar para a Ação da Cidadania.',
-  },
-  {
-    tipo: 'materia',
     veiculo: 'Clube de Criação',
     titulo: 'Combate à fome',
     data: '2021-05-28',
     url: 'https://clubedecriacao.com.br/ultimas/combate-a-fome-2/',
     resumo: 'Registro da campanha "Por Todas as Mesas", que teve o hambúrguer com QR code da Just Burger como ativação.',
-  },
-  {
-    tipo: 'materia',
-    veiculo: 'Marcas pelo Mundo',
-    titulo: 'Coca-Cola apoia hambúrguer que incentiva doação de alimentos',
-    data: '2021-05-28',
-    url: 'https://marcaspelomundo.com.br/destaques/coca-cola-apoia-hamburguer-que-incentiva-doacao-de-alimentos/',
-    resumo: 'Quem pediu na Just Burger no Dia do Hambúrguer recebeu o lanche com QR code no pão.',
   },
   {
     tipo: 'guia',

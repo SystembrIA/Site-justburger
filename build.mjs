@@ -1117,9 +1117,9 @@ ${midiaOrdenada.map((m) => `- **${m.titulo}** — ${m.veiculo}${m.data ? `, ${da
 // Nossa história: só fatos confirmados pela diretoria ou em fonte pública. Os episódios do
 // Falando de Delivery (midia) contam o resto, até a transcrição virar texto aqui.
 const historia = [
-  `A Just Burger nasceu em ${new Date(site.fundacaoData + 'T12:00:00').toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}, na Zona Leste de São Paulo, pensada desde o primeiro dia para o delivery. Por trás dela estão Maikon e Juliana, casal que toca o negócio junto.`,
-  `A base de tudo é hambúrguer de 150 g, pão brioche e o Molho Just, montado na hora. Da matriz na Vila Buenos Aires, a Just chegou a Pirituba, Guarulhos e São Bernardo do Campo, e já passou de ${fmtInt(site.contador.basePedidos)} pedidos.`,
-  'No iFood, a nota é 4,9, e as unidades de Pirituba e São Bernardo do Campo têm o selo Super Restaurante. Em 2021, no Dia do Hambúrguer, a Just Burger e a Coca-Cola lançaram um lanche com QR code no pão para incentivar doações contra a fome.',
+  `A Just Burger nasceu em ${new Date(site.fundacaoData + 'T12:00:00').toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}, na Zona Leste de São Paulo, com 12 pessoas. Antes de abrir, Maikon Rangel estudou a região e viu que ali faltava delivery de qualidade. A decisão foi ser 100% delivery: "Optei por ser 100% delivery e deu super certo", contou ao iFood. No primeiro ano, as vendas dobraram.`,
+  'Maikon e Juliana tocam o negócio juntos. A base de tudo é hambúrguer de 150 g, pão brioche e o Molho Just, montado na hora. Da matriz na Vila Buenos Aires, a Just chegou a São Bernardo do Campo em 2021, a Guarulhos em 2022 e depois a Pirituba.',
+  `Hoje são mais de ${fmtInt(site.contador.basePedidos)} pedidos, nota 4,9 no iFood e o selo Super Restaurante nas unidades de Pirituba e São Bernardo do Campo. Em 2021, no Dia do Hambúrguer, a Just e a Coca-Cola lançaram um lanche com QR code no pão para incentivar doações contra a fome.`,
 ];
 const videosHistoria = () => midia.filter((m) => m.youtube && /falando de delivery/i.test(m.veiculo));
 
