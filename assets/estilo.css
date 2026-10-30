@@ -291,3 +291,26 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
   .heroi-burger, .ao-vivo { animation: none; }
   .produto .produto-foto, .categoria .produto-foto { transition: none; }
 }
+
+/* ---------- Faça seu pedido: busca por CEP ---------- */
+.janela-pedido { width: min(560px, 100% - 24px); }
+.janela-pedido .janela-texto { padding-top: 30px; }
+.busca-cep { margin-top: 18px; }
+.busca-cep label { display: block; margin-bottom: 8px; font-weight: 700; }
+.busca-cep-linha { display: flex; gap: 10px; }
+.busca-cep-linha input { flex: 1; min-width: 0; padding: 14px 16px; border: 1px solid var(--linha); border-radius: 999px; background: #000; color: var(--branco); font: inherit; font-size: 1.1rem; letter-spacing: .06em; }
+.busca-cep-linha input:focus { outline: 2px solid var(--laranja); outline-offset: 2px; }
+.busca-cep-linha .botao, .janela-texto .busca-cep-linha .botao { margin-top: 0; }
+.busca-cep-resultado:not(:empty) { margin-top: 18px; }
+.busca-cep-loja { padding: 18px; border: 1px solid var(--linha); border-left: 3px solid var(--laranja); border-radius: 12px; background: rgba(255, 255, 255, .03); }
+.busca-cep-loja h3 { margin: .1em 0 .3em; font-size: 1.6rem; }
+.busca-cep-loja p { margin: .35em 0; }
+.busca-cep-acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 14px !important; }
+.busca-cep-acoes .botao, .janela-texto .busca-cep-acoes .botao { margin-top: 0; }
+.busca-cep-nota { font-size: .85rem; color: var(--suave); }
+.pedido-outras { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 22px; }
+.pedido-outras .botao, .janela-texto .pedido-outras .botao { margin-top: 0; }
+
+/* ---------- WhatsApp ---------- */
+.whats-flutuante { position: fixed; right: 16px; bottom: 16px; z-index: 50; display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%; background: #25d366; color: #fff; box-shadow: 0 6px 20px rgba(0, 0, 0, .45); }
+.whats-flutuante:hover { background: #1ebe5a; }

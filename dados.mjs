@@ -13,8 +13,11 @@ export const site = {
   publicado: false,
   fundacao: '2018', // ano que aparece nos textos ("desde 2018")
   fundacaoData: '2018-10-04', // data de nascimento da Just Burger, informada pela diretoria (vai no schema)
-  telefoneCentral: '', // PREENCHER (formato +55 11 9XXXX-XXXX) ou deixar vazio
-  emailContato: '', // PREENCHER (ex.: contato@justburger.com.br) ou deixar vazio
+  telefoneCentral: '(11) 2622-8800', // telefone e WhatsApp central (diretoria, 30/10/2026)
+  whatsapp: '551126228800', // botão de WhatsApp em todas as páginas (wa.me)
+  // Botão "Ver todas as opções" da janela "Faça seu pedido". Vazio = o botão não aparece.
+  linktree: '', // PREENCHER: link do Linktree da Just
+  emailContato: '', // vazio = não aparece
   instagram: 'https://www.instagram.com/justburgersp/',
   pedidoMinimo: '20,00', // conferir: valor mostrado no iFood
   // Preço em site é oferta (CDC art. 30) e envelhece rápido. Com false, o site mostra
@@ -78,12 +81,12 @@ export const lojas = [
     regiao: 'Zona Leste',
     endereco: 'Rua Peixoto, 156', // endereço oficial (diretoria, 30/10/2026); corrigir o Guia do Hambúrguer, que mostra R. Santa Germana, 152
     cep: '03627-010',
-    telefone: '(11) 2682-0227', // conferir: telefone do Guia do Hambúrguer
+    telefone: '(11) 2622-8800', // central (telefone e WhatsApp)
     geo: { lat: -23.5114779, lng: -46.5052967 }, // Rua Peixoto (OpenStreetMap); conferir o pino exato no Google Maps
     ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-hamburgueria-lanches--dog-vila-buenos-aires/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de',
     googleMaps: 'https://maps.google.com/?q=Just+Burger+Hamburgueria+Vila+Buenos+Aires+São+Paulo',
     horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '11:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '11:00', fecha: '23:59' }], // iFood (ifood_horarios do Hub, 30/10/2026); quinta igual aos outros dias (Michael, 30/10) — falta cadastrar no iFood
-    bairrosAtendidos: ['Vila Buenos Aires', 'Penha', 'Cangaíba', 'Vila Matilde', 'Ermelino Matarazzo'], // PREENCHER: confirmar raio de entrega
+    bairrosAtendidos: ['Vila Buenos Aires', 'Penha', 'Cangaíba', 'Vila Matilde', 'Ermelino Matarazzo'], // raio de 10 km (lista completa em bairros.json)
     intro:
       'A matriz da Just Burger fica na Vila Buenos Aires, que muita gente da vizinhança chama de Vila Fidelis Ribeiro ou Jardim Popular, na região da Penha, Zona Leste de São Paulo. Foi aqui que a receita da Just foi acertada e é daqui que sai o padrão das outras lojas.',
   },
@@ -95,11 +98,11 @@ export const lojas = [
     termoBusca: 'em Pirituba',
     cidade: 'São Paulo',
     regiao: 'Zona Norte', // Prefeitura de SP (GeoSampa): distrito Pirituba, região Norte 2
-    endereco: 'Av. Raimundo Pereira de Magalhães, PREENCHER número', // conferir: filial no CNPJ (Jardim Íris)
-    cep: 'PREENCHER',
-    telefone: '',
-    geo: null,
-    ifood: 'https://www.ifood.com.br/PREENCHER',
+    endereco: 'Av. Raimundo Pereira de Magalhães, 3850, loja 2', // CNPJ 31.394.735/0004-13 (Receita Federal), Jardim Íris
+    cep: '05145-200',
+    telefone: '(11) 2622-8800',
+    geo: { lat: -23.4940394, lng: -46.7310058 }, // OpenStreetMap (avenida no CEP); conferir o pino no Google Maps
+    ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-pirituba-jardim-iris/b1f195b5-8ec5-4b9a-ae71-cd55d969a4df', // merchant do iFood (Hub)
     googleMaps: 'https://maps.google.com/?q=Just+Burger+Pirituba',
     horarios: [{ dias: ['Tu', 'We', 'Th'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '23:59' }, { dias: ['Su'], abre: '17:30', fecha: '23:00' }], // iFood (ifood_horarios do Hub, 30/10/2026)
     bairrosAtendidos: ['Pirituba', 'Jaraguá', 'São Domingos', 'Vila Mangalot', 'Parque São Domingos'],
@@ -109,38 +112,38 @@ export const lojas = [
   {
     slug: 'guarulhos',
     nome: 'Just Burger Guarulhos',
-    bairro: 'Vila Endres', // conferir: bairro mostrado no iFood
+    bairro: 'Vila Endres',
     preposicao: 'em',
     termoBusca: 'em Guarulhos',
     cidade: 'Guarulhos',
     regiao: 'Grande São Paulo',
-    endereco: 'PREENCHER: rua e número',
-    cep: 'PREENCHER',
-    telefone: '',
-    geo: null,
+    endereco: 'Rua Espanhola, 470', // CNPJ 31.394.735/0003-32 (Receita Federal)
+    cep: '07043-060',
+    telefone: '(11) 2622-8800',
+    geo: { lat: -23.4833176, lng: -46.5482269 }, // OpenStreetMap (rua); conferir o pino no Google Maps
     ifood: 'https://www.ifood.com.br/delivery/guarulhos-sp/just-burger-hamburgueria-lanches--dog-vila-endres/8432b620-27ea-48fb-bf3b-a0b76bbf3516',
     googleMaps: 'https://maps.google.com/?q=Just+Burger+Hamburgueria+Vila+Endres+Guarulhos',
     horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '17:00', fecha: '23:00' }], // iFood (ifood_horarios do Hub, 30/10/2026)
-    bairrosAtendidos: ['Vila Endres', 'PREENCHER'],
+    bairrosAtendidos: ['Vila Endres', 'Itapegica', 'Vila Augusta', 'Ponte Grande', 'Porto da Igreja', 'Tranquilidade'],
     intro:
       'A unidade de Guarulhos fica na Vila Endres e leva o burger da Just para quem mora e trabalha em Guarulhos, com entrega pelo iFood.',
   },
   {
     slug: 'sao-bernardo-do-campo',
     nome: 'Just Burger São Bernardo',
-    bairro: 'Baeta Neves', // conferir: bairro mostrado no iFood
+    bairro: 'Baeta Neves',
     preposicao: 'em',
     termoBusca: 'em São Bernardo do Campo',
     cidade: 'São Bernardo do Campo',
     regiao: 'ABC Paulista',
-    endereco: 'PREENCHER: rua e número',
-    cep: 'PREENCHER',
-    telefone: '',
-    geo: null,
+    endereco: 'Av. Getúlio Vargas, 600', // CNPJ 31.394.735/0002-51 (Receita Federal), lotes 38 e 39
+    cep: '09751-250',
+    telefone: '(11) 2622-8800',
+    geo: { lat: -23.6857582, lng: -46.5448592 }, // OpenStreetMap (avenida); conferir o pino no Google Maps
     ifood: 'https://www.ifood.com.br/delivery/sao-bernardo-do-campo-sp/just-burger-hamburgueria-lanches--dog-baeta-neves/aa6576e8-574e-42c5-8d38-0d7df31f3fcc',
     googleMaps: 'https://maps.google.com/?q=Just+Burger+Hamburgueria+Baeta+Neves+São+Bernardo+do+Campo',
     horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '17:00', fecha: '23:00' }], // iFood (ifood_horarios do Hub, 30/10/2026)
-    bairrosAtendidos: ['Baeta Neves', 'PREENCHER'], // o iFood mostra a mesma loja atendendo parte de Santo André
+    bairrosAtendidos: ['Baeta Neves', 'Centro de São Bernardo', 'Nova Petrópolis', 'Anchieta', 'Jardim Stella (Santo André)', 'Jardim Las Vegas (Santo André)'], // o iFood mostra a mesma loja atendendo parte de Santo André
     intro:
       'No ABC, a Just Burger fica no Baeta Neves e atende São Bernardo do Campo (e parte de Santo André) com a mesma receita da matriz.',
   },
@@ -244,7 +247,7 @@ export const perfis = [
       'Também há saladas e um prato fitness com filé de frango grelhado (veja "Quer algo mais leve").',
     ],
     produtos: ['just-chicken', 'just-pic', 'just-chicken-supreme-seara', 'just-franguito-2'],
-    perguntas: [{ p: 'A Just Burger tem opção vegetariana?', r: 'Há saladas no cardápio (Just Garden, Tradicional, Cheese, Completa). PREENCHER: confirmar se existe lanche vegetariano.' }],
+    perguntas: [{ p: 'A Just Burger tem opção vegetariana?', r: 'Há saladas no cardápio (Just Garden, Tradicional, Cheese, Completa).' }],
   },
   {
     slug: 'mais-leve',
@@ -265,22 +268,6 @@ export const perfis = [
     texto: ['A sobremesa vem no mesmo pedido do iFood, junto com o lanche.'],
     produtos: ['milk-shake-de-ninho-com-nutella-300ml', 'pudim-de-brigadeirao-de-chocolate', 'franui-chocolate-ao-leite'],
     perguntas: [{ p: 'A Just Burger tem milk-shake?', r: 'Sim, os Just Shake de 300 ml: Ninho com Nutella, Nutella, Ninho, Morango, Pistache e Café.' }],
-  },
-  {
-    slug: 'alergias-e-restricoes',
-    nome: 'Alergias e restrições',
-    chamada: 'Antes de pedir, confira os ingredientes.',
-    resposta:
-      'Os burgers da Just levam pão brioche ou de gergelim (normalmente com glúten, ovo e leite) e queijos (lactose). A Just não faz trocas nem retira ingredientes dos lanches. Quem tem alergia ou restrição deve falar com a loja pelo chat do iFood antes de pedir.',
-    texto: [
-      'Os ingredientes de cada lanche estão no cardápio. PREENCHER: lista oficial de alérgenos por item, validada pela cozinha.',
-      'Como a regra da casa é não trocar itens, escolha um lanche que já venha sem o ingrediente que você precisa evitar.',
-    ],
-    produtos: [],
-    perguntas: [
-      { p: 'A Just Burger tem pão sem glúten?', r: 'PREENCHER: sim/não.' },
-      { p: 'Dá para tirar ingredientes do lanche?', r: 'Não. A Just não faz trocas de itens nem retira ingredientes; os lanches saem como estão no cardápio.' },
-    ],
   },
 ];
 
