@@ -464,10 +464,6 @@ a.heroi-burger-caixa { display: block; }
   .numeros-extra .numero-rotulo { font-size: 2.85vw; }
 }
 
-/* Botão de som do placar */
-.numeros-som { text-align: center; margin: 14px 0 0; }
-.botao-som { padding: 6px 14px; border: 1px solid var(--linha); border-radius: 999px; background: transparent; color: var(--suave); font: 600 .8rem/1 var(--fonte); cursor: pointer; }
-.botao-som:hover { color: var(--branco); border-color: var(--branco); }
 /* Google Maps: mesmo formato dos outros botões, mapinha maior */
 .loja-acoes .botao-mapa, .acoes-loja .botao-mapa { min-width: 62px; padding: 0 14px !important; }
 .botao-mapa svg { width: 34px !important; height: 31px !important; }
@@ -529,3 +525,9 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .lojas-centro .loja-marca .loja-acoes { justify-content: center; }
 .loja-marca .loja-acoes .botao { flex: 0 0 auto; padding: 0 22px !important; }
 .rodape-marcas .submenu-marca { display: grid; place-items: center; color: #000; font-size: .9rem; font-weight: 900; }
+
+/* Nota, avaliações e unidades: maiores, uma informação por linha */
+.numeros-extra { gap: 6px; }
+.numeros-extra .numero { font-size: clamp(2.2rem, 8vw, 3.2rem) !important; }
+.numeros-extra .numero-rotulo { font-size: clamp(1.05rem, 4.4vw, 1.4rem) !important; }
+.numeros-extra .numeros-avaliacoes { margin: -4px 0 10px; font-size: clamp(1rem, 4.2vw, 1.3rem); font-weight: 600; color: var(--branco); text-align: center; white-space: normal; }
