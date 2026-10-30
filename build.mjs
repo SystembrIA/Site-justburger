@@ -414,55 +414,97 @@ const temHeroi = !!imagemHeroi;
 const fmtInt = (v) => Math.round(v).toLocaleString('pt-BR');
 const nota1 = (v) => Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 const slug = (t) => semAcentoMin(t).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+// Placar de aeroporto: cada dígito é uma plaquinha que vira. No HTML já vai o número base (Google, IA
+// e quem está sem JavaScript leem). Ao aparecer na tela, todas as plaquinhas giram e param da esquerda
+// para a direita; depois, a cada pedido ao vivo, só viram as que mudaram.
+const placarHtml = (n, rotulo) => `<div class="placar" role="img" aria-label="${fmtInt(n)} ${esc(rotulo)}" data-valor="${Math.round(n)}">${
+  fmtInt(n).split('').map((c) => (c === '.' ? '<span class="ponto">.</span>' : `<span class="flap" data-d="${c}"><span class="metade cima"><span>${c}</span></span><span class="metade baixo"><span>${c}</span></span><span class="aba aba-cima"><span>${c}</span></span><span class="aba aba-baixo"><span>${c}</span></span></span>`)).join('')
+}</div>`;
 const blocoContador = () => {
   const c = site.contador, n = site.avaliacoes && site.avaliacoes.notaInformada;
   return `
 <section class="numeros" id="contador" aria-label="Just Burger em números">
-  <div class="largura numeros-grade">
-    <div><p class="numero" data-pedidos>${fmtInt(c.basePedidos)}</p><p class="numero-rotulo">${esc(c.rotuloPedidos)}</p></div>
-    <div><p class="numero" data-lanches>${fmtInt(c.basePedidos * c.lanchesPorPedido)}</p><p class="numero-rotulo">${esc(c.rotuloLanches)}</p></div>
-    ${n ? `<div><p class="numero"><span data-geral-nota>${nota1(n)}</span><span class="estrela" aria-hidden="true">★</span></p><p class="numero-rotulo" data-geral-texto>nota no iFood</p></div>` : ''}
-    <div><p class="numero">${lojas.length}</p><p class="numero-rotulo">unidades na Grande SP</p></div>
+  <div class="largura">
+    <div class="placar-linha">${placarHtml(c.basePedidos, c.rotuloPedidos)}<p class="numero-rotulo">${esc(c.rotuloPedidos)}</p></div>
+    <div class="placar-linha">${placarHtml(c.basePedidos * c.lanchesPorPedido, c.rotuloLanches)}<p class="numero-rotulo">${esc(c.rotuloLanches)}</p></div>
+    <div class="numeros-extra">
+      ${n ? `<p><span class="numero"><span data-geral-nota>${nota1(n)}</span><span class="estrela" aria-hidden="true">★</span></span><span class="numero-rotulo" data-geral-texto>nota no iFood</span></p>` : ''}
+      <p><span class="numero">${lojas.length}</span><span class="numero-rotulo">unidades na Grande SP</span></p>
+    </div>
   </div>
   <p class="largura numeros-vivo" data-vivo hidden><span class="ao-vivo" aria-hidden="true"></span>Contagem ao vivo · atualizado às <span data-hora>--:--</span></p>
 </section>
 <script>
 (function () {
   var C = ${JSON.stringify({ url: c.url, base: c.basePedidos, media: c.lanchesPorPedido })};
-  var el = document.getElementById('contador'), nP = el.querySelector('[data-pedidos]'), nL = el.querySelector('[data-lanches]');
+  var el = document.getElementById('contador'), placares = el.querySelectorAll('.placar');
   var vivo = el.querySelector('[data-vivo]'), hora = el.querySelector('[data-hora]'), d = {};
-  var atual = { p: C.base, l: C.base * C.media };
   var calmo = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var fmt = function (v) { return Math.round(v).toLocaleString('pt-BR'); };
-  function anima(no, de, para) {
-    if (calmo || de === para) { no.textContent = fmt(para); return; }
-    var ini = performance.now();
-    (function passo(a) {
-      var p = Math.min(1, (a - ini) / 1500), e = 1 - Math.pow(1 - p, 3);
-      no.textContent = fmt(de + (para - de) * e);
-      if (p < 1) requestAnimationFrame(passo);
-    })(ini);
+  var pronto = false, pendente = null;
+  function texto(f, sel, v) { f.querySelector(sel + ' span').textContent = v; }
+  function vira(f, novo, rapido) {
+    var velho = f.dataset.d; if (velho === novo) return;
+    texto(f, '.cima', novo); texto(f, '.baixo', velho); texto(f, '.aba-cima', velho); texto(f, '.aba-baixo', novo);
+    f.classList.remove('virando', 'rapido'); void f.offsetWidth; f.classList.add('virando'); if (rapido) f.classList.add('rapido');
+    f.dataset.d = novo;
+    clearTimeout(f._t); f._t = setTimeout(function () { texto(f, '.baixo', novo); f.classList.remove('virando', 'rapido'); }, rapido ? 130 : 340);
   }
-  function mostra() {
+  function mostra(pl, v) {
+    var t = Math.round(v).toLocaleString('pt-BR');
+    pl.setAttribute('aria-label', t + ' ' + pl.nextElementSibling.textContent);
+    var dig = t.replace(/\\D/g, ''), flaps = pl.querySelectorAll('.flap');
+    if (flaps.length !== dig.length) { pl.dataset.valor = Math.round(v); return; } // muda de casa: fica para o próximo build
+    dig.split('').forEach(function (c, i) { vira(flaps[i], c); });
+  }
+  // Entrada: todas giram e vão parando da esquerda para a direita no valor certo.
+  function entrada(pl, fim) {
+    var flaps = [].slice.call(pl.querySelectorAll('.flap')), alvo = String(fim).split('');
+    flaps.forEach(function (f, i) { vira(f, '0', true); });
+    flaps.forEach(function (f, i) {
+      var para = 700 + i * 220, ini = performance.now();
+      (function gira() {
+        if (performance.now() - ini >= para) { vira(f, alvo[i]); return; }
+        vira(f, String((+f.dataset.d + 1) % 10), true);
+        setTimeout(gira, 85);
+      })();
+    });
+  }
+  function valores() {
+    return [C.base + (Number(d.pedidos) || 0), (C.base + (Number(d.prontos) || 0)) * C.media];
+  }
+  function atualiza() {
     if (!d || !d.atualizadoEm) return;
-    var p = C.base + (Number(d.pedidos) || 0), l = (C.base + (Number(d.prontos) || 0)) * C.media;
-    anima(nP, atual.p, p); anima(nL, atual.l, l); atual = { p: p, l: l };
     hora.textContent = new Date(d.atualizadoEm).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' });
     vivo.hidden = false;
+    if (!pronto) return;
+    var v = valores(); mostra(placares[0], v[0]); mostra(placares[1], v[1]);
   }
+  function comeca() {
+    if (pronto) return; pronto = true;
+    var v = valores();
+    [0, 1].forEach(function (k) {
+      var fim = Math.round(v[k]).toLocaleString('pt-BR').replace(/\\D/g, '');
+      placares[k].setAttribute('aria-label', Math.round(v[k]).toLocaleString('pt-BR') + ' ' + placares[k].nextElementSibling.textContent);
+      if (calmo || fim.length !== placares[k].querySelectorAll('.flap').length) mostra(placares[k], v[k]); else entrada(placares[k], fim);
+    });
+  }
+  if ('IntersectionObserver' in window && !calmo) {
+    var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); comeca(); } }, { threshold: 0.4 });
+    io.observe(el);
+  } else pronto = true;
   function evento(e) {
     try {
       var m = JSON.parse(e.data); if (!m) return;
       if (m.path === '/') d = e.type === 'patch' ? Object.assign({}, d, m.data) : (m.data || {});
       else d[m.path.slice(1)] = m.data;
-      mostra();
+      atualiza();
     } catch (x) {}
   }
   if (window.EventSource) {
     var es = new EventSource(C.url);
     es.addEventListener('put', evento); es.addEventListener('patch', evento);
   } else {
-    fetch(C.url).then(function (r) { return r.json(); }).then(function (x) { d = x || {}; mostra(); }).catch(function () {});
+    fetch(C.url).then(function (r) { return r.json(); }).then(function (x) { d = x || {}; atualiza(); }).catch(function () {});
   }
 })();
 </script>`;
@@ -488,6 +530,8 @@ const blocoAvaliacoes = () => `
 })();
 </script>`;
 
+// Botões de cada loja: pedido no iFood da loja, WhatsApp e Google Maps.
+const acoesLoja = (l) => `<a class="botao" href="${esc(l.ifood)}" rel="noopener">Faça seu pedido</a>${linkWhats ? `<a class="botao botao-whats" href="${linkWhats}" rel="noopener">${iconeWhats}WhatsApp</a>` : ''}<a class="botao botao-contorno" href="${esc(l.googleMaps)}" rel="noopener">Abrir no Google Maps</a>`;
 const cartaoLoja = (l, base) => `
 <article class="loja">
   <p class="loja-regiao">${esc(l.regiao)}</p>
@@ -496,7 +540,8 @@ const cartaoLoja = (l, base) => `
   <p class="loja-hora">${l.horarios.map((h) => esc(textoHorario(h))).join('<br>')}</p>
   ${site.avaliacoes && site.avaliacoes.notaInformada ? `<p class="loja-nota" data-nota-loja="${esc(l.nome)}">${nota1(site.avaliacoes.notaInformada)} ★ no iFood</p>` : ''}
   ${l.superIfood ? '<p class="selo-super">Super Restaurante iFood</p>' : ''}
-  <p class="loja-acoes"><a class="botao" href="${esc(l.ifood)}" rel="noopener">Fazer pedido</a><a class="link" href="${base}unidades/${l.slug}/">Ver unidade</a>${linkWhats ? `<a class="whats-bolinha" href="${linkWhats}" rel="noopener" aria-label="WhatsApp ${esc(site.telefoneCentral)}">${iconeWhats}</a>` : ''}</p>
+  <p class="loja-acoes">${acoesLoja(l)}</p>
+  <p><a class="link" href="${base}unidades/${l.slug}/">Ver unidade →</a></p>
 </article>`;
 
 // No cardápio o cartão é a âncora (#id); nos perfis ele aponta para essa âncora.
@@ -935,10 +980,7 @@ for (const l of lojas) {
     <p class="sobretitulo">Hamburgueria ${esc(termo)}</p>
     <h1>${esc(l.nome)}</h1>
     <p class="lead resumo">${esc(l.intro)}</p>
-    <div class="acoes">
-      <a class="botao" href="${esc(l.ifood)}" rel="noopener">Fazer pedido</a>
-      <a class="botao botao-contorno" href="${esc(l.googleMaps)}" rel="noopener">Abrir no Google Maps</a>
-    </div>
+    <div class="acoes acoes-loja">${acoesLoja(l)}</div>
   </div>
 </section>
 <section class="secao">
@@ -1114,11 +1156,12 @@ ${midiaOrdenada.map((m) => `- **${m.titulo}** — ${m.veiculo}${m.data ? `, ${da
 `,
 });
 
-// Nossa história: só fatos confirmados pela diretoria ou em fonte pública. Os episódios do
-// Falando de Delivery (midia) contam o resto, até a transcrição virar texto aqui.
+// Nossa história: texto da diretoria (30/10/2026) com fatos da entrevista ao iFood (2023).
+// Os episódios do Falando de Delivery (midia) aparecem logo abaixo.
 const historia = [
   `A Just Burger nasceu em ${new Date(site.fundacaoData + 'T12:00:00').toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}, na Zona Leste de São Paulo, com uma aposta clara: fazer o melhor hambúrguer de delivery de uma região carente de qualidade na entrega. Começamos pequenos, com 12 pessoas e foco 100% no delivery: um hambúrguer de 150 g no pão brioche, feito para chegar quentinho e no tempo certo. À frente da Just estão Maikon e Juliana.`,
   `Deu certo: só no primeiro ano as vendas dobraram. Crescemos para São Bernardo do Campo (2021), Guarulhos (2022) e Pirituba, passamos de ${fmtInt(site.contador.basePedidos)} pedidos, e duas unidades têm o selo Super Restaurante no iFood, com uma das entregas mais rápidas da cidade.`,
+  'Da Just Burger nasceu um grupo. Em 2020 veio a Just Gourmet, de comida brasileira, que hoje está entre as maiores do grupo em pedidos e em faturamento. Em 2024 chegou a Aham, com pizza e esfiha, e em 2025 o Aham Sushi.',
   'Seguimos com a mesma ideia do primeiro dia: comida boa de verdade, na casa de cada cliente.',
 ];
 const videosHistoria = () => midia.filter((m) => m.youtube && /falando de delivery/i.test(m.veiculo));

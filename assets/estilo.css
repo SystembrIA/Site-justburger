@@ -325,9 +325,11 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 /* ---------- Unidades: selo e WhatsApp ---------- */
 .selo-super { display: inline-flex; align-items: center; gap: 6px; margin: .5em 0 0 !important; padding: 5px 12px; border-radius: 999px; background: #ea1d2c; color: #fff !important; font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .selo-super::before { content: '★'; }
-.whats-bolinha { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #25d366; color: #fff; flex: none; }
-.whats-bolinha svg { width: 24px; height: 24px; }
-.whats-bolinha:hover { background: #1ebe5a; }
+.botao-whats { gap: 8px; background: #25d366; border-color: #25d366; color: #fff; }
+.botao-whats:hover { background: #1ebe5a; border-color: #1ebe5a; color: #fff; }
+.botao-whats svg { width: 20px; height: 20px; flex: none; }
+.loja-acoes { flex-wrap: wrap; gap: 10px !important; }
+.acoes.acoes-loja { flex-wrap: wrap; }
 .rodape-whats strong { font-size: 1.15em; letter-spacing: .02em; }
 .rodape-endereco { color: inherit; text-decoration: none; }
 .rodape-endereco:hover { text-decoration: underline; }
@@ -336,3 +338,31 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 .acoes { flex-wrap: nowrap; }
 .acoes .botao { flex: 0 1 auto; white-space: nowrap; }
 @media (max-width: 520px) { .acoes .botao { padding-inline: 16px; font-size: .78rem; min-height: 46px; } }
+
+/* ---------- Placar de aeroporto (contador) ---------- */
+.numeros { padding: 40px 0 36px; }
+.placar-linha { margin: 0 0 26px; }
+.placar { display: flex; align-items: flex-end; font-size: clamp(2.5rem, 10.5vw, 6rem); font-weight: 800; font-stretch: 70%; line-height: 1; --fundo: #161616; --tinta: #fff; --dobra: #000; }
+.placar .flap { position: relative; display: inline-block; width: .74em; height: 1.18em; margin: 0 .035em; perspective: 4em; border-radius: .07em; box-shadow: 0 .06em .12em rgba(0, 0, 0, .6), inset 0 0 0 1px rgba(255, 255, 255, .06); }
+.placar .metade, .placar .aba { position: absolute; left: 0; right: 0; height: 50%; overflow: hidden; background: var(--fundo); color: var(--tinta); }
+.placar .metade span, .placar .aba span { position: absolute; left: 0; right: 0; height: 200%; display: grid; place-items: center; }
+.placar .cima, .placar .aba-cima { top: 0; border-radius: .07em .07em 0 0; }
+.placar .baixo, .placar .aba-baixo { bottom: 0; border-radius: 0 0 .07em .07em; }
+.placar .baixo span, .placar .aba-baixo span { top: -100%; }
+.placar .aba { visibility: hidden; }
+.placar .aba-cima { transform-origin: 50% 100%; z-index: 2; backface-visibility: hidden; }
+.placar .aba-baixo { transform-origin: 50% 0; z-index: 2; transform: rotateX(90deg); backface-visibility: hidden; }
+.placar .flap::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: max(1px, .02em); background: var(--dobra); z-index: 3; }
+.placar .flap.virando .aba { visibility: visible; }
+.placar .flap.virando .aba-cima { animation: vira-cima .16s ease-in forwards; }
+.placar .flap.virando .aba-baixo { animation: vira-baixo .16s .16s ease-out forwards; }
+.placar .flap.rapido .aba-cima { animation-duration: .06s; }
+.placar .flap.rapido .aba-baixo { animation-duration: .06s; animation-delay: .06s; }
+.placar .ponto { display: inline-block; width: .22em; text-align: center; color: #fff; }
+@keyframes vira-cima { to { transform: rotateX(-90deg); } }
+@keyframes vira-baixo { from { transform: rotateX(90deg); } to { transform: rotateX(0); } }
+.placar-linha .numero-rotulo { margin-top: .7em; font-size: .85rem; }
+.numeros-extra { display: flex; flex-wrap: wrap; gap: 14px 48px; margin-top: 6px; padding-top: 22px; border-top: 1px solid var(--linha); }
+.numeros-extra p { margin: 0; display: flex; align-items: baseline; gap: 12px; }
+.numeros-extra .numero { font-size: clamp(1.8rem, 5vw, 2.6rem); }
+.numeros-extra .numero-rotulo { margin: 0; }
