@@ -325,7 +325,7 @@ ${corpo(base)}
       <img src="${base}assets/img/logo-320.webp" width="140" height="117" alt="Just Burger Hamburgueria" loading="lazy">
       <p>Desde ${esc(site.fundacao)} fazendo o seu burger, o melhor burger de São Paulo.</p>
       ${site.telefoneCentral ? `<p><a class="rodape-social rodape-whats" href="${linkWhats}" rel="noopener">WhatsApp e telefone<br><strong>${esc(site.telefoneCentral)}</strong></a></p>` : ''}
-      ${!pendente(site.instagram) ? `<p><a class="rodape-social" href="${site.instagram}" rel="noopener">Instagram @justburgersp</a></p>` : ''}
+      ${redes().length ? `<p class="rodape-redes">${redes().map(([n, u, i]) => `<a href="${esc(u)}" rel="noopener" aria-label="${n}">${i}</a>`).join('')}</p>` : ''}
     </div>
     <div>
       <h2>Unidades</h2>
@@ -366,6 +366,36 @@ ${site.whatsapp ? `<a class="whats-flutuante" href="${linkWhats}" rel="noopener"
 
 // "Faça seu pedido": abre a janela da busca por CEP (assets/pedido.js). Sem JavaScript, vai para /pedir/.
 const RAIO_KM = 10;
+const iconePin = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#ea4335" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#7a1a12"/></svg>';
+const iconeInstagram = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 7.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21.9 8.2c0-1.7-.5-3.2-1.7-4.4C19 2.6 17.5 2.2 15.8 2.1 14 2 10 2 8.2 2.1 6.5 2.2 5 2.6 3.8 3.8 2.6 5 2.2 6.5 2.1 8.2 2 10 2 14 2.1 15.8c.1 1.7.5 3.2 1.7 4.4 1.2 1.2 2.7 1.6 4.4 1.7 1.8.1 5.8.1 7.6 0 1.7-.1 3.2-.5 4.4-1.7 1.2-1.2 1.6-2.7 1.7-4.4.1-1.8.1-5.8 0-7.6zM19.6 17.7a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.9.4s-4.7.1-5.9-.4a3 3 0 0 1-1.7-1.7c-.5-1.2-.4-4-.4-5.7s-.1-4.6.4-5.7a3 3 0 0 1 1.7-1.7c1.2-.5 4-.4 5.9-.4s4.7-.1 5.9.4a3 3 0 0 1 1.7 1.7c.5 1.2.4 4 .4 5.7s.1 4.6-.4 5.7z"/></svg>';
+const iconeFacebook = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>';
+const iconeTiktok = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.8a5.7 5.7 0 1 0 4.9 5.6V9.1a7.3 7.3 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6z"/></svg>';
+// Redes oficiais (site.instagram / facebook / tiktok): só aparecem as preenchidas.
+const redes = () => [['Instagram', site.instagram, iconeInstagram], ['Facebook', site.facebook, iconeFacebook], ['TikTok', site.tiktok, iconeTiktok]].filter(([, u]) => u && !pendente(u));
+const blocoSiga = () => `
+<section class="secao siga" aria-labelledby="siga-titulo">
+  <div class="largura">
+    <div class="titulo-secao">
+      <h2 id="siga-titulo">Siga a gente</h2>
+      <p class="siga-redes">${redes().map(([n, u, i]) => `<a class="siga-rede" href="${esc(u)}" rel="noopener" aria-label="${n}">${i}<span>${n}</span></a>`).join('')}</p>
+    </div>
+    <div class="insta-grade" data-insta hidden></div>
+  </div>
+</section>
+${site.instagramPosts ? `<script>
+(function () {
+  var g = document.querySelector('[data-insta]'); if (!g || !window.fetch) return;
+  var url = ${JSON.stringify(site.instagramPosts)}, base = url.replace(/[^/]*$/, '');
+  var esc = function (t) { return String(t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  fetch(url).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) {
+    var p = (d && d.posts || []).slice(0, 4); if (!p.length) return;
+    g.innerHTML = p.map(function (x) {
+      return '<a class="insta-post" href="' + esc(x.url) + '" rel="noopener"><img src="' + esc(base + x.imagem) + '" width="600" height="600" loading="lazy" alt="' + esc(x.legenda || 'Postagem da Just Burger no Instagram') + '">' + (x.video ? '<span class="insta-video" aria-hidden="true">▶</span>' : '') + '</a>';
+    }).join('');
+    g.hidden = false;
+  }).catch(function () {});
+})();
+</script>` : ''}`;
 const iconeWhats = '<svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5v-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8 0 1.6 1.2 3.2 1.4 3.4.2.2 2.3 3.6 5.7 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.6-.4z"/></svg>';
 const linkWhats = site.whatsapp ? `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Olá! Vim pelo site da Just Burger.')}` : '';
 const botaoPedido = (base, classe = 'botao') => `<a class="${classe}" href="${base}pedir/" data-pedido>Faça seu pedido</a>`;
@@ -533,7 +563,7 @@ const blocoAvaliacoes = () => `
 // Selo Super Restaurante iFood (só nas lojas com superIfood: nível 5 de 5 no painel do iFood).
 const seloSuper = `<div class="selo-super" role="img" aria-label="Somos um Super Restaurante no iFood"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#ea1d2c"/><path d="M50.0,24.0 L56.8,42.7 L76.6,43.3 L60.9,55.6 L66.5,74.7 L50.0,63.5 L33.5,74.7 L39.1,55.6 L23.4,43.3 L43.2,42.7Z" fill="#fff"/></svg><p><span>Somos um</span><em>super</em><span>restaurante</span></p></div>`;
 // Botões de cada loja: pedido no iFood da loja, WhatsApp e Google Maps.
-const acoesLoja = (l) => `<a class="botao" href="${esc(l.ifood)}" rel="noopener">Faça seu pedido</a>${linkWhats ? `<a class="botao botao-whats" href="${linkWhats}" rel="noopener">${iconeWhats}WhatsApp</a>` : ''}<a class="botao botao-contorno" href="${esc(l.googleMaps)}" rel="noopener">Google Maps</a>`;
+const acoesLoja = (l) => `<a class="botao" href="${esc(l.ifood)}" rel="noopener">Faça seu pedido</a>${linkWhats ? `<a class="botao botao-whats" href="${linkWhats}" rel="noopener">${iconeWhats}WhatsApp</a>` : ''}<a class="botao botao-contorno botao-mapa" href="${esc(l.googleMaps)}" rel="noopener" aria-label="Abrir ${esc(l.nome)} no Google Maps" title="Abrir no Google Maps">${iconePin}</a>`;
 const cartaoLoja = (l, base) => `
 <article class="loja">
   <p class="loja-regiao">${esc(l.regiao)}</p>
@@ -813,7 +843,8 @@ ${site.contador ? blocoContador() : ''}
     ${blocoFaq(faq)}
   </div>
 </section>
-${site.avaliacoes ? blocoAvaliacoes() : ''}`,
+${site.avaliacoes ? blocoAvaliacoes() : ''}
+${blocoSiga()}`,
   md: () => `# ${site.nome}
 
 > ${site.descricaoCurta}. Pedidos pelo iFood (${site.nomeIfood}).
