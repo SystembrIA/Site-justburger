@@ -98,7 +98,7 @@ export const lojas = [
     termoBusca: 'em Pirituba',
     cidade: 'São Paulo',
     regiao: 'Zona Norte', // Prefeitura de SP (GeoSampa): distrito Pirituba, região Norte 2
-    endereco: 'Av. Raimundo Pereira de Magalhães, 3850, loja 2', // CNPJ 31.394.735/0004-13 (Receita Federal), Jardim Íris
+    endereco: 'Av. Raimundo Pereira de Magalhães, 3850', // CNPJ 31.394.735/0004-13 (Receita Federal), Jardim Íris
     cep: '05145-200',
     telefone: '(11) 2622-8800',
     geo: { lat: -23.4940394, lng: -46.7310058 }, // OpenStreetMap (avenida no CEP); conferir o pino no Google Maps
