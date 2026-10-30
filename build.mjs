@@ -290,12 +290,12 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
     <nav class="menu" aria-label="Principal">
       <ul>${nav.map(([n, c]) => `<li><a href="${base}${c}"${caminho.startsWith(c) ? ' aria-current="page"' : ''}>${n}</a></li>`).join('')}</ul>
     </nav>
-    <a class="botao botao-topo" href="${base}unidades/">Peça no iFood</a>
+    ${botaoPedido(base, 'botao botao-topo')}
     <details class="menu-celular">
       <summary aria-label="Abrir menu"><span></span><span></span><span></span></summary>
       <nav aria-label="Menu">
         <ul>${nav.map(([n, c]) => `<li><a href="${base}${c}">${n}</a></li>`).join('')}<li><a href="${base}entrega/">Onde entregamos</a></li></ul>
-        <a class="botao" href="${base}unidades/">Peça no iFood</a>
+        ${botaoPedido(base)}
       </nav>
     </details>
   </div>
@@ -308,6 +308,7 @@ ${corpo(base)}
     <div class="rodape-marca">
       <img src="${base}assets/img/logo-320.webp" width="140" height="117" alt="Just Burger Hamburgueria" loading="lazy">
       <p>Hambúrguer de 150 g no pão brioche, desde ${esc(site.fundacao)}. Pedidos pelo iFood.</p>
+      ${site.telefoneCentral ? `<p><a class="rodape-social" href="${linkWhats}" rel="noopener">WhatsApp e telefone ${esc(site.telefoneCentral)}</a></p>` : ''}
       ${!pendente(site.instagram) ? `<p><a class="rodape-social" href="${site.instagram}" rel="noopener">Instagram @justburgersp</a></p>` : ''}
     </div>
     <div>
@@ -327,7 +328,7 @@ ${corpo(base)}
         <li><a href="${base}sobre/">Nossa história</a></li>
         <li><a href="${base}na-midia/">Na mídia</a></li>
         ${geo ? `<li><a href="${base}entrega/">Onde entregamos</a></li>` : ''}
-        <li><a href="${base}para-voce/alergias-e-restricoes/">Alergias e restrições</a></li>
+        <li><a href="${base}pedir/">Faça seu pedido</a></li>
       </ul>
     </div>
   </div>
@@ -336,12 +337,43 @@ ${corpo(base)}
     <p>Imagens meramente ilustrativas. Preços e disponibilidade no iFood.</p>
   </div>
 </footer>
+${janelaPedido(base)}
+${site.whatsapp ? `<a class="whats-flutuante" href="${linkWhats}" rel="noopener" aria-label="Falar com a Just Burger no WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5v-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8 0 1.6 1.2 3.2 1.4 3.4.2.2 2.3 3.6 5.7 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.6-.4z"/></svg></a>` : ''}
+<script src="${base}assets/pedido-dados.js" defer></script>
+<script src="${base}assets/pedido.js" defer></script>
 </body>
 </html>
 `;
 }
 
 // ---------- Blocos reutilizados ----------
+
+// "Faça seu pedido": abre a janela da busca por CEP (assets/pedido.js). Sem JavaScript, vai para /pedir/.
+const RAIO_KM = 10;
+const linkWhats = site.whatsapp ? `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Olá! Vim pelo site da Just Burger.')}` : '';
+const botaoPedido = (base, classe = 'botao') => `<a class="${classe}" href="${base}pedir/" data-pedido>Faça seu pedido</a>`;
+const buscaCep = (id) => `
+<form class="busca-cep" data-busca-cep novalidate>
+  <label for="${id}">Digite seu CEP para ver a loja que atende você</label>
+  <div class="busca-cep-linha">
+    <input id="${id}" name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" maxlength="9">
+    <button class="botao" type="submit">Buscar</button>
+  </div>
+  <div class="busca-cep-resultado" aria-live="polite"></div>
+</form>`;
+const outrasOpcoes = () => site.linktree || linkWhats
+  ? `<p class="pedido-outras">${site.linktree ? `<a class="botao botao-contorno" href="${esc(site.linktree)}" rel="noopener">Ver todas as opções</a>` : ''}${linkWhats ? `<a class="link" href="${linkWhats}" rel="noopener">WhatsApp ${esc(site.telefoneCentral)}</a>` : ''}</p>`
+  : '';
+const janelaPedido = (base) => `
+<dialog class="janela janela-pedido" id="janela-pedido" aria-labelledby="pedido-titulo">
+  <button type="button" class="janela-fechar" aria-label="Fechar">×</button>
+  <div class="janela-texto">
+    <p class="sobretitulo">Faça seu pedido</p>
+    <h2 id="pedido-titulo">Qual loja atende você?</h2>
+    ${buscaCep('cep-janela')}
+    ${outrasOpcoes()}
+  </div>
+</dialog>`;
 
 // Primeiro parágrafo de cada página responde a pergunta dela (é o trecho que buscadores e IA citam).
 const respostaRapida = (texto) => `<p class="lead resumo">${esc(texto)}</p>`;
@@ -446,7 +478,7 @@ const cartaoLoja = (l, base) => `
   <p>${pendente(l.endereco) ? esc(l.bairro) : `${esc(l.endereco)} · ${esc(l.bairro)}`}<br>${esc(l.cidade)}</p>
   <p class="loja-hora">${l.horarios.map((h) => esc(textoHorario(h))).join('<br>')}</p>
   ${site.avaliacoes && site.avaliacoes.notaInformada ? `<p class="loja-nota" data-nota-loja="${esc(l.nome)}">${nota1(site.avaliacoes.notaInformada)} ★ no iFood</p>` : ''}
-  <p class="loja-acoes"><a class="botao" href="${esc(l.ifood)}" rel="noopener">Pedir no iFood</a><a class="link" href="${base}unidades/${l.slug}/">Ver unidade</a></p>
+  <p class="loja-acoes"><a class="botao" href="${esc(l.ifood)}" rel="noopener">Fazer pedido</a><a class="link" href="${base}unidades/${l.slug}/">Ver unidade</a></p>
 </article>`;
 
 // No cardápio o cartão é a âncora (#id); nos perfis ele aponta para essa âncora.
@@ -595,7 +627,7 @@ const janelaFoto = (base) => `
     <p class="produto-detalhe" data-j="detalhe"></p>
     <p class="produto-descricao" data-j="descricao"></p>
     <div data-j="extra"></div>
-    <a class="botao" href="${base}unidades/">Peça no iFood</a>
+    ${botaoPedido(base)}
   </div>
 </dialog>
 <script>
@@ -642,7 +674,7 @@ paginas.push({
       <h1>150 g de carne.<br>Pão brioche.<br><span>Molho Just.</span></h1>
       <p class="lead">Hambúrguer feito na hora nas unidades da Zona Leste, Pirituba, Guarulhos e São Bernardo do Campo, com entrega pelo iFood.</p>
       <div class="acoes">
-        <a class="botao" href="${base}unidades/">Peça no iFood</a>
+        ${botaoPedido(base)}
         <a class="botao botao-contorno" href="${base}cardapio/">Ver o cardápio</a>
       </div>
     </div>
@@ -756,7 +788,7 @@ paginas.push({
 <section class="secao secao-menu">
   <div class="largura">
     ${cardapio.map((c) => `<h2 class="categoria-titulo" id="${slug(c.categoria)}">${esc(c.categoria)}</h2><div class="lista-menu">${c.itens.map((i) => cartaoProduto({ ...i, categoria: c.categoria }, base, { ancora: true })).join('')}</div>`).join('\n')}
-    <div class="acoes"><a class="botao" href="${base}unidades/">Peça no iFood</a></div>
+    <div class="acoes">${botaoPedido(base)}</div>
 ${janelaFoto(base)}
   </div>
 </section>`,
@@ -772,7 +804,7 @@ paginas.push({
   caminho: 'para-voce/',
   profundidade: 1,
   titulo: `O que pedir na ${site.nome} | Recomendações para cada perfil`,
-  descricao: `Primeira vez, fome grande, pedido em grupo, gastar pouco, smash, frango, algo leve, sobremesa ou alergias: veja o que pedir na Just Burger para cada perfil.`,
+  descricao: `Primeira vez, fome grande, pedido em grupo, gastar pouco, smash, frango, algo leve, ou sobremesa: veja o que pedir na Just Burger para cada perfil.`,
   schema: [
     { '@type': 'CollectionPage', name: 'O que pedir na Just Burger', hasPart: perfis.map((p) => ({ '@id': abs(`para-voce/${p.slug}/#pagina`) })) },
     schemaBreadcrumb([['Início', ''], ['Para você', 'para-voce/']]),
@@ -818,7 +850,7 @@ for (const p of perfis) {
     ${p.texto.map((t) => `<p>${esc(t)}</p>`).join('')}
     <h2>Perguntas</h2>
     ${blocoFaq(p.perguntas)}
-    <div class="acoes"><a class="botao" href="${base}unidades/">Peça no iFood</a></div>
+    <div class="acoes">${botaoPedido(base)}</div>
   </div>
 </section>
 <section class="secao">
@@ -886,7 +918,7 @@ for (const l of lojas) {
     <h1>${esc(l.nome)}</h1>
     <p class="lead resumo">${esc(l.intro)}</p>
     <div class="acoes">
-      <a class="botao" href="${esc(l.ifood)}" rel="noopener">Pedir no iFood</a>
+      <a class="botao" href="${esc(l.ifood)}" rel="noopener">Fazer pedido</a>
       <a class="botao botao-contorno" href="${esc(l.googleMaps)}" rel="noopener">Abrir no Google Maps</a>
     </div>
   </div>
@@ -1014,7 +1046,7 @@ if (geo) {
     <h1>Hamburgueria ${esc(onde)}</h1>
     ${respostaRapida(resumo)}
     <div class="acoes">
-      <a class="botao" href="${esc(l.ifood)}" rel="noopener">Pedir no iFood</a>
+      <a class="botao" href="${esc(l.ifood)}" rel="noopener">Fazer pedido</a>
       <a class="botao botao-contorno" href="${base}unidades/${l.slug}/">Ver a unidade ${esc(l.bairro)}</a>
     </div>
   </div>
@@ -1082,11 +1114,57 @@ paginas.push({
   md: () => `# Sobre a ${site.nome}\n\nA Just Burger começou em ${site.fundacao} na Zona Leste de São Paulo, no delivery, e hoje tem quatro unidades na Grande São Paulo.\n`,
 });
 
+paginas.push({
+  caminho: 'pedir/',
+  profundidade: 1,
+  titulo: `Faça seu pedido | ${site.nome}`,
+  descricao: 'Digite seu CEP e veja qual unidade da Just Burger atende você, com o link direto para pedir.',
+  schema: [schemaBreadcrumb([['Início', ''], ['Faça seu pedido', 'pedir/']])],
+  corpo: (base) => `
+<section class="secao">
+  <div class="largura estreita">
+    ${migalhas(base, [['Início', ''], ['Faça seu pedido', 'pedir/']])}
+    <h1>Faça seu pedido</h1>
+    <p class="lead">Digite seu CEP: mostramos a unidade mais perto, com o link direto para pedir.</p>
+    ${buscaCep('cep-pagina')}
+    ${outrasOpcoes()}
+  </div>
+</section>
+<section class="secao">
+  <div class="largura">
+    <h2>Ou escolha a unidade</h2>
+    <div class="grade-lojas">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
+  </div>
+</section>`,
+  md: () => `# Faça seu pedido na ${site.nome}\n\n${lojas.map((l) => `- ${l.nome} (${l.endereco}, ${l.bairro}, ${l.cidade}): ${l.ifood}`).join('\n')}\n${site.telefoneCentral ? `\nWhatsApp e telefone: ${site.telefoneCentral}\n` : ''}`,
+});
+
 // ---------- Escrita ----------
 
 rmSync(SAIDA, { recursive: true, force: true });
 mkdirSync(SAIDA, { recursive: true });
 cpSync(join(RAIZ, 'assets'), join(SAIDA, 'assets'), { recursive: true });
+{
+  // Busca por CEP (assets/pedido.js): lojas com coordenadas e, de reserva, bairro -> loja (bairros.json).
+  const normB = (t) => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  const comGeo = lojas.filter((l) => l.geo);
+  const bairros = {};
+  for (const b of geo ? geo.bairros : []) {
+    const i = comGeo.findIndex((l) => l.slug === b.loja);
+    if (i < 0) continue;
+    for (const n of [b.nome, ...(b.variacoes || [])]) {
+      bairros[`${normB(n)}|${normB(b.cidade)}`] ??= i;
+      bairros[normB(n)] ??= i;
+    }
+  }
+  const dados = {
+    raio: RAIO_KM,
+    whatsapp: linkWhats,
+    lojas: comGeo.map((l) => ({ nome: l.nome, endereco: l.endereco, bairro: l.bairro, cidade: l.cidade, lat: l.geo.lat, lng: l.geo.lng, ifood: l.ifood })),
+    bairros,
+  };
+  writeFileSync(join(SAIDA, 'assets', 'pedido-dados.js'), `window.JUST_PEDIDO = ${JSON.stringify(dados)};\n`);
+}
 
 for (const p of paginas) {
   const pasta = join(SAIDA, p.caminho);
