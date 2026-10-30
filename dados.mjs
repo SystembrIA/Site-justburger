@@ -82,7 +82,7 @@ export const lojas = [
     geo: { lat: -23.5114779, lng: -46.5052967 }, // Rua Peixoto (OpenStreetMap); conferir o pino exato no Google Maps
     ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-hamburgueria-lanches--dog-vila-buenos-aires/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de',
     googleMaps: 'https://maps.google.com/?q=Just+Burger+Hamburgueria+Vila+Buenos+Aires+São+Paulo',
-    horarios: [{ dias: ['Mo', 'Tu', 'We', 'Su'], abre: '11:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '11:00', fecha: '23:59' }], // iFood (ifood_horarios do Hub, 30/10/2026); quinta sem turno cadastrado no iFood
+    horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '11:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '11:00', fecha: '23:59' }], // iFood (ifood_horarios do Hub, 30/10/2026); quinta igual aos outros dias (Michael, 30/10) — falta cadastrar no iFood
     bairrosAtendidos: ['Vila Buenos Aires', 'Penha', 'Cangaíba', 'Vila Matilde', 'Ermelino Matarazzo'], // PREENCHER: confirmar raio de entrega
     intro:
       'A matriz da Just Burger fica na Vila Buenos Aires, que muita gente da vizinhança chama de Vila Fidelis Ribeiro ou Jardim Popular, na região da Penha, Zona Leste de São Paulo. Foi aqui que a receita da Just foi acertada e é daqui que sai o padrão das outras lojas.',
