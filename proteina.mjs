@@ -1,15 +1,17 @@
 // Proteína aproximada dos lanches Just Burger, pelas médias da Just (base: bloco do Top Smash no iFood
 // e tabela TACO/Unicamp). O site usa isto só enquanto a descrição do iFood não traz o bloco
 // "Proteína (aproximada) por ...:" — quando traz, vale o texto do iFood.
-// Peso marcado com "conferir" é suposição: a cozinha precisa confirmar antes de ir para o iFood.
+// Pesos sem gramatura na descrição (frango do Just Chicken e do Just Pic, carne seca do Just Farm):
+// médias aprovadas pelo Michael em 30/10/2026.
 
 const I = {
   carne: ['Carne 150g', 28],
   carne2: ['Carne 2x 150g', 56],
   smash: ['Carne smash 80g', 15],
   smash2: ['Carne smash 2x 80g', 30],
-  frangoJust: ['Frango temperado 120g', 30], // conferir peso
-  frangoGrelhado2: ['Frango grelhado 2x 80g', 50], // conferir peso
+  frangoJust: ['Frango temperado 120g', 30],
+  frangoGrelhado2: ['Frango grelhado 2x 80g', 50],
+  carneSeca: ['Carne seca desfiada 40g', 11],
   bacon: ['Bacon', 6],
   baconTriturado: ['Bacon triturado', 4],
   farofaBacon: ['Farofa de bacon', 4],
@@ -48,6 +50,7 @@ const lanches = {
   'just jaro': ['smash2', 'prato', 'brioche', 'salada'],
   'just ozem': ['smash2', 'prato2', 'salada'],
   'just pic': ['frangoGrelhado2', 'prato2', 'salada'],
+  'just farm': ['carne', 'carneSeca', 'coalho', 'brioche', 'molhos'],
   '2 just passado': ['carne', 'prato', 'pao', 'salada'], // por lanche (vêm dois)
 };
 // combo = lanche + batata palito individual (refrigerante não tem proteína)
@@ -59,7 +62,6 @@ const combos = {
   'combo just chicken': 'just chicken',
   'just combo 3': 'just cheddar melt',
 };
-export const pesosAConferir = Object.entries(I).filter(([k]) => ['frangoJust', 'frangoGrelhado2'].includes(k)).map(([, [n]]) => n);
 
 const chave = (nome) => String(nome).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
 

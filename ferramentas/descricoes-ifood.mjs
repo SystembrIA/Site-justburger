@@ -2,12 +2,11 @@
 // (proteina.mjs) + "Não Fazemos Trocas De Itens.". Lê cardapio-ifood.json. Saída em Markdown, para conferência.
 // Uso: node ferramentas/descricoes-ifood.mjs > descricoes-ifood.md
 import { readFileSync } from 'node:fs';
-import { receitaDe, blocoIfood, pesosAConferir } from '../proteina.mjs';
+import { receitaDe, blocoIfood } from '../proteina.mjs';
 
 const dados = JSON.parse(readFileSync(new URL('../cardapio-ifood.json', import.meta.url)));
 const vistos = new Set();
-const saida = ['# Just Burger: descrições com proteína (aproximada)', '',
-  `Pesos a conferir pela cozinha: ${pesosAConferir.join(', ')}.`, ''];
+const saida = ['# Just Burger: descrições com proteína (aproximada)', ''];
 for (const cat of dados.categorias) {
   for (const i of cat.itens) {
     const nome = i.nome.replace(/\s*-?\s*(hits|queridinhos)\s*$/i, '').split(/\s+-\s+/)[0].trim();
