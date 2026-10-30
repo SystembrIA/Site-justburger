@@ -1064,7 +1064,7 @@ paginas.push({
     ${migalhas(base, [['Início', ''], ['Unidades', 'unidades/']])}
     <h1>Unidades Just Burger</h1>
     ${respostaRapida(`São quatro unidades: ${juntar(lojas.map((l) => `${l.bairro} (${l.cidade})`))}. Todas entregam pelo iFood; escolha a mais perto para ver endereço, horário e bairros atendidos.`)}
-    <div class="grade-2">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
+    <div class="grade-2 lojas-centro">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
   </div>
 </section>`,
   md: () => `# Unidades ${site.nome}\n\n${lojas.map(mdLoja).join('\n\n')}\n`,
