@@ -342,11 +342,15 @@ ${corpo(base)}
       <img src="${base}assets/img/logo-320.webp" width="140" height="117" alt="Just Burger Hamburgueria" loading="lazy">
       <p>Desde ${esc(site.fundacao)} fazendo o seu burger, o melhor burger de São Paulo.</p>
       ${site.telefoneCentral ? `<p><a class="rodape-social rodape-whats" href="${linkWhats}" rel="noopener">WhatsApp e telefone<br><strong>${esc(site.telefoneCentral)}</strong></a></p>` : ''}
-      ${redes().length ? `<p class="rodape-redes">${redes().map(([n, u, i]) => `<a href="${esc(u)}" rel="noopener" aria-label="${n}">${i}</a>`).join('')}</p>` : ''}
+      ${redes().length ? `<p class="rodape-siga">Siga a gente</p><p class="rodape-redes">${redes().map(([n, u, i]) => `<a href="${esc(u)}" rel="noopener" aria-label="${n}">${i}</a>`).join('')}</p>` : ''}
     </div>
     <div>
-      <h2>Unidades</h2>
-      <ul>${lojas.map((l) => `<li><a href="${base}unidades/${l.slug}/">${esc(l.nome.replace('Just Burger ', ''))}</a><a class="rodape-endereco" href="${esc(l.googleMaps)}" rel="noopener">${esc(pendente(l.endereco) ? l.bairro : l.endereco)} · ${esc(l.cidade)}</a></li>`).join('')}</ul>
+      <h2>Nossas unidades</h2>
+      <ul class="rodape-lojas">${lojas.map((l) => `<li><a class="rodape-loja-nome" href="${base}unidades/${l.slug}/">${esc(l.nome.replace('Just Burger ', ''))}</a><a class="rodape-endereco" href="${esc(l.googleMaps)}" rel="noopener">${esc(enderecoCurto(l))}</a></li>`).join('')}</ul>
+    </div>
+    <div>
+      <h2>Nossas culinárias</h2>
+      <ul class="rodape-marcas">${culinarias.map((c) => `<li><a href="${base}culinarias/${c.slug}/">${logoMarca(c) ? `<img src="${base}${logoMarca(c)}" width="32" height="32" alt="" loading="lazy">` : `<span class="submenu-marca" aria-hidden="true">${esc(c.nome.split(' ').pop()[0])}</span>`}<span><strong>${esc(c.nome)}</strong><small>${esc((c.lojas || []).map((x) => x.regiao).join(' · '))}</small></span></a></li>`).join('')}</ul>
     </div>
     <div>
       <h2>Cardápio</h2>
@@ -366,6 +370,7 @@ ${corpo(base)}
       </ul>
     </div>
   </div>
+  ${blocoInsta()}
   <div class="largura rodape-base">
     <p>© ${new Date().getFullYear()} Just Burger Hamburgueria Ltda · CNPJ 31.394.735/0001-70</p>
     <p>Imagens meramente ilustrativas. Preços e disponibilidade no iFood.</p>
@@ -390,16 +395,8 @@ const iconeFacebook = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidd
 const iconeTiktok = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.8a5.7 5.7 0 1 0 4.9 5.6V9.1a7.3 7.3 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6z"/></svg>';
 // Redes oficiais (site.instagram / facebook / tiktok): só aparecem as preenchidas.
 const redes = () => [['Instagram', site.instagram, iconeInstagram], ['Facebook', site.facebook, iconeFacebook], ['TikTok', site.tiktok, iconeTiktok]].filter(([, u]) => u && !pendente(u));
-const blocoSiga = () => `
-<section class="secao siga" aria-labelledby="siga-titulo">
-  <div class="largura">
-    <div class="titulo-secao">
-      <h2 id="siga-titulo">Siga a gente</h2>
-      <p class="siga-redes">${redes().map(([n, u, i]) => `<a class="siga-rede" href="${esc(u)}" rel="noopener" aria-label="${n}">${i}<span>${n}</span></a>`).join('')}</p>
-    </div>
-    <div class="insta-grade" data-insta hidden></div>
-  </div>
-</section>
+const blocoInsta = () => `
+<div class="largura insta-grade" data-insta hidden></div>
 ${site.instagramPosts ? `<script>
 (function () {
   var g = document.querySelector('[data-insta]'); if (!g || !window.fetch) return;
@@ -626,6 +623,18 @@ const cartaoCulinaria = (c, base) => {
   const logo = logoMarca(c);
   return `<a class="culinaria" href="${base}culinarias/${c.slug}/">${logo ? `<img src="${base}${logo}" width="320" height="320" loading="lazy" alt="Logo ${esc(c.nome)}">` : ''}<p class="culinaria-nome">${esc(c.nome)}</p><p class="culinaria-tipo">${esc(c.tipo)}</p>${c.conteudo ? '' : '<p class="culinaria-breve">Em breve</p>'}</a>`;
 };
+// Cartão de uma culinária na página Unidades: mesmo padrão das lojas Burger, uma linha por operação.
+const cartaoMarca = (c, base) => `
+<article class="loja loja-marca">
+  ${logoMarca(c) ? `<img class="marca-logo-peq" src="${base}${logoMarca(c)}" width="72" height="72" alt="Logo ${esc(c.nome)}" loading="lazy">` : `<span class="submenu-marca marca-inicial" aria-hidden="true">${esc(c.nome.split(' ').pop()[0])}</span>`}
+  <h3><a href="${base}culinarias/${c.slug}/">${esc(c.nome)}</a></h3>
+  <p class="loja-endereco">${esc(c.tipo)}</p>
+  ${(c.lojas || []).map((x) => `<div class="marca-operacao">
+    <p class="marca-regiao">${esc(x.regiao)}</p>
+    <div class="loja-reputacao"><p class="loja-nota">${nota1(x.nota)} <span class="estrela-dourada" aria-hidden="true">★</span> no iFood</p>${x.superIfood ? seloSuper : ''}</div>
+    <p class="loja-acoes"><a class="botao" href="${esc(x.ifood)}" rel="noopener">Faça seu pedido</a></p>
+  </div>`).join('')}
+</article>`;
 const blocoCulinarias = (base) => (culinarias.length ? `
 <section class="secao culinarias" aria-labelledby="culinarias-titulo">
   <div class="largura">
@@ -923,8 +932,7 @@ ${blocoCulinarias(base)}
     ${blocoFaq(faq)}
   </div>
 </section>
-${site.avaliacoes ? blocoAvaliacoes() : ''}
-${blocoSiga()}`,
+${site.avaliacoes ? blocoAvaliacoes() : ''}`,
   md: () => `# ${site.nome}
 
 > ${site.descricaoCurta}. Pedidos pelo iFood (${site.nomeIfood}).
@@ -1066,7 +1074,13 @@ paginas.push({
     ${respostaRapida(`São quatro unidades: ${juntar(lojas.map((l) => `${l.bairro} (${l.cidade})`))}. Todas entregam pelo iFood; escolha a mais perto para ver endereço, horário e bairros atendidos.`)}
     <div class="grade-2 lojas-centro">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
   </div>
-</section>`,
+</section>
+${culinarias.some((c) => c.lojas) ? `<section class="secao">
+  <div class="largura">
+    <h2>Nossas culinárias</h2>
+    <div class="grade-2 lojas-centro">${culinarias.map((c) => cartaoMarca(c, base)).join('')}</div>
+  </div>
+</section>` : ''}`,
   md: () => `# Unidades ${site.nome}\n\n${lojas.map(mdLoja).join('\n\n')}\n`,
 });
 
