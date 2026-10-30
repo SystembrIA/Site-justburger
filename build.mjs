@@ -1160,7 +1160,7 @@ ${midiaOrdenada.map((m) => `- **${m.titulo}** — ${m.veiculo}${m.data ? `, ${da
 // Os episódios do Falando de Delivery (midia) aparecem logo abaixo.
 const historia = [
   `A Just Burger nasceu em ${new Date(site.fundacaoData + 'T12:00:00').toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}, na Zona Leste de São Paulo, com uma aposta clara: fazer o melhor hambúrguer de delivery de uma região carente de qualidade na entrega. Começamos pequenos, com 12 pessoas e foco 100% no delivery: um hambúrguer de 150 g no pão brioche, feito para chegar quentinho e no tempo certo. À frente da Just estão Maikon e Juliana.`,
-  `Deu certo: só no primeiro ano as vendas dobraram. Crescemos para São Bernardo do Campo (2021), Guarulhos (2022) e Pirituba, passamos de ${fmtInt(site.contador.basePedidos)} pedidos, e duas unidades têm o selo Super Restaurante no iFood, com uma das entregas mais rápidas da cidade.`,
+  `Deu certo: só no primeiro ano as vendas dobraram. Crescemos para São Bernardo do Campo (2021), Guarulhos (2022) e Pirituba, passamos de ${fmtInt(site.contador.basePedidos)} pedidos, e as quatro unidades têm o selo Super Restaurante no iFood, com uma das entregas mais rápidas da cidade.`,
   'Da Just Burger nasceu um grupo. Em 2020 veio a Just Gourmet, de comida brasileira, que hoje está entre as maiores do grupo em pedidos e em faturamento. Em 2024 chegou a Aham, com pizza e esfiha, e em 2025 o Aham Sushi.',
   'Seguimos com a mesma ideia do primeiro dia: comida boa de verdade, na casa de cada cliente.',
 ];

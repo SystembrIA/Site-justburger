@@ -89,6 +89,7 @@ export const lojas = [
     distritoOficial: 'Ponte Rasa', // GeoSampa; a página /entrega/ponte-rasa/ ganha os nomes acima
     preposicao: 'na',
     termoBusca: 'na Zona Leste', // como a página se apresenta no título
+    superIfood: true, // Super Restaurante iFood (nível 5 de 5, jul-set/2026, painel do Hub)
     cidade: 'São Paulo',
     regiao: 'Zona Leste',
     endereco: 'Rua Peixoto, 156', // endereço oficial (diretoria, 30/10/2026); corrigir o Guia do Hambúrguer, que mostra R. Santa Germana, 152
@@ -108,7 +109,7 @@ export const lojas = [
     bairro: 'Pirituba',
     preposicao: 'em',
     termoBusca: 'em Pirituba',
-    superIfood: true, // Super Restaurante iFood (nível 5 de 5, jun-ago/2026, painel do Hub)
+    superIfood: true, // Super Restaurante iFood (nível 5 de 5, jul-set/2026, painel do Hub)
     cidade: 'São Paulo',
     regiao: 'Zona Norte', // Prefeitura de SP (GeoSampa): distrito Pirituba, região Norte 2
     endereco: 'Av. Raimundo Pereira de Magalhães, 3850', // CNPJ 31.394.735/0004-13 (Receita Federal), Jardim Íris
@@ -128,6 +129,7 @@ export const lojas = [
     bairro: 'Vila Endres',
     preposicao: 'em',
     termoBusca: 'em Guarulhos',
+    superIfood: true, // Super Restaurante iFood (nível 5 de 5, jul-set/2026, painel do Hub)
     cidade: 'Guarulhos',
     regiao: 'Grande São Paulo',
     endereco: 'Rua Espanhola, 470', // CNPJ 31.394.735/0003-32 (Receita Federal)
@@ -147,7 +149,7 @@ export const lojas = [
     bairro: 'Baeta Neves',
     preposicao: 'em',
     termoBusca: 'em São Bernardo do Campo',
-    superIfood: true, // Super Restaurante iFood (nível 5 de 5, jun-ago/2026, painel do Hub)
+    superIfood: true, // Super Restaurante iFood (nível 5 de 5, jul-set/2026, painel do Hub)
     cidade: 'São Bernardo do Campo',
     regiao: 'ABC Paulista',
     endereco: 'Av. Getúlio Vargas, 600', // CNPJ 31.394.735/0002-51 (Receita Federal), lotes 38 e 39
