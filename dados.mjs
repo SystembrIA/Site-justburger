@@ -49,7 +49,8 @@ export const site = {
   // notaInformada: aparece já no HTML (todas as lojas) até o robô trazer a nota e a quantidade do iFood.
   avaliacoes: {
     url: 'https://systembria.github.io/just-burger-producao/site-dados/avaliacoes-just-burger.json',
-    notaInformada: 4.9, // nota no iFood das 4 lojas, informada pela diretoria em 30/10/2026
+    notaInformada: 4.9,
+    avaliacoesInformadas: 15422, // total nas lojas Burger, informado pela diretoria em 30/10/2026 // nota no iFood das 4 lojas, informada pela diretoria em 30/10/2026
   },
   // Burger flutuando no topo da home: recorte (sem fundo) do produto com este nome, gerado pelo robô
   // a partir da foto do iFood. Sem recorte, usa `imagem` (PNG/WebP transparente) e, sem ela, o logo.

@@ -407,3 +407,11 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 .rodape-redes { display: flex; gap: 14px; }
 .rodape-redes a { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--linha); border-radius: 50%; color: var(--branco); }
 .rodape-redes a:hover { border-color: var(--laranja); color: var(--laranja); }
+
+/* Nota e unidades: uma por linha, centralizadas */
+.numeros-extra { flex-direction: column; align-items: center; gap: 10px; flex-wrap: nowrap; }
+.numeros-extra p { white-space: normal; justify-content: center; text-align: left; }
+.numeros-extra .numero-rotulo { max-width: 34ch; }
+/* Selo: texto centralizado e "super" mais perto de "Somos um" */
+.selo-super p { align-items: center; text-align: center; }
+.selo-super em { margin: -.16em 0 .04em; }
