@@ -126,6 +126,8 @@ ul { padding-left: 1.2em; }
 .produto-texto h3 a { text-decoration: none; }
 .produto-texto h3 a:hover { color: var(--laranja); }
 .produto-texto .preco { margin: auto 0 0; padding-top: 8px; font-size: 1rem; }
+.produto-selo { margin-left: 6px; padding: 2px 8px; border-radius: 999px; background: var(--laranja); color: #000; letter-spacing: .04em; }
+.produto-detalhe { margin: -.2em 0 .5em; font-size: .88rem; font-weight: 600; color: var(--laranja); }
 .produto-categoria { margin: 0 0 .4em; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--suave); }
 .categorias { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1em; }
 .categorias a { padding: 8px 14px; border: 1px solid var(--linha); border-radius: 999px; text-decoration: none; font-weight: 600; font-size: .9rem; }

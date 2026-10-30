@@ -36,9 +36,46 @@ function textoHorario(h) {
 const ARQ_IFOOD = join(RAIZ, 'cardapio-ifood.json');
 const doIfood = existsSync(ARQ_IFOOD) ? JSON.parse(readFileSync(ARQ_IFOOD, 'utf8')) : null;
 const reais = (v) => (v ? v.toFixed(2).replace('.', ',') : '');
-const cardapio = doIfood
-  ? doIfood.categorias.map((c) => ({ categoria: c.categoria, itens: c.itens.map((i) => ({ id: i.id, nome: i.nome, descricao: i.descricao, preco: reais(i.preco) })) }))
-  : cardapioDados;
+// O cardápio do iFood tem categorias de promoção que repetem itens ("Queridinhos ... 15% Off"), versões
+// "Hits" do mesmo lanche e selos no nome ("Top 1 mais vendido"). Para o site: sem repetição, nome limpo,
+// selo separado e sem preço/desconto no nome da categoria (oferta é no iFood).
+const semAcentoMin = (t) => String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const limpaCategoria = (n) => n.replace(/\s*-?\s*\d+\s*%\s*off.*$/i, '').split(/\s+-\s+/)[0].trim();
+const limpaDescricao = (d) =>
+  (d || '')
+    .replace(/\s*n[ãa]o (fazemos|removemos)[^.\n]*[.!]?/gi, '')
+    .split(/\n+/).map((l) => l.trim().replace(/[,;]$/, '')).filter(Boolean)
+    .join(', ').replace(/\s+,/g, ',').replace(/\s{2,}/g, ' ').replace(/^combo,\s*/i, '').replace(/[,.\s]+$/, '');
+function limpaItem(i) {
+  const bruto = i.nome.replace(/\s*-?\s*(hits|queridinhos)\s*$/i, '').replace(/\s+/g, ' ').trim();
+  const [nome, ...resto] = bruto.split(/\s+-\s+/);
+  let detalhe = resto.join(' - ').replace(/!/g, '').trim();
+  const selo = (detalhe.match(/top\s*\d+\s*mais vendido/i) || [''])[0];
+  if (selo) detalhe = detalhe.replace(selo, '').replace(/^[-\s]+|[-\s]+$/g, '');
+  return { id: i.id, nome: nome.trim(), detalhe, selo: selo && selo.replace(/^top\s*(\d+)/i, 'Top $1'), descricao: limpaDescricao(i.descricao), preco: reais(i.preco) };
+}
+function cardapioDoIfood(dados) {
+  const vistos = new Map();
+  const categorias = [];
+  for (const c of dados.categorias) {
+    if (/queridinhos/i.test(c.categoria)) continue;
+    const itensCat = [];
+    for (const bruto of c.itens) {
+      const i = limpaItem(bruto);
+      const chave = semAcentoMin(`${i.nome} ${i.detalhe}`);
+      const ja = vistos.get(chave);
+      if (ja) {
+        if (/-hits$/.test(ja.item.id) && !/-hits$/.test(i.id)) Object.assign(ja.item, i); // fica o id sem "hits"
+        continue;
+      }
+      vistos.set(chave, { item: i });
+      itensCat.push(i);
+    }
+    if (itensCat.length) categorias.push({ categoria: limpaCategoria(c.categoria), itens: itensCat });
+  }
+  return categorias;
+}
+const cardapio = doIfood ? cardapioDoIfood(doIfood) : cardapioDados;
 
 // Bairros dentro do raio de entrega (bairros.json, gerado a partir do OpenStreetMap e do GeoSampa).
 const ARQ_BAIRROS = join(RAIZ, 'bairros.json');
@@ -103,7 +140,7 @@ function schemaLoja(l) {
     alternateName: site.nomeIfood,
     url,
     image: abs('assets/img/og-just-burger.jpg'),
-    servesCuisine: ['Hambúrguer', 'Smash burger', 'Lanches'],
+    servesCuisine: ['Hambúrguer', 'Lanches', 'Saladas'],
     priceRange: site.faixaPreco,
     hasMenu: abs('cardapio/'),
     acceptsReservations: false,
@@ -413,8 +450,9 @@ const cartaoProduto = (i, base, { ancora = false } = {}) => {
     ? `<img class="produto-foto" src="${base}${img}"${temFoto600(i.id) ? ` srcset="${base}assets/img/cardapio/${i.id}-600.webp 600w, ${base}${img} 1200w" sizes="(min-width: 900px) 360px, (min-width: 640px) 46vw, 92vw"` : ''} width="1200" height="900" loading="lazy" decoding="async" alt="${esc(i.nome)}${i.descricao ? ` — ${esc(i.descricao)}` : ''}">`
     : `<div class="produto-foto produto-sem-foto" role="img" aria-label="Foto do ${esc(i.nome)} em breve"><span>${esc(i.nome)}</span></div>`}
   <div class="produto-texto">
-    <p class="produto-categoria">${esc(i.categoria)}</p>
+    <p class="produto-categoria">${esc(i.categoria)}${i.selo ? ` <span class="produto-selo">${esc(i.selo)}</span>` : ''}</p>
     <h3>${titulo}</h3>
+    ${i.detalhe ? `<p class="produto-detalhe">${esc(i.detalhe)}</p>` : ''}
     <p class="suave">${esc(i.descricao)}</p>
     <p class="preco">${esc(textoPreco(i))}</p>
   </div>
@@ -487,7 +525,7 @@ const schemaMidia = () => ({
 // ---------- Markdown (versão para IA) ----------
 
 const mdLink = (texto, caminho) => `[${texto}](${abs(caminho)})`;
-const mdItem = (i) => `- **${i.nome}** (${i.categoria}): ${i.descricao} ${mdLink('ver no cardápio', `cardapio/#${i.id}`)}`;
+const mdItem = (i) => `- **${i.nome}**${i.detalhe ? ` — ${i.detalhe}` : ''}${i.selo ? ` (${i.selo})` : ''} (${i.categoria}): ${i.descricao} ${mdLink('ver no cardápio', `cardapio/#${i.id}`)}`;
 const mdFaq = (lista) => lista.map((f) => `### ${f.p}\n\n${f.r}`).join('\n\n');
 const mdLoja = (l) =>
   [
@@ -507,8 +545,8 @@ const paginas = [];
 paginas.push({
   caminho: '',
   profundidade: 0,
-  titulo: `${site.nome} | Hamburgueria smash em São Paulo, Guarulhos e ABC`,
-  descricao: `Just Burger: hamburgueria de smash burger com entrega pelo iFood na Zona Leste, Pirituba, Guarulhos e São Bernardo do Campo. Veja o cardápio, o pedido ideal para o seu perfil e a unidade mais perto.`,
+  titulo: `${site.nome} | Hamburgueria em São Paulo, Guarulhos e ABC`,
+  descricao: `Just Burger: hamburgueria com hambúrguer de 150 g no pão brioche e entrega pelo iFood na Zona Leste, Pirituba, Guarulhos e São Bernardo do Campo. Veja o cardápio, o pedido ideal para o seu perfil e a unidade mais perto.`,
   schema: [
     { '@type': 'WebSite', '@id': abs('#site'), name: site.nome, url: abs(''), inLanguage: 'pt-BR', publisher: { '@id': orgId } },
     ...lojas.map(schemaLoja),
@@ -519,7 +557,7 @@ paginas.push({
   <div class="largura heroi-grade">
     <div>
       <p class="sobretitulo">Hamburgueria · ${esc(listaCidades)}</p>
-      <h1>Smash burger de verdade, feito na hora e entregue perto de você.</h1>
+      <h1>Hambúrguer de 150 g no pão brioche, feito na hora e entregue perto de você.</h1>
       <p class="lead">Quatro unidades na Grande São Paulo: Zona Leste, Pirituba, Guarulhos e São Bernardo do Campo. Escolha a mais perto e peça pelo iFood.</p>
       <div class="acoes">
         <a class="botao" href="${base}unidades/">Encontrar a unidade mais perto</a>
@@ -605,15 +643,15 @@ ${mdFaq(faq)}
 paginas.push({
   caminho: 'cardapio/',
   profundidade: 1,
-  titulo: `Cardápio ${site.nome} | Smash burgers, combos e frango`,
-  descricao: `Cardápio da hamburgueria Just Burger: smash burgers no pão brioche, combos com batata e refrigerante, balde de sassami e bebidas. Peça pelo iFood na unidade mais perto.`,
+  titulo: `Cardápio ${site.nome} | Hambúrgueres, combos, saladas e shakes`,
+  descricao: `Cardápio da hamburgueria Just Burger: hambúrgueres de 150 g no pão brioche, combos com batata e refrigerante, frango, saladas, milk-shakes e sobremesas. Peça pelo iFood na unidade mais perto.`,
   schema: [schemaCardapio(), schemaBreadcrumb([['Início', ''], ['Cardápio', 'cardapio/']])],
   corpo: (base) => `
 <section class="secao">
   <div class="largura">
     ${migalhas(base, [['Início', ''], ['Cardápio', 'cardapio/']])}
     <h1>Cardápio Just Burger</h1>
-    ${respostaRapida(`A Just Burger é especializada em smash burger no pão brioche com queijo prato e Molho Just. O cardápio tem ${juntar(cardapio.map((c) => c.categoria.toLowerCase()))}. Preço, disponibilidade e promoções do dia ficam no iFood da unidade.`)}
+    ${respostaRapida(`A Just Burger faz hambúrguer de 150 g no pão brioche com o Molho Just; os mais vendidos são Top Smash, Just House e Dolce Gabana. O cardápio tem ${juntar(cardapio.map((c) => c.categoria.toLowerCase()))}. Preço, disponibilidade e promoções do dia ficam no iFood da unidade, e a Just não faz trocas de itens.`)}
     <nav class="categorias" aria-label="Categorias">${cardapio.map((c) => `<a href="#${c.itens[0].id}">${esc(c.categoria)}</a>`).join('')}</nav>
     ${cardapio.map((c) => `<h2>${esc(c.categoria)}</h2><div class="grade-produtos">${c.itens.map((i) => cartaoProduto({ ...i, categoria: c.categoria }, base, { ancora: true })).join('')}</div>`).join('\n')}
     <div class="acoes"><a class="botao" href="${base}unidades/">Escolher unidade e pedir</a></div>
@@ -621,7 +659,7 @@ paginas.push({
 </section>`,
   md: () => `# Cardápio ${site.nome}
 
-> Smash burger no pão brioche com queijo prato e Molho Just. Preço e disponibilidade do dia no iFood de cada unidade.
+> Hambúrguer de 150 g no pão brioche com Molho Just. Mais vendidos: Top Smash, Just House, Dolce Gabana. Preço e disponibilidade do dia no iFood de cada unidade. Não fazemos trocas de itens.
 
 ${cardapio.map((c) => `## ${c.categoria}\n\n${c.itens.map((i) => mdItem({ ...i, categoria: c.categoria })).join('\n')}`).join('\n\n')}
 `,
@@ -631,7 +669,7 @@ paginas.push({
   caminho: 'para-voce/',
   profundidade: 1,
   titulo: `O que pedir na ${site.nome} | Recomendações para cada perfil`,
-  descricao: `Primeira vez, fome grande, pedido em grupo, gastar pouco, fã de smash, frango ou alergias: veja o que pedir na Just Burger para cada perfil.`,
+  descricao: `Primeira vez, fome grande, pedido em grupo, gastar pouco, smash, frango, algo leve, sobremesa ou alergias: veja o que pedir na Just Burger para cada perfil.`,
   schema: [
     { '@type': 'CollectionPage', name: 'O que pedir na Just Burger', hasPart: perfis.map((p) => ({ '@id': abs(`para-voce/${p.slug}/#pagina`) })) },
     schemaBreadcrumb([['Início', ''], ['Para você', 'para-voce/']]),
@@ -735,7 +773,7 @@ for (const l of lojas) {
     caminho,
     profundidade: 2,
     titulo: `Hamburgueria ${termo} | ${site.nome} ${l.bairro}`,
-    descricao: `${l.nome}: hamburgueria de smash burger ${termo}${termo.includes(l.bairro) ? '' : ` (${l.bairro})`}. Endereço, horário, bairros de entrega e link direto para pedir no iFood.`,
+    descricao: `${l.nome}: hamburgueria ${termo}${termo.includes(l.bairro) ? '' : ` (${l.bairro})`}. Endereço, horário, bairros de entrega e link direto para pedir no iFood.`,
     schema: [schemaLoja(l), schemaFaq(faqLoja), schemaBreadcrumb(trilha)],
     corpo: (base) => `
 <section class="secao">
@@ -848,7 +886,7 @@ if (geo) {
       // Bairro pequeno sem sub-bairros (1 ponto da varredura): fica fora do Google para não parecer página-isca.
       noindex: !site.indexarBairrosPequenos && b.pontos === 1 && !b.variacoes.length,
       titulo: `Hamburgueria ${onde}${b.tipo === 'bairro' ? `, ${b.cidade.replace(' do Campo', '')}` : ''} | ${site.nome}`,
-      descricao: `Delivery de hambúrguer ${onde} (${regiao}): smash burger da Just Burger, unidade ${l.bairro} a ${kmTxt(b.distanciaKm)} km. Bairros atendidos e como pedir pelo iFood.`,
+      descricao: `Delivery de hambúrguer ${onde} (${regiao}): hambúrguer de 150 g da Just Burger, unidade ${l.bairro} a ${kmTxt(b.distanciaKm)} km. Bairros atendidos e como pedir pelo iFood.`,
       schema: [
         {
           '@type': 'WebPage',
@@ -928,7 +966,7 @@ paginas.push({
   caminho: 'sobre/',
   profundidade: 1,
   titulo: `Sobre a ${site.nome} | Hamburgueria paulistana desde ${site.fundacao}`,
-  descricao: `A história da Just Burger, hamburgueria de smash burger criada na Zona Leste de São Paulo em ${site.fundacao}.`,
+  descricao: `A história da Just Burger, hamburgueria criada na Zona Leste de São Paulo em ${site.fundacao}.`,
   schema: [schemaBreadcrumb([['Início', ''], ['Sobre', 'sobre/']])],
   corpo: (base) => `
 <section class="secao">
@@ -977,7 +1015,7 @@ writeFileSync(
 // llms.txt (padrão llmstxt.org): resumo + mapa do site em Markdown para assistentes de IA.
 const llms = `# ${site.nome}
 
-> ${site.descricaoCurta}. Especialidade: smash burger no pão brioche com queijo prato e Molho Just. Pedidos somente pelo iFood, na loja "${site.nomeIfood}" da unidade mais próxima.
+> ${site.descricaoCurta}. Especialidade: hambúrguer de 150 g no pão brioche com Molho Just; mais vendidos Top Smash, Just House e Dolce Gabana. Pedidos somente pelo iFood, na loja "${site.nomeIfood}" da unidade mais próxima.
 
 Fatos principais:
 ${site.avaliacoes && site.avaliacoes.notaInformada ? `- Nota ${nota1(site.avaliacoes.notaInformada)} no iFood nas quatro lojas.\n` : ''}${site.contador ? `- Mais de ${fmtInt(site.contador.basePedidos)} pedidos e ${fmtInt(site.contador.basePedidos * site.contador.lanchesPorPedido)} lanches vendidos desde a abertura (total ao vivo na home).\n` : ''}- Quatro unidades: ${juntar(lojas.map((l) => `${l.bairro} (${l.cidade}, ${l.regiao})`))}.

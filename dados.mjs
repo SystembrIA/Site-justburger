@@ -7,7 +7,7 @@ export const site = {
   url: 'https://www.justburger.com.br',
   nome: 'Just Burger',
   nomeIfood: 'Just Burger Hamburgueria Lanches & Dog', // nome igual ao do iFood/Google ajuda o Google a ligar as fichas
-  descricaoCurta: 'Hamburgueria de smash burger em São Paulo, Guarulhos e São Bernardo do Campo',
+  descricaoCurta: 'Hamburgueria em São Paulo, Guarulhos e São Bernardo do Campo',
   // false = páginas saem com "noindex" (Google não indexa). Só trocar para true
   // quando todos os PREENCHER estiverem resolvidos e o domínio estiver no ar.
   publicado: false,
@@ -42,14 +42,14 @@ export const site = {
   },
   // Burger flutuando no topo da home: recorte (sem fundo) do produto com este nome, gerado pelo robô
   // a partir da foto do iFood. Sem recorte, usa `imagem` (PNG/WebP transparente) e, sem ela, o logo.
-  heroi: { produto: 'Dolce Cabana', imagem: 'assets/img/heroi-dolce-cabana.webp', alt: 'Dolce Cabana, burger da Just Burger' },
+  heroi: { produto: 'Dolce Gabana', imagem: 'assets/img/heroi-dolce-gabana.webp', alt: 'Dolce Gabana, burger da Just Burger' },
 };
 
 // Diferenciais da home. Só o que for verdade e verificável.
 export const diferenciais = [
   {
-    titulo: 'Smash de verdade',
-    texto: 'Carne prensada na chapa bem quente até formar crosta, montada no pão brioche com o Molho Just.',
+    titulo: 'Hambúrguer de 150 g',
+    texto: 'Carne de 150 g no pão brioche com o Molho Just. Os mais pedidos: Top Smash, Just House e Dolce Gabana.',
   },
   {
     titulo: 'Feito para o delivery',
@@ -85,7 +85,7 @@ export const lojas = [
     horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '18:00', fecha: '23:30' }], // PREENCHER: o iFood mostra abertura às 18h; confirmar fechamento
     bairrosAtendidos: ['Vila Buenos Aires', 'Penha', 'Cangaíba', 'Vila Matilde', 'Ermelino Matarazzo'], // PREENCHER: confirmar raio de entrega
     intro:
-      'A matriz da Just Burger fica na Vila Buenos Aires, que muita gente da vizinhança chama de Vila Fidelis Ribeiro ou Jardim Popular, na região da Penha, Zona Leste de São Paulo. Foi aqui que a receita do smash foi acertada e é daqui que sai o padrão das outras lojas.',
+      'A matriz da Just Burger fica na Vila Buenos Aires, que muita gente da vizinhança chama de Vila Fidelis Ribeiro ou Jardim Popular, na região da Penha, Zona Leste de São Paulo. Foi aqui que a receita da Just foi acertada e é daqui que sai o padrão das outras lojas.',
   },
   {
     slug: 'pirituba',
@@ -123,7 +123,7 @@ export const lojas = [
     horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '18:00', fecha: '23:30' }],
     bairrosAtendidos: ['Vila Endres', 'PREENCHER'],
     intro:
-      'A unidade de Guarulhos fica na Vila Endres e leva o smash da Just para quem mora e trabalha em Guarulhos, com entrega pelo iFood.',
+      'A unidade de Guarulhos fica na Vila Endres e leva o burger da Just para quem mora e trabalha em Guarulhos, com entrega pelo iFood.',
   },
   {
     slug: 'sao-bernardo-do-campo',
@@ -149,39 +149,15 @@ export const lojas = [
 // Cardápio. "id" é usado nos links (/cardapio/#id) e no nome da foto:
 // assets/img/cardapio/<id>.webp (ver preparar-fotos.py).
 export const cardapio = [
+  // Reserva: só é usado se o cardápio do iFood (cardapio-ifood.json, robô do Hub) não estiver disponível.
   {
-    categoria: 'Smash burgers',
+    categoria: 'Hambúrguers',
     itens: [
-      {
-        id: 'just-smash',
-        nome: 'Just Smash',
-        descricao: 'Pão brioche, 1 carne smash de 80 g, queijo prato, Molho Just, alface americana e tomate.',
-        preco: '32,90',
-        conferir: true, // nome do item a confirmar; descrição e preço vistos no iFood
-      },
-      { id: 'top-smash', nome: 'Top Smash', descricao: 'PREENCHER: ingredientes.', preco: '', conferir: true },
-      { id: 'double-smash', nome: 'Double Smash', descricao: 'Dois hambúrgueres smash. PREENCHER: gramatura e ingredientes.', preco: '', conferir: true },
-      { id: 'just-calabria', nome: 'Just Calabria', descricao: 'Hambúrguer de calabresa. PREENCHER: ingredientes.', preco: '', conferir: true },
-      { id: 'just-burger-day', nome: 'Just Burger Day', descricao: 'PREENCHER: ingredientes.', preco: '', conferir: true },
+      { id: 'top-smash-top-1-mais-vendido', nome: 'Top Smash', descricao: 'Pão brioche, hambúrguer de 150 g, bacon, cheddar, queijo prato, cebola caramelizada, picles, mayo e Molho Just.', preco: '' },
+      { id: 'just-house-top-2-mais-vendido', nome: 'Just House', descricao: 'Pão brioche, hambúrguer de 150 g, cheddar, mayo, cebola roxa, bacon e Molho Just.', preco: '' },
+      { id: 'dolce-gabana-top-4-mais-vendido', nome: 'Dolce Gabana', descricao: 'Pão brioche, hambúrguer de 150 g, gorgonzola, geleia de damasco, farofa de bacon, mayo e Molho Just.', preco: '' },
+      { id: 'just-burger-hamburguer-de-150-g', nome: 'Just Burger', descricao: 'Pão brioche, hambúrguer de 150 g, queijo, cebola, mayo e Molho Just.', preco: '' },
     ],
-  },
-  {
-    categoria: 'Combos',
-    itens: [
-      { id: 'just-combo-1', nome: 'Just Combo 1', descricao: 'Burger + batata + refrigerante.', preco: '52,90', conferir: true },
-      { id: 'combo-just-passado', nome: 'Combo Just Passado', descricao: 'Burger + batata + refrigerante. PREENCHER: qual burger.', preco: '', conferir: true },
-      { id: 'combo-top-smash', nome: 'Combo Top Smash', descricao: 'Top Smash + batata + refrigerante.', preco: '61,90', conferir: true },
-    ],
-  },
-  {
-    categoria: 'Frango',
-    itens: [
-      { id: 'just-balde-m-sassami', nome: 'Just Balde M Sassami', descricao: 'Balde médio com 500 g de sassami (tiras de peito de frango) empanado.', preco: '59,90', conferir: true },
-    ],
-  },
-  {
-    categoria: 'Bebidas',
-    itens: [{ id: 'monster-mango-loco', nome: 'Monster Juice Mango Loco', descricao: 'Energético, lata.', preco: '', conferir: true }],
   },
 ];
 
@@ -191,17 +167,17 @@ export const perfis = [
   {
     slug: 'primeira-vez',
     nome: 'Primeira vez na Just',
-    chamada: 'Nunca pediu? Comece pelo clássico.',
+    chamada: 'Comece pelos mais vendidos.',
     resposta:
-      'Para o primeiro pedido, peça o Just Smash ou o Just Combo 1 (burger, batata e refrigerante). É a receita base da casa: carne smash com crosta, queijo prato e Molho Just no pão brioche.',
+      'Comece pelo Top Smash, o lanche mais vendido da Just: hambúrguer de 150 g com bacon, cheddar, queijo prato e cebola caramelizada no pão brioche. O segundo mais pedido é o Just House. Com mais fome, o Just Combo 1 traz o Top Smash com batata e refrigerante.',
     texto: [
-      'Quem pede pela primeira vez quer acertar. Por isso a recomendação é a receita que define a Just: um smash simples, sem excesso de ingredientes, onde dá para sentir a crosta da carne e o Molho Just.',
-      'Se estiver com mais fome, vá de combo: o burger chega com batata e refrigerante, e sai mais em conta do que pedir tudo separado.',
+      'Quem pede pela primeira vez quer acertar, e os clientes já escolheram: no iFood, o Top Smash é o 1º mais vendido e o Just House, com cheddar, bacon e cebola roxa, é o 2º.',
+      'Se estiver com mais fome, vá de combo: o lanche chega com batata palito e refrigerante.',
     ],
-    produtos: ['just-smash', 'just-combo-1', 'top-smash'],
+    produtos: ['top-smash-top-1-mais-vendido', 'just-house-top-2-mais-vendido', 'just-combo-1-burguer-batata-refri'],
     perguntas: [
-      { p: 'Qual o lanche mais pedido da Just Burger?', r: 'PREENCHER: o item mais vendido segundo o iFood/sistema da loja.' },
-      { p: 'O que é o Molho Just?', r: 'É o molho da casa, que vai nos smash burgers. PREENCHER: descrição curta (sem revelar receita).' },
+      { p: 'Qual o lanche mais vendido da Just Burger?', r: 'O Top Smash é o 1º mais vendido no iFood; o Just House é o 2º e o Dolce Gabana está entre os 4 mais vendidos.' },
+      { p: 'O que é o Molho Just?', r: 'É o molho da casa, que vai na maioria dos burgers da Just.' },
     ],
   },
   {
@@ -209,83 +185,101 @@ export const perfis = [
     nome: 'Fome de verdade',
     chamada: 'Para quem não quer passar vontade.',
     resposta:
-      'Com muita fome, peça o Double Smash (duas carnes) ou o Combo Top Smash, que já vem com batata e refrigerante. Para dividir ou complementar, o Just Balde M Sassami traz 500 g de frango.',
+      'Com muita fome, vá de Double Smash ou Double Burger Day: os dois levam duas carnes de 150 g. Para a refeição completa, o Just Combo 1 vem com Top Smash, batata e refrigerante.',
     texto: [
-      'Smash burger é fino por natureza: a carne é prensada para criar crosta. Por isso, quem tem fome grande deve ir direto nas versões com duas carnes.',
-      'O combo resolve a refeição inteira em um pedido só, e o balde de sassami funciona como acompanhamento para mais de uma pessoa.',
+      'Os burgers da Just já têm 150 g de carne. Nas versões double são duas carnes de 150 g, 300 g no total.',
+      'Para acompanhar, a Batata Palito Grande tem 400 g.',
     ],
-    produtos: ['double-smash', 'combo-top-smash', 'just-balde-m-sassami'],
-    perguntas: [
-      { p: 'Qual o maior lanche da Just Burger?', r: 'O Double Smash, com duas carnes. PREENCHER: confirmar se há versão maior.' },
-    ],
+    produtos: ['double-smash-2-hamburguer-de-150-gr', 'double-burger-day', 'just-combo-1-burguer-batata-refri'],
+    perguntas: [{ p: 'Qual o maior lanche da Just Burger?', r: 'Os doubles: Double Smash e Double Burger Day, com duas carnes de 150 g cada.' }],
   },
   {
     slug: 'para-dividir',
     nome: 'Galera, família e casal',
     chamada: 'Pedido para mais de uma pessoa.',
     resposta:
-      'Para dividir, combine um combo por pessoa com o Just Balde M Sassami (500 g de frango) no meio da mesa. Um pedido só, na unidade mais perto, chega tudo junto.',
+      'Para duas pessoas, o Combo 2 traz dois lanches à sua escolha, batata grande e refrigerante de 600 ml. Também tem o Passado em Dobro (dois Just Passado) e o Just Chicken Supreme, com 12 unidades de frango empanado para dividir.',
     texto: [
-      'Pedido em grupo dá certo quando cada um escolhe o seu burger e existe algo para beliscar no meio. O balde de sassami cumpre esse papel.',
+      'Pedido em grupo dá certo quando cada um escolhe o seu lanche e existe algo para beliscar no meio. O Just Chicken Supreme e a batata grande cumprem esse papel.',
       'Dica: faça um pedido único pelo iFood para tudo chegar no mesmo horário e economizar na taxa de entrega.',
     ],
-    produtos: ['just-balde-m-sassami', 'just-combo-1', 'combo-top-smash'],
-    perguntas: [{ p: 'A Just Burger tem combo para duas pessoas?', r: 'PREENCHER: confirmar se existe combo para 2 no cardápio atual.' }],
+    produtos: ['combo-2-lanches-a-sua-escolha-batata-grande-refri-de-600ml', '2-just-passado', 'just-chicken-supreme-seara'],
+    perguntas: [{ p: 'A Just Burger tem combo para duas pessoas?', r: 'Sim: o Combo 2 tem dois lanches à sua escolha, batata grande e refrigerante de 600 ml.' }],
   },
   {
     slug: 'custo-beneficio',
     nome: 'Quer gastar pouco',
     chamada: 'O melhor pedido pelo menor valor.',
     resposta:
-      'Para gastar pouco, o Just Smash é o burger de entrada da casa, e o Just Combo 1 é a forma mais econômica de levar burger, batata e refrigerante. Pedido mínimo no iFood: R$ 20,00.',
+      'Para gastar pouco, o Just Burger é o lanche de entrada da casa (150 g no pão brioche) e o Combo Just Burger leva lanche, batata e refrigerante num pedido só. Pedido mínimo no iFood: R$ 20,00.',
     texto: [
-      'Combo quase sempre sai mais barato do que os itens separados. E vale olhar a aba de promoções da loja no iFood antes de fechar o pedido: a Just costuma ter itens com preço promocional.',
+      'Combo quase sempre sai mais barato do que os itens separados. Vale olhar as promoções da loja no iFood antes de fechar o pedido: a Just costuma ter itens com preço promocional.',
     ],
-    produtos: ['just-smash', 'just-combo-1'],
+    produtos: ['just-burger-hamburguer-de-150-g', 'combo-just-burger-burguer-batata-refri', '2-just-passado'],
     perguntas: [{ p: 'Qual o pedido mínimo da Just Burger?', r: 'O pedido mínimo no iFood é de R$ 20,00 (pode variar por unidade).' }],
   },
   {
     slug: 'fa-de-smash',
     nome: 'Fã de smash burger',
-    chamada: 'Crosta, queijo derretido e pão brioche.',
+    chamada: 'Carne prensada na chapa, com crosta.',
     resposta:
-      'Smash burger é a especialidade da Just. Para quem já é fã, a ordem é: Just Smash (a base), Top Smash (a versão completa) e Double Smash (duas carnes, mais crosta).',
+      'Os smash da Just estão na linha Turma da Canetinha: Just Moun (1 carne smash de 80 g), Just Jaro (2 carnes smash) e Just Ozem (2 carnes smash com molho rosé), todos no pão brioche.',
     texto: [
-      'No smash, a bola de carne é prensada na chapa muito quente. A carne fica fina, sela rápido e ganha uma crosta caramelizada que é o que dá o sabor característico.',
-      'Na Just, o smash vai no pão brioche, com queijo prato derretendo direto sobre a carne e o Molho Just.',
+      'No smash, a bola de carne é prensada na chapa muito quente. A carne fica fina, sela rápido e ganha uma crosta caramelizada, que é o que dá o sabor característico.',
+      'Para quem prefere hambúrguer alto, os clássicos da casa têm 150 g, como o Top Smash e o Just House.',
     ],
-    produtos: ['just-smash', 'top-smash', 'double-smash'],
+    produtos: ['just-moun', 'just-jaro', 'just-ozem'],
     perguntas: [
       { p: 'O que é smash burger?', r: 'É o hambúrguer em que a carne é prensada na chapa quente, ficando fina e com crosta caramelizada.' },
     ],
   },
   {
     slug: 'frango-e-outras-carnes',
-    nome: 'Prefere frango ou outra carne',
+    nome: 'Prefere frango',
     chamada: 'Nem todo mundo quer carne bovina.',
     resposta:
-      'Para quem não quer carne bovina, a Just tem o Just Balde M Sassami (500 g de tiras de frango empanado) e o Just Calabria, burger de calabresa.',
+      'Para quem prefere frango: Just Chicken (frango especial temperado no pão de gergelim), Just Pic (dois frangos grelhados) e, para beliscar, o Just Chicken Supreme (12 unidades) e o Just Franguito.',
     texto: [
-      'O sassami é o filé mais macio do peito de frango, servido em tiras empanadas. O Just Calabria troca o blend bovino por calabresa.',
-      'PREENCHER: se houver burger de frango, opção vegetariana ou vegana, incluir aqui.',
+      'A linha de frango da Just tem lanche com frango temperado, lanche com frango grelhado e porções de frango empanado.',
+      'Também há saladas e um prato fitness com filé de frango grelhado (veja "Quer algo mais leve").',
     ],
-    produtos: ['just-balde-m-sassami', 'just-calabria'],
-    perguntas: [{ p: 'A Just Burger tem opção vegetariana?', r: 'PREENCHER: sim/não e qual item.' }],
+    produtos: ['just-chicken', 'just-pic', 'just-chicken-supreme-seara', 'just-franguito-2'],
+    perguntas: [{ p: 'A Just Burger tem opção vegetariana?', r: 'Há saladas no cardápio (Just Garden, Tradicional, Cheese, Completa). PREENCHER: confirmar se existe lanche vegetariano.' }],
+  },
+  {
+    slug: 'mais-leve',
+    nome: 'Quer algo mais leve',
+    chamada: 'Saladas e prato fitness.',
+    resposta:
+      'Para algo mais leve, a Just tem saladas individuais (Just Garden, Caesar, Tradicional, Cheese e Completa) e o Prato Fitness, com filé de frango grelhado, legumes e ovo.',
+    texto: ['As saladas são para uma pessoa e saem da mesma cozinha dos burgers, pelo mesmo pedido no iFood.'],
+    produtos: ['just-garden', 'salada-caesar', 'prato-fitness'],
+    perguntas: [{ p: 'A Just Burger tem salada?', r: 'Sim: Just Garden, Caesar, Tradicional, Cheese, Completa e a Salada Especial, além do Prato Fitness.' }],
+  },
+  {
+    slug: 'sobremesa',
+    nome: 'Para a sobremesa',
+    chamada: 'Shake, pudim e sorvete.',
+    resposta:
+      'Para fechar o pedido: milk-shakes Just Shake de 300 ml (Ninho com Nutella, Nutella, Ninho, Morango, Pistache e Café), pudim de brigadeirão, Franuí e sorvetes Ben & Jerry\'s.',
+    texto: ['A sobremesa vem no mesmo pedido do iFood, junto com o lanche.'],
+    produtos: ['milk-shake-de-ninho-com-nutella-300ml', 'pudim-de-brigadeirao-de-chocolate', 'franui-chocolate-ao-leite'],
+    perguntas: [{ p: 'A Just Burger tem milk-shake?', r: 'Sim, os Just Shake de 300 ml: Ninho com Nutella, Nutella, Ninho, Morango, Pistache e Café.' }],
   },
   {
     slug: 'alergias-e-restricoes',
     nome: 'Alergias e restrições',
     chamada: 'Antes de pedir, confira os ingredientes.',
     resposta:
-      'Os burgers da Just levam pão brioche (que normalmente contém glúten, ovo e leite) e queijo prato (contém lactose). Quem tem alergia ou restrição deve falar com a loja pelo chat do iFood antes de pedir.',
+      'Os burgers da Just levam pão brioche ou de gergelim (normalmente com glúten, ovo e leite) e queijos (lactose). A Just não faz trocas nem retira ingredientes dos lanches. Quem tem alergia ou restrição deve falar com a loja pelo chat do iFood antes de pedir.',
     texto: [
-      'A cozinha da Just manipula trigo, leite, ovos e carnes na mesma chapa e bancada, então não é possível garantir ausência de traços. PREENCHER: lista oficial de alérgenos por item, validada pela cozinha.',
-      'Dá para pedir para tirar ingredientes (como alface, tomate ou molho) nas observações do pedido no iFood.',
+      'Os ingredientes de cada lanche estão no cardápio. PREENCHER: lista oficial de alérgenos por item, validada pela cozinha.',
+      'Como a regra da casa é não trocar itens, escolha um lanche que já venha sem o ingrediente que você precisa evitar.',
     ],
     produtos: [],
     perguntas: [
       { p: 'A Just Burger tem pão sem glúten?', r: 'PREENCHER: sim/não.' },
-      { p: 'Dá para tirar ingredientes do lanche?', r: 'Sim. Escreva nas observações do item no iFood (ex.: "sem tomate").' },
+      { p: 'Dá para tirar ingredientes do lanche?', r: 'Não. A Just não faz trocas de itens nem retira ingredientes; os lanches saem como estão no cardápio.' },
     ],
   },
 ];
@@ -295,15 +289,15 @@ export const perfis = [
 export const faq = [
   {
     p: 'Onde fica a Just Burger?',
-    r: 'A Just Burger tem quatro unidades: Vila Buenos Aires (Zona Leste de São Paulo), Pirituba (São Paulo), Vila Endres (Guarulhos) e Baeta Neves (São Bernardo do Campo).',
+    r: 'A Just Burger tem quatro unidades: Vila Buenos Aires (Rua Peixoto, 156, Zona Leste de São Paulo), Pirituba (São Paulo), Vila Endres (Guarulhos) e Baeta Neves (São Bernardo do Campo).',
   },
   {
     p: 'Como pedir na Just Burger?',
     r: 'Os pedidos são feitos pelo iFood. Em cada página de unidade há o link direto para a loja certa no iFood.',
   },
   {
-    p: 'Qual a especialidade da Just Burger?',
-    r: 'Smash burger: carne prensada na chapa quente, com crosta, queijo prato e Molho Just no pão brioche.',
+    p: 'Qual o lanche mais vendido da Just Burger?',
+    r: 'O Top Smash é o 1º mais vendido no iFood, seguido do Just House. O Dolce Gabana está entre os 4 mais vendidos. Todos levam hambúrguer de 150 g no pão brioche.',
   },
   {
     p: 'Qual o horário da Just Burger?',
