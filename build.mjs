@@ -548,16 +548,32 @@ const blocoContador = () => {
   function valores() {
     return [C.base + (Number(d.pedidos) || 0), (C.base + (Number(d.prontos) || 0)) * C.media];
   }
+  // Sem animação: põe o número direto nas plaquinhas (antes de o placar aparecer na tela).
+  function poe(pl, v) {
+    var t = Math.round(v).toLocaleString('pt-BR'), dig = t.replace(/\\D/g, ''), flaps = pl.querySelectorAll('.flap');
+    if (flaps.length !== dig.length) return;
+    dig.split('').forEach(function (c, i) { var f = flaps[i]; ['.cima', '.baixo', '.aba-cima', '.aba-baixo'].forEach(function (s) { texto(f, s, c); }); f.dataset.d = c; });
+    pl.setAttribute('aria-label', t + ' ' + pl.nextElementSibling.textContent);
+  }
+  var esperando = false, semDados = false;
   function atualiza() {
     if (!d || !d.atualizadoEm) return;
     hora.textContent = new Date(d.atualizadoEm).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' });
     vivo.hidden = false;
-    if (!pronto || girando) return;
-    var v = valores(); mostra(placares[0], v[0]); mostra(placares[1], v[1]);
+    var v = valores();
+    if (esperando) { esperando = false; comeca(); return; } // o placar já estava na tela esperando o número ao vivo
+    if (!pronto) { poe(placares[0], v[0]); poe(placares[1], v[1]); return; }
+    if (girando) return;
+    mostra(placares[0], v[0]); mostra(placares[1], v[1]);
   }
+  // Sem resposta do servidor em 4 s, anima até o número que tiver (a base).
+  setTimeout(function () { semDados = true; if (esperando) { esperando = false; comeca(); } }, 4000);
   // Toda vez que o placar entra na tela: todas as plaquinhas giram juntas e param da esquerda para a direita.
+  // A animação só começa com o número ao vivo na mão, para já parar no valor atual.
   function comeca() {
-    if (girando) return; pronto = true; girando = true;
+    if (girando) return;
+    if (!(d && d.atualizadoEm) && !semDados) { esperando = true; return; }
+    pronto = true; girando = true;
     setTimeout(function () { girando = false; atualiza(); }, DURACAO + 900);
     var v = valores();
     [0, 1].forEach(function (k) {
