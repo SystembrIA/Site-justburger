@@ -316,6 +316,7 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Dancing+Script:wght@700&display=swap">
 <link rel="stylesheet" href="${base}assets/estilo.css">
+<script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; if (!location.hash) addEventListener('load', function () { scrollTo(0, 0); });</script>
 <script type="application/ld+json">${JSON.stringify(grafo)}</script>
 </head>
 <body>
