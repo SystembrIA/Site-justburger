@@ -44,6 +44,7 @@ const limpaCategoria = (n) => n.replace(/\s*-?\s*\d+\s*%\s*off.*$/i, '').split(/
 const limpaDescricao = (d) =>
   (d || '')
     .replace(/\s*n[ãa]o (fazemos|removemos)[^.\n]*[.!]?/gi, '')
+    .replace(/\s*prote[ií]na\s*\(estimativa\)[\s\S]*$/i, '')
     .split(/\n+/).map((l) => l.trim().replace(/[,;]$/, '')).filter(Boolean)
     .join(', ').replace(/\s+,/g, ',').replace(/\s{2,}/g, ' ').replace(/^combo,\s*/i, '').replace(/[,.\s]+$/, '');
 function limpaItem(i) {
@@ -52,6 +53,7 @@ function limpaItem(i) {
   let detalhe = resto.join(' - ').replace(/!/g, '').trim();
   const selo = (detalhe.match(/top\s*\d+\s*mais vendido/i) || [''])[0];
   if (selo) detalhe = detalhe.replace(selo, '').replace(/^[-\s]+|[-\s]+$/g, '');
+  detalhe = detalhe.charAt(0).toUpperCase() + detalhe.slice(1);
   return { id: i.id, nome: nome.trim(), detalhe, selo: selo && selo.replace(/^top\s*(\d+)/i, 'Top $1'), descricao: limpaDescricao(i.descricao), preco: reais(i.preco) };
 }
 function cardapioDoIfood(dados) {
@@ -225,10 +227,10 @@ function pagina({ caminho, titulo, descricao, corpo, schema = [], profundidade, 
   const grafo = { '@context': 'https://schema.org', '@graph': [schemaOrganizacao(), ...schema] };
   const nav = [
     ['Cardápio', 'cardapio/'],
-    ['Para você', 'para-voce/'],
+    ['O que pedir', 'para-voce/'],
     ['Unidades', 'unidades/'],
     ['Na mídia', 'na-midia/'],
-    ['Sobre', 'sobre/'],
+    ['Nossa história', 'sobre/'],
   ];
   return `<!doctype html>
 <html lang="pt-BR">
@@ -257,7 +259,7 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
 <link rel="manifest" href="${base}site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap">
 <link rel="stylesheet" href="${base}assets/estilo.css">
 <script type="application/ld+json">${JSON.stringify(grafo)}</script>
 </head>
@@ -266,12 +268,19 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
 <header class="topo">
   <div class="largura topo-linha">
     <a class="marca" href="${base}" aria-label="${esc(site.nome)} — página inicial">
-      <img src="${base}assets/img/logo-320.webp" width="96" height="80" alt="Logo Just Burger Hamburgueria">
+      <img src="${base}assets/img/logo-320.webp" width="96" height="80" alt="Just Burger Hamburgueria">
     </a>
-    <nav aria-label="Principal">
+    <nav class="menu" aria-label="Principal">
       <ul>${nav.map(([n, c]) => `<li><a href="${base}${c}"${caminho.startsWith(c) ? ' aria-current="page"' : ''}>${n}</a></li>`).join('')}</ul>
     </nav>
-    <a class="botao botao-pequeno" href="${base}unidades/">Pedir</a>
+    <a class="botao botao-topo" href="${base}unidades/">Peça no iFood</a>
+    <details class="menu-celular">
+      <summary aria-label="Abrir menu"><span></span><span></span><span></span></summary>
+      <nav aria-label="Menu">
+        <ul>${nav.map(([n, c]) => `<li><a href="${base}${c}">${n}</a></li>`).join('')}<li><a href="${base}entrega/">Onde entregamos</a></li></ul>
+        <a class="botao" href="${base}unidades/">Peça no iFood</a>
+      </nav>
+    </details>
   </div>
 </header>
 <main id="conteudo">
@@ -279,30 +288,36 @@ ${corpo(base)}
 </main>
 <footer class="rodape">
   <div class="largura rodape-grade">
-    <div>
-      <img src="${base}assets/img/logo-320.webp" width="120" height="100" alt="" loading="lazy">
-      <p>${esc(site.descricaoCurta)}.</p>
+    <div class="rodape-marca">
+      <img src="${base}assets/img/logo-320.webp" width="140" height="117" alt="Just Burger Hamburgueria" loading="lazy">
+      <p>Hambúrguer de 150 g no pão brioche, desde ${esc(site.fundacao)}. Pedidos pelo iFood.</p>
+      ${!pendente(site.instagram) ? `<p><a class="rodape-social" href="${site.instagram}" rel="noopener">Instagram @justburgersp</a></p>` : ''}
     </div>
     <div>
       <h2>Unidades</h2>
-      <ul>${lojas.map((l) => `<li><a href="${base}unidades/${l.slug}/">${esc(l.nome)}</a></li>`).join('')}${geo ? `<li><a href="${base}entrega/">Onde entregamos (${bairros.length} bairros)</a></li>` : ''}</ul>
+      <ul>${lojas.map((l) => `<li><a href="${base}unidades/${l.slug}/">${esc(l.nome.replace('Just Burger ', ''))}</a><span>${esc(pendente(l.endereco) ? l.bairro : l.endereco)} · ${esc(l.cidade)}</span></li>`).join('')}</ul>
     </div>
     <div>
-      <h2>Para você</h2>
-      <ul>${perfis.map((p) => `<li><a href="${base}para-voce/${p.slug}/">${esc(p.nome)}</a></li>`).join('')}</ul>
-    </div>
-    <div>
-      <h2>Contato</h2>
+      <h2>Cardápio</h2>
       <ul>
-        ${!pendente(site.instagram) ? `<li><a href="${site.instagram}" rel="noopener">Instagram</a></li>` : ''}
-        ${site.emailContato ? `<li><a href="mailto:${site.emailContato}">${site.emailContato}</a></li>` : ''}
-        <li>Pedidos pelo iFood</li>
-        <li><a href="${base}na-midia/">Just Burger na mídia</a></li>
-        <li><a href="${base}llms.txt">Informações para IA (llms.txt)</a></li>
+        <li><a href="${base}cardapio/">Cardápio completo</a></li>
+        ${perfis.slice(0, 5).map((p) => `<li><a href="${base}para-voce/${p.slug}/">${esc(p.nome)}</a></li>`).join('')}
+      </ul>
+    </div>
+    <div>
+      <h2>Just Burger</h2>
+      <ul>
+        <li><a href="${base}sobre/">Nossa história</a></li>
+        <li><a href="${base}na-midia/">Na mídia</a></li>
+        ${geo ? `<li><a href="${base}entrega/">Onde entregamos</a></li>` : ''}
+        <li><a href="${base}para-voce/alergias-e-restricoes/">Alergias e restrições</a></li>
       </ul>
     </div>
   </div>
-  <p class="largura suave pequeno">© ${new Date().getFullYear()} ${esc(site.nome)}. Todos os direitos reservados.</p>
+  <div class="largura rodape-base">
+    <p>© ${new Date().getFullYear()} Just Burger Hamburgueria Ltda · CNPJ 31.394.735/0001-70</p>
+    <p>Imagens meramente ilustrativas. Preços e disponibilidade no iFood.</p>
+  </div>
 </footer>
 </body>
 </html>
@@ -311,11 +326,8 @@ ${corpo(base)}
 
 // ---------- Blocos reutilizados ----------
 
-const respostaRapida = (texto) => `
-<aside class="resposta" aria-label="Resposta rápida">
-  <p class="resposta-rotulo">Resposta rápida</p>
-  <p>${esc(texto)}</p>
-</aside>`;
+// Primeiro parágrafo de cada página responde a pergunta dela (é o trecho que buscadores e IA citam).
+const respostaRapida = (texto) => `<p class="lead resumo">${esc(texto)}</p>`;
 
 const migalhas = (base, lista) =>
   `<nav class="migalhas" aria-label="Você está em">${lista.map(([n, c], i) => (i === lista.length - 1 ? esc(n) : `<a href="${base}${c}">${esc(n)}</a>`)).join(' / ')}</nav>`;
@@ -334,20 +346,20 @@ const temHeroi = !!imagemHeroi;
 // Painel de números: base histórica no HTML (aparece mesmo sem JavaScript) e, ao vivo, a soma da
 // função contadorSite (site_publico/contador) pelo streaming do Firebase (EventSource, sem SDK).
 const fmtInt = (v) => Math.round(v).toLocaleString('pt-BR');
+const nota1 = (v) => Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const slug = (t) => semAcentoMin(t).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const blocoContador = () => {
-  const c = site.contador;
+  const c = site.contador, n = site.avaliacoes && site.avaliacoes.notaInformada;
   return `
-<div class="contador" id="contador">
-  <div class="contador-item">
-    <p class="contador-numero" data-pedidos>${fmtInt(c.basePedidos)}</p>
-    <p class="contador-rotulo">${esc(c.rotuloPedidos)}</p>
+<section class="numeros" id="contador" aria-label="Just Burger em números">
+  <div class="largura numeros-grade">
+    <div><p class="numero" data-pedidos>${fmtInt(c.basePedidos)}</p><p class="numero-rotulo">${esc(c.rotuloPedidos)}</p></div>
+    <div><p class="numero" data-lanches>${fmtInt(c.basePedidos * c.lanchesPorPedido)}</p><p class="numero-rotulo">${esc(c.rotuloLanches)}</p></div>
+    ${n ? `<div><p class="numero"><span data-geral-nota>${nota1(n)}</span><span class="estrela" aria-hidden="true">★</span></p><p class="numero-rotulo" data-geral-texto>nota no iFood</p></div>` : ''}
+    <div><p class="numero">${lojas.length}</p><p class="numero-rotulo">unidades na Grande SP</p></div>
   </div>
-  <div class="contador-item">
-    <p class="contador-numero" data-lanches>${fmtInt(c.basePedidos * c.lanchesPorPedido)}</p>
-    <p class="contador-rotulo">${esc(c.rotuloLanches)}</p>
-  </div>
-  <p class="contador-sub" data-vivo hidden><span class="ao-vivo" aria-hidden="true"></span>ao vivo · atualizado às <span data-hora>--:--</span></p>
-</div>
+  <p class="largura numeros-vivo" data-vivo hidden><span class="ao-vivo" aria-hidden="true"></span>Contagem ao vivo · atualizado às <span data-hora>--:--</span></p>
+</section>
 <script>
 (function () {
   var C = ${JSON.stringify({ url: c.url, base: c.basePedidos, media: c.lanchesPorPedido })};
@@ -392,72 +404,63 @@ const blocoContador = () => {
 
 // Painel de avaliações do iFood (JSON diário do robô). Sem dado, não aparece.
 // Sem schema de nota de propósito: o Google não aceita nota da própria empresa em dados estruturados.
-const nota1 = (v) => Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-const blocoAvaliacoes = () => {
-  const n = site.avaliacoes.notaInformada;
-  return `
-<section class="secao secao-destaque" id="avaliacoes"${n ? '' : ' hidden'}>
-  <div class="largura">
-    <h2>Avaliações no iFood</h2>
-    <div class="aval-geral">
-      <p class="aval-nota" data-geral-nota>${n ? nota1(n) : '–'}</p>
-      <div><p class="aval-estrelas" aria-hidden="true">★★★★★</p><p class="suave" data-geral-texto>nota no iFood nas quatro lojas</p></div>
-    </div>
-    <div class="grade-aval" data-lojas>${n ? lojas.map((l) => `<div class="cartao aval-loja"><p class="aval-loja-nota">${nota1(n)} <span aria-hidden="true">★</span></p><p class="aval-loja-nome">${esc(l.nome)}</p></div>`).join('') : ''}</div>
-    <p class="suave pequeno" data-aval-rodape hidden>Notas do iFood, atualizadas todo dia (<span data-aval-data></span>).</p>
-  </div>
-</section>
+// Avaliações do iFood (JSON diário do robô): troca a nota informada pela do iFood e mostra a quantidade.
+// Sem schema de nota de propósito: o Google não aceita nota da própria empresa em dados estruturados.
+const blocoAvaliacoes = () => `
 <script>
 (function () {
-  var s = document.getElementById('avaliacoes'), q = function (x) { return s.querySelector(x); };
   var n1 = function (v) { return Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 }); };
   var mil = function (v) { return Number(v).toLocaleString('pt-BR'); };
-  var esc = function (t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; };
   fetch(${JSON.stringify(site.avaliacoes.url)}).then(function (r) { return r.ok ? r.json() : null; }).then(function (a) {
     if (!a || !a.geral || !a.lojas || !a.lojas.length) return;
-    q('[data-geral-nota]').textContent = n1(a.geral.nota);
-    q('[data-geral-texto]').innerHTML = 'média de <strong>' + mil(a.geral.avaliacoes) + '</strong> avaliações nas quatro lojas';
-    q('[data-aval-data]').textContent = new Date(a.atualizadoEm).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
-    q('[data-aval-rodape]').hidden = false;
-    q('[data-lojas]').innerHTML = a.lojas.map(function (l) {
-      return '<div class="cartao aval-loja"><p class="aval-loja-nota">' + n1(l.nota) + ' <span aria-hidden="true">★</span></p><p class="aval-loja-nome">' + esc(l.loja) + '</p><p class="suave pequeno">' + mil(l.avaliacoes) + ' avaliações</p></div>';
-    }).join('');
-    s.hidden = false;
+    var g = document.querySelector('[data-geral-nota]'); if (g) g.textContent = n1(a.geral.nota);
+    var t = document.querySelector('[data-geral-texto]'); if (t) t.textContent = mil(a.geral.avaliacoes) + ' avaliações no iFood';
+    a.lojas.forEach(function (l) {
+      document.querySelectorAll('[data-nota-loja="' + l.loja + '"]').forEach(function (e) { e.textContent = n1(l.nota) + ' ★ · ' + mil(l.avaliacoes) + ' avaliações'; });
+    });
   }).catch(function () {});
 })();
 </script>`;
-};
 
 const cartaoLoja = (l, base) => `
-<article class="cartao loja">
-  <p class="selo">${esc(l.regiao)}</p>
-  <h3><a href="${base}unidades/${l.slug}/">${esc(l.nome)}</a></h3>
-  <p class="suave">${pendente(l.bairro) ? esc(l.cidade) : `${esc(l.bairro)} · ${esc(l.cidade)}`}</p>
-  <p>${esc(textoHorario(l.horarios[0]))}</p>
-  <div class="acoes">
-    <a class="botao" href="${esc(l.ifood)}" rel="noopener">Pedir no iFood</a>
-    <a class="link" href="${base}unidades/${l.slug}/">Ver unidade</a>
-  </div>
+<article class="loja">
+  <p class="loja-regiao">${esc(l.regiao)}</p>
+  <h3><a href="${base}unidades/${l.slug}/">${esc(l.nome.replace('Just Burger ', ''))}</a></h3>
+  <p>${pendente(l.endereco) ? esc(l.bairro) : `${esc(l.endereco)} · ${esc(l.bairro)}`}<br>${esc(l.cidade)}</p>
+  <p class="loja-hora">${esc(textoHorario(l.horarios[0]))}</p>
+  ${site.avaliacoes && site.avaliacoes.notaInformada ? `<p class="loja-nota" data-nota-loja="${esc(l.nome)}">${nota1(site.avaliacoes.notaInformada)} ★ no iFood</p>` : ''}
+  <p class="loja-acoes"><a class="botao" href="${esc(l.ifood)}" rel="noopener">Pedir no iFood</a><a class="link" href="${base}unidades/${l.slug}/">Ver unidade</a></p>
 </article>`;
 
 // No cardápio o cartão é a âncora (#id); nos perfis ele aponta para essa âncora.
-const cartaoProduto = (i, base, { ancora = false } = {}) => {
+const imgProduto = (i, base, sizes) => {
   const img = foto(i.id);
-  const titulo = ancora ? esc(i.nome) : `<a href="${base}cardapio/#${i.id}">${esc(i.nome)}</a>`;
-  return `
-<article class="produto"${ancora ? ` id="${i.id}"` : ''}>
-  ${img
-    ? `<img class="produto-foto" src="${base}${img}"${temFoto600(i.id) ? ` srcset="${base}assets/img/cardapio/${i.id}-600.webp 600w, ${base}${img} 1200w" sizes="(min-width: 900px) 360px, (min-width: 640px) 46vw, 92vw"` : ''} width="1200" height="900" loading="lazy" decoding="async" alt="${esc(i.nome)}${i.descricao ? ` — ${esc(i.descricao)}` : ''}">`
-    : `<div class="produto-foto produto-sem-foto" role="img" aria-label="Foto do ${esc(i.nome)} em breve"><span>${esc(i.nome)}</span></div>`}
-  <div class="produto-texto">
-    <p class="produto-categoria">${esc(i.categoria)}${i.selo ? ` <span class="produto-selo">${esc(i.selo)}</span>` : ''}</p>
-    <h3>${titulo}</h3>
-    ${i.detalhe ? `<p class="produto-detalhe">${esc(i.detalhe)}</p>` : ''}
-    <p class="suave">${esc(i.descricao)}</p>
-    <p class="preco">${esc(textoPreco(i))}</p>
-  </div>
-</article>`;
+  return img
+    ? `<img class="produto-foto" src="${base}${img}"${temFoto600(i.id) ? ` srcset="${base}assets/img/cardapio/${i.id}-600.webp 600w, ${base}${img} 1200w" sizes="${sizes}"` : ''} width="1200" height="900" loading="lazy" decoding="async" alt="${esc(i.nome)}">`
+    : `<div class="produto-foto produto-sem-foto" role="img" aria-label="${esc(i.nome)}"><span>${esc(i.nome)}</span></div>`;
 };
+// No cardápio cada item é uma linha de menu com âncora (#id); fora dele, um cartão que aponta para essa âncora.
+const cartaoProduto = (i, base, { ancora = false } = {}) => ancora
+  ? `
+<article class="item-menu" id="${i.id}">
+  ${imgProduto(i, base, '(min-width: 900px) 220px, 34vw')}
+  <div>
+    ${i.selo ? `<p class="produto-selo">${esc(i.selo)}</p>` : ''}
+    <h3>${esc(i.nome)}</h3>
+    ${i.detalhe ? `<p class="produto-detalhe">${esc(i.detalhe)}</p>` : ''}
+    ${i.descricao ? `<p class="produto-descricao">${esc(i.descricao)}</p>` : ''}
+    ${site.mostrarPrecos && i.preco ? `<p class="preco">${esc(textoPreco(i))}</p>` : ''}
+  </div>
+</article>`
+  : `
+<a class="produto" href="${base}cardapio/#${i.id}">
+  ${imgProduto(i, base, '(min-width: 900px) 380px, (min-width: 640px) 46vw, 92vw')}
+  <span class="produto-texto">
+    ${i.selo ? `<span class="produto-selo">${esc(i.selo)}</span>` : ''}
+    <span class="produto-nome">${esc(i.nome)}</span>
+    <span class="produto-descricao">${esc(i.descricao)}</span>
+  </span>
+</a>`;
 
 const cartaoPerfil = (p, base) => `
 <a class="perfil" href="${base}para-voce/${p.slug}/">
@@ -538,6 +541,25 @@ const mdLoja = (l) =>
     `- Página: ${abs(`unidades/${l.slug}/`)}`,
   ].join('\n');
 
+// Mais pedidos: os itens com selo "Top N mais vendido", na ordem; sem selo, os destaques do 1º perfil.
+const maisPedidos = () => {
+  const top = [...itens.values()].filter((i) => i.selo).sort((a, b) => parseInt(a.selo.replace(/\D/g, '')) - parseInt(b.selo.replace(/\D/g, '')));
+  return (top.length >= 3 ? top : destaquesHome()).slice(0, 3);
+};
+// Atalhos do cardápio: uma foto por categoria (sem molhos e energéticos, que não vendem pela foto).
+const categoriasHome = () =>
+  cardapio
+    .filter((c) => !/molho|energ|bebida/i.test(c.categoria))
+    .map((c) => ({ categoria: c.categoria, item: c.itens.find((i) => foto(i.id)) }))
+    .filter((c) => c.item)
+    .slice(0, 8);
+// Destaque da imprensa: o case do iFood, se existir.
+const citacaoMidia = (base) => {
+  const m = midia.find((x) => x.tipo === 'case') || midiaOrdenada[0];
+  const trecho = m && m.tipo === 'case' ? m.titulo.replace(/^.*?(ajudou a just burger)/i, '…$1') : m && m.titulo;
+  return m ? `<figure class="citacao"><blockquote>“${esc(trecho)}”</blockquote><figcaption>${esc(m.veiculo)}${m.data ? `, ${dataMidia(m.data)}` : ''} · <a href="${base}na-midia/">ver todas as matérias</a></figcaption></figure>` : '';
+};
+
 // ---------- Páginas ----------
 
 const paginas = [];
@@ -555,71 +577,86 @@ paginas.push({
   corpo: (base) => `
 <section class="heroi">
   <div class="largura heroi-grade">
-    <div>
-      <p class="sobretitulo">Hamburgueria · ${esc(listaCidades)}</p>
-      <h1>Hambúrguer de 150 g no pão brioche, feito na hora e entregue perto de você.</h1>
-      <p class="lead">Quatro unidades na Grande São Paulo: Zona Leste, Pirituba, Guarulhos e São Bernardo do Campo. Escolha a mais perto e peça pelo iFood.</p>
+    <div class="heroi-texto">
+      <p class="sobretitulo">Desde ${esc(site.fundacao)} · Grande São Paulo</p>
+      <h1>150 g de carne.<br>Pão brioche.<br><span>Molho Just.</span></h1>
+      <p class="lead">Hambúrguer feito na hora nas unidades da Zona Leste, Pirituba, Guarulhos e São Bernardo do Campo, com entrega pelo iFood.</p>
       <div class="acoes">
-        <a class="botao" href="${base}unidades/">Encontrar a unidade mais perto</a>
-        <a class="botao botao-contorno" href="${base}para-voce/">O que eu peço?</a>
+        <a class="botao" href="${base}unidades/">Peça no iFood</a>
+        <a class="botao botao-contorno" href="${base}cardapio/">Ver o cardápio</a>
       </div>
-      ${site.contador ? blocoContador() : ''}
     </div>
     ${temHeroi
-      ? `<div class="heroi-burger-caixa"><img class="heroi-burger" src="${base}${imagemHeroi}" width="1000" height="1000" alt="${esc(itemHeroi ? `${itemHeroi.nome}, burger da Just Burger` : site.heroi.alt)}" fetchpriority="high"></div>`
+      ? `<figure class="heroi-burger-caixa"><img class="heroi-burger" src="${base}${imagemHeroi}" width="1000" height="1000" alt="${esc(itemHeroi ? `${itemHeroi.nome}, burger da Just Burger` : site.heroi.alt)}" fetchpriority="high">${itemHeroi ? `<figcaption>${esc(itemHeroi.nome)}${itemHeroi.selo ? ` · ${esc(itemHeroi.selo)}` : ''}</figcaption>` : ''}</figure>`
       : `<img class="heroi-logo" src="${base}assets/img/logo-640.webp" srcset="${base}assets/img/logo-320.webp 320w, ${base}assets/img/logo-640.webp 640w" sizes="(min-width: 900px) 420px, 70vw" width="640" height="536" alt="Just Burger Hamburgueria" fetchpriority="high">`}
   </div>
 </section>
 
-${site.avaliacoes ? blocoAvaliacoes() : ''}
+${site.contador ? blocoContador() : ''}
 
 <section class="secao">
   <div class="largura">
-    <h2>Qual é o seu pedido?</h2>
-    <p class="lead">Escolha o que mais combina com você e veja o que pedir.</p>
-    <div class="grade-perfis">${perfis.map((p) => cartaoPerfil(p, base)).join('')}</div>
+    <div class="titulo-secao">
+      <h2>Os mais pedidos</h2>
+      <a class="link" href="${base}cardapio/">Cardápio completo</a>
+    </div>
+    <div class="grade-produtos">${maisPedidos().map((i) => cartaoProduto(i, base)).join('')}</div>
   </div>
 </section>
 
-<section class="secao secao-destaque">
+<section class="secao secao-clara">
   <div class="largura">
-    <h2>Por que a Just Burger</h2>
-    <div class="grade-3">
-      ${diferenciais.map((d) => `<article class="cartao"><h3>${esc(d.titulo)}</h3><p>${esc(d.texto)}</p></article>`).join('')}
+    <div class="titulo-secao">
+      <h2>Cardápio</h2>
+      <p>Hambúrgueres, combos, porções, saladas, shakes e sobremesas.</p>
+    </div>
+    <div class="grade-categorias">${categoriasHome().map(({ categoria, item }) => `
+      <a class="categoria" href="${base}cardapio/#${slug(categoria)}">
+        ${imgProduto(item, base, '(min-width: 900px) 280px, 46vw')}
+        <span>${esc(categoria)}</span>
+      </a>`).join('')}
     </div>
   </div>
 </section>
 
-<section class="secao">
+<section class="secao secao-unidades" id="unidades">
   <div class="largura">
-    <h2>Para começar</h2>
-    <div class="grade-produtos">${destaquesHome().map((i) => cartaoProduto(i, base)).join('')}</div>
-    <p><a class="link" href="${base}cardapio/">Cardápio completo →</a></p>
-  </div>
-</section>
-
-<section class="secao secao-destaque">
-  <div class="largura">
-    <h2>A Just na mídia</h2>
-    <div class="grade-midia">${midiaOrdenada.slice(0, 3).map((m) => cartaoMidia(m, base)).join('')}</div>
-    <p><a class="link" href="${base}na-midia/">Todas as matérias e vídeos →</a></p>
-  </div>
-</section>
-
-<section class="secao" id="unidades">
-  <div class="largura">
-    <h2>Nossas hamburguerias</h2>
-    <div class="grade-2">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
-    ${geo ? `<p><a class="link" href="${base}entrega/">Veja se entregamos no seu bairro (${bairros.length} bairros e cidades) →</a></p>` : ''}
+    <div class="titulo-secao">
+      <h2>Nossas unidades</h2>
+      ${geo ? `<a class="link" href="${base}entrega/">Entregamos em ${bairros.length} bairros</a>` : ''}
+    </div>
+    <div class="grade-lojas">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
   </div>
 </section>
 
 <section class="secao">
-  <div class="largura estreita">
-    <h2>Perguntas frequentes</h2>
+  <div class="largura dividido">
+    <div>
+      <h2>O que pedir</h2>
+      <p class="suave">Primeira vez, muita fome, pedido para dividir ou algo mais leve: um atalho para cada situação.</p>
+    </div>
+    <div class="lista-perfis">${perfis.map((p) => cartaoPerfil(p, base)).join('')}</div>
+  </div>
+</section>
+
+<section class="secao secao-clara">
+  <div class="largura">
+    ${citacaoMidia(base)}
+    <p class="visto-em-rotulo">Visto em</p>
+    <ul class="visto-em">${[...new Map(midiaOrdenada.map((m) => [m.veiculo.split(' · ')[0], m])).values()].map((m) => `<li><a href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.veiculo.split(' · ')[0])}</a></li>`).join('')}</ul>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="largura dividido">
+    <div>
+      <h2>Perguntas frequentes</h2>
+      <p class="suave">Não achou o que procurava? Fale com a loja pelo chat do iFood.</p>
+    </div>
     ${blocoFaq(faq)}
   </div>
-</section>`,
+</section>
+${site.avaliacoes ? blocoAvaliacoes() : ''}`,
   md: () => `# ${site.nome}
 
 > ${site.descricaoCurta}. Pedidos pelo iFood (${site.nomeIfood}).
@@ -651,10 +688,15 @@ paginas.push({
   <div class="largura">
     ${migalhas(base, [['Início', ''], ['Cardápio', 'cardapio/']])}
     <h1>Cardápio Just Burger</h1>
-    ${respostaRapida(`A Just Burger faz hambúrguer de 150 g no pão brioche com o Molho Just; os mais vendidos são Top Smash, Just House e Dolce Gabana. O cardápio tem ${juntar(cardapio.map((c) => c.categoria.toLowerCase()))}. Preço, disponibilidade e promoções do dia ficam no iFood da unidade, e a Just não faz trocas de itens.`)}
-    <nav class="categorias" aria-label="Categorias">${cardapio.map((c) => `<a href="#${c.itens[0].id}">${esc(c.categoria)}</a>`).join('')}</nav>
-    ${cardapio.map((c) => `<h2>${esc(c.categoria)}</h2><div class="grade-produtos">${c.itens.map((i) => cartaoProduto({ ...i, categoria: c.categoria }, base, { ancora: true })).join('')}</div>`).join('\n')}
-    <div class="acoes"><a class="botao" href="${base}unidades/">Escolher unidade e pedir</a></div>
+    ${respostaRapida('Hambúrguer de 150 g no pão brioche com o Molho Just. Os mais vendidos são o Top Smash, o Just House e o Dolce Gabana.')}
+    <p class="aviso">Preços, promoções e disponibilidade do dia no iFood da sua unidade. A Just não faz trocas de itens.</p>
+  </div>
+</section>
+<nav class="categorias" aria-label="Categorias do cardápio"><div class="largura">${cardapio.map((c) => `<a href="#${slug(c.categoria)}">${esc(c.categoria)}</a>`).join('')}</div></nav>
+<section class="secao secao-menu">
+  <div class="largura">
+    ${cardapio.map((c) => `<h2 class="categoria-titulo" id="${slug(c.categoria)}">${esc(c.categoria)}</h2><div class="lista-menu">${c.itens.map((i) => cartaoProduto({ ...i, categoria: c.categoria }, base, { ancora: true })).join('')}</div>`).join('\n')}
+    <div class="acoes"><a class="botao" href="${base}unidades/">Peça no iFood</a></div>
   </div>
 </section>`,
   md: () => `# Cardápio ${site.nome}
@@ -715,7 +757,7 @@ for (const p of perfis) {
     ${p.texto.map((t) => `<p>${esc(t)}</p>`).join('')}
     <h2>Perguntas</h2>
     ${blocoFaq(p.perguntas)}
-    <div class="acoes"><a class="botao" href="${base}unidades/">Escolher unidade e pedir</a></div>
+    <div class="acoes"><a class="botao" href="${base}unidades/">Peça no iFood</a></div>
   </div>
 </section>
 <section class="secao">
@@ -779,10 +821,9 @@ for (const l of lojas) {
 <section class="secao">
   <div class="largura">
     ${migalhas(base, trilha)}
-    <p class="sobretitulo">${esc(l.regiao)}</p>
-    <h1>Hamburgueria ${esc(termo)}: ${esc(l.nome)}</h1>
-    <p class="lead">${esc(l.intro)}</p>
-    ${respostaRapida(`${l.nome} fica em ${local}${l.outrosNomes ? ` (também chamada de ${juntar(l.outrosNomes)}, ${l.regiaoConhecida})` : ''}, abre ${textoHorario(l.horarios[0]).toLowerCase()} e entrega pelo iFood em ${juntar(l.bairrosAtendidos)}.`)}
+    <p class="sobretitulo">Hamburgueria ${esc(termo)}</p>
+    <h1>${esc(l.nome)}</h1>
+    <p class="lead resumo">${esc(l.intro)}</p>
     <div class="acoes">
       <a class="botao" href="${esc(l.ifood)}" rel="noopener">Pedir no iFood</a>
       <a class="botao botao-contorno" href="${esc(l.googleMaps)}" rel="noopener">Abrir no Google Maps</a>
@@ -798,7 +839,7 @@ for (const l of lojas) {
     </article>
     <article class="cartao">
       <h2>Horário</h2>
-      <ul>${l.horarios.map((h) => `<li>${esc(textoHorario(h))}</li>`).join('')}</ul>
+      <p class="suave">${l.horarios.map((h) => esc(textoHorario(h))).join('<br>')}</p>
     </article>
     <article class="cartao">
       <h2>Bairros atendidos</h2>
