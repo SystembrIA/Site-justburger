@@ -523,7 +523,6 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .marca-operacao { padding: 14px 0 6px; border-top: 1px solid var(--linha); margin-top: 12px; }
 .marca-regiao { margin: 0 0 4px !important; color: var(--branco) !important; font-weight: 800; }
 .lojas-centro .loja-marca .loja-acoes { justify-content: center; }
-.loja-marca .loja-acoes .botao { flex: 0 0 auto; padding: 0 22px !important; }
 .rodape-marcas .submenu-marca { display: grid; place-items: center; color: #000; font-size: .9rem; font-weight: 900; }
 
 /* Nota, avaliações e unidades: maiores, uma informação por linha */
@@ -531,3 +530,6 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .numeros-extra .numero { font-size: clamp(2.2rem, 8vw, 3.2rem) !important; }
 .numeros-extra .numero-rotulo { font-size: clamp(1.05rem, 4.4vw, 1.4rem) !important; }
 .numeros-extra .numeros-avaliacoes { margin: -4px 0 10px; font-size: clamp(1rem, 4.2vw, 1.3rem); font-weight: 600; color: var(--branco); text-align: center; white-space: normal; }
+
+/* Operações das culinárias: mesmo padrão das lojas Burger */
+.marca-regiao { font-size: 1.35rem; font-stretch: 80%; color: var(--laranja) !important; }

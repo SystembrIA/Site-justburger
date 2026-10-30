@@ -33,16 +33,21 @@ const SEMANA = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 const CURTO = { Su: 'Dom', Mo: 'Seg', Tu: 'Ter', We: 'Qua', Th: 'Qui', Fr: 'Sex', Sa: 'Sáb' };
 const hora = (t) => (t === '00:00' ? 'meia-noite' : t.endsWith(':00') ? `${+t.slice(0, 2)}h` : `${+t.slice(0, 2)}h${t.slice(3)}`);
 function textoHorarioCurto(h) {
-  if (h.dias.length === 7) return `Todos os dias · ${hora(h.abre)} ${h.fecha === '00:00' ? 'à' : 'às'} ${hora(h.fecha)}`;
+  const faixa = `${hora(h.abre)} ${h.fecha === '00:00' ? 'à' : 'às'} ${hora(h.fecha)}`;
+  if (h.dias.length === 7) return `Todos os dias · ${faixa}`;
+  const LONGO = { Su: 'domingo', Mo: 'segunda', Tu: 'terça', We: 'quarta', Th: 'quinta', Fr: 'sexta', Sa: 'sábado' };
+  if (h.dias.length === 6) return `Todos os dias, exceto ${LONGO[SEMANA.find((d) => !h.dias.includes(d))]} · ${faixa}`;
   const tem = SEMANA.map((d) => h.dias.includes(d));
-  const ini = tem.findIndex((x, i) => x && !tem[(i + 6) % 7]); // começo de uma sequência (a semana é circular)
+  // começo de uma sequência (semana circular), procurando a partir de segunda
+  const ini = [1, 2, 3, 4, 5, 6, 0].find((i) => tem[i] && !tem[(i + 6) % 7]);
   const faixas = [];
   for (let k = 0, i = ini; k < 7; k++, i = (i + 1) % 7) {
     if (!tem[i]) continue;
     if (faixas.length && faixas.at(-1).fim === (i + 6) % 7) faixas.at(-1).fim = i; else faixas.push({ ini: i, fim: i });
   }
-  const dias = faixas.map(({ ini: a, fim: b }) => (a === b ? CURTO[SEMANA[a]] : (b - a + 7) % 7 === 1 ? `${CURTO[SEMANA[a]]} e ${CURTO[SEMANA[b]].toLowerCase()}` : `${CURTO[SEMANA[a]]} a ${CURTO[SEMANA[b]].toLowerCase()}`)).join(', ');
-  return `${dias} · ${hora(h.abre)} ${h.fecha === '00:00' ? 'à' : 'às'} ${hora(h.fecha)}`;
+  const nomes = faixas.map(({ ini: a, fim: b }) => (a === b ? CURTO[SEMANA[a]].toLowerCase() : (b - a + 7) % 7 === 1 ? `${CURTO[SEMANA[a]].toLowerCase()} e ${CURTO[SEMANA[b]].toLowerCase()}` : `${CURTO[SEMANA[a]].toLowerCase()} a ${CURTO[SEMANA[b]].toLowerCase()}`));
+  const dias = nomes.length > 1 ? `${nomes.slice(0, -1).join(', ')} e ${nomes.at(-1)}` : nomes[0];
+  return `${dias.charAt(0).toUpperCase()}${dias.slice(1)} · ${faixa}`;
 }
 function textoHorario(h) {
   const dias = h.dias.length === 7 ? 'Todos os dias' : h.dias.map((d) => DIAS[d]).join(', ');
@@ -637,11 +642,16 @@ const cartaoMarca = (c, base) => `
   ${logoMarca(c) ? `<img class="marca-logo-peq" src="${base}${logoMarca(c)}" width="72" height="72" alt="Logo ${esc(c.nome)}" loading="lazy">` : `<span class="submenu-marca marca-inicial" aria-hidden="true">${esc(c.nome.split(' ').pop()[0])}</span>`}
   <h3><a href="${base}culinarias/${c.slug}/">${esc(c.nome)}</a></h3>
   <p class="loja-endereco">${esc(c.tipo)}</p>
-  ${(c.lojas || []).map((x) => `<div class="marca-operacao">
+  ${(c.lojas || []).map((x) => {
+    const op = { ...x, nome: `${c.nome} ${x.regiao}`, googleMaps: x.endereco ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${x.endereco}, São Paulo - SP`)}` : '' };
+    return `<div class="marca-operacao">
     <p class="marca-regiao">${esc(x.regiao)}</p>
+    ${x.endereco ? `<p class="loja-endereco">${esc(x.endereco)}</p>` : ''}
+    ${x.horarios ? `<p class="loja-hora">${x.horarios.map((h) => `<span>${esc(textoHorarioCurto(h))}</span>`).join('')}</p>` : ''}
     <div class="loja-reputacao"><p class="loja-nota">${nota1(x.nota)} <span class="estrela-dourada" aria-hidden="true">★</span> no iFood</p>${x.superIfood ? seloSuper : ''}</div>
-    <p class="loja-acoes"><a class="botao" href="${esc(x.ifood)}" rel="noopener">Faça seu pedido</a></p>
-  </div>`).join('')}
+    <p class="loja-acoes">${acoesLoja(op)}</p>
+  </div>`;
+  }).join('')}
 </article>`;
 const blocoCulinarias = (base) => (culinarias.length ? `
 <section class="secao culinarias" aria-labelledby="culinarias-titulo">
@@ -653,7 +663,7 @@ const blocoCulinarias = (base) => (culinarias.length ? `
 // Selo Super Restaurante iFood (só nas lojas com superIfood: nível 5 de 5 no painel do iFood).
 const seloSuper = `<div class="selo-super" role="img" aria-label="Super Restaurante no iFood"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#ea1d2c"/><path d="M50.0,24.0 L56.8,42.7 L76.6,43.3 L60.9,55.6 L66.5,74.7 L50.0,63.5 L33.5,74.7 L39.1,55.6 L23.4,43.3 L43.2,42.7Z" fill="#fff"/></svg><p><em>super</em> <span>restaurante</span></p></div>`;
 // Botões de cada loja: pedido no iFood da loja, WhatsApp e Google Maps.
-const acoesLoja = (l) => `<a class="botao" href="${esc(l.ifood)}" rel="noopener">Faça seu pedido</a>${linkWhats ? `<a class="botao botao-whats" href="${linkWhats}" rel="noopener">${iconeWhats}WhatsApp</a>` : ''}<a class="botao botao-contorno botao-mapa" href="${esc(l.googleMaps)}" rel="noopener" aria-label="Abrir ${esc(l.nome)} no Google Maps" title="Abrir no Google Maps">${iconePin}</a>`;
+const acoesLoja = (l) => `<a class="botao" href="${esc(l.ifood)}" rel="noopener">Faça seu pedido</a>${linkWhats ? `<a class="botao botao-whats" href="${linkWhats}" rel="noopener">${iconeWhats}WhatsApp</a>` : ''}${l.googleMaps ? `<a class="botao botao-contorno botao-mapa" href="${esc(l.googleMaps)}" rel="noopener" aria-label="Abrir ${esc(l.nome)} no Google Maps" title="Abrir no Google Maps">${iconePin}</a>` : ''}`;
 // Endereço numa linha só: com o bairro quando cabe; senão, só rua e número (a cidade já está no nome da loja).
 const enderecoCurto = (l) => (pendente(l.endereco) ? l.bairro : `${l.endereco} · ${l.bairro}`.length <= 38 ? `${l.endereco} · ${l.bairro}` : l.endereco);
 const cartaoLoja = (l, base) => `
