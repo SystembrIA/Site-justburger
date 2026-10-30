@@ -33,6 +33,7 @@ const lanches = {
   'just burger': ['carne', 'prato', 'brioche', 'molhos'],
   'just passado': ['carne', 'prato', 'pao', 'salada'],
   'just house': ['carne', 'bacon', 'cheddar', 'brioche', 'molhos'],
+  'just top smash': ['carne', 'bacon', 'cheddar', 'prato', 'brioche', 'molhos'],
   'top smash': ['carne', 'bacon', 'cheddar', 'prato', 'brioche', 'molhos'],
   'just chicken': ['frangoJust', 'paoGergelim', 'salada'],
   'just brasil': ['carne', 'coalho', 'bacon', 'brioche', 'molhos'],
@@ -62,12 +63,22 @@ export const pesosAConferir = Object.entries(I).filter(([k]) => ['frangoJust', '
 
 const chave = (nome) => String(nome).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
 
+// A receita segue a descrição do item quando ela é passada: o Top Smash tem cadastros com e sem queijo
+// prato no iFood, e algumas lojas usam pão tradicional em vez de brioche.
+function ajusta(c, desc) {
+  if (!desc) return c;
+  if (c === 'prato' && !/prato|queijo\s*,\s*cheddar|\bqueijo\s*(\n|,|$)/i.test(desc)) return null;
+  if (c === 'brioche' && !/brioche/i.test(desc)) return 'pao';
+  return c;
+}
+
 // { por: 'lanche' | 'combo', linhas: [{ nome, g }], total } com g em número; null se não for lanche conhecido
-export function receitaDe(nome) {
+export function receitaDe(nome, descricao = '') {
   const k = chave(nome);
   const lanche = combos[k] || k;
   if (!lanches[lanche]) return null;
-  const itens = lanches[lanche].concat(combos[k] ? ['batata'] : []).map((c) => ({ nome: I[c][0], g: I[c][1] }));
+  const itens = lanches[lanche].concat(combos[k] ? ['batata'] : []).map((c) => ajusta(c, descricao)).filter(Boolean)
+    .map((c) => ({ nome: I[c][0], g: I[c][1] }));
   return { por: combos[k] ? 'combo' : 'lanche', linhas: itens, total: itens.reduce((s, l) => s + l.g, 0) };
 }
 

@@ -11,7 +11,7 @@ const saida = ['# Just Burger: descrições com proteína (aproximada)', '',
 for (const cat of dados.categorias) {
   for (const i of cat.itens) {
     const nome = i.nome.replace(/\s*-?\s*(hits|queridinhos)\s*$/i, '').split(/\s+-\s+/)[0].trim();
-    const r = receitaDe(nome);
+    const r = receitaDe(nome, i.descricao);
     if (!r) continue;
     const base = (i.descricao || '')
       .replace(/\s*prote[ií]na\s*\((estimativa|aproximada)\)[\s\S]*$/i, '')
