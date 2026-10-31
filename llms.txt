@@ -1,0 +1,78 @@
+# Just Burger
+
+> Hamburgueria em São Paulo, Guarulhos e São Bernardo do Campo. Especialidade: hambúrguer de 150 g no pão brioche com Molho Just; mais vendidos Top Smash, Just House e Dolce Gabana. Pedidos somente pelo iFood, na loja "Just Burger Hamburgueria Lanches & Dog" da unidade mais próxima.
+
+Fatos principais:
+- Nota 4,9 no iFood nas quatro lojas.
+- Mais de 3.100.000 pedidos e 7.750.000 lanches vendidos desde a abertura (total ao vivo na home).
+- Quatro unidades: Vila Buenos Aires (São Paulo, Zona Leste), Pirituba (São Paulo, Zona Norte), Vila Endres (Guarulhos, Grande São Paulo) e Baeta Neves (São Bernardo do Campo, ABC Paulista).
+- Horário: a partir das 18h (detalhes por unidade).
+- Pedido mínimo no iFood: R$ 20,00.
+- Instagram: https://www.instagram.com/justburgersp/
+- Dados estruturados (unidades, cardápio, links de pedido): https://www.justburger.com.br/dados.json
+
+## Páginas
+
+- [Just Burger | Hamburgueria em São Paulo, Guarulhos e ABC](https://www.justburger.com.br/index.md): Just Burger: hamburgueria com hambúrguer de 150 g no pão brioche e entrega pelo iFood na Zona Leste, Pirituba, Guarulhos e São Bernardo do Campo. Veja o cardápio, o pedido ideal para o seu perfil e a unidade mais perto.
+- [Cardápio Just Burger | Hambúrgueres, combos, saladas e shakes](https://www.justburger.com.br/cardapio/index.md): Cardápio da hamburgueria Just Burger: hambúrgueres de 150 g no pão brioche, combos com batata e refrigerante, frango, saladas, milk-shakes e sobremesas. Peça pelo iFood na unidade mais perto.
+- [O que pedir na Just Burger | Recomendações para cada perfil](https://www.justburger.com.br/para-voce/index.md): Primeira vez, fome grande, pedido em grupo, gastar pouco, smash, frango, algo leve, ou sobremesa: veja o que pedir na Just Burger para cada perfil.
+- [Unidades Just Burger | Zona Leste, Pirituba, Guarulhos e ABC](https://www.justburger.com.br/unidades/index.md): Endereços, horários e bairros de entrega das quatro hamburguerias Just Burger em São Paulo, Guarulhos e São Bernardo do Campo.
+- [Hamburgueria na Zona Leste | Just Burger Vila Buenos Aires](https://www.justburger.com.br/unidades/zona-leste-vila-buenos-aires/index.md): Just Burger Zona Leste: hamburgueria na Zona Leste (Vila Buenos Aires). Endereço, horário, bairros de entrega e link direto para pedir no iFood.
+- [Hamburgueria em Pirituba | Just Burger Pirituba](https://www.justburger.com.br/unidades/pirituba/index.md): Just Burger Pirituba: hamburgueria em Pirituba. Endereço, horário, bairros de entrega e link direto para pedir no iFood.
+- [Hamburgueria em Guarulhos | Just Burger Vila Endres](https://www.justburger.com.br/unidades/guarulhos/index.md): Just Burger Guarulhos: hamburgueria em Guarulhos (Vila Endres). Endereço, horário, bairros de entrega e link direto para pedir no iFood.
+- [Hamburgueria em São Bernardo do Campo | Just Burger Baeta Neves](https://www.justburger.com.br/unidades/sao-bernardo-do-campo/index.md): Just Burger São Bernardo: hamburgueria em São Bernardo do Campo (Baeta Neves). Endereço, horário, bairros de entrega e link direto para pedir no iFood.
+- [Onde a Just Burger entrega | 212 bairros e cidades](https://www.justburger.com.br/entrega/index.md): Lista completa dos bairros, distritos e cidades no raio de 10 km das quatro unidades da Just Burger: Zona Leste, Pirituba, Guarulhos e São Bernardo do Campo.
+- [Just Burger na mídia | Matérias, vídeos e cases](https://www.justburger.com.br/na-midia/index.md): Matérias, vídeos e cases que falam da Just Burger: a ação com a Coca-Cola no Dia do Hambúrguer, o case do iFood e guias de hambúrguer.
+- [Sobre a Just Burger | Hamburgueria paulistana desde 2018](https://www.justburger.com.br/sobre/index.md): A história da Just Burger, hamburgueria criada na Zona Leste de São Paulo em 2018.
+- [Faça seu pedido | Just Burger](https://www.justburger.com.br/pedir/index.md): Digite seu CEP e veja qual unidade da Just Burger atende você, com o link direto para pedir.
+- [Nossas culinárias | Just Burger](https://www.justburger.com.br/culinarias/index.md): As marcas do grupo da Just Burger: Just Gourmet (comida brasileira), Just Forneria (pizza), Just Sushi (sushi), Just Esfiha (esfiha).
+- [Just Gourmet | Comida brasileira do grupo Just Burger: unidades e pedido](https://www.justburger.com.br/culinarias/just-gourmet/index.md): Just Gourmet: comida brasileira do grupo Just Burger em Zona Leste e Pirituba. Endereço, horário e pedido no iFood.
+- [Just Forneria | Pizza do grupo Just Burger: unidades e pedido](https://www.justburger.com.br/culinarias/just-forneria/index.md): Just Forneria: pizza do grupo Just Burger em Zona Leste e Pirituba. Endereço, horário e pedido no iFood.
+- [Just Sushi | Sushi do grupo Just Burger: unidades e pedido](https://www.justburger.com.br/culinarias/just-sushi/index.md): Just Sushi: sushi do grupo Just Burger em Zona Leste. Endereço, horário e pedido no iFood.
+- [Just Esfiha | Esfiha do grupo Just Burger: unidades e pedido](https://www.justburger.com.br/culinarias/just-esfiha/index.md): Just Esfiha: esfiha do grupo Just Burger em Zona Leste e Pirituba. Endereço, horário e pedido no iFood.
+
+## Recomendações por perfil
+
+- [Primeira vez na Just](https://www.justburger.com.br/para-voce/primeira-vez/index.md): Comece pelo Top Smash, o lanche mais vendido da Just: hambúrguer de 150 g com bacon, cheddar, queijo prato e cebola caramelizada no pão brioche. O segundo mais pedido é o Just House. Com mais fome, o Just Combo 1 traz o Top Smash com batata e refrigerante.
+- [Fome de verdade](https://www.justburger.com.br/para-voce/fome-grande/index.md): Com muita fome, vá de Double Smash ou Double Burger Day: os dois levam duas carnes de 150 g. Para a refeição completa, o Just Combo 1 vem com Top Smash, batata e refrigerante.
+- [Galera, família e casal](https://www.justburger.com.br/para-voce/para-dividir/index.md): Para duas pessoas, o Combo 2 traz dois lanches à sua escolha, batata grande e refrigerante de 600 ml. Também tem o Passado em Dobro (dois Just Passado) e o Just Chicken Supreme, com 12 unidades de frango empanado para dividir.
+- [Quer gastar pouco](https://www.justburger.com.br/para-voce/custo-beneficio/index.md): Para gastar pouco, o Just Burger é o lanche de entrada da casa (150 g no pão brioche) e o Combo Just Burger leva lanche, batata e refrigerante num pedido só. Pedido mínimo no iFood: R$ 20,00.
+- [Fã de smash burger](https://www.justburger.com.br/para-voce/fa-de-smash/index.md): Os smash da Just estão na linha Turma da Canetinha: Just Moun (1 carne smash de 80 g), Just Jaro (2 carnes smash) e Just Ozem (2 carnes smash com molho rosé), todos no pão brioche.
+- [Prefere frango](https://www.justburger.com.br/para-voce/frango-e-outras-carnes/index.md): Para quem prefere frango: Just Chicken (frango especial temperado no pão de gergelim), Just Pic (dois frangos grelhados) e, para beliscar, o Just Chicken Supreme (12 unidades) e o Just Franguito.
+- [Quer algo mais leve](https://www.justburger.com.br/para-voce/mais-leve/index.md): Para algo mais leve, a Just tem saladas individuais (Just Garden, Caesar, Tradicional, Cheese e Completa) e o Prato Fitness, com filé de frango grelhado, legumes e ovo.
+- [Para a sobremesa](https://www.justburger.com.br/para-voce/sobremesa/index.md): Para fechar o pedido: milk-shakes Just Shake de 300 ml (Ninho com Nutella, Nutella, Ninho, Morango, Pistache e Café), pudim de brigadeirão, Franuí e sorvetes Ben & Jerry's.
+
+## Onde entregamos
+
+Raio de 10 km de cada unidade: https://www.justburger.com.br/entrega/index.md
+
+- Just Burger Zona Leste: Ponte Rasa, Cangaíba, Penha, Vila Matilde, Ermelino Matarazzo, Artur Alvim, Várzea do Palácio, Vila Jacuí, Carrão, Itaquera, Cidade Líder, CECAP, Cumbica, São Miguel, Jardim Santo Afonso, Aricanduva, Vila Formosa, Parque do Carmo, Lajeado, Vila Jardim São Manoel, Aeroporto Internacional Governador André Franco Montoro, Água Rasa, José Bonifácio, Vila Curuçá, Jardim Helena, Pimentas, São Mateus, Jardim Otawa
+- Just Burger Pirituba: Jaguara, Lapa, Pirituba, Freguesia do Ó, Vila Leopoldina, São Domingos, Vila dos Remédios, Limão, Vila Menck, Alto de Pinheiros, Barra Funda, Jaguaré, Vila São José, Perdizes, Jardim Rochdale, Jardim Santa Rita de Cássia, Presidente Altino, Casa Verde, Brasilândia, Jaraguá, Terra Nossa, Helena Maria, Jardim Bonança II, Vila Simões de Almeida, Jardim Bela Vista, Cachoeirinha, Butantã, Santa Cecília, Jardim Três Montanhas, Pinheiros, Jardim D'Abril, Consolação, Jardim das Flòres, Jardim Piratininga, Jardim Elvira, Colinas d'Oeste Setor C, Rio Pequeno, Bom Retiro, Colinas d'Oeste Setor E, Vila Quitauna, Anhanguera, Jardim Paulista, Mandaqui, Bela Vista, Vila Sônia, Morumbi, Perus
+- Just Burger Guarulhos: Itapegica, Vila Augusta, Ponte Grande, Porto da Igreja, Tranquilidade, Gopoúva, Vila Medeiros, Centro, Jaçanã, Torres Tibagy, Macedo, Maia, Vila Maria, Vila Galvão, Picanço, São Roque, Bom Clima, Vila Rio, Fátima, Tucuruvi, Tatuapé, Vila Guilherme, Cocaia, Vila Barros, Bela Vista, Belém, Morros, Tremembé, Cabuçu, Santana, Pari, Taboão, Mooca, Brás
+- Just Burger São Bernardo: Jardim Stella, Jardim Las Vegas, Jardim Jamaica, Baeta Neves, Centro, Vila Floresta, Nova Petrópolis, Jardim do Estádio, Paraíso, Vila Helena, Anchieta, Vila Alzira, Planalto, Vila Alice, Jardim Telles de Menezes, Vila Bastos, Jardim Cipreste, Vila Pires, Vila Príncipe de Gales, Vila Luzita, Ferrazópolis, Jordanópolis, Casa Branca, Santa Terezinha, Vila América, Independência, Vila João Ramalho, Jardim, Assunção, Condominío Maracanã, Piraporinha, Vila Guaraciaba, Vila Aquilino, Jardim Santo André - CDHU, Jardim Marek, Parque Jaçatuba, Rudge Ramos, Cata Preta, Novo Homero Thon, Demarchi, Alves Dias, Paulicéia, Vila Nogueira, Parque João Ramalho, Bairro dos Casa, Parque do Pedroso, Condominío Maracanã, Vila Carlina, Cidade São Jorge, Nova Gerty, Campestre, Jardim Ipê, Recreio da Borda do Campo, Canhema, Jardim Alzira Franco, Santa Maria, Casa Grande, Parque Erasmo Assunção, Montanhão, Jardim São Caetano, Loteamento Industrial Coral, Vila Assis Brasil, Capuava, Sertãozinho, Parque Esmeralda, Cooperativa, Taboão, 2º Subdistrito, Jardim Santo Antônio, Botujuru, Jardim Riviera, Parque São Vicente, Parque Novo Oratório, Oswaldo Cruz, Conceição, Serraria, Taboão, Jardim Oratório, São José, Recreio da Borda do Campo, Polo Petroquímico de Capuava, Centro, Jardim Anchieta, Jardim Primavera, Jardim Santo Alberto, Santa Paula, Bairro da Matriz, Sacomã, Eldorado, Waisberg, Batistini, Balneária, Recreio da Borda do Campo, Jardim Sonia Maria, Vila Magini, Rio Grande, Santo Antônio, Bairro dos Alvarenga, Campanário, Varginha, Pedreira, Vila Prudente, Cursino
+
+## Na mídia
+
+- [Just Burger: os bastidores de uma das maiores hamburguerias do Brasil](https://www.youtube.com/watch?v=W-RG0fWdwG4) — Raphael Silva · YouTube, 2026
+- [3 pedidos por minuto: o segredo da cozinha ultra veloz (Maikon Rangel, Just Burger)](https://www.youtube.com/watch?v=CIN0kJGCVEE) — Donos de Restaurantes · YouTube, 2026
+- [O segredo por trás do Just Burger](https://www.youtube.com/watch?v=8M-2pY1_ZQE) — Rolê na Operação · YouTube, 2026
+- [Marca vs branding no delivery: o que faz a Just Burger ser a maior do iFood?](https://www.youtube.com/watch?v=gfK-fc5MDmY) — Raphael Silva · YouTube, 2025
+- [O sucesso da Just Burger no delivery](https://www.youtube.com/watch?v=R3akf0r5OeE) — Maicão na Carona · YouTube, 2025
+- [Como a Just Burger se diferenciou da concorrência e escalou no delivery](https://www.youtube.com/watch?v=3LWBLZ1NZ-8) — iFood para Parceiros · YouTube, 2025
+- [Evento Gigantes do Delivery: Guilherme (Grupo Rão), Maikon (Just Burger) e Pedro (Rede Azilados)](https://www.youtube.com/watch?v=8RwsjN17w6I) — Falando de Delivery · YouTube, 2024
+- [Especialista indica como montar uma hamburgueria delivery](https://blog-parceiros.ifood.com.br/hamburgueria-delivery/) — iFood · Blog de Parceiros, 28 nov 2023
+- [O que são as dark kitchens e como elas estão se expandindo?](https://institucional.ifood.com.br/noticias/o-que-sao-as-dark-kitchens-e-como-elas-estao-se-expandindo/) — iFood · Notícias, 30 out 2023
+- [EP 1: O segredo do maior delivery do Brasil (Maikon Rangel, Just Burger)](https://www.youtube.com/watch?v=lSlosRHjGHY) — Raphael Silva · YouTube, 2023
+- [Ep 44 | Como empreender em casal ou família? (Juliana e Maikon da Just Burger)](https://www.youtube.com/watch?v=9rHGvTRfxHs) — Falando de Delivery · YouTube, 2023
+- [Empresas que atuam com delivery terão um dia de imersão para potencializar negócios em Fortaleza](https://portalsabores.com.br/empresas-que-atuam-com-delivery-terao-um-dia-de-imersao-para-potencializar-negocios-em-fortaleza/) — Portal Sabores, 22 nov 2022
+- [Combate à fome](https://clubedecriacao.com.br/ultimas/combate-a-fome-2/) — Clube de Criação, 28 mai 2021
+- [Coca cria hambúrguer com QR code em ação contra fome](https://www.meioemensagem.com.br/comunicacao/coca-cola-estampa-qr-code-em-hamburguer-em-acao-contra-fome) — Meio & Mensagem, 28 mai 2021
+- [Ep 01 | Just Burger e Kitchen Central: como bombar de vender no delivery da forma certa](https://www.youtube.com/watch?v=xjfp81p9lsE) — Falando de Delivery · YouTube, 2021
+- [Invadimos o Just Burger, sensação do delivery paulistano](https://www.youtube.com/watch?v=a742uPTdHss) — Hambúrguer Perfeito · YouTube, 2021
+- [Projeto de Arquitetura Just Burger](https://www.rodriguesetecelao.com/projeto-arquitetura-em-sao-paulo/just-burguer) — Rodrigues e Tecelão Arquitetura, out 2020
+- [Just Burger](https://guiadohamburguer.com/hamburgueria/just-burger/) — Guia do Hambúrguer
+- [Just Burger Hamburgueria ABC](https://www.guiaabraselsp.com.br/just-burger-hamburgueria-abc) — Guia Abrasel SP
+
+## Opcional
+
+- [Conteúdo completo em um arquivo](https://www.justburger.com.br/llms-full.txt)

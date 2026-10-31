@@ -1,0 +1,3007 @@
+{
+  "atualizado": "2026-10-31",
+  "marca": {
+    "nome": "Just Burger",
+    "nomeNoIfood": "Just Burger Hamburgueria Lanches & Dog",
+    "site": "https://www.justburger.com.br/",
+    "instagram": "https://www.instagram.com/justburgersp/",
+    "pedidoMinimo": "R$ 20,00",
+    "comoPedir": "Somente pelo iFood, pelo link da unidade."
+  },
+  "unidades": [
+    {
+      "nome": "Just Burger Zona Leste",
+      "bairro": "Vila Buenos Aires",
+      "cidade": "São Paulo",
+      "regiao": "Zona Leste",
+      "endereco": "Rua Peixoto, 156",
+      "cep": "03627-010",
+      "horarios": [
+        "Segunda, Terça, Quarta, Quinta, Domingo, das 11:00 às 23:00",
+        "Sexta, Sábado, das 11:00 até meia-noite"
+      ],
+      "bairrosAtendidos": [
+        "Ponte Rasa",
+        "Cangaíba",
+        "Penha",
+        "Vila Matilde",
+        "Ermelino Matarazzo",
+        "Artur Alvim",
+        "Várzea do Palácio",
+        "Vila Jacuí"
+      ],
+      "pedirNoIfood": "https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-hamburgueria-lanches--dog-vila-buenos-aires/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de",
+      "pagina": "https://www.justburger.com.br/unidades/zona-leste-vila-buenos-aires/"
+    },
+    {
+      "nome": "Just Burger Pirituba",
+      "bairro": "Pirituba",
+      "cidade": "São Paulo",
+      "regiao": "Zona Norte",
+      "endereco": "Av. Raimundo Pereira de Magalhães, 3850",
+      "cep": "05145-200",
+      "horarios": [
+        "Terça, Quarta, Quinta, das 18:00 às 23:00",
+        "Sexta, Sábado, das 18:00 até meia-noite",
+        "Domingo, das 17:30 às 23:00"
+      ],
+      "bairrosAtendidos": [
+        "Jaguara",
+        "Lapa",
+        "Pirituba",
+        "Freguesia do Ó",
+        "Vila Leopoldina",
+        "São Domingos",
+        "Vila dos Remédios",
+        "Limão"
+      ],
+      "pedirNoIfood": "https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-pirituba-jardim-iris/b1f195b5-8ec5-4b9a-ae71-cd55d969a4df",
+      "pagina": "https://www.justburger.com.br/unidades/pirituba/"
+    },
+    {
+      "nome": "Just Burger Guarulhos",
+      "bairro": "Vila Endres",
+      "cidade": "Guarulhos",
+      "regiao": "Grande São Paulo",
+      "endereco": "Rua Espanhola, 470",
+      "cep": "07043-060",
+      "horarios": [
+        "Todos os dias, das 17:00 às 23:00"
+      ],
+      "bairrosAtendidos": [
+        "Itapegica",
+        "Vila Augusta",
+        "Ponte Grande",
+        "Porto da Igreja",
+        "Tranquilidade",
+        "Gopoúva",
+        "Vila Medeiros",
+        "Centro"
+      ],
+      "pedirNoIfood": "https://www.ifood.com.br/delivery/guarulhos-sp/just-burger-hamburgueria-lanches--dog-vila-endres/8432b620-27ea-48fb-bf3b-a0b76bbf3516",
+      "pagina": "https://www.justburger.com.br/unidades/guarulhos/"
+    },
+    {
+      "nome": "Just Burger São Bernardo",
+      "bairro": "Baeta Neves",
+      "cidade": "São Bernardo do Campo",
+      "regiao": "ABC Paulista",
+      "endereco": "Av. Getúlio Vargas, 600",
+      "cep": "09751-250",
+      "horarios": [
+        "Todos os dias, das 17:00 às 23:00"
+      ],
+      "bairrosAtendidos": [
+        "Jardim Stella",
+        "Jardim Las Vegas",
+        "Jardim Jamaica",
+        "Baeta Neves",
+        "Centro",
+        "Vila Floresta",
+        "Nova Petrópolis",
+        "Jardim do Estádio"
+      ],
+      "pedirNoIfood": "https://www.ifood.com.br/delivery/sao-bernardo-do-campo-sp/just-burger-hamburgueria-lanches--dog-baeta-neves/aa6576e8-574e-42c5-8d38-0d7df31f3fcc",
+      "pagina": "https://www.justburger.com.br/unidades/sao-bernardo-do-campo/"
+    }
+  ],
+  "cardapio": [
+    {
+      "categoria": "Combos Para Uma Pessoa",
+      "itens": [
+        {
+          "id": "combo-just-burger-burguer-batata-refri",
+          "nome": "Combo Just Burger",
+          "descricao": "1 Lanche Just Burger, 1 Batata palito individual, 1 Refrigerante 350 ml Lata, Pão, Hambúrguer de 150 gr, Queijo, Cebola, Molho Just, Mayo",
+          "precoReferencia": "R$ 55,90",
+          "url": "https://www.justburger.com.br/cardapio/#combo-just-burger-burguer-batata-refri"
+        },
+        {
+          "id": "combo-just-passado-burguer-batata-refri",
+          "nome": "Combo Just Passado",
+          "descricao": "1 Lanche Just Passado, 1 Batata palito individual, 1 Refrigerante 350 ml Lata, Pão, Mayo, Molho Just, Tomate, Alface crespa, Queijo prato, Hamburguer 150gr",
+          "precoReferencia": "R$ 57,90",
+          "url": "https://www.justburger.com.br/cardapio/#combo-just-passado-burguer-batata-refri"
+        },
+        {
+          "id": "combo-just-house-burguer-batata-refri",
+          "nome": "Combo Just House",
+          "descricao": "1 Lanche House, 1 Batata palito individual, 1 Refrigerante 350 ml Lata, Pão tradicional, Hamburguer 150g, Cheddar, Mayo, Cebola Roxa, Bacon, Molho Just",
+          "precoReferencia": "R$ 62,90",
+          "url": "https://www.justburger.com.br/cardapio/#combo-just-house-burguer-batata-refri"
+        },
+        {
+          "id": "just-combo-1-burguer-batata-refri",
+          "nome": "Just Combo 1",
+          "descricao": "1 Lanche Top Smash, 1 Batata palito individual, 1 Refrigerante 350 ml Lata, Ingredientes do Lanche : Hambúrguer de 150 gr, pão, bacon, queijo, cheddar, cebola caramelizada, picles, mayo, molho especial",
+          "precoReferencia": "R$ 64,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-combo-1-burguer-batata-refri"
+        },
+        {
+          "id": "combo-just-chicken-burguer-batata-refri",
+          "nome": "Combo Just Chicken",
+          "descricao": "1 lanche Just chicken, 1 batata palito, 1 refrigerante 350 ml, Ingredientes:, Pão, Frango especial Just temperado, Molho de mostarda e mel, Mayo, Cebola roxa, Alface",
+          "precoReferencia": "R$ 63,90",
+          "url": "https://www.justburger.com.br/cardapio/#combo-just-chicken-burguer-batata-refri"
+        },
+        {
+          "id": "just-combo-3-burguer-batata-refri",
+          "nome": "Just combo 3",
+          "descricao": "1 cheddar melt, 1 batata palito, 1 refrigerante 350ml lata., Pão australiano, hamburguer 150g, cheddar Original importado, molho just e cebola refogada no molho shoyo, (Devido a consistência do cheddar Ter Que Ser Fria esta opção de lanche não chega totalmente quente)",
+          "precoReferencia": "R$ 64,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-combo-3-burguer-batata-refri"
+        }
+      ]
+    },
+    {
+      "categoria": "Combo 2 pessoas",
+      "itens": [
+        {
+          "id": "combo-2-lanches-a-sua-escolha-batata-grande-refri-de-600ml",
+          "nome": "Combo 2 lanches a sua escolha + batata grande + refri de 600ml",
+          "descricao": "2 Lanches de sua Escolha, 1 Batata Grande, 1 Refri 600ml",
+          "precoReferencia": "R$ 100,90",
+          "url": "https://www.justburger.com.br/cardapio/#combo-2-lanches-a-sua-escolha-batata-grande-refri-de-600ml"
+        }
+      ]
+    },
+    {
+      "categoria": "Passado em Dobro",
+      "itens": [
+        {
+          "id": "2-just-passado",
+          "nome": "2 Just Passado",
+          "descricao": "Aproveite o famoso just passado (X- salada) em dobro, com duas unidades e com uma promoção incomparavél!!!, 2 passados, Pão brioche, Mayo, Molho Just, Tomate, Alface Crespa, Queijo Prato, Hamburguer de 150gr",
+          "precoReferencia": "R$ 72,90",
+          "url": "https://www.justburger.com.br/cardapio/#2-just-passado"
+        }
+      ]
+    },
+    {
+      "categoria": "Hambúrguers",
+      "itens": [
+        {
+          "id": "just-burger-hamburguer-de-150-g",
+          "nome": "Just burger",
+          "descricao": "Pão Brioche, Hambúrguer de 150 gr, Queijo, Cebola, Mayo, Molho Just",
+          "precoReferencia": "R$ 34,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-burger-hamburguer-de-150-g"
+        },
+        {
+          "id": "just-passado-o-novo-sucesso",
+          "nome": "Just Passado",
+          "descricao": "O famoso X Salada Está De Volta !, Pão, Mayo, Molho Just, Tomate, Alface crespa, Queijo prato, Hamburguer 150gr",
+          "precoReferencia": "R$ 39,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-passado-o-novo-sucesso"
+        },
+        {
+          "id": "just-house-top-2-mais-vendido",
+          "nome": "Just House",
+          "descricao": "Pão Brioche, Hamburguer 150g, Cheddar, Mayo, Cebola Roxa, Bacon, Molho Just",
+          "precoReferencia": "R$ 42,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-house-top-2-mais-vendido"
+        },
+        {
+          "id": "top-smash-top-1-mais-vendido",
+          "nome": "Top Smash",
+          "descricao": "Pão Brioche, Hambúrguer de 150g, bacon, queijo cheddar, Queijo Prato, cebola caramelizada, picles, mayo e molho especial",
+          "precoReferencia": "R$ 44,90",
+          "url": "https://www.justburger.com.br/cardapio/#top-smash-top-1-mais-vendido"
+        },
+        {
+          "id": "just-chicken",
+          "nome": "Just Chicken",
+          "descricao": "Just chicken, Pão de gergelim mesclado, Frango especial Just temperado, Mostarda especial Just com mel e especiarias, Mayo temperada, Molho Just, Cebola roxa e alface",
+          "precoReferencia": "R$ 43,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-chicken"
+        },
+        {
+          "id": "just-brasil",
+          "nome": "Just Brasil",
+          "descricao": "Pão brioche, Hambúrguer 150 g, Mayo, molho Just, Queijo Coalho, Bacon, Cebola Roxa, Couve Crispy, Melaço de cana de açúcar",
+          "precoReferencia": "R$ 49,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-brasil"
+        },
+        {
+          "id": "catupi-burger",
+          "nome": "Catupi Burger",
+          "descricao": "Pão Brioche, Hambúrguer 150 gr, Maionese Defumada, Molho Just, Catupiry, Bacon Triturado, Crispy de Cebola",
+          "precoReferencia": "R$ 47,90",
+          "url": "https://www.justburger.com.br/cardapio/#catupi-burger"
+        },
+        {
+          "id": "just-cheddar-melt",
+          "nome": "Just Cheddar Melt",
+          "descricao": "Pão Australiano, Hamburger 150g, Cheddar, Molho Just, Cebola refogada no molho Shoyu",
+          "precoReferencia": "R$ 44,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-cheddar-melt"
+        },
+        {
+          "id": "dolce-gabana-top-4-mais-vendido",
+          "nome": "Dolce Gabana",
+          "descricao": "Pão de brioche, Hambúrguer de 150 gr, Queijo gorgonzola, Geleia de damasco, Farofa de bacon, Mayo, Molho Just especial, Bacon fatiado",
+          "precoReferencia": "R$ 51,90",
+          "url": "https://www.justburger.com.br/cardapio/#dolce-gabana-top-4-mais-vendido"
+        },
+        {
+          "id": "double-burger-day",
+          "nome": "Double Burger Day",
+          "descricao": "Pão de gergelim misto, 2 hambúrguer de 150 gr, Alface, Tomate, Mayo, Molho just, Bacon, Cebola caramelizada., Queijo Prato, Cheddar fatia",
+          "precoReferencia": "R$ 52,90",
+          "url": "https://www.justburger.com.br/cardapio/#double-burger-day"
+        },
+        {
+          "id": "just-burger-day",
+          "nome": "Just Burger Day",
+          "descricao": "Pão de gergelim misto, Hamburguer de 150 gr, Alface, Tomate, Mayo, Molho Just, Queijo Prato, Cheddar Fatia, Bacon, Cebola caramelizada",
+          "precoReferencia": "R$ 49,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-burger-day"
+        },
+        {
+          "id": "just-three-cheese",
+          "nome": "Just Three Cheese",
+          "descricao": "Pão de Brioche, Hamburguer 150g, Molho Just, Mayo, Cheddar, Bacon, e o Catupiry com provolone",
+          "precoReferencia": "R$ 55,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-three-cheese"
+        },
+        {
+          "id": "double-smash-2-hamburguer-de-150-gr",
+          "nome": "Double smash",
+          "descricao": "Pão, 2 hambúrguers de 150 gr, Queijo prato, Cheddar, Alface, Cebola caramelizada, Picles, Mayo, Molho especial",
+          "precoReferencia": "R$ 52,90",
+          "url": "https://www.justburger.com.br/cardapio/#double-smash-2-hamburguer-de-150-gr"
+        },
+        {
+          "id": "just-kids",
+          "nome": "Just Kids",
+          "descricao": "Caixinha personalizada infantil., 1 cheese burger (ou nugetts), 1 Fritas, 1 refrig. Pequeno ou suco de caixinha 200ml, 1 Lembrancinha",
+          "precoReferencia": "R$ 39,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-kids"
+        }
+      ]
+    },
+    {
+      "categoria": "Turma da Canetinha",
+      "itens": [
+        {
+          "id": "just-moun",
+          "nome": "Just Moun",
+          "descricao": "Pão brioche, 1 Carne smash 80gr, Queijo prato, Molho Just, Alface americana, Tomate",
+          "precoReferencia": "R$ 34,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-moun"
+        },
+        {
+          "id": "just-jaro",
+          "nome": "Just Jaro",
+          "descricao": "Pão brioche, 2 Carnes - smash 80gr, Molho Just, Queijo prato, Alface americana, Tomate",
+          "precoReferencia": "R$ 38,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-jaro"
+        },
+        {
+          "id": "just-ozem",
+          "nome": "Just Ozem",
+          "descricao": "2 carnes smash 80gr, 2 queijos prato, molho rose, Alface americana, Tomate",
+          "precoReferencia": "R$ 37,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-ozem"
+        },
+        {
+          "id": "just-pic",
+          "nome": "Just Pic",
+          "descricao": "2 Frangos grelhados, 2 Queijos prato, Molho rose, Alface americana, Tomate",
+          "precoReferencia": "R$ 37,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-pic"
+        }
+      ]
+    },
+    {
+      "categoria": "Porções e Batatas Fritas",
+      "itens": [
+        {
+          "id": "batata-palito-individual-pequena",
+          "nome": "Batata Palito Individual pequena",
+          "descricao": "Batata palito pequena 200gr - Inatura",
+          "precoReferencia": "R$ 18,90",
+          "url": "https://www.justburger.com.br/cardapio/#batata-palito-individual-pequena"
+        },
+        {
+          "id": "batata-palito-grande",
+          "nome": "Batata Palito Grande",
+          "descricao": "Batata palito grande 400gr - Inatura",
+          "precoReferencia": "R$ 30,90",
+          "url": "https://www.justburger.com.br/cardapio/#batata-palito-grande"
+        },
+        {
+          "id": "batata-pequena-com-cheddar-e-bacon",
+          "nome": "Batata Pequena com Cheddar e Bacon",
+          "descricao": "Batata Pequena 200gr Inatura, Cheddar e Bacon, vai separado, para não deixar a batata murcha ! A melhor batata crocante com o melhor cheddar + bacon, a combinação perfeita !, Caso queira o cheddar mais liquido, favor aquecer 10 segundos",
+          "precoReferencia": "R$ 32,90",
+          "url": "https://www.justburger.com.br/cardapio/#batata-pequena-com-cheddar-e-bacon"
+        },
+        {
+          "id": "just-chicken-supreme-seara",
+          "nome": "Just Chicken Supreme Seara",
+          "descricao": "12 unidades de frango empanado com um tempero especial ! Experimente, e quer deixar essa experiência mais gostosa ? Adicione um de nossos molhos e curta essa onda de sabor !",
+          "precoReferencia": "R$ 28,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-chicken-supreme-seara"
+        },
+        {
+          "id": "batata-crinkles-individual-c-paprica-pequena",
+          "nome": "Batata Crinkles Individual c/ páprica",
+          "descricao": "Batata Crinkles Individual ( somente com páprica) - 200 gr - Inatura",
+          "precoReferencia": "R$ 19,90",
+          "url": "https://www.justburger.com.br/cardapio/#batata-crinkles-individual-c-paprica-pequena"
+        },
+        {
+          "id": "batata-crinkles-grande-c-paprica",
+          "nome": "Batata crinkles Grande c/ páprica",
+          "descricao": "Batata palito crinkles. (somente com páprica) 400gr Inatura",
+          "precoReferencia": "R$ 31,90",
+          "url": "https://www.justburger.com.br/cardapio/#batata-crinkles-grande-c-paprica"
+        },
+        {
+          "id": "just-franguito-2",
+          "nome": "Just Franguito",
+          "descricao": "Just Franguito 300 grama inatura, O verdadeiro pedaço de frango empanado na sua casa!",
+          "precoReferencia": "R$ 29,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-franguito-2"
+        }
+      ]
+    },
+    {
+      "categoria": "Molhos especiais",
+      "itens": [
+        {
+          "id": "sache-de-molho-mayo-30g",
+          "nome": "Sachê de molho mayo 30g",
+          "descricao": "Sinta essa sensação sinta esse sabor",
+          "precoReferencia": "R$ 5,90",
+          "url": "https://www.justburger.com.br/cardapio/#sache-de-molho-mayo-30g"
+        },
+        {
+          "id": "sache-de-molho-mayo-100g",
+          "nome": "Sachê de molho mayo 100g",
+          "descricao": "Vc pediu a melhor maionese temperada em tamanho maior !!! Tá ai a Mayo G !!, 1 Unidade de 100 gr",
+          "precoReferencia": "R$ 14,90",
+          "url": "https://www.justburger.com.br/cardapio/#sache-de-molho-mayo-100g"
+        },
+        {
+          "id": "sache-de-molho-cheddar-30g",
+          "nome": "Sachê de molho cheddar 30g",
+          "descricao": "Sem dúvidas esse cheddar é algo especial",
+          "precoReferencia": "R$ 5,90",
+          "url": "https://www.justburger.com.br/cardapio/#sache-de-molho-cheddar-30g"
+        },
+        {
+          "id": "sache-de-molho-cheddar-100g",
+          "nome": "Sachê de molho Cheddar 100g",
+          "descricao": "Cheddar é bom, agora em quantidade maior é perfeito., 1 Unidade de 100 gr",
+          "precoReferencia": "R$ 14,90",
+          "url": "https://www.justburger.com.br/cardapio/#sache-de-molho-cheddar-100g"
+        },
+        {
+          "id": "sache-de-molho-just-30g",
+          "nome": "Sachê de molho Just 30g",
+          "descricao": "Esse e o nosso molho just com um toque especial!",
+          "precoReferencia": "R$ 5,90",
+          "url": "https://www.justburger.com.br/cardapio/#sache-de-molho-just-30g"
+        }
+      ]
+    },
+    {
+      "categoria": "Saladas",
+      "itens": [
+        {
+          "id": "just-garden",
+          "nome": "Just Garden",
+          "descricao": "Alface americana, Tomate italiano, Azeitona preta sem caroço, Cebola roxa, Cenoura, Croutons, Parmesão., Acompanha: sachê de azeite, sal e molho italiano., Tamanho para uma pessoa!",
+          "precoReferencia": "R$ 28,90",
+          "url": "https://www.justburger.com.br/cardapio/#just-garden"
+        },
+        {
+          "id": "salada-caesar",
+          "nome": "Salada Caesar",
+          "descricao": "Salada individual, Alface americano, frango desfiado, parmesão ralado, croutons e molho caesar., Tamanho Para Uma Pessoa!!",
+          "precoReferencia": "R$ 28,90",
+          "url": "https://www.justburger.com.br/cardapio/#salada-caesar"
+        },
+        {
+          "id": "salada-tradicional",
+          "nome": "Salada Tradicional",
+          "descricao": "Alface americana, Tomate cereja, Cebola roxa, Cenoura, Tamanho para uma pessoa!",
+          "precoReferencia": "R$ 20,90",
+          "url": "https://www.justburger.com.br/cardapio/#salada-tradicional"
+        },
+        {
+          "id": "salada-cheese",
+          "nome": "Salada Cheese",
+          "descricao": "Alface americano, Tomate italiano, Queijo parmesão, Tamanho para uma pessoa!",
+          "precoReferencia": "R$ 20,90",
+          "url": "https://www.justburger.com.br/cardapio/#salada-cheese"
+        },
+        {
+          "id": "salada-completa",
+          "nome": "Salada Completa",
+          "descricao": "Alface americana, tomate cereja, cebola roxa, palmito, milho e cenoura ralada., Tamanho Para Uma Pessoa!",
+          "precoReferencia": "R$ 22,90",
+          "url": "https://www.justburger.com.br/cardapio/#salada-completa"
+        },
+        {
+          "id": "salada-especial-1-pessoas",
+          "nome": "Salada especial ( 1 pessoas )",
+          "descricao": "Alface americana, tomate cereja, cebola roxa, cenoura no vapor, brócolis, ovo, palmito, maionese com batatas, e vagem, ( opcional adicionar um complemento)",
+          "precoReferencia": "R$ 31,90",
+          "url": "https://www.justburger.com.br/cardapio/#salada-especial-1-pessoas"
+        }
+      ]
+    },
+    {
+      "categoria": "Bebidas",
+      "itens": [
+        {
+          "id": "pink-lemonade-500-mls",
+          "nome": "Pink lemonade 500 mls",
+          "descricao": "Um sabor diferente de tudo que já bebeu, refrescante, deliciosa, peça, você não vai se arrepender !!!",
+          "precoReferencia": "R$ 13,90",
+          "url": "https://www.justburger.com.br/cardapio/#pink-lemonade-500-mls"
+        }
+      ]
+    },
+    {
+      "categoria": "Franuí sorvete",
+      "itens": [
+        {
+          "id": "franui-chocolate-ao-leite",
+          "nome": "Franuí chocolate ao leite",
+          "descricao": "Delicioso chocolate argentino e framboesa com gostinho de sorvete!",
+          "precoReferencia": "R$ 44,90",
+          "url": "https://www.justburger.com.br/cardapio/#franui-chocolate-ao-leite"
+        },
+        {
+          "id": "franui-pink",
+          "nome": "Franui pink",
+          "descricao": "Framboesas naturais congeladas, banhadas com uma camada de chocolate branco e uma segunda camada de chocolate branco misturado com pó de framboesa",
+          "precoReferencia": "R$ 44,90",
+          "url": "https://www.justburger.com.br/cardapio/#franui-pink"
+        }
+      ]
+    },
+    {
+      "categoria": "Sorvetes Ben & Jerry's",
+      "itens": [
+        {
+          "id": "ben-jerrys-half-baked-458ml",
+          "nome": "Ben & Jerrys Half Baked 458ml",
+          "descricao": "O Sorvete Mais Vendido Dos Estados Unidos Acaba de Desembarcar Aqui No Brasil!!! Isso Mesmo, Ben & Jerrys Half Baked Agora No Pedaço",
+          "precoReferencia": "R$ 58,90",
+          "url": "https://www.justburger.com.br/cardapio/#ben-jerrys-half-baked-458ml"
+        },
+        {
+          "id": "sorvete-ben-jerrys-doce-de-leite-458ml",
+          "nome": "Sorvete Ben & Jerrys Doce de Leite 458ml",
+          "descricao": "Sorvete Sabor Doce de Leite e Sorvete Sabor Chocolate com Pedaços Sabor Chocolate Recheio Cremoso de Doce de Leite",
+          "precoReferencia": "R$ 58,90",
+          "url": "https://www.justburger.com.br/cardapio/#sorvete-ben-jerrys-doce-de-leite-458ml"
+        },
+        {
+          "id": "sorvete-ben-jerrys-phish-food-458ml",
+          "nome": "Sorvete Ben & Jerrys Phish Food 458ml",
+          "descricao": "Sorvete Sabor Chocolate com Marshmallow, Calda de Caramelo e Flocos em Formato de Peixe Sabor Chocolate",
+          "precoReferencia": "R$ 58,90",
+          "url": "https://www.justburger.com.br/cardapio/#sorvete-ben-jerrys-phish-food-458ml"
+        },
+        {
+          "id": "sorvete-chocolate-fudge-brownie-ben-e-jerrys-458ml",
+          "nome": "Sorvete Chocolate Fudge Brownie Ben e Jerrys 458ml",
+          "descricao": "Sorvete Sabor Chocolate com Pedaços de Bolo Sabor Chocolate",
+          "precoReferencia": "R$ 58,90",
+          "url": "https://www.justburger.com.br/cardapio/#sorvete-chocolate-fudge-brownie-ben-e-jerrys-458ml"
+        },
+        {
+          "id": "sovete-ben-jerrys-triple-caramel-chunk-458ml",
+          "nome": "Sovete Ben & Jerrys Triple Caramel Chunk 458ml",
+          "descricao": "Sorvete de Caramelo com Calda de Caramelo e Flocos Sabor Chocolate Recheados com Caramelo",
+          "precoReferencia": "R$ 58,90",
+          "url": "https://www.justburger.com.br/cardapio/#sovete-ben-jerrys-triple-caramel-chunk-458ml"
+        },
+        {
+          "id": "ben-jerry-s-strawberry-cheesecake",
+          "nome": "Ben & Jerry's Strawberry Cheesecake",
+          "descricao": "Sorvete sabor cheesecake com morango em calda e pedaços de biscoito",
+          "precoReferencia": "R$ 58,90",
+          "url": "https://www.justburger.com.br/cardapio/#ben-jerry-s-strawberry-cheesecake"
+        }
+      ]
+    },
+    {
+      "categoria": "Sobremesa",
+      "itens": [
+        {
+          "id": "pudim-de-brigadeirao-de-chocolate",
+          "nome": "Pudim de Brigadeirão de Chocolate",
+          "descricao": "Um pudim que vc nunca viu igual, só pede, e depois nos fale ! Uma consistência única que só a Just traz pra vc !",
+          "precoReferencia": "R$ 22,90",
+          "url": "https://www.justburger.com.br/cardapio/#pudim-de-brigadeirao-de-chocolate"
+        },
+        {
+          "id": "pudim-tradicional",
+          "nome": "Pudim tradicional",
+          "descricao": "Um pudim que vc nunca viu igual, só pede, e depois nos fale ! Uma consistencia unica que só a just traz pra vc !",
+          "precoReferencia": "R$ 22,90",
+          "url": "https://www.justburger.com.br/cardapio/#pudim-tradicional"
+        }
+      ]
+    }
+  ],
+  "entrega": {
+    "raioKm": 10,
+    "bairros": [
+      {
+        "nome": "Itapegica",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 0.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/itapegica-guarulhos/"
+      },
+      {
+        "nome": "Vila Augusta",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 1.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-augusta-guarulhos/"
+      },
+      {
+        "nome": "Ponte Grande",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 1.6,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/ponte-grande-guarulhos/"
+      },
+      {
+        "nome": "Porto da Igreja",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 2.1,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/porto-da-igreja-guarulhos/"
+      },
+      {
+        "nome": "Tranquilidade",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 2.1,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/tranquilidade-guarulhos/"
+      },
+      {
+        "nome": "Gopoúva",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 2.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/gopouva-guarulhos/"
+      },
+      {
+        "nome": "Vila Medeiros",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 2.4,
+        "inclui": [
+          "Vila Sabrina",
+          "Vila Ede",
+          "Jardim Brasil"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-medeiros/"
+      },
+      {
+        "nome": "Centro",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 2.6,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/centro-guarulhos/"
+      },
+      {
+        "nome": "Jaçanã",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 3.2,
+        "inclui": [
+          "Jardim Modelo",
+          "Parque Edu Chaves",
+          "Parque Vitória",
+          "Vila Nilo"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jacana/"
+      },
+      {
+        "nome": "Torres Tibagy",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 3.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/torres-tibagy-guarulhos/"
+      },
+      {
+        "nome": "Macedo",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 3.9,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/macedo-guarulhos/"
+      },
+      {
+        "nome": "Maia",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 3.9,
+        "inclui": [
+          "Vila Lanzara"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/maia-guarulhos/"
+      },
+      {
+        "nome": "Vila Maria",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 4,
+        "inclui": [
+          "Jardim Japão",
+          "Parque Novo Mundo"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-maria/"
+      },
+      {
+        "nome": "Vila Galvão",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 4.2,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-galvao-guarulhos/"
+      },
+      {
+        "nome": "Picanço",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 4.5,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/picanco-guarulhos/"
+      },
+      {
+        "nome": "São Roque",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 5,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/sao-roque-guarulhos/"
+      },
+      {
+        "nome": "Bom Clima",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 5.1,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/bom-clima-guarulhos/"
+      },
+      {
+        "nome": "Vila Rio",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 5.5,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-rio-guarulhos/"
+      },
+      {
+        "nome": "Fátima",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 5.6,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/fatima-guarulhos/"
+      },
+      {
+        "nome": "Tucuruvi",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 5.7,
+        "inclui": [
+          "Jardim França",
+          "Vila Gustavo",
+          "Parada Inglesa",
+          "Jardim Leonor Mendes de Barros",
+          "Vila Mazzei"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/tucuruvi/"
+      },
+      {
+        "nome": "Tatuapé",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 6.1,
+        "inclui": [
+          "Vila Azevedo",
+          "Parque São Jorge",
+          "Vila Gomes Cardim"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/tatuape/"
+      },
+      {
+        "nome": "Vila Guilherme",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 6.3,
+        "inclui": [
+          "Bairro da Coroa",
+          "Vila Isolina Mazzei"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-guilherme/"
+      },
+      {
+        "nome": "Cocaia",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 6.6,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/cocaia-guarulhos/"
+      },
+      {
+        "nome": "Vila Barros",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 6.8,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-barros-guarulhos/"
+      },
+      {
+        "nome": "Bela Vista",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 7.2,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/bela-vista-guarulhos/"
+      },
+      {
+        "nome": "Belém",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 7.3,
+        "inclui": [
+          "Vila Operária Maria Zélia"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/belem/"
+      },
+      {
+        "nome": "Morros",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 7.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/morros-guarulhos/"
+      },
+      {
+        "nome": "Tremembé",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 7.5,
+        "inclui": [
+          "Vila Albertina",
+          "Furnas",
+          "Jardim Fontalis",
+          "Horto Florestal",
+          "Bortolândia",
+          "Jardim Guapira",
+          "Mandaqui"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/tremembe/"
+      },
+      {
+        "nome": "Cabuçu",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 7.8,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/cabucu-guarulhos/"
+      },
+      {
+        "nome": "Santana",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 8.4,
+        "inclui": [
+          "Carandiru",
+          "Alto de Santana",
+          "Jardim São Bento",
+          "Imirim",
+          "Santa Teresinha",
+          "Vila Paulicéia"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/santana/"
+      },
+      {
+        "nome": "Pari",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 8.5,
+        "inclui": [
+          "Canindé"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/pari/"
+      },
+      {
+        "nome": "Taboão",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 8.8,
+        "inclui": [
+          "Jardim Paraiso",
+          "Vila Jardim São Domingos"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/taboao-guarulhos/"
+      },
+      {
+        "nome": "Mooca",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 9,
+        "inclui": [
+          "Parque da Mooca"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/mooca/"
+      },
+      {
+        "nome": "Brás",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Guarulhos",
+        "distanciaKm": 9.5,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/bras/"
+      },
+      {
+        "nome": "Jaguara",
+        "cidade": "São Paulo",
+        "regiao": "Zona Oeste de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 2.4,
+        "inclui": [
+          "Vila Jaguara"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jaguara/"
+      },
+      {
+        "nome": "Lapa",
+        "cidade": "São Paulo",
+        "regiao": "Zona Oeste de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 2.5,
+        "inclui": [
+          "Água Branca",
+          "Vila Ipojuca",
+          "Vila Romana",
+          "Vila Anastácio",
+          "Vila Hamburguesa",
+          "Bairro Siciliano"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/lapa/"
+      },
+      {
+        "nome": "Pirituba",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 2.6,
+        "inclui": [
+          "Piqueri",
+          "Grand Reserva Paulista",
+          "Jardim Líbano",
+          "Vila Pereira Barreto",
+          "Vila Pirituba",
+          "City Pinheirinho",
+          "Vila Renato",
+          "Jardim Regina",
+          "Vila Mirante"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/pirituba/"
+      },
+      {
+        "nome": "Freguesia do Ó",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 2.9,
+        "inclui": [
+          "Parque Monteiro Soares",
+          "Pirituba"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/freguesia-do-o/"
+      },
+      {
+        "nome": "Vila Leopoldina",
+        "cidade": "São Paulo",
+        "regiao": "Zona Oeste de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 3.2,
+        "inclui": [
+          "Vila Hamburguesa",
+          "Bela Aliança"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-leopoldina/"
+      },
+      {
+        "nome": "São Domingos",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 3.4,
+        "inclui": [
+          "Parque São Domingos",
+          "City América",
+          "Jardim Maristela",
+          "Jardim Mangalot"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/sao-domingos/"
+      },
+      {
+        "nome": "Vila dos Remédios",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-dos-remedios-osasco/"
+      },
+      {
+        "nome": "Limão",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 4.5,
+        "inclui": [
+          "VIla Prado"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/limao/"
+      },
+      {
+        "nome": "Vila Menck",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 4.7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-menck-osasco/"
+      },
+      {
+        "nome": "Alto de Pinheiros",
+        "cidade": "São Paulo",
+        "regiao": "Zona Oeste de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 4.9,
+        "inclui": [
+          "Boaçava",
+          "Vila Beatriz",
+          "Vila Ida"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/alto-de-pinheiros/"
+      },
+      {
+        "nome": "Barra Funda",
+        "cidade": "São Paulo",
+        "regiao": "Zona Oeste de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 5.1,
+        "inclui": [
+          "Pompéia"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/barra-funda/"
+      },
+      {
+        "nome": "Jaguaré",
+        "cidade": "São Paulo",
+        "regiao": "Zona Oeste de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 5.6,
+        "inclui": [
+          "Parque Continental",
+          "Vila Nova Jaguaré"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jaguare/"
+      },
+      {
+        "nome": "Vila São José",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 5.6,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-sao-jose-osasco/"
+      },
+      {
+        "nome": "Perdizes",
+        "cidade": "São Paulo",
+        "regiao": "Zona Oeste de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 5.8,
+        "inclui": [
+          "Sumaré",
+          "Pompéia"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/perdizes/"
+      },
+      {
+        "nome": "Jardim Rochdale",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 5.9,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-rochdale-osasco/"
+      },
+      {
+        "nome": "Jardim Santa Rita de Cássia",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 6,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-santa-rita-de-cassia-osasco/"
+      },
+      {
+        "nome": "Presidente Altino",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 6.2,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/presidente-altino-osasco/"
+      },
+      {
+        "nome": "Casa Verde",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 6.5,
+        "inclui": [
+          "Casa Verde Alta"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/casa-verde/"
+      },
+      {
+        "nome": "Brasilândia",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 6.6,
+        "inclui": [
+          "Vila Penteado"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/brasilandia/"
+      },
+      {
+        "nome": "Jaraguá",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 6.7,
+        "inclui": [
+          "Parque Nações Unidas",
+          "City Jaraguá",
+          "Vila Souza",
+          "Parada de Taípas",
+          "Jardim Pirituba"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jaragua/"
+      },
+      {
+        "nome": "Terra Nossa",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 7.1,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/terra-nossa-osasco/"
+      },
+      {
+        "nome": "Helena Maria",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 7.1,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/helena-maria-osasco/"
+      },
+      {
+        "nome": "Jardim Bonança II",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 7.2,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-bonanca-ii-osasco/"
+      },
+      {
+        "nome": "Vila Simões de Almeida",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 7.2,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-simoes-de-almeida-osasco/"
+      },
+      {
+        "nome": "Jardim Bela Vista",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 7.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-bela-vista-osasco/"
+      },
+      {
+        "nome": "Cachoeirinha",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 7.4,
+        "inclui": [
+          "Vila Amélia",
+          "Jardim Peri"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/cachoeirinha/"
+      },
+      {
+        "nome": "Butantã",
+        "cidade": "São Paulo",
+        "regiao": "Zona Oeste de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 7.5,
+        "inclui": [
+          "Caxingui"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/butanta/"
+      },
+      {
+        "nome": "Santa Cecília",
+        "cidade": "São Paulo",
+        "regiao": "Centro de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 7.5,
+        "inclui": [
+          "Campos Elísios"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/santa-cecilia/"
+      },
+      {
+        "nome": "Jardim Três Montanhas",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 7.5,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-tres-montanhas-osasco/"
+      },
+      {
+        "nome": "Pinheiros",
+        "cidade": "São Paulo",
+        "regiao": "Zona Oeste de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 7.6,
+        "inclui": [
+          "Vila Madalena",
+          "Jardim Europa"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/pinheiros/"
+      },
+      {
+        "nome": "Jardim D'Abril",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 7.7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-d-abril-osasco/"
+      },
+      {
+        "nome": "Consolação",
+        "cidade": "São Paulo",
+        "regiao": "Centro de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 8,
+        "inclui": [
+          "Higienópolis",
+          "Vila Madalena"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/consolacao/"
+      },
+      {
+        "nome": "Jardim das Flòres",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 8,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-das-flores-osasco/"
+      },
+      {
+        "nome": "Jardim Piratininga",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 8,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-piratininga-osasco/"
+      },
+      {
+        "nome": "Jardim Elvira",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 8.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-elvira-osasco/"
+      },
+      {
+        "nome": "Colinas d'Oeste Setor C",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 8.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/colinas-d-oeste-setor-c-osasco/"
+      },
+      {
+        "nome": "Rio Pequeno",
+        "cidade": "São Paulo",
+        "regiao": "Zona Oeste de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 8.5,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/rio-pequeno/"
+      },
+      {
+        "nome": "Bom Retiro",
+        "cidade": "São Paulo",
+        "regiao": "Centro de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 8.5,
+        "inclui": [
+          "Bairro da Luz"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/bom-retiro/"
+      },
+      {
+        "nome": "Colinas d'Oeste Setor E",
+        "cidade": "Barueri",
+        "regiao": "Barueri",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 8.7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/colinas-d-oeste-setor-e-barueri/"
+      },
+      {
+        "nome": "Vila Quitauna",
+        "cidade": "Osasco",
+        "regiao": "Osasco",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 8.9,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-quitauna-osasco/"
+      },
+      {
+        "nome": "Anhanguera",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 8.9,
+        "inclui": [
+          "Morro Doce",
+          "Jardim Britânia"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/anhanguera/"
+      },
+      {
+        "nome": "Jardim Paulista",
+        "cidade": "São Paulo",
+        "regiao": "Zona Oeste de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 9,
+        "inclui": [
+          "Cerqueira César",
+          "Jardim Europa"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-paulista/"
+      },
+      {
+        "nome": "Mandaqui",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 9.2,
+        "inclui": [
+          "Lauzane Paulista",
+          "Vila Aurora",
+          "Parque Mandaqui",
+          "Cachoeirinha"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/mandaqui/"
+      },
+      {
+        "nome": "Bela Vista",
+        "cidade": "São Paulo",
+        "regiao": "Centro de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 9.3,
+        "inclui": [
+          "Bixiga"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/bela-vista/"
+      },
+      {
+        "nome": "Vila Sônia",
+        "cidade": "São Paulo",
+        "regiao": "Zona Oeste de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 9.4,
+        "inclui": [
+          "Butantã"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-sonia/"
+      },
+      {
+        "nome": "Morumbi",
+        "cidade": "São Paulo",
+        "regiao": "Zona Oeste de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 9.4,
+        "inclui": [
+          "Cidade Jardim"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/morumbi/"
+      },
+      {
+        "nome": "Perus",
+        "cidade": "São Paulo",
+        "regiao": "Zona Norte de São Paulo",
+        "unidade": "Just Burger Pirituba",
+        "distanciaKm": 9.4,
+        "inclui": [
+          "Vila Souza",
+          "Vila Caiuba",
+          "Parque Taipas"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/perus/"
+      },
+      {
+        "nome": "Jardim Stella",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 0.9,
+        "inclui": [
+          "Jardim Pilar"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-stella-santo-andre/"
+      },
+      {
+        "nome": "Jardim Las Vegas",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 1,
+        "inclui": [
+          "Jardim Milena"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-las-vegas-santo-andre/"
+      },
+      {
+        "nome": "Jardim Jamaica",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 1.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-jamaica-santo-andre/"
+      },
+      {
+        "nome": "Baeta Neves",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 1.5,
+        "inclui": [
+          "Jardim Industrial"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/baeta-neves-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Centro",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 1.7,
+        "inclui": [
+          "Vila Santa Rita de Cássia",
+          "Vila Álvaro Marques",
+          "Vila Dusi",
+          "Jardim das Américas",
+          "Jardim Três Marias"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/centro-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Vila Floresta",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 2.1,
+        "inclui": [
+          "Vila Lilica"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-floresta-santo-andre/"
+      },
+      {
+        "nome": "Nova Petrópolis",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 2.2,
+        "inclui": [
+          "Jardim Nova Petrópolis"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/nova-petropolis-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Jardim do Estádio",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 2.2,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-do-estadio-santo-andre/"
+      },
+      {
+        "nome": "Paraíso",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 2.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/paraiso-santo-andre/"
+      },
+      {
+        "nome": "Vila Helena",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 2.4,
+        "inclui": [
+          "Vila Marina"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-helena-santo-andre/"
+      },
+      {
+        "nome": "Anchieta",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 2.8,
+        "inclui": [
+          "Parque Anchieta",
+          "Jardim Hollywood",
+          "Jardim Silvestre"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/anchieta-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Vila Alzira",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 3,
+        "inclui": [
+          "Vila Leopoldina"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-alzira-santo-andre/"
+      },
+      {
+        "nome": "Planalto",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 3.1,
+        "inclui": [
+          "Conjunto Habitacional Vila São Salvério",
+          "Vila Washington"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/planalto-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Vila Alice",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 3.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-alice-santo-andre/"
+      },
+      {
+        "nome": "Jardim Telles de Menezes",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 3.4,
+        "inclui": [
+          "Vila Mazzei"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-telles-de-menezes-santo-andre/"
+      },
+      {
+        "nome": "Vila Bastos",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 3.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-bastos-santo-andre/"
+      },
+      {
+        "nome": "Jardim Cipreste",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 3.5,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-cipreste-santo-andre/"
+      },
+      {
+        "nome": "Vila Pires",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 3.5,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-pires-santo-andre/"
+      },
+      {
+        "nome": "Vila Príncipe de Gales",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 3.6,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-principe-de-gales-santo-andre/"
+      },
+      {
+        "nome": "Vila Luzita",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 3.7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-luzita-santo-andre/"
+      },
+      {
+        "nome": "Ferrazópolis",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 3.9,
+        "inclui": [
+          "Vila Ferrazópolis"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/ferrazopolis-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Jordanópolis",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 3.9,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jordanopolis-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Casa Branca",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 3.9,
+        "inclui": [
+          "Vila Vilma"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/casa-branca-santo-andre/"
+      },
+      {
+        "nome": "Santa Terezinha",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 4,
+        "inclui": [
+          "Jardim Tiradentes"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/santa-terezinha-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Vila América",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 4,
+        "inclui": [
+          "Parque Industriário"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-america-santo-andre/"
+      },
+      {
+        "nome": "Independência",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 4.1,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/independencia-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Vila João Ramalho",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 4.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-joao-ramalho-santo-andre/"
+      },
+      {
+        "nome": "Jardim",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 4.5,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-santo-andre/"
+      },
+      {
+        "nome": "Assunção",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 4.6,
+        "inclui": [
+          "Vila Artuelia",
+          "Vila Simone"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/assuncao-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Condominío Maracanã",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 4.6,
+        "inclui": [
+          "Jardim Carla"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/condominio-maracana-santo-andre/"
+      },
+      {
+        "nome": "Piraporinha",
+        "cidade": "Diadema",
+        "regiao": "Diadema",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 4.6,
+        "inclui": [
+          "Jardim Padre Anchieta"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/piraporinha-diadema/"
+      },
+      {
+        "nome": "Vila Guaraciaba",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 4.7,
+        "inclui": [
+          "Jardim Silvana"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-guaraciaba-santo-andre/"
+      },
+      {
+        "nome": "Vila Aquilino",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 4.7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-aquilino-santo-andre/"
+      },
+      {
+        "nome": "Jardim Santo André - CDHU",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 4.8,
+        "inclui": [
+          "Vila Lamartine"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-santo-andre-cdhu-santo-andre/"
+      },
+      {
+        "nome": "Jardim Marek",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 5,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-marek-santo-andre/"
+      },
+      {
+        "nome": "Parque Jaçatuba",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 5,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/parque-jacatuba-santo-andre/"
+      },
+      {
+        "nome": "Rudge Ramos",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 5.1,
+        "inclui": [
+          "Vila Dourados",
+          "Jardim Orlandina"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/rudge-ramos-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Cata Preta",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 5.2,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/cata-preta-santo-andre/"
+      },
+      {
+        "nome": "Novo Homero Thon",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 5.2,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/novo-homero-thon-santo-andre/"
+      },
+      {
+        "nome": "Demarchi",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 5.3,
+        "inclui": [
+          "Jardim Nossa Senhora de Fátima"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/demarchi-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Alves Dias",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 5.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/alves-dias-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Paulicéia",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 5.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/pauliceia-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Vila Nogueira",
+        "cidade": "Diadema",
+        "regiao": "Diadema",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 5.6,
+        "inclui": [
+          "Jardim Ana Sofia"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-nogueira-diadema/"
+      },
+      {
+        "nome": "Parque João Ramalho",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 5.6,
+        "inclui": [
+          "Vila Santa Maria"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/parque-joao-ramalho-santo-andre/"
+      },
+      {
+        "nome": "Bairro dos Casa",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 5.7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/bairro-dos-casa-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Parque do Pedroso",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 5.7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/parque-do-pedroso-santo-andre/"
+      },
+      {
+        "nome": "Condominío Maracanã",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 5.8,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/condominio-maracana-maua/"
+      },
+      {
+        "nome": "Vila Carlina",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 6,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-carlina-maua/"
+      },
+      {
+        "nome": "Cidade São Jorge",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 6,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/cidade-sao-jorge-santo-andre/"
+      },
+      {
+        "nome": "Nova Gerty",
+        "cidade": "São Caetano do Sul",
+        "regiao": "São Caetano do Sul",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 6.2,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/nova-gerty-sao-caetano-do-sul/"
+      },
+      {
+        "nome": "Campestre",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 6.3,
+        "inclui": [
+          "Jardim Martha"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/campestre-santo-andre/"
+      },
+      {
+        "nome": "Jardim Ipê",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 6.4,
+        "inclui": [
+          "Jardim do Lago"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-ipe-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Recreio da Borda do Campo",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 6.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/recreio-da-borda-do-campo-maua/"
+      },
+      {
+        "nome": "Canhema",
+        "cidade": "Diadema",
+        "regiao": "Diadema",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 6.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/canhema-diadema/"
+      },
+      {
+        "nome": "Jardim Alzira Franco",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 6.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-alzira-franco-santo-andre/"
+      },
+      {
+        "nome": "Santa Maria",
+        "cidade": "São Caetano do Sul",
+        "regiao": "São Caetano do Sul",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 6.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/santa-maria-sao-caetano-do-sul/"
+      },
+      {
+        "nome": "Casa Grande",
+        "cidade": "Diadema",
+        "regiao": "Diadema",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 6.5,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/casa-grande-diadema/"
+      },
+      {
+        "nome": "Parque Erasmo Assunção",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 6.6,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/parque-erasmo-assuncao-santo-andre/"
+      },
+      {
+        "nome": "Montanhão",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 6.7,
+        "inclui": [
+          "Vila São Bernardo Novo",
+          "Vila Areião",
+          "Jardim Baraldi",
+          "Parque Residencial Selecta",
+          "Golden Park"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/montanhao-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Jardim São Caetano",
+        "cidade": "São Caetano do Sul",
+        "regiao": "São Caetano do Sul",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 6.8,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-sao-caetano-sao-caetano-do-sul/"
+      },
+      {
+        "nome": "Loteamento Industrial Coral",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/loteamento-industrial-coral-maua/"
+      },
+      {
+        "nome": "Vila Assis Brasil",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-assis-brasil-maua/"
+      },
+      {
+        "nome": "Capuava",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/capuava-maua/"
+      },
+      {
+        "nome": "Sertãozinho",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.1,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/sertaozinho-maua/"
+      },
+      {
+        "nome": "Parque Esmeralda",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.2,
+        "inclui": [
+          "Jardim Thelma"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/parque-esmeralda-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Cooperativa",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.2,
+        "inclui": [
+          "Jardim Belas Artes",
+          "Jardim Satelite"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/cooperativa-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Taboão",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.2,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/taboao-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "2º Subdistrito",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.2,
+        "inclui": [
+          "Casas Populares",
+          "Jardim Oratório",
+          "Vila Sá"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/2o-subdistrito-santo-andre/"
+      },
+      {
+        "nome": "Jardim Santo Antônio",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.2,
+        "inclui": [
+          "Vila Alto de Santo André"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-santo-antonio-santo-andre/"
+      },
+      {
+        "nome": "Botujuru",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.3,
+        "inclui": [
+          "Jardim Capivari",
+          "Jardim Arco Iris"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/botujuru-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Jardim Riviera",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-riviera-santo-andre/"
+      },
+      {
+        "nome": "Parque São Vicente",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/parque-sao-vicente-maua/"
+      },
+      {
+        "nome": "Parque Novo Oratório",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/parque-novo-oratorio-santo-andre/"
+      },
+      {
+        "nome": "Oswaldo Cruz",
+        "cidade": "São Caetano do Sul",
+        "regiao": "São Caetano do Sul",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/oswaldo-cruz-sao-caetano-do-sul/"
+      },
+      {
+        "nome": "Conceição",
+        "cidade": "Diadema",
+        "regiao": "Diadema",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/conceicao-diadema/"
+      },
+      {
+        "nome": "Serraria",
+        "cidade": "Diadema",
+        "regiao": "Diadema",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.5,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/serraria-diadema/"
+      },
+      {
+        "nome": "Taboão",
+        "cidade": "Diadema",
+        "regiao": "Diadema",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/taboao-diadema/"
+      },
+      {
+        "nome": "Jardim Oratório",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-oratorio-maua/"
+      },
+      {
+        "nome": "São José",
+        "cidade": "São Caetano do Sul",
+        "regiao": "São Caetano do Sul",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 7.8,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/sao-jose-sao-caetano-do-sul/"
+      },
+      {
+        "nome": "Recreio da Borda do Campo",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/recreio-da-borda-do-campo-santo-andre/"
+      },
+      {
+        "nome": "Polo Petroquímico de Capuava",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.1,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/polo-petroquimico-de-capuava-santo-andre/"
+      },
+      {
+        "nome": "Centro",
+        "cidade": "Diadema",
+        "regiao": "Diadema",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.2,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/centro-diadema/"
+      },
+      {
+        "nome": "Jardim Anchieta",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.2,
+        "inclui": [
+          "Jardim São Judas"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-anchieta-maua/"
+      },
+      {
+        "nome": "Jardim Primavera",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.3,
+        "inclui": [
+          "Jardim São Jorge"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-primavera-maua/"
+      },
+      {
+        "nome": "Jardim Santo Alberto",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-santo-alberto-santo-andre/"
+      },
+      {
+        "nome": "Santa Paula",
+        "cidade": "São Caetano do Sul",
+        "regiao": "São Caetano do Sul",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/santa-paula-sao-caetano-do-sul/"
+      },
+      {
+        "nome": "Bairro da Matriz",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/bairro-da-matriz-maua/"
+      },
+      {
+        "nome": "Sacomã",
+        "cidade": "São Paulo",
+        "regiao": "Zona Sul de São Paulo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.4,
+        "inclui": [
+          "Jardim Santa Cruz",
+          "Jardim Imperador (Zona Sul)",
+          "Vila Arapuã",
+          "Vila das Mercês",
+          "São João Climaco",
+          "Vila Conde do Pinhal"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/sacoma/"
+      },
+      {
+        "nome": "Eldorado",
+        "cidade": "Diadema",
+        "regiao": "Diadema",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.5,
+        "inclui": [
+          "Vila Imbaúva"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/eldorado-diadema/"
+      },
+      {
+        "nome": "Waisberg",
+        "cidade": "Santo André",
+        "regiao": "Santo André",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.6,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/waisberg-santo-andre/"
+      },
+      {
+        "nome": "Batistini",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.7,
+        "inclui": [
+          "Vila Norma"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/batistini-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Balneária",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/balnearia-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Recreio da Borda do Campo",
+        "cidade": "Ribeirão Pires",
+        "regiao": "Ribeirão Pires",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/recreio-da-borda-do-campo-ribeirao-pires/"
+      },
+      {
+        "nome": "Jardim Sonia Maria",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-sonia-maria-maua/"
+      },
+      {
+        "nome": "Vila Magini",
+        "cidade": "Mauá",
+        "regiao": "Mauá",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.8,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-magini-maua/"
+      },
+      {
+        "nome": "Rio Grande",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.9,
+        "inclui": [
+          "Vila Jurubatuba"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/rio-grande-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Santo Antônio",
+        "cidade": "São Caetano do Sul",
+        "regiao": "São Caetano do Sul",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 8.9,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/santo-antonio-sao-caetano-do-sul/"
+      },
+      {
+        "nome": "Bairro dos Alvarenga",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 9,
+        "inclui": [
+          "Jardim Anna Falletti",
+          "Jardim Diana"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/bairro-dos-alvarenga-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Campanário",
+        "cidade": "Diadema",
+        "regiao": "Diadema",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 9,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/campanario-diadema/"
+      },
+      {
+        "nome": "Varginha",
+        "cidade": "São Bernardo do Campo",
+        "regiao": "São Bernardo do Campo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 9.3,
+        "inclui": [
+          "Jardim Borda do Campo"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/varginha-sao-bernardo-do-campo/"
+      },
+      {
+        "nome": "Pedreira",
+        "cidade": "São Paulo",
+        "regiao": "Zona Sul de São Paulo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 9.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/pedreira/"
+      },
+      {
+        "nome": "Vila Prudente",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 9.4,
+        "inclui": [
+          "Vila Alpina"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-prudente/"
+      },
+      {
+        "nome": "Cursino",
+        "cidade": "São Paulo",
+        "regiao": "Zona Sul de São Paulo",
+        "unidade": "Just Burger São Bernardo",
+        "distanciaKm": 9.5,
+        "inclui": [
+          "Cidade Vargas",
+          "Jardim Imperador (Zona Sul)"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/cursino/"
+      },
+      {
+        "nome": "Ponte Rasa",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 1.2,
+        "inclui": [
+          "Vila Buenos Aires",
+          "Vila Fidelis Ribeiro",
+          "Jardim Popular",
+          "Jardim Lisboa",
+          "Burgo Paulista",
+          "Vila Costa Melo",
+          "Vila Rio Branco",
+          "Vila São Francisco"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/ponte-rasa/"
+      },
+      {
+        "nome": "Cangaíba",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 1.9,
+        "inclui": [
+          "Chacara Cruzeiro do Sul",
+          "Jardim Piratininga",
+          "Vila Piratininga",
+          "Engenheiro Goulart",
+          "Jardim Danfer",
+          "Vila Buenos Aires"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/cangaiba/"
+      },
+      {
+        "nome": "Penha",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 2.9,
+        "inclui": [
+          "Vila Laís",
+          "Vila Granada",
+          "Vila Ré",
+          "Vila Esperança"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/penha/"
+      },
+      {
+        "nome": "Vila Matilde",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 3.1,
+        "inclui": [
+          "Vila Dalila",
+          "Jardim Assunção",
+          "Jardim Triana",
+          "Vila Aricanduva",
+          "Vila Guilhermina",
+          "Cidade Patriarca"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-matilde/"
+      },
+      {
+        "nome": "Ermelino Matarazzo",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 3.4,
+        "inclui": [
+          "Parque Boturussu",
+          "Jardim Keralux"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/ermelino-matarazzo/"
+      },
+      {
+        "nome": "Artur Alvim",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 4,
+        "inclui": [
+          "Conjunto Habitacional Padre Manoel da Nobrega",
+          "Cidade Rui Barbosa",
+          "Jardim Nordeste"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/artur-alvim/"
+      },
+      {
+        "nome": "Várzea do Palácio",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 4.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/varzea-do-palacio-guarulhos/"
+      },
+      {
+        "nome": "Vila Jacuí",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 4.9,
+        "inclui": [
+          "Limoeiro",
+          "Jardim Pedro José Nunes",
+          "União de Vila Nova"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-jacui/"
+      },
+      {
+        "nome": "Carrão",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 5.4,
+        "inclui": [
+          "Vila Formosa"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/carrao/"
+      },
+      {
+        "nome": "Itaquera",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 5.4,
+        "inclui": [
+          "Parque Guarani",
+          "Vila Campanela São Paulo",
+          "Cidade Antônio Estêvão de Carvalho",
+          "Parada XV de Novembro"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/itaquera/"
+      },
+      {
+        "nome": "Cidade Líder",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 5.6,
+        "inclui": [
+          "Parque Savoy City",
+          "Jardim Brasília",
+          "Jardim Ipanema",
+          "Vila Carlo Maderna"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/cidade-lider/"
+      },
+      {
+        "nome": "CECAP",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 6.3,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/cecap-guarulhos/"
+      },
+      {
+        "nome": "Cumbica",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 6.6,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/cumbica-guarulhos/"
+      },
+      {
+        "nome": "São Miguel",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 6.8,
+        "inclui": [
+          "Vila Progresso",
+          "Vila Chavantes",
+          "Vila Pantanal 2",
+          "Vila Roland Berigan"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/sao-miguel/"
+      },
+      {
+        "nome": "Jardim Santo Afonso",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 6.9,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-santo-afonso-guarulhos/"
+      },
+      {
+        "nome": "Aricanduva",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/aricanduva/"
+      },
+      {
+        "nome": "Vila Formosa",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 7.6,
+        "inclui": [
+          "Jardim Anália Franco"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-formosa/"
+      },
+      {
+        "nome": "Parque do Carmo",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 8,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/parque-do-carmo/"
+      },
+      {
+        "nome": "Lajeado",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 8.7,
+        "inclui": [
+          "Jardim Etelvina"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/lajeado/"
+      },
+      {
+        "nome": "Vila Jardim São Manoel",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 8.7,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/vila-jardim-sao-manoel-guarulhos/"
+      },
+      {
+        "nome": "Aeroporto Internacional Governador André Franco Montoro",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 8.8,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/aeroporto-internacional-governador-andre-franco-montoro-guarulhos/"
+      },
+      {
+        "nome": "Água Rasa",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 8.9,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/agua-rasa/"
+      },
+      {
+        "nome": "José Bonifácio",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 8.9,
+        "inclui": [
+          "Gleba do Pêssego",
+          "COHAB 2"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jose-bonifacio/"
+      },
+      {
+        "nome": "Vila Curuçá",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 8.9,
+        "inclui": [
+          "Vila Nova Curuça",
+          "Jardim Ipê",
+          "Jardim Robru",
+          "Vila Parque Guaianases"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/vila-curuca/"
+      },
+      {
+        "nome": "Jardim Helena",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 9.1,
+        "inclui": [
+          "Vila Grão Mogol",
+          "Chacára Três Meninas"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-helena/"
+      },
+      {
+        "nome": "Pimentas",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 9.1,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/pimentas-guarulhos/"
+      },
+      {
+        "nome": "São Mateus",
+        "cidade": "São Paulo",
+        "regiao": "Zona Leste de São Paulo",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 9.2,
+        "inclui": [
+          "Jardim Imperador"
+        ],
+        "pagina": "https://www.justburger.com.br/entrega/sao-mateus/"
+      },
+      {
+        "nome": "Jardim Otawa",
+        "cidade": "Guarulhos",
+        "regiao": "Guarulhos",
+        "unidade": "Just Burger Zona Leste",
+        "distanciaKm": 9.4,
+        "inclui": [],
+        "pagina": "https://www.justburger.com.br/entrega/jardim-otawa-guarulhos/"
+      }
+    ]
+  },
+  "naMidia": [
+    {
+      "tipo": "video",
+      "veiculo": "Raphael Silva · YouTube",
+      "titulo": "Just Burger: os bastidores de uma das maiores hamburguerias do Brasil",
+      "data": "2026",
+      "url": "https://www.youtube.com/watch?v=W-RG0fWdwG4"
+    },
+    {
+      "tipo": "video",
+      "veiculo": "Donos de Restaurantes · YouTube",
+      "titulo": "3 pedidos por minuto: o segredo da cozinha ultra veloz (Maikon Rangel, Just Burger)",
+      "data": "2026",
+      "url": "https://www.youtube.com/watch?v=CIN0kJGCVEE"
+    },
+    {
+      "tipo": "video",
+      "veiculo": "Rolê na Operação · YouTube",
+      "titulo": "O segredo por trás do Just Burger",
+      "data": "2026",
+      "url": "https://www.youtube.com/watch?v=8M-2pY1_ZQE"
+    },
+    {
+      "tipo": "video",
+      "veiculo": "Raphael Silva · YouTube",
+      "titulo": "Marca vs branding no delivery: o que faz a Just Burger ser a maior do iFood?",
+      "data": "2025",
+      "url": "https://www.youtube.com/watch?v=gfK-fc5MDmY"
+    },
+    {
+      "tipo": "video",
+      "veiculo": "Maicão na Carona · YouTube",
+      "titulo": "O sucesso da Just Burger no delivery",
+      "data": "2025",
+      "url": "https://www.youtube.com/watch?v=R3akf0r5OeE"
+    },
+    {
+      "tipo": "video",
+      "veiculo": "iFood para Parceiros · YouTube",
+      "titulo": "Como a Just Burger se diferenciou da concorrência e escalou no delivery",
+      "data": "2025",
+      "url": "https://www.youtube.com/watch?v=3LWBLZ1NZ-8"
+    },
+    {
+      "tipo": "video",
+      "veiculo": "Falando de Delivery · YouTube",
+      "titulo": "Evento Gigantes do Delivery: Guilherme (Grupo Rão), Maikon (Just Burger) e Pedro (Rede Azilados)",
+      "data": "2024",
+      "url": "https://www.youtube.com/watch?v=8RwsjN17w6I"
+    },
+    {
+      "tipo": "materia",
+      "veiculo": "iFood · Blog de Parceiros",
+      "titulo": "Especialista indica como montar uma hamburgueria delivery",
+      "data": "2023-11-28",
+      "url": "https://blog-parceiros.ifood.com.br/hamburgueria-delivery/"
+    },
+    {
+      "tipo": "materia",
+      "veiculo": "iFood · Notícias",
+      "titulo": "O que são as dark kitchens e como elas estão se expandindo?",
+      "data": "2023-10-30",
+      "url": "https://institucional.ifood.com.br/noticias/o-que-sao-as-dark-kitchens-e-como-elas-estao-se-expandindo/"
+    },
+    {
+      "tipo": "video",
+      "veiculo": "Raphael Silva · YouTube",
+      "titulo": "EP 1: O segredo do maior delivery do Brasil (Maikon Rangel, Just Burger)",
+      "data": "2023",
+      "url": "https://www.youtube.com/watch?v=lSlosRHjGHY"
+    },
+    {
+      "tipo": "video",
+      "veiculo": "Falando de Delivery · YouTube",
+      "titulo": "Ep 44 | Como empreender em casal ou família? (Juliana e Maikon da Just Burger)",
+      "data": "2023",
+      "url": "https://www.youtube.com/watch?v=9rHGvTRfxHs"
+    },
+    {
+      "tipo": "materia",
+      "veiculo": "Portal Sabores",
+      "titulo": "Empresas que atuam com delivery terão um dia de imersão para potencializar negócios em Fortaleza",
+      "data": "2022-11-22",
+      "url": "https://portalsabores.com.br/empresas-que-atuam-com-delivery-terao-um-dia-de-imersao-para-potencializar-negocios-em-fortaleza/"
+    },
+    {
+      "tipo": "materia",
+      "veiculo": "Clube de Criação",
+      "titulo": "Combate à fome",
+      "data": "2021-05-28",
+      "url": "https://clubedecriacao.com.br/ultimas/combate-a-fome-2/"
+    },
+    {
+      "tipo": "materia",
+      "veiculo": "Meio & Mensagem",
+      "titulo": "Coca cria hambúrguer com QR code em ação contra fome",
+      "data": "2021-05-28",
+      "url": "https://www.meioemensagem.com.br/comunicacao/coca-cola-estampa-qr-code-em-hamburguer-em-acao-contra-fome"
+    },
+    {
+      "tipo": "video",
+      "veiculo": "Falando de Delivery · YouTube",
+      "titulo": "Ep 01 | Just Burger e Kitchen Central: como bombar de vender no delivery da forma certa",
+      "data": "2021",
+      "url": "https://www.youtube.com/watch?v=xjfp81p9lsE"
+    },
+    {
+      "tipo": "video",
+      "veiculo": "Hambúrguer Perfeito · YouTube",
+      "titulo": "Invadimos o Just Burger, sensação do delivery paulistano",
+      "data": "2021",
+      "url": "https://www.youtube.com/watch?v=a742uPTdHss"
+    },
+    {
+      "tipo": "guia",
+      "veiculo": "Rodrigues e Tecelão Arquitetura",
+      "titulo": "Projeto de Arquitetura Just Burger",
+      "data": "2020-10",
+      "url": "https://www.rodriguesetecelao.com/projeto-arquitetura-em-sao-paulo/just-burguer"
+    },
+    {
+      "tipo": "guia",
+      "veiculo": "Guia do Hambúrguer",
+      "titulo": "Just Burger",
+      "data": "",
+      "url": "https://guiadohamburguer.com/hamburgueria/just-burger/"
+    },
+    {
+      "tipo": "guia",
+      "veiculo": "Guia Abrasel SP",
+      "titulo": "Just Burger Hamburgueria ABC",
+      "data": "",
+      "url": "https://www.guiaabraselsp.com.br/just-burger-hamburgueria-abc"
+    }
+  ],
+  "observacaoPrecos": "Preços de referência; o valor vigente e as promoções do dia estão no iFood.",
+  "perfis": [
+    {
+      "perfil": "Primeira vez na Just",
+      "recomendacao": "Comece pelo Top Smash, o lanche mais vendido da Just: hambúrguer de 150 g com bacon, cheddar, queijo prato e cebola caramelizada no pão brioche. O segundo mais pedido é o Just House. Com mais fome, o Just Combo 1 traz o Top Smash com batata e refrigerante.",
+      "produtos": [
+        "top-smash-top-1-mais-vendido",
+        "just-house-top-2-mais-vendido",
+        "just-combo-1-burguer-batata-refri"
+      ],
+      "pagina": "https://www.justburger.com.br/para-voce/primeira-vez/"
+    },
+    {
+      "perfil": "Fome de verdade",
+      "recomendacao": "Com muita fome, vá de Double Smash ou Double Burger Day: os dois levam duas carnes de 150 g. Para a refeição completa, o Just Combo 1 vem com Top Smash, batata e refrigerante.",
+      "produtos": [
+        "double-smash-2-hamburguer-de-150-gr",
+        "double-burger-day",
+        "just-combo-1-burguer-batata-refri"
+      ],
+      "pagina": "https://www.justburger.com.br/para-voce/fome-grande/"
+    },
+    {
+      "perfil": "Galera, família e casal",
+      "recomendacao": "Para duas pessoas, o Combo 2 traz dois lanches à sua escolha, batata grande e refrigerante de 600 ml. Também tem o Passado em Dobro (dois Just Passado) e o Just Chicken Supreme, com 12 unidades de frango empanado para dividir.",
+      "produtos": [
+        "combo-2-lanches-a-sua-escolha-batata-grande-refri-de-600ml",
+        "2-just-passado",
+        "just-chicken-supreme-seara"
+      ],
+      "pagina": "https://www.justburger.com.br/para-voce/para-dividir/"
+    },
+    {
+      "perfil": "Quer gastar pouco",
+      "recomendacao": "Para gastar pouco, o Just Burger é o lanche de entrada da casa (150 g no pão brioche) e o Combo Just Burger leva lanche, batata e refrigerante num pedido só. Pedido mínimo no iFood: R$ 20,00.",
+      "produtos": [
+        "just-burger-hamburguer-de-150-g",
+        "combo-just-burger-burguer-batata-refri",
+        "2-just-passado"
+      ],
+      "pagina": "https://www.justburger.com.br/para-voce/custo-beneficio/"
+    },
+    {
+      "perfil": "Fã de smash burger",
+      "recomendacao": "Os smash da Just estão na linha Turma da Canetinha: Just Moun (1 carne smash de 80 g), Just Jaro (2 carnes smash) e Just Ozem (2 carnes smash com molho rosé), todos no pão brioche.",
+      "produtos": [
+        "just-moun",
+        "just-jaro",
+        "just-ozem"
+      ],
+      "pagina": "https://www.justburger.com.br/para-voce/fa-de-smash/"
+    },
+    {
+      "perfil": "Prefere frango",
+      "recomendacao": "Para quem prefere frango: Just Chicken (frango especial temperado no pão de gergelim), Just Pic (dois frangos grelhados) e, para beliscar, o Just Chicken Supreme (12 unidades) e o Just Franguito.",
+      "produtos": [
+        "just-chicken",
+        "just-pic",
+        "just-chicken-supreme-seara",
+        "just-franguito-2"
+      ],
+      "pagina": "https://www.justburger.com.br/para-voce/frango-e-outras-carnes/"
+    },
+    {
+      "perfil": "Quer algo mais leve",
+      "recomendacao": "Para algo mais leve, a Just tem saladas individuais (Just Garden, Caesar, Tradicional, Cheese e Completa) e o Prato Fitness, com filé de frango grelhado, legumes e ovo.",
+      "produtos": [
+        "just-garden",
+        "salada-caesar"
+      ],
+      "pagina": "https://www.justburger.com.br/para-voce/mais-leve/"
+    },
+    {
+      "perfil": "Para a sobremesa",
+      "recomendacao": "Para fechar o pedido: milk-shakes Just Shake de 300 ml (Ninho com Nutella, Nutella, Ninho, Morango, Pistache e Café), pudim de brigadeirão, Franuí e sorvetes Ben & Jerry's.",
+      "produtos": [
+        "pudim-de-brigadeirao-de-chocolate",
+        "franui-chocolate-ao-leite"
+      ],
+      "pagina": "https://www.justburger.com.br/para-voce/sobremesa/"
+    }
+  ]
+}
