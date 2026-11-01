@@ -1568,15 +1568,16 @@ details.lk-cul[open] summary::after { content: '–'; }
 .lk-uni { padding: 0 0 12px; }
 .lk-uni p { margin: 8px 0 6px; font-size: .88rem; color: var(--suave); }
 .lk-todas { padding: 0; }
-.lk-todas > summary { position: relative; display: flex; align-items: center; gap: 12px; padding: 12px 42px 12px 14px; cursor: pointer; list-style: none; }
+.lk-todas > summary { position: relative; display: flex; align-items: center; gap: 12px; padding: 12px 44px 12px 18px; cursor: pointer; list-style: none; }
 .lk-todas > summary::-webkit-details-marker { display: none; }
 .lk-todas > summary::after { content: '+'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--laranja); font-size: 1.5rem; font-weight: 800; }
 .lk-todas[open] > summary::after { content: '–'; }
 .lk-logos { display: flex; }
 .lk-logos { flex: none; }
-.lk-logos img { width: 30px; height: 30px; object-fit: contain; padding: 2px; border-radius: 50%; background: #000; border: 2px solid var(--carvao); margin-left: -9px; }
+.lk-logos img { width: 36px; height: 36px; object-fit: contain; padding: 2px; border-radius: 50%; background: #000; border: 2px solid var(--carvao); margin-left: -9px; }
 .lk-logos img:first-child { margin-left: 0; }
-.lk-todas-texto { font-weight: 900; font-stretch: 80%; font-size: .8rem; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; }
+.lk-todas-texto { font-weight: 900; font-stretch: 80%; font-size: .95rem; line-height: 1.15; letter-spacing: .03em; text-transform: uppercase; white-space: nowrap; }
+.lk-todas .lk-logos { margin-left: auto; }
 .lk-todas[open] > summary { border-bottom: 1px solid var(--linha); }
 .lk-todas details.lk-cul { padding: 0 18px; }
 .lk-insta > summary { list-style: none; }
@@ -1606,7 +1607,7 @@ details.lk-cul[open] summary::after { content: '–'; }
   </section>
 
   <details class="lk-caixa lk-todas">
-    <summary><span class="lk-logos">${marcas.filter((m) => m.logo).map((m) => `<img src="../${m.logo}" alt="">`).join('')}</span><span class="lk-todas-texto">Escolha sua culinária</span></summary>
+    <summary><span class="lk-todas-texto">Escolha sua<br>culinária</span><span class="lk-logos">${marcas.filter((m) => m.logo).map((m) => `<img src="../${m.logo}" alt="">`).join('')}</span></summary>
     ${marcas.map((m) => `<details class="lk-cul"><summary>${m.logo ? `<img src="../${m.logo}" alt="" loading="lazy">` : ''}<span><strong>${esc(m.nome)}</strong><small class="suave"> ${esc(m.tipo)}</small></span></summary>
       ${m.unidades.map((u) => `<div class="lk-uni"><p>${esc(u.nome)}</p><div class="lk-plats">${botoesUnidade(u)}</div></div>`).join('')}
     </details>`).join('\n    ')}
