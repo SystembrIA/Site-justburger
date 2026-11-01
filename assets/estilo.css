@@ -588,7 +588,7 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 
 /* Menu do celular: "Nossas culinárias" com os logos no próprio botão (Maikon 01/11) */
 .menu-celular .submenu summary { gap: 10px; }
-.submenu-titulo { font: inherit; }
-.submenu-logos { display: flex; flex: 1; justify-content: flex-end; margin-left: auto; font-style: normal; }
-.submenu-logos img { width: 42px; height: 42px; object-fit: contain; padding: 2px; border-radius: 50%; background: #000; border: 2px solid var(--preto); margin-left: -6px; }
+.submenu-titulo { font: inherit; line-height: 1.1; white-space: nowrap; }
+.submenu-logos { display: flex; flex: 1; min-width: 0; justify-content: center; margin-left: 8px; font-style: normal; }
+.submenu-logos img { flex: 1 1 0; min-width: 0; max-width: 62px; width: auto; height: auto; aspect-ratio: 1; object-fit: contain; padding: 3px; border-radius: 50%; background: #000; border: 2px solid var(--preto); margin-left: -4px; }
 .submenu-logos img:first-child { margin-left: 0; }

@@ -34,6 +34,11 @@
       return m.unidades.map(function (u) { return cartao(m, u, null); }).join('');
     }).join('');
   }
+  // Clicou em outra coisa da página (culinárias, site, cardápio...): fecha a lista do CEP.
+  document.addEventListener('click', function (e) {
+    if (!res.innerHTML || e.target.closest('#pedido')) return;
+    if (e.target.closest('.lk-todas > summary, .lk-bt, .lk-insta > summary, a')) res.innerHTML = '';
+  });
   campo.addEventListener('input', function () { var v = campo.value.replace(/\D/g, '').slice(0, 8); campo.value = v.length > 5 ? v.slice(0, 5) + '-' + v.slice(5) : v; });
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
