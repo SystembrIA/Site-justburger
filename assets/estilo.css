@@ -561,3 +561,14 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 /* ---------- Nossa equipe ---------- */
 .grade-equipe { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
 .grade-equipe img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; }
+
+/* ---------- Trabalhe conosco: formulário ---------- */
+.form-curriculo { display: grid; gap: 14px; }
+.form-curriculo label { display: grid; gap: 6px; font-weight: 700; font-size: .95rem; }
+.form-curriculo small { color: var(--suave); font-weight: 500; }
+.form-curriculo input, .form-curriculo select, .form-curriculo textarea { width: 100%; min-height: 48px; padding: 10px 14px; border: 1px solid var(--linha); border-radius: 12px; background: var(--carvao); color: var(--branco); font: inherit; font-weight: 400; }
+.form-curriculo input[type="file"] { padding: 10px; }
+.form-curriculo .form-check { display: flex; align-items: flex-start; gap: 10px; font-weight: 500; color: var(--suave); }
+.form-curriculo .form-check input { width: 20px; min-height: 20px; margin-top: 3px; flex: none; }
+.form-curriculo .form-site { position: absolute; left: -9999px; }
+.form-status { margin: 0; color: var(--suave); }

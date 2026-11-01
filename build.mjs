@@ -290,6 +290,7 @@ function pagina({ caminho, titulo, descricao, corpo, schema = [], profundidade, 
     ['Na mídia', 'na-midia/'],
     ['Nossa história', 'sobre/'],
     ...(site.equipe && site.equipe.publicada ? [['Nossa equipe', 'equipe/']] : []),
+    ...(site.trabalhe && site.trabalhe.publicada ? [['Trabalhe conosco', 'trabalhe-conosco/']] : []),
     ['Culinárias', 'culinarias/'],
   ];
   return `<!doctype html>
@@ -1335,6 +1336,54 @@ const VIDEOS_HISTORIA = [
 ];
 const videosHistoria = () => VIDEOS_HISTORIA.map(([id, titulo]) => { const m = midia.find((x) => x.youtube === id); return m && { ...m, titulo }; }).filter(Boolean);
 
+// Trabalhe conosco (Maikon 01/11): texto em dados.mjs (site.trabalhe), fotos em assets/img/trabalhe/*.webp e
+// formulário de currículo (envia para site.trabalhe.envio: função do banco). Só entra no site com publicada = true.
+const PASTA_TRABALHE = join(RAIZ, 'assets/img/trabalhe');
+const fotosTrabalhe = existsSync(PASTA_TRABALHE) ? readdirSync(PASTA_TRABALHE).filter((f) => f.endsWith('.webp')).sort() : [];
+if (site.trabalhe && site.trabalhe.publicada) {
+  const tb = site.trabalhe;
+  const opcoesMarca = [[site.nome, lojas.map((l) => l.nome.replace(/^Just Burger\s*/, ''))], ...culinarias.map((c) => [c.nome, (c.lojas || []).map((u) => u.regiao)])];
+  paginas.push({
+    caminho: 'trabalhe-conosco/',
+    profundidade: 1,
+    titulo: `Trabalhe conosco | ${site.nome}`,
+    descricao: 'Venha trabalhar no grupo Just Burger: vagas de cozinha, atendimento e operação nas unidades de São Paulo, Guarulhos e São Bernardo. Envie seu currículo.',
+    schema: [schemaBreadcrumb([['Início', ''], ['Trabalhe conosco', 'trabalhe-conosco/']])],
+    corpo: (base) => `
+<section class="secao">
+  <div class="largura estreita">
+    ${migalhas(base, [['Início', ''], ['Trabalhe conosco', 'trabalhe-conosco/']])}
+    <h1>Trabalhe conosco</h1>
+    <p class="lead">${esc(tb.chamada)}</p>
+    ${tb.texto.map((t) => `<p>${esc(t)}</p>`).join('')}
+  </div>
+</section>
+${fotosTrabalhe.length ? `<section class="secao"><div class="largura"><h2 class="so-leitor">Nosso dia a dia</h2><div class="grade-equipe">${fotosTrabalhe.map((f) => `<img src="${base}assets/img/trabalhe/${f}" alt="Equipe do grupo Just Burger trabalhando" loading="lazy" decoding="async">`).join('')}</div></div></section>` : ''}
+<section class="secao" id="curriculo">
+  <div class="largura estreita">
+    <h2>Envie seu currículo</h2>
+    <form class="form-curriculo" id="form-curriculo" data-envio="${esc(tb.envio || '')}" novalidate>
+      <label>Nome completo<input name="nome" required maxlength="120" autocomplete="name"></label>
+      <label>WhatsApp<input name="telefone" required inputmode="tel" maxlength="20" autocomplete="tel" placeholder="(11) 90000-0000"></label>
+      <label>E-mail <small>(opcional)</small><input name="email" type="email" maxlength="120" autocomplete="email"></label>
+      <label>Empresa<select name="marca" required><option value="">Escolha</option>${opcoesMarca.map(([m]) => `<option>${esc(m)}</option>`).join('')}<option>Qualquer uma do grupo</option></select></label>
+      <label>Unidade<select name="unidade" required><option value="">Escolha a empresa primeiro</option></select></label>
+      <label>Vaga de interesse<select name="funcao" required><option value="">Escolha</option>${tb.funcoes.map((f) => `<option>${esc(f)}</option>`).join('')}</select></label>
+      <label>Conte um pouco sobre você <small>(opcional)</small><textarea name="mensagem" rows="4" maxlength="1500"></textarea></label>
+      <label>Currículo em PDF <small>(opcional, até 2 MB)</small><input name="arquivo" type="file" accept="application/pdf"></label>
+      <label class="form-site" aria-hidden="true">Site<input name="site" tabindex="-1" autocomplete="off"></label>
+      <label class="form-check"><input name="consentimento" type="checkbox" required> Autorizo o grupo Just Burger a guardar meus dados para processos seletivos por até 12 meses.</label>
+      <button class="botao" type="submit">Enviar currículo</button>
+      <p class="form-status" role="status"></p>
+    </form>
+  </div>
+</section>
+<script>window.JUST_UNIDADES = ${JSON.stringify(Object.fromEntries(opcoesMarca))};</script>
+<script src="${base}assets/curriculo.js" defer></script>`,
+    md: () => `# Trabalhe conosco\n\n${tb.chamada}\n\n${tb.texto.join('\n\n')}\n\nEnvie seu currículo pelo formulário: ${abs('trabalhe-conosco/')}\n`,
+  });
+}
+
 // Nossa equipe (Maikon 01/11): texto em dados.mjs (site.equipe) e fotos em assets/img/equipe/*.webp.
 // Só entra no site e no menu quando site.equipe.publicada = true (texto aprovado pela diretoria).
 const PASTA_EQUIPE = join(RAIZ, 'assets/img/equipe');
@@ -1618,6 +1667,7 @@ details.lk-cul[open] summary::after { content: '–'; }
 
   <a class="lk-bt" href="../">Conheça nosso site</a>
   <a class="lk-bt" href="../cardapio/">Cardápio</a>
+  ${site.trabalhe && site.trabalhe.publicada ? `<a class="lk-bt" href="../trabalhe-conosco/">Trabalhe conosco</a>` : ''}
   ${linkWhats ? `<a class="lk-bt" href="${linkWhats}" rel="noopener">${iconeWhats} WhatsApp</a>` : ''}
   ${(site.instagrams || []).length ? `<details class="lk-insta"><summary class="lk-bt">Instagram</summary><div class="lk-insta-lista">${site.instagrams.map(([arroba, url, marca]) => `<a href="${esc(url)}" rel="noopener"><strong>${esc(arroba)}</strong><small>${esc(marca)}</small></a>`).join('')}</div></details>` : site.instagram ? `<a class="lk-bt" href="${esc(site.instagram)}" rel="noopener">Instagram</a>` : ''}
 
