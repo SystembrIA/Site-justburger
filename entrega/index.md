@@ -1,0 +1,227 @@
+# Onde a Just Burger entrega
+
+Raio de 10 km de cada unidade. Confirme o endereço no iFood.
+
+## Just Burger Zona Leste
+
+- [Ponte Rasa](https://www.justburger.com.br/entrega/ponte-rasa/) — 1,2 km (inclui Vila Buenos Aires, Vila Fidelis Ribeiro, Jardim Popular, Jardim Lisboa, Burgo Paulista, Vila Costa Melo)
+- [Cangaíba](https://www.justburger.com.br/entrega/cangaiba/) — 1,9 km (inclui Chacara Cruzeiro do Sul, Jardim Piratininga, Vila Piratininga, Engenheiro Goulart, Jardim Danfer, Vila Buenos Aires)
+- [Penha](https://www.justburger.com.br/entrega/penha/) — 2,9 km (inclui Vila Laís, Vila Granada, Vila Ré, Vila Esperança)
+- [Vila Matilde](https://www.justburger.com.br/entrega/vila-matilde/) — 3,1 km (inclui Vila Dalila, Jardim Assunção, Jardim Triana, Vila Aricanduva, Vila Guilhermina, Cidade Patriarca)
+- [Ermelino Matarazzo](https://www.justburger.com.br/entrega/ermelino-matarazzo/) — 3,4 km (inclui Parque Boturussu, Jardim Keralux)
+- [Artur Alvim](https://www.justburger.com.br/entrega/artur-alvim/) — 4 km (inclui Conjunto Habitacional Padre Manoel da Nobrega, Cidade Rui Barbosa, Jardim Nordeste)
+- [Várzea do Palácio](https://www.justburger.com.br/entrega/varzea-do-palacio-guarulhos/) — 4,4 km
+- [Vila Jacuí](https://www.justburger.com.br/entrega/vila-jacui/) — 4,9 km (inclui Limoeiro, Jardim Pedro José Nunes, União de Vila Nova)
+- [Carrão](https://www.justburger.com.br/entrega/carrao/) — 5,4 km (inclui Vila Formosa)
+- [Itaquera](https://www.justburger.com.br/entrega/itaquera/) — 5,4 km (inclui Parque Guarani, Vila Campanela São Paulo, Cidade Antônio Estêvão de Carvalho, Parada XV de Novembro)
+- [Cidade Líder](https://www.justburger.com.br/entrega/cidade-lider/) — 5,6 km (inclui Parque Savoy City, Jardim Brasília, Jardim Ipanema, Vila Carlo Maderna)
+- [CECAP](https://www.justburger.com.br/entrega/cecap-guarulhos/) — 6,3 km
+- [Cumbica](https://www.justburger.com.br/entrega/cumbica-guarulhos/) — 6,6 km
+- [São Miguel](https://www.justburger.com.br/entrega/sao-miguel/) — 6,8 km (inclui Vila Progresso, Vila Chavantes, Vila Pantanal 2, Vila Roland Berigan)
+- [Jardim Santo Afonso](https://www.justburger.com.br/entrega/jardim-santo-afonso-guarulhos/) — 6,9 km
+- [Aricanduva](https://www.justburger.com.br/entrega/aricanduva/) — 7 km
+- [Vila Formosa](https://www.justburger.com.br/entrega/vila-formosa/) — 7,6 km (inclui Jardim Anália Franco)
+- [Parque do Carmo](https://www.justburger.com.br/entrega/parque-do-carmo/) — 8 km
+- [Lajeado](https://www.justburger.com.br/entrega/lajeado/) — 8,7 km (inclui Jardim Etelvina)
+- [Vila Jardim São Manoel](https://www.justburger.com.br/entrega/vila-jardim-sao-manoel-guarulhos/) — 8,7 km
+- [Aeroporto Internacional Governador André Franco Montoro](https://www.justburger.com.br/entrega/aeroporto-internacional-governador-andre-franco-montoro-guarulhos/) — 8,8 km
+- [Água Rasa](https://www.justburger.com.br/entrega/agua-rasa/) — 8,9 km
+- [José Bonifácio](https://www.justburger.com.br/entrega/jose-bonifacio/) — 8,9 km (inclui Gleba do Pêssego, COHAB 2)
+- [Vila Curuçá](https://www.justburger.com.br/entrega/vila-curuca/) — 8,9 km (inclui Vila Nova Curuça, Jardim Ipê, Jardim Robru, Vila Parque Guaianases)
+- [Jardim Helena](https://www.justburger.com.br/entrega/jardim-helena/) — 9,1 km (inclui Vila Grão Mogol, Chacára Três Meninas)
+- [Pimentas](https://www.justburger.com.br/entrega/pimentas-guarulhos/) — 9,1 km
+- [São Mateus](https://www.justburger.com.br/entrega/sao-mateus/) — 9,2 km (inclui Jardim Imperador)
+- [Jardim Otawa](https://www.justburger.com.br/entrega/jardim-otawa-guarulhos/) — 9,4 km
+
+## Just Burger Pirituba
+
+- [Jaguara](https://www.justburger.com.br/entrega/jaguara/) — 2,4 km (inclui Vila Jaguara)
+- [Lapa](https://www.justburger.com.br/entrega/lapa/) — 2,5 km (inclui Água Branca, Vila Ipojuca, Vila Romana, Vila Anastácio, Vila Hamburguesa, Bairro Siciliano)
+- [Pirituba](https://www.justburger.com.br/entrega/pirituba/) — 2,6 km (inclui Piqueri, Grand Reserva Paulista, Jardim Líbano, Vila Pereira Barreto, Vila Pirituba, City Pinheirinho)
+- [Freguesia do Ó](https://www.justburger.com.br/entrega/freguesia-do-o/) — 2,9 km (inclui Parque Monteiro Soares, Pirituba)
+- [Vila Leopoldina](https://www.justburger.com.br/entrega/vila-leopoldina/) — 3,2 km (inclui Vila Hamburguesa, Bela Aliança)
+- [São Domingos](https://www.justburger.com.br/entrega/sao-domingos/) — 3,4 km (inclui Parque São Domingos, City América, Jardim Maristela, Jardim Mangalot)
+- [Vila dos Remédios](https://www.justburger.com.br/entrega/vila-dos-remedios-osasco/) — 4 km
+- [Limão](https://www.justburger.com.br/entrega/limao/) — 4,5 km (inclui VIla Prado)
+- [Vila Menck](https://www.justburger.com.br/entrega/vila-menck-osasco/) — 4,7 km
+- [Alto de Pinheiros](https://www.justburger.com.br/entrega/alto-de-pinheiros/) — 4,9 km (inclui Boaçava, Vila Beatriz, Vila Ida)
+- [Barra Funda](https://www.justburger.com.br/entrega/barra-funda/) — 5,1 km (inclui Pompéia)
+- [Jaguaré](https://www.justburger.com.br/entrega/jaguare/) — 5,6 km (inclui Parque Continental, Vila Nova Jaguaré)
+- [Vila São José](https://www.justburger.com.br/entrega/vila-sao-jose-osasco/) — 5,6 km
+- [Perdizes](https://www.justburger.com.br/entrega/perdizes/) — 5,8 km (inclui Sumaré, Pompéia)
+- [Jardim Rochdale](https://www.justburger.com.br/entrega/jardim-rochdale-osasco/) — 5,9 km
+- [Jardim Santa Rita de Cássia](https://www.justburger.com.br/entrega/jardim-santa-rita-de-cassia-osasco/) — 6 km
+- [Presidente Altino](https://www.justburger.com.br/entrega/presidente-altino-osasco/) — 6,2 km
+- [Casa Verde](https://www.justburger.com.br/entrega/casa-verde/) — 6,5 km (inclui Casa Verde Alta)
+- [Brasilândia](https://www.justburger.com.br/entrega/brasilandia/) — 6,6 km (inclui Vila Penteado)
+- [Jaraguá](https://www.justburger.com.br/entrega/jaragua/) — 6,7 km (inclui Parque Nações Unidas, City Jaraguá, Vila Souza, Parada de Taípas, Jardim Pirituba)
+- [Terra Nossa](https://www.justburger.com.br/entrega/terra-nossa-osasco/) — 7,1 km
+- [Helena Maria](https://www.justburger.com.br/entrega/helena-maria-osasco/) — 7,1 km
+- [Jardim Bonança II](https://www.justburger.com.br/entrega/jardim-bonanca-ii-osasco/) — 7,2 km
+- [Vila Simões de Almeida](https://www.justburger.com.br/entrega/vila-simoes-de-almeida-osasco/) — 7,2 km
+- [Jardim Bela Vista](https://www.justburger.com.br/entrega/jardim-bela-vista-osasco/) — 7,4 km
+- [Cachoeirinha](https://www.justburger.com.br/entrega/cachoeirinha/) — 7,4 km (inclui Vila Amélia, Jardim Peri)
+- [Butantã](https://www.justburger.com.br/entrega/butanta/) — 7,5 km (inclui Caxingui)
+- [Santa Cecília](https://www.justburger.com.br/entrega/santa-cecilia/) — 7,5 km (inclui Campos Elísios)
+- [Jardim Três Montanhas](https://www.justburger.com.br/entrega/jardim-tres-montanhas-osasco/) — 7,5 km
+- [Pinheiros](https://www.justburger.com.br/entrega/pinheiros/) — 7,6 km (inclui Vila Madalena, Jardim Europa)
+- [Jardim D'Abril](https://www.justburger.com.br/entrega/jardim-d-abril-osasco/) — 7,7 km
+- [Consolação](https://www.justburger.com.br/entrega/consolacao/) — 8 km (inclui Higienópolis, Vila Madalena)
+- [Jardim das Flòres](https://www.justburger.com.br/entrega/jardim-das-flores-osasco/) — 8 km
+- [Jardim Piratininga](https://www.justburger.com.br/entrega/jardim-piratininga-osasco/) — 8 km
+- [Jardim Elvira](https://www.justburger.com.br/entrega/jardim-elvira-osasco/) — 8,3 km
+- [Colinas d'Oeste Setor C](https://www.justburger.com.br/entrega/colinas-d-oeste-setor-c-osasco/) — 8,4 km
+- [Rio Pequeno](https://www.justburger.com.br/entrega/rio-pequeno/) — 8,5 km
+- [Bom Retiro](https://www.justburger.com.br/entrega/bom-retiro/) — 8,5 km (inclui Bairro da Luz)
+- [Colinas d'Oeste Setor E](https://www.justburger.com.br/entrega/colinas-d-oeste-setor-e-barueri/) — 8,7 km
+- [Vila Quitauna](https://www.justburger.com.br/entrega/vila-quitauna-osasco/) — 8,9 km
+- [Anhanguera](https://www.justburger.com.br/entrega/anhanguera/) — 8,9 km (inclui Morro Doce, Jardim Britânia)
+- [Jardim Paulista](https://www.justburger.com.br/entrega/jardim-paulista/) — 9 km (inclui Cerqueira César, Jardim Europa)
+- [Mandaqui](https://www.justburger.com.br/entrega/mandaqui/) — 9,2 km (inclui Lauzane Paulista, Vila Aurora, Parque Mandaqui, Cachoeirinha)
+- [Bela Vista](https://www.justburger.com.br/entrega/bela-vista/) — 9,3 km (inclui Bixiga)
+- [Vila Sônia](https://www.justburger.com.br/entrega/vila-sonia/) — 9,4 km (inclui Butantã)
+- [Morumbi](https://www.justburger.com.br/entrega/morumbi/) — 9,4 km (inclui Cidade Jardim)
+- [Perus](https://www.justburger.com.br/entrega/perus/) — 9,4 km (inclui Vila Souza, Vila Caiuba, Parque Taipas)
+
+## Just Burger Guarulhos
+
+- [Itapegica](https://www.justburger.com.br/entrega/itapegica-guarulhos/) — 0,4 km
+- [Vila Augusta](https://www.justburger.com.br/entrega/vila-augusta-guarulhos/) — 1,3 km
+- [Ponte Grande](https://www.justburger.com.br/entrega/ponte-grande-guarulhos/) — 1,6 km
+- [Porto da Igreja](https://www.justburger.com.br/entrega/porto-da-igreja-guarulhos/) — 2,1 km
+- [Tranquilidade](https://www.justburger.com.br/entrega/tranquilidade-guarulhos/) — 2,1 km
+- [Gopoúva](https://www.justburger.com.br/entrega/gopouva-guarulhos/) — 2,3 km
+- [Vila Medeiros](https://www.justburger.com.br/entrega/vila-medeiros/) — 2,4 km (inclui Vila Sabrina, Vila Ede, Jardim Brasil)
+- [Centro](https://www.justburger.com.br/entrega/centro-guarulhos/) — 2,6 km
+- [Jaçanã](https://www.justburger.com.br/entrega/jacana/) — 3,2 km (inclui Jardim Modelo, Parque Edu Chaves, Parque Vitória, Vila Nilo)
+- [Torres Tibagy](https://www.justburger.com.br/entrega/torres-tibagy-guarulhos/) — 3,3 km
+- [Macedo](https://www.justburger.com.br/entrega/macedo-guarulhos/) — 3,9 km
+- [Maia](https://www.justburger.com.br/entrega/maia-guarulhos/) — 3,9 km (inclui Vila Lanzara)
+- [Vila Maria](https://www.justburger.com.br/entrega/vila-maria/) — 4 km (inclui Jardim Japão, Parque Novo Mundo)
+- [Vila Galvão](https://www.justburger.com.br/entrega/vila-galvao-guarulhos/) — 4,2 km
+- [Picanço](https://www.justburger.com.br/entrega/picanco-guarulhos/) — 4,5 km
+- [São Roque](https://www.justburger.com.br/entrega/sao-roque-guarulhos/) — 5 km
+- [Bom Clima](https://www.justburger.com.br/entrega/bom-clima-guarulhos/) — 5,1 km
+- [Vila Rio](https://www.justburger.com.br/entrega/vila-rio-guarulhos/) — 5,5 km
+- [Fátima](https://www.justburger.com.br/entrega/fatima-guarulhos/) — 5,6 km
+- [Tucuruvi](https://www.justburger.com.br/entrega/tucuruvi/) — 5,7 km (inclui Jardim França, Vila Gustavo, Parada Inglesa, Jardim Leonor Mendes de Barros, Vila Mazzei)
+- [Tatuapé](https://www.justburger.com.br/entrega/tatuape/) — 6,1 km (inclui Vila Azevedo, Parque São Jorge, Vila Gomes Cardim)
+- [Vila Guilherme](https://www.justburger.com.br/entrega/vila-guilherme/) — 6,3 km (inclui Bairro da Coroa, Vila Isolina Mazzei)
+- [Cocaia](https://www.justburger.com.br/entrega/cocaia-guarulhos/) — 6,6 km
+- [Vila Barros](https://www.justburger.com.br/entrega/vila-barros-guarulhos/) — 6,8 km
+- [Bela Vista](https://www.justburger.com.br/entrega/bela-vista-guarulhos/) — 7,2 km
+- [Belém](https://www.justburger.com.br/entrega/belem/) — 7,3 km (inclui Vila Operária Maria Zélia)
+- [Morros](https://www.justburger.com.br/entrega/morros-guarulhos/) — 7,4 km
+- [Tremembé](https://www.justburger.com.br/entrega/tremembe/) — 7,5 km (inclui Vila Albertina, Furnas, Jardim Fontalis, Horto Florestal, Bortolândia, Jardim Guapira)
+- [Cabuçu](https://www.justburger.com.br/entrega/cabucu-guarulhos/) — 7,8 km
+- [Santana](https://www.justburger.com.br/entrega/santana/) — 8,4 km (inclui Carandiru, Alto de Santana, Jardim São Bento, Imirim, Santa Teresinha, Vila Paulicéia)
+- [Pari](https://www.justburger.com.br/entrega/pari/) — 8,5 km (inclui Canindé)
+- [Taboão](https://www.justburger.com.br/entrega/taboao-guarulhos/) — 8,8 km (inclui Jardim Paraiso, Vila Jardim São Domingos)
+- [Mooca](https://www.justburger.com.br/entrega/mooca/) — 9 km (inclui Parque da Mooca)
+- [Brás](https://www.justburger.com.br/entrega/bras/) — 9,5 km
+
+## Just Burger São Bernardo
+
+- [Jardim Stella](https://www.justburger.com.br/entrega/jardim-stella-santo-andre/) — 0,9 km (inclui Jardim Pilar)
+- [Jardim Las Vegas](https://www.justburger.com.br/entrega/jardim-las-vegas-santo-andre/) — 1 km (inclui Jardim Milena)
+- [Jardim Jamaica](https://www.justburger.com.br/entrega/jardim-jamaica-santo-andre/) — 1,3 km
+- [Baeta Neves](https://www.justburger.com.br/entrega/baeta-neves-sao-bernardo-do-campo/) — 1,5 km (inclui Jardim Industrial)
+- [Centro](https://www.justburger.com.br/entrega/centro-sao-bernardo-do-campo/) — 1,7 km (inclui Vila Santa Rita de Cássia, Vila Álvaro Marques, Vila Dusi, Jardim das Américas, Jardim Três Marias)
+- [Vila Floresta](https://www.justburger.com.br/entrega/vila-floresta-santo-andre/) — 2,1 km (inclui Vila Lilica)
+- [Nova Petrópolis](https://www.justburger.com.br/entrega/nova-petropolis-sao-bernardo-do-campo/) — 2,2 km (inclui Jardim Nova Petrópolis)
+- [Jardim do Estádio](https://www.justburger.com.br/entrega/jardim-do-estadio-santo-andre/) — 2,2 km
+- [Paraíso](https://www.justburger.com.br/entrega/paraiso-santo-andre/) — 2,3 km
+- [Vila Helena](https://www.justburger.com.br/entrega/vila-helena-santo-andre/) — 2,4 km (inclui Vila Marina)
+- [Anchieta](https://www.justburger.com.br/entrega/anchieta-sao-bernardo-do-campo/) — 2,8 km (inclui Parque Anchieta, Jardim Hollywood, Jardim Silvestre)
+- [Vila Alzira](https://www.justburger.com.br/entrega/vila-alzira-santo-andre/) — 3 km (inclui Vila Leopoldina)
+- [Planalto](https://www.justburger.com.br/entrega/planalto-sao-bernardo-do-campo/) — 3,1 km (inclui Conjunto Habitacional Vila São Salvério, Vila Washington)
+- [Vila Alice](https://www.justburger.com.br/entrega/vila-alice-santo-andre/) — 3,3 km
+- [Jardim Telles de Menezes](https://www.justburger.com.br/entrega/jardim-telles-de-menezes-santo-andre/) — 3,4 km (inclui Vila Mazzei)
+- [Vila Bastos](https://www.justburger.com.br/entrega/vila-bastos-santo-andre/) — 3,4 km
+- [Jardim Cipreste](https://www.justburger.com.br/entrega/jardim-cipreste-santo-andre/) — 3,5 km
+- [Vila Pires](https://www.justburger.com.br/entrega/vila-pires-santo-andre/) — 3,5 km
+- [Vila Príncipe de Gales](https://www.justburger.com.br/entrega/vila-principe-de-gales-santo-andre/) — 3,6 km
+- [Vila Luzita](https://www.justburger.com.br/entrega/vila-luzita-santo-andre/) — 3,7 km
+- [Ferrazópolis](https://www.justburger.com.br/entrega/ferrazopolis-sao-bernardo-do-campo/) — 3,9 km (inclui Vila Ferrazópolis)
+- [Jordanópolis](https://www.justburger.com.br/entrega/jordanopolis-sao-bernardo-do-campo/) — 3,9 km
+- [Casa Branca](https://www.justburger.com.br/entrega/casa-branca-santo-andre/) — 3,9 km (inclui Vila Vilma)
+- [Santa Terezinha](https://www.justburger.com.br/entrega/santa-terezinha-sao-bernardo-do-campo/) — 4 km (inclui Jardim Tiradentes)
+- [Vila América](https://www.justburger.com.br/entrega/vila-america-santo-andre/) — 4 km (inclui Parque Industriário)
+- [Independência](https://www.justburger.com.br/entrega/independencia-sao-bernardo-do-campo/) — 4,1 km
+- [Vila João Ramalho](https://www.justburger.com.br/entrega/vila-joao-ramalho-santo-andre/) — 4,3 km
+- [Jardim](https://www.justburger.com.br/entrega/jardim-santo-andre/) — 4,5 km
+- [Assunção](https://www.justburger.com.br/entrega/assuncao-sao-bernardo-do-campo/) — 4,6 km (inclui Vila Artuelia, Vila Simone)
+- [Condominío Maracanã](https://www.justburger.com.br/entrega/condominio-maracana-santo-andre/) — 4,6 km (inclui Jardim Carla)
+- [Piraporinha](https://www.justburger.com.br/entrega/piraporinha-diadema/) — 4,6 km (inclui Jardim Padre Anchieta)
+- [Vila Guaraciaba](https://www.justburger.com.br/entrega/vila-guaraciaba-santo-andre/) — 4,7 km (inclui Jardim Silvana)
+- [Vila Aquilino](https://www.justburger.com.br/entrega/vila-aquilino-santo-andre/) — 4,7 km
+- [Jardim Santo André - CDHU](https://www.justburger.com.br/entrega/jardim-santo-andre-cdhu-santo-andre/) — 4,8 km (inclui Vila Lamartine)
+- [Jardim Marek](https://www.justburger.com.br/entrega/jardim-marek-santo-andre/) — 5 km
+- [Parque Jaçatuba](https://www.justburger.com.br/entrega/parque-jacatuba-santo-andre/) — 5 km
+- [Rudge Ramos](https://www.justburger.com.br/entrega/rudge-ramos-sao-bernardo-do-campo/) — 5,1 km (inclui Vila Dourados, Jardim Orlandina)
+- [Cata Preta](https://www.justburger.com.br/entrega/cata-preta-santo-andre/) — 5,2 km
+- [Novo Homero Thon](https://www.justburger.com.br/entrega/novo-homero-thon-santo-andre/) — 5,2 km
+- [Demarchi](https://www.justburger.com.br/entrega/demarchi-sao-bernardo-do-campo/) — 5,3 km (inclui Jardim Nossa Senhora de Fátima)
+- [Alves Dias](https://www.justburger.com.br/entrega/alves-dias-sao-bernardo-do-campo/) — 5,4 km
+- [Paulicéia](https://www.justburger.com.br/entrega/pauliceia-sao-bernardo-do-campo/) — 5,4 km
+- [Vila Nogueira](https://www.justburger.com.br/entrega/vila-nogueira-diadema/) — 5,6 km (inclui Jardim Ana Sofia)
+- [Parque João Ramalho](https://www.justburger.com.br/entrega/parque-joao-ramalho-santo-andre/) — 5,6 km (inclui Vila Santa Maria)
+- [Bairro dos Casa](https://www.justburger.com.br/entrega/bairro-dos-casa-sao-bernardo-do-campo/) — 5,7 km
+- [Parque do Pedroso](https://www.justburger.com.br/entrega/parque-do-pedroso-santo-andre/) — 5,7 km
+- [Condominío Maracanã](https://www.justburger.com.br/entrega/condominio-maracana-maua/) — 5,8 km
+- [Vila Carlina](https://www.justburger.com.br/entrega/vila-carlina-maua/) — 6 km
+- [Cidade São Jorge](https://www.justburger.com.br/entrega/cidade-sao-jorge-santo-andre/) — 6 km
+- [Nova Gerty](https://www.justburger.com.br/entrega/nova-gerty-sao-caetano-do-sul/) — 6,2 km
+- [Campestre](https://www.justburger.com.br/entrega/campestre-santo-andre/) — 6,3 km (inclui Jardim Martha)
+- [Jardim Ipê](https://www.justburger.com.br/entrega/jardim-ipe-sao-bernardo-do-campo/) — 6,4 km (inclui Jardim do Lago)
+- [Recreio da Borda do Campo](https://www.justburger.com.br/entrega/recreio-da-borda-do-campo-maua/) — 6,4 km
+- [Canhema](https://www.justburger.com.br/entrega/canhema-diadema/) — 6,4 km
+- [Jardim Alzira Franco](https://www.justburger.com.br/entrega/jardim-alzira-franco-santo-andre/) — 6,4 km
+- [Santa Maria](https://www.justburger.com.br/entrega/santa-maria-sao-caetano-do-sul/) — 6,4 km
+- [Casa Grande](https://www.justburger.com.br/entrega/casa-grande-diadema/) — 6,5 km
+- [Parque Erasmo Assunção](https://www.justburger.com.br/entrega/parque-erasmo-assuncao-santo-andre/) — 6,6 km
+- [Montanhão](https://www.justburger.com.br/entrega/montanhao-sao-bernardo-do-campo/) — 6,7 km (inclui Vila São Bernardo Novo, Vila Areião, Jardim Baraldi, Parque Residencial Selecta, Golden Park)
+- [Jardim São Caetano](https://www.justburger.com.br/entrega/jardim-sao-caetano-sao-caetano-do-sul/) — 6,8 km
+- [Loteamento Industrial Coral](https://www.justburger.com.br/entrega/loteamento-industrial-coral-maua/) — 7 km
+- [Vila Assis Brasil](https://www.justburger.com.br/entrega/vila-assis-brasil-maua/) — 7 km
+- [Capuava](https://www.justburger.com.br/entrega/capuava-maua/) — 7 km
+- [Sertãozinho](https://www.justburger.com.br/entrega/sertaozinho-maua/) — 7,1 km
+- [Parque Esmeralda](https://www.justburger.com.br/entrega/parque-esmeralda-sao-bernardo-do-campo/) — 7,2 km (inclui Jardim Thelma)
+- [Cooperativa](https://www.justburger.com.br/entrega/cooperativa-sao-bernardo-do-campo/) — 7,2 km (inclui Jardim Belas Artes, Jardim Satelite)
+- [Taboão](https://www.justburger.com.br/entrega/taboao-sao-bernardo-do-campo/) — 7,2 km
+- [2º Subdistrito](https://www.justburger.com.br/entrega/2o-subdistrito-santo-andre/) — 7,2 km (inclui Casas Populares, Jardim Oratório, Vila Sá)
+- [Jardim Santo Antônio](https://www.justburger.com.br/entrega/jardim-santo-antonio-santo-andre/) — 7,2 km (inclui Vila Alto de Santo André)
+- [Botujuru](https://www.justburger.com.br/entrega/botujuru-sao-bernardo-do-campo/) — 7,3 km (inclui Jardim Capivari, Jardim Arco Iris)
+- [Jardim Riviera](https://www.justburger.com.br/entrega/jardim-riviera-santo-andre/) — 7,3 km
+- [Parque São Vicente](https://www.justburger.com.br/entrega/parque-sao-vicente-maua/) — 7,3 km
+- [Parque Novo Oratório](https://www.justburger.com.br/entrega/parque-novo-oratorio-santo-andre/) — 7,3 km
+- [Oswaldo Cruz](https://www.justburger.com.br/entrega/oswaldo-cruz-sao-caetano-do-sul/) — 7,3 km
+- [Conceição](https://www.justburger.com.br/entrega/conceicao-diadema/) — 7,4 km
+- [Serraria](https://www.justburger.com.br/entrega/serraria-diadema/) — 7,5 km
+- [Taboão](https://www.justburger.com.br/entrega/taboao-diadema/) — 7,7 km
+- [Jardim Oratório](https://www.justburger.com.br/entrega/jardim-oratorio-maua/) — 7,7 km
+- [São José](https://www.justburger.com.br/entrega/sao-jose-sao-caetano-do-sul/) — 7,8 km
+- [Recreio da Borda do Campo](https://www.justburger.com.br/entrega/recreio-da-borda-do-campo-santo-andre/) — 8 km
+- [Polo Petroquímico de Capuava](https://www.justburger.com.br/entrega/polo-petroquimico-de-capuava-santo-andre/) — 8,1 km
+- [Centro](https://www.justburger.com.br/entrega/centro-diadema/) — 8,2 km
+- [Jardim Anchieta](https://www.justburger.com.br/entrega/jardim-anchieta-maua/) — 8,2 km (inclui Jardim São Judas)
+- [Jardim Primavera](https://www.justburger.com.br/entrega/jardim-primavera-maua/) — 8,3 km (inclui Jardim São Jorge)
+- [Jardim Santo Alberto](https://www.justburger.com.br/entrega/jardim-santo-alberto-santo-andre/) — 8,3 km
+- [Santa Paula](https://www.justburger.com.br/entrega/santa-paula-sao-caetano-do-sul/) — 8,3 km
+- [Bairro da Matriz](https://www.justburger.com.br/entrega/bairro-da-matriz-maua/) — 8,4 km
+- [Sacomã](https://www.justburger.com.br/entrega/sacoma/) — 8,4 km (inclui Jardim Santa Cruz, Jardim Imperador (Zona Sul), Vila Arapuã, Vila das Mercês, São João Climaco, Vila Conde do Pinhal)
+- [Eldorado](https://www.justburger.com.br/entrega/eldorado-diadema/) — 8,5 km (inclui Vila Imbaúva)
+- [Waisberg](https://www.justburger.com.br/entrega/waisberg-santo-andre/) — 8,6 km
+- [Batistini](https://www.justburger.com.br/entrega/batistini-sao-bernardo-do-campo/) — 8,7 km (inclui Vila Norma)
+- [Balneária](https://www.justburger.com.br/entrega/balnearia-sao-bernardo-do-campo/) — 8,7 km
+- [Recreio da Borda do Campo](https://www.justburger.com.br/entrega/recreio-da-borda-do-campo-ribeirao-pires/) — 8,7 km
+- [Jardim Sonia Maria](https://www.justburger.com.br/entrega/jardim-sonia-maria-maua/) — 8,7 km
+- [Vila Magini](https://www.justburger.com.br/entrega/vila-magini-maua/) — 8,8 km
+- [Rio Grande](https://www.justburger.com.br/entrega/rio-grande-sao-bernardo-do-campo/) — 8,9 km (inclui Vila Jurubatuba)
+- [Santo Antônio](https://www.justburger.com.br/entrega/santo-antonio-sao-caetano-do-sul/) — 8,9 km
+- [Bairro dos Alvarenga](https://www.justburger.com.br/entrega/bairro-dos-alvarenga-sao-bernardo-do-campo/) — 9 km (inclui Jardim Anna Falletti, Jardim Diana)
+- [Campanário](https://www.justburger.com.br/entrega/campanario-diadema/) — 9 km
+- [Varginha](https://www.justburger.com.br/entrega/varginha-sao-bernardo-do-campo/) — 9,3 km (inclui Jardim Borda do Campo)
+- [Pedreira](https://www.justburger.com.br/entrega/pedreira/) — 9,3 km
+- [Vila Prudente](https://www.justburger.com.br/entrega/vila-prudente/) — 9,4 km (inclui Vila Alpina)
+- [Cursino](https://www.justburger.com.br/entrega/cursino/) — 9,5 km (inclui Cidade Vargas, Jardim Imperador (Zona Sul))

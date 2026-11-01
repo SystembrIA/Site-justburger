@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Just Burger | Links e pedidos</title>
+<meta name="description" content="Peça Just Burger, Just Gourmet, Just Forneria, Just Esfiha e Just Sushi pelo iFood ou pela Keeta. Digite seu CEP e veja a loja que atende você.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.justburger.com.br/links/">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Dancing+Script:wght@700&display=swap">
+<style>
+:root { --preto: #0a0a0a; --carvao: #151412; --linha: rgba(255,255,255,.12); --laranja: #fa7304; --branco: #f7f3ee; --suave: #aaa39a; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem/1.5 Archivo, system-ui, sans-serif; }
+.lk { max-width: 480px; margin: 0 auto; padding: 36px 16px 48px; }
+.lk-topo { text-align: center; margin-bottom: 20px; }
+.lk-topo img { width: 112px; height: auto; }
+.lk-lema { margin: 10px 0 2px; font-family: 'Dancing Script', cursive; font-size: 1.5rem; }
+.lk-sub { margin: 0; color: var(--suave); font-size: .92rem; }
+.lk-bt { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 48px; margin: 0 0 10px; padding: 0 18px; border: 1px solid var(--linha); border-radius: 999px; background: var(--carvao); color: var(--branco); font-weight: 800; font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; cursor: pointer; }
+.lk-bt:hover { border-color: var(--laranja); }
+.lk-bt.lk-principal { background: var(--laranja); border-color: var(--laranja); color: #0b0b0b; }
+.lk-bt svg { width: 20px; height: 20px; }
+.so-leitor { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.lk-caixa { margin: 6px 0 16px; padding: 14px; border: 1px solid var(--linha); border-radius: 22px; background: var(--carvao); }
+.lk-caixa h2, .lk-titulo { margin: 0 0 10px; font-size: 1.05rem; font-weight: 900; font-stretch: 80%; letter-spacing: .04em; text-transform: uppercase; }
+.lk-cep { display: flex; gap: 8px; }
+.lk-campo { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; padding: 7px 16px; border: 1px solid var(--linha); border-radius: 999px; background: var(--preto); cursor: text; }
+.lk-campo:focus-within { border-color: var(--laranja); }
+.lk-campo small { color: var(--suave); font-size: .7rem; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lk-cep input { width: 100%; min-width: 0; min-height: 0; padding: 0; border: 0; outline: 0; background: transparent; color: var(--branco); font: inherit; font-size: 1.05rem; }
+.lk-cep button { align-self: center; min-height: 40px; padding: 0 16px; font-size: .8rem; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
+.lk-dica { margin: 10px 4px 0 !important; font-size: .86rem !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lk-msg { margin: 12px 0 0; color: var(--suave); font-size: .9rem; }
+.lk-marca { display: grid; grid-template-columns: 40px 7.6em 1fr; gap: 10px; align-items: center; padding: 10px 0; border-top: 1px solid var(--linha); }
+.lk-marca:first-child { border-top: 0; }
+.lk-marca > img { width: 40px; height: 40px; object-fit: contain; border-radius: 12px; background: #000; }
+.lk-marca strong { display: block; font-size: .92rem; line-height: 1.2; }
+.lk-marca small { display: block; color: var(--laranja); font-weight: 700; font-size: .8rem; }
+.lk-plats { display: flex; gap: 8px; }
+.lk-plat { flex: 1; display: grid; place-items: center; min-height: 44px; border-radius: 999px; font-weight: 800; font-size: .85rem; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; }
+.lk-plats { gap: 8px; flex: none; justify-self: center; }
+.lk-plat { flex: 0 0 auto; display: block; min-height: 0; min-width: 0; width: 64px; height: 34px; padding: 0; border: 0; border-radius: 10px; overflow: hidden; background: none; }
+.lk-plat img { width: 64px; height: 34px; display: block; object-fit: cover; }
+.lk-plat[aria-label='Pedir no iFood'] { background: #ea1d2c; }
+.lk-plat-off img { object-position: 50% 70%; }
+.lk-plat[aria-label='Pedir no iFood'] img { object-fit: contain; transform: scale(1.35); }
+.lk-plat-off { cursor: default; }
+.lk-plat:hover { border-color: rgba(255,255,255,.35); }
+.lk-ifood img { height: 15px; width: auto; display: block; }
+.lk-keeta { color: #ffd100; }
+.lk-keeta-marca { font-size: .9rem; font-weight: 900; font-stretch: 100%; letter-spacing: -.01em; text-transform: none; }
+.lk-off { opacity: .45; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.lk-off { opacity: .35; }
+details.lk-cul { border-top: 1px solid var(--linha); }
+details.lk-cul:first-of-type { border-top: 0; }
+details.lk-cul summary { display: flex; align-items: center; gap: 12px; padding: 12px 0; cursor: pointer; list-style: none; }
+details.lk-cul summary::-webkit-details-marker { display: none; }
+details.lk-cul summary img { width: 44px; height: 44px; object-fit: contain; border-radius: 10px; background: #000; }
+details.lk-cul summary::after { content: '+'; margin-left: auto; color: var(--laranja); font-size: 1.3rem; font-weight: 800; }
+details.lk-cul[open] summary::after { content: '–'; }
+.lk-uni { display: grid; grid-template-columns: minmax(110px, auto) 1fr; align-items: center; gap: 10px; padding: 8px 0; }
+.lk-uni p { margin: 0; font-size: .92rem; font-weight: 800; color: var(--branco); }
+.lk-cul[open] { padding-bottom: 8px; }
+details.lk-cul summary strong { display: block; line-height: 1.2; }
+details.lk-cul summary small { display: block; font-size: .8rem; }
+.lk-todas { padding: 0; }
+.lk-todas > summary { position: relative; display: flex; align-items: center; gap: 12px; padding: 12px 44px 12px 18px; cursor: pointer; list-style: none; }
+.lk-todas > summary::-webkit-details-marker { display: none; }
+.lk-todas > summary::after { content: '+'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--laranja); font-size: 1.5rem; font-weight: 800; }
+.lk-todas[open] > summary::after { content: '–'; }
+.lk-logos { display: flex; }
+.lk-logos { flex: none; }
+.lk-logos img { width: 36px; height: 36px; object-fit: contain; padding: 2px; border-radius: 50%; background: #000; border: 2px solid var(--carvao); margin-left: -9px; }
+.lk-logos img:first-child { margin-left: 0; }
+.lk-todas-texto { font-weight: 900; font-stretch: 80%; font-size: .95rem; line-height: 1.15; letter-spacing: .03em; text-transform: uppercase; white-space: nowrap; }
+.lk-todas .lk-logos { flex: 1; min-width: 0; display: flex; justify-content: flex-end; margin-left: 10px; }
+.lk-todas .lk-logos img { flex: 1 1 0; min-width: 0; max-width: 50px; width: auto; height: auto; aspect-ratio: 1; margin-left: -6px; }
+.lk-todas[open] > summary { border-bottom: 1px solid var(--linha); }
+.lk-todas details.lk-cul { padding: 0 18px; }
+.lk-insta > summary { list-style: none; }
+.lk-insta > summary::-webkit-details-marker { display: none; }
+.lk-insta[open] > summary { border-color: var(--laranja); }
+.lk-insta-lista { display: grid; gap: 8px; margin: -2px 0 12px; }
+.lk-insta-lista a { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 12px 18px; border: 1px solid var(--linha); border-radius: 14px; background: var(--carvao); color: var(--branco); text-decoration: none; }
+.lk-insta-lista a:hover { border-color: var(--laranja); }
+.lk-insta-lista strong { font-size: .95rem; }
+.lk-insta-lista small { color: var(--suave); font-size: .8rem; }
+.lk-rodape { margin-top: 26px; text-align: center; color: var(--suave); font-size: .8rem; }
+.lk-rodape a { color: var(--suave); }
+</style>
+</head>
+<body>
+<main class="lk">
+  <header class="lk-topo">
+    <img src="../assets/img/logo-320.webp" width="320" height="268" alt="Just Burger Hamburgueria">
+    <p class="lk-lema">Ore, espere, confie</p>
+  </header>
+
+  <section class="lk-caixa" id="pedido">
+    <h2 class="so-leitor">Faça seu pedido</h2>
+    <form class="lk-cep" id="lk-form"><label class="lk-campo"><input id="lk-cep" inputmode="numeric" autocomplete="postal-code" placeholder="Digite seu CEP" aria-label="CEP" maxlength="9"><small>Loja disponível em sua região</small></label><button type="submit">Buscar</button></form>
+    <div id="lk-res"></div>
+  </section>
+
+  <details class="lk-caixa lk-todas">
+    <summary><span class="lk-todas-texto">Escolha sua<br>culinária</span><span class="lk-logos"><img src="../assets/img/logo-320.webp" alt=""><img src="../assets/img/marcas/just-gourmet.webp" alt=""><img src="../assets/img/marcas/just-forneria.webp" alt=""><img src="../assets/img/marcas/just-sushi.webp" alt=""><img src="../assets/img/marcas/just-esfiha.webp" alt=""></span></summary>
+    <details class="lk-cul"><summary><img src="../assets/img/logo-320.webp" alt="" loading="lazy"><span><strong>Just Burger</strong><small class="suave"> Hamburgueria</small></span></summary>
+      <div class="lk-uni"><p>Zona Leste</p><div class="lk-plats"><a class="lk-plat" href="https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-hamburgueria-lanches--dog-vila-buenos-aires/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a><span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span></div></div><div class="lk-uni"><p>Pirituba</p><div class="lk-plats"><a class="lk-plat" href="https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-pirituba-jardim-iris/b1f195b5-8ec5-4b9a-ae71-cd55d969a4df" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a><span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span></div></div><div class="lk-uni"><p>Guarulhos</p><div class="lk-plats"><a class="lk-plat" href="https://www.ifood.com.br/delivery/guarulhos-sp/just-burger-hamburgueria-lanches--dog-vila-endres/8432b620-27ea-48fb-bf3b-a0b76bbf3516" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a><span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span></div></div><div class="lk-uni"><p>São Bernardo</p><div class="lk-plats"><a class="lk-plat" href="https://www.ifood.com.br/delivery/sao-bernardo-do-campo-sp/just-burger-hamburgueria-lanches--dog-baeta-neves/aa6576e8-574e-42c5-8d38-0d7df31f3fcc" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a><span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span></div></div>
+    </details>
+    <details class="lk-cul"><summary><img src="../assets/img/marcas/just-gourmet.webp" alt="" loading="lazy"><span><strong>Just Gourmet</strong><small class="suave"> Comida brasileira</small></span></summary>
+      <div class="lk-uni"><p>Zona Leste</p><div class="lk-plats"><a class="lk-plat" href="https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-penha/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a><span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span></div></div><div class="lk-uni"><p>Pirituba</p><div class="lk-plats"><a class="lk-plat" href="https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-pirituba/9e482678-bad2-45ee-97ed-8d34a3e7e994" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a><span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span></div></div>
+    </details>
+    <details class="lk-cul"><summary><img src="../assets/img/marcas/just-forneria.webp" alt="" loading="lazy"><span><strong>Just Forneria</strong><small class="suave"> Pizza</small></span></summary>
+      <div class="lk-uni"><p>Zona Leste</p><div class="lk-plats"><a class="lk-plat" href="https://www.ifood.com.br/delivery/sao-paulo-sp/aham-forneria-penha/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a><span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span></div></div><div class="lk-uni"><p>Pirituba</p><div class="lk-plats"><a class="lk-plat" href="https://www.ifood.com.br/delivery/sao-paulo-sp/aham-forneria-pirituba/83d23068-46ec-45b2-b155-b03ec6e2954f" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a><span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span></div></div>
+    </details>
+    <details class="lk-cul"><summary><img src="../assets/img/marcas/just-sushi.webp" alt="" loading="lazy"><span><strong>Just Sushi</strong><small class="suave"> Sushi</small></span></summary>
+      <div class="lk-uni"><p>Zona Leste</p><div class="lk-plats"><a class="lk-plat" href="https://www.ifood.com.br/delivery/sao-paulo-sp/aham-sushi-penha/fe4e06bd-2f30-410a-97ef-b21eba59f3e4" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a><span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span></div></div>
+    </details>
+    <details class="lk-cul"><summary><img src="../assets/img/marcas/just-esfiha.webp" alt="" loading="lazy"><span><strong>Just Esfiha</strong><small class="suave"> Esfiha</small></span></summary>
+      <div class="lk-uni"><p>Zona Leste</p><div class="lk-plats"><a class="lk-plat" href="https://www.ifood.com.br/delivery/sao-paulo-sp/aham-esfiha-penha/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a><span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span></div></div><div class="lk-uni"><p>Pirituba</p><div class="lk-plats"><a class="lk-plat" href="https://www.ifood.com.br/delivery/sao-paulo-sp/aham-esfiha-pirituba/b1331127-d9d1-4754-b23b-b2ff8737e770" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a><span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span></div></div>
+    </details>
+  </details>
+
+  <a class="lk-bt" href="../">Conheça nosso site</a>
+  <a class="lk-bt" href="../cardapio/">Cardápio</a>
+  <a class="lk-bt" href="../trabalhe-conosco/">Trabalhe conosco</a>
+  <a class="lk-bt" href="https://wa.me/551126228800?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Just%20Burger." rel="noopener"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5v-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8 0 1.6 1.2 3.2 1.4 3.4.2.2 2.3 3.6 5.7 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.6-.4z"/></svg> WhatsApp</a>
+  <details class="lk-insta"><summary class="lk-bt">Instagram</summary><div class="lk-insta-lista"><a href="https://www.instagram.com/justburgersp/" rel="noopener"><strong>@justburgersp</strong><small>Just Burger</small></a><a href="https://www.instagram.com/justgourmetsp/" rel="noopener"><strong>@justgourmetsp</strong><small>Just Gourmet</small></a><a href="https://www.instagram.com/ahamforneriasp/" rel="noopener"><strong>@ahamforneriasp</strong><small>Just Forneria</small></a><a href="https://www.instagram.com/ahamsushisp/" rel="noopener"><strong>@ahamsushisp</strong><small>Just Sushi</small></a></div></details>
+
+  <p class="lk-rodape">Grupo Just Burger · <a href="../">justburger.com.br</a></p>
+</main>
+<script>window.JUST_LINKS = {"raio":10,"marcas":[{"nome":"Just Burger","tipo":"Hamburgueria","logo":"assets/img/logo-320.webp","unidades":[{"nome":"Zona Leste","ifood":"https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-hamburgueria-lanches--dog-vila-buenos-aires/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de","keeta":"","lat":-23.5114779,"lng":-46.5052967},{"nome":"Pirituba","ifood":"https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-pirituba-jardim-iris/b1f195b5-8ec5-4b9a-ae71-cd55d969a4df","keeta":"","lat":-23.4940394,"lng":-46.7310058},{"nome":"Guarulhos","ifood":"https://www.ifood.com.br/delivery/guarulhos-sp/just-burger-hamburgueria-lanches--dog-vila-endres/8432b620-27ea-48fb-bf3b-a0b76bbf3516","keeta":"","lat":-23.4833176,"lng":-46.5482269},{"nome":"São Bernardo","ifood":"https://www.ifood.com.br/delivery/sao-bernardo-do-campo-sp/just-burger-hamburgueria-lanches--dog-baeta-neves/aa6576e8-574e-42c5-8d38-0d7df31f3fcc","keeta":"","lat":-23.6857582,"lng":-46.5448592}]},{"nome":"Just Gourmet","tipo":"Comida brasileira","logo":"assets/img/marcas/just-gourmet.webp","unidades":[{"nome":"Zona Leste","ifood":"https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-penha/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb","keeta":"","lat":-23.5114779,"lng":-46.5052967},{"nome":"Pirituba","ifood":"https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-pirituba/9e482678-bad2-45ee-97ed-8d34a3e7e994","keeta":"","lat":-23.4940394,"lng":-46.7310058}]},{"nome":"Just Forneria","tipo":"Pizza","logo":"assets/img/marcas/just-forneria.webp","unidades":[{"nome":"Zona Leste","ifood":"https://www.ifood.com.br/delivery/sao-paulo-sp/aham-forneria-penha/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8","keeta":"","lat":-23.5114779,"lng":-46.5052967},{"nome":"Pirituba","ifood":"https://www.ifood.com.br/delivery/sao-paulo-sp/aham-forneria-pirituba/83d23068-46ec-45b2-b155-b03ec6e2954f","keeta":"","lat":-23.4940394,"lng":-46.7310058}]},{"nome":"Just Sushi","tipo":"Sushi","logo":"assets/img/marcas/just-sushi.webp","unidades":[{"nome":"Zona Leste","ifood":"https://www.ifood.com.br/delivery/sao-paulo-sp/aham-sushi-penha/fe4e06bd-2f30-410a-97ef-b21eba59f3e4","keeta":"","lat":-23.5114779,"lng":-46.5052967}]},{"nome":"Just Esfiha","tipo":"Esfiha","logo":"assets/img/marcas/just-esfiha.webp","unidades":[{"nome":"Zona Leste","ifood":"https://www.ifood.com.br/delivery/sao-paulo-sp/aham-esfiha-penha/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a","keeta":"","lat":-23.5114779,"lng":-46.5052967},{"nome":"Pirituba","ifood":"https://www.ifood.com.br/delivery/sao-paulo-sp/aham-esfiha-pirituba/b1331127-d9d1-4754-b23b-b2ff8737e770","keeta":"","lat":-23.4940394,"lng":-46.7310058}]}]};</script>
+<script src="../assets/links.js" defer></script>
+</body>
+</html>
