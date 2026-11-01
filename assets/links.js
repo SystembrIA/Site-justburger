@@ -7,7 +7,7 @@
   function km(a, b, c, d) { var r = Math.PI / 180, x = Math.sin((c - a) * r / 2), y = Math.sin((d - b) * r / 2); return 12742 * Math.asin(Math.sqrt(x * x + Math.cos(a * r) * Math.cos(c * r) * y * y)); }
   function pega(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
   function botoes(u) {
-    return (u.ifood ? '<a class="lk-plat lk-ifood" href="' + esc(u.ifood) + '" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-branco.svg" alt="iFood"></a>' : '') +
+    return (u.ifood ? '<a class="lk-plat lk-ifood" href="' + esc(u.ifood) + '" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood.svg" alt="iFood"></a>' : '') +
       (u.keeta ? '<a class="lk-plat lk-keeta" href="' + esc(u.keeta) + '" rel="noopener" aria-label="Pedir na Keeta"><span class="lk-keeta-marca">Keeta</span></a>'
         : '<span class="lk-plat lk-keeta lk-off" aria-label="Keeta em breve"><span class="lk-keeta-marca">Keeta</span><small>em breve</small></span>');
   }

@@ -1508,7 +1508,7 @@ for (const p of paginas) {
     ...culinarias.map((c) => ({ nome: c.nome, tipo: c.tipo, logo: logoMarca(c),
       unidades: (c.lojas || []).map((u) => { const b = lojaDaRegiao(u.regiao); return { nome: u.regiao, ifood: u.ifood || '', keeta: u.keeta || '', lat: b && b.geo && b.geo.lat, lng: b && b.geo && b.geo.lng }; }) })),
   ];
-  const botoesUnidade = (u) => `${u.ifood ? `<a class="lk-plat lk-ifood" href="${esc(u.ifood)}" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-branco.svg" alt="iFood"></a>` : ''}${u.keeta ? `<a class="lk-plat lk-keeta" href="${esc(u.keeta)}" rel="noopener" aria-label="Pedir na Keeta"><span class="lk-keeta-marca">Keeta</span></a>` : '<span class="lk-plat lk-keeta lk-off" aria-label="Keeta em breve"><span class="lk-keeta-marca">Keeta</span><small>em breve</small></span>'}`;
+  const botoesUnidade = (u) => `${u.ifood ? `<a class="lk-plat lk-ifood" href="${esc(u.ifood)}" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood.svg" alt="iFood"></a>` : ''}${u.keeta ? `<a class="lk-plat lk-keeta" href="${esc(u.keeta)}" rel="noopener" aria-label="Pedir na Keeta"><span class="lk-keeta-marca">Keeta</span></a>` : '<span class="lk-plat lk-keeta lk-off" aria-label="Keeta em breve"><span class="lk-keeta-marca">Keeta</span><small>em breve</small></span>'}`;
   const dadosLinks = { raio: geo ? geo.raioKm : 10, marcas };
   const htmlLinks = `<!doctype html>
 <html lang="pt-BR">
@@ -1540,7 +1540,7 @@ body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem
 .lk-cep { display: flex; gap: 8px; }
 .lk-cep input { flex: 1; min-width: 0; min-height: 50px; padding: 0 16px; border: 1px solid var(--linha); border-radius: 999px; background: var(--preto); color: var(--branco); font: inherit; font-size: 1.05rem; }
 .lk-cep button { min-height: 50px; padding: 0 20px; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
-.lk-dica { margin: 0 0 12px !important; }
+.lk-dica { margin: 0 0 12px !important; font-size: .86rem !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lk-msg { margin: 12px 0 0; color: var(--suave); font-size: .9rem; }
 .lk-marca { display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: center; padding: 14px 0; border-top: 1px solid var(--linha); }
 .lk-marca:first-child { border-top: 0; }
@@ -1549,11 +1549,12 @@ body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem
 .lk-marca small { display: block; color: var(--suave); font-size: .82rem; }
 .lk-plats { grid-column: 1 / -1; display: flex; gap: 8px; }
 .lk-plat { flex: 1; display: grid; place-items: center; min-height: 44px; border-radius: 999px; font-weight: 800; font-size: .85rem; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; }
-.lk-plat { min-height: 48px; }
-.lk-ifood { background: #ea1d2c; }
-.lk-ifood img { height: 22px; width: auto; display: block; }
-.lk-keeta { background: #ffd100; color: #111; }
-.lk-keeta-marca { font-size: 1.15rem; font-weight: 900; font-stretch: 100%; letter-spacing: -.01em; text-transform: none; }
+.lk-plats { gap: 10px; }
+.lk-plat { flex: 0 0 auto; min-height: 40px; min-width: 104px; padding: 0 18px; background: transparent; border: 1px solid var(--linha); }
+.lk-plat:hover { border-color: rgba(255,255,255,.35); }
+.lk-ifood img { height: 18px; width: auto; display: block; }
+.lk-keeta { color: #ffd100; }
+.lk-keeta-marca { font-size: 1rem; font-weight: 900; font-stretch: 100%; letter-spacing: -.01em; text-transform: none; }
 .lk-off { opacity: .45; display: flex; align-items: center; justify-content: center; gap: 6px; }
 .lk-off small { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
 details.lk-cul { border-top: 1px solid var(--linha); }
@@ -1565,6 +1566,17 @@ details.lk-cul summary::after { content: '+'; margin-left: auto; color: var(--la
 details.lk-cul[open] summary::after { content: '–'; }
 .lk-uni { padding: 0 0 12px; }
 .lk-uni p { margin: 8px 0 6px; font-size: .88rem; color: var(--suave); }
+.lk-todas { padding: 0; }
+.lk-todas > summary { position: relative; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 18px 44px; cursor: pointer; list-style: none; text-align: center; }
+.lk-todas > summary::-webkit-details-marker { display: none; }
+.lk-todas > summary::after { content: '+'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--laranja); font-size: 1.5rem; font-weight: 800; }
+.lk-todas[open] > summary::after { content: '–'; }
+.lk-logos { display: flex; }
+.lk-logos img { width: 44px; height: 44px; object-fit: contain; padding: 3px; border-radius: 50%; background: #000; border: 2px solid var(--carvao); margin-left: -8px; }
+.lk-logos img:first-child { margin-left: 0; }
+.lk-todas-texto { font-weight: 900; font-stretch: 80%; font-size: .95rem; letter-spacing: .03em; text-transform: uppercase; white-space: nowrap; }
+.lk-todas[open] > summary { border-bottom: 1px solid var(--linha); }
+.lk-todas details.lk-cul { padding: 0 18px; }
 .lk-rodape { margin-top: 26px; text-align: center; color: var(--suave); font-size: .8rem; }
 .lk-rodape a { color: var(--suave); }
 </style>
@@ -1579,17 +1591,17 @@ details.lk-cul[open] summary::after { content: '–'; }
 
   <section class="lk-caixa" id="pedido">
     <h2>Faça seu pedido</h2>
-    <p class="lk-msg lk-dica">Digite seu CEP e veja as lojas que entregam no seu endereço.</p>
+    <p class="lk-msg lk-dica">Veja qual loja está disponível em sua região.</p>
     <form class="lk-cep" id="lk-form"><input id="lk-cep" inputmode="numeric" autocomplete="postal-code" placeholder="Digite seu CEP" aria-label="CEP" maxlength="9"><button type="submit">Buscar</button></form>
     <div id="lk-res"></div>
   </section>
 
-  <section class="lk-caixa">
-    <h2>Ou escolha a culinária</h2>
+  <details class="lk-caixa lk-todas">
+    <summary><span class="lk-logos">${marcas.filter((m) => m.logo).map((m) => `<img src="../${m.logo}" alt="">`).join('')}</span><span class="lk-todas-texto">Escolha sua culinária</span></summary>
     ${marcas.map((m) => `<details class="lk-cul"><summary>${m.logo ? `<img src="../${m.logo}" alt="" loading="lazy">` : ''}<span><strong>${esc(m.nome)}</strong><small class="suave"> ${esc(m.tipo)}</small></span></summary>
       ${m.unidades.map((u) => `<div class="lk-uni"><p>${esc(u.nome)}</p><div class="lk-plats">${botoesUnidade(u)}</div></div>`).join('')}
     </details>`).join('\n    ')}
-  </section>
+  </details>
 
   <a class="lk-bt" href="../">Conheça nosso site</a>
   <a class="lk-bt" href="../cardapio/">Cardápio</a>
