@@ -49,6 +49,8 @@ function textoHorarioCurto(h) {
   const dias = nomes.length > 1 ? `${nomes.slice(0, -1).join(', ')} e ${nomes.at(-1)}` : nomes[0];
   return `${dias.charAt(0).toUpperCase()}${dias.slice(1)} · ${faixa}`;
 }
+// Horário completo de uma loja em uma linha ("Dom a qui · 11h às 23h; Sex e sáb · 11h à meia-noite").
+const horarioLoja = (l) => l.horarios.map(textoHorarioCurto).join('; ');
 function textoHorario(h) {
   const dias = h.dias.length === 7 ? 'Todos os dias' : h.dias.map((d) => DIAS[d]).join(', ');
   return h.fecha === '00:00' ? `${dias}, das ${h.abre} até meia-noite` : `${dias}, das ${h.abre} às ${h.fecha}`;
@@ -1208,8 +1210,8 @@ if (geo) {
     const trilha = [['Início', ''], ['Onde entregamos', 'entrega/'], [b.nome, caminho]];
     const casa = l.distritoOficial === b.nome; // distrito onde a própria loja fica
     const resumo = casa
-      ? `A ${l.nome} fica ${onde} (${regiao}): é aqui que está a loja${l.outrosNomes ? `, na ${l.bairro} (também chamada de ${juntar(l.outrosNomes)})` : ''}. O pedido é feito pelo iFood, a partir das 18h.`
-      : `A Just Burger entrega ${onde} (${regiao}) pela unidade ${l.nome}, a cerca de ${kmTxt(b.distanciaKm)} km. O pedido é feito pelo iFood, a partir das 18h.`;
+      ? `A ${l.nome} fica ${onde} (${regiao}): é aqui que está a loja${l.outrosNomes ? `, na ${l.bairro} (também chamada de ${juntar(l.outrosNomes)})` : ''}. O pedido é feito pelo iFood (${horarioLoja(l)}).`
+      : `A Just Burger entrega ${onde} (${regiao}) pela unidade ${l.nome}, a cerca de ${kmTxt(b.distanciaKm)} km. O pedido é feito pelo iFood (${horarioLoja(l)}).`;
     const borda = b.inteiroNoRaio ? '' : ` Parte ${esc(deOnde)} passa do raio: nas ruas mais afastadas, a entrega depende da área do iFood.`;
     const paragrafoDistancia = casa
       ? `A ${esc(l.nome)} fica ${esc(onde)}, então o bairro inteiro está perto da cozinha.`
@@ -1473,7 +1475,7 @@ const llms = `# ${site.nome}
 
 Fatos principais:
 ${site.avaliacoes && site.avaliacoes.notaInformada ? `- Nota ${nota1(site.avaliacoes.notaInformada)} no iFood nas quatro lojas.\n` : ''}${site.contador ? `- Mais de ${fmtInt(site.contador.basePedidos)} pedidos e ${fmtInt(site.contador.basePedidos * site.contador.lanchesPorPedido)} lanches vendidos desde a abertura (total ao vivo na home).\n` : ''}- Quatro unidades: ${juntar(lojas.map((l) => `${l.bairro} (${l.cidade}, ${l.regiao})`))}.
-- Horário: a partir das 18h (detalhes por unidade).
+- Horário de cada unidade: ${lojas.map((l) => `${l.nome}: ${horarioLoja(l)}`).join(' | ')}.
 - Pedido mínimo no iFood: R$ ${site.pedidoMinimo}.
 - Instagram: ${site.instagram}
 - Dados estruturados (unidades, cardápio, links de pedido): ${abs('dados.json')}
