@@ -1007,6 +1007,7 @@ paginas.push({
     ${migalhas(base, [['Início', ''], ['Cardápio', 'cardapio/']])}
     <h1>Cardápio Just Burger</h1>
     ${respostaRapida('Hambúrguer de 150 g no pão brioche com o Molho Just. Os mais vendidos são o Top Smash, o Just House e o Dolce Gabana.')}
+    <nav class="cardapio-marcas" aria-label="Cardápios do grupo"><a class="ativo" href="${base}cardapio/" aria-current="page"><img src="${base}assets/img/logo-320.webp" alt="" width="56" height="56"><span>Just Burger</span></a>${culinarias.map((c) => `<a href="${base}culinarias/${c.slug}/">${logoMarca(c) ? `<img src="${base}${logoMarca(c)}" alt="" width="56" height="56" loading="lazy">` : ''}<span>${esc(c.nome)}</span></a>`).join('')}</nav>
     <p class="aviso">Preços, promoções e disponibilidade do dia no iFood da sua unidade. A Just não faz trocas de itens.</p>
   </div>
 </section>
@@ -1722,8 +1723,8 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
     </details>`).join('\n    ')}
   </details>
 
-  <a class="lk-bt" href="../">Conheça nosso site</a>
   <a class="lk-bt" href="../cardapio/">Cardápio</a>
+  <a class="lk-bt" href="../">Conheça nosso site</a>
   ${site.trabalhe && site.trabalhe.publicada ? `<a class="lk-bt" href="../trabalhe-conosco/">Trabalhe conosco</a>` : ''}
   ${(site.instagrams || []).length ? `<details class="lk-insta"><summary class="lk-bt">${iconeInstagram} Nossos Instagrams</summary><div class="lk-insta-lista">${site.instagrams.map(([arroba, url, marca, tipo, logo]) => `<a href="${esc(url)}" rel="noopener">${logo ? `<img class="lk-insta-logo" src="../${esc(logo)}" alt="">` : ''}<span class="lk-insta-nome"><strong>${esc(marca)}</strong><small>${esc(tipo || arroba)}</small></span><span class="lk-insta-ig" aria-label="${esc(arroba)} no Instagram">${iconeInstagram}</span></a>`).join('')}</div></details>` : site.instagram ? `<a class="lk-bt" href="${esc(site.instagram)}" rel="noopener">Instagram</a>` : ''}
   ${linkWhats ? `<a class="lk-bt" href="${linkWhats}" rel="noopener">${iconeWhats} WhatsApp</a>` : ''}

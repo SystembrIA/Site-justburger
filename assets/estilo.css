@@ -595,3 +595,11 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 
 /* Rodapé: Nossas culinárias e Cardápio */
 .rodape-dupla { display: contents; } /* Maikon 01/11: um embaixo do outro, Nossas culinárias antes do Cardápio */
+
+/* Cardápio: ícones das culinárias do grupo logo depois do título (Maikon 01/11) */
+.cardapio-marcas { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; max-width: 460px; padding: 4px 0 14px; margin: 6px 0 4px; }
+.cardapio-marcas::-webkit-scrollbar { display: none; }
+.cardapio-marcas a { display: grid; justify-items: center; gap: 6px; min-width: 0; text-decoration: none; color: var(--suave); font-size: .66rem; font-weight: 700; text-align: center; line-height: 1.15; }
+.cardapio-marcas img { width: 100%; max-width: 58px; height: auto; aspect-ratio: 1; object-fit: contain; border-radius: 50%; background: #000; border: 2px solid var(--linha); padding: 3px; }
+.cardapio-marcas a.ativo { color: var(--branco); }
+.cardapio-marcas a.ativo img { border-color: var(--laranja); }
