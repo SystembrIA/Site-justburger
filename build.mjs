@@ -285,13 +285,13 @@ const schemaPerfil = (p) => ({
 function pagina({ caminho, titulo, descricao, corpo, schema = [], profundidade, base = profundidade === 0 ? './' : '../'.repeat(profundidade), markdown = true, noindex = false }) {
   const canonical = abs(caminho);
   const grafo = { '@context': 'https://schema.org', '@graph': [schemaOrganizacao(), ...schema] };
-  // Ordem dos menus (Maikon 01/11): Home, Nossa história, Cardápio, Unidades, Nossas culinárias, O que pedir,
+  // Ordem dos menus (Maikon 01/11): Home, Nossa história, Cardápio, Nossas culinárias, Unidades, O que pedir,
   // Nossa equipe, Na mídia, Trabalhe conosco (+ Onde entregamos no fim do menu do celular).
   const nav = [
     ['Nossa história', 'sobre/'],
     ['Cardápio', 'cardapio/'],
-    ['Unidades', 'unidades/'],
     ['Culinárias', 'culinarias/'],
+    ['Unidades', 'unidades/'],
     ['O que pedir', 'para-voce/'],
     ...(site.equipe && site.equipe.publicada ? [['Nossa equipe', 'equipe/']] : []),
     ['Na mídia', 'na-midia/'],
