@@ -290,6 +290,7 @@ function pagina({ caminho, titulo, descricao, corpo, schema = [], profundidade, 
     ['Na mídia', 'na-midia/'],
     ['Nossa história', 'sobre/'],
     ...(site.equipe && site.equipe.publicada ? [['Nossa equipe', 'equipe/']] : []),
+    ...(site.acoes && site.acoes.publicada ? [['Ações com parceiros', 'acoes/']] : []),
     ...(site.trabalhe && site.trabalhe.publicada ? [['Trabalhe conosco', 'trabalhe-conosco/']] : []),
     ['Culinárias', 'culinarias/'],
   ];
@@ -1335,6 +1336,38 @@ const VIDEOS_HISTORIA = [
   ['8RwsjN17w6I', 'Gigantes do Delivery: evento presencial com Maikon Rangel (Just Burger)'],
 ];
 const videosHistoria = () => VIDEOS_HISTORIA.map(([id, titulo]) => { const m = midia.find((x) => x.youtube === id); return m && { ...m, titulo }; }).filter(Boolean);
+
+// Ações com parceiros (Maikon 01/11): dados em site.acoes. publicada = menu e Google; previa = só pelo endereço.
+if (site.acoes && (site.acoes.publicada || site.acoes.previa)) {
+  const ac = site.acoes;
+  const linkAcao = (base, u) => (/^https?:/.test(u) ? u : base + u);
+  paginas.push({
+    caminho: 'acoes/',
+    profundidade: 1,
+    noindex: !ac.publicada,
+    titulo: `Ações com parceiros | ${site.nome}`,
+    descricao: `Ações da Just Burger com parceiros: ${ac.itens.map((i) => i.parceiro).join(', ')}. Campanhas, lançamentos e cases no delivery.`,
+    schema: [schemaBreadcrumb([['Início', ''], ['Ações com parceiros', 'acoes/']])],
+    corpo: (base) => `
+<section class="secao">
+  <div class="largura">
+    ${migalhas(base, [['Início', ''], ['Ações com parceiros', 'acoes/']])}
+    <h1>Ações com parceiros</h1>
+    <p class="lead">${esc(ac.chamada)}</p>
+    <div class="grade-acoes">${ac.itens.map((i) => `<article class="acao">
+      ${i.foto ? `<img src="${base}${i.foto}" alt="${esc(i.titulo)}" decoding="async">` : `<div class="acao-parceiro"><p>Just Burger <span>×</span> ${esc(i.parceiro)}</p></div>`}
+      <div class="acao-texto">
+        <p class="sobretitulo">${esc(i.parceiro)} · ${esc(i.quando)}</p>
+        <h2>${esc(i.titulo)}</h2>
+        <p>${esc(i.texto)}</p>
+        ${(i.links || []).length ? `<p class="acao-links">${i.links.map(([r, u]) => `<a class="link" href="${esc(linkAcao(base, u))}"${/^https?:/.test(u) ? ' rel="noopener"' : ''}>${esc(r)} →</a>`).join('')}</p>` : ''}
+      </div>
+    </article>`).join('')}</div>
+  </div>
+</section>`,
+    md: () => `# Ações com parceiros\n\n${ac.chamada}\n\n${ac.itens.map((i) => `## ${i.parceiro}: ${i.titulo}\n\n${i.quando}. ${i.texto}\n\n${(i.links || []).map(([r, u]) => `- ${r}: ${/^https?:/.test(u) ? u : abs(u)}`).join('\n')}`).join('\n\n')}\n`,
+  });
+}
 
 // Trabalhe conosco (Maikon 01/11): texto em dados.mjs (site.trabalhe), fotos em assets/img/trabalhe/*.webp e
 // formulário de currículo (envia para site.trabalhe.envio: função do banco). Só entra no site com publicada = true.

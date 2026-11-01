@@ -572,3 +572,16 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .form-curriculo .form-check input { width: 20px; min-height: 20px; margin-top: 3px; flex: none; }
 .form-curriculo .form-site { position: absolute; left: -9999px; }
 .form-status { margin: 0; color: var(--suave); }
+
+/* ---------- Ações com parceiros ---------- */
+.grade-acoes { display: grid; gap: 22px; margin-top: 26px; }
+.acao { display: grid; gap: 0; overflow: hidden; border: 1px solid var(--linha); border-radius: 22px; background: var(--carvao); }
+.acao img, .acao-parceiro { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.acao-parceiro { display: grid; place-items: center; background: linear-gradient(135deg, #1b1a18, #0a0a0a); font-weight: 900; font-stretch: 80%; font-size: clamp(1.6rem, 6vw, 2.4rem); text-transform: uppercase; letter-spacing: .02em; }
+.acao-parceiro p { margin: 0; text-align: center; }
+.acao-parceiro span { color: var(--laranja); margin: 0 .2em; }
+.acao-texto { padding: 20px 22px 24px; }
+.acao-texto h2 { margin: 6px 0 10px; font-size: 1.35rem; }
+.acao-texto p { margin: 0 0 10px; color: var(--suave); }
+.acao-links { display: flex; flex-wrap: wrap; gap: 14px; }
+@media (min-width: 900px) { .acao { grid-template-columns: 1fr 1fr; } .acao img, .acao-parceiro { height: 100%; aspect-ratio: auto; min-height: 300px; } }

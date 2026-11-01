@@ -14,6 +14,31 @@ export const site = {
   lema: 'Ore, espere, confie', // fixo no topo e no rodapé (Maikon 01/11)
   lemaNoTopo: 'logo', // 'menu' (ao lado do menu) ou 'logo' (ao lado do logo)
   // Página Nossa equipe (Maikon 01/11). Autorização LGPD de nome e imagem assinada pelos colaboradores.
+  // Ações com parceiros (Maikon 01/11): prévia fora do Google e do menu até a diretoria aprovar e mandar as fotos.
+  // Fotos próprias em assets/img/acoes/<foto>.webp. Sem foto, o cartão mostra o nome do parceiro.
+  acoes: {
+    publicada: false,
+    previa: true,
+    chamada: 'Grandes marcas confiam na Just. Juntos, a gente faz o delivery ir além do pedido.',
+    itens: [
+      {
+        parceiro: 'Coca-Cola', titulo: 'Not Just a Burger: o hambúrguer com QR code contra a fome', quando: 'Dia do Hambúrguer, 28 de maio de 2021',
+        texto: 'No Dia do Hambúrguer, a Just Burger e a Coca-Cola lançaram o combo "Not Just a Burger – Special Edition", com um QR code estampado no pão. O código levava à campanha "Por Todas as Mesas", em apoio ao Brasil Sem Fome, da Ação da Cidadania, e quem pedia o combo pelo iFood também podia doar direto para a campanha. A ação, criada pela Ogilvy Brasil, foi notícia no Meio & Mensagem e no Clube de Criação.',
+        links: [['Meio & Mensagem', 'https://www.meioemensagem.com.br/comunicacao/coca-cola-estampa-qr-code-em-hamburguer-em-acao-contra-fome'], ['Clube de Criação', 'https://clubedecriacao.com.br/ultimas/combate-a-fome-2/']],
+      },
+      {
+        parceiro: 'Seara', titulo: 'Just Chicken Supreme Seara', quando: 'No cardápio',
+        texto: 'Em parceria com a Seara, o Just Chicken Supreme traz 12 unidades de frango empanado com tempero especial, para comer com os molhos da casa. Um dos queridinhos do cardápio.',
+        foto: 'assets/img/proprias/just-chicken-supreme-seara.webp',
+        links: [['Ver no cardápio', 'cardapio/#just-chicken-supreme-seara']],
+      },
+      {
+        parceiro: 'iFood', titulo: 'Case do iFood: como a Just Burger escalou no delivery', quando: '2023 a 2025',
+        texto: 'A Just Burger virou exemplo para outros restaurantes no próprio iFood: o vídeo do canal iFood para Parceiros conta como a Just se diferenciou da concorrência e cresceu no delivery, e o blog de parceiros do iFood trouxe a experiência da Just para quem quer montar uma hamburgueria delivery. Hoje as quatro unidades têm nota 4,9 e selo de Super Restaurante.',
+        links: [['Vídeo do iFood para Parceiros', 'https://www.youtube.com/watch?v=3LWBLZ1NZ-8'], ['Blog de Parceiros do iFood', 'https://blog-parceiros.ifood.com.br/hamburgueria-delivery/']],
+      },
+    ],
+  },
   // Trabalhe conosco (aprovada pelo Maikon, 01/11): no site, no menu e na página de links.
   trabalhe: {
     publicada: true, // aprovada pelo Maikon em 01/11
