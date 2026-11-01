@@ -548,7 +548,7 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .marca-destaque h3 { font-size: 2.4rem; }
 
 /* ---------- Lema "Ore, espere, confie" (fixo no topo e no rodapé) ---------- */
-.lema { font-family: 'Dancing Script', cursive; font-weight: 700; color: #d9b45a; font-size: 1.35rem; line-height: 1; white-space: nowrap; }
+.lema { font-family: 'Dancing Script', cursive; font-weight: 700; color: #fff; font-size: 1.35rem; line-height: 1; white-space: nowrap; }
 .topo-linha > .lema:not(.lema-menu) { margin-left: -14px; }
 .lema-menu { margin-left: auto; }
 .lema-menu ~ .menu-celular { margin-left: 4px; }

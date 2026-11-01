@@ -12,7 +12,7 @@ export const site = {
   // quando todos os PREENCHER estiverem resolvidos e o domínio estiver no ar.
   publicado: true, // domínio www.justburger.com.br no ar desde 01/11/2026
   lema: 'Ore, espere, confie', // fixo no topo e no rodapé (Maikon 01/11)
-  lemaNoTopo: 'menu', // 'menu' (ao lado do menu) ou 'logo' (ao lado do logo)
+  lemaNoTopo: 'logo', // 'menu' (ao lado do menu) ou 'logo' (ao lado do logo)
   fundacao: '2018', // ano que aparece nos textos ("desde 2018")
   fundacaoData: '2018-10-04', // data de nascimento da Just Burger, informada pela diretoria (vai no schema)
   telefoneCentral: '(11) 2622-8800', // telefone e WhatsApp central (diretoria, 30/10/2026)
