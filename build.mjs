@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 // Gera o site estático a partir de dados.mjs. Uso: node build.mjs
 // Saída em ./publico (é essa pasta que vai para o servidor/domínio).
 // Além do HTML, cada página ganha uma versão em Markdown (index.md) e o site ganha
@@ -9,6 +10,7 @@ import { site, diferenciais, lojas, cardapio as cardapioDados, perfis, faq, midi
 import { receitaDe } from './proteina.mjs';
 
 const RAIZ = dirname(fileURLToPath(import.meta.url));
+const VERSAO_CSS = createHash('md5').update(readFileSync(new URL('./assets/estilo.css', import.meta.url))).digest('hex').slice(0, 8);
 const SAIDA = join(RAIZ, 'publico');
 const HOJE = new Date().toISOString().slice(0, 10);
 
@@ -327,7 +329,7 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Dancing+Script:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Dancing+Script:wght@700&display=swap"></noscript>
-<link rel="stylesheet" href="${base}assets/estilo.css">
+<link rel="stylesheet" href="${base}assets/estilo.css?v=${VERSAO_CSS}">
 <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; if (!location.hash) addEventListener('load', function () { scrollTo(0, 0); });</script>
 <script type="application/ld+json">${JSON.stringify(grafo)}</script>
 </head>
