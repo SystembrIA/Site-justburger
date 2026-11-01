@@ -29,6 +29,35 @@ def baixar(caminho):
         return r.read()
 
 
+# ---------- Tratamento das fotos (Burger e outras culinárias) ----------
+# Foto: a original do iFood em 1200x900 com sombra suave só nas bordas (Maikon 01/11: o prato inteiro
+# aparece; sem recorte, que cortava pratos de cor parecida com o fundo).
+from PIL import ImageDraw, ImageFilter
+VERSAO_FOTO = 'v4'  # v4: sombra fraca, só nos cantos (opção B aprovada pelo Maikon, 01/11)
+_MASCARA = None
+def foto_marca(raw):
+    global _MASCARA
+    im = Image.open(io.BytesIO(raw)).convert('RGB')
+    W, H = 1200, 900
+    r = max(W / im.width, H / im.height)
+    im = im.resize((round(im.width * r), round(im.height * r)), Image.LANCZOS)
+    x, y = (im.width - W) // 2, (im.height - H) // 2
+    im = im.crop((x, y, x + W, y + H))
+    if _MASCARA is None:
+        _MASCARA = Image.new('L', (W, H), 0)
+        ImageDraw.Draw(_MASCARA).ellipse((-W * 0.08, -H * 0.08, W * 1.08, H * 1.08), fill=255)
+        _MASCARA = _MASCARA.filter(ImageFilter.GaussianBlur(120))
+    # Foto de produto em fundo branco (lata, pote, garrafa): fica como está, sem sombra (a sombra fazia um oval branco).
+    borda = [im.getpixel((x, y)) for x in range(0, W, 40) for y in (2, H - 3)] + [im.getpixel((x, y)) for y in range(0, H, 40) for x in (2, W - 3)]
+    if sum(sum(p) / 3 for p in borda) / len(borda) > 200:
+        return im
+    return Image.composite(im, Image.new('RGB', (W, H)), _MASCARA)
+
+def baixar_url(url):
+    with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': 'JustBurgerSite/1.0'}), timeout=60) as r:
+        return r.read()
+
+
 dados = json.loads(baixar('cardapio-just-burger.json'))
 try:
     indice = json.loads(baixar('fotos/indice.json'))
@@ -41,49 +70,32 @@ for velho in FOTOS.glob('*.webp'):  # item que saiu do cardápio
     if velho.stem.removesuffix('-600').removesuffix('-recorte') not in ids:
         velho.unlink()
 
+burger_v = FOTOS / '.versao'
+if not burger_v.exists() or burger_v.read_text().strip() != VERSAO_FOTO:  # tratamento mudou: refaz as fotos (o recorte fica)
+    for velho in FOTOS.glob('*.webp'):
+        if not velho.stem.endswith('-recorte'):
+            velho.unlink()
+    burger_v.write_text(VERSAO_FOTO)
 com_foto = 0
 for cat in dados['categorias']:
     for item in cat['itens']:
-        info = indice.get(item['id'])
-        if not info:
-            continue
-        foto = Image.open(io.BytesIO(baixar(f"fotos/{item['id']}.webp")))
-        foto.save(FOTOS / f"{item['id']}.webp", 'WEBP', quality=86, method=6)
-        foto.resize((600, 450), Image.LANCZOS).save(FOTOS / f"{item['id']}-600.webp", 'WEBP', quality=84, method=6)
-        if info.get('modo') == 'recorte':
+        info = indice.get(item['id']) or {}
+        destino = FOTOS / f"{item['id']}.webp"
+        if not destino.exists():
+            try:
+                foto = foto_marca(baixar_url(item['foto'])) if item.get('foto') else Image.open(io.BytesIO(baixar(f"fotos/{item['id']}.webp")))
+            except Exception:  # noqa: BLE001 — sem foto, o site mostra o nome
+                foto = None
+            if foto is not None:
+                foto.save(destino, 'WEBP', quality=84, method=6)
+                foto.resize((600, 450), Image.LANCZOS).save(FOTOS / f"{item['id']}-600.webp", 'WEBP', quality=82, method=6)
+        if info.get('modo') == 'recorte' and not (FOTOS / f"{item['id']}-recorte.webp").exists():
             (FOTOS / f"{item['id']}-recorte.webp").write_bytes(baixar(f"fotos/{item['id']}-recorte.webp"))
-        com_foto += 1
+        if destino.exists():
+            com_foto += 1
 
 (PASTA / 'cardapio-ifood.json').write_text(json.dumps(dados, ensure_ascii=False, indent=2) + '\n')
 print(f'{len(ids)} itens importados ({com_foto} com foto). Rode: node build.mjs')
-
-# ---------- Outras culinárias (JARVIS, 01/11): cardápio do iFood da Penha ----------
-# Foto: a original do iFood em 1200x900 com sombra suave só nas bordas (Maikon 01/11: o prato inteiro
-# aparece; sem recorte, que cortava pratos de cor parecida com o fundo).
-from PIL import ImageDraw, ImageFilter
-VERSAO_FOTO = 'v3'
-_MASCARA = None
-def foto_marca(raw):
-    global _MASCARA
-    im = Image.open(io.BytesIO(raw)).convert('RGB')
-    W, H = 1200, 900
-    r = max(W / im.width, H / im.height)
-    im = im.resize((round(im.width * r), round(im.height * r)), Image.LANCZOS)
-    x, y = (im.width - W) // 2, (im.height - H) // 2
-    im = im.crop((x, y, x + W, y + H))
-    if _MASCARA is None:
-        _MASCARA = Image.new('L', (W, H), 0)
-        ImageDraw.Draw(_MASCARA).ellipse((W * 0.05, H * 0.03, W * 0.95, H * 0.97), fill=255)
-        _MASCARA = _MASCARA.filter(ImageFilter.GaussianBlur(100))
-    # Foto de produto em fundo branco (lata, pote, garrafa): fica como está, sem sombra (a sombra fazia um oval branco).
-    borda = [im.getpixel((x, y)) for x in range(0, W, 40) for y in (2, H - 3)] + [im.getpixel((x, y)) for y in range(0, H, 40) for x in (2, W - 3)]
-    if sum(sum(p) / 3 for p in borda) / len(borda) > 200:
-        return im
-    return Image.composite(im, Image.new('RGB', (W, H)), _MASCARA)
-
-def baixar_url(url):
-    with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': 'JustBurgerSite/1.0'}), timeout=60) as r:
-        return r.read()
 
 for marca in ['just-gourmet', 'just-forneria', 'just-esfiha', 'just-sushi']:
     try:
