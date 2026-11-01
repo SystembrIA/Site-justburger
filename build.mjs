@@ -289,6 +289,7 @@ function pagina({ caminho, titulo, descricao, corpo, schema = [], profundidade, 
     ['Unidades', 'unidades/'],
     ['Na mídia', 'na-midia/'],
     ['Nossa história', 'sobre/'],
+    ...(site.equipe && site.equipe.publicada ? [['Nossa equipe', 'equipe/']] : []),
     ['Culinárias', 'culinarias/'],
   ];
   return `<!doctype html>
@@ -1333,6 +1334,34 @@ const VIDEOS_HISTORIA = [
   ['8RwsjN17w6I', 'Gigantes do Delivery: evento presencial com Maikon Rangel (Just Burger)'],
 ];
 const videosHistoria = () => VIDEOS_HISTORIA.map(([id, titulo]) => { const m = midia.find((x) => x.youtube === id); return m && { ...m, titulo }; }).filter(Boolean);
+
+// Nossa equipe (Maikon 01/11): texto em dados.mjs (site.equipe) e fotos em assets/img/equipe/*.webp.
+// Só entra no site e no menu quando site.equipe.publicada = true (texto aprovado pela diretoria).
+const PASTA_EQUIPE = join(RAIZ, 'assets/img/equipe');
+const fotosEquipe = existsSync(PASTA_EQUIPE) ? readdirSync(PASTA_EQUIPE).filter((f) => f.endsWith('.webp')).sort() : [];
+if (site.equipe && site.equipe.publicada) paginas.push({
+  caminho: 'equipe/',
+  profundidade: 1,
+  titulo: `Nossa equipe | ${site.nome}`,
+  descricao: 'Sem eles, nada disso seria possível: conheça a equipe da Just Burger e do grupo, com gente que está com a gente há mais de 20 anos.',
+  schema: [schemaBreadcrumb([['Início', ''], ['Nossa equipe', 'equipe/']])],
+  corpo: (base) => `
+<section class="secao">
+  <div class="largura estreita">
+    ${migalhas(base, [['Início', ''], ['Nossa equipe', 'equipe/']])}
+    <h1>Nossa equipe</h1>
+    <p class="lead">${esc(site.equipe.chamada)}</p>
+    ${site.equipe.texto.map((t) => `<p>${esc(t)}</p>`).join('')}
+  </div>
+</section>
+${fotosEquipe.length ? `<section class="secao">
+  <div class="largura">
+    <h2 class="so-leitor">Fotos da equipe</h2>
+    <div class="grade-equipe">${fotosEquipe.map((f) => `<img src="${base}assets/img/equipe/${f}" alt="Equipe do grupo Just Burger" loading="lazy" decoding="async">`).join('')}</div>
+  </div>
+</section>` : ''}`,
+  md: () => `# Nossa equipe\n\n${site.equipe.chamada}\n\n${site.equipe.texto.join('\n\n')}\n`,
+});
 
 paginas.push({
   caminho: 'sobre/',
