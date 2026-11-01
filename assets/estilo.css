@@ -609,3 +609,9 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .pedir-flutuante:hover { background: var(--laranja-escuro); }
 @keyframes pedir-pulsa { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
 @media (prefers-reduced-motion: reduce) { .pedir-flutuante { animation: none; } }
+
+/* Rodapé: bolinha verde do WhatsApp ao lado do telefone (Maikon 01/11) */
+.rodape-whats-bola { display: inline-flex !important; align-items: center; gap: 12px; }
+.rodape-whats-bola b { font-weight: inherit; }
+.bola-whats { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: #25d366; color: #fff; font-style: normal; }
+.bola-whats svg { width: 26px; height: 26px; }

@@ -363,7 +363,7 @@ ${corpo(base)}
     <div class="rodape-marca">
       <p class="rodape-logo-lema"><img src="${base}assets/img/logo-320.webp" width="140" height="117" alt="Just Burger Hamburgueria" loading="lazy">${site.lema ? `<span class="lema">${esc(site.lema)}</span>` : ''}</p>
       <p>Desde ${esc(site.fundacao)} fazendo o seu burger, o melhor burger de São Paulo.</p>
-      ${site.telefoneCentral ? `<p><a class="rodape-social rodape-whats" href="${linkWhats}" rel="noopener">WhatsApp e telefone<br><strong>${esc(site.telefoneCentral)}</strong></a></p>` : ''}
+      ${site.telefoneCentral ? `<p><a class="rodape-social rodape-whats rodape-whats-bola" href="${linkWhats}" rel="noopener"><i class="bola-whats" aria-hidden="true">${iconeWhats}</i><b>WhatsApp e telefone<br><strong>${esc(site.telefoneCentral)}</strong></b></a></p>` : ''}
       ${redes().length ? `<p class="rodape-siga">Siga a gente</p><p class="rodape-redes">${redes().map(([n, u, i]) => `<a href="${esc(u)}" rel="noopener" aria-label="${n}">${i}</a>`).join('')}</p>` : ''}
     </div>
     <div class="rodape-dupla"> <!-- Nossas culinárias à esquerda e Cardápio à direita, lado a lado (Maikon 01/11) -->
