@@ -891,10 +891,10 @@ paginas.push({
     <div class="heroi-texto">
       <p class="sobretitulo">Desde ${esc(site.fundacao)} fazendo sucesso</p>
       ${site.destaque ? `<h1><a class="heroi-nome" href="${base}cardapio/${itemHeroi ? `#${itemHeroi.id}` : ''}"><span class="so-leitor">Just Burger, hamburgueria em São Paulo: </span>${esc(site.destaque.produto)}</a></h1>
-      <p class="heroi-ingredientes">${site.destaque.ingredientes.map((t, k, a) => k === a.length - 1 ? `<span>${esc(t)}.</span>` : `${esc(t)}.`).join('<br>')}</p>
+      <p class="heroi-ingredientes">${site.destaque.ingredientes.map((t, k, a) => k === a.length - 1 ? `<span>${esc(t)}${a.length > 1 ? '.' : ''}</span>` : `${esc(t)}.`).join('<br>')}</p>
       <h2 class="heroi-sub">${esc(site.destaque.titulo)}</h2>
       <p class="lead">${esc(site.destaque.texto)}</p>
-      <p class="destaque-frase">${esc(site.destaque.frase)}</p>` : `<h1>150 g de carne.<br>Pão brioche.<br><span>Molho Just.</span></h1>`}
+      ${site.destaque.frase ? `<p class="destaque-frase">${esc(site.destaque.frase)}</p>` : ''}` : `<h1>150 g de carne.<br>Pão brioche.<br><span>Molho Just.</span></h1>`}
     </div>
     ${temHeroi
       ? `<a class="heroi-burger-caixa" href="${base}cardapio/${itemHeroi ? `#${itemHeroi.id}` : ''}" aria-label="Ver ${esc(itemHeroi ? itemHeroi.nome : 'o destaque')} no cardápio"><img class="heroi-burger" src="${base}${imagemHeroi}"${srcsetHeroi.length > 1 ? ` srcset="${srcsetHeroi.map(([a, w]) => `${base}${a} ${w}w`).join(', ')}" sizes="(min-width: 718px) 560px, 78vw"` : ''} width="1200" height="1101" alt="${esc(itemHeroi ? `${itemHeroi.nome}, burger da Just Burger` : site.heroi.alt)}" fetchpriority="high"></a>`

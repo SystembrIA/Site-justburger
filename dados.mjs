@@ -129,10 +129,10 @@ export const site = {
   // Nome sempre como no iFood ("Dolce Gabana"), sem a grafia da marca de moda.
   destaque: {
     produto: 'Dolce Gabana',
-    ingredientes: ['150 g de carne', 'Pão brioche', 'Gorgonzola', 'Geleia de damasco'],
+    ingredientes: ['Gorgonzola & geleia de damasco'], // Maikon 01/11: só isso, em laranja
     titulo: 'Uma explosão de sabores',
-    texto: 'O gorgonzola cremoso derrete sobre o hambúrguer de 150 g e encontra a geleia de damasco: o doce que equilibra o salgado. Por cima, bacon fatiado e farofa de bacon crocante, tudo no pão brioche com mayo e Molho Just.',
-    frase: 'Gorgonzola e geleia de damasco: a combinação perfeita.',
+    texto: 'O gorgonzola cremoso derrete sobre o hambúrguer de 150 g e encontra a geleia de damasco: o doce que equilibra o salgado. Por cima, bacon fatiado e farofa de bacon crocante, tudo no pão brioche com mayo e Molho Just. Um dos clássicos da Just Burger: um lanche com a cara da Just.',
+    frase: '', // Maikon 01/11: sem frase extra
   },
 };
 
