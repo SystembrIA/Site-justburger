@@ -48,7 +48,7 @@ export const site = {
     basePedidos: 3100000, // informado pela diretoria em 30/10/2026
     lanchesPorPedido: 2.5, // média informada pela diretoria
     rotuloPedidos: 'pedidos feitos',
-    rotuloLanches: 'lanches vendidos',
+    rotuloLanches: 'itens vendidos', // Maikon 01/11: itens (todas as marcas), não só lanches
   },
   // Painel de avaliações: nota e quantidade de cada loja no iFood (robô diário do just-burger-producao).
   // notaInformada: aparece já no HTML (todas as lojas) até o robô trazer a nota e a quantidade do iFood.

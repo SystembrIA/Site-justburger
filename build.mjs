@@ -968,7 +968,7 @@ ${site.avaliacoes ? blocoAvaliacoes() : ''}`,
   md: () => `# ${site.nome}
 
 > ${site.descricaoCurta}. Pedidos pelo iFood (${site.nomeIfood}).
-${site.contador ? `\nMais de ${fmtInt(site.contador.basePedidos)} pedidos e ${fmtInt(site.contador.basePedidos * site.contador.lanchesPorPedido)} lanches vendidos desde a abertura.\n` : ''}
+${site.contador ? `\nMais de ${fmtInt(site.contador.basePedidos)} pedidos e ${fmtInt(site.contador.basePedidos * site.contador.lanchesPorPedido)} itens vendidos desde a abertura.\n` : ''}
 ${diferenciais.map((d) => `- **${d.titulo}:** ${d.texto}`).join('\n')}
 ${itemDestaque() ? `\n## Destaque: ${itemDestaque().nome}\n\n${site.destaque.texto} ${site.destaque.frase}\n` : ''}
 ## Qual é o seu pedido?
@@ -1496,7 +1496,7 @@ const llms = `# ${site.nome}
 > ${site.descricaoCurta}. Especialidade: hambúrguer de 150 g no pão brioche com Molho Just; mais vendidos Top Smash, Just House e Dolce Gabana. Pedidos somente pelo iFood, na loja "${site.nomeIfood}" da unidade mais próxima.
 
 Fatos principais:
-${site.avaliacoes && site.avaliacoes.notaInformada ? `- Nota ${nota1(site.avaliacoes.notaInformada)} no iFood nas quatro lojas.\n` : ''}${site.contador ? `- Mais de ${fmtInt(site.contador.basePedidos)} pedidos e ${fmtInt(site.contador.basePedidos * site.contador.lanchesPorPedido)} lanches vendidos desde a abertura (total ao vivo na home).\n` : ''}- Quatro unidades: ${juntar(lojas.map((l) => `${l.bairro} (${l.cidade}, ${l.regiao})`))}.
+${site.avaliacoes && site.avaliacoes.notaInformada ? `- Nota ${nota1(site.avaliacoes.notaInformada)} no iFood nas quatro lojas.\n` : ''}${site.contador ? `- Mais de ${fmtInt(site.contador.basePedidos)} pedidos e ${fmtInt(site.contador.basePedidos * site.contador.lanchesPorPedido)} itens vendidos desde a abertura (total ao vivo na home).\n` : ''}- Quatro unidades: ${juntar(lojas.map((l) => `${l.bairro} (${l.cidade}, ${l.regiao})`))}.
 - Horário de cada unidade: ${lojas.map((l) => `${l.nome}: ${horarioLoja(l)}`).join(' | ')}.
 - Pedido mínimo no iFood: R$ ${site.pedidoMinimo}.
 - Instagram: ${site.instagram}
