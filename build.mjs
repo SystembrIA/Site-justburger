@@ -389,7 +389,7 @@ ${corpo(base)}
         <li><a href="${base}sobre/">Nossa história</a></li>
         <li><a href="${base}na-midia/">Na mídia</a></li>
         ${geo ? `<li><a href="${base}entrega/">Onde entregamos</a></li>` : ''}
-        <li><a href="${base}pedir/">Faça seu pedido</a></li>
+        <li><a href="${base}links/">Faça seu pedido</a></li>
         <li><a href="${base}culinarias/">Nossas culinárias</a></li>
       </ul>
     </div>
@@ -437,7 +437,8 @@ ${site.instagramPosts ? `<script>
 </script>` : ''}`;
 const iconeWhats = '<svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5v-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8 0 1.6 1.2 3.2 1.4 3.4.2.2 2.3 3.6 5.7 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.6-.4z"/></svg>';
 const linkWhats = site.whatsapp ? `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Olá! Vim pelo site da Just Burger.')}` : '';
-const botaoPedido = (base, classe = 'botao') => `<a class="${classe}" href="${base}pedir/" data-pedido>Faça seu pedido</a>`;
+// Maikon 01/11: todo "Faça seu pedido" do site leva à página de links (CEP + iFood/Keeta de cada marca).
+const botaoPedido = (base, classe = 'botao') => `<a class="${classe}" href="${base}links/">Faça seu pedido</a>`;
 const buscaCep = (id) => `
 <form class="busca-cep" data-busca-cep novalidate>
   <label for="${id}">Digite seu CEP para ver a loja que atende você</label>
@@ -686,7 +687,7 @@ const blocoCulinarias = (base) => (culinarias.length ? `
 // Selo Super Restaurante iFood (só nas lojas com superIfood: nível 5 de 5 no painel do iFood).
 const seloSuper = `<div class="selo-super" role="img" aria-label="Super Restaurante no iFood"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#ea1d2c"/><path d="M50.0,24.0 L56.8,42.7 L76.6,43.3 L60.9,55.6 L66.5,74.7 L50.0,63.5 L33.5,74.7 L39.1,55.6 L23.4,43.3 L43.2,42.7Z" fill="#fff"/></svg><p><em>super</em> <span>restaurante</span></p></div>`;
 // Botões de cada loja: pedido no iFood da loja, WhatsApp e Google Maps.
-const acoesLoja = (l) => `<a class="botao" href="${esc(l.ifood)}" rel="noopener">Faça seu pedido</a>${linkWhats ? `<a class="botao botao-whats" href="${linkWhats}" rel="noopener">${iconeWhats}WhatsApp</a>` : ''}${l.googleMaps ? `<a class="botao botao-contorno botao-mapa" href="${esc(l.googleMaps)}" rel="noopener" aria-label="Abrir ${esc(l.nome)} no Google Maps" title="Abrir no Google Maps">${iconePin}</a>` : ''}`;
+const acoesLoja = (l) => `<a class="botao" href="/links/">Faça seu pedido</a>${linkWhats ? `<a class="botao botao-whats" href="${linkWhats}" rel="noopener">${iconeWhats}WhatsApp</a>` : ''}${l.googleMaps ? `<a class="botao botao-contorno botao-mapa" href="${esc(l.googleMaps)}" rel="noopener" aria-label="Abrir ${esc(l.nome)} no Google Maps" title="Abrir no Google Maps">${iconePin}</a>` : ''}`;
 // Endereço numa linha só: com o bairro quando cabe; senão, só rua e número (a cidade já está no nome da loja).
 const enderecoCurto = (l) => (pendente(l.endereco) ? l.bairro : `${l.endereco} · ${l.bairro}`.length <= 38 ? `${l.endereco} · ${l.bairro}` : l.endereco);
 const cartaoLoja = (l, base) => `
@@ -1275,7 +1276,7 @@ if (geo) {
     <h1>Hamburgueria ${esc(onde)}</h1>
     ${respostaRapida(resumo)}
     <div class="acoes">
-      <a class="botao" href="${esc(l.ifood)}" rel="noopener">Fazer pedido</a>
+      <a class="botao" href="/links/">Fazer pedido</a>
       <a class="botao botao-contorno" href="${base}unidades/${l.slug}/">Ver a unidade ${esc(l.bairro)}</a>
     </div>
   </div>
