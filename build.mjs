@@ -51,6 +51,8 @@ function textoHorarioCurto(h) {
 }
 // Horário completo de uma loja em uma linha ("Dom a qui · 11h às 23h; Sex e sáb · 11h à meia-noite").
 const horarioLoja = (l) => l.horarios.map(textoHorarioCurto).join('; ');
+// Primeira opção que cabe no limite do Google (título ~60, descrição ~160 caracteres); senão, a mais curta.
+const cabe = (max, ...opcoes) => opcoes.find((o) => o.length <= max) || opcoes.reduce((a, b) => (b.length < a.length ? b : a));
 function textoHorario(h) {
   const dias = h.dias.length === 7 ? 'Todos os dias' : h.dias.map((d) => DIAS[d]).join(', ');
   return h.fecha === '00:00' ? `${dias}, das ${h.abre} até meia-noite` : `${dias}, das ${h.abre} às ${h.fecha}`;
@@ -865,7 +867,7 @@ paginas.push({
   caminho: '',
   profundidade: 0,
   titulo: `${site.nome} | Hamburgueria em São Paulo, Guarulhos e ABC`,
-  descricao: `Just Burger: hamburgueria com hambúrguer de 150 g no pão brioche e entrega pelo iFood na Zona Leste, Pirituba, Guarulhos e São Bernardo do Campo. Veja o cardápio, o pedido ideal para o seu perfil e a unidade mais perto.`,
+  descricao: `Hamburgueria Just Burger: hambúrguer de 150 g no pão brioche, nota 4,9 no iFood. Delivery na Zona Leste, Pirituba, Guarulhos e São Bernardo do Campo.`,
   schema: [
     { '@type': 'WebSite', '@id': abs('#site'), name: site.nome, url: abs(''), inLanguage: 'pt-BR', publisher: { '@id': orgId } },
     ...lojas.map(schemaLoja),
@@ -979,8 +981,8 @@ ${mdFaq(faq)}
 paginas.push({
   caminho: 'cardapio/',
   profundidade: 1,
-  titulo: `Cardápio ${site.nome} | Hambúrgueres, combos, saladas e shakes`,
-  descricao: `Cardápio da hamburgueria Just Burger: hambúrgueres de 150 g no pão brioche, combos com batata e refrigerante, frango, saladas, milk-shakes e sobremesas. Peça pelo iFood na unidade mais perto.`,
+  titulo: `Cardápio ${site.nome} | Hambúrgueres, combos e shakes`,
+  descricao: `Cardápio da Just Burger: hambúrgueres de 150 g no pão brioche, combos, frango, milk-shakes e sobremesas. Peça pelo iFood na unidade mais perto.`,
   schema: [schemaCardapio(), schemaBreadcrumb([['Início', ''], ['Cardápio', 'cardapio/']])],
   corpo: (base) => `
 <section class="secao">
@@ -1120,7 +1122,7 @@ for (const l of lojas) {
   paginas.push({
     caminho,
     profundidade: 2,
-    titulo: `Hamburgueria ${termo} | ${site.nome} ${l.bairro}`,
+    titulo: cabe(60, `Hamburgueria ${termo} | ${site.nome} ${l.bairro}`, `Hamburgueria ${termo} | ${site.nome}`),
     descricao: `${l.nome}: hamburgueria ${termo}${termo.includes(l.bairro) ? '' : ` (${l.bairro})`}. Endereço, horário, bairros de entrega e link direto para pedir no iFood.`,
     schema: [schemaLoja(l), schemaFaq(faqLoja), schemaBreadcrumb(trilha)],
     corpo: (base) => `
@@ -1229,8 +1231,8 @@ if (geo) {
       profundidade: 2,
       // Bairro pequeno sem sub-bairros (1 ponto da varredura): fica fora do Google para não parecer página-isca.
       noindex: !site.indexarBairrosPequenos && b.pontos === 1 && !b.variacoes.length,
-      titulo: `Hamburgueria ${onde}${b.tipo === 'bairro' ? `, ${b.cidade.replace(' do Campo', '')}` : ''} | ${site.nome}`,
-      descricao: `Delivery de hambúrguer ${onde} (${regiao}): hambúrguer de 150 g da Just Burger, unidade ${l.bairro} a ${kmTxt(b.distanciaKm)} km. Bairros atendidos e como pedir pelo iFood.`,
+      titulo: cabe(60, `Hamburgueria ${onde}${b.tipo === 'bairro' ? `, ${b.cidade.replace(' do Campo', '')}` : ''} | ${site.nome}`, `Hamburgueria ${onde} | ${site.nome}`, `${b.nome}: hamburgueria | ${site.nome}`, `${b.nome} | ${site.nome}`),
+      descricao: cabe(160, `Delivery de hambúrguer ${onde} (${regiao}): Just Burger ${l.bairro}, a ${kmTxt(b.distanciaKm)} km. Hambúrguer de 150 g no brioche, pedido pelo iFood.`, `Delivery de hambúrguer ${onde}: Just Burger ${l.bairro}, a ${kmTxt(b.distanciaKm)} km. Hambúrguer de 150 g, pedido pelo iFood.`, `Delivery de hambúrguer ${onde}: Just Burger ${l.bairro}, a ${kmTxt(b.distanciaKm)} km, pelo iFood.`),
       schema: [
         {
           '@type': 'WebPage',
