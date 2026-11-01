@@ -1325,17 +1325,14 @@ const historia = [
   'Em 2026, as lojas do grupo chegaram também à Keeta, plataforma da Meituan, líder do delivery na China e a maior plataforma de delivery do mundo. É uma nova fase, com novos desafios e espaço para crescer no mercado brasileiro nos próximos anos.',
   'Seguimos com a mesma ideia do primeiro dia: comida boa de verdade, na casa de cada cliente.',
 ];
-// Ordem e títulos dos vídeos da página (Maikon 01/11): casados e sócios, Kitchen Central, Gigantes do Delivery.
-const ORDEM_VIDEOS_HISTORIA = [
-  [/casal ou fam/i, 'Casados e sócios: como empreender em casal (Juliana e Maikon, Just Burger)'],
-  [/kitchen central/i, null],
-  [/gigantes do delivery/i, 'Gigantes do Delivery: evento presencial com Maikon Rangel (Just Burger)'],
+// Vídeos da página, nesta ordem e com estes títulos (Maikon 01/11).
+const VIDEOS_HISTORIA = [
+  ['9rHGvTRfxHs', 'Casados e sócios: como empreender em casal (Juliana e Maikon, Just Burger)'],
+  ['W-RG0fWdwG4', 'Por dentro de uma das maiores operações do Brasil (Rafa Silva)'],
+  ['xjfp81p9lsE', 'Just Burger e Kitchen Central: como bombar de vender no delivery da forma certa'],
+  ['8RwsjN17w6I', 'Gigantes do Delivery: evento presencial com Maikon Rangel (Just Burger)'],
 ];
-const videosHistoria = () => {
-  const lista = midia.filter((m) => m.youtube && /falando de delivery/i.test(m.veiculo));
-  const pos = (m) => { const i = ORDEM_VIDEOS_HISTORIA.findIndex(([r]) => r.test(m.titulo)); return i < 0 ? 99 : i; };
-  return lista.sort((a, b) => pos(a) - pos(b)).map((m) => { const t = (ORDEM_VIDEOS_HISTORIA[pos(m)] || [])[1]; return t ? { ...m, titulo: t } : m; });
-};
+const videosHistoria = () => VIDEOS_HISTORIA.map(([id, titulo]) => { const m = midia.find((x) => x.youtube === id); return m && { ...m, titulo }; }).filter(Boolean);
 
 paginas.push({
   caminho: 'sobre/',
