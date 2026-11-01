@@ -1527,20 +1527,21 @@ for (const p of paginas) {
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem/1.5 Archivo, system-ui, sans-serif; }
 .lk { max-width: 480px; margin: 0 auto; padding: 36px 16px 48px; }
-.lk-topo { text-align: center; margin-bottom: 26px; }
+.lk-topo { text-align: center; margin-bottom: 20px; }
 .lk-topo img { width: 112px; height: auto; }
 .lk-lema { margin: 10px 0 2px; font-family: 'Dancing Script', cursive; font-size: 1.5rem; }
 .lk-sub { margin: 0; color: var(--suave); font-size: .92rem; }
-.lk-bt { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 56px; margin: 0 0 12px; padding: 0 18px; border: 1px solid var(--linha); border-radius: 999px; background: var(--carvao); color: var(--branco); font-weight: 800; font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; cursor: pointer; }
+.lk-bt { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 48px; margin: 0 0 10px; padding: 0 18px; border: 1px solid var(--linha); border-radius: 999px; background: var(--carvao); color: var(--branco); font-weight: 800; font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; cursor: pointer; }
 .lk-bt:hover { border-color: var(--laranja); }
 .lk-bt.lk-principal { background: var(--laranja); border-color: var(--laranja); color: #0b0b0b; }
 .lk-bt svg { width: 20px; height: 20px; }
-.lk-caixa { margin: 6px 0 22px; padding: 18px; border: 1px solid var(--linha); border-radius: 22px; background: var(--carvao); }
+.so-leitor { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.lk-caixa { margin: 6px 0 16px; padding: 14px; border: 1px solid var(--linha); border-radius: 22px; background: var(--carvao); }
 .lk-caixa h2, .lk-titulo { margin: 0 0 10px; font-size: 1.05rem; font-weight: 900; font-stretch: 80%; letter-spacing: .04em; text-transform: uppercase; }
 .lk-cep { display: flex; gap: 8px; }
-.lk-cep input { flex: 1; min-width: 0; min-height: 50px; padding: 0 16px; border: 1px solid var(--linha); border-radius: 999px; background: var(--preto); color: var(--branco); font: inherit; font-size: 1.05rem; }
-.lk-cep button { min-height: 50px; padding: 0 20px; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
-.lk-dica { margin: 0 0 12px !important; font-size: .86rem !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lk-cep input { flex: 1; min-width: 0; min-height: 46px; padding: 0 16px; border: 1px solid var(--linha); border-radius: 999px; background: var(--preto); color: var(--branco); font: inherit; font-size: 1.05rem; }
+.lk-cep button { min-height: 46px; padding: 0 16px; font-size: .85rem; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
+.lk-dica { margin: 10px 4px 0 !important; font-size: .86rem !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lk-msg { margin: 12px 0 0; color: var(--suave); font-size: .9rem; }
 .lk-marca { display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: center; padding: 14px 0; border-top: 1px solid var(--linha); }
 .lk-marca:first-child { border-top: 0; }
@@ -1567,14 +1568,15 @@ details.lk-cul[open] summary::after { content: '–'; }
 .lk-uni { padding: 0 0 12px; }
 .lk-uni p { margin: 8px 0 6px; font-size: .88rem; color: var(--suave); }
 .lk-todas { padding: 0; }
-.lk-todas > summary { position: relative; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 18px 44px; cursor: pointer; list-style: none; text-align: center; }
+.lk-todas > summary { position: relative; display: flex; align-items: center; gap: 12px; padding: 12px 42px 12px 14px; cursor: pointer; list-style: none; }
 .lk-todas > summary::-webkit-details-marker { display: none; }
-.lk-todas > summary::after { content: '+'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--laranja); font-size: 1.5rem; font-weight: 800; }
+.lk-todas > summary::after { content: '+'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--laranja); font-size: 1.5rem; font-weight: 800; }
 .lk-todas[open] > summary::after { content: '–'; }
 .lk-logos { display: flex; }
-.lk-logos img { width: 44px; height: 44px; object-fit: contain; padding: 3px; border-radius: 50%; background: #000; border: 2px solid var(--carvao); margin-left: -8px; }
+.lk-logos { flex: none; }
+.lk-logos img { width: 30px; height: 30px; object-fit: contain; padding: 2px; border-radius: 50%; background: #000; border: 2px solid var(--carvao); margin-left: -9px; }
 .lk-logos img:first-child { margin-left: 0; }
-.lk-todas-texto { font-weight: 900; font-stretch: 80%; font-size: .95rem; letter-spacing: .03em; text-transform: uppercase; white-space: nowrap; }
+.lk-todas-texto { font-weight: 900; font-stretch: 80%; font-size: .8rem; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; }
 .lk-todas[open] > summary { border-bottom: 1px solid var(--linha); }
 .lk-todas details.lk-cul { padding: 0 18px; }
 .lk-rodape { margin-top: 26px; text-align: center; color: var(--suave); font-size: .8rem; }
@@ -1586,13 +1588,12 @@ details.lk-cul[open] summary::after { content: '–'; }
   <header class="lk-topo">
     <img src="../assets/img/logo-320.webp" width="320" height="268" alt="Just Burger Hamburgueria">
     ${site.lema ? `<p class="lk-lema">${esc(site.lema)}</p>` : ''}
-    <p class="lk-sub">Grupo de delivery em São Paulo · nota 4,9 no iFood</p>
   </header>
 
   <section class="lk-caixa" id="pedido">
-    <h2>Faça seu pedido</h2>
-    <p class="lk-msg lk-dica">Veja qual loja está disponível em sua região.</p>
+    <h2 class="so-leitor">Faça seu pedido</h2>
     <form class="lk-cep" id="lk-form"><input id="lk-cep" inputmode="numeric" autocomplete="postal-code" placeholder="Digite seu CEP" aria-label="CEP" maxlength="9"><button type="submit">Buscar</button></form>
+    <p class="lk-msg lk-dica">Veja qual loja está disponível na sua região.</p>
     <div id="lk-res"></div>
   </section>
 
