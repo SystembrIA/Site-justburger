@@ -1592,7 +1592,8 @@ for (const p of paginas) {
     ...culinarias.map((c) => ({ nome: c.nome, tipo: c.tipo, logo: logoMarca(c),
       unidades: (c.lojas || []).map((u) => { const b = lojaDaRegiao(u.regiao); return { nome: u.regiao, ifood: u.ifood || '', keeta: u.keeta || '', lat: b && b.geo && b.geo.lat, lng: b && b.geo && b.geo.lng }; }) })),
   ];
-  const botoesUnidade = (u) => `${u.ifood ? `<a class="lk-plat lk-ifood" href="${esc(u.ifood)}" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood.svg" alt="iFood"></a>` : ''}${u.keeta ? `<a class="lk-plat lk-keeta" href="${esc(u.keeta)}" rel="noopener" aria-label="Pedir na Keeta"><span class="lk-keeta-marca">Keeta</span></a>` : '<span class="lk-plat lk-keeta lk-off" title="Keeta em breve" aria-label="Keeta em breve"><span class="lk-keeta-marca">Keeta</span></span>'}`;
+  // Ícones do iFood e da Keeta (Maikon 01/11). A Keeta ainda não é clicável (só o ícone), mesmo com link.
+  const botoesUnidade = (u) => `${u.ifood ? `<a class="lk-plat" href="${esc(u.ifood)}" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a>` : ''}<span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span>`;
   const dadosLinks = { raio: geo ? geo.raioKm : 10, marcas };
   const htmlLinks = `<!doctype html>
 <html lang="pt-BR">
@@ -1638,7 +1639,9 @@ body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem
 .lk-plats { display: flex; gap: 8px; }
 .lk-plat { flex: 1; display: grid; place-items: center; min-height: 44px; border-radius: 999px; font-weight: 800; font-size: .85rem; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; }
 .lk-plats { gap: 6px; flex: none; }
-.lk-plat { flex: 0 0 auto; min-height: 34px; min-width: 66px; padding: 0 10px; background: transparent; border: 1px solid var(--linha); }
+.lk-plat { flex: 0 0 auto; display: block; min-height: 0; min-width: 0; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 10px; overflow: hidden; background: none; }
+.lk-plat img { width: 40px; height: 40px; display: block; }
+.lk-plat-off { cursor: default; }
 .lk-plat:hover { border-color: rgba(255,255,255,.35); }
 .lk-ifood img { height: 15px; width: auto; display: block; }
 .lk-keeta { color: #ffd100; }
