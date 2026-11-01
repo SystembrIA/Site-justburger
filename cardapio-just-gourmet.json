@@ -1,0 +1,607 @@
+{
+  "loja": "gourmet-penha",
+  "copiadoDoIfoodEm": "2026-11-01T07:12:23.151-03:00",
+  "categorias": [
+    {
+      "categoria": "Just Baião De Dois",
+      "itens": [
+        {
+          "id": "just-baiao-de-dois",
+          "nome": "Just Baião de Dois",
+          "descricao": "Delicioso Baião De Dois Da Just Gourmet.\n\nObs.: Não fazemos alterações, remoções ou substituições de ingredientes ou itens dos pratos.",
+          "preco": 45.9,
+          "precoDe": 50.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607311908_UPEM_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Queridinhos da Just Gourmet",
+      "itens": [
+        {
+          "id": "strogonoff-de-frango-queridinho",
+          "nome": "Strogonoff de frango - Queridinho",
+          "descricao": "Arroz, strogonoff de frango Com Champignon, batata palha.\nNão removemos o champignon.",
+          "preco": 42.9,
+          "precoDe": 43.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202304182355_5HWH_i.jpg"
+        },
+        {
+          "id": "strogonoff-de-carne-queridinho",
+          "nome": "Strogonoff de carne - Queridinho",
+          "descricao": "Arroz, batata palha e Strogonoff de carne bovina com champignon.\nNão removemos o champignon.",
+          "preco": 44.9,
+          "precoDe": 45.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202304182358_H7S1_i.jpg"
+        },
+        {
+          "id": "lagarto-ao-molho-madeira-queridinho",
+          "nome": "Lagarto ao molho madeira- Queridinho",
+          "descricao": "Arroz, feijão, fritas e purê ou farofa.\n Não removemos o champignon nem a cebola.",
+          "preco": 43.9,
+          "precoDe": 44.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202210191754_P1E1_i.jpg"
+        },
+        {
+          "id": "filet-de-frango-a-parmegiana-1-pessoa-queridinho",
+          "nome": "Filet de frango a parmegiana 1 Pessoa - Queridinho",
+          "descricao": "Filet de frango empanado coberto com queijo e molho vermelho. Acompanha arroz e fritas\n\nPara 1 pessoa - 1 unidade de 130gramas aproximadamente.\nPara 2 pessoas - 2 unidades de 130gramas aproximadamente.",
+          "preco": 62.9,
+          "precoDe": 73.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202308262013_TP2G_i.jpg"
+        },
+        {
+          "id": "filet-de-frango-grelhado-queridinho",
+          "nome": "Filet de frango grelhado - Queridinho",
+          "descricao": "Filet de Frango grelhado, arroz branco, feijão, fritas e purê ou farofa.\n 1 unidade de 130 gramas de proteina aproximadamente.",
+          "preco": 41.9,
+          "precoDe": 42.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202609021640_46VO_i.jpg"
+        },
+        {
+          "id": "bife-grelhado-queridinho",
+          "nome": "Bife Grelhado - Queridinho",
+          "descricao": "Bife grelhado, arroz branco, feijão, fritas e purê ou farofa.\n1 unidade de 130 gramas de proteina aproximadamente.",
+          "preco": 45.9,
+          "precoDe": 52.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202304190014_H4QI_i.jpg"
+        },
+        {
+          "id": "just-baiao-queridinho",
+          "nome": "Just Baião - Queridinho",
+          "descricao": "Delicioso Baião De Dois Da Just Gourmet",
+          "preco": 43.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607211856_D785_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Pratos principais - individuais",
+      "itens": [
+        {
+          "id": "filet-de-frango-grelhado-c-creme-de-milho",
+          "nome": "Filet De Frango Grelhado  C/ Creme De Milho",
+          "descricao": "Filé de frango grelhado servido com creme de milho, acompanhado de arroz, feijão e batatas fritas.\n1 unidade de 130 gramas de proteina aproximadamente.",
+          "preco": 45.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608011926_1O30_i.jpg"
+        },
+        {
+          "id": "strogonoff-de-frango",
+          "nome": "Strogonoff de Frango",
+          "descricao": "Strogonoff de frango com champignon, acompanhado de arroz e batata palha. \n\nObs.: Não Removemos O Champignon",
+          "preco": 44.9,
+          "precoDe": 54.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608011929_INRE_i.jpg"
+        },
+        {
+          "id": "strogonoff-de-frango-hits",
+          "nome": "Strogonoff de frango Hits",
+          "descricao": "Strogonoff de frango com champignon, acompanhado de arroz e batata palha. \n\nObs.: Não Removemos O Champignon",
+          "preco": 51.9,
+          "precoDe": 58.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608011929_INRE_i.jpg"
+        },
+        {
+          "id": "filet-de-frango-grelhado",
+          "nome": "Filet De Frango Grelhado",
+          "descricao": "Filet de Frango grelhado, arroz branco, feijão, fritas e purê ou farofa.\n1 unidade de 130 gramas de proteina aproximadamente.",
+          "preco": 42.9,
+          "precoDe": 48.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608111736_E4VP_i.jpg"
+        },
+        {
+          "id": "filet-de-frango-grelhado-hits",
+          "nome": "Filet de frango grelhado Hits",
+          "descricao": "Filet de Frango grelhado, arroz branco, feijão, fritas e purê ou farofa.\n1 unidade de 130 gramas de proteina aproximadamente.",
+          "preco": 49.9,
+          "precoDe": 59.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608111736_E4VP_i.jpg"
+        },
+        {
+          "id": "lagarto-ao-molho-madeira",
+          "nome": "Lagarto ao Molho Madeira",
+          "descricao": "Arroz, feijão, fritas e purê ou farofa.\n\nObs.: Não removemos o champignon nem a cebola.",
+          "preco": 44.9,
+          "precoDe": 55.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608111923_B52O_i.jpg"
+        },
+        {
+          "id": "lagarto-ao-molho-madeira-hits",
+          "nome": "Lagarto ao molho madeira - Hits",
+          "descricao": "Arroz, feijão, fritas e purê ou farofa.\n\nObs.: Não removemos o champignon nem a cebola.",
+          "preco": 51.9,
+          "precoDe": 58.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608111923_B52O_i.jpg"
+        },
+        {
+          "id": "strogonoff-de-carne",
+          "nome": "Strogonoff De Carne",
+          "descricao": "Strogonoff de carne bovina com champignon, acompanhado de arroz e batata palha.\n\nObs.: Não Removemos os  Champignon",
+          "preco": 45.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608111742_4650_i.jpg"
+        },
+        {
+          "id": "bife-a-milanesa",
+          "nome": "Bife a Milanesa",
+          "descricao": "Bife a milanesa, arroz branco, feijão, fritas e purê ou farofa.\n1 unidade de 130 gramas de proteina aproximadamente..",
+          "preco": 47.9,
+          "precoDe": 51.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607212007_A1BN_i.jpg"
+        },
+        {
+          "id": "bife-grelhado",
+          "nome": "Bife Grelhado",
+          "descricao": "Bife grelhado, arroz branco, feijão, fritas e purê ou farofa.\n1 unidade de 130 gramas de proteina aproximadamente.",
+          "preco": 47.9,
+          "precoDe": 52.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608111739_IO2X_i.jpg"
+        },
+        {
+          "id": "filet-de-frango-a-milanesa",
+          "nome": "Filet de frango a milanesa",
+          "descricao": "Filé de frango à milanesa, acompanhado de arroz branco, feijão, batatas fritas e purê de batatas ou farofa.\n1 unidade de 130 gramas de proteina aproximadamente.",
+          "preco": 44.9,
+          "precoDe": 50.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607311912_D1EF_i.jpg"
+        },
+        {
+          "id": "linguica-toscana-acebolada",
+          "nome": "Linguiça toscana acebolada",
+          "descricao": "Linguiça toscana acebolada, arroz branco, feijão, fritas e purê ou farofa.",
+          "preco": 43.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608111730_0WLM_i.jpg"
+        },
+        {
+          "id": "filet-de-peixe-a-milanesa",
+          "nome": "Filet de peixe a milanesa",
+          "descricao": "Filet de peixe a milanesa, arroz branco, feijão, fritas e purê ou farofa.\n1 unidade de 130 gramas de proteina aproximadamente.",
+          "preco": 44.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202304190024_5N7R_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Pratos Fitness",
+      "itens": [
+        {
+          "id": "prato-fitness",
+          "nome": "Prato Fitness",
+          "descricao": "Filé de frango grelhado.\nBrócolis, \nCenoura,\nTomate,\nVagem,\nOvo cozido,\nCebola,\nAlface \nNão removemos os insumos da salada.",
+          "preco": 41.9,
+          "precoDe": 47.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607172011_8A02_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Massas artesanais e grelhados",
+      "itens": [
+        {
+          "id": "lasanha-artesanal-de-presunto-e-queijo-individual",
+          "nome": "Lasanha Artesanal de Presunto e Queijo  Individual",
+          "descricao": "Lasanha Artesanal de Presunto e Queijo ao Tradicional Molho Bolonhesa – cerca de 800g",
+          "preco": 48.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202304192007_0778_i.jpg"
+        },
+        {
+          "id": "talharim-ao-molho",
+          "nome": "Talharim ao Molho",
+          "descricao": "Escolha entre os molhos branco, sugo ou bolonhesa.\n(Adicione carne ou frango opcionalmente — valor cobrado à parte.)\nFoto ilustrativa.",
+          "preco": 36.9,
+          "precoDe": 41.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202304191946_Q050_i.jpg"
+        },
+        {
+          "id": "conchiglione-de-massa-artesanal-recheada-com-4-queijos",
+          "nome": "Conchiglione de Massa Artesanal Recheada com 4 Queijos",
+          "descricao": "Escolha entre os molhos branco, sugo ou bolonhesa para acompanhar sua massa.\n(Adicione carne ou frango opcionalmente — valor cobrado à parte.)\nFoto ilustrativa.",
+          "preco": 41.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202304192005_VTAO_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Pratos premium",
+      "itens": [
+        {
+          "id": "filet-mignon-a-parmegiana",
+          "nome": "Filet Mignon a Parmegiana",
+          "descricao": "Filé Mignon empanado, coberto com queijo derretido, acompanhado de arroz branco, molho de tomate artesanal e batatas fritas.\n\nPara 1 pessoa - 1 unidade de 130 gramas aproximadamente.\nPara 2 pessoas - 2 unidades de 130 gramas aproximadamente.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607311902_1718_i.jpg"
+        },
+        {
+          "id": "salmao-ao-molho-de-alcaparras",
+          "nome": "Salmão ao molho de alcaparras",
+          "descricao": "Acompanha arroz à grega, batatas sauté douradas na manteiga e nosso exclusivo molho artesanal de alcaparras. Preparado com uma deliciosa base de mostarda.\n\nPara 1 pessoa - 1 unidade de 130 gramas aproximadamente.\nPara 2 pessoas - 2 unidades de 130 gramas aproximadamente.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202306061216_6KA4_i.jpg"
+        },
+        {
+          "id": "salmao-ao-molho-de-maracuja",
+          "nome": "Salmão ao molho de maracujá",
+          "descricao": "Arroz à grega, batatas sauté e molho de maracujá artesanal.\n\nPara 1 pessoa - 1 unidade de 130 gramas aproximadamente.\nPara 2 pessoas - 2 unidades de 130 gramas aproximadamente.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607231827_7RR4_i.jpg"
+        },
+        {
+          "id": "filet-mignon-grelhado",
+          "nome": "Filet mignon grelhado",
+          "descricao": "Filet mignon grelhado, arroz à grega, legumes na manteiga e vinagrete.\n\nPara 1 pessoa - 1 unidade de 130 gramas aproximadamente.\nPara 2 pessoas - 2 unidades de 130 gramas aproximadamente.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608111909_DO5G_i.jpg"
+        },
+        {
+          "id": "picanha-grelhada",
+          "nome": "Picanha grelhada",
+          "descricao": "Picanha grelhada, arroz branco. Feijão , vinagrete, e fritas\n\nPara 1 pessoa - 1 unidade de 130 gramas aproximadamente.\nPara 2 pessoas - 2 unidades de 130 gramas aproximadamente.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202304190032_GS57_i.jpg"
+        },
+        {
+          "id": "filet-de-frango-a-parmegiana",
+          "nome": "Filet de frango a parmegiana",
+          "descricao": "Filé de Frango empanado e grelhado, com queijo derretido e molho de tomate artesanal, acompanhado de arroz branco e batatas fritas.\n\nPara 1 pessoa - 1 unidade de 130 gramas aproximadamente.\nPara 2 pessoas - 2 unidades de 130 gramas aproximadamente.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607311901_P78X_i.jpg"
+        },
+        {
+          "id": "medalhoes-de-filet-mignon-ao-molho-madeira",
+          "nome": "Medalhões de filet mignon ao molho madeira",
+          "descricao": "Medalhões de filé mignon envolvidos em bacon, ao molho madeira artesanal, acompanhados de arroz à grega, legumes na manteiga e purê de batatas.\n\nPara 1 pessoa - 1 unidade de 130 gramas aproximadamente.\nPara 2 pessoas - 2 unidades de 130 gramas aproximadamente.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202609131919_M5FF_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Gourmet Kids",
+      "itens": [
+        {
+          "id": "bife-grelhado-kids",
+          "nome": "Bife Grelhado Kids",
+          "descricao": "Arroz, feijão, fritas e purê de batatas. — E ainda acompanha uma lembrancinha especial!",
+          "preco": 36.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607211852_H823_i.jpg"
+        },
+        {
+          "id": "filet-de-frango-grelhado-kids",
+          "nome": "Filet de frango grelhado kids",
+          "descricao": "Arroz, feijão, fritas e purê de batatas. — E  ainda acompanha uma lembrancinha especial!",
+          "preco": 36.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607211853_33KP_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Saladas e saladas + grelhados",
+      "itens": [
+        {
+          "id": "just-garden",
+          "nome": "Just Garden",
+          "descricao": "Alface americana, tomate italiano fatiado, azeitonas pretas sem caroço, cebola roxa fatiada, cenoura ralada, croutons crocantes e parmesão ralado.\nSalada servida completa — não realizamos a remoção de ingredientes.",
+          "preco": 28.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607172000_08I1_i.jpg"
+        },
+        {
+          "id": "caesar-salad",
+          "nome": "Caesar Salad",
+          "descricao": "Alface americana, frango desfiado, croutons, parmesão ralado, e molho caesar, ( opcional adicionar um complemento).\nNova Embalagem\nNão removemos os insumos da salada. \nTamanho Para Uma Pessoa!!!",
+          "preco": 28.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202602241714_NWIL_i.jpg"
+        },
+        {
+          "id": "salada-completa",
+          "nome": "Salada Completa",
+          "descricao": "Alface americana, tomate cereja, cebola roxa, palmito, milho e cenoura ralada, ( opcional adicionar um complemento).\nNova Embalagem\nNão removemos os insumos da salada. \nTamanho Para Uma Pessoa!!!",
+          "preco": 22.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202304192015_6CNP_i.jpg"
+        },
+        {
+          "id": "salada-especial-1-pessoa",
+          "nome": "Salada especial ( 1 pessoa )",
+          "descricao": "Alface americana, tomate cereja, cebola roxa, cenoura no vapor, brócolis, ovo, palmito, maionese com batatas, e vagem, ( opcional adicionar um complemento).\nNão Removemos Os Insumos Da Salada.",
+          "preco": 31.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607171959_LKUY_i.jpg"
+        },
+        {
+          "id": "salada-tradicional",
+          "nome": "Salada Tradicional",
+          "descricao": "Alface Americana, Tomate Cereja, e cebola roxa, (opcional adicionar um complemento).\nNova Embalagem\nTamanho Para Uma Pessoa!!!\nNão removemos os insumos da salada.",
+          "preco": 20.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202304192015_5NHS_i.jpg"
+        },
+        {
+          "id": "salada-cheese",
+          "nome": "Salada Cheese",
+          "descricao": "Alface americano,\nTomate,\nQueijo Parmesão.\nTamanho para uma pessoa!\nNão removemos os insumos da salada.",
+          "preco": 20.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607172006_2318_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Bebidas",
+      "itens": [
+        {
+          "id": "pink-lemonade",
+          "nome": "Pink lemonade",
+          "descricao": "Uma explosão refrescante de limão com morango e um toque secreto da casa. Leve, vibrante e sofisticada — Vc nunca bebeu nada igual !!!",
+          "preco": 13.9,
+          "precoDe": 15.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202208021915_S085_i.jpg"
+        },
+        {
+          "id": "coca-cola-350ml",
+          "nome": "Coca cola 350ml",
+          "descricao": "",
+          "preco": 8.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202106021512_06ML_i.jpg"
+        },
+        {
+          "id": "coca-cola-zero-acucar-350ml",
+          "nome": "Coca cola zero açucar 350ml",
+          "descricao": "",
+          "preco": 8.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202106021424_67Q1_i.jpg"
+        },
+        {
+          "id": "coca-cola-600-ml",
+          "nome": "Coca cola 600 ml",
+          "descricao": "Coca cola 600 ml",
+          "preco": 12.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202007301536_vLgq_c.jpg"
+        },
+        {
+          "id": "refrigerante-coca-cola-original-2l",
+          "nome": "Refrigerante Coca-Cola Original 2l",
+          "descricao": "",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/820af392-002c-47b1-bfae-d7ef31743c7f/202604221110_j1lezetprgj.png"
+        },
+        {
+          "id": "fanta-guarana-350ml",
+          "nome": "Fanta Guaraná 350ml",
+          "descricao": "",
+          "preco": 8.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202101061414_Sye0_.jpeg"
+        },
+        {
+          "id": "fanta-laranja-350-ml",
+          "nome": "Fanta Laranja 350 ml",
+          "descricao": "",
+          "preco": 8.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202109142318_03NP_i.jpg"
+        },
+        {
+          "id": "sprite-600ml",
+          "nome": "Sprite 600ml",
+          "descricao": "",
+          "preco": 12.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202103051330_gpCq_.jpeg"
+        },
+        {
+          "id": "sprite-350-ml",
+          "nome": "Sprite 350 ml",
+          "descricao": "",
+          "preco": 8.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607142141_38KR_i.jpg"
+        },
+        {
+          "id": "del-valle-maracuja-290ml",
+          "nome": "Del Valle Maracujá - 290ml",
+          "descricao": "",
+          "preco": 8.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202008190957_QwjL_d.png"
+        },
+        {
+          "id": "del-valle-uva-290ml",
+          "nome": "Del Valle Uva - 290ml",
+          "descricao": "Del vale uva - 290ml",
+          "preco": 8.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202008190952_HAaU_7.png"
+        },
+        {
+          "id": "coca-cola-zero-acucar-600ml",
+          "nome": "Coca Cola zero açucar 600ml",
+          "descricao": "",
+          "preco": 12.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202410081110_856A_i.jpg"
+        },
+        {
+          "id": "coca-cola-sem-acucar-2l",
+          "nome": "Coca-Cola sem Açúcar 2l",
+          "descricao": "Garrafa 2l",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/820af392-002c-47b1-bfae-d7ef31743c7f/202210192313_t75186fymeq.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Salada de frutas",
+      "itens": [
+        {
+          "id": "just-mix",
+          "nome": "Just Mix",
+          "descricao": "Uma deliciosa combinação de frutas frescas, preparada para deixar seu Dia mais leve, saboroso e refrescante!    200 Gramas \nBanana, manga, uva, mamão e/ou abacaxi",
+          "preco": 12.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202610261203_2VR0_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Sobremesas",
+      "itens": [
+        {
+          "id": "pudim-tradicional",
+          "nome": "Pudim Tradicional",
+          "descricao": "Um pudim que você nunca viu igual, só pede, e depois nos fale ! Uma consistência única que só a Just traz pra vc !",
+          "preco": 22.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202507191758_W05P_i.jpg"
+        },
+        {
+          "id": "pudim-de-chocolate-belga-branco-com-morango",
+          "nome": "Pudim De Chocolate Belga Branco Com Morango",
+          "descricao": "Um pudim que você nunca viu igual, só pede, e depois nos fale ! Uma consistência única que só a Just traz para vc !",
+          "preco": 22.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202507191800_0764_i.jpg"
+        },
+        {
+          "id": "pudim-de-chocolate-belga-com-granule",
+          "nome": "Pudim De Chocolate Belga Com Granule",
+          "descricao": "Um pudim que você nunca viu igual, só pede, e depois nos fale ! Uma consistência única que só a Just traz para vc !",
+          "preco": 22.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202507191759_3017_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Just Shake",
+      "itens": [
+        {
+          "id": "milk-shake-de-pistache-300ml",
+          "nome": "Milk-Shake de Pistache 300ml",
+          "descricao": "Milk-Shake de Pistache 300ml",
+          "preco": 21.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608281625_D2DT_i.jpg"
+        },
+        {
+          "id": "milk-shake-de-ninho-com-nutella-300ml",
+          "nome": "Milk-Shake de Ninho com Nutella 300ml",
+          "descricao": "Milk-Shake de Ninho com Nutella 300ml",
+          "preco": 21.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608281632_CK13_i.jpg"
+        },
+        {
+          "id": "milk-shake-de-ninho-300ml",
+          "nome": "Milk-Shake de Ninho 300ml",
+          "descricao": "Milk-Shake de Ninho 300ml",
+          "preco": 21.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608281640_N31F_i.jpg"
+        },
+        {
+          "id": "milk-shake-de-nutella-300ml",
+          "nome": "Milk-Shake de Nutella 300ml",
+          "descricao": "Milk-Shake de Nutella 300ml",
+          "preco": 21.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608281702_OA4S_i.jpg"
+        },
+        {
+          "id": "milk-shake-de-morango-300ml",
+          "nome": "Milk-Shake de Morango 300ml",
+          "descricao": "Milk-Shake de Morango 300ml",
+          "preco": 21.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608281705_47J4_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Sorvetes Ben & Jerry's - O Melhor !",
+      "itens": [
+        {
+          "id": "ben-jerrys-half-baked-458ml",
+          "nome": "Ben & Jerrys Half Baked 458ml",
+          "descricao": "O Sorvete Mais Vendido Dos Estados Unidos Acaba de Desembarcar Aqui No Brasil!!! Isso Mesmo, Ben & Jerrys Half Baked Agora No Pedaço.",
+          "preco": 58.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608281752_K2TT_i.jpg"
+        },
+        {
+          "id": "sorvete-ben-jerrys-doce-de-leite-458ml",
+          "nome": "Sorvete Ben & Jerrys Doce de Leite 458ml",
+          "descricao": "Sorvete Sabor Doce de Leite e Sorvete Sabor Chocolate com Pedaços Sabor Chocolate Recheio Cremoso de Doce de Leite.",
+          "preco": 58.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608281756_YM75_i.jpg"
+        },
+        {
+          "id": "sorvete-ben-jerrys-phish-food-458ml",
+          "nome": "Sorvete Ben & Jerrys Phish Food 458ml",
+          "descricao": "Sorvete Sabor Chocolate com Marshmallow, Calda de Caramelo e Flocos em Formato de Peixe Sabor Chocolate.",
+          "preco": 58.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608281758_U251_i.jpg"
+        },
+        {
+          "id": "sorvete-chocolate-fudge-brownie-ben-e-jerrys-458ml",
+          "nome": "Sorvete Chocolate Fudge Brownie Ben e Jerrys 458ml",
+          "descricao": "Sorvete Sabor Chocolate com Pedaços de Bolo Sabor Chocolate.",
+          "preco": 58.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608281759_E121_i.jpg"
+        },
+        {
+          "id": "sovete-ben-jerrys-triple-caramel-chunk-458ml",
+          "nome": "Sovete Ben & Jerrys Triple Caramel Chunk 458ml",
+          "descricao": "Sorvete de Caramelo com Calda de Caramelo e Flocos Sabor Chocolate Recheados com Caramelo.",
+          "preco": 58.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608281800_HOH5_i.jpg"
+        }
+      ]
+    }
+  ]
+}

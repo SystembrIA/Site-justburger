@@ -1,0 +1,441 @@
+{
+  "loja": "esfiha-penha",
+  "copiadoDoIfoodEm": "2026-11-01T07:17:13.261-03:00",
+  "categorias": [
+    {
+      "categoria": "Combos com Coca-Cola",
+      "itens": [
+        {
+          "id": "combo-individual-premium-coca-cola-350-ml",
+          "nome": "Combo Individual Premium +  Coca-Cola 350 ml",
+          "descricao": "Escolha 3 esfihas tradicionais salgada + 2 esfihas premium salgadas + 1 esfiha doce premium à sua escolha! Ainda tem +  Coca-Cola 350 ml! Tudo isso com 10% de desconto!",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202504161124_5D3R_i.jpg"
+        },
+        {
+          "id": "combo-casal-com-10-off-coca-cola-350-ml",
+          "nome": "Combo casal com 10% off + Coca-Cola 350 ml",
+          "descricao": "Escolha 8 das nossas deliciosas esfihas salgadas + 2 esfihas doces + 2 Coca-Cola 350ml (lata). Tudo isso com 10% de desconto!",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202504161113_LQ5H_i.jpg"
+        },
+        {
+          "id": "combo-25-unidades-coca-cola-2l-gratis",
+          "nome": "Combo 25 unidades + Coca-Cola 2l grátis",
+          "descricao": "Escolha 20 esfihas salgadas + 5 esfihas doces e ganhe 1 Coca-Cola 2l grátis",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202504161122_PNP1_i.jpg"
+        },
+        {
+          "id": "combo-50-unidades-2-coca-cola-2l-gratis",
+          "nome": "Combo 50 unidades + 2 Coca-Cola 2l grátis",
+          "descricao": "Escolha 40 esfihas salgadas + 10 esfihas doces e ganhe 2 Coca-Cola 2l grátis!",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202504161115_QX57_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Combo com até 15% desconto",
+      "itens": [
+        {
+          "id": "combo-com-10-esfihas-salgadas-10-off",
+          "nome": "Combo com 10 esfihas salgadas (10% off).",
+          "descricao": "Escolha 10 das nossas deliciosas esfihas, e o melhor, com 5% de desconto!",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202504161117_1XY1_i.jpg"
+        },
+        {
+          "id": "combo-com-15-esfihas-salgadas-10-off",
+          "nome": "Combo com 15 esfihas salgadas  (10% off)",
+          "descricao": "Escolha 15 das nossas deliciosas esfihas, e o melhor, com 10% de desconto!",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202504161117_0YXP_i.jpg"
+        },
+        {
+          "id": "combo-com-25-esfihas-salgadas-15-off",
+          "nome": "Combo com 25 esfihas salgadas  (15% off)",
+          "descricao": "Escolha 25 das nossas deliciosas esfihas, e o melhor, com 15% de desconto!",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202504161125_B63L_i.jpg"
+        },
+        {
+          "id": "combo-com-50-esfihas-salgadas-20-off",
+          "nome": "Combo com 50 esfihas salgadas  (20% off)",
+          "descricao": "Escolha 50 das nossas deliciosas esfihas, e o melhor, com 20% de desconto!",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202504161120_XR34_i.jpg"
+        },
+        {
+          "id": "combo-com-2-esfihas-doces-premium-10-off",
+          "nome": "Combo com 2 esfihas doces premium (10% off)",
+          "descricao": "Escolha 2 das melhores esfihas doces e ainda com 10% de desconto.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202504161120_5SG1_i.jpg"
+        },
+        {
+          "id": "combo-com-4-esfihas-doces-15-off",
+          "nome": "Combo com 4 esfihas doces  (15% off)",
+          "descricao": "Escolha 4 das melhores esfihas doces e com 15% de desconto.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202504161121_0F31_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Combos Hits",
+      "itens": [
+        {
+          "id": "combo-esfiha-de-mussarela-coca-lata-350-ml",
+          "nome": "Combo Esfiha de Mussarela + Coca Lata 350 ml",
+          "descricao": "3 Esfihas de Mussarela mais uma coca lata de 350 ml",
+          "preco": 26.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202608131430_J8A0_i.jpg"
+        },
+        {
+          "id": "combos-3-esfihas-de-calabresa-coca-lata-350ml",
+          "nome": "Combos 3 Esfihas de Calabresa + Coca Lata 350ml",
+          "descricao": "3 Esfihas de Calabresa mais uma coca lata de 350 ml",
+          "preco": 26.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072220_2CMX_i.jpg"
+        },
+        {
+          "id": "combo-4-esfihas-de-calabresa",
+          "nome": "Combo 4 Esfihas de Calabresa",
+          "descricao": "4 Esfihas de Calabresa",
+          "preco": 26.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072220_2CMX_i.jpg"
+        },
+        {
+          "id": "combo-4-esfihas-de-mussarela",
+          "nome": "Combo 4 Esfihas de Mussarela",
+          "descricao": "4 Esfihas de Mussarela",
+          "preco": 26.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202608131430_J8A0_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Esfihas Salgadas Tradicionais",
+      "itens": [
+        {
+          "id": "carne",
+          "nome": "Carne",
+          "descricao": "Esfiha de carne com tomate, cebola e tempero especial",
+          "preco": 7.9,
+          "precoDe": 8.9,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202608131443_M761_i.jpg"
+        },
+        {
+          "id": "mucarela",
+          "nome": "Muçarela",
+          "descricao": "Esfiha de muçarela",
+          "preco": 8.9,
+          "precoDe": 9.9,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202608131430_J8A0_i.jpg"
+        },
+        {
+          "id": "calabresa",
+          "nome": "Calabresa",
+          "descricao": "Esfiha de calabresa com cebola",
+          "preco": 7.9,
+          "precoDe": 8.9,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072220_2CMX_i.jpg"
+        },
+        {
+          "id": "frango",
+          "nome": "Frango",
+          "descricao": "Esfiha de frango com tempero especial",
+          "preco": 8.9,
+          "precoDe": 9.9,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072219_5835_i.jpg"
+        },
+        {
+          "id": "queijo",
+          "nome": "Queijo",
+          "descricao": "Esfiha com mix de queijos e tempero especial",
+          "preco": 8.9,
+          "precoDe": 9.9,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072220_53J5_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Esfihas Salgadas Premium",
+      "itens": [
+        {
+          "id": "calabresa-com-mucarela",
+          "nome": "Calabresa com muçarela",
+          "descricao": "Esfiha de calabresa com muçarela",
+          "preco": 8.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072213_HXSN_i.jpg"
+        },
+        {
+          "id": "mussarela-com-bacon",
+          "nome": "Mussarela com bacon",
+          "descricao": "Esfiha de mussarela com bacon",
+          "preco": 13.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202608131450_LS84_i.jpg"
+        },
+        {
+          "id": "italiana",
+          "nome": "Italiana",
+          "descricao": "Esfiha de muçarela com tomate cereja, manjericão e alho torrado em lascas",
+          "preco": 9.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508071757_1OKO_i.jpg"
+        },
+        {
+          "id": "mucarela-com-presunto",
+          "nome": "Muçarela com presunto",
+          "descricao": "Esfiha de muçarela com presunto e orégano",
+          "preco": 8.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072213_107A_i.jpg"
+        },
+        {
+          "id": "calabresa-com-catupiry",
+          "nome": "Calabresa com Catupiry",
+          "descricao": "Esfiha de calabresa com Catupiry Original",
+          "preco": 12.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072208_XE64_i.jpg"
+        },
+        {
+          "id": "frango-com-catupiry",
+          "nome": "Frango com Catupiry",
+          "descricao": "Esfiha de frango com Catupiry Original",
+          "preco": 12.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072214_5J38_i.jpg"
+        },
+        {
+          "id": "pepperoni-com-catupiry",
+          "nome": "Pepperoni com Catupiry",
+          "descricao": "Esfiha de pepperoni com Catupiry Original",
+          "preco": 13.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072209_D413_i.jpg"
+        },
+        {
+          "id": "quatro-queijos",
+          "nome": "Quatro queijos",
+          "descricao": "Esfiha de muçarela com gorgonzola, Catupiry Original e parmesão.",
+          "preco": 14.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072151_5TU2_i.jpg"
+        },
+        {
+          "id": "dois-queijos-com-bacon",
+          "nome": "Dois queijos com bacon",
+          "descricao": "Esfiha de muçarela com Catupiry Original e bacon",
+          "preco": 13.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072221_OFW0_i.jpg"
+        },
+        {
+          "id": "calabresa-com-parmesao",
+          "nome": "Calabresa com Parmesão",
+          "descricao": "Esfiha de Calabresa com queijo parmesão",
+          "preco": 11.9,
+          "precoDe": 12.9,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072221_8RJD_i.jpg"
+        },
+        {
+          "id": "camarao-com-cream-cheese",
+          "nome": "Camarão com cream cheese",
+          "descricao": "Esfiha de Camarão, com queijo e cream cheese Philadelphia",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072222_C0L5_i.jpg"
+        },
+        {
+          "id": "frango-com-bacon-e-catupiry",
+          "nome": "Frango com bacon e Catupiry",
+          "descricao": "Esfiha de frango com bacon e Catupiry Original",
+          "preco": 12.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072222_I432_i.jpg"
+        },
+        {
+          "id": "carne-seca-com-catupiry",
+          "nome": "Carne seca com Catupiry",
+          "descricao": "Esfiha de carne seca com Catupiry Original",
+          "preco": 12.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072223_X0GO_i.jpg"
+        },
+        {
+          "id": "camarao-com-mussarela",
+          "nome": "Camarão com mussarela",
+          "descricao": "Esfiha de camarão com queijo mussarela",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072223_F05G_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Esfihas doces",
+      "itens": [
+        {
+          "id": "choco-duo",
+          "nome": "Choco Duo",
+          "descricao": "Esfiha de chocolate ao leite forneável coberta com chocolate branco forneável",
+          "preco": 13.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508071606_55Q8_i.jpg"
+        },
+        {
+          "id": "banana-nevada",
+          "nome": "Banana Nevada",
+          "descricao": "Esfiha de banana com chocolate branco Nestlé forneável, doce de leite e canela",
+          "preco": 11.9,
+          "precoDe": 12.9,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072125_CJ3I_i.jpg"
+        },
+        {
+          "id": "chocolate-ao-leite",
+          "nome": "Chocolate ao leite",
+          "descricao": "Esfiha de chocolate ao leite Nestlé",
+          "preco": 13.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072125_8A3S_i.jpg"
+        },
+        {
+          "id": "chocolate-branco",
+          "nome": "Chocolate branco",
+          "descricao": "Esfiha de chocolate branco Nestlé",
+          "preco": 13.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072121_L5HE_i.jpg"
+        },
+        {
+          "id": "romeu-e-julieta",
+          "nome": "Romeu e Julieta",
+          "descricao": "Esfiha de muçarela com goiabada cremosa",
+          "preco": 13.9,
+          "precoDe": 14.9,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072014_E618_i.jpg"
+        },
+        {
+          "id": "doce-de-leite-com-amendoas",
+          "nome": "Doce de leite com amêndoas",
+          "descricao": "Esfiha de chocolate branco Nestlé  com doce de leite e amêndoas em lascas",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072130_7118_i.jpg"
+        },
+        {
+          "id": "chocolate-ao-leite-com-m-m-s",
+          "nome": "Chocolate ao leite com M&M's",
+          "descricao": "Esfiha de chocolate ao leite Nestlé com M&M's",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072028_1O51_i.jpg"
+        },
+        {
+          "id": "chocolate-branco-com-m-m-s",
+          "nome": "Chocolate branco com M&M's",
+          "descricao": "Esfiha de chocolate branco Nestlé  com M&M's",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072129_NG36_i.jpg"
+        },
+        {
+          "id": "negresco",
+          "nome": "Negresco",
+          "descricao": "Esfiha de chocolate branco Nestlé  e Negresco",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072131_56SU_i.jpg"
+        },
+        {
+          "id": "kit-kat",
+          "nome": "Kit Kat",
+          "descricao": "Esfiha a base de pasta de Kit Kat finalizada com pedaços da barrinha",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072132_K4T8_i.jpg"
+        },
+        {
+          "id": "churros",
+          "nome": "Churros",
+          "descricao": "Esfiha de doce de leite, açúcar e canela",
+          "preco": 11.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202508072126_61L1_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Bebidas - Entregas somente esfihas",
+      "itens": [
+        {
+          "id": "refrigerante-lata",
+          "nome": "Refrigerante lata",
+          "descricao": "Não entregamos pedidos só de bebidas.",
+          "preco": 8.9,
+          "precoDe": 9.9,
+          "foto": "https://static-images.ifood.com.br/pratos/679195f7-8856-41c2-a675-e8ea927c66c5/202310061438_K263_i.jpg"
+        },
+        {
+          "id": "coca-cola-2l-original",
+          "nome": "Coca-Cola 2l Original",
+          "descricao": "Não entregamos pedidos só de bebidas.",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/820af392-002c-47b1-bfae-d7ef31743c7f/202210180403_7z21qphifpm.jpg"
+        },
+        {
+          "id": "coca-cola-2l-sem-acucar",
+          "nome": "Coca-Cola 2l Sem Açúcar",
+          "descricao": "Não entregamos pedidos só de bebidas.",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/820af392-002c-47b1-bfae-d7ef31743c7f/202210180010_5xklns60ui.jpg"
+        },
+        {
+          "id": "fanta-guarana-2l-original",
+          "nome": "Fanta Guaraná 2l Original",
+          "descricao": "Não entregamos pedidos só de bebidas.",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/679195f7-8856-41c2-a675-e8ea927c66c5/202310061436_DAID_i.jpg"
+        },
+        {
+          "id": "sprite-2l",
+          "nome": "Sprite 2l",
+          "descricao": "",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202310131754_IRYL_i.jpg"
+        },
+        {
+          "id": "fanta-laranja-2l",
+          "nome": "Fanta Laranja 2l",
+          "descricao": "",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202310131756_0DJ1_i.jpg"
+        }
+      ]
+    }
+  ]
+}

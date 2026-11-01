@@ -1,0 +1,312 @@
+{
+  "loja": "forneria-penha",
+  "copiadoDoIfoodEm": "2026-11-01T07:17:02.427-03:00",
+  "categorias": [
+    {
+      "categoria": "Segunda a Quarta com Coca Cola Grátis",
+      "itens": [
+        {
+          "id": "pizza-grande-coca-cola-2l-gratis",
+          "nome": "Pizza grande + Coca-Cola 2l Grátis!",
+          "descricao": "Comprou uma pizza grande? Ganhou Coca-Cola 2 Litros\n\nEscolha uma das opções de pizzas e leve uma Coca Cola 2 Litros grátis!",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202609220958_Q2HD_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Pizzas No Precinho 20% Off !",
+      "itens": [
+        {
+          "id": "pizza-bacon-e-ovos-g",
+          "nome": "Pizza Bacon e Ovos (G)",
+          "descricao": "Mussarela,Bacon,ovos e Oregano",
+          "preco": 76.9,
+          "precoDe": 96.9,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202408221320_C54D_i.jpg"
+        },
+        {
+          "id": "pizza-gamberetto-g",
+          "nome": "Pizza Gamberetto (G)",
+          "descricao": "Mussarela,  Camarão,  Alho poró, Cream Cheese Philadelphia e oregáno.",
+          "preco": 114.9,
+          "precoDe": 144.9,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202408221338_8A67_i.jpg"
+        },
+        {
+          "id": "pizza-de-mussarela-g",
+          "nome": "Pizza de Mussarela (G)",
+          "descricao": "Massa napolitana, molho de tomate, muçarela e orégano",
+          "preco": 62.9,
+          "precoDe": 83.9,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202410251345_F52V_i.jpg"
+        },
+        {
+          "id": "pizza-de-calabresa-g",
+          "nome": "Pizza de Calabresa (G)",
+          "descricao": "Massa napolitana, molho de tomate, calabresa, cebola e orégano",
+          "preco": 62.9,
+          "precoDe": 78.9,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202410251344_4R0V_i.jpg"
+        },
+        {
+          "id": "pizza-de-frango-com-catupiry-g",
+          "nome": "Pizza de Frango com Catupiry (G)",
+          "descricao": "Massa napolitana, molho de tomate, muçarela, frango, Catupiry e orégano",
+          "preco": 80.9,
+          "precoDe": 99.9,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202410251345_2CKH_i.jpg"
+        },
+        {
+          "id": "pizza-de-calabresa-carioca-g",
+          "nome": "Pizza de Calabresa Carioca (G)",
+          "descricao": "Massa napolitana, molho de tomate, muçarela, calabresa, cebola e orégano",
+          "preco": 77.9,
+          "precoDe": 87.9,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202410251344_B87N_i.jpg"
+        },
+        {
+          "id": "pizza-brasileira",
+          "nome": "Pizza Brasileira",
+          "descricao": "Massa napolitana, molho de tomate, muçarela, calabresa, ovo, tomate, azeitona e orégano.",
+          "preco": 100.9,
+          "precoDe": 125.9,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202604161520_Y5N7_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Pizza Salgada",
+      "itens": [
+        {
+          "id": "pizza-grande-salgada-g-escolha-ate-2-sabores",
+          "nome": "Pizza Grande Salgada (G) - Escolha até 2 sabores",
+          "descricao": "Pizza Salgada 35cm",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202408221330_NK77_i.jpg"
+        },
+        {
+          "id": "pizza-broto-salgada-p",
+          "nome": "Pizza Broto Salgada (P)",
+          "descricao": "Pizza salgada de 25cm",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202408221342_24C4_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Combos com Desconto!",
+      "itens": [
+        {
+          "id": "pizza-salgada-p-coca-cola-lata-com-25-off",
+          "nome": "Pizza salgada (P) + Coca-Cola lata com 25% Off",
+          "descricao": "Escolha seu sabor favorito da pizza salgada pequena e leve um refrigerante lata com 25% de desconto!",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202504161214_1BR1_i.jpg"
+        },
+        {
+          "id": "pizza-salgada-g-coca-cola-2l-com-50-off",
+          "nome": "Pizza salgada (G) + Coca-Cola 2l com 50% off",
+          "descricao": "Escolha seu sabor favorito da pizza salgada grande e leve um refrigerante 2l com 50% de desconto!",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202504161100_7UYY_i.jpg"
+        },
+        {
+          "id": "pizza-grande-salgada-g-pizza-doce-p-20-off-na-doce",
+          "nome": "Pizza grande salgada (G) + Pizza doce (P) (20% off na doce)",
+          "descricao": "Peça uma pizza grande salgada e ganhe 20% de desconto em qualquer pizza doce pequena.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202504161059_3D37_i.jpg"
+        },
+        {
+          "id": "2-pizzas-salgadas-grandes-g-pizza-doce-p-gratis",
+          "nome": "2 pizzas salgadas grandes (G) = Pizza doce (P) grátis",
+          "descricao": "Peça duas pizzas salgadas grandes (35cm), e ganhe uma brotinho doce grátis dos seguintes sabores: Chocolate ao leite, Chocolate branco e Banana Nevada.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202504161058_10ES_i.jpg"
+        },
+        {
+          "id": "combo-pizza-salgada-g-pizza-doce-p-coca-cola-2l-gratis",
+          "nome": "Combo Pizza Salgada (G) + Pizza doce (P) + Coca-Cola 2l grátis",
+          "descricao": "Peça uma pizza salgada grande e uma pizza doce pequena e ganhe uma Coca-Cola 2l grátis.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202504161054_3K7X_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Meio a Meio Mais Pedidas!",
+      "itens": [
+        {
+          "id": "pizza-1-2-calabresa-pizza-1-2-frango-com-catupiry-g",
+          "nome": "Pizza 1/2 Calabresa + Pizza 1/2 Frango com Catupiry (G)",
+          "descricao": "Pizza de 35cm 1/2 calabresa e 1/2 frango com Catupiry. \n\nCalabresa: Massa napolitana de fermentação lenta extremamente leve com molho de tomate Heinz, calabresa, cebola e orégano\n\n\nFrango com Catupiry:  Massa napolitana de fermentação lenta extremamente leve com molho de tomate Heinz, muçarela de altíssima qualidade, frango desfiado, Catupiry Original e orégano.\n\nPreço fixo é válido para o item descrito acima, qualquer adicional, agregará custos ao pedido final.",
+          "preco": 86.9,
+          "precoDe": 90.9,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202504161052_QR78_i.jpg"
+        },
+        {
+          "id": "pizza-1-2-margherita-pizza-1-2-portuguesa-g",
+          "nome": "Pizza 1/2 Margherita + Pizza 1/2 Portuguesa (G)",
+          "descricao": "Pizza de 35cm 1/2 Margherita  e 1/2 Portuguesa\n \nMargherita: Massa napolitana de fermentação lenta extremamente leve com molho de tomate Heinz,  muçarela, tomate americano, manjericão e orégano\n\nPortuguesa: Massa napolitana de fermentação lenta extremamente leve com molho de tomate Heinz, muçarela, presunto, azeitona, cebola, ovo e orégano",
+          "preco": 88.9,
+          "precoDe": 94.9,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202504161052_H06H_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Pizza kids",
+      "itens": [
+        {
+          "id": "pizza-kids-de-calabresa",
+          "nome": "Pizza Kids de Calabresa.",
+          "descricao": "Molho de tomate e calabresa",
+          "preco": 31.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202508261609_L70W_i.jpg"
+        },
+        {
+          "id": "pizza-kids-de-carioca",
+          "nome": "Pizza Kids de Carioca",
+          "descricao": "Molho de tomate, mussarela e calabresa.",
+          "preco": 40.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202508261609_8W7P_i.jpg"
+        },
+        {
+          "id": "pizza-kids-de-mussarela",
+          "nome": "Pizza Kids de Mussarela",
+          "descricao": "Molho de tomate e mussarela",
+          "preco": 36.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202508261600_1J4X_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Pizza Doce",
+      "itens": [
+        {
+          "id": "pizza-doce-g-escolha-ate-2-sabores",
+          "nome": "Pizza doce (G) - Escolha até 2 sabores",
+          "descricao": "Pizza doce de 35cm - \nSelecione duas vezes o mesmo sabor caso deseje ela inteira de sabor único.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202408221419_R4XW_i.jpg"
+        },
+        {
+          "id": "pizza-broto-doce-p",
+          "nome": "Pizza Broto Doce (P)",
+          "descricao": "Pizza doce de 25cm",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202408221420_823F_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Bebidas - Entregas somente com Pizza",
+      "itens": [
+        {
+          "id": "refrigerante-lata",
+          "nome": "Refrigerante lata",
+          "descricao": "Não entregamos pedidos só de bebidas.",
+          "preco": 8.9,
+          "precoDe": 9.9,
+          "foto": "https://static-images.ifood.com.br/pratos/679195f7-8856-41c2-a675-e8ea927c66c5/202310061438_K263_i.jpg"
+        },
+        {
+          "id": "coca-cola-2l-original",
+          "nome": "Coca-Cola 2l Original",
+          "descricao": "Não entregamos pedidos só de bebidas.",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202609220935_U2MV_i.jpg"
+        },
+        {
+          "id": "coca-cola-2l-sem-acucar",
+          "nome": "Coca-Cola 2l Sem Açúcar",
+          "descricao": "Não entregamos pedidos só de bebidas.",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202609220935_5D4G_i.jpg"
+        },
+        {
+          "id": "fanta-guarana-2l-original",
+          "nome": "Fanta Guaraná 2l Original",
+          "descricao": "Não entregamos pedidos só de bebidas.",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/679195f7-8856-41c2-a675-e8ea927c66c5/202310061436_DAID_i.jpg"
+        },
+        {
+          "id": "sprite-2l",
+          "nome": "Sprite 2l",
+          "descricao": "",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202310131754_IRYL_i.jpg"
+        },
+        {
+          "id": "fanta-laranja-2l",
+          "nome": "Fanta Laranja 2l",
+          "descricao": "",
+          "preco": 15.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202310131756_0DJ1_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Salva Bordas",
+      "itens": [
+        {
+          "id": "salva-bordas-de-doce-de-leite",
+          "nome": "Salva Bordas de Doce de Leite",
+          "descricao": "Um potinho com nosso delicioso doce de leite com 30 g.",
+          "preco": 5.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202606181727_5EDV_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Hits",
+      "itens": [
+        {
+          "id": "pizza-broto-de-frango-com-catupiry-p",
+          "nome": "Pizza Broto de Frango com Catupiry (P)",
+          "descricao": "Massa napolitana, molho de tomate, mussarela, frango, Catupiry, orégano e azeitona preta.",
+          "preco": 62.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202408221338_18OR_i.jpg"
+        },
+        {
+          "id": "pizza-broto-de-marguerita-gourmet-p",
+          "nome": "Pizza Broto de Marguerita Gourmet (P)",
+          "descricao": "Massa napolitana, molho de tomate, mussarela, tomate cereja, manjericão, alho em lascas, orégano e azeitona preta.",
+          "preco": 55.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202408221336_47X0_i.jpg"
+        },
+        {
+          "id": "pizza-broto-portuguesa-p",
+          "nome": "Pizza Broto Portuguesa   (P)",
+          "descricao": "Massa napolitana, molho de tomate, mussarela, presunto, azeitona, cebola, ovo, orégano e azeitona preta.",
+          "preco": 55.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202408221319_30V7_i.jpg"
+        }
+      ]
+    }
+  ]
+}

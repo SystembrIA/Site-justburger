@@ -1,6 +1,6 @@
 {
   "loja": "burger-penha",
-  "copiadoDoIfoodEm": "2026-10-30T05:32:34.465-03:00",
+  "copiadoDoIfoodEm": "2026-11-01T07:17:11.313-03:00",
   "categorias": [
     {
       "categoria": "Queridinhos Da Just Com 15% Off Pc Noite",
@@ -8,7 +8,7 @@
         {
           "id": "just-burger-queridinhos",
           "nome": "Just Burger -Queridinhos",
-          "descricao": "Pão Brioche\nHambúrguer de 150 gr \nQueijo \nCebola \nMayo\nMolho Just.\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão Brioche\nHambúrguer de 150 gr\nQueijo\nCebola\nMayo\nMolho Just.\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n4g    Queijo prato\n6g    Pão brioche\n1g    Cebola/molhos\n39g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 29.9,
           "precoDe": 34.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202604241733_6UJV_i.jpg"
@@ -16,7 +16,7 @@
         {
           "id": "top-smash-queridinhos",
           "nome": "Top Smash - Queridinhos",
-          "descricao": "Pão Brioche\nHambúrguer de 150 gr \nbacon \nqueijo cheddar \ncebola caramelizada \npicles \nmayo \nmolho especial\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão Brioche\nHambúrguer de 150 gr\nbacon\nqueijo cheddar\nQueijo Prato\ncebola caramelizada\npicles\nmayo\nmolho especial\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n6g    Bacon\n5g    Queijo cheddar\n4g    Queijo prato\n6g    Pão brioche\n1g    Cebola/molhos\n50g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 38.9,
           "precoDe": 44.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202301031906_2ID5_i.jpg"
@@ -53,7 +53,7 @@
         {
           "id": "just-burger-queridinhos-2",
           "nome": "Just Burger -Queridinhos",
-          "descricao": "Pão Brioche \nHambúrguer de 150 gr \nQueijo \nCebola \nMayo\nMolho Just.\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão Brioche\nHambúrguer de 150 gr\nQueijo\nCebola\nMayo\nMolho Just.\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n4g    Queijo prato\n6g    Pão brioche\n1g    Cebola/molhos\n39g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 28.9,
           "precoDe": 32.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202604241733_0W2T_i.jpg"
@@ -61,7 +61,7 @@
         {
           "id": "top-smash-queridinhos-2",
           "nome": "Top Smash - Queridinhos",
-          "descricao": "Pão Brioche\nHambúrguer de 150 gr \nbacon \nqueijo cheddar \ncebola caramelizada \npicles \nmayo \nmolho especial\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão Brioche\nHambúrguer de 150 gr\nbacon\nqueijo cheddar\nQueijo Prato\ncebola caramelizada\npicles\nmayo\nmolho especial\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n6g    Bacon\n5g    Queijo cheddar\n4g    Queijo prato\n6g    Pão brioche\n1g    Cebola/molhos\n50g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 38.9,
           "precoDe": 44.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202301031906_2ID5_i.jpg"
@@ -98,7 +98,7 @@
         {
           "id": "combo-just-burger-burguer-batata-refri",
           "nome": "Combo Just Burger - Burguer + Batata + Refri",
-          "descricao": "Combo\n1 Lanche Just Burger, \n1 Batata palito individual , \nNão Fazemos Trocas De Itens.\n1 Refrigerante 350 ml Lata, \n\nPão\nHambúrguer de 150 gr \nQueijo \nCebola \nMolho Just\nMayo.",
+          "descricao": "Combo\n1 Lanche Just Burger,\n1 Batata palito individual ,\n1 Refrigerante 350 ml Lata,\n\nPão\nHambúrguer de 150 gr\nQueijo\nCebola\nMolho Just\nMayo.\n\nProteína (aproximada) por combo:\n28g   Carne 150g\n4g    Queijo prato\n6g    Pão\n1g    Cebola/molhos\n6g    Batata palito 200g\n45g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 55.9,
           "precoDe": 61.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202308232153_O0S1_i.jpg"
@@ -106,7 +106,7 @@
         {
           "id": "combo-just-passado-burguer-batata-refri",
           "nome": "Combo Just Passado - Burguer + batata + refri",
-          "descricao": "Combo\n1 Lanche Just Passado, \n1 Batata palito individual , \n1 Refrigerante 350 ml Lata, \n\nPão\nMayo\nMolho Just\nTomate\nAlface crespa\nQueijo prato\nHamburguer 150gr\n\nNão Fazemos Trocas De Itens.",
+          "descricao": "Combo\n1 Lanche Just Passado,\n1 Batata palito individual ,\n1 Refrigerante 350 ml Lata,\n\nPão\nMayo\nMolho Just\nTomate\nAlface crespa\nQueijo prato\nHamburguer 150gr\n\nProteína (aproximada) por combo:\n28g   Carne 150g\n4g    Queijo prato\n6g    Pão\n1g    Alface/tomate/molhos\n6g    Batata palito 200g\n45g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 57.9,
           "precoDe": 63.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202604241723_UOQ7_i.jpg"
@@ -114,7 +114,7 @@
         {
           "id": "combo-just-house-burguer-batata-refri",
           "nome": "Combo Just House - Burguer + Batata + Refri",
-          "descricao": "Combo\n1 Lanche House, \n1 Batata palito individual,  \n1 Refrigerante 350 ml Lata, \n\nPão tradicional \nHamburguer 150g \nCheddar\nMayo \nCebola Roxa \nBacon \nMolho Just\nNão Fazemos Trocas De Itens.",
+          "descricao": "Combo\n1 Lanche House,\n1 Batata palito individual,\n1 Refrigerante 350 ml Lata,\n\nPão tradicional\nHamburguer 150g\nCheddar\nMayo\nCebola Roxa\nBacon\nMolho Just\n\nProteína (aproximada) por combo:\n28g   Carne 150g\n6g    Bacon\n5g    Queijo cheddar\n6g    Pão\n1g    Cebola/molhos\n6g    Batata palito 200g\n52g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 62.9,
           "precoDe": 69.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202309021701_0WT8_i.jpg"
@@ -122,23 +122,15 @@
         {
           "id": "just-combo-1-burguer-batata-refri",
           "nome": "Just Combo 1 - Burguer + batata + refri",
-          "descricao": "Combo\n1 Lanche Top Smash \n1 Batata palito individual \n1 Refrigerante 350 ml Lata\n\nIngredientes do Lanche : Hambúrguer de 150 gr, pão, bacon, queijo, cheddar, cebola caramelizada, picles, mayo, molho especial\nNão Fazemos Trocas De Itens.",
+          "descricao": "Combo\n1 Lanche Top Smash\n1 Batata palito individual\n1 Refrigerante 350 ml Lata\n\nIngredientes do Lanche : Hambúrguer de 150 gr, pão, bacon, queijo, cheddar, cebola caramelizada, picles, mayo, molho especial\n\nProteína (aproximada) por combo:\n28g   Carne 150g\n6g    Bacon\n5g    Queijo cheddar\n4g    Queijo prato\n6g    Pão\n1g    Cebola/molhos\n6g    Batata palito 200g\n56g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 64.9,
           "precoDe": 71.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202301041114_G281_i.jpg"
         },
         {
-          "id": "combo-just-chicken-burguer-batata-refri",
-          "nome": "Combo Just Chicken - Burguer + Batata + Refri",
-          "descricao": "Combo\n1 lanche Just chicken \n1 batata palito\n1 refrigerante 350 ml\n\nIngredientes: \nPão \nFrango especial Just temperado \nMolho de mostarda e mel\nMayo  \nCebola roxa \nAlface\nNão Fazemos Trocas De Itens.",
-          "preco": 63.9,
-          "precoDe": 70.9,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202308182238_M1V4_i.jpg"
-        },
-        {
           "id": "just-combo-3-burguer-batata-refri",
           "nome": "Just combo 3 - Burguer + batata + Refri",
-          "descricao": "Combo\n1 cheddar melt,  \n1 batata palito, \n1 refrigerante 350ml lata. \n\nPão australiano, hamburguer 150g, cheddar Original importado, molho just e cebola refogada no molho shoyo \n\n(Devido a consistência do cheddar Ter Que Ser Fria esta opção de lanche não chega totalmente quente)\n\nNão Fazemos Trocas De Itens.",
+          "descricao": "Combo\n1 cheddar melt,\n1 batata palito,\n1 refrigerante 350ml lata.\n\nPão australiano, hamburguer 150g, cheddar Original importado, molho just e cebola refogada no molho shoyo\n\n(Devido a consistência do cheddar Ter Que Ser Fria esta opção de lanche não chega totalmente quente)\n\nProteína (aproximada) por combo:\n28g   Carne 150g\n5g    Queijo cheddar\n6g    Pão australiano\n1g    Cebola/molhos\n6g    Batata palito 200g\n46g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 64.9,
           "precoDe": 71.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202308202344_81SO_i.jpg"
@@ -164,7 +156,7 @@
         {
           "id": "2-just-passado",
           "nome": "2 Just Passado",
-          "descricao": "Aproveite o famoso just passado (X- salada) em dobro, com duas unidades e com  uma promoção incomparavél!!!\n2 passados\nPão brioche\nMayo\nMolho Just \nTomate \nAlface Crespa\nQueijo Prato\nHamburguer de 150gr\nNão Fazemos Trocas De Itens.",
+          "descricao": "Aproveite o famoso just passado (X- salada) em dobro, com duas unidades e com  uma promoção incomparavél!!!\n2 passados\nPão brioche\nMayo\nMolho Just\nTomate\nAlface Crespa\nQueijo Prato\nHamburguer de 150gr\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n4g    Queijo prato\n6g    Pão\n1g    Alface/tomate/molhos\n39g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 72.9,
           "precoDe": 78.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202411111357_R5UA_i.jpg"
@@ -177,7 +169,7 @@
         {
           "id": "just-burger-hamburguer-de-150-g",
           "nome": "Just burger -  hambúrguer de 150 g",
-          "descricao": "Pão Brioche \nHambúrguer de 150 gr \nQueijo \nCebola \nMayo\nMolho Just.\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão Brioche\nHambúrguer de 150 gr\nQueijo\nCebola\nMayo\nMolho Just.\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n4g    Queijo prato\n6g    Pão brioche\n1g    Cebola/molhos\n39g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 34.9,
           "precoDe": 39.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202604241733_6UJV_i.jpg"
@@ -185,7 +177,7 @@
         {
           "id": "just-passado-o-novo-sucesso-hits",
           "nome": "Just Passado - O novo Sucesso ! Hits",
-          "descricao": "O famoso X Salada Está De Volta !\nPão\nMayo\nMolho Just \nTomate\nAlface crespa\nQueijo prato\nHamburguer 150gr\nNão Fazemos Trocas De Itens.",
+          "descricao": "O famoso X Salada Está De Volta !\nPão\nMayo\nMolho Just\nTomate\nAlface crespa\nQueijo prato\nHamburguer 150gr\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n4g    Queijo prato\n6g    Pão\n1g    Alface/tomate/molhos\n39g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 46.9,
           "precoDe": 51.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202408311632_35Y1_i.jpg"
@@ -193,7 +185,7 @@
         {
           "id": "just-passado-o-novo-sucesso",
           "nome": "Just Passado - O novo Sucesso !",
-          "descricao": "O famoso X Salada Está De Volta !\nPão\nMayo\nMolho Just\nTomate\nAlface crespa\nQueijo prato\nHamburguer 150gr\nNão Fazemos Trocas De Itens.",
+          "descricao": "O famoso X Salada Está De Volta !\nPão\nMayo\nMolho Just\nTomate\nAlface crespa\nQueijo prato\nHamburguer 150gr\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n4g    Queijo prato\n6g    Pão\n1g    Alface/tomate/molhos\n39g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 39.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202408311632_35Y1_i.jpg"
@@ -201,7 +193,7 @@
         {
           "id": "just-house-top-2-mais-vendido-hits",
           "nome": "Just House - Top 2 mais vendido - Hits",
-          "descricao": "Pão Brioche\nHamburguer 150g \nCheddar\nMayo \nCebola Roxa \nBacon \nMolho Just\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão Brioche\nHamburguer 150g\nCheddar\nMayo\nCebola Roxa\nBacon\nMolho Just\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n6g    Bacon\n5g    Queijo cheddar\n6g    Pão brioche\n1g    Cebola/molhos\n46g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 49.9,
           "precoDe": 56.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202208130136_2T72_i.jpg"
@@ -209,7 +201,7 @@
         {
           "id": "just-house-top-2-mais-vendido",
           "nome": "Just House - Top 2 mais vendido",
-          "descricao": "Pão Brioche\nHamburguer 150g\nCheddar\nMayo\nCebola Roxa\nBacon\nMolho Just\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão Brioche\nHamburguer 150g\nCheddar\nMayo\nCebola Roxa\nBacon\nMolho Just\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n6g    Bacon\n5g    Queijo cheddar\n6g    Pão brioche\n1g    Cebola/molhos\n46g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 42.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202411061614_00XU_i.jpg"
@@ -217,23 +209,15 @@
         {
           "id": "top-smash-top-1-mais-vendido",
           "nome": "Top Smash - Top 1 mais vendido",
-          "descricao": "Pão Brioche, Hambúrguer de 150g, bacon, queijo cheddar, Queijo Prato, cebola caramelizada, picles, mayo e molho especial.\n\nProteína (estimativa) por lanche:\n~28g  Carne 150g\n~6g   Bacon\n~5g   Queijo cheddar\n~4g   Queijo prato\n~6g   Pão brioche\n~1g   Cebola/picles/molhos\n~48g  Total\n\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão Brioche, Hambúrguer de 150g, bacon, queijo cheddar, Queijo Prato, cebola caramelizada, picles, mayo e molho especial.\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n6g    Bacon\n5g    Queijo cheddar\n4g    Queijo prato\n6g    Pão brioche\n1g    Cebola/molhos\n50g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 44.9,
           "precoDe": 50.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202301031906_2ID5_i.jpg"
         },
         {
-          "id": "just-chicken",
-          "nome": "Just Chicken",
-          "descricao": "Just chicken \nPão de gergelim mesclado\nFrango especial Just temperado, \nMostarda especial Just com mel e especiarias, \nMayo temperada, \nMolho Just,\nCebola roxa e alface\n\nNão Fazemos Trocas De Itens.",
-          "preco": 43.9,
-          "precoDe": 49.9,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202109241753_202U_i.jpg"
-        },
-        {
           "id": "just-brasil",
           "nome": "Just Brasil",
-          "descricao": "Pão brioche, \nHambúrguer 150 g, \nMayo, \nmolho Just, \nQueijo Coalho,\nBacon, \nCebola Roxa,\nCouve Crispy,  \nMelaço de cana de açúcar.\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão brioche,\nHambúrguer 150 g,\nMayo,\nmolho Just,\nQueijo Coalho,\nBacon,\nCebola Roxa,\nCouve Crispy,\nMelaço de cana de açúcar.\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n7g    Queijo coalho\n6g    Bacon\n6g    Pão brioche\n1g    Cebola/molhos\n48g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 49.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202301031905_F5U2_i.jpg"
@@ -241,7 +225,7 @@
         {
           "id": "catupi-burger",
           "nome": "Catupi Burger",
-          "descricao": "Pão Brioche\nHambúrguer 150 gr,\nMaionese Defumada,\nMolho Just,\nCatupiry, \nBacon Triturado, \nCrispy de Cebola\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão Brioche\nHambúrguer 150 gr,\nMaionese Defumada,\nMolho Just,\nCatupiry,\nBacon Triturado,\nCrispy de Cebola\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n2g    Catupiry\n4g    Bacon triturado\n6g    Pão brioche\n1g    Cebola/molhos\n41g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 47.9,
           "precoDe": 52.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202208161857_BRQ3_i.jpg"
@@ -249,7 +233,7 @@
         {
           "id": "just-cheddar-melt",
           "nome": "Just Cheddar Melt",
-          "descricao": "Pão Australiano,\nHamburger 150g,\nCheddar,\nMolho Just, \nCebola refogada no molho Shoyu\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão Australiano,\nHamburger 150g,\nCheddar,\nMolho Just,\nCebola refogada no molho Shoyu\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n5g    Queijo cheddar\n6g    Pão australiano\n1g    Cebola/molhos\n40g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 44.9,
           "precoDe": 50.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202308272253_7W35_i.jpg"
@@ -257,7 +241,7 @@
         {
           "id": "dolce-gabana-top-4-mais-vendido",
           "nome": "Dolce Gabana - Top 4 Mais Vendido",
-          "descricao": "Pão de brioche \nHambúrguer de 150 gr\nQueijo gorgonzola \nGeleia de damasco, \nFarofa de bacon \nMayo \nMolho Just especial\nBacon fatiado\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão de brioche\nHambúrguer de 150 gr\nQueijo gorgonzola\nGeleia de damasco,\nFarofa de bacon\nMayo\nMolho Just especial\nBacon fatiado\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n6g    Queijo gorgonzola\n6g    Bacon\n4g    Farofa de bacon\n6g    Pão brioche\n1g    Cebola/molhos\n51g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 51.9,
           "precoDe": 56.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202301031952_187U_i.jpg"
@@ -265,7 +249,7 @@
         {
           "id": "double-burger-day",
           "nome": "Double Burger Day",
-          "descricao": "Pão de gergelim misto\n2 hambúrguer de 150 gr\nAlface\nTomate\nMayo\nMolho just\nBacon\nCebola caramelizada.\nQueijo Prato\nCheddar fatia\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão de gergelim misto\n2 hambúrguer de 150 gr\nAlface\nTomate\nMayo\nMolho just\nBacon\nCebola caramelizada.\nQueijo Prato\nCheddar fatia\n\nProteína (aproximada) por lanche:\n56g   Carne 2x 150g\n6g    Bacon\n4g    Queijo prato\n5g    Queijo cheddar\n6g    Pão de gergelim\n1g    Alface/tomate/molhos\n78g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 52.9,
           "precoDe": 57.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202301031948_RT81_i.jpg"
@@ -273,7 +257,7 @@
         {
           "id": "just-burger-day",
           "nome": "Just Burger Day",
-          "descricao": "Pão de gergelim misto\nHamburguer de 150 gr\nAlface \nTomate\nMayo\nMolho Just\nQueijo Prato\nCheddar Fatia\nBacon\nCebola caramelizada\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão de gergelim misto\nHamburguer de 150 gr\nAlface\nTomate\nMayo\nMolho Just\nQueijo Prato\nCheddar Fatia\nBacon\nCebola caramelizada\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n6g    Bacon\n4g    Queijo prato\n5g    Queijo cheddar\n6g    Pão de gergelim\n1g    Alface/tomate/molhos\n50g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 49.9,
           "precoDe": 54.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202301031957_G854_i.jpg"
@@ -281,7 +265,7 @@
         {
           "id": "just-three-cheese",
           "nome": "Just Three Cheese",
-          "descricao": "Pão de Brioche, \nHamburguer 150g, \nMolho Just, \nMayo\nCheddar, \nBacon, \ne o Catupiry com provolone.\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão de Brioche,\nHamburguer 150g,\nMolho Just,\nMayo\nCheddar,\nBacon,\ne o Catupiry com provolone.\n\nProteína (aproximada) por lanche:\n28g   Carne 150g\n5g    Queijo cheddar\n2g    Catupiry\n5g    Provolone\n6g    Bacon\n6g    Pão brioche\n1g    Cebola/molhos\n53g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 55.9,
           "precoDe": 60.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202308231933_MCDO_i.jpg"
@@ -289,15 +273,15 @@
         {
           "id": "double-smash-2-hamburguer-de-150-gr",
           "nome": "Double smash - 2 hambúrguer de 150 gr",
-          "descricao": "Pão \n2 hambúrguers de 150 gr \nQueijo prato \nCheddar  \nAlface \nCebola caramelizada  \nPicles \nMayo \nMolho especial.\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão\n2 hambúrguers de 150 gr\nQueijo prato\nCheddar\nAlface\nCebola caramelizada\nPicles\nMayo\nMolho especial.\n\nProteína (aproximada) por lanche:\n56g   Carne 2x 150g\n4g    Queijo prato\n5g    Queijo cheddar\n6g    Pão\n1g    Cebola/molhos\n72g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 52.9,
           "precoDe": 57.9,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202301032017_C820_i.jpg"
         },
         {
-          "id": "just-kids-presente-fini-dia-das-criancas",
-          "nome": "Just Kids - Presente Fini Dia Das Crianças!!!",
-          "descricao": "Caixinha personalizada infantil. \n1 cheese burger (ou nugetts) \n1 Fritas \n1 refrig. Pequeno ou suco de caixinha 200ml\n1 Lembrancinha\n3 Finis Especial De Dia Das Crianças\nNão Fazemos Trocas De Itens.",
+          "id": "just-kids",
+          "nome": "Just Kids",
+          "descricao": "Caixinha personalizada infantil. \n1 cheese burger (ou nugetts) \n1 Fritas \n1 refrig. Pequeno ou suco de caixinha 200ml\n1 Lembrancinha\nNão Fazemos Trocas De Itens.",
           "preco": 39.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202610121553_5T6F_i.jpg"
@@ -310,7 +294,7 @@
         {
           "id": "just-moun",
           "nome": "Just Moun",
-          "descricao": "Pão brioche, 1 Carne smash 80gr, Queijo prato, Molho Just , Alface americana, Tomate.\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão brioche, 1 Carne smash 80gr, Queijo prato, Molho Just , Alface americana, Tomate.\n\nProteína (aproximada) por lanche:\n15g   Carne smash 80g\n4g    Queijo prato\n6g    Pão brioche\n1g    Alface/tomate/molhos\n26g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 34.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202605071705_45QQ_i.jpg"
@@ -318,7 +302,7 @@
         {
           "id": "just-jaro",
           "nome": "Just Jaro",
-          "descricao": "Pão brioche, 2 Carnes - smash 80gr, Molho Just, Queijo prato, Alface americana, Tomate.\nNão Fazemos Trocas De Itens.",
+          "descricao": "Pão brioche, 2 Carnes - smash 80gr, Molho Just, Queijo prato, Alface americana, Tomate.\n\nProteína (aproximada) por lanche:\n30g   Carne smash 2x 80g\n4g    Queijo prato\n6g    Pão brioche\n1g    Alface/tomate/molhos\n41g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 38.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202605071706_1B68_i.jpg"
@@ -326,7 +310,7 @@
         {
           "id": "just-ozem",
           "nome": "Just Ozem",
-          "descricao": "2 carnes smash 80gr\n2 queijos prato\nmolho  rose\nAlface americana\nTomate\nNão Fazemos Trocas De Itens.",
+          "descricao": "2 carnes smash 80gr\n2 queijos prato\nmolho  rose\nAlface americana\nTomate\n\nProteína (aproximada) por lanche:\n30g   Carne smash 2x 80g\n8g    Queijo prato 2x\n1g    Alface/tomate/molhos\n39g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 37.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202609111120_8BA7_i.jpg"
@@ -334,7 +318,7 @@
         {
           "id": "just-pic",
           "nome": "Just Pic",
-          "descricao": "2 Frangos grelhados, 2 Queijos prato, Molho rose, Alface americana, Tomate.\nNão Fazemos Trocas De Itens.",
+          "descricao": "2 Frangos grelhados, 2 Queijos prato, Molho rose, Alface americana, Tomate.\n\nProteína (aproximada) por lanche:\n50g   Frango grelhado 2x 80g\n8g    Queijo prato 2x\n1g    Alface/tomate/molhos\n59g   Total\n\nNão Fazemos Trocas De Itens.",
           "preco": 37.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202609111122_682H_i.jpg"
@@ -414,14 +398,6 @@
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202507021713_2120_i.jpg"
         },
         {
-          "id": "sache-de-molho-mayo-100g",
-          "nome": "Sachê de molho mayo 100g",
-          "descricao": "Vc pediu a melhor maionese temperada em tamanho maior !!! Tá ai a Mayo G !!\n\n1 Unidade de 100 gr",
-          "preco": 14.9,
-          "precoDe": null,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202507021713_5671_i.jpg"
-        },
-        {
           "id": "sache-de-molho-cheddar-30g",
           "nome": "Sachê de molho cheddar 30g",
           "descricao": "Sem dúvidas esse cheddar é algo especial.",
@@ -457,54 +433,6 @@
           "preco": 28.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202602250841_TK0X_i.jpg"
-        },
-        {
-          "id": "salada-caesar",
-          "nome": "Salada Caesar",
-          "descricao": "Salada individual \nAlface americano, frango desfiado, parmesão ralado, croutons e molho caesar.\n\nTamanho Para Uma Pessoa!!",
-          "preco": 28.9,
-          "precoDe": null,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202207251944_Q46P_i.jpg"
-        },
-        {
-          "id": "salada-tradicional",
-          "nome": "Salada Tradicional",
-          "descricao": "Alface americana\nTomate cereja\nCebola roxa\nCenoura \nTamanho para uma pessoa!",
-          "preco": 20.9,
-          "precoDe": null,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202602250839_HEW7_i.jpg"
-        },
-        {
-          "id": "salada-cheese",
-          "nome": "Salada Cheese",
-          "descricao": "Alface americano\nTomate italiano\nQueijo parmesão\n\nTamanho para uma pessoa!",
-          "preco": 20.9,
-          "precoDe": null,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202602250837_D6OG_i.jpg"
-        },
-        {
-          "id": "salada-completa",
-          "nome": "Salada Completa",
-          "descricao": "Alface americana, tomate cereja, cebola roxa, palmito, milho e cenoura ralada.\nTamanho Para Uma Pessoa!",
-          "preco": 22.9,
-          "precoDe": null,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202602261129_K0O4_i.jpg"
-        },
-        {
-          "id": "salada-especial-1-pessoas",
-          "nome": "Salada especial ( 1 pessoas )",
-          "descricao": "Alface americana, tomate cereja, cebola roxa, cenoura no vapor, brócolis, ovo, palmito, maionese com batatas, e vagem, ( opcional adicionar um complemento).\nNão Removemos Os Insumos Da Salada.",
-          "preco": 31.9,
-          "precoDe": null,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202602261135_6311_i.jpg"
-        },
-        {
-          "id": "prato-fitness",
-          "nome": "Prato Fitness",
-          "descricao": "Filé de frango grelhado.\nBrócolis,\nCenoura,\nTomate,\nVagem,\nOvo cozido,\nCebola,\nAlface\nNão removemos os insumos da salada.",
-          "preco": 41.9,
-          "precoDe": 47.9,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202608201415_PM08_i.jpg"
         }
       ]
     },
@@ -512,44 +440,12 @@
       "categoria": "Just shake",
       "itens": [
         {
-          "id": "milk-shake-de-cafe-300ml",
-          "nome": "Milk-Shake de Café 300ml",
-          "descricao": "Milk-Shake de Café 300ml",
-          "preco": 21.9,
-          "precoDe": null,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202609292134_2DAR_i.jpg"
-        },
-        {
           "id": "milk-shake-de-pistache-300ml",
           "nome": "Milk-Shake de Pistache 300ml",
           "descricao": "Milk-Shake de Pistache 300ml",
           "preco": 21.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202602241646_5Q23_i.jpg"
-        },
-        {
-          "id": "milk-shake-de-ninho-com-nutella-300ml",
-          "nome": "Milk-Shake de Ninho com Nutella 300ml",
-          "descricao": "Milk-Shake Ninho com Nutella 300ml",
-          "preco": 21.9,
-          "precoDe": null,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202409191717_5570_i.jpg"
-        },
-        {
-          "id": "milk-shake-de-ninho-300ml",
-          "nome": "Milk-Shake de Ninho 300ml",
-          "descricao": "Milk-Shake de Ninho 300ml",
-          "preco": 21.9,
-          "precoDe": null,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202409191718_5Q6W_i.jpg"
-        },
-        {
-          "id": "milk-shake-de-nutella-300ml",
-          "nome": "Milk-Shake de Nutella 300ml",
-          "descricao": "Milk-Shake de Nutella 300ml",
-          "preco": 21.9,
-          "precoDe": null,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202409191638_K4VS_i.jpg"
         },
         {
           "id": "milk-shake-de-morango-300ml",
@@ -564,14 +460,6 @@
     {
       "categoria": "Bebidas",
       "itens": [
-        {
-          "id": "pink-lemonade-500-mls",
-          "nome": "Pink lemonade 500 mls",
-          "descricao": "Um sabor diferente de tudo que já bebeu, refrescante, deliciosa, peça, você não vai se arrepender !!!",
-          "preco": 13.9,
-          "precoDe": 15.9,
-          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202107252108_8150_i.jpg"
-        },
         {
           "id": "coca-cola-350-ml",
           "nome": "Coca Cola 350 ml",
@@ -776,6 +664,14 @@
     {
       "categoria": "Sobremesa",
       "itens": [
+        {
+          "id": "pudim-de-chocolate-branco-com-morango",
+          "nome": "Pudim de Chocolate Branco com Morango",
+          "descricao": "Um pudim que vc nunca viu igual, só pede, e depois nos fale ! Uma consistencia unica que só a just traz pra vc !",
+          "preco": 22.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de/202507181609_0X81_i.jpg"
+        },
         {
           "id": "pudim-de-brigadeirao-de-chocolate",
           "nome": "Pudim de Brigadeirão de Chocolate",

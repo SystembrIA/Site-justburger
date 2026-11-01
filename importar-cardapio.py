@@ -56,3 +56,37 @@ for cat in dados['categorias']:
 
 (PASTA / 'cardapio-ifood.json').write_text(json.dumps(dados, ensure_ascii=False, indent=2) + '\n')
 print(f'{len(ids)} itens importados ({com_foto} com foto). Rode: node build.mjs')
+
+# ---------- Outras culinárias (JARVIS, 01/11): mesmo formato, fotos em site-dados/fotos-<marca>/ ----------
+for marca in ['just-gourmet', 'just-forneria', 'just-esfiha', 'just-sushi']:
+    try:
+        dm = json.loads(baixar(f'cardapio-{marca}.json'))
+    except urllib.error.HTTPError as erro:
+        print(f'{marca}: sem cardápio ({erro.code})')
+        continue
+    try:
+        ind = json.loads(baixar(f'fotos-{marca}/indice.json'))
+    except urllib.error.HTTPError:
+        ind = {}
+    pasta = PASTA / 'assets' / 'img' / f'cardapio-{marca}'
+    pasta.mkdir(parents=True, exist_ok=True)
+    ids_m = {i['id'] for c in dm['categorias'] for i in c['itens']}
+    for velho in pasta.glob('*.webp'):
+        if velho.stem.removesuffix('-600') not in ids_m:
+            velho.unlink()
+    n = 0
+    for c in dm['categorias']:
+        for item in c['itens']:
+            if item['id'] not in ind:
+                continue
+            destino = pasta / f"{item['id']}.webp"
+            if not destino.exists():
+                try:
+                    f = Image.open(io.BytesIO(baixar(f"fotos-{marca}/{item['id']}.webp")))
+                except urllib.error.HTTPError:
+                    continue
+                f.save(destino, 'WEBP', quality=86, method=6)
+                f.resize((600, 450), Image.LANCZOS).save(pasta / f"{item['id']}-600.webp", 'WEBP', quality=84, method=6)
+            n += 1
+    (PASTA / f'cardapio-{marca}.json').write_text(json.dumps(dm, ensure_ascii=False, indent=2) + '\n')
+    print(f'{marca}: {len(ids_m)} itens ({n} com foto)')

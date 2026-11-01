@@ -1,0 +1,774 @@
+{
+  "loja": "sushi-penha",
+  "copiadoDoIfoodEm": "2026-11-01T07:12:25.796-03:00",
+  "categorias": [
+    {
+      "categoria": "Novidades!",
+      "itens": [
+        {
+          "id": "camarao-supremo-04-unid",
+          "nome": "Camarão Supremo (04 unid.)",
+          "descricao": "Nova Receita!!\nSupremo – 4 camarões empanados na panko, recheados com cream cheese, nosso tempero secreto, crocância garantida em cada mordida!",
+          "preco": 39.9,
+          "precoDe": 44.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051855_304E_i.jpg"
+        },
+        {
+          "id": "joe-tartar-de-salmao-trufado-04-unid",
+          "nome": "Joe Tartar de Salmão Trufado (04 unid)",
+          "descricao": "Base de arroz enrolado com lâmina de salmão e topo de tartar de salmão com cebolinha, gergelim, flor de sal e azeite trufado.",
+          "preco": 48.9,
+          "precoDe": 52.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506021659_U36X_i.jpg"
+        },
+        {
+          "id": "niguiri-de-haddock-trufado",
+          "nome": "Niguiri de Haddock Trufado",
+          "descricao": "Niguiri Haddock frito com mel trufado, sabor que nunca experimentou !",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031320_4M70_i.jpg"
+        },
+        {
+          "id": "combo-maki",
+          "nome": "Combo Maki",
+          "descricao": "5 hossomaki Filadélfia \n5 Uramaki salmão Cream \n5 Uramaki Filadélfia",
+          "preco": 52.9,
+          "precoDe": 58.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202610270942_F57K_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Teppan",
+      "itens": [
+        {
+          "id": "teppan-de-salmao",
+          "nome": "Teppan de Salmão",
+          "descricao": "",
+          "preco": 47.9,
+          "precoDe": 55.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202608171704_3N47_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Combinados e Hot Combos Até 20% Off!",
+      "itens": [
+        {
+          "id": "deguste-21-pecas",
+          "nome": "Deguste (21 peças)",
+          "descricao": "05 sashimi salmão\n05 hossomaki filadélfia\n05 uramaki filadélfia \n04 joe salmão\n02 sushi salmão",
+          "preco": 104.9,
+          "precoDe": 135.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031254_133T_i.jpg"
+        },
+        {
+          "id": "deguste-40-pecas",
+          "nome": "Deguste (40 peças)",
+          "descricao": "05 sashimi salmão\n05 sashimi salmão roast (maçaricado)\n10 hossomaki filadélfia\n10 uramaki filadélfia\n06 joe salmão\n04 sushi salmão",
+          "preco": 177.9,
+          "precoDe": 198.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051905_QCA7_i.jpg"
+        },
+        {
+          "id": "gourmet-20-pecas",
+          "nome": "Gourmet (20 Peças)",
+          "descricao": "02 sashimi salmão\n02 sashimi atum\n02 sashimi Peixe Branco\n02 sashimi haddock\n01 niguiri salmão brulé\n01 niguiri camarão\n01 niguiri polvo\n01 niguiri skin special\n01 joe salmão tartar trufado\n01 joe poró crispy\n01 joe Ceviche\n01 joe salmão\n01 joe couve crispy\n01 ebi shakke\n02 Baterá de Salmão",
+          "preco": 135.9,
+          "precoDe": 156.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031309_A6L4_i.jpg"
+        },
+        {
+          "id": "gourmet-40-pecas",
+          "nome": "Gourmet (40 peças)",
+          "descricao": "04 sashimi salmão\n04 sashimi atum\n04 sashimi Peixe Branco\n04 sashimi haddock\n02 sushi camarão\n02 sushi polvo\n02 sushi skin special\n02 joe salmão tartar trufado\n02 joe poró crispy\n02 joe ceviche\n02 joe couve crispy\n02 joe salmão com cream cheese\n02 ebi shakke\n02 niguiri salmão rostaed\n04 baterá salmão",
+          "preco": 198.9,
+          "precoDe": 229.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507081541_487X_i.jpg"
+        },
+        {
+          "id": "aham-fresh-27-pecas",
+          "nome": "Aham! Fresh (27 peças)",
+          "descricao": "05 sashimi salmão\n05 sashimi Peixe Branco lemon\n05 uramaki salmão lemon\n04 joe ceviche trufado (Pb)\n04 Joe Spicy \n02 sushi Peixe Branco trufado\n02 sushi salmão lemon",
+          "preco": 138.9,
+          "precoDe": 152.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051904_E832_i.jpg"
+        },
+        {
+          "id": "combo-hot-holl",
+          "nome": "Combo Hot Holl",
+          "descricao": "05 Unid. Hot Holl  Salmão Tradicional com Cream Cheese, Teriyaki da casa e cebolinha\n05 Unid. Hot Holl Especial com Alho poró, com cream cheese, e molho teriyaki da casa.",
+          "preco": 41.9,
+          "precoDe": 48.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031844_2K4U_i.jpg"
+        },
+        {
+          "id": "combo-hot-holl-especial",
+          "nome": "Combo Hot Holl Especial",
+          "descricao": "05 Unid. Hot Holl Base de hot filadélfia crocante, com topo de cubos de barriga de salmão, finalizada com azeite trufado e flor de sal.\n05 Unid. Hot Holl Especial com Alho poró, com cream cheese, e molho teriyaki da casa\n05 Unid. Hot Holl com couve crispy, com cream cheese, teriyaki da casa",
+          "preco": 68.9,
+          "precoDe": 79.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031851_8A00_i.jpg"
+        },
+        {
+          "id": "combo-hot-mex",
+          "nome": "Combo Hot Mex!!",
+          "descricao": "5 Hot Filadelphia\n5 Hot Couve Crisp\n5 Hot Mex",
+          "preco": 60.9,
+          "precoDe": 67.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202508141907_0V0J_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Hot Holl e Dog Hot",
+      "itens": [
+        {
+          "id": "hot-filadelfia-salmao",
+          "nome": "Hot Filadélfia Salmão",
+          "descricao": "Salmão\nCream cheese\nMolho Teriyaki da casa\ncebolinha\nEnrolado de arroz com nori por fora\nFrito na farinha panko.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031725_2025_i.jpg"
+        },
+        {
+          "id": "hot-filadefia-salmao-especial",
+          "nome": "Hot Filadéfia Salmão Especial",
+          "descricao": "Salmão com Cream cheese, Enrolado de arroz com nori por fora, Frito na farinha panko ,  Finalizado com cream cheese, crispy de alho poró e teriyaki da casa.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061735_YB7F_i.jpg"
+        },
+        {
+          "id": "hot-holl-mex",
+          "nome": "Hot Holl Mex",
+          "descricao": "Salmão\nCream cheese\nMolho Teriyaki da casa\nEnrolado de arroz com nori por fora\nFrito na farinha panko.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031827_T1WF_i.jpg"
+        },
+        {
+          "id": "hot-fila-couve-crispy",
+          "nome": "Hot Fila Couve Crispy",
+          "descricao": "Base de hot salmão filadélfia crocante, cream cheese, com topo de couve crispy e alho frito.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061748_W6JY_i.jpg"
+        },
+        {
+          "id": "hot-tartar-salmao-trufado",
+          "nome": "Hot Tartar Salmão Trufado",
+          "descricao": "Base de hot filadélfia crocante, com topo de cubos de barriga de salmão, finalizada com azeite trufado e flor de sal.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506071656_UR1F_i.jpg"
+        },
+        {
+          "id": "dog-hot-salmao",
+          "nome": "Dog Hot Salmão",
+          "descricao": "Dog Hot - Hotholl com salmão Cru , teriyaki da Casa, vinagrete (ceviche).",
+          "preco": 41.9,
+          "precoDe": 45.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031808_405J_i.jpg"
+        },
+        {
+          "id": "dog-hot-salmao-grelhado",
+          "nome": "Dog Hot Salmão Grelhado",
+          "descricao": "Dog Hot - Hotholl com salmão Grelhado, teriyaki e crispy de alho poró.",
+          "preco": 41.9,
+          "precoDe": 45.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031810_FO2J_i.jpg"
+        },
+        {
+          "id": "sushi-burger-filadelfia",
+          "nome": "Sushi Burger Filadélfia",
+          "descricao": "Aqui nosso hot filadélfia ganha cara de sanduiche e muito mais sabor! \nSalmão\narroz\nnori\ncream cheese \ncebolinha\nempanado na Panko e frito.",
+          "preco": 34.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061647_U5M6_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Entradinhas",
+      "itens": [
+        {
+          "id": "salmao-ball-com-cream-cheese-08-unidades",
+          "nome": "Salmão Ball Com Cream Cheese - 08 Unidades",
+          "descricao": "Vc vai adorar ! Bolinhas de salmão temperado e desfiado com cream cheese, geleia de pimenta, empanado na farinha panko.",
+          "preco": 36.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202512201400_SXS3_i.jpg"
+        },
+        {
+          "id": "shimeji",
+          "nome": "Shimeji",
+          "descricao": "Cogumelo Japonês temperado e salteado na manteiga com Saquê",
+          "preco": 37.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061642_438O_i.jpg"
+        },
+        {
+          "id": "sunomono",
+          "nome": "Sunomono",
+          "descricao": "Pepino japonês fatiado\nKani marinado em molho",
+          "preco": 17.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031757_KA25_i.jpg"
+        },
+        {
+          "id": "sunomono-e-kani",
+          "nome": "Sunomono e Kani",
+          "descricao": "Pepino japonês fatiado\nKani marinado em molho",
+          "preco": 20.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061403_T07D_i.jpg"
+        },
+        {
+          "id": "sunomono-especial",
+          "nome": "Sunomono Especial",
+          "descricao": "Pepino japonês fatiado\nPolvo\nkani marinado em molho.",
+          "preco": 25.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061404_6S2K_i.jpg"
+        },
+        {
+          "id": "fry",
+          "nome": "Fry",
+          "descricao": "Cubos de peixe branco empanados na panko, com molho opcional",
+          "preco": 45.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061400_00O3_i.jpg"
+        },
+        {
+          "id": "ebi-fry",
+          "nome": "Ebi fry",
+          "descricao": "Camarões empanados na panko, com molho opcional",
+          "preco": 51.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061402_7M33_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Especiais do Chef Aham Sushi",
+      "itens": [
+        {
+          "id": "salmao-cream",
+          "nome": "Salmão Cream",
+          "descricao": "Uma combinação mais que especial! Coberto com nossa geléia de pimenta, teriaky da casa, e gergelim, o enrolado de salmão com cream cheese e cebolinha ficou imperdível!",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061645_X530_i.jpg"
+        },
+        {
+          "id": "ebi-shakke",
+          "nome": "Ebi Shakke",
+          "descricao": "Enrolado de salmão com cream cheese e cebolinha, envolto com camarão selecionado e fita de nori.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061643_IY48_i.jpg"
+        },
+        {
+          "id": "niguiri-de-haddock-trufado-2",
+          "nome": "Niguiri de Haddock Trufado",
+          "descricao": "Niguiri Haddock frito com mel trufado, sabor que nunca experimentou !",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031320_4M70_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Yakisoba e Shimeji",
+      "itens": [
+        {
+          "id": "yakisoba-carne",
+          "nome": "Yakisoba Carne",
+          "descricao": "Macarrão japonês, Mix de vegetais, Carne.\n(600g De Yakisoba)",
+          "preco": 43.9,
+          "precoDe": 51.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051927_SR8Y_i.jpg"
+        },
+        {
+          "id": "yakisoba-frango",
+          "nome": "Yakisoba Frango",
+          "descricao": "Macarrão japonês, Mix de vegetais, Frango",
+          "preco": 37.9,
+          "precoDe": 45.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051927_T68V_i.jpg"
+        },
+        {
+          "id": "yakisoba-legumes",
+          "nome": "Yakisoba Legumes",
+          "descricao": "Macarrão japonês, Mix de vegetais e Legumes\n(600g De Yakisoba)",
+          "preco": 33.9,
+          "precoDe": 42.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506071642_L337_i.jpg"
+        },
+        {
+          "id": "yakisoba-camarao",
+          "nome": "Yakisoba Camarão",
+          "descricao": "Macarrão japonês, Mix de vegetais e Camarão\n(600g De Yakisoba)",
+          "preco": 48.9,
+          "precoDe": 55.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506071641_L180_i.jpg"
+        },
+        {
+          "id": "shimeji-2",
+          "nome": "Shimeji",
+          "descricao": "Cogumelo Japonês temperado e salteado na manteiga com Saquê",
+          "preco": 27.9,
+          "precoDe": 41.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061642_438O_i.jpg"
+        },
+        {
+          "id": "yakisoba-misto",
+          "nome": "Yakisoba Misto",
+          "descricao": "Macarrão japonês, Mix de Vegetais, Mix de Carne e Frango.\n(600g De Yakisoba)",
+          "preco": 40.9,
+          "precoDe": 49.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202605221638_8177_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Temaki",
+      "itens": [
+        {
+          "id": "temaki-salmao",
+          "nome": "Temaki Salmão",
+          "descricao": "Salmão, Arroz, Nori, Gergelim, Cebolinha.",
+          "preco": 36.9,
+          "precoDe": 39.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506071638_II6D_i.jpg"
+        },
+        {
+          "id": "temaki-filadelfia-salmao",
+          "nome": "Temaki  Filadélfia Salmão",
+          "descricao": "Salmão, Cream cheese, Arroz, Nori, Gergelim, Cebolinha.",
+          "preco": 37.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506071636_4SJU_i.jpg"
+        },
+        {
+          "id": "temaki-mex",
+          "nome": "Temaki Mex",
+          "descricao": "Temaki Mex\nSalmão em Cubos, arroz, Teriyaki, Cream cheese e Doritos",
+          "preco": 37.9,
+          "precoDe": 41.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031818_AM66_i.jpg"
+        },
+        {
+          "id": "hot-temaki-salmao-filadelfia",
+          "nome": "Hot Temaki Salmão Filadélfia",
+          "descricao": "Salmão, Cream cheese, Arroz, Nori, Gergelim, Cebolinha, Empanado na Panko e Frito.",
+          "preco": 40.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031801_40AK_i.jpg"
+        },
+        {
+          "id": "temaki-atum",
+          "nome": "Temaki Atum",
+          "descricao": "Atum, Arroz, Gergelim E cebolinha",
+          "preco": 37.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506071636_7T0J_i.jpg"
+        },
+        {
+          "id": "temaki-skin-especial",
+          "nome": "Temaki Skin Especial",
+          "descricao": "Pele de Salmão selada, Cream cheese, Arroz, Gergelim, Cebolinha, Teriyaki.",
+          "preco": 20.9,
+          "precoDe": 27.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507011841_Q648_i.jpg"
+        },
+        {
+          "id": "temaki-salmao-empanado-filadelfia",
+          "nome": "Temaki Salmão Empanado Filadélfia",
+          "descricao": "Salmão empanado, Cream cheese, Arroz, Nori, Cebolinha, Teryaki.",
+          "preco": 38.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202603161737_RV2A_i.jpg"
+        },
+        {
+          "id": "temaki-salmao-grelhado-filadelfia",
+          "nome": "Temaki Salmão Grelhado Filadélfia",
+          "descricao": "Salmão grelhado, Cream cheese, Arroz, Nori, Cebolinha, Teryaki.",
+          "preco": 38.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202511272120_22GM_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Carpaccios e Ceviche",
+      "itens": [
+        {
+          "id": "carpaccio-de-salmao",
+          "nome": "Carpaccio de Salmão",
+          "descricao": "Carpaccio de Salmão\nMolho Ponzu",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031521_CL17_i.jpg"
+        },
+        {
+          "id": "carpaccio-de-salmao-trufado",
+          "nome": "Carpaccio de Salmão Trufado",
+          "descricao": "Carpaccio de Salmão \nGotas de Limão\nAzeite trufado\nFlor de Sal\nRaspas de limão siciliano",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051923_60L4_i.jpg"
+        },
+        {
+          "id": "carpaccio-de-barriga-de-salmao-trufado-parte-nobre-salmao",
+          "nome": "Carpaccio de Barriga de Salmão Trufado - Parte Nobre Salmão",
+          "descricao": "Carpaccio da parte mais nobre e suculenta do salmão.\nFatias de carpaccio da barriga Salmão \nAzeite Trufado\nRaspas de limão siciliano\nFlor de Sal",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031552_GT8T_i.jpg"
+        },
+        {
+          "id": "ceviche-mix",
+          "nome": "Ceviche Mix",
+          "descricao": "Salmão\nPeixe branco (Haddock Defumado)\nAtum\nCebola roxa\nCoentro\npimenta dedo de moça\npimentão amarelo\nCebolinha\nTomate cereja\nSuco de limão",
+          "preco": 36.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031710_587H_i.jpg"
+        },
+        {
+          "id": "ceviche",
+          "nome": "Ceviche",
+          "descricao": "Peixe branco\nCebola roxa\nCoentro\npimenta dedo de moça\npimentão amarelo\nCebolinha\nTomate cereja\nSuco de limão",
+          "preco": 41.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051922_7HD3_i.jpg"
+        },
+        {
+          "id": "ceviche-especial",
+          "nome": "Ceviche Especial",
+          "descricao": "Salmão\nPolvo\nCamarão\nPeixe branco \nCebola roxa \nPimentão amarelo \nPimenta dedo-de-moça \nCoentro\nCebolinha\nManga\nTomate cereja\nSuco de limão\nLeite de coco.",
+          "preco": 45.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051922_0R50_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Joe",
+      "itens": [
+        {
+          "id": "joe-salmao",
+          "nome": "Joe Salmão",
+          "descricao": "4 Unidades\nArroz envolto com lamina de salmão\ncream cheese e cebolinha.",
+          "preco": 21.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061649_XC04_i.jpg"
+        },
+        {
+          "id": "joe-salmao-roasted",
+          "nome": "Joe Salmão Roasted",
+          "descricao": "4 Unidades\nArroz com lamina de salmão maçaricado\ncream cheese e cebolinha.",
+          "preco": 22.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061649_62H8_i.jpg"
+        },
+        {
+          "id": "joe-poro-crispy",
+          "nome": "Joe Poró Crispy",
+          "descricao": "4 Unidades\nLâmina de salmão\narroz\ncream cheese\ncrispy de alho poró\nteriyaki da casa e gergelim.",
+          "preco": 25.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061650_0TB0_i.jpg"
+        },
+        {
+          "id": "joe-ceviche-trufado",
+          "nome": "Joe Ceviche Trufado",
+          "descricao": "4 Unidades\nArroz com lâmina de peixe branco\ncream cheese e topo de ceviche \nfinalizado com azeite trufado e flor de sal.",
+          "preco": 20.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061651_8CC3_i.jpg"
+        },
+        {
+          "id": "joe-brie",
+          "nome": "Joe Brie",
+          "descricao": "4 Unidades\nArroz envolto em lamina de salmão com pedaço de queijo brie maçaricado, finalizado com geleia de damasco da casa.",
+          "preco": 26.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061657_FKVL_i.jpg"
+        },
+        {
+          "id": "joe-ebi",
+          "nome": "Joe Ebi",
+          "descricao": "4 Unidades\nArroz envolto de lamina de Salmão com camarão sobreposto, cream cheese e cebolinha.",
+          "preco": 26.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061654_DX58_i.jpg"
+        },
+        {
+          "id": "joe-ceviche-de-salmao",
+          "nome": "Joe Ceviche de Salmão",
+          "descricao": "4 Unidades\nArroz com lâmina de salmão\ncream cheese e topo de ceviche \nfinalizado com azeite trufado e flor de sal.",
+          "preco": 26.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202606171100_0BWO_i.jpg"
+        },
+        {
+          "id": "joe-gorgon-crispy",
+          "nome": "Joe Gorgon-Crispy",
+          "descricao": "4 Unidades\nArroz envolto em lâmina de salmão com pedaço de queijo gorgonzola maçaricado com gotas de limão, finalizado com couve crispy e alho torrado.",
+          "preco": 25.9,
+          "precoDe": 36.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061658_8751_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Uramaki",
+      "itens": [
+        {
+          "id": "uramaki-filadelfia-salmao",
+          "nome": "Uramaki Filadélfia Salmão",
+          "descricao": "Salmão, Cream cheese, Enrolado de arroz com gergelim e nori por dentro.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506071531_F52I_i.jpg"
+        },
+        {
+          "id": "uramaki-salmao-lemon",
+          "nome": "Uramaki Salmão Lemon",
+          "descricao": "Salmão, Cream cheese, Enrolado de arroz e gergelim com nori por dentro, Finalizado com laminas de salmão e raspa de limão siciliano.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1ecab715-77a2-4bec-9429-2f41c076f5ff/202112041427_3LJ7_i.jpg"
+        },
+        {
+          "id": "uramaki-salmao-cream",
+          "nome": "Uramaki Salmão Cream",
+          "descricao": "Cream de Salmão, Enrolado de arroz e gergelim com nori por dentro, Finalizado com teriyaki da casa.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506071628_KOXJ_i.jpg"
+        },
+        {
+          "id": "uramaki-ebi-crock",
+          "nome": "Uramaki Ebi Crock",
+          "descricao": "Camarões selecionados empanados na panko, Cream cheese, Enrolado de arroz e gergelim com nori por dentro, Finalizado com laminas de salmão maçaricadas e raspas de limão siciliano.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506071628_D877_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Sashimi",
+      "itens": [
+        {
+          "id": "sashimi-salmao",
+          "nome": "Sashimi Salmão",
+          "descricao": "4 Unidades\nFatias de salmão fresco.",
+          "preco": 22.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051908_PX2G_i.jpg"
+        },
+        {
+          "id": "sashimi-salmao-roasted",
+          "nome": "Sashimi Salmão Roasted",
+          "descricao": "4 Unidades\nFatias de salmão fresco maçaricado\nGergelim.",
+          "preco": 24.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051908_5450_i.jpg"
+        },
+        {
+          "id": "sashimi-especial-barriga-de-salmao",
+          "nome": "Sashimi Especial Barriga de Salmão",
+          "descricao": "4 Unidades\nSashimi especial da parte mais premium do salmão.\nRaspa de limão siciliano\nAzeite Trufado \nFlor de Sal",
+          "preco": 25.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031748_MS5H_i.jpg"
+        },
+        {
+          "id": "sashimi-peixe-branco",
+          "nome": "Sashimi Peixe branco",
+          "descricao": "4 Unidades\nFatias de peixe branco fresco.",
+          "preco": 16.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051910_K24C_i.jpg"
+        },
+        {
+          "id": "sashimi-haddock-defumado",
+          "nome": "Sashimi Haddock Defumado",
+          "descricao": "4 Unidades\nFatias de haddock Defumado.",
+          "preco": 26.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051907_Y32K_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Niguiri - Sushi",
+      "itens": [
+        {
+          "id": "niguiri-de-salmao",
+          "nome": "Niguiri de Salmão",
+          "descricao": "Fatia de salmão sobre arroz.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051914_J15Q_i.jpg"
+        },
+        {
+          "id": "niguiri-salmao-roasted",
+          "nome": "Niguiri Salmão Roasted",
+          "descricao": "Fatia de barriga de salmão maçaricado sobre arroz\nRaspa de limão siciliano\nFlor de sal.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051915_828G_i.jpg"
+        },
+        {
+          "id": "niguiri-de-haddock-trufado-3",
+          "nome": "Niguiri de Haddock Trufado",
+          "descricao": "Niguiri Haddock frito com mel trufado, sabor que nunca experimentou !",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031320_4M70_i.jpg"
+        },
+        {
+          "id": "niguiri-de-atum",
+          "nome": "Niguiri de Atum",
+          "descricao": "Fatia de atum sobre arroz",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051916_3DEY_i.jpg"
+        },
+        {
+          "id": "niguiri-de-salmao-trufado-com-raspas-de-limao",
+          "nome": "Niguiri de salmão trufado com raspas de limão",
+          "descricao": "Niguiri de salmão trufado com raspas de limão",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202610201801_Y70K_i.jpg"
+        },
+        {
+          "id": "niguiri-de-camarao",
+          "nome": "Niguiri de Camarão",
+          "descricao": "Camarão sobre arroz.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051918_DAMW_i.jpg"
+        },
+        {
+          "id": "niguiri-de-skin-especial",
+          "nome": "Niguiri de Skin Especial",
+          "descricao": "Pele de Salmão selada sobre arroz\nCream cheese\nCebolinha\nTeriyaki \nEnvolto fita nori.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051920_648V_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Hossomaki (Rolls)",
+      "itens": [
+        {
+          "id": "hossomaki-salmao",
+          "nome": "Hossomaki Salmão",
+          "descricao": "Salmão, Enrolado de arroz com nori por fora",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061750_GSKS_i.jpg"
+        },
+        {
+          "id": "hossomaki-filadelfia-salmao",
+          "nome": "Hossomaki Filadélfia Salmão",
+          "descricao": "Salmão, Cream cheese, Enrolado de arroz com nori por fora.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061751_2U28_i.jpg"
+        },
+        {
+          "id": "hossomaki-kappa-maki",
+          "nome": "Hossomaki Kappa Maki",
+          "descricao": "Pepino, Enrolado de arroz com nori por fora",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061807_IHFX_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Harumaki - Sobremesas",
+      "itens": [
+        {
+          "id": "harumaki-camarao",
+          "nome": "Harumaki Camarão",
+          "descricao": "Rolinho frito com recheio de camarão, alho poró refogado, cream cheese e cebolinha.",
+          "preco": null,
+          "precoDe": 29.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506071647_LFN0_i.jpg"
+        },
+        {
+          "id": "harumaki-de-queijo",
+          "nome": "Harumaki de queijo",
+          "descricao": "Rolinho frito com Queijo - O mais pedido",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202601142115_DD2T_i.jpg"
+        },
+        {
+          "id": "harumaki-de-nutella",
+          "nome": "Harumaki de Nutella",
+          "descricao": "Rolinho frito com recheio de Nutella.",
+          "preco": null,
+          "precoDe": 26.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506071643_YFGU_i.jpg"
+        },
+        {
+          "id": "harumaki-de-doce-de-leite",
+          "nome": "Harumaki de Doce de Leite",
+          "descricao": "Rolinho frito com recheio de doce de leite, finalizado com canela e açúcar.",
+          "preco": null,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506071644_HCO0_i.jpg"
+        },
+        {
+          "id": "joe-4-estacoes-04-unid",
+          "nome": "Joe 4 Estações - 04 unid.",
+          "descricao": "Uma verdadeira explosão de sabores! Esse joe um tanto diferente, leva uma fatia de goiabada, cream cheese, pedaço selecionado de morango e um toque especial com raspas de limão siciliano",
+          "preco": 20.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061647_S5B6_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Bebidas",
+      "itens": [
+        {
+          "id": "suco-del-valle-uva-lata-290ml",
+          "nome": "Suco Del Valle Uva Lata 290ml",
+          "descricao": "",
+          "preco": 8.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202603111729_E44C_i.jpg"
+        },
+        {
+          "id": "suco-del-valle-maracuja-lata-290ml",
+          "nome": "Suco Del Valle Maracujá Lata 290ml",
+          "descricao": "",
+          "preco": 8.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202606120849_PU0K_i.jpg"
+        },
+        {
+          "id": "refrigerante-lata",
+          "nome": "Refrigerante lata",
+          "descricao": "Não entregamos pedidos só de bebidas.",
+          "preco": 8.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/a0f1eeb9-c22e-458c-ba03-5cf712d6005d/202106190117_Y2CS_i.jpg"
+        }
+      ]
+    }
+  ]
+}

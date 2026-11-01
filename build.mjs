@@ -705,6 +705,12 @@ const cartaoLoja = (l, base) => `
 
 // No cardápio o cartão é a âncora (#id); nos perfis ele aponta para essa âncora.
 const imgProduto = (i, base, sizes) => {
+  if (i.fotoPasta) {
+    const c = `${i.fotoPasta}/${i.id}.webp`, c6 = `${i.fotoPasta}/${i.id}-600.webp`;
+    return existsSync(join(RAIZ, c))
+      ? `<img class="produto-foto" src="${base}${c}"${existsSync(join(RAIZ, c6)) ? ` srcset="${base}${c6} 600w, ${base}${c} 1200w" sizes="${sizes}"` : ''} width="1200" height="900" loading="lazy" decoding="async" alt="${esc(i.nome)}">`
+      : `<div class="produto-foto produto-sem-foto" role="img" aria-label="${esc(i.nome)}"><span>${esc(i.nome)}</span></div>`;
+  }
   const img = foto(i.id);
   return img
     ? `<img class="produto-foto" src="${base}${img}"${temFoto600(i.id) ? ` srcset="${base}${arqFoto(i.id, '-600')} 600w, ${base}${img} 1200w" sizes="${sizes}"` : ''} width="1200" height="900" loading="lazy" decoding="async" alt="${esc(i.nome)}">`
@@ -1007,7 +1013,7 @@ paginas.push({
     ${migalhas(base, [['Início', ''], ['Cardápio', 'cardapio/']])}
     <h1>Cardápio Just Burger</h1>
     ${respostaRapida('Hambúrguer de 150 g no pão brioche com o Molho Just. Os mais vendidos são o Top Smash, o Just House e o Dolce Gabana.')}
-    <nav class="cardapio-marcas" aria-label="Cardápios do grupo"><a class="ativo" href="${base}cardapio/" aria-current="page"><img src="${base}assets/img/logo-320.webp" alt="" width="56" height="56"><span>Just Burger</span></a>${culinarias.map((c) => `<a href="${base}culinarias/${c.slug}/">${logoMarca(c) ? `<img src="${base}${logoMarca(c)}" alt="" width="56" height="56" loading="lazy">` : ''}<span>${esc(c.nome)}</span></a>`).join('')}</nav>
+    ${navCardapios(base, 'burger')}
   </div>
 </section>
 <nav class="categorias" aria-label="Categorias do cardápio"><div class="largura">${cardapio.map((c) => `<a href="#${slug(c.categoria)}">${esc(c.categoria)}</a>`).join('')}</div></nav>
@@ -1025,6 +1031,60 @@ ${janelaFoto(base)}
 ${cardapio.map((c) => `## ${c.categoria}\n\n${c.itens.map((i) => mdItem({ ...i, categoria: c.categoria })).join('\n')}`).join('\n\n')}
 `,
 });
+
+
+// ---------- Cardápios das outras culinárias (JARVIS exporta da Penha; Maikon 01/11: sem proteína por enquanto) ----------
+const cardapioMarca = (c) => {
+  const arq = join(RAIZ, `cardapio-${c.slug}.json`);
+  if (!existsSync(arq)) return null;
+  const dados = JSON.parse(readFileSync(arq, 'utf8'));
+  const vistos = new Set(), cats = [];
+  for (const cat of dados.categorias || []) {
+    if (/queridinhos/i.test(cat.categoria)) continue;
+    const lista = [];
+    for (const bruto of cat.itens || []) {
+      const i = { ...limpaItem(bruto), proteina: null, fotoPasta: `assets/img/cardapio-${c.slug}` };
+      i.descricao = (i.descricao || '').replace(/\.,\s*/g, '. ').replace(/[,.]?\s*Obs\.?\s*:?\s*$/i, '').replace(/\s*,\s*$/, '').trim();
+      const chave = semAcentoMin(`${i.nome} ${i.detalhe}`);
+      if (vistos.has(chave)) continue;
+      vistos.add(chave); lista.push(i);
+    }
+    if (lista.length) cats.push({ categoria: limpaCategoria(cat.categoria), itens: lista });
+  }
+  return cats.length ? cats : null;
+};
+const cardapiosMarcas = Object.fromEntries(culinarias.map((c) => [c.slug, cardapioMarca(c)]).filter(([, v]) => v));
+const navCardapios = (base, ativo) => `<nav class="cardapio-marcas" aria-label="Cardápios do grupo"><a${ativo === 'burger' ? ' class="ativo" aria-current="page"' : ''} href="${base}cardapio/"><img src="${base}assets/img/logo-320.webp" alt="" width="56" height="56"><span>Just Burger</span></a>${culinarias.map((c) => `<a${ativo === c.slug ? ' class="ativo" aria-current="page"' : ''} href="${base}${cardapiosMarcas[c.slug] ? `cardapio/${c.slug}/` : `culinarias/${c.slug}/`}">${logoMarca(c) ? `<img src="${base}${logoMarca(c)}" alt="" width="56" height="56" loading="lazy">` : ''}<span>${esc(c.nome)}</span></a>`).join('')}</nav>`;
+for (const c of culinarias) {
+  const cats = cardapiosMarcas[c.slug];
+  if (!cats) continue;
+  const caminho = `cardapio/${c.slug}/`;
+  paginas.push({
+    caminho,
+    profundidade: 2,
+    titulo: `Cardápio ${c.nome} | ${c.tipo}`,
+    descricao: `Cardápio da ${c.nome} (${c.tipo.toLowerCase()}), do grupo Just Burger: ${cats.slice(0, 4).map((x) => x.categoria.toLowerCase()).join(', ')}. Peça pelo iFood ou pela Keeta.`,
+    schema: [schemaBreadcrumb([['Início', ''], ['Cardápio', 'cardapio/'], [c.nome, caminho]])],
+    corpo: (base) => `
+<section class="secao">
+  <div class="largura">
+    ${migalhas(base, [['Início', ''], ['Cardápio', 'cardapio/'], [c.nome, caminho]])}
+    <h1>Cardápio ${esc(c.nome)}</h1>
+    ${respostaRapida(`${c.nome}: ${c.tipo.toLowerCase()} do grupo Just Burger, em ${(c.lojas || []).map((x) => x.regiao).join(' e ')}.`)}
+    ${navCardapios(base, c.slug)}
+  </div>
+</section>
+<nav class="categorias" aria-label="Categorias do cardápio"><div class="largura">${cats.map((x) => `<a href="#${slug(x.categoria)}">${esc(x.categoria)}</a>`).join('')}</div></nav>
+<section class="secao secao-menu">
+  <div class="largura">
+    ${cats.map((x) => `<h2 class="categoria-titulo" id="${slug(x.categoria)}">${esc(x.categoria)}</h2><div class="lista-menu">${x.itens.map((i) => cartaoProduto({ ...i, categoria: x.categoria }, base, { ancora: true })).join('')}</div>`).join('')}
+    <div class="acoes">${botaoPedido(base)}</div>
+${janelaFoto(base)}
+  </div>
+</section>`,
+    md: () => `# Cardápio ${c.nome}\n\n${cats.map((x) => `## ${x.categoria}\n\n${x.itens.map((i) => `- **${i.nome}**${i.detalhe ? ` (${i.detalhe})` : ''}${i.descricao ? `: ${i.descricao}` : ''}`).join('\n')}`).join('\n\n')}\n`,
+  });
+}
 
 paginas.push({
   caminho: 'para-voce/',
