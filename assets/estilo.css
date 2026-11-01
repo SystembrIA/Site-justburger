@@ -585,3 +585,10 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .acao-texto p { margin: 0 0 10px; color: var(--suave); }
 .acao-links { display: flex; flex-wrap: wrap; gap: 14px; }
 @media (min-width: 900px) { .acao { grid-template-columns: 1fr 1fr; } .acao img, .acao-parceiro { height: 100%; aspect-ratio: auto; min-height: 300px; } }
+
+/* Menu do celular: "Nossas culinárias" com os logos no próprio botão (Maikon 01/11) */
+.menu-celular .submenu summary { gap: 10px; }
+.submenu-titulo { font: inherit; }
+.submenu-logos { display: flex; margin-left: auto; font-style: normal; }
+.submenu-logos img { width: 30px; height: 30px; object-fit: contain; padding: 2px; border-radius: 50%; background: #000; border: 2px solid var(--preto); margin-left: -7px; }
+.submenu-logos img:first-child { margin-left: 0; }
