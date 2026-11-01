@@ -32,6 +32,10 @@ export const site = {
   linktree: '', // PREENCHER: link do Linktree da Just
   emailContato: '', // vazio = não aparece
   instagram: 'https://www.instagram.com/justburgersp/',
+  // Perfis de todas as marcas (página /links/). [arroba, link, marca]. PREENCHER as outras marcas com o @ certo.
+  instagrams: [
+    ['@justburgersp', 'https://www.instagram.com/justburgersp/', 'Just Burger'],
+  ],
   facebook: '', // PREENCHER: link da página oficial no Facebook (vazio = não aparece)
   tiktok: '', // PREENCHER: link do perfil oficial no TikTok (vazio = não aparece)
   // 4 últimas postagens do Instagram (robô instagram-site.py do just-burger-producao, API oficial).

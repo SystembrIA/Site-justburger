@@ -1579,6 +1579,14 @@ details.lk-cul[open] summary::after { content: '–'; }
 .lk-todas-texto { font-weight: 900; font-stretch: 80%; font-size: .8rem; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; }
 .lk-todas[open] > summary { border-bottom: 1px solid var(--linha); }
 .lk-todas details.lk-cul { padding: 0 18px; }
+.lk-insta > summary { list-style: none; }
+.lk-insta > summary::-webkit-details-marker { display: none; }
+.lk-insta[open] > summary { border-color: var(--laranja); }
+.lk-insta-lista { display: grid; gap: 8px; margin: -2px 0 12px; }
+.lk-insta-lista a { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 12px 18px; border: 1px solid var(--linha); border-radius: 14px; background: var(--carvao); color: var(--branco); text-decoration: none; }
+.lk-insta-lista a:hover { border-color: var(--laranja); }
+.lk-insta-lista strong { font-size: .95rem; }
+.lk-insta-lista small { color: var(--suave); font-size: .8rem; }
 .lk-rodape { margin-top: 26px; text-align: center; color: var(--suave); font-size: .8rem; }
 .lk-rodape a { color: var(--suave); }
 </style>
@@ -1607,7 +1615,7 @@ details.lk-cul[open] summary::after { content: '–'; }
   <a class="lk-bt" href="../">Conheça nosso site</a>
   <a class="lk-bt" href="../cardapio/">Cardápio</a>
   ${linkWhats ? `<a class="lk-bt" href="${linkWhats}" rel="noopener">${iconeWhats} WhatsApp</a>` : ''}
-  ${site.instagram ? `<a class="lk-bt" href="${esc(site.instagram)}" rel="noopener">Instagram</a>` : ''}
+  ${(site.instagrams || []).length ? `<details class="lk-insta"><summary class="lk-bt">Instagram</summary><div class="lk-insta-lista">${site.instagrams.map(([arroba, url, marca]) => `<a href="${esc(url)}" rel="noopener"><strong>${esc(arroba)}</strong><small>${esc(marca)}</small></a>`).join('')}</div></details>` : site.instagram ? `<a class="lk-bt" href="${esc(site.instagram)}" rel="noopener">Instagram</a>` : ''}
 
   <p class="lk-rodape">Grupo Just Burger · <a href="../">justburger.com.br</a></p>
 </main>
