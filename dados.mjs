@@ -41,7 +41,8 @@ export const site = {
   indexarBairrosPequenos: false,
   // Painel de números da home: BASE informada pela Just + o que a função contadorSite soma desde
   // que entrou no ar (site_publico/contador: pedidos novos e pedidos prontos, iFood + Keeta + Saipos).
-  // lanches = (base de pedidos + pedidos prontos desde então) × lanchesPorPedido.
+  // lanches = base de pedidos × lanchesPorPedido + lanches somados pela função (prontos de cada marca × a média dela:
+  // burger 2,5; pizza 2; marmita 1,5; sushi 1,5 — diretoria, 01/11). Pedidos: todas as marcas do grupo.
   contador: {
     url: 'https://justburger-producao-e9b27-default-rtdb.firebaseio.com/site_publico/contador.json',
     basePedidos: 3100000, // informado pela diretoria em 30/10/2026

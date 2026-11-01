@@ -564,7 +564,8 @@ const blocoContador = () => {
     });
   }
   function valores() {
-    return [C.base + (Number(d.pedidos) || 0), (C.base + (Number(d.prontos) || 0)) * C.media];
+    // lanches: base × média da Burger + o que a função já somou com a média de cada marca (Maikon 01/11)
+    return [C.base + (Number(d.pedidos) || 0), d.lanches != null ? C.base * C.media + (Number(d.lanches) || 0) : (C.base + (Number(d.prontos) || 0)) * C.media];
   }
   // Sem animação: põe o número direto nas plaquinhas (antes de o placar aparecer na tela).
   function poe(pl, v) {
