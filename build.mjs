@@ -1497,6 +1497,111 @@ for (const p of paginas) {
   writeFileSync(join(pasta, 'index.md'), p.md());
 }
 
+// ---------- Página de links (no lugar do Linktree; Maikon 01/11) ----------
+// www.justburger.com.br/links/: para a bio do Instagram. CEP → cada marca que entrega ali, com iFood e Keeta.
+// Coordenadas das marcas: a da unidade Just Burger da mesma região (mesmo endereço ou a poucas quadras).
+{
+  const lojaDaRegiao = (r) => (/pirituba/i.test(r) ? lojas.find((l) => l.slug === 'pirituba') : lojas.find((l) => l.regiao === r));
+  const marcas = [
+    { nome: site.nome, tipo: 'Hamburgueria', logo: 'assets/img/logo-320.webp',
+      unidades: lojas.map((l) => ({ nome: l.nome.replace(/^Just Burger\s*/, ''), ifood: l.ifood || '', keeta: l.keeta || '', lat: l.geo && l.geo.lat, lng: l.geo && l.geo.lng })) },
+    ...culinarias.map((c) => ({ nome: c.nome, tipo: c.tipo, logo: logoMarca(c),
+      unidades: (c.lojas || []).map((u) => { const b = lojaDaRegiao(u.regiao); return { nome: u.regiao, ifood: u.ifood || '', keeta: u.keeta || '', lat: b && b.geo && b.geo.lat, lng: b && b.geo && b.geo.lng }; }) })),
+  ];
+  const botoesUnidade = (u) => `${u.ifood ? `<a class="lk-plat lk-ifood" href="${esc(u.ifood)}" rel="noopener">iFood</a>` : ''}${u.keeta ? `<a class="lk-plat lk-keeta" href="${esc(u.keeta)}" rel="noopener">Keeta</a>` : '<span class="lk-plat lk-off">Keeta em breve</span>'}`;
+  const dadosLinks = { raio: geo ? geo.raioKm : 10, marcas };
+  const htmlLinks = `<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Just Burger | Links e pedidos</title>
+<meta name="description" content="Peça Just Burger, Just Gourmet, Just Forneria, Just Esfiha e Just Sushi pelo iFood ou pela Keeta. Digite seu CEP e veja a loja que atende você.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="${abs('links/')}">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Dancing+Script:wght@700&display=swap">
+<style>
+:root { --preto: #0a0a0a; --carvao: #151412; --linha: rgba(255,255,255,.12); --laranja: #fa7304; --branco: #f7f3ee; --suave: #aaa39a; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem/1.5 Archivo, system-ui, sans-serif; }
+.lk { max-width: 480px; margin: 0 auto; padding: 36px 16px 48px; }
+.lk-topo { text-align: center; margin-bottom: 26px; }
+.lk-topo img { width: 112px; height: auto; }
+.lk-lema { margin: 10px 0 2px; font-family: 'Dancing Script', cursive; font-size: 1.5rem; }
+.lk-sub { margin: 0; color: var(--suave); font-size: .92rem; }
+.lk-bt { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 56px; margin: 0 0 12px; padding: 0 18px; border: 1px solid var(--linha); border-radius: 999px; background: var(--carvao); color: var(--branco); font-weight: 800; font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; cursor: pointer; }
+.lk-bt:hover { border-color: var(--laranja); }
+.lk-bt.lk-principal { background: var(--laranja); border-color: var(--laranja); color: #0b0b0b; }
+.lk-bt svg { width: 20px; height: 20px; }
+.lk-caixa { margin: 6px 0 22px; padding: 18px; border: 1px solid var(--linha); border-radius: 22px; background: var(--carvao); }
+.lk-caixa h2, .lk-titulo { margin: 0 0 10px; font-size: 1.05rem; font-weight: 900; font-stretch: 80%; letter-spacing: .04em; text-transform: uppercase; }
+.lk-cep { display: flex; gap: 8px; }
+.lk-cep input { flex: 1; min-width: 0; min-height: 50px; padding: 0 16px; border: 1px solid var(--linha); border-radius: 999px; background: var(--preto); color: var(--branco); font: inherit; font-size: 1.05rem; }
+.lk-cep button { min-height: 50px; padding: 0 20px; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
+.lk-msg { margin: 12px 0 0; color: var(--suave); font-size: .9rem; }
+.lk-marca { display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: center; padding: 14px 0; border-top: 1px solid var(--linha); }
+.lk-marca:first-child { border-top: 0; }
+.lk-marca img { width: 52px; height: 52px; object-fit: contain; border-radius: 12px; background: #000; }
+.lk-marca strong { display: block; font-size: 1rem; }
+.lk-marca small { display: block; color: var(--suave); font-size: .82rem; }
+.lk-plats { grid-column: 1 / -1; display: flex; gap: 8px; }
+.lk-plat { flex: 1; display: grid; place-items: center; min-height: 44px; border-radius: 999px; font-weight: 800; font-size: .85rem; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; }
+.lk-ifood { background: var(--laranja); color: #0b0b0b; }
+.lk-keeta { background: var(--branco); color: #0b0b0b; }
+.lk-off { border: 1px dashed var(--linha); color: var(--suave); font-weight: 600; }
+details.lk-cul { border-top: 1px solid var(--linha); }
+details.lk-cul:first-of-type { border-top: 0; }
+details.lk-cul summary { display: flex; align-items: center; gap: 12px; padding: 12px 0; cursor: pointer; list-style: none; }
+details.lk-cul summary::-webkit-details-marker { display: none; }
+details.lk-cul summary img { width: 44px; height: 44px; object-fit: contain; border-radius: 10px; background: #000; }
+details.lk-cul summary::after { content: '+'; margin-left: auto; color: var(--laranja); font-size: 1.3rem; font-weight: 800; }
+details.lk-cul[open] summary::after { content: '–'; }
+.lk-uni { padding: 0 0 12px; }
+.lk-uni p { margin: 8px 0 6px; font-size: .88rem; color: var(--suave); }
+.lk-rodape { margin-top: 26px; text-align: center; color: var(--suave); font-size: .8rem; }
+.lk-rodape a { color: var(--suave); }
+</style>
+</head>
+<body>
+<main class="lk">
+  <header class="lk-topo">
+    <img src="../assets/img/logo-320.webp" width="320" height="268" alt="Just Burger Hamburgueria">
+    ${site.lema ? `<p class="lk-lema">${esc(site.lema)}</p>` : ''}
+    <p class="lk-sub">Grupo de delivery em São Paulo · nota 4,9 no iFood</p>
+  </header>
+
+  <a class="lk-bt lk-principal" href="#pedido">Faça seu pedido</a>
+  <a class="lk-bt" href="../">Conheça nosso site</a>
+  <a class="lk-bt" href="../cardapio/">Cardápio</a>
+  ${linkWhats ? `<a class="lk-bt" href="${linkWhats}" rel="noopener">${iconeWhats} WhatsApp</a>` : ''}
+  ${site.instagram ? `<a class="lk-bt" href="${esc(site.instagram)}" rel="noopener">Instagram</a>` : ''}
+
+  <section class="lk-caixa" id="pedido">
+    <h2>Qual loja atende você?</h2>
+    <form class="lk-cep" id="lk-form"><input id="lk-cep" inputmode="numeric" autocomplete="postal-code" placeholder="Digite seu CEP" aria-label="CEP" maxlength="9"><button type="submit">Buscar</button></form>
+    <div id="lk-res"></div>
+  </section>
+
+  <section class="lk-caixa">
+    <h2>Ou escolha a culinária</h2>
+    ${marcas.map((m) => `<details class="lk-cul"><summary>${m.logo ? `<img src="../${m.logo}" alt="" loading="lazy">` : ''}<span><strong>${esc(m.nome)}</strong><small class="suave"> ${esc(m.tipo)}</small></span></summary>
+      ${m.unidades.map((u) => `<div class="lk-uni"><p>${esc(u.nome)}</p><div class="lk-plats">${botoesUnidade(u)}</div></div>`).join('')}
+    </details>`).join('\n    ')}
+  </section>
+
+  <p class="lk-rodape">Grupo Just Burger · <a href="../">justburger.com.br</a></p>
+</main>
+<script>window.JUST_LINKS = ${JSON.stringify(dadosLinks)};</script>
+<script src="../assets/links.js" defer></script>
+</body>
+</html>
+`;
+  mkdirSync(join(SAIDA, 'links'), { recursive: true });
+  writeFileSync(join(SAIDA, 'links', 'index.html'), htmlLinks);
+}
+
 writeFileSync(
   join(SAIDA, '404.html'),
   pagina({
