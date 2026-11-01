@@ -1321,11 +1321,21 @@ ${midiaOrdenada.map((m) => `- **${m.titulo}** — ${m.veiculo}${m.data ? `, ${da
 const historia = [
   `A Just Burger nasceu em ${new Date(site.fundacaoData + 'T12:00:00').toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}, na Zona Leste de São Paulo, com uma aposta clara: fazer o melhor hambúrguer de delivery de uma região carente de qualidade na entrega. Começamos pequenos, com 12 pessoas e foco 100% no delivery: um hambúrguer de 150 g no pão brioche, feito para chegar quentinho e no tempo certo. À frente da Just estão Maikon e Juliana.`,
   `Deu certo: só no primeiro ano as vendas dobraram. Crescemos para São Bernardo do Campo (2021), Guarulhos (2022) e Pirituba, passamos de ${fmtInt(site.contador.basePedidos)} pedidos, e as quatro unidades têm o selo Super Restaurante no iFood, com uma das entregas mais rápidas da cidade.`,
-  'Da Just Burger nasceu um grupo. Em 2020 veio a Just Gourmet, de comida brasileira, que hoje está entre as maiores do grupo em pedidos e em faturamento. Em 2024 chegaram a Just Forneria, de pizza, e a Just Esfiha, e em 2025 a Just Sushi. Hoje são 11 operações abertas no iFood e na Keeta.',
+  'Da Just Burger nasceu um grupo. Em 2020 veio a Just Gourmet, de comida brasileira, que hoje está entre as maiores do grupo em pedidos e em faturamento. Em 2024 chegaram a Just Forneria, de pizza, e a Just Esfiha, e em 2025 a Just Sushi.',
   'Em 2026, as lojas do grupo chegaram também à Keeta, plataforma da Meituan, líder do delivery na China e a maior plataforma de delivery do mundo. É uma nova fase, com novos desafios e espaço para crescer no mercado brasileiro nos próximos anos.',
   'Seguimos com a mesma ideia do primeiro dia: comida boa de verdade, na casa de cada cliente.',
 ];
-const videosHistoria = () => midia.filter((m) => m.youtube && /falando de delivery/i.test(m.veiculo));
+// Ordem e títulos dos vídeos da página (Maikon 01/11): casados e sócios, Kitchen Central, Gigantes do Delivery.
+const ORDEM_VIDEOS_HISTORIA = [
+  [/casal ou fam/i, 'Casados e sócios: como empreender em casal (Juliana e Maikon, Just Burger)'],
+  [/kitchen central/i, null],
+  [/gigantes do delivery/i, 'Gigantes do Delivery: evento presencial com Maikon Rangel (Just Burger)'],
+];
+const videosHistoria = () => {
+  const lista = midia.filter((m) => m.youtube && /falando de delivery/i.test(m.veiculo));
+  const pos = (m) => { const i = ORDEM_VIDEOS_HISTORIA.findIndex(([r]) => r.test(m.titulo)); return i < 0 ? 99 : i; };
+  return lista.sort((a, b) => pos(a) - pos(b)).map((m) => { const t = (ORDEM_VIDEOS_HISTORIA[pos(m)] || [])[1]; return t ? { ...m, titulo: t } : m; });
+};
 
 paginas.push({
   caminho: 'sobre/',
@@ -1338,7 +1348,7 @@ paginas.push({
   <div class="largura estreita">
     ${migalhas(base, [['Início', ''], ['Sobre', 'sobre/']])}
     <h1>Sobre a Just Burger</h1>
-    <p class="lead">A Just Burger começou em ${esc(site.fundacao)} na Zona Leste de São Paulo, no delivery, e hoje tem quatro unidades na Grande São Paulo.</p>
+    <p class="lead">A Just começou em ${esc(site.fundacao)} na Zona Leste de São Paulo, no delivery. Hoje são 4 unidades da Just Burger (hamburgueria), 2 da Just Gourmet (comida brasileira), 2 da Just Forneria (pizzaria), 2 da Just Esfiha e 1 da Just Sushi: o grupo conta com 11 lojas nos aplicativos e plataformas de delivery.</p>
     ${historia.map((t) => `<p>${esc(t)}</p>`).join('')}
   </div>
 </section>
@@ -1348,7 +1358,7 @@ ${videosHistoria().length ? `<section class="secao">
     <div class="grade-midia">${videosHistoria().map((m) => cartaoMidia(m, base)).join('')}</div>
   </div>
 </section>` : ''}`,
-  md: () => `# Sobre a ${site.nome}\n\nA Just Burger começou em ${site.fundacao} na Zona Leste de São Paulo, no delivery, e hoje tem quatro unidades na Grande São Paulo.\n\n${historia.join('\n\n')}\n\n${videosHistoria().map((m) => `- ${m.titulo}: ${m.url}`).join('\n')}\n`,
+  md: () => `# Sobre a ${site.nome}\n\nA Just começou em ${site.fundacao} na Zona Leste de São Paulo, no delivery. Hoje são 4 unidades da Just Burger (hamburgueria), 2 da Just Gourmet (comida brasileira), 2 da Just Forneria (pizzaria), 2 da Just Esfiha e 1 da Just Sushi: o grupo conta com 11 lojas nos aplicativos e plataformas de delivery.\n\n${historia.join('\n\n')}\n\n${videosHistoria().map((m) => `- ${m.titulo}: ${m.url}`).join('\n')}\n`,
 });
 
 paginas.push({
