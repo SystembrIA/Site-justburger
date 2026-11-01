@@ -42,7 +42,7 @@ export const site = {
   // Trabalhe conosco (aprovada pelo Maikon, 01/11): no site, no menu e na página de links.
   trabalhe: {
     publicada: true, // aprovada pelo Maikon em 01/11
-    envio: '', // endereço da função que recebe o currículo (o JARVIS publica); vazio = o botão manda pelo WhatsApp
+    envio: 'https://us-central1-justburger-producao-e9b27.cloudfunctions.net/curriculoSite', // função curriculoSite (JARVIS, 01/11); vazio = o botão manda pelo WhatsApp
     whatsappRH: '5511921659293', // Larissa, RH Recrutamento e Seleção (seg a sex, 8h15 às 18h) — Maikon 01/11
     chamada: 'Aqui, quem faz parte é reconhecido.',
     texto: [
