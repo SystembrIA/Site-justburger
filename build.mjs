@@ -333,9 +333,11 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
     <a class="marca" href="${base}" aria-label="${esc(site.nome)} — página inicial">
       <img src="${base}assets/img/logo-320.webp" width="96" height="80" alt="Just Burger Hamburgueria">
     </a>
+    ${site.lemaNoTopo === 'logo' ? `${site.lema ? `<span class="lema">${esc(site.lema)}</span>` : ''}` : ''}
     <nav class="menu" aria-label="Principal">
       <ul>${nav.map(([n, c]) => `<li><a href="${base}${c}"${caminho.startsWith(c) ? ' aria-current="page"' : ''}>${n}</a></li>`).join('')}</ul>
     </nav>
+    ${site.lemaNoTopo === 'menu' ? `${site.lema ? `<span class="lema lema-menu">${esc(site.lema)}</span>` : ''}` : ''}
     ${botaoPedido(base, 'botao botao-topo')}
     <details class="menu-celular">
       <summary aria-label="Abrir menu"><span></span><span></span><span></span></summary>
@@ -352,7 +354,7 @@ ${corpo(base)}
 <footer class="rodape">
   <div class="largura rodape-grade">
     <div class="rodape-marca">
-      <img src="${base}assets/img/logo-320.webp" width="140" height="117" alt="Just Burger Hamburgueria" loading="lazy">
+      <p class="rodape-logo-lema"><img src="${base}assets/img/logo-320.webp" width="140" height="117" alt="Just Burger Hamburgueria" loading="lazy">${site.lema ? `<span class="lema">${esc(site.lema)}</span>` : ''}</p>
       <p>Desde ${esc(site.fundacao)} fazendo o seu burger, o melhor burger de São Paulo.</p>
       ${site.telefoneCentral ? `<p><a class="rodape-social rodape-whats" href="${linkWhats}" rel="noopener">WhatsApp e telefone<br><strong>${esc(site.telefoneCentral)}</strong></a></p>` : ''}
       ${redes().length ? `<p class="rodape-siga">Siga a gente</p><p class="rodape-redes">${redes().map(([n, u, i]) => `<a href="${esc(u)}" rel="noopener" aria-label="${n}">${i}</a>`).join('')}</p>` : ''}
