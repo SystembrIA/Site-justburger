@@ -3,7 +3,7 @@
 // (busca do Google, out/2026) que precisa ser confirmado por alguém da Just antes de publicar.
 
 export const site = {
-  textoPedirLinks: 'Faça pedido', // texto do botão laranja das culinárias na página /links/
+  textoPedirLinks: 'Peça aqui', // texto do botão laranja das culinárias na página /links/
 
 
   // Domínio definitivo do site (sem barra no final). Usado em canonical, sitemap e schema.
