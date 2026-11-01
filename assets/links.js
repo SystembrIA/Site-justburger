@@ -9,11 +9,11 @@
   function botoes(u) {
     return (u.ifood ? '<a class="lk-plat lk-ifood" href="' + esc(u.ifood) + '" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood.svg" alt="iFood"></a>' : '') +
       (u.keeta ? '<a class="lk-plat lk-keeta" href="' + esc(u.keeta) + '" rel="noopener" aria-label="Pedir na Keeta"><span class="lk-keeta-marca">Keeta</span></a>'
-        : '<span class="lk-plat lk-keeta lk-off" aria-label="Keeta em breve"><span class="lk-keeta-marca">Keeta</span><small>em breve</small></span>');
+        : '<span class="lk-plat lk-keeta lk-off" title="Keeta em breve" aria-label="Keeta em breve"><span class="lk-keeta-marca">Keeta</span></span>');
   }
   function cartao(m, u, dist) {
     return '<div class="lk-marca">' + (m.logo ? '<img src="../' + esc(m.logo) + '" alt="">' : '<span></span>') +
-      '<span><strong>' + esc(m.nome) + '</strong><small>' + esc(u.nome) + (dist != null ? ' · ' + String(Math.max(0.5, Math.round(dist * 10) / 10)).replace('.', ',') + ' km' : '') + '</small></span>' +
+      '<span><strong>' + esc(m.nome) + '</strong><small>' + esc(u.nome) + '</small></span>' +
       '<div class="lk-plats">' + botoes(u) + '</div></div>';
   }
   function mostra(c, onde) {

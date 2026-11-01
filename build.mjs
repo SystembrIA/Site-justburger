@@ -1557,7 +1557,7 @@ for (const p of paginas) {
     ...culinarias.map((c) => ({ nome: c.nome, tipo: c.tipo, logo: logoMarca(c),
       unidades: (c.lojas || []).map((u) => { const b = lojaDaRegiao(u.regiao); return { nome: u.regiao, ifood: u.ifood || '', keeta: u.keeta || '', lat: b && b.geo && b.geo.lat, lng: b && b.geo && b.geo.lng }; }) })),
   ];
-  const botoesUnidade = (u) => `${u.ifood ? `<a class="lk-plat lk-ifood" href="${esc(u.ifood)}" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood.svg" alt="iFood"></a>` : ''}${u.keeta ? `<a class="lk-plat lk-keeta" href="${esc(u.keeta)}" rel="noopener" aria-label="Pedir na Keeta"><span class="lk-keeta-marca">Keeta</span></a>` : '<span class="lk-plat lk-keeta lk-off" aria-label="Keeta em breve"><span class="lk-keeta-marca">Keeta</span><small>em breve</small></span>'}`;
+  const botoesUnidade = (u) => `${u.ifood ? `<a class="lk-plat lk-ifood" href="${esc(u.ifood)}" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood.svg" alt="iFood"></a>` : ''}${u.keeta ? `<a class="lk-plat lk-keeta" href="${esc(u.keeta)}" rel="noopener" aria-label="Pedir na Keeta"><span class="lk-keeta-marca">Keeta</span></a>` : '<span class="lk-plat lk-keeta lk-off" title="Keeta em breve" aria-label="Keeta em breve"><span class="lk-keeta-marca">Keeta</span></span>'}`;
   const dadosLinks = { raio: geo ? geo.raioKm : 10, marcas };
   const htmlLinks = `<!doctype html>
 <html lang="pt-BR">
@@ -1592,24 +1592,24 @@ body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem
 .lk-campo:focus-within { border-color: var(--laranja); }
 .lk-campo small { color: var(--suave); font-size: .7rem; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lk-cep input { width: 100%; min-width: 0; min-height: 0; padding: 0; border: 0; outline: 0; background: transparent; color: var(--branco); font: inherit; font-size: 1.05rem; }
-.lk-cep button { min-height: 56px; padding: 0 14px; font-size: .8rem; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
+.lk-cep button { align-self: center; min-height: 40px; padding: 0 16px; font-size: .8rem; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
 .lk-dica { margin: 10px 4px 0 !important; font-size: .86rem !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lk-msg { margin: 12px 0 0; color: var(--suave); font-size: .9rem; }
-.lk-marca { display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: center; padding: 14px 0; border-top: 1px solid var(--linha); }
+.lk-marca { display: grid; grid-template-columns: 40px 1fr auto; gap: 10px; align-items: center; padding: 10px 0; border-top: 1px solid var(--linha); }
 .lk-marca:first-child { border-top: 0; }
-.lk-marca > img { width: 52px; height: 52px; object-fit: contain; border-radius: 12px; background: #000; }
-.lk-marca strong { display: block; font-size: 1rem; }
-.lk-marca small { display: block; color: var(--suave); font-size: .82rem; }
-.lk-plats { grid-column: 1 / -1; display: flex; gap: 8px; }
+.lk-marca > img { width: 40px; height: 40px; object-fit: contain; border-radius: 12px; background: #000; }
+.lk-marca strong { display: block; font-size: .92rem; line-height: 1.2; }
+.lk-marca small { display: block; color: var(--laranja); font-weight: 700; font-size: .8rem; }
+.lk-plats { display: flex; gap: 8px; }
 .lk-plat { flex: 1; display: grid; place-items: center; min-height: 44px; border-radius: 999px; font-weight: 800; font-size: .85rem; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; }
-.lk-plats { gap: 10px; }
-.lk-plat { flex: 0 0 auto; min-height: 40px; min-width: 104px; padding: 0 18px; background: transparent; border: 1px solid var(--linha); }
+.lk-plats { gap: 6px; flex: none; }
+.lk-plat { flex: 0 0 auto; min-height: 34px; min-width: 66px; padding: 0 10px; background: transparent; border: 1px solid var(--linha); }
 .lk-plat:hover { border-color: rgba(255,255,255,.35); }
-.lk-ifood img { height: 18px; width: auto; display: block; }
+.lk-ifood img { height: 15px; width: auto; display: block; }
 .lk-keeta { color: #ffd100; }
-.lk-keeta-marca { font-size: 1rem; font-weight: 900; font-stretch: 100%; letter-spacing: -.01em; text-transform: none; }
+.lk-keeta-marca { font-size: .9rem; font-weight: 900; font-stretch: 100%; letter-spacing: -.01em; text-transform: none; }
 .lk-off { opacity: .45; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.lk-off small { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+.lk-off { opacity: .35; }
 details.lk-cul { border-top: 1px solid var(--linha); }
 details.lk-cul:first-of-type { border-top: 0; }
 details.lk-cul summary { display: flex; align-items: center; gap: 12px; padding: 12px 0; cursor: pointer; list-style: none; }
@@ -1617,8 +1617,11 @@ details.lk-cul summary::-webkit-details-marker { display: none; }
 details.lk-cul summary img { width: 44px; height: 44px; object-fit: contain; border-radius: 10px; background: #000; }
 details.lk-cul summary::after { content: '+'; margin-left: auto; color: var(--laranja); font-size: 1.3rem; font-weight: 800; }
 details.lk-cul[open] summary::after { content: '–'; }
-.lk-uni { padding: 0 0 12px; }
-.lk-uni p { margin: 8px 0 6px; font-size: .88rem; color: var(--suave); }
+.lk-uni { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 0; }
+.lk-uni p { margin: 0; font-size: .92rem; font-weight: 800; color: var(--laranja); }
+.lk-cul[open] { padding-bottom: 8px; }
+details.lk-cul summary strong { display: block; line-height: 1.2; }
+details.lk-cul summary small { display: block; font-size: .8rem; }
 .lk-todas { padding: 0; }
 .lk-todas > summary { position: relative; display: flex; align-items: center; gap: 12px; padding: 12px 44px 12px 18px; cursor: pointer; list-style: none; }
 .lk-todas > summary::-webkit-details-marker { display: none; }
