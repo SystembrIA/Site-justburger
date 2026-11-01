@@ -401,7 +401,7 @@ ${corpo(base)}
   </div>
 </footer>
 ${janelaPedido(base)}
-${site.whatsapp ? `<a class="whats-flutuante" href="${linkWhats}" rel="noopener" aria-label="Falar com a Just Burger no WhatsApp">${iconeWhats}</a>` : ''}
+<a class="pedir-flutuante" href="${base}links/" aria-label="Peça aqui: escolha a loja e peça pelo iFood ou Keeta">Peça<br>aqui</a>
 <script src="${base}assets/pedido-dados.js" defer></script>
 <script src="${base}assets/pedido.js" defer></script>
 </body>
