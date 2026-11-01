@@ -593,7 +593,5 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .submenu-logos img { flex: 1 1 0; min-width: 0; max-width: 62px; width: auto; height: auto; aspect-ratio: 1; object-fit: contain; padding: 3px; border-radius: 50%; background: #000; border: 2px solid var(--preto); margin-left: -4px; }
 .submenu-logos img:first-child { margin-left: 0; }
 
-/* Rodapé: Nossas culinárias e Cardápio lado a lado (Maikon 01/11); no computador seguem como colunas da grade */
-.rodape-dupla { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-@media (min-width: 900px) { .rodape-dupla { display: contents; } }
-@media (max-width: 899px) { .rodape-dupla ul:not(.rodape-marcas) a { font-size: .95rem; } .rodape-dupla .rodape-marcas img { width: 40px; } }
+/* Rodapé: Nossas culinárias e Cardápio */
+.rodape-dupla { display: contents; } /* Maikon 01/11: um embaixo do outro, Nossas culinárias antes do Cardápio */
