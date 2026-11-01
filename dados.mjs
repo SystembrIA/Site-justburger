@@ -17,6 +17,7 @@ export const site = {
   // Trabalhe conosco: rascunho para a diretoria aprovar (01/11). publicada: true põe no site, no menu e nos links.
   trabalhe: {
     publicada: false,
+    previa: true, // gera a página fora do Google e fora do menu, só para a diretoria ver
     envio: '', // endereço da função que recebe o currículo (o JARVIS publica); vazio = o botão manda pelo WhatsApp
     chamada: 'Aqui, quem faz parte é reconhecido.',
     texto: [
@@ -25,7 +26,15 @@ export const site = {
       'Trabalhamos com padrão, organização e respeito. Você aprende com gente experiente, recebe treinamento e faz parte de uma operação que é referência no delivery de São Paulo, com nota 4,9 e selo de Super Restaurante no iFood.',
       'Se você gosta de cozinha, de atendimento e de trabalhar em equipe, envie seu currículo. A gente vai adorar te conhecer.',
     ],
-    funcoes: ['Cozinha (chapeiro, montador, auxiliar)', 'Atendimento', 'Embalagem e expedição', 'Limpeza', 'Liderança', 'Administrativo', 'Outra'],
+    // Cargos por empresa: tirados do relógio de ponto (controle_ponto, 01/11) + chapeiro e montador (Maikon).
+    funcoesPorMarca: {
+      'Just Burger': ['Chapeiro', 'Montador', 'Auxiliar de cozinha', 'Ajudante de despacho', 'Atendente', 'Assistente de operação'],
+      'Just Gourmet': ['Cozinheiro(a)', 'Meio oficial de cozinha', 'Auxiliar de cozinha', 'Ajudante de despacho', 'Atendente'],
+      'Just Forneria': ['Pizzaiolo', 'Ajudante de pizzaiolo', 'Auxiliar de cozinha', 'Ajudante de despacho', 'Atendente'],
+      'Just Esfiha': ['Esfiheiro', 'Auxiliar de cozinha', 'Ajudante de despacho', 'Atendente'],
+      'Just Sushi': ['Sushiman', 'Meio oficial de cozinha', 'Auxiliar de cozinha', 'Atendente'],
+    },
+    funcoesGerais: ['Ajudante geral', 'Estágio', 'Liderança', 'Administrativo', 'Outra'],
   },
   equipe: {
     publicada: true, // texto aprovado pelo Maikon em 01/11; fotos chegam depois

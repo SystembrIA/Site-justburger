@@ -4,9 +4,15 @@
   var form = document.getElementById('form-curriculo'); if (!form) return;
   var U = window.JUST_UNIDADES || {}, status = form.querySelector('.form-status');
   var marca = form.elements.marca, unidade = form.elements.unidade;
+  var F = window.JUST_FUNCOES || { porMarca: {}, gerais: [] }, funcao = form.elements.funcao;
+  function opcoes(lista) { return '<option value="">Escolha</option>' + lista.map(function (x) { return '<option>' + x + '</option>'; }).join(''); }
   marca.addEventListener('change', function () {
-    var lista = marca.value === 'Qualquer uma do grupo' ? ['Qualquer unidade'] : (U[marca.value] || []);
-    unidade.innerHTML = '<option value="">Escolha</option>' + lista.concat(lista.length > 1 ? ['Qualquer unidade'] : []).map(function (u) { return '<option>' + u + '</option>'; }).join('');
+    var todas = marca.value === 'Todas as empresas do grupo';
+    var lista = todas ? ['Qualquer unidade'] : (U[marca.value] || []);
+    unidade.innerHTML = opcoes(lista.concat(!todas && lista.length > 1 ? ['Qualquer unidade'] : []));
+    var cargos = todas ? Object.keys(F.porMarca).reduce(function (t, m) { return t.concat(F.porMarca[m]); }, []) : (F.porMarca[marca.value] || []);
+    cargos = cargos.filter(function (c, i) { return cargos.indexOf(c) === i; }).concat(F.gerais || []);
+    funcao.innerHTML = opcoes(cargos);
   });
   function ler(arq) {
     return new Promise(function (ok, erro) {

@@ -1340,12 +1340,13 @@ const videosHistoria = () => VIDEOS_HISTORIA.map(([id, titulo]) => { const m = m
 // formulário de currículo (envia para site.trabalhe.envio: função do banco). Só entra no site com publicada = true.
 const PASTA_TRABALHE = join(RAIZ, 'assets/img/trabalhe');
 const fotosTrabalhe = existsSync(PASTA_TRABALHE) ? readdirSync(PASTA_TRABALHE).filter((f) => f.endsWith('.webp')).sort() : [];
-if (site.trabalhe && site.trabalhe.publicada) {
+if (site.trabalhe && (site.trabalhe.publicada || site.trabalhe.previa)) {
   const tb = site.trabalhe;
   const opcoesMarca = [[site.nome, lojas.map((l) => l.nome.replace(/^Just Burger\s*/, ''))], ...culinarias.map((c) => [c.nome, (c.lojas || []).map((u) => u.regiao)])];
   paginas.push({
     caminho: 'trabalhe-conosco/',
     profundidade: 1,
+    noindex: !tb.publicada,
     titulo: `Trabalhe conosco | ${site.nome}`,
     descricao: 'Venha trabalhar no grupo Just Burger: vagas de cozinha, atendimento e operação nas unidades de São Paulo, Guarulhos e São Bernardo. Envie seu currículo.',
     schema: [schemaBreadcrumb([['Início', ''], ['Trabalhe conosco', 'trabalhe-conosco/']])],
@@ -1366,9 +1367,9 @@ ${fotosTrabalhe.length ? `<section class="secao"><div class="largura"><h2 class=
       <label>Nome completo<input name="nome" required maxlength="120" autocomplete="name"></label>
       <label>WhatsApp<input name="telefone" required inputmode="tel" maxlength="20" autocomplete="tel" placeholder="(11) 90000-0000"></label>
       <label>E-mail <small>(opcional)</small><input name="email" type="email" maxlength="120" autocomplete="email"></label>
-      <label>Empresa<select name="marca" required><option value="">Escolha</option>${opcoesMarca.map(([m]) => `<option>${esc(m)}</option>`).join('')}<option>Qualquer uma do grupo</option></select></label>
+      <label>Empresa<select name="marca" required><option value="">Escolha</option>${opcoesMarca.map(([m]) => `<option>${esc(m)}</option>`).join('')}<option>Todas as empresas do grupo</option></select></label>
       <label>Unidade<select name="unidade" required><option value="">Escolha a empresa primeiro</option></select></label>
-      <label>Vaga de interesse<select name="funcao" required><option value="">Escolha</option>${tb.funcoes.map((f) => `<option>${esc(f)}</option>`).join('')}</select></label>
+      <label>Vaga de interesse<select name="funcao" required><option value="">Escolha a empresa primeiro</option></select></label>
       <label>Conte um pouco sobre você <small>(opcional)</small><textarea name="mensagem" rows="4" maxlength="1500"></textarea></label>
       <label>Currículo em PDF <small>(opcional, até 2 MB)</small><input name="arquivo" type="file" accept="application/pdf"></label>
       <label class="form-site" aria-hidden="true">Site<input name="site" tabindex="-1" autocomplete="off"></label>
@@ -1378,7 +1379,7 @@ ${fotosTrabalhe.length ? `<section class="secao"><div class="largura"><h2 class=
     </form>
   </div>
 </section>
-<script>window.JUST_UNIDADES = ${JSON.stringify(Object.fromEntries(opcoesMarca))};</script>
+<script>window.JUST_UNIDADES = ${JSON.stringify(Object.fromEntries(opcoesMarca))}; window.JUST_FUNCOES = ${JSON.stringify({ porMarca: tb.funcoesPorMarca, gerais: tb.funcoesGerais })};</script>
 <script src="${base}assets/curriculo.js" defer></script>`,
     md: () => `# Trabalhe conosco\n\n${tb.chamada}\n\n${tb.texto.join('\n\n')}\n\nEnvie seu currículo pelo formulário: ${abs('trabalhe-conosco/')}\n`,
   });
