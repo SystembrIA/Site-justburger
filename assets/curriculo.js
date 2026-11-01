@@ -31,7 +31,7 @@
     var envio = form.getAttribute('data-envio');
     if (!envio) {
       var txt = 'Olá! Quero trabalhar no grupo Just Burger.\nNome: ' + dados.nome + '\nWhatsApp: ' + dados.telefone + (dados.email ? '\nE-mail: ' + dados.email : '') + '\nEmpresa: ' + dados.marca + '\nUnidade: ' + dados.unidade + '\nVaga: ' + dados.funcao + (dados.mensagem ? '\nSobre mim: ' + dados.mensagem : '');
-      location.href = 'https://wa.me/551126228800?text=' + encodeURIComponent(txt);
+      location.href = 'https://wa.me/' + (form.getAttribute('data-whats') || '551126228800') + '?text=' + encodeURIComponent(txt);
       return;
     }
     status.textContent = 'Enviando…'; form.querySelector('button').disabled = true;

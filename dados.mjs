@@ -19,6 +19,7 @@ export const site = {
     publicada: false,
     previa: true, // gera a página fora do Google e fora do menu, só para a diretoria ver
     envio: '', // endereço da função que recebe o currículo (o JARVIS publica); vazio = o botão manda pelo WhatsApp
+    whatsappRH: '5511921659293', // Larissa, RH Recrutamento e Seleção (seg a sex, 8h15 às 18h) — Maikon 01/11
     chamada: 'Aqui, quem faz parte é reconhecido.',
     texto: [
       'O grupo Just Burger nasceu em 2018 e hoje tem 11 lojas nos aplicativos de delivery, com mais de 150 pessoas nas cinco cozinhas. Crescemos assim porque cuidamos de quem faz o trabalho acontecer todos os dias.',

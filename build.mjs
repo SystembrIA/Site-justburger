@@ -1363,7 +1363,8 @@ ${fotosTrabalhe.length ? `<section class="secao"><div class="largura"><h2 class=
 <section class="secao" id="curriculo">
   <div class="largura estreita">
     <h2>Envie seu currículo</h2>
-    <form class="form-curriculo" id="form-curriculo" data-envio="${esc(tb.envio || '')}" novalidate>
+    ${tb.whatsappRH ? `<p class="suave">Dúvidas? Fale com o RH (Recrutamento e Seleção) pelo <a class="link" href="https://wa.me/${esc(tb.whatsappRH)}?text=${encodeURIComponent('Olá! Vim pelo site, quero saber das vagas.')}" rel="noopener">WhatsApp</a>, de segunda a sexta, das 8h15 às 18h.</p>` : ''}
+    <form class="form-curriculo" id="form-curriculo" data-envio="${esc(tb.envio || '')}" data-whats="${esc(tb.whatsappRH || site.whatsapp)}" novalidate>
       <label>Nome completo<input name="nome" required maxlength="120" autocomplete="name"></label>
       <label>WhatsApp<input name="telefone" required inputmode="tel" maxlength="20" autocomplete="tel" placeholder="(11) 90000-0000"></label>
       <label>E-mail <small>(opcional)</small><input name="email" type="email" maxlength="120" autocomplete="email"></label>
