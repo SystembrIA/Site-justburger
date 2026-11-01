@@ -1,6 +1,8 @@
 name: Publicar site
 
-# Gera o site (node build.mjs) e publica a pasta publico/ na branch gh-pages (GitHub Pages).
+# Gera o site (node build.mjs) e publica a pasta publico/ direto no GitHub Pages pela fila do GitHub Actions
+# (Settings → Pages → Source: GitHub Actions). Um passo só, sem a branch gh-pages: a publicação mais nova
+# substitui a que estiver esperando, e não trava mais uma na outra (Maikon 01/11).
 # Todo dia, depois do robô do just-burger-producao (06:17), traz antes o cardápio,
 # as fotos tratadas e a nota do iFood (importar-cardapio.py). Sem dado novo, publica o que já tem.
 on:
@@ -11,14 +13,16 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write   # publica o site pronto na branch gh-pages
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: publicar
-  cancel-in-progress: false
+  group: pages
+  cancel-in-progress: true
 
 jobs:
-  publicar:
+  gerar:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -38,16 +42,22 @@ jobs:
           python3 importar-cardapio.py
 
       - name: Gerar o site
-        run: node build.mjs
-
-      # O GitHub Pages serve a branch gh-pages (Settings → Pages → Source: Deploy from a branch, gh-pages).
-      - name: Publicar na branch gh-pages
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
-          cd publico
-          touch .nojekyll
-          git init -q -b gh-pages
-          git add -A
-          git -c user.name="Robo Site Just Burger" -c user.email="robo@justburger.com.br" commit -q -m "Site gerado de ${GITHUB_SHA::7}"
-          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+          node build.mjs
+          touch publico/.nojekyll
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: publico
+
+  publicar:
+    needs: gerar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
