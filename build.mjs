@@ -1618,7 +1618,7 @@ details.lk-cul summary img { width: 44px; height: 44px; object-fit: contain; bor
 details.lk-cul summary::after { content: '+'; margin-left: auto; color: var(--laranja); font-size: 1.3rem; font-weight: 800; }
 details.lk-cul[open] summary::after { content: '–'; }
 .lk-uni { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 0; }
-.lk-uni p { margin: 0; font-size: .92rem; font-weight: 800; color: var(--laranja); }
+.lk-uni p { margin: 0; font-size: .92rem; font-weight: 800; color: var(--branco); }
 .lk-cul[open] { padding-bottom: 8px; }
 details.lk-cul summary strong { display: block; line-height: 1.2; }
 details.lk-cul summary small { display: block; font-size: .8rem; }

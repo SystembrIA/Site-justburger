@@ -13,7 +13,7 @@
   }
   function cartao(m, u, dist) {
     return '<div class="lk-marca">' + (m.logo ? '<img src="../' + esc(m.logo) + '" alt="">' : '<span></span>') +
-      '<span><strong>' + esc(m.nome) + '</strong><small>' + esc(u.nome) + '</small></span>' +
+      '<span><strong>' + esc(m.nome) + '</strong></span>' +
       '<div class="lk-plats">' + botoes(u) + '</div></div>';
   }
   function mostra(c, onde) {
