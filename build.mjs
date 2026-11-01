@@ -1539,8 +1539,11 @@ body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem
 .lk-caixa { margin: 6px 0 16px; padding: 14px; border: 1px solid var(--linha); border-radius: 22px; background: var(--carvao); }
 .lk-caixa h2, .lk-titulo { margin: 0 0 10px; font-size: 1.05rem; font-weight: 900; font-stretch: 80%; letter-spacing: .04em; text-transform: uppercase; }
 .lk-cep { display: flex; gap: 8px; }
-.lk-cep input { flex: 1; min-width: 0; min-height: 46px; padding: 0 16px; border: 1px solid var(--linha); border-radius: 999px; background: var(--preto); color: var(--branco); font: inherit; font-size: 1.05rem; }
-.lk-cep button { min-height: 46px; padding: 0 16px; font-size: .85rem; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
+.lk-campo { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; padding: 7px 16px; border: 1px solid var(--linha); border-radius: 999px; background: var(--preto); cursor: text; }
+.lk-campo:focus-within { border-color: var(--laranja); }
+.lk-campo small { color: var(--suave); font-size: .7rem; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lk-cep input { width: 100%; min-width: 0; min-height: 0; padding: 0; border: 0; outline: 0; background: transparent; color: var(--branco); font: inherit; font-size: 1.05rem; }
+.lk-cep button { min-height: 56px; padding: 0 14px; font-size: .8rem; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
 .lk-dica { margin: 10px 4px 0 !important; font-size: .86rem !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lk-msg { margin: 12px 0 0; color: var(--suave); font-size: .9rem; }
 .lk-marca { display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: center; padding: 14px 0; border-top: 1px solid var(--linha); }
@@ -1577,7 +1580,8 @@ details.lk-cul[open] summary::after { content: '–'; }
 .lk-logos img { width: 36px; height: 36px; object-fit: contain; padding: 2px; border-radius: 50%; background: #000; border: 2px solid var(--carvao); margin-left: -9px; }
 .lk-logos img:first-child { margin-left: 0; }
 .lk-todas-texto { font-weight: 900; font-stretch: 80%; font-size: .95rem; line-height: 1.15; letter-spacing: .03em; text-transform: uppercase; white-space: nowrap; }
-.lk-todas .lk-logos { margin-left: auto; }
+.lk-todas .lk-logos { flex: 1; min-width: 0; display: flex; justify-content: flex-end; margin-left: 10px; }
+.lk-todas .lk-logos img { flex: 1 1 0; min-width: 0; max-width: 50px; width: auto; height: auto; aspect-ratio: 1; margin-left: -6px; }
 .lk-todas[open] > summary { border-bottom: 1px solid var(--linha); }
 .lk-todas details.lk-cul { padding: 0 18px; }
 .lk-insta > summary { list-style: none; }
@@ -1601,8 +1605,7 @@ details.lk-cul[open] summary::after { content: '–'; }
 
   <section class="lk-caixa" id="pedido">
     <h2 class="so-leitor">Faça seu pedido</h2>
-    <form class="lk-cep" id="lk-form"><input id="lk-cep" inputmode="numeric" autocomplete="postal-code" placeholder="Digite seu CEP" aria-label="CEP" maxlength="9"><button type="submit">Buscar</button></form>
-    <p class="lk-msg lk-dica">Veja qual loja está disponível na sua região.</p>
+    <form class="lk-cep" id="lk-form"><label class="lk-campo"><input id="lk-cep" inputmode="numeric" autocomplete="postal-code" placeholder="Digite seu CEP" aria-label="CEP" maxlength="9"><small>Loja disponível em sua região</small></label><button type="submit">Buscar</button></form>
     <div id="lk-res"></div>
   </section>
 
