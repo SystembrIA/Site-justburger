@@ -14,10 +14,9 @@ export const site = {
   lema: 'Ore, espere, confie', // fixo no topo e no rodapé (Maikon 01/11)
   lemaNoTopo: 'logo', // 'menu' (ao lado do menu) ou 'logo' (ao lado do logo)
   // Página Nossa equipe (Maikon 01/11). Autorização LGPD de nome e imagem assinada pelos colaboradores.
-  // Trabalhe conosco: rascunho para a diretoria aprovar (01/11). publicada: true põe no site, no menu e nos links.
+  // Trabalhe conosco (aprovada pelo Maikon, 01/11): no site, no menu e na página de links.
   trabalhe: {
-    publicada: false,
-    previa: true, // gera a página fora do Google e fora do menu, só para a diretoria ver
+    publicada: true, // aprovada pelo Maikon em 01/11
     envio: '', // endereço da função que recebe o currículo (o JARVIS publica); vazio = o botão manda pelo WhatsApp
     whatsappRH: '5511921659293', // Larissa, RH Recrutamento e Seleção (seg a sex, 8h15 às 18h) — Maikon 01/11
     chamada: 'Aqui, quem faz parte é reconhecido.',
