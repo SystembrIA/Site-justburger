@@ -284,7 +284,7 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
   .grade-lojas { grid-template-columns: repeat(4, 1fr); column-gap: 32px; }
   .dividido { grid-template-columns: 1fr 1.5fr; gap: 64px; }
   .lista-menu { grid-template-columns: repeat(2, 1fr); column-gap: 48px; }
-  .rodape-grade { grid-template-columns: 1.4fr 1.2fr 1fr 1fr; }
+  .rodape-grade { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; } /* Cardápio e Culinárias antes de Unidades (Maikon 01/11) */
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -516,7 +516,7 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .rodape-marcas strong { display: block; color: var(--laranja); font-weight: 800; }
 .rodape-marcas small { display: block; color: var(--suave); font-size: .82rem; font-weight: 500; }
 .rodape > .insta-grade { margin-bottom: 30px; }
-@media (min-width: 1000px) { .rodape-grade { grid-template-columns: 1.2fr 1.1fr 1.1fr .9fr .9fr; } }
+@media (min-width: 1000px) { .rodape-grade { grid-template-columns: 1.2fr .9fr 1.1fr 1.1fr .9fr; } } /* marca, Cardápio, Culinárias, Unidades, Just Burger (Maikon 01/11) */
 /* Culinárias na página Unidades */
 .marca-inicial { width: 56px; height: 56px; margin: 0 auto 10px; font-size: 1.5rem; border-radius: 14px; }
 .marca-logo-peq { width: 72px; height: 72px; object-fit: contain; margin: 0 auto 10px; display: block; }
@@ -553,7 +553,7 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .lema-menu { margin-left: auto; }
 .lema-menu ~ .menu-celular { margin-left: 4px; }
 @media (min-width: 900px) { .menu + .lema-menu { margin-left: 0; } }
-.rodape-logo-lema { display: flex; align-items: center; gap: 14px; max-width: none !important; margin: 0 0 16px; }
+.rodape-logo-lema { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; max-width: 100% !important; margin: 0 0 16px; } /* a frase desce para baixo do logo quando não cabe (não invade a coluna ao lado) */
 .rodape-logo-lema img { margin-bottom: 0 !important; }
 .rodape-logo-lema .lema { font-size: 1.6rem; }
 @media (max-width: 899px) { .lema { font-size: 1.15rem; } .topo-linha > .lema:not(.lema-menu) { margin-left: -16px; } }

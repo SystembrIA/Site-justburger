@@ -285,6 +285,7 @@ function pagina({ caminho, titulo, descricao, corpo, schema = [], profundidade, 
   const grafo = { '@context': 'https://schema.org', '@graph': [schemaOrganizacao(), ...schema] };
   const nav = [
     ['Cardápio', 'cardapio/'],
+    ['Culinárias', 'culinarias/'], // logo depois do Cardápio nos três menus (Maikon 01/11)
     ['O que pedir', 'para-voce/'],
     ['Unidades', 'unidades/'],
     ['Na mídia', 'na-midia/'],
@@ -292,7 +293,6 @@ function pagina({ caminho, titulo, descricao, corpo, schema = [], profundidade, 
     ...(site.equipe && site.equipe.publicada ? [['Nossa equipe', 'equipe/']] : []),
     ...(site.acoes && site.acoes.publicada ? [['Ações com parceiros', 'acoes/']] : []),
     ...(site.trabalhe && site.trabalhe.publicada ? [['Trabalhe conosco', 'trabalhe-conosco/']] : []),
-    ['Culinárias', 'culinarias/'],
   ];
   return `<!doctype html>
 <html lang="pt-BR">
@@ -345,7 +345,7 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
     <details class="menu-celular">
       <summary aria-label="Abrir menu"><span></span><span></span><span></span></summary>
       <nav aria-label="Menu">
-        <ul><li><a href="${base}">Início</a></li>${nav.filter(([, c]) => c !== 'culinarias/').map(([n, c]) => `<li><a href="${base}${c}">${n}</a></li>`).join('')}<li><a href="${base}entrega/">Onde entregamos</a></li>${culinarias.length ? `<li><details class="submenu"><summary>Conheça nossas culinárias</summary><ul>${culinarias.map((c) => { const logo = logoMarca(c); return `<li><a href="${base}culinarias/${c.slug}/">${logo ? `<img src="${base}${logo}" width="36" height="36" alt="">` : `<span class="submenu-marca" aria-hidden="true">${esc(c.nome.split(' ').pop()[0])}</span>`}${esc(c.nome)}</a></li>`; }).join('')}</ul></details></li>` : ''}</ul>
+        <ul><li><a href="${base}">Início</a></li>${nav.filter(([, c]) => c === 'cardapio/').map(([n, c]) => `<li><a href="${base}${c}">${n}</a></li>`).join('')}${culinarias.length ? `<li><details class="submenu"><summary>Conheça nossas culinárias</summary><ul>${culinarias.map((c) => { const logo = logoMarca(c); return `<li><a href="${base}culinarias/${c.slug}/">${logo ? `<img src="${base}${logo}" width="36" height="36" alt="">` : `<span class="submenu-marca" aria-hidden="true">${esc(c.nome.split(' ').pop()[0])}</span>`}${esc(c.nome)}</a></li>`; }).join('')}</ul></details></li>` : ''}${nav.filter(([, c]) => c !== 'culinarias/' && c !== 'cardapio/').map(([n, c]) => `<li><a href="${base}${c}">${n}</a></li>`).join('')}<li><a href="${base}entrega/">Onde entregamos</a></li></ul>
         ${botaoPedido(base)}
       </nav>
     </details>
@@ -363,19 +363,19 @@ ${corpo(base)}
       ${redes().length ? `<p class="rodape-siga">Siga a gente</p><p class="rodape-redes">${redes().map(([n, u, i]) => `<a href="${esc(u)}" rel="noopener" aria-label="${n}">${i}</a>`).join('')}</p>` : ''}
     </div>
     <div>
-      <h2>Nossas unidades</h2>
-      <ul class="rodape-lojas">${lojas.map((l) => `<li><a class="rodape-loja-nome" href="${base}unidades/${l.slug}/">${esc(l.nome.replace('Just Burger ', ''))}</a><a class="rodape-endereco" href="${esc(l.googleMaps)}" rel="noopener">${esc(enderecoCurto(l))}</a></li>`).join('')}</ul>
+      <h2>Cardápio</h2>
+      <ul>
+        <li><a href="${base}cardapio/">Cardápio completo</a></li>
+        ${perfis.slice(0, 5).map((p) => `<li><a href="${base}para-voce/${p.slug}/">${esc(p.nome)}</a></li>`).join('')}
+      </ul>
     </div>
     <div>
       <h2>Nossas culinárias</h2>
       <ul class="rodape-marcas">${culinarias.map((c) => `<li><a href="${base}culinarias/${c.slug}/">${logoMarca(c) ? `<img src="${base}${logoMarca(c)}" width="32" height="32" alt="" loading="lazy">` : `<span class="submenu-marca" aria-hidden="true">${esc(c.nome.split(' ').pop()[0])}</span>`}<span><strong>${esc(c.nome)}</strong><small>${esc((c.lojas || []).map((x) => x.regiao).join(' · '))}</small></span></a></li>`).join('')}</ul>
     </div>
     <div>
-      <h2>Cardápio</h2>
-      <ul>
-        <li><a href="${base}cardapio/">Cardápio completo</a></li>
-        ${perfis.slice(0, 5).map((p) => `<li><a href="${base}para-voce/${p.slug}/">${esc(p.nome)}</a></li>`).join('')}
-      </ul>
+      <h2>Nossas unidades</h2>
+      <ul class="rodape-lojas">${lojas.map((l) => `<li><a class="rodape-loja-nome" href="${base}unidades/${l.slug}/">${esc(l.nome.replace('Just Burger ', ''))}</a><a class="rodape-endereco" href="${esc(l.googleMaps)}" rel="noopener">${esc(enderecoCurto(l))}</a></li>`).join('')}</ul>
     </div>
     <div>
       <h2>Just Burger</h2>
