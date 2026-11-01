@@ -1008,7 +1008,6 @@ paginas.push({
     <h1>Cardápio Just Burger</h1>
     ${respostaRapida('Hambúrguer de 150 g no pão brioche com o Molho Just. Os mais vendidos são o Top Smash, o Just House e o Dolce Gabana.')}
     <nav class="cardapio-marcas" aria-label="Cardápios do grupo"><a class="ativo" href="${base}cardapio/" aria-current="page"><img src="${base}assets/img/logo-320.webp" alt="" width="56" height="56"><span>Just Burger</span></a>${culinarias.map((c) => `<a href="${base}culinarias/${c.slug}/">${logoMarca(c) ? `<img src="${base}${logoMarca(c)}" alt="" width="56" height="56" loading="lazy">` : ''}<span>${esc(c.nome)}</span></a>`).join('')}</nav>
-    <p class="aviso">Preços, promoções e disponibilidade do dia no iFood da sua unidade. A Just não faz trocas de itens.</p>
   </div>
 </section>
 <nav class="categorias" aria-label="Categorias do cardápio"><div class="largura">${cardapio.map((c) => `<a href="#${slug(c.categoria)}">${esc(c.categoria)}</a>`).join('')}</div></nav>
