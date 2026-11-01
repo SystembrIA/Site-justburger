@@ -1531,6 +1531,10 @@ ${paginas.filter((p) => !p.noindex).map((p) => `  <url><loc>${abs(p.caminho)}</l
 `,
 );
 
+// Domínio próprio no GitHub Pages: o arquivo CNAME na branch gh-pages liga o site a www.justburger.com.br
+// (o GitHub redireciona justburger.com.br e o endereço github.io para ele). Só sai quando o site está publicado.
+if (site.publicado) writeFileSync(join(SAIDA, 'CNAME'), new URL(site.url).hostname + '\n');
+
 writeFileSync(
   join(SAIDA, 'robots.txt'),
   site.publicado
