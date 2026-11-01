@@ -161,7 +161,7 @@ const destaquesHome = () => (produtosDe(perfis[0]).length ? produtosDe(perfis[0]
 // mais que as do iFood que o robô baixa todo dia. Original em fotos-proprias/, tratamento em ferramentas/foto-propria.py.
 const PASTA_PROPRIAS = join(RAIZ, 'assets/img/proprias');
 const proprias = existsSync(PASTA_PROPRIAS)
-  ? readdirSync(PASTA_PROPRIAS).filter((f) => f.endsWith('.webp') && !/-(600|recorte)\.webp$/.test(f)).map((f) => f.slice(0, -5))
+  ? readdirSync(PASTA_PROPRIAS).filter((f) => f.endsWith('.webp') && !/-(600|900|recorte)(-600|-900)?\.webp$/.test(f)).map((f) => f.slice(0, -5))
   : [];
 const pastaFoto = (id) => {
   const p = proprias.find((x) => id === x || id.startsWith(`${x}-`));
@@ -320,7 +320,8 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
 <link rel="manifest" href="${base}site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Dancing+Script:wght@700&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Dancing+Script:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Dancing+Script:wght@700&display=swap"></noscript>
 <link rel="stylesheet" href="${base}assets/estilo.css">
 <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; if (!location.hash) addEventListener('load', function () { scrollTo(0, 0); });</script>
 <script type="application/ld+json">${JSON.stringify(grafo)}</script>
@@ -465,6 +466,9 @@ const imagemHeroi = itemHeroi
   ? arqFoto(itemHeroi.id, '-recorte')
   : site.heroi && site.heroi.imagem && existsSync(join(RAIZ, site.heroi.imagem)) ? site.heroi.imagem : null;
 const temHeroi = !!imagemHeroi;
+// Versões menores do destaque (-600 e -900), quando existem: o celular não baixa a de 1200 px.
+const variante = (arq, l) => (arq && existsSync(join(RAIZ, arq.replace(/\.webp$/, `-${l}.webp`))) ? arq.replace(/\.webp$/, `-${l}.webp`) : null);
+const srcsetHeroi = imagemHeroi ? [[variante(imagemHeroi, 600), 600], [variante(imagemHeroi, 900), 900], [imagemHeroi, 1200]].filter(([a]) => a) : [];
 
 // Painel de números: base histórica no HTML (aparece mesmo sem JavaScript) e, ao vivo, a soma da
 // função contadorSite (site_publico/contador) pelo streaming do Firebase (EventSource, sem SDK).
@@ -885,7 +889,7 @@ paginas.push({
       <p class="destaque-frase">${esc(site.destaque.frase)}</p>` : `<h1>150 g de carne.<br>Pão brioche.<br><span>Molho Just.</span></h1>`}
     </div>
     ${temHeroi
-      ? `<a class="heroi-burger-caixa" href="${base}cardapio/${itemHeroi ? `#${itemHeroi.id}` : ''}" aria-label="Ver ${esc(itemHeroi ? itemHeroi.nome : 'o destaque')} no cardápio"><img class="heroi-burger" src="${base}${imagemHeroi}" width="1000" height="1000" alt="${esc(itemHeroi ? `${itemHeroi.nome}, burger da Just Burger` : site.heroi.alt)}" fetchpriority="high"></a>`
+      ? `<a class="heroi-burger-caixa" href="${base}cardapio/${itemHeroi ? `#${itemHeroi.id}` : ''}" aria-label="Ver ${esc(itemHeroi ? itemHeroi.nome : 'o destaque')} no cardápio"><img class="heroi-burger" src="${base}${imagemHeroi}"${srcsetHeroi.length > 1 ? ` srcset="${srcsetHeroi.map(([a, w]) => `${base}${a} ${w}w`).join(', ')}" sizes="(min-width: 718px) 560px, 78vw"` : ''} width="1200" height="1101" alt="${esc(itemHeroi ? `${itemHeroi.nome}, burger da Just Burger` : site.heroi.alt)}" fetchpriority="high"></a>`
       : `<img class="heroi-logo" src="${base}assets/img/logo-640.webp" srcset="${base}assets/img/logo-320.webp 320w, ${base}assets/img/logo-640.webp 640w" sizes="(min-width: 900px) 420px, 70vw" width="640" height="536" alt="Just Burger Hamburgueria" fetchpriority="high">`}
   </div>
 </section>
