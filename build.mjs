@@ -366,6 +366,11 @@ ${corpo(base)}
       ${site.telefoneCentral ? `<p><a class="rodape-social rodape-whats" href="${linkWhats}" rel="noopener">WhatsApp e telefone<br><strong>${esc(site.telefoneCentral)}</strong></a></p>` : ''}
       ${redes().length ? `<p class="rodape-siga">Siga a gente</p><p class="rodape-redes">${redes().map(([n, u, i]) => `<a href="${esc(u)}" rel="noopener" aria-label="${n}">${i}</a>`).join('')}</p>` : ''}
     </div>
+    <div class="rodape-dupla"> <!-- Nossas culinárias à esquerda e Cardápio à direita, lado a lado (Maikon 01/11) -->
+    <div>
+      <h2>Nossas culinárias</h2>
+      <ul class="rodape-marcas">${culinarias.map((c) => `<li><a href="${base}culinarias/${c.slug}/">${logoMarca(c) ? `<img src="${base}${logoMarca(c)}" width="32" height="32" alt="" loading="lazy">` : `<span class="submenu-marca" aria-hidden="true">${esc(c.nome.split(' ').pop()[0])}</span>`}<span><strong>${esc(c.nome)}</strong><small>${esc((c.lojas || []).map((x) => x.regiao).join(' · '))}</small></span></a></li>`).join('')}</ul>
+    </div>
     <div>
       <h2>Cardápio</h2>
       <ul>
@@ -373,9 +378,6 @@ ${corpo(base)}
         ${perfis.slice(0, 5).map((p) => `<li><a href="${base}para-voce/${p.slug}/">${esc(p.nome)}</a></li>`).join('')}
       </ul>
     </div>
-    <div>
-      <h2>Nossas culinárias</h2>
-      <ul class="rodape-marcas">${culinarias.map((c) => `<li><a href="${base}culinarias/${c.slug}/">${logoMarca(c) ? `<img src="${base}${logoMarca(c)}" width="32" height="32" alt="" loading="lazy">` : `<span class="submenu-marca" aria-hidden="true">${esc(c.nome.split(' ').pop()[0])}</span>`}<span><strong>${esc(c.nome)}</strong><small>${esc((c.lojas || []).map((x) => x.regiao).join(' · '))}</small></span></a></li>`).join('')}</ul>
     </div>
     <div>
       <h2>Nossas unidades</h2>
