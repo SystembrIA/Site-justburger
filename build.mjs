@@ -1508,7 +1508,7 @@ for (const p of paginas) {
     ...culinarias.map((c) => ({ nome: c.nome, tipo: c.tipo, logo: logoMarca(c),
       unidades: (c.lojas || []).map((u) => { const b = lojaDaRegiao(u.regiao); return { nome: u.regiao, ifood: u.ifood || '', keeta: u.keeta || '', lat: b && b.geo && b.geo.lat, lng: b && b.geo && b.geo.lng }; }) })),
   ];
-  const botoesUnidade = (u) => `${u.ifood ? `<a class="lk-plat lk-ifood" href="${esc(u.ifood)}" rel="noopener">iFood</a>` : ''}${u.keeta ? `<a class="lk-plat lk-keeta" href="${esc(u.keeta)}" rel="noopener">Keeta</a>` : '<span class="lk-plat lk-off">Keeta em breve</span>'}`;
+  const botoesUnidade = (u) => `${u.ifood ? `<a class="lk-plat lk-ifood" href="${esc(u.ifood)}" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-branco.svg" alt="iFood"></a>` : ''}${u.keeta ? `<a class="lk-plat lk-keeta" href="${esc(u.keeta)}" rel="noopener" aria-label="Pedir na Keeta"><span class="lk-keeta-marca">Keeta</span></a>` : '<span class="lk-plat lk-keeta lk-off" aria-label="Keeta em breve"><span class="lk-keeta-marca">Keeta</span><small>em breve</small></span>'}`;
   const dadosLinks = { raio: geo ? geo.raioKm : 10, marcas };
   const htmlLinks = `<!doctype html>
 <html lang="pt-BR">
@@ -1540,17 +1540,22 @@ body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem
 .lk-cep { display: flex; gap: 8px; }
 .lk-cep input { flex: 1; min-width: 0; min-height: 50px; padding: 0 16px; border: 1px solid var(--linha); border-radius: 999px; background: var(--preto); color: var(--branco); font: inherit; font-size: 1.05rem; }
 .lk-cep button { min-height: 50px; padding: 0 20px; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
+.lk-dica { margin: 0 0 12px !important; }
 .lk-msg { margin: 12px 0 0; color: var(--suave); font-size: .9rem; }
 .lk-marca { display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: center; padding: 14px 0; border-top: 1px solid var(--linha); }
 .lk-marca:first-child { border-top: 0; }
-.lk-marca img { width: 52px; height: 52px; object-fit: contain; border-radius: 12px; background: #000; }
+.lk-marca > img { width: 52px; height: 52px; object-fit: contain; border-radius: 12px; background: #000; }
 .lk-marca strong { display: block; font-size: 1rem; }
 .lk-marca small { display: block; color: var(--suave); font-size: .82rem; }
 .lk-plats { grid-column: 1 / -1; display: flex; gap: 8px; }
 .lk-plat { flex: 1; display: grid; place-items: center; min-height: 44px; border-radius: 999px; font-weight: 800; font-size: .85rem; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; }
-.lk-ifood { background: var(--laranja); color: #0b0b0b; }
-.lk-keeta { background: var(--branco); color: #0b0b0b; }
-.lk-off { border: 1px dashed var(--linha); color: var(--suave); font-weight: 600; }
+.lk-plat { min-height: 48px; }
+.lk-ifood { background: #ea1d2c; }
+.lk-ifood img { height: 22px; width: auto; display: block; }
+.lk-keeta { background: #ffd100; color: #111; }
+.lk-keeta-marca { font-size: 1.15rem; font-weight: 900; font-stretch: 100%; letter-spacing: -.01em; text-transform: none; }
+.lk-off { opacity: .45; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.lk-off small { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
 details.lk-cul { border-top: 1px solid var(--linha); }
 details.lk-cul:first-of-type { border-top: 0; }
 details.lk-cul summary { display: flex; align-items: center; gap: 12px; padding: 12px 0; cursor: pointer; list-style: none; }
@@ -1572,14 +1577,9 @@ details.lk-cul[open] summary::after { content: '–'; }
     <p class="lk-sub">Grupo de delivery em São Paulo · nota 4,9 no iFood</p>
   </header>
 
-  <a class="lk-bt lk-principal" href="#pedido">Faça seu pedido</a>
-  <a class="lk-bt" href="../">Conheça nosso site</a>
-  <a class="lk-bt" href="../cardapio/">Cardápio</a>
-  ${linkWhats ? `<a class="lk-bt" href="${linkWhats}" rel="noopener">${iconeWhats} WhatsApp</a>` : ''}
-  ${site.instagram ? `<a class="lk-bt" href="${esc(site.instagram)}" rel="noopener">Instagram</a>` : ''}
-
   <section class="lk-caixa" id="pedido">
-    <h2>Qual loja atende você?</h2>
+    <h2>Faça seu pedido</h2>
+    <p class="lk-msg lk-dica">Digite seu CEP e veja as lojas que entregam no seu endereço.</p>
     <form class="lk-cep" id="lk-form"><input id="lk-cep" inputmode="numeric" autocomplete="postal-code" placeholder="Digite seu CEP" aria-label="CEP" maxlength="9"><button type="submit">Buscar</button></form>
     <div id="lk-res"></div>
   </section>
@@ -1590,6 +1590,11 @@ details.lk-cul[open] summary::after { content: '–'; }
       ${m.unidades.map((u) => `<div class="lk-uni"><p>${esc(u.nome)}</p><div class="lk-plats">${botoesUnidade(u)}</div></div>`).join('')}
     </details>`).join('\n    ')}
   </section>
+
+  <a class="lk-bt" href="../">Conheça nosso site</a>
+  <a class="lk-bt" href="../cardapio/">Cardápio</a>
+  ${linkWhats ? `<a class="lk-bt" href="${linkWhats}" rel="noopener">${iconeWhats} WhatsApp</a>` : ''}
+  ${site.instagram ? `<a class="lk-bt" href="${esc(site.instagram)}" rel="noopener">Instagram</a>` : ''}
 
   <p class="lk-rodape">Grupo Just Burger · <a href="../">justburger.com.br</a></p>
 </main>
