@@ -1635,7 +1635,7 @@ body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem
 .lk-campo:focus-within { border-color: var(--laranja); }
 .lk-campo small { color: var(--suave); font-size: .7rem; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lk-cep input { width: 100%; min-width: 0; min-height: 0; padding: 0; border: 0; outline: 0; background: transparent; color: var(--branco); font: inherit; font-size: 1.05rem; }
-.lk-cep button { align-self: center; min-height: 40px; padding: 0 16px; font-size: .8rem; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
+.lk-cep button { align-self: center; min-height: 40px; padding: 0 16px; background: var(--branco) !important; color: #0b0b0b !important; font-size: .8rem; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
 .lk-dica { margin: 10px 4px 0 !important; font-size: .86rem !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lk-msg { margin: 12px 0 0; color: var(--suave); font-size: .9rem; }
 .lk-marca { display: grid; grid-template-columns: 40px 7.6em 1fr; gap: 10px; align-items: center; padding: 10px 0; border-top: 1px solid var(--linha); }
@@ -1680,6 +1680,7 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
 .lk-logos img { width: 36px; height: 36px; object-fit: contain; padding: 2px; border-radius: 50%; background: #000; border: 2px solid var(--carvao); margin-left: -9px; }
 .lk-logos img:first-child { margin-left: 0; }
 .lk-todas-texto { font-weight: 900; font-stretch: 80%; font-size: .95rem; line-height: 1.15; letter-spacing: .03em; text-transform: uppercase; white-space: nowrap; }
+.lk-todas-botao { padding: 8px 14px; border-radius: 14px; background: var(--laranja); color: #0b0b0b; }
 .lk-todas .lk-logos { flex: 1; min-width: 0; display: flex; justify-content: flex-end; margin-left: 10px; }
 .lk-todas .lk-logos img { flex: 1 1 0; min-width: 0; max-width: 50px; width: auto; height: auto; aspect-ratio: 1; margin-left: -6px; }
 .lk-todas[open] > summary { border-bottom: 1px solid var(--linha); }
@@ -1715,7 +1716,7 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
   </section>
 
   <details class="lk-caixa lk-todas">
-    <summary><span class="lk-todas-texto">Escolha sua<br>culinária</span><span class="lk-logos">${marcas.filter((m) => m.logo).map((m) => `<img src="../${m.logo}" alt="">`).join('')}</span></summary>
+    <summary><span class="lk-todas-texto lk-todas-botao">Faça seu<br>pedido</span><span class="lk-logos">${marcas.filter((m) => m.logo).map((m) => `<img src="../${m.logo}" alt="">`).join('')}</span></summary>
     ${marcas.map((m) => `<details class="lk-cul"><summary>${m.logo ? `<img src="../${m.logo}" alt="" loading="lazy">` : ''}<span><strong>${esc(m.nome)}</strong><small class="suave"> ${esc(m.tipo)}</small></span></summary>
       ${m.unidades.map((u) => `<div class="lk-uni"><p>${esc(u.nome)}</p><div class="lk-plats">${botoesUnidade(u)}</div></div>`).join('')}
     </details>`).join('\n    ')}
