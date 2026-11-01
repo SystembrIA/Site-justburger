@@ -79,12 +79,12 @@ export const site = {
   linktree: '', // PREENCHER: link do Linktree da Just
   emailContato: '', // vazio = não aparece
   instagram: 'https://www.instagram.com/justburgersp/',
-  // Perfis de todas as marcas (página /links/). [arroba, link, marca] — informados pelo Maikon em 01/11.
+  // Perfis de todas as marcas (página /links/). [arroba, link, marca, tipo, logo] — informados pelo Maikon em 01/11.
   instagrams: [
-    ['@justburgersp', 'https://www.instagram.com/justburgersp/', 'Just Burger'],
-    ['@justgourmetsp', 'https://www.instagram.com/justgourmetsp/', 'Just Gourmet'],
-    ['@ahamforneriasp', 'https://www.instagram.com/ahamforneriasp/', 'Just Forneria'],
-    ['@ahamsushisp', 'https://www.instagram.com/ahamsushisp/', 'Just Sushi'],
+    ['@justburgersp', 'https://www.instagram.com/justburgersp/', 'Just Burger', 'Hamburgueria', 'assets/img/logo-320.webp'],
+    ['@justgourmetsp', 'https://www.instagram.com/justgourmetsp/', 'Just Gourmet', 'Comida brasileira', 'assets/img/marcas/just-gourmet.webp'],
+    ['@ahamforneriasp', 'https://www.instagram.com/ahamforneriasp/', 'Just Forneria', 'Pizza e esfiha', 'assets/img/marcas/just-forneria.webp'],
+    ['@ahamsushisp', 'https://www.instagram.com/ahamsushisp/', 'Just Sushi', 'Sushi', 'assets/img/marcas/just-sushi.webp'],
   ],
   facebook: '', // PREENCHER: link da página oficial no Facebook (vazio = não aparece)
   tiktok: '', // PREENCHER: link do perfil oficial no TikTok (vazio = não aparece)

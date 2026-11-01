@@ -1688,10 +1688,15 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
 .lk-insta > summary::-webkit-details-marker { display: none; }
 .lk-insta[open] > summary { border-color: var(--laranja); }
 .lk-insta-lista { display: grid; gap: 8px; margin: -2px 0 12px; }
-.lk-insta-lista a { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 12px 18px; border: 1px solid var(--linha); border-radius: 14px; background: var(--carvao); color: var(--branco); text-decoration: none; }
+.lk-insta-lista a { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; border: 1px solid var(--linha); border-radius: 14px; background: var(--carvao); color: var(--branco); text-decoration: none; }
 .lk-insta-lista a:hover { border-color: var(--laranja); }
-.lk-insta-lista strong { font-size: .95rem; }
-.lk-insta-lista small { color: var(--suave); font-size: .8rem; }
+.lk-insta-lista strong { display: block; font-size: .95rem; color: var(--branco); }
+.lk-insta-logo { width: 40px; height: 40px; flex: none; object-fit: contain; border-radius: 10px; background: #000; }
+.lk-insta-nome { flex: 1; min-width: 0; }
+.lk-insta-ig { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--linha); }
+.lk-insta-ig svg { width: 20px; height: 20px; }
+.lk-insta > summary svg { width: 20px; height: 20px; }
+.lk-insta-lista small { display: block; color: var(--branco); opacity: .85; font-size: .8rem; }
 .lk-rodape { margin-top: 26px; text-align: center; color: var(--suave); font-size: .8rem; }
 .lk-rodape a { color: var(--suave); }
 </style>
@@ -1719,8 +1724,8 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
   <a class="lk-bt" href="../">Conheça nosso site</a>
   <a class="lk-bt" href="../cardapio/">Cardápio</a>
   ${site.trabalhe && site.trabalhe.publicada ? `<a class="lk-bt" href="../trabalhe-conosco/">Trabalhe conosco</a>` : ''}
+  ${(site.instagrams || []).length ? `<details class="lk-insta"><summary class="lk-bt">${iconeInstagram} Nossos Instagrams</summary><div class="lk-insta-lista">${site.instagrams.map(([arroba, url, marca, tipo, logo]) => `<a href="${esc(url)}" rel="noopener">${logo ? `<img class="lk-insta-logo" src="../${esc(logo)}" alt="">` : ''}<span class="lk-insta-nome"><strong>${esc(marca)}</strong><small>${esc(tipo || arroba)}</small></span><span class="lk-insta-ig" aria-label="${esc(arroba)} no Instagram">${iconeInstagram}</span></a>`).join('')}</div></details>` : site.instagram ? `<a class="lk-bt" href="${esc(site.instagram)}" rel="noopener">Instagram</a>` : ''}
   ${linkWhats ? `<a class="lk-bt" href="${linkWhats}" rel="noopener">${iconeWhats} WhatsApp</a>` : ''}
-  ${(site.instagrams || []).length ? `<details class="lk-insta"><summary class="lk-bt">Instagram</summary><div class="lk-insta-lista">${site.instagrams.map(([arroba, url, marca]) => `<a href="${esc(url)}" rel="noopener"><strong>${esc(arroba)}</strong><small>${esc(marca)}</small></a>`).join('')}</div></details>` : site.instagram ? `<a class="lk-bt" href="${esc(site.instagram)}" rel="noopener">Instagram</a>` : ''}
 
   <p class="lk-rodape">Grupo Just Burger · <a href="../">justburger.com.br</a></p>
 </main>
