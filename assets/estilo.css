@@ -330,8 +330,8 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 .selo-super span { color: var(--branco); font-size: .74rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 .selo-super em { font-family: 'Dancing Script', cursive; font-style: normal; font-weight: 700; font-size: 1.9rem; line-height: .95; color: #d9b45a; }
 .estrela-dourada { color: #f2c14e; }
-.botao-whats { gap: 8px; background: #25d366; border-color: #25d366; color: #fff; }
-.botao-whats:hover { background: #1ebe5a; border-color: #1ebe5a; color: #fff; }
+.botao-whats { gap: 8px; background: #25d366; border-color: #25d366; color: #0b0b0b; } /* texto escuro: contraste 9,9 (branco era 2,0) */
+.botao-whats:hover { background: #1ebe5a; border-color: #1ebe5a; color: #0b0b0b; }
 .botao-whats svg { width: 20px; height: 20px; flex: none; }
 .loja-acoes { flex-wrap: wrap; gap: 10px !important; }
 .acoes.acoes-loja { flex-wrap: wrap; }
@@ -509,7 +509,7 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .rodape-redes svg { width: 18px; height: 18px; }
 .rodape-lojas li, .rodape-marcas li { min-width: 0; }
 .rodape-loja-nome { display: block; color: var(--laranja) !important; font-weight: 800 !important; }
-.rodape-lojas .rodape-endereco { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--suave); font-size: .85rem; }
+.rodape-lojas .rodape-endereco { display: block; padding-block: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--suave); font-size: .85rem; }
 .rodape-marcas a { display: flex; align-items: center; gap: 10px; }
 .rodape-marcas img { width: 32px; height: 32px; object-fit: contain; border-radius: 8px; }
 .rodape-marcas .submenu-marca { width: 32px; height: 32px; flex: none; font-size: .9rem; }

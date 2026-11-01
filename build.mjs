@@ -1101,6 +1101,7 @@ paginas.push({
     ${migalhas(base, [['Início', ''], ['Unidades', 'unidades/']])}
     <h1>Unidades Just Burger</h1>
     ${respostaRapida(`São quatro unidades: ${juntar(lojas.map((l) => `${l.bairro} (${l.cidade})`))}. Todas entregam pelo iFood; escolha a mais perto para ver endereço, horário e bairros atendidos.`)}
+    <h2 class="so-leitor">As quatro unidades</h2>
     <div class="grade-2 lojas-centro">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
   </div>
 </section>
@@ -1387,6 +1388,7 @@ paginas.push({
     ${migalhas(base, [['Início', ''], ['Culinárias', 'culinarias/']])}
     <h1>Conheça nossas culinárias</h1>
     <p class="lead">Da Just Burger nasceu um grupo. Conheça as outras marcas.</p>
+    <h2 class="so-leitor">As marcas do grupo</h2>
     <div class="grade-2 lojas-centro">${culinarias.map((c) => cartaoMarca(c, base)).join('')}</div>
   </div>
 </section>`,
@@ -1407,6 +1409,7 @@ for (const c of culinarias) {
   <div class="largura">
     ${migalhas(base, trilha)}
     <h1 class="so-leitor">${esc(c.nome)}: ${esc(c.tipo.toLowerCase())} do grupo Just Burger</h1>
+    <h2 class="so-leitor">Onde pedir</h2>
     <div class="marca-destaque lojas-centro">${cartaoMarca(c, base)}</div>
     ${c.conteudo ? `<div class="largura estreita">${c.conteudo.map((t) => `<p>${esc(t)}</p>`).join('')}</div>` : ''}
   </div>
