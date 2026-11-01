@@ -1,7 +1,102 @@
 {
   "loja": "sushi-penha",
-  "copiadoDoIfoodEm": "2026-11-01T07:12:25.796-03:00",
+  "copiadoDoIfoodEm": "2026-11-01T08:12:33.255-03:00",
   "categorias": [
+    {
+      "categoria": "Promoção até 50%",
+      "itens": [
+        {
+          "id": "deguste-21-pecas",
+          "nome": "Deguste (21 peças)",
+          "descricao": "05 sashimi salmão\n05 hossomaki filadélfia\n05 uramaki filadélfia \n04 joe salmão\n02 sushi salmão",
+          "preco": 102.9,
+          "precoDe": 127.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031254_133T_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "eby-fry",
+          "nome": "Eby Fry",
+          "descricao": "Camarões empanados na panko, com molho opcional",
+          "preco": 27.9,
+          "precoDe": 51.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061402_7M33_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "fry",
+          "nome": "Fry",
+          "descricao": "Cubos de peixe branco empanados na panko, com molho opcional",
+          "preco": 25.9,
+          "precoDe": 45.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061400_00O3_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "deguste-40-pecas",
+          "nome": "Deguste (40 peças)",
+          "descricao": "05 sashimi salmão\n05 sashimi salmão roast (maçaricado)\n10 hossomaki filadélfia\n10 uramaki filadélfia\n06 joe salmão\n04 sushi salmão",
+          "preco": 114.9,
+          "precoDe": 193.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051905_QCA7_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "gourmet-40-pecas",
+          "nome": "Gourmet (40 peças)",
+          "descricao": "04 sashimi salmão\n04 sashimi atum\n04 sashimi Peixe Branco\n04 sashimi haddock\n02 sushi camarão\n02 sushi polvo\n02 sushi skin special\n02 joe salmão tartar trufado\n02 joe poró crispy\n02 joe ceviche\n02 joe couve crispy\n02 joe salmão com cream cheese\n02 ebi shakke\n02 niguiri salmão rostaed\n04 baterá salmão",
+          "preco": 125.9,
+          "precoDe": 224.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507081541_487X_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "50-off-salmao-ball-08-unid",
+          "nome": "50% Off Salmão Ball ( 08 unid)",
+          "descricao": "Bolinhas de salmão temperado e desfiado com cream cheese, geleia de pimenta, empanado e frito na panko.",
+          "preco": 18.5,
+          "precoDe": 36.9,
+          "foto": "https://static-images.ifood.com.br/pratos/1ecab715-77a2-4bec-9429-2f41c076f5ff/202202142140_1C5R_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "ceviche-mix",
+          "nome": "Ceviche Mix",
+          "descricao": "Salmão\nPeixe branco (Haddock Defumado)\nAtum\nCebola roxa\nCoentro\npimenta dedo de moça\npimentão amarelo\nCebolinha\nTomate cereja\nSuco de limão",
+          "preco": 29.9,
+          "precoDe": 36.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031710_587H_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "sushi-burguer",
+          "nome": "Sushi Burguer",
+          "descricao": "Sushi burguer empanado e frito.",
+          "preco": 17.9,
+          "precoDe": 34.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202604262136_72WF_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "gourmet-20-pecas",
+          "nome": "Gourmet (20 Peças)",
+          "descricao": "02 sashimi salmão\n02 sashimi atum\n02 sashimi Peixe Branco\n02 sashimi haddock\n01 niguiri salmão brulé\n01 niguiri camarão\n01 niguiri polvo\n01 niguiri skin special\n01 joe salmão tartar trufado\n01 joe poró crispy\n01 joe Ceviche\n01 joe salmão\n01 joe couve crispy\n01 ebi shakke\n02 Baterá de Salmão",
+          "preco": 135.9,
+          "precoDe": 156.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031251_J627_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "aham-fresh-27-pecas",
+          "nome": "Aham! Fresh (27 peças)",
+          "descricao": "05 sashimi salmão\n05 sashimi Peixe Branco lemon\n05 uramaki salmão lemon\n04 joe ceviche trufado (Pb)\n04 Joe Spicy \n02 sushi Peixe Branco trufado\n02 sushi salmão lemon",
+          "preco": 138.9,
+          "precoDe": 152.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051904_E832_i.jpg",
+          "pausado": true
+        }
+      ]
+    },
     {
       "categoria": "Novidades!",
       "itens": [
@@ -56,7 +151,7 @@
       "categoria": "Combinados e Hot Combos Até 20% Off!",
       "itens": [
         {
-          "id": "deguste-21-pecas",
+          "id": "deguste-21-pecas-2",
           "nome": "Deguste (21 peças)",
           "descricao": "05 sashimi salmão\n05 hossomaki filadélfia\n05 uramaki filadélfia \n04 joe salmão\n02 sushi salmão",
           "preco": 104.9,
@@ -64,7 +159,7 @@
           "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031254_133T_i.jpg"
         },
         {
-          "id": "deguste-40-pecas",
+          "id": "deguste-40-pecas-2",
           "nome": "Deguste (40 peças)",
           "descricao": "05 sashimi salmão\n05 sashimi salmão roast (maçaricado)\n10 hossomaki filadélfia\n10 uramaki filadélfia\n06 joe salmão\n04 sushi salmão",
           "preco": 177.9,
@@ -72,7 +167,7 @@
           "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051905_QCA7_i.jpg"
         },
         {
-          "id": "gourmet-20-pecas",
+          "id": "gourmet-20-pecas-2",
           "nome": "Gourmet (20 Peças)",
           "descricao": "02 sashimi salmão\n02 sashimi atum\n02 sashimi Peixe Branco\n02 sashimi haddock\n01 niguiri salmão brulé\n01 niguiri camarão\n01 niguiri polvo\n01 niguiri skin special\n01 joe salmão tartar trufado\n01 joe poró crispy\n01 joe Ceviche\n01 joe salmão\n01 joe couve crispy\n01 ebi shakke\n02 Baterá de Salmão",
           "preco": 135.9,
@@ -80,7 +175,7 @@
           "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031309_A6L4_i.jpg"
         },
         {
-          "id": "gourmet-40-pecas",
+          "id": "gourmet-40-pecas-2",
           "nome": "Gourmet (40 peças)",
           "descricao": "04 sashimi salmão\n04 sashimi atum\n04 sashimi Peixe Branco\n04 sashimi haddock\n02 sushi camarão\n02 sushi polvo\n02 sushi skin special\n02 joe salmão tartar trufado\n02 joe poró crispy\n02 joe ceviche\n02 joe couve crispy\n02 joe salmão com cream cheese\n02 ebi shakke\n02 niguiri salmão rostaed\n04 baterá salmão",
           "preco": 198.9,
@@ -88,7 +183,7 @@
           "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507081541_487X_i.jpg"
         },
         {
-          "id": "aham-fresh-27-pecas",
+          "id": "aham-fresh-27-pecas-2",
           "nome": "Aham! Fresh (27 peças)",
           "descricao": "05 sashimi salmão\n05 sashimi Peixe Branco lemon\n05 uramaki salmão lemon\n04 joe ceviche trufado (Pb)\n04 Joe Spicy \n02 sushi Peixe Branco trufado\n02 sushi salmão lemon",
           "preco": 138.9,
@@ -234,7 +329,7 @@
           "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506061404_6S2K_i.jpg"
         },
         {
-          "id": "fry",
+          "id": "fry-2",
           "nome": "Fry",
           "descricao": "Cubos de peixe branco empanados na panko, com molho opcional",
           "preco": 45.9,
@@ -430,7 +525,7 @@
           "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031552_GT8T_i.jpg"
         },
         {
-          "id": "ceviche-mix",
+          "id": "ceviche-mix-2",
           "nome": "Ceviche Mix",
           "descricao": "Salmão\nPeixe branco (Haddock Defumado)\nAtum\nCebola roxa\nCoentro\npimenta dedo de moça\npimentão amarelo\nCebolinha\nTomate cereja\nSuco de limão",
           "preco": 36.9,
@@ -761,12 +856,94 @@
           "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202606120849_PU0K_i.jpg"
         },
         {
+          "id": "pink-lemonade-500-ml",
+          "nome": "Pink lemonade 500 ml",
+          "descricao": "Um sabor diferente de tudo que já bebeu, refrescante, deliciosa, peça, você não vai se arrepender !!!",
+          "preco": 13.9,
+          "precoDe": 16.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202610011745_LJLT_i.jpg",
+          "pausado": true
+        },
+        {
           "id": "refrigerante-lata",
           "nome": "Refrigerante lata",
           "descricao": "Não entregamos pedidos só de bebidas.",
           "preco": 8.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/a0f1eeb9-c22e-458c-ba03-5cf712d6005d/202106190117_Y2CS_i.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Promoção até 30%",
+      "itens": [
+        {
+          "id": "deguste-21-pecas-3",
+          "nome": "Deguste (21 peças)",
+          "descricao": "05 sashimi salmão\n05 hossomaki filadélfia\n05 uramaki filadélfia \n04 joe salmão\n02 sushi salmão",
+          "preco": 104.9,
+          "precoDe": 132.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031254_133T_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "deguste-40-pecas-3",
+          "nome": "Deguste (40 peças)",
+          "descricao": "05 sashimi salmão\n05 sashimi salmão roast (maçaricado)\n10 hossomaki filadélfia\n10 uramaki filadélfia\n06 joe salmão\n04 sushi salmão",
+          "preco": 135.9,
+          "precoDe": 193.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051905_QCA7_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "gourmet-40-pecas-3",
+          "nome": "Gourmet (40 peças)",
+          "descricao": "04 sashimi salmão\n04 sashimi atum\n04 sashimi Peixe Branco\n04 sashimi haddock\n02 sushi camarão\n02 sushi polvo\n02 sushi skin special\n02 joe salmão tartar trufado\n02 joe poró crispy\n02 joe ceviche\n02 joe couve crispy\n02 joe salmão com cream cheese\n02 ebi shakke\n02 niguiri salmão rostaed\n04 baterá salmão",
+          "preco": 157.9,
+          "precoDe": 224.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507081541_487X_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "50-off-salmao-ball-08-unid-2",
+          "nome": "50% Off Salmão Ball ( 08 unid)",
+          "descricao": "Bolinhas de salmão temperado e desfiado com cream cheese, geleia de pimenta, empanado e frito na panko.",
+          "preco": 25.9,
+          "precoDe": 36.9,
+          "foto": "https://static-images.ifood.com.br/pratos/1ecab715-77a2-4bec-9429-2f41c076f5ff/202202142140_1C5R_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "ceviche-mix-3",
+          "nome": "Ceviche Mix",
+          "descricao": "Salmão\nPeixe branco (Haddock Defumado)\nAtum\nCebola roxa\nCoentro\npimenta dedo de moça\npimentão amarelo\nCebolinha\nTomate cereja\nSuco de limão",
+          "preco": 25.9,
+          "precoDe": 36.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202507031710_587H_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "yakisoba-frango-2",
+          "nome": "Yakisoba Frango",
+          "descricao": "Macarrão japonês, Mix de vegetais, Frango",
+          "preco": 30.9,
+          "precoDe": 42.9,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202506051927_T68V_i.jpg",
+          "pausado": true
+        }
+      ]
+    },
+    {
+      "categoria": "Combo Cinema",
+      "itens": [
+        {
+          "id": "2-sprites-sem-acucar-1-par-de-ingressos",
+          "nome": "2 Sprites sem açúcar = 1 Par de ingressos",
+          "descricao": "Na compra de 2 Sprites sem açúcar 350ml você ganha 1 par de ingressos\n\n2 Sprite 350ml sem açúcar\n1 Par de Ingressos",
+          "preco": 18.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/fe4e06bd-2f30-410a-97ef-b21eba59f3e4/202609181513_XGNM_i.jpg",
+          "pausado": true
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "loja": "forneria-penha",
-  "copiadoDoIfoodEm": "2026-11-01T07:17:02.427-03:00",
+  "copiadoDoIfoodEm": "2026-11-01T08:17:09.415-03:00",
   "categorias": [
     {
       "categoria": "Segunda a Quarta com Coca Cola Grátis",
@@ -263,6 +263,15 @@
           "preco": 15.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202310131756_0DJ1_i.jpg"
+        },
+        {
+          "id": "pink-lemonade-500-ml",
+          "nome": "Pink lemonade 500 ml",
+          "descricao": "Um sabor diferente de tudo que já bebeu, refrescante, deliciosa, peça, você não vai se arrepender !!!",
+          "preco": 13.9,
+          "precoDe": 16.9,
+          "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202610011738_4W2F_i.jpg",
+          "pausado": true
         }
       ]
     },

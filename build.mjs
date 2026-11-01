@@ -124,7 +124,10 @@ function cardapioDoIfood(dados) {
   }
   return categorias;
 }
-const cardapio = doIfood ? cardapioDoIfood(doIfood) : cardapioDados;
+// Maikon 01/11: refrigerante não entra em nenhum cardápio do site (sucos, água e shakes continuam).
+const REFRI = /\b(coca|coca-cola|guaran[aá]|fanta|sprite|pepsi|schweppes|refrigerante|refri\b|kuat|sukita|itubaína|itubaina|h2oh|soda limonada|t[oô]nica)/i;
+const semRefri = (cats) => cats.map((c) => ({ ...c, itens: c.itens.filter((i) => !(REFRI.test(i.nome) && !/combo|\+/i.test(i.nome))) })).filter((c) => c.itens.length);
+const cardapio = semRefri(doIfood ? cardapioDoIfood(doIfood) : cardapioDados);
 
 // Bairros dentro do raio de entrega (bairros.json, gerado a partir do OpenStreetMap e do GeoSampa).
 const ARQ_BAIRROS = join(RAIZ, 'bairros.json');
@@ -1051,7 +1054,8 @@ const cardapioMarca = (c) => {
     }
     if (lista.length) cats.push({ categoria: limpaCategoria(cat.categoria), itens: lista });
   }
-  return cats.length ? cats : null;
+  const limpos = semRefri(cats);
+  return limpos.length ? limpos : null;
 };
 const cardapiosMarcas = Object.fromEntries(culinarias.map((c) => [c.slug, cardapioMarca(c)]).filter(([, v]) => v));
 const navCardapios = (base, ativo) => `<nav class="cardapio-marcas" aria-label="Cardápios do grupo"><a${ativo === 'burger' ? ' class="ativo" aria-current="page"' : ''} href="${base}cardapio/"><img src="${base}assets/img/logo-320.webp" alt="" width="56" height="56"><span>Just Burger</span></a>${culinarias.map((c) => `<a${ativo === c.slug ? ' class="ativo" aria-current="page"' : ''} href="${base}${cardapiosMarcas[c.slug] ? `cardapio/${c.slug}/` : `culinarias/${c.slug}/`}">${logoMarca(c) ? `<img src="${base}${logoMarca(c)}" alt="" width="56" height="56" loading="lazy">` : ''}<span>${esc(c.nome)}</span></a>`).join('')}</nav>`;

@@ -1,7 +1,82 @@
 {
   "loja": "gourmet-penha",
-  "copiadoDoIfoodEm": "2026-11-01T07:12:23.151-03:00",
+  "copiadoDoIfoodEm": "2026-11-01T08:12:30.127-03:00",
   "categorias": [
+    {
+      "categoria": "Feijoada Especial Just, Melhor da Região",
+      "itens": [
+        {
+          "id": "feijoada-especial-just-1-pessoa-experimente",
+          "nome": "Feijoada Especial Just 1 Pessoa Experimente !",
+          "descricao": "Para 1 pessoa — Arroz branco, carne seca, linguiça defumada, costelinha de porco, bacon, couve, farofa e torresmo.\nObs.: Não fazemos alterações, remoções ou substituições de ingredientes ou itens dos pratos.",
+          "preco": 81.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608011958_VCKY_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "feijoada-especial-just-2-pessoas-experimente",
+          "nome": "Feijoada Especial Just - 2 Pessoas Experimente !",
+          "descricao": "Para 2 pessoas - arroz branco, carne seca, linguiça defumada, costelinha de porco, bacon, couve, farofa e torresmo.\nObs.: Não fazemos alterações, remoções ou substituições de ingredientes ou itens dos pratos.",
+          "preco": 120.9,
+          "precoDe": 162.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608011959_3054_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "feijoada-especial-just-3-pessoas-experimente",
+          "nome": "Feijoada especial Just 3 Pessoas - Experimente !",
+          "descricao": "Para 3 pessoas - arroz branco, carne seca, linguiça defumada, costelinha de porco, bacon, couve, farofa e torresmo.\nObs.: Não fazemos alterações, remoções ou substituições de ingredientes ou itens dos pratos.",
+          "preco": 151.9,
+          "precoDe": 244.9,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608011959_48OH_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "porcao-de-torresmo",
+          "nome": "Porção De Torresmo",
+          "descricao": "Porção de torresmo 200g",
+          "preco": 31.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202607311910_70Q5_i.jpg",
+          "pausado": true
+        }
+      ],
+      "pausada": true
+    },
+    {
+      "categoria": "Combos - Feijoada + Coca Cola !!",
+      "itens": [
+        {
+          "id": "feijoada-especial-para-1-pessoa-com-coca-cola",
+          "nome": "Feijoada Especial para 1 Pessoa  com Coca-Cola",
+          "descricao": "1 Feijoada Especial Just 1 Pessoa.\n Arroz branco, carne seca, linguiça defumada, costelinha de porco, bacon, couve, farofa e torresmo.\n1 Coca Cola 350 ml Gelada\nObs.: Não fazemos alterações, remoções ou substituições de ingredientes ou itens dos pratos.",
+          "preco": 87.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202405091604_3R8U_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "feijoada-especial-para-2-pessoas-com-coca-cola-2-litros",
+          "nome": "Feijoada Especial para 2  Pessoas com Coca-Cola 2 litros",
+          "descricao": "Feijoada Especial Just 2 Pessoas.\n Arroz branco, carne seca, linguiça defumada, costelinha de porco, bacon, couve, farofa e torresmo.\n1 Coca Cola 2 Litros Gelada\nObs.: Não fazemos alterações, remoções ou substituições de ingredientes ou itens dos pratos.",
+          "preco": 136.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202405091607_848A_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "feijoada-especial-para-3-pessoas-com-coca-cola-2-litros",
+          "nome": "Feijoada Especial para 3 Pessoas com Coca-Cola 2 litros",
+          "descricao": "Feijoada Especial Just 3 Pessoas.\n Arroz branco, carne seca, linguiça defumada, costelinha de porco, bacon, couve, farofa e torresmo.\n1 Coca Cola 2 Litros Gelada\nNão removemos os insumos da feijoada.",
+          "preco": 168.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202405091607_FIYV_i.jpg",
+          "pausado": true
+        }
+      ],
+      "pausada": true
+    },
     {
       "categoria": "Just Baião De Dois",
       "itens": [
@@ -517,6 +592,15 @@
       "categoria": "Just Shake",
       "itens": [
         {
+          "id": "milk-shake-de-cafe-300ml",
+          "nome": "Milk-Shake de Café 300ml",
+          "descricao": "",
+          "preco": 21.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202609301430_1665_i.jpg",
+          "pausado": true
+        },
+        {
           "id": "milk-shake-de-pistache-300ml",
           "nome": "Milk-Shake de Pistache 300ml",
           "descricao": "Milk-Shake de Pistache 300ml",
@@ -600,6 +684,33 @@
           "preco": 58.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608281800_HOH5_i.jpg"
+        },
+        {
+          "id": "ben-jerry-s-strawberry-cheesecake",
+          "nome": "Ben & Jerry's Strawberry Cheesecake",
+          "descricao": "Sorvete sabor cheesecake com morango em calda e pedaços de biscoito",
+          "preco": 58.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608281801_X3NE_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "eski-bon-mini-no-pote",
+          "nome": "Eski-bon mini no pote!",
+          "descricao": "Eski-bon mini no pote!",
+          "preco": 31.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202609111313_3WC0_i.jpg",
+          "pausado": true
+        },
+        {
+          "id": "eski-bon-mini-doce-de-leite-no-pote",
+          "nome": "Eski-bon mini doce de leite no pote!",
+          "descricao": "Eski-bon mini doce de leite no pote!",
+          "preco": 31.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb/202608281803_WK61_i.jpg",
+          "pausado": true
         }
       ]
     }

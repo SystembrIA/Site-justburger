@@ -1,6 +1,6 @@
 {
   "loja": "esfiha-penha",
-  "copiadoDoIfoodEm": "2026-11-01T07:17:13.261-03:00",
+  "copiadoDoIfoodEm": "2026-11-01T08:17:07.390-03:00",
   "categorias": [
     {
       "categoria": "Combos com Coca-Cola",
@@ -96,6 +96,15 @@
       "categoria": "Combos Hits",
       "itens": [
         {
+          "id": "combos-3-esfihas-de-carne-coca-lata-350-ml",
+          "nome": "Combos 3 Esfihas de Carne + Coca Lata 350 ml",
+          "descricao": "3 Esfihas de Carne mais uma coca lata de 350 ml",
+          "preco": 26.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202608131443_M761_i.jpg",
+          "pausado": true
+        },
+        {
           "id": "combo-esfiha-de-mussarela-coca-lata-350-ml",
           "nome": "Combo Esfiha de Mussarela + Coca Lata 350 ml",
           "descricao": "3 Esfihas de Mussarela mais uma coca lata de 350 ml",
@@ -126,6 +135,15 @@
           "preco": 26.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202608131430_J8A0_i.jpg"
+        },
+        {
+          "id": "combos-de-4-esfihas-de-carne",
+          "nome": "Combos de 4 Esfihas de Carne",
+          "descricao": "3 Esfihas de Carne",
+          "preco": 26.9,
+          "precoDe": null,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202608131443_M761_i.jpg",
+          "pausado": true
         }
       ]
     },
@@ -434,6 +452,15 @@
           "preco": 15.9,
           "precoDe": null,
           "foto": "https://static-images.ifood.com.br/pratos/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8/202310131756_0DJ1_i.jpg"
+        },
+        {
+          "id": "pink-lemonade-500-ml",
+          "nome": "Pink lemonade 500 ml",
+          "descricao": "Um sabor diferente de tudo que já bebeu, refrescante, deliciosa, peça, você não vai se arrepender !!!",
+          "preco": 15.9,
+          "precoDe": 16.9,
+          "foto": "https://static-images.ifood.com.br/pratos/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a/202610011741_L021_i.jpg",
+          "pausado": true
         }
       ]
     }
