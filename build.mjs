@@ -1641,8 +1641,11 @@ body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem
 .lk-plats { display: flex; gap: 8px; }
 .lk-plat { flex: 1; display: grid; place-items: center; min-height: 44px; border-radius: 999px; font-weight: 800; font-size: .85rem; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; }
 .lk-plats { gap: 8px; flex: none; justify-self: center; }
-.lk-plat { flex: 0 0 auto; display: block; min-height: 0; min-width: 0; width: 54px; height: 40px; padding: 0; border: 0; border-radius: 10px; overflow: hidden; background: none; }
-.lk-plat img { width: 54px; height: 40px; display: block; object-fit: cover; }
+.lk-plat { flex: 0 0 auto; display: block; min-height: 0; min-width: 0; width: 64px; height: 34px; padding: 0; border: 0; border-radius: 10px; overflow: hidden; background: none; }
+.lk-plat img { width: 64px; height: 34px; display: block; object-fit: cover; }
+.lk-plat[aria-label='Pedir no iFood'] { background: #ea1d2c; }
+.lk-plat-off img { object-position: 50% 70%; }
+.lk-plat[aria-label='Pedir no iFood'] img { object-fit: contain; transform: scale(1.35); }
 .lk-plat-off { cursor: default; }
 .lk-plat:hover { border-color: rgba(255,255,255,.35); }
 .lk-ifood img { height: 15px; width: auto; display: block; }
