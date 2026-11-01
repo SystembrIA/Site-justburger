@@ -1635,7 +1635,7 @@ body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem
 .lk-campo:focus-within { border-color: var(--laranja); }
 .lk-campo small { color: var(--suave); font-size: .7rem; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lk-cep input { width: 100%; min-width: 0; min-height: 0; padding: 0; border: 0; outline: 0; background: transparent; color: var(--branco); font: inherit; font-size: 1.05rem; }
-.lk-cep button { align-self: center; min-height: 26px; padding: 0 12px; line-height: 1; font-size: .72rem !important; background: var(--branco) !important; color: #0b0b0b !important; font-size: .8rem; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
+.lk-cep button { align-self: center; min-height: 26px; padding: 0 12px; line-height: 1; font-size: .72rem !important; font-weight: 500 !important; background: var(--branco) !important; color: #0b0b0b !important; font-size: .8rem; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
 .lk-dica { margin: 10px 4px 0 !important; font-size: .86rem !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lk-msg { margin: 12px 0 0; color: var(--suave); font-size: .9rem; }
 .lk-marca { display: grid; grid-template-columns: 40px 7.6em 1fr; gap: 10px; align-items: center; padding: 10px 0; border-top: 1px solid var(--linha); }
