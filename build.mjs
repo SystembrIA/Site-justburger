@@ -283,14 +283,16 @@ const schemaPerfil = (p) => ({
 function pagina({ caminho, titulo, descricao, corpo, schema = [], profundidade, base = profundidade === 0 ? './' : '../'.repeat(profundidade), markdown = true, noindex = false }) {
   const canonical = abs(caminho);
   const grafo = { '@context': 'https://schema.org', '@graph': [schemaOrganizacao(), ...schema] };
+  // Ordem dos menus (Maikon 01/11): Home, Nossa história, Cardápio, Unidades, Nossas culinárias, O que pedir,
+  // Nossa equipe, Na mídia, Trabalhe conosco (+ Onde entregamos no fim do menu do celular).
   const nav = [
-    ['Cardápio', 'cardapio/'],
-    ['Culinárias', 'culinarias/'], // logo depois do Cardápio nos três menus (Maikon 01/11)
-    ['O que pedir', 'para-voce/'],
-    ['Unidades', 'unidades/'],
-    ['Na mídia', 'na-midia/'],
     ['Nossa história', 'sobre/'],
+    ['Cardápio', 'cardapio/'],
+    ['Unidades', 'unidades/'],
+    ['Culinárias', 'culinarias/'],
+    ['O que pedir', 'para-voce/'],
     ...(site.equipe && site.equipe.publicada ? [['Nossa equipe', 'equipe/']] : []),
+    ['Na mídia', 'na-midia/'],
     ...(site.acoes && site.acoes.publicada ? [['Ações com parceiros', 'acoes/']] : []),
     ...(site.trabalhe && site.trabalhe.publicada ? [['Trabalhe conosco', 'trabalhe-conosco/']] : []),
   ];
@@ -345,7 +347,7 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
     <details class="menu-celular">
       <summary aria-label="Abrir menu"><span></span><span></span><span></span></summary>
       <nav aria-label="Menu">
-        <ul><li><a href="${base}">Início</a></li>${nav.filter(([, c]) => c === 'cardapio/').map(([n, c]) => `<li><a href="${base}${c}">${n}</a></li>`).join('')}${culinarias.length ? `<li><details class="submenu"><summary><strong class="submenu-titulo">Nossas culinárias</strong><i class="submenu-logos">${culinarias.map((c) => logoMarca(c)).filter(Boolean).map((l) => `<img src="${base}${l}" alt="" width="30" height="30">`).join('')}</i></summary><ul>${culinarias.map((c) => { const logo = logoMarca(c); return `<li><a href="${base}culinarias/${c.slug}/">${logo ? `<img src="${base}${logo}" width="36" height="36" alt="">` : `<span class="submenu-marca" aria-hidden="true">${esc(c.nome.split(' ').pop()[0])}</span>`}${esc(c.nome)}</a></li>`; }).join('')}</ul></details></li>` : ''}${nav.filter(([, c]) => c !== 'culinarias/' && c !== 'cardapio/').map(([n, c]) => `<li><a href="${base}${c}">${n}</a></li>`).join('')}<li><a href="${base}entrega/">Onde entregamos</a></li></ul>
+        <ul><li><a href="${base}">Home</a></li>${nav.map(([n, c]) => (c === 'culinarias/' ? (culinarias.length ? `<li><details class="submenu"><summary><strong class="submenu-titulo">Nossas culinárias</strong><i class="submenu-logos">${culinarias.map((c) => logoMarca(c)).filter(Boolean).map((l) => `<img src="${base}${l}" alt="" width="30" height="30">`).join('')}</i></summary><ul>${culinarias.map((c) => { const logo = logoMarca(c); return `<li><a href="${base}culinarias/${c.slug}/">${logo ? `<img src="${base}${logo}" width="36" height="36" alt="">` : `<span class="submenu-marca" aria-hidden="true">${esc(c.nome.split(' ').pop()[0])}</span>`}${esc(c.nome)}</a></li>`; }).join('')}</ul></details></li>` : '') : `<li><a href="${base}${c}">${n}</a></li>`)).join('')}<li><a href="${base}entrega/">Onde entregamos</a></li></ul>
         ${botaoPedido(base)}
       </nav>
     </details>
@@ -1631,16 +1633,16 @@ body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem
 .lk-cep button { align-self: center; min-height: 40px; padding: 0 16px; font-size: .8rem; border: 0; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font: inherit; font-weight: 800; text-transform: uppercase; cursor: pointer; }
 .lk-dica { margin: 10px 4px 0 !important; font-size: .86rem !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lk-msg { margin: 12px 0 0; color: var(--suave); font-size: .9rem; }
-.lk-marca { display: grid; grid-template-columns: 40px 1fr auto; gap: 10px; align-items: center; padding: 10px 0; border-top: 1px solid var(--linha); }
+.lk-marca { display: grid; grid-template-columns: 40px 7.6em 1fr; gap: 10px; align-items: center; padding: 10px 0; border-top: 1px solid var(--linha); }
 .lk-marca:first-child { border-top: 0; }
 .lk-marca > img { width: 40px; height: 40px; object-fit: contain; border-radius: 12px; background: #000; }
 .lk-marca strong { display: block; font-size: .92rem; line-height: 1.2; }
 .lk-marca small { display: block; color: var(--laranja); font-weight: 700; font-size: .8rem; }
 .lk-plats { display: flex; gap: 8px; }
 .lk-plat { flex: 1; display: grid; place-items: center; min-height: 44px; border-radius: 999px; font-weight: 800; font-size: .85rem; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; }
-.lk-plats { gap: 6px; flex: none; }
-.lk-plat { flex: 0 0 auto; display: block; min-height: 0; min-width: 0; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 10px; overflow: hidden; background: none; }
-.lk-plat img { width: 40px; height: 40px; display: block; }
+.lk-plats { gap: 8px; flex: none; justify-self: center; }
+.lk-plat { flex: 0 0 auto; display: block; min-height: 0; min-width: 0; width: 54px; height: 40px; padding: 0; border: 0; border-radius: 10px; overflow: hidden; background: none; }
+.lk-plat img { width: 54px; height: 40px; display: block; object-fit: cover; }
 .lk-plat-off { cursor: default; }
 .lk-plat:hover { border-color: rgba(255,255,255,.35); }
 .lk-ifood img { height: 15px; width: auto; display: block; }
@@ -1655,7 +1657,7 @@ details.lk-cul summary::-webkit-details-marker { display: none; }
 details.lk-cul summary img { width: 44px; height: 44px; object-fit: contain; border-radius: 10px; background: #000; }
 details.lk-cul summary::after { content: '+'; margin-left: auto; color: var(--laranja); font-size: 1.3rem; font-weight: 800; }
 details.lk-cul[open] summary::after { content: '–'; }
-.lk-uni { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 0; }
+.lk-uni { display: grid; grid-template-columns: minmax(110px, auto) 1fr; align-items: center; gap: 10px; padding: 8px 0; }
 .lk-uni p { margin: 0; font-size: .92rem; font-weight: 800; color: var(--branco); }
 .lk-cul[open] { padding-bottom: 8px; }
 details.lk-cul summary strong { display: block; line-height: 1.2; }
