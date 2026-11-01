@@ -1680,7 +1680,7 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
 .lk-logos img { width: 36px; height: 36px; object-fit: contain; padding: 2px; border-radius: 50%; background: #000; border: 2px solid var(--carvao); margin-left: -9px; }
 .lk-logos img:first-child { margin-left: 0; }
 .lk-todas-texto { font-weight: 900; font-stretch: 80%; font-size: .95rem; line-height: 1.15; letter-spacing: .03em; text-transform: uppercase; white-space: nowrap; }
-.lk-todas-botao { padding: 8px 14px; border-radius: 14px; background: var(--laranja); color: #0b0b0b; }
+.lk-todas-botao { padding: 7px 14px; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font-size: .78rem !important; line-height: 1.1; }
 .lk-todas .lk-logos { flex: 1; min-width: 0; display: flex; justify-content: flex-end; margin-left: 10px; }
 .lk-todas .lk-logos img { flex: 1 1 0; min-width: 0; max-width: 50px; width: auto; height: auto; aspect-ratio: 1; margin-left: -6px; }
 .lk-todas[open] > summary { border-bottom: 1px solid var(--linha); }
@@ -1716,7 +1716,7 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
   </section>
 
   <details class="lk-caixa lk-todas">
-    <summary><span class="lk-todas-texto lk-todas-botao">Faça seu<br>pedido</span><span class="lk-logos">${marcas.filter((m) => m.logo).map((m) => `<img src="../${m.logo}" alt="">`).join('')}</span></summary>
+    <summary><span class="lk-todas-texto lk-todas-botao">Faça seu pedido</span><span class="lk-logos">${marcas.filter((m) => m.logo).map((m) => `<img src="../${m.logo}" alt="">`).join('')}</span></summary>
     ${marcas.map((m) => `<details class="lk-cul"><summary>${m.logo ? `<img src="../${m.logo}" alt="" loading="lazy">` : ''}<span><strong>${esc(m.nome)}</strong><small class="suave"> ${esc(m.tipo)}</small></span></summary>
       ${m.unidades.map((u) => `<div class="lk-uni"><p>${esc(u.nome)}</p><div class="lk-plats">${botoesUnidade(u)}</div></div>`).join('')}
     </details>`).join('\n    ')}
