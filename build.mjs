@@ -1769,6 +1769,50 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
 .lk-insta-lista small { display: block; color: var(--branco); opacity: .85; font-size: .8rem; }
 .lk-rodape { margin-top: 26px; text-align: center; color: var(--suave); font-size: .8rem; }
 .lk-rodape a { color: var(--suave); }
+.lk-todas-titulo { display: none; }
+/* ---------- Versões para computador (só a partir de 1000px) ---------- */
+@media (min-width: 1000px) {
+  .pc .lk-todas > summary { display: none; }
+  .pc .lk-todas { padding: 20px; }
+  .pc .lk-todas-titulo { display: block; margin: 0 0 14px; }
+  .pc .lk-grade { display: grid; gap: 12px; }
+  .pc .lk-todas details.lk-cul { padding: 10px 14px; border: 1px solid var(--linha); border-radius: 16px; background: var(--preto); }
+  .pc details.lk-cul summary { pointer-events: none; padding: 4px 0 10px; }
+  .pc details.lk-cul summary::after { display: none; }
+  .pc .lk-bt { transition: border-color .15s, transform .15s; }
+  .pc .lk-bt:hover, .pc .lk-plat:hover { transform: translateY(-1px); }
+
+  /* A: duas colunas — marca e links à esquerda (fixos), pedido à direita */
+  .pc-a .lk { max-width: 1120px; display: grid; grid-template-columns: 330px 1fr; column-gap: 44px; align-items: start; padding-top: 56px; }
+  .pc-a .lk-topo { grid-column: 1; grid-row: 1; }
+  .pc-a .lk-mais { grid-column: 1; grid-row: 2 / span 2; position: sticky; top: 24px; }
+  .pc-a #pedido { grid-column: 2; grid-row: 1; align-self: end; margin-top: 0; }
+  .pc-a .lk-todas { grid-column: 2; grid-row: 2; margin-top: 0; }
+  .pc-a .lk-rodape { grid-column: 1 / -1; }
+  .pc-a .lk-grade { grid-template-columns: repeat(2, 1fr); }
+
+  /* B: vitrine — topo largo, busca no centro, as 5 marcas lado a lado */
+  .pc-b .lk { max-width: 1240px; padding-top: 48px; }
+  .pc-b .lk-topo { display: flex; align-items: center; justify-content: center; gap: 22px; margin-bottom: 28px; }
+  .pc-b .lk-topo img { width: 104px; }
+  .pc-b .lk-lema { margin: 0; font-size: 2.2rem; }
+  .pc-b #pedido { max-width: 620px; margin: 0 auto 22px; }
+  .pc-b .lk-grade { grid-template-columns: repeat(5, 1fr); }
+  .pc-b .lk-uni { grid-template-columns: 1fr; gap: 6px; padding: 8px 0; border-top: 1px solid var(--linha); }
+  .pc-b .lk-plats { justify-self: start; }
+  .pc-b .lk-mais { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .pc-b .lk-mais .lk-bt { width: auto; margin: 0; padding: 0 26px; }
+  .pc-b .lk-insta[open] { flex-basis: 100%; display: flex; flex-direction: column; align-items: center; }
+  .pc-b .lk-insta-lista { grid-template-columns: repeat(5, 1fr); width: 100%; margin-top: 10px; }
+
+  /* C: cartão largo — o mesmo do celular, só que mais largo e em colunas */
+  .pc-c .lk { max-width: 860px; padding-top: 48px; }
+  .pc-c .lk-grade { grid-template-columns: repeat(2, 1fr); }
+  .pc-c .lk-mais { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .pc-c .lk-mais .lk-bt { margin: 0; }
+  .pc-c .lk-insta[open] { grid-column: 1 / -1; }
+  .pc-c .lk-insta-lista { grid-template-columns: repeat(3, 1fr); margin-top: 10px; }
+}
 </style>
 </head>
 <body>
@@ -1786,20 +1830,32 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
 
   <details class="lk-caixa lk-todas">
     <summary><span class="lk-todas-texto lk-todas-botao">${esc(site.textoPedirLinks || 'Faça pedido').replace(' ', '<br>')}</span><span class="lk-logos">${marcas.filter((m) => m.logo).map((m) => `<img src="../${m.logo}" alt="">`).join('')}</span></summary>
+    <h2 class="lk-todas-titulo">Escolha a culinária e a unidade</h2>
+    <div class="lk-grade">
     ${marcas.map((m) => `<details class="lk-cul"><summary>${m.logo ? `<img src="../${m.logo}" alt="" loading="lazy">` : ''}<span><strong>${esc(m.nome)}</strong><small class="suave"> ${esc(m.tipo)}</small></span></summary>
       ${m.unidades.map((u) => `<div class="lk-uni"><p>${esc(u.nome)}</p><div class="lk-plats">${botoesUnidade(u)}</div></div>`).join('')}
     </details>`).join('\n    ')}
+    </div>
   </details>
 
+  <nav class="lk-mais" aria-label="Mais links">
   <a class="lk-bt" href="../cardapio/">Cardápio</a>
   <a class="lk-bt" href="../">Conheça nosso site</a>
   ${site.trabalhe && site.trabalhe.publicada ? `<a class="lk-bt" href="../trabalhe-conosco/">Trabalhe conosco</a>` : ''}
   ${(site.instagrams || []).length ? `<details class="lk-insta"><summary class="lk-bt">${iconeInstagram} Nossos Instagrams</summary><div class="lk-insta-lista">${site.instagrams.map(([arroba, url, marca, tipo, logo]) => `<a href="${esc(url)}" rel="noopener">${logo ? `<img class="lk-insta-logo" src="../${esc(logo)}" alt="">` : ''}<span class="lk-insta-nome"><strong>${esc(marca)}</strong><small>${esc(tipo || arroba)}</small></span><span class="lk-insta-ig" aria-label="${esc(arroba)} no Instagram">${iconeInstagram}</span></a>`).join('')}</div></details>` : site.instagram ? `<a class="lk-bt" href="${esc(site.instagram)}" rel="noopener">Instagram</a>` : ''}
   ${linkWhats ? `<a class="lk-bt" href="${linkWhats}" rel="noopener">${iconeWhats} WhatsApp</a>` : ''}
+  </nav>
 
   <p class="lk-rodape">Grupo Just Burger · <a href="../">justburger.com.br</a></p>
 </main>
-<script>window.JUST_LINKS = ${JSON.stringify(dadosLinks)};</script>
+<script>
+// Versões para computador em teste (Maikon 02/11): /links/?pc=a, ?pc=b, ?pc=c. No celular nada muda.
+(function () {
+  var v = (location.search.match(/[?&]pc=([abc])/) || [])[1]; if (!v) return;
+  document.body.classList.add('pc', 'pc-' + v);
+  if (matchMedia('(min-width: 1000px)').matches) document.querySelectorAll('.lk-todas, .lk-cul').forEach(function (d) { d.open = true; });
+})();
+window.JUST_LINKS = ${JSON.stringify(dadosLinks)};</script>
 <script src="../assets/links.js" defer></script>
 </body>
 </html>
