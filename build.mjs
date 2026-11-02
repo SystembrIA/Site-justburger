@@ -1770,48 +1770,30 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
 .lk-rodape { margin-top: 26px; text-align: center; color: var(--suave); font-size: .8rem; }
 .lk-rodape a { color: var(--suave); }
 .lk-todas-titulo { display: none; }
-/* ---------- Versões para computador (só a partir de 1000px) ---------- */
+/* ---------- Computador (a partir de 1000px; Maikon 02/11): cartão largo, CEP largo, logos das 5 culinárias
+   na largura do campo; clicou na culinária, as unidades abrem embaixo. No celular nada muda. ---------- */
+.lk-painel { display: none; }
 @media (min-width: 1000px) {
-  .pc .lk-todas > summary { display: none; }
-  .pc .lk-todas { padding: 20px; }
-  .pc .lk-todas-titulo { display: block; margin: 0 0 14px; }
-  .pc .lk-grade { display: grid; gap: 12px; }
-  .pc .lk-todas details.lk-cul { padding: 10px 14px; border: 1px solid var(--linha); border-radius: 16px; background: var(--preto); }
-  .pc details.lk-cul summary { pointer-events: none; padding: 4px 0 10px; }
-  .pc details.lk-cul summary::after { display: none; }
-  .pc .lk-bt { transition: border-color .15s, transform .15s; }
-  .pc .lk-bt:hover, .pc .lk-plat:hover { transform: translateY(-1px); }
-
-  /* A: duas colunas — marca e links à esquerda (fixos), pedido à direita */
-  .pc-a .lk { max-width: 1120px; display: grid; grid-template-columns: 330px 1fr; column-gap: 44px; align-items: start; padding-top: 56px; }
-  .pc-a .lk-topo { grid-column: 1; grid-row: 1; }
-  .pc-a .lk-mais { grid-column: 1; grid-row: 2 / span 2; position: sticky; top: 24px; }
-  .pc-a #pedido { grid-column: 2; grid-row: 1; align-self: end; margin-top: 0; }
-  .pc-a .lk-todas { grid-column: 2; grid-row: 2; margin-top: 0; }
-  .pc-a .lk-rodape { grid-column: 1 / -1; }
-  .pc-a .lk-grade { grid-template-columns: repeat(2, 1fr); }
-
-  /* B: vitrine — topo largo, busca no centro, as 5 marcas lado a lado */
-  .pc-b .lk { max-width: 1240px; padding-top: 48px; }
-  .pc-b .lk-topo { display: flex; align-items: center; justify-content: center; gap: 22px; margin-bottom: 28px; }
-  .pc-b .lk-topo img { width: 104px; }
-  .pc-b .lk-lema { margin: 0; font-size: 2.2rem; }
-  .pc-b #pedido { max-width: 620px; margin: 0 auto 22px; }
-  .pc-b .lk-grade { grid-template-columns: repeat(5, 1fr); }
-  .pc-b .lk-uni { grid-template-columns: 1fr; gap: 6px; padding: 8px 0; border-top: 1px solid var(--linha); }
-  .pc-b .lk-plats { justify-self: start; }
-  .pc-b .lk-mais { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-  .pc-b .lk-mais .lk-bt { width: auto; margin: 0; padding: 0 26px; }
-  .pc-b .lk-insta[open] { flex-basis: 100%; display: flex; flex-direction: column; align-items: center; }
-  .pc-b .lk-insta-lista { grid-template-columns: repeat(5, 1fr); width: 100%; margin-top: 10px; }
-
-  /* C: cartão largo — o mesmo do celular, só que mais largo e em colunas */
-  .pc-c .lk { max-width: 860px; padding-top: 48px; }
-  .pc-c .lk-grade { grid-template-columns: repeat(2, 1fr); }
-  .pc-c .lk-mais { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .pc-c .lk-mais .lk-bt { margin: 0; }
-  .pc-c .lk-insta[open] { grid-column: 1 / -1; }
-  .pc-c .lk-insta-lista { grid-template-columns: repeat(3, 1fr); margin-top: 10px; }
+  .lk-desk .lk { max-width: 860px; padding-top: 48px; }
+  .lk-desk .lk-todas > summary { display: none; }
+  .lk-desk .lk-todas { padding: 20px; }
+  .lk-desk .lk-todas-titulo { display: block; margin: 0 0 14px; }
+  .lk-desk .lk-grade { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .lk-desk .lk-todas details.lk-cul { padding: 0; border: 0; }
+  .lk-desk details.lk-cul summary { flex-direction: column; justify-content: flex-start; gap: 8px; height: 100%; padding: 14px 8px 12px; text-align: center; border: 1px solid var(--linha); border-radius: 16px; background: var(--preto); transition: border-color .15s, transform .15s; }
+  .lk-desk details.lk-cul summary img { width: 100%; max-width: 104px; height: auto; aspect-ratio: 1; border-radius: 14px; }
+  .lk-desk details.lk-cul summary::after { display: none; }
+  .lk-desk details.lk-cul summary:hover { border-color: rgba(250, 115, 4, .6); transform: translateY(-2px); }
+  .lk-desk details.lk-cul.ativo summary { border-color: var(--laranja); box-shadow: 0 0 0 1px var(--laranja); }
+  .lk-desk .lk-painel:not(:empty) { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--linha); }
+  .lk-painel-titulo { grid-column: 1 / -1; margin: 0 0 2px; font-weight: 800; }
+  .lk-painel-titulo small { color: var(--suave); font-weight: 400; }
+  .lk-desk .lk-painel .lk-uni { padding: 10px 14px; border: 1px solid var(--linha); border-radius: 14px; background: var(--preto); }
+  .lk-desk .lk-plat:hover { transform: translateY(-1px); }
+  .lk-desk .lk-mais { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .lk-desk .lk-mais .lk-bt { margin: 0; }
+  .lk-desk .lk-insta[open] { grid-column: 1 / -1; }
+  .lk-desk .lk-insta-lista { grid-template-columns: repeat(3, 1fr); margin-top: 10px; }
 }
 </style>
 </head>
@@ -1830,12 +1812,13 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
 
   <details class="lk-caixa lk-todas">
     <summary><span class="lk-todas-texto lk-todas-botao">${esc(site.textoPedirLinks || 'Faça pedido').replace(' ', '<br>')}</span><span class="lk-logos">${marcas.filter((m) => m.logo).map((m) => `<img src="../${m.logo}" alt="">`).join('')}</span></summary>
-    <h2 class="lk-todas-titulo">Escolha a culinária e a unidade</h2>
+    <h2 class="lk-todas-titulo">Escolha a culinária</h2>
     <div class="lk-grade">
     ${marcas.map((m) => `<details class="lk-cul"><summary>${m.logo ? `<img src="../${m.logo}" alt="" loading="lazy">` : ''}<span><strong>${esc(m.nome)}</strong><small class="suave"> ${esc(m.tipo)}</small></span></summary>
       ${m.unidades.map((u) => `<div class="lk-uni"><p>${esc(u.nome)}</p><div class="lk-plats">${botoesUnidade(u)}</div></div>`).join('')}
     </details>`).join('\n    ')}
     </div>
+    <div class="lk-painel" aria-live="polite"></div>
   </details>
 
   <nav class="lk-mais" aria-label="Mais links">
@@ -1849,11 +1832,24 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
   <p class="lk-rodape">Grupo Just Burger · <a href="../">justburger.com.br</a></p>
 </main>
 <script>
-// Versões para computador em teste (Maikon 02/11): /links/?pc=a, ?pc=b, ?pc=c. No celular nada muda.
+// Computador: os logos das culinárias viram botões; clicou, as unidades abrem no painel embaixo deles.
 (function () {
-  var v = (location.search.match(/[?&]pc=([abc])/) || [])[1]; if (!v) return;
-  document.body.classList.add('pc', 'pc-' + v);
-  if (matchMedia('(min-width: 1000px)').matches) document.querySelectorAll('.lk-todas, .lk-cul').forEach(function (d) { d.open = true; });
+  if (!matchMedia('(min-width: 1000px)').matches) return;
+  document.body.classList.add('lk-desk');
+  var todas = document.querySelector('.lk-todas'), painel = document.querySelector('.lk-painel'); if (!todas || !painel) return;
+  todas.open = true;
+  todas.querySelectorAll('details.lk-cul').forEach(function (d) {
+    d.querySelector('summary').addEventListener('click', function (e) {
+      e.preventDefault();
+      var era = d.classList.contains('ativo');
+      todas.querySelectorAll('details.lk-cul.ativo').forEach(function (x) { x.classList.remove('ativo'); });
+      painel.innerHTML = '';
+      if (era) return;
+      d.classList.add('ativo');
+      var t = d.querySelector('summary span'); painel.innerHTML = '<p class="lk-painel-titulo">' + (t ? t.innerHTML : '') + '</p>';
+      d.querySelectorAll('.lk-uni').forEach(function (u) { painel.appendChild(u.cloneNode(true)); });
+    });
+  });
 })();
 window.JUST_LINKS = ${JSON.stringify(dadosLinks)};</script>
 <script src="../assets/links.js" defer></script>
