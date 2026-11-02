@@ -345,7 +345,7 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
     </a>
     ${site.lemaNoTopo === 'logo' ? `${site.lema ? `<span class="lema">${esc(site.lema)}</span>` : ''}` : ''}
     <nav class="menu" aria-label="Principal">
-      <ul>${nav.map(([n, c]) => `<li><a href="${base}${c}"${caminho.startsWith(c) ? ' aria-current="page"' : ''}>${n}</a></li>`).join('')}</ul>
+      <ul>${nav.filter(([, c]) => c !== 'para-voce/').map(([n, c]) => `<li><a href="${base}${c}"${caminho.startsWith(c) ? ' aria-current="page"' : ''}>${n}</a></li>`).join('')}</ul>
     </nav>
     ${site.lemaNoTopo === 'menu' ? `${site.lema ? `<span class="lema lema-menu">${esc(site.lema)}</span>` : ''}` : ''}
     ${botaoPedido(base, 'botao botao-topo')}
@@ -869,7 +869,12 @@ const janelaFoto = (base) => `
   var campo = function (k) { return j.querySelector('[data-j="' + k + '"]'); };
   function abre(item) {
     var img = item.querySelector('img.produto-foto'), foto = j.querySelector('.janela-foto');
-    if (img) { foto.src = img.getAttribute('src'); foto.alt = img.alt; foto.hidden = false; } else foto.hidden = true;
+    if (img) {
+      // Mostra na hora a foto que já está carregada na lista (sem piscar a anterior) e troca pela grande quando chegar.
+      var grande = img.src; foto.removeAttribute('src'); foto.src = img.currentSrc || grande; foto.alt = img.alt; foto.hidden = false;
+      if (foto.src !== grande) { var pre = new Image(); pre.onload = function () { if (foto.dataset.atual === grande) foto.src = grande; }; pre.src = grande; }
+      foto.dataset.atual = grande;
+    } else foto.hidden = true;
     ['selo', 'detalhe', 'descricao'].forEach(function (k) {
       var o = item.querySelector('.produto-' + k); campo(k).textContent = o ? o.textContent : ''; campo(k).hidden = !o;
     });
