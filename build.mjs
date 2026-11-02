@@ -684,9 +684,46 @@ const blocoCulinarias = (base) => (culinarias.length ? `
 <section class="secao culinarias" aria-labelledby="culinarias-titulo">
   <div class="largura">
     <h2 id="culinarias-titulo">Conheça nossas culinárias</h2>
-    <div class="grade-culinarias">${culinarias.map((c) => cartaoCulinaria(c, base)).join('')}</div>
+    <div class="grade-culinarias">${culinarias.map((c) => cartaoCulinaria(c, base).replace('<a class="culinaria"', `<a class="culinaria" data-cul="${c.slug}"`)).join('')}</div>
+    ${culinarias.map((c) => detalheCulinaria(c, base)).join('')}
   </div>
-</section>` : '');
+</section>
+<script>
+// Computador: clicou numa culinária, ela abre grande no meio com as unidades lado a lado; as outras sobem pequenas.
+(function () {
+  if (!matchMedia('(min-width: 900px)').matches) return;
+  var sec = document.querySelector('.culinarias'); if (!sec) return;
+  function mostra(slug) {
+    sec.classList.toggle('cul-aberta', !!slug);
+    sec.querySelectorAll('.culinaria[data-cul]').forEach(function (a) { a.classList.toggle('cul-ativa', a.dataset.cul === slug); });
+    sec.querySelectorAll('.cul-detalhe').forEach(function (d) { d.hidden = d.dataset.cul !== slug; });
+  }
+  sec.querySelectorAll('.culinaria[data-cul]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); mostra(a.dataset.cul); });
+  });
+  sec.querySelectorAll('.cul-voltar').forEach(function (b) { b.addEventListener('click', function () { mostra(''); sec.scrollIntoView({ block: 'start' }); }); });
+})();
+</script>` : '');
+// Detalhe de uma culinária (home, computador): logo grande, unidades lado a lado com endereço, horário, nota e botões.
+const detalheCulinaria = (c, base) => `
+<div class="cul-detalhe" data-cul="${c.slug}" hidden>
+  <div class="cul-detalhe-topo">
+    ${logoMarca(c) ? `<img src="${base}${logoMarca(c)}" width="320" height="320" loading="lazy" alt="${esc(c.nome)}">` : ''}
+    <div><h3>${esc(c.nome)}</h3><p class="suave">${esc(c.tipo)}</p>
+    <p><a class="link" href="${base}cardapio/${c.slug}/">Ver cardápio →</a> &nbsp; <a class="link" href="${base}culinarias/${c.slug}/">Conhecer a ${esc(c.nome)} →</a></p></div>
+  </div>
+  <div class="cul-unidades">${(c.lojas || []).map((x) => {
+    const op = { ...x, nome: `${c.nome} ${x.regiao}`, googleMaps: x.endereco ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${x.endereco}, São Paulo - SP`)}` : '' };
+    return `<article class="loja cul-unidade">
+    <h4>${esc(x.regiao)}</h4>
+    ${x.endereco ? `<p class="loja-endereco">${esc(x.endereco)}</p>` : ''}
+    ${x.horarios ? `<p class="loja-hora">${x.horarios.map((h) => `<span>${esc(textoHorarioCurto(h))}</span>`).join('')}</p>` : ''}
+    <div class="loja-reputacao"><p class="loja-nota">${nota1(x.nota)} <span class="estrela-dourada" aria-hidden="true">★</span> no iFood</p>${x.superIfood ? seloSuper : ''}</div>
+    <p class="loja-acoes">${acoesLoja(op)}</p>
+  </article>`;
+  }).join('')}</div>
+  <button type="button" class="cul-voltar">← Ver as ${culinarias.length} culinárias</button>
+</div>`;
 // Selo Super Restaurante iFood (só nas lojas com superIfood: nível 5 de 5 no painel do iFood).
 const seloSuper = `<div class="selo-super" role="img" aria-label="Super Restaurante no iFood"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#ea1d2c"/><path d="M50.0,24.0 L56.8,42.7 L76.6,43.3 L60.9,55.6 L66.5,74.7 L50.0,63.5 L33.5,74.7 L39.1,55.6 L23.4,43.3 L43.2,42.7Z" fill="#fff"/></svg><p><em>super</em> <span>restaurante</span></p></div>`;
 // Botões de cada loja: pedido no iFood da loja, WhatsApp e Google Maps.

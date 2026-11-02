@@ -630,3 +630,25 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .pedir-texto { margin: 0 0 18px; color: var(--suave); }
 @media (min-width: 900px) { .pedir-lado { position: sticky; top: 100px; align-self: start; } }
 @media (max-width: 899px) { .pedir-fotos, .pedir-texto, .pedir-lado .botao { display: none; } }
+
+/* Home, "Conheça nossas culinárias" no computador: a escolhida abre grande, as outras sobem pequenas */
+@media (min-width: 900px) {
+  .culinarias .culinaria[data-cul] { cursor: pointer; }
+  .cul-aberta .grade-culinarias { display: flex; justify-content: center; gap: 12px; }
+  .cul-aberta .culinaria { min-height: 0; width: 150px; padding: 10px; }
+  .cul-aberta .culinaria img { width: 96px; height: 60px; margin-bottom: 2px; }
+  .cul-aberta .culinaria-tipo { margin-top: .2em; font-size: .78rem; }
+  .cul-aberta .culinaria.cul-ativa { display: none; }
+  .cul-aberta .culinaria-breve { display: none; }
+  .cul-detalhe { margin-top: 28px; padding: 28px; border: 1px solid var(--laranja); border-radius: 18px; background: rgba(255, 255, 255, .02); }
+  .cul-detalhe-topo { display: flex; align-items: center; justify-content: center; gap: 28px; text-align: left; }
+  .cul-detalhe-topo img { width: 200px; height: 200px; object-fit: contain; }
+  .cul-detalhe-topo h3 { margin: 0; font-size: 3rem; }
+  .cul-detalhe-topo p { margin: .3em 0 0; }
+  .cul-unidades { display: flex; justify-content: center; gap: 20px; margin-top: 24px; }
+  .cul-unidade { flex: 0 1 460px; padding: 22px 24px; border: 1px solid var(--linha); border-radius: 14px; background: var(--preto); }
+  .cul-unidade h4 { margin: 0 0 .3em; font-size: 1.6rem; font-weight: 900; font-stretch: 75%; text-transform: uppercase; }
+  .cul-voltar { display: block; margin: 22px auto 0; padding: 8px 14px; border: 0; background: none; color: var(--suave); font: inherit; font-size: .9rem; cursor: pointer; }
+  .cul-voltar:hover { color: var(--laranja); }
+}
+@media (max-width: 899px) { .cul-detalhe { display: none !important; } }
