@@ -811,7 +811,10 @@ const dataMidia = (d) => {
   const [a, m, dia] = d.split('-');
   return [dia && Number(dia), m && MESES[Number(m) - 1], a].filter(Boolean).join(' ');
 };
-const midiaOrdenada = [...midia].sort((a, b) => (b.data || '0').localeCompare(a.data || '0'));
+// Os 6 primeiros na ordem do Maikon (02/11); o resto segue do mais novo para o mais antigo.
+const MIDIA_PRIMEIROS = ['9rHGvTRfxHs', 'W-RG0fWdwG4', 'xjfp81p9lsE', 'CIN0kJGCVEE', '8M-2pY1_ZQE', 'a742uPTdHss'];
+const posMidia = (m) => { const i = MIDIA_PRIMEIROS.indexOf(m.youtube); return i < 0 ? 99 : i; };
+const midiaOrdenada = [...midia].sort((a, b) => posMidia(a) - posMidia(b) || (b.data || '0').localeCompare(a.data || '0'));
 const capaMidia = (m, base) =>
   m.youtube ? `https://i.ytimg.com/vi/${m.youtube}/hqdefault.jpg` : m.imagem ? `${base}${m.imagem}` : null;
 
