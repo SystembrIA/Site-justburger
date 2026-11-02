@@ -345,7 +345,7 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
     </a>
     ${site.lemaNoTopo === 'logo' ? `${site.lema ? `<span class="lema">${esc(site.lema)}</span>` : ''}` : ''}
     <nav class="menu" aria-label="Principal">
-      <ul>${nav.map(([n, c]) => `<li><a href="${base}${c}"${caminho.startsWith(c) ? ' aria-current="page"' : ''}>${n}</a></li>`).join('')}</ul>
+      <ul>${nav.map(([n, c]) => `<li><a href="${base}${c === 'culinarias/' ? '#culinarias' : c}"${caminho.startsWith(c) ? ' aria-current="page"' : ''}>${n}</a></li>`).join('')}</ul>
     </nav>
     ${site.lemaNoTopo === 'menu' ? `${site.lema ? `<span class="lema lema-menu">${esc(site.lema)}</span>` : ''}` : ''}
     ${botaoPedido(base, 'botao botao-topo')}
@@ -681,7 +681,7 @@ const cartaoMarca = (c, base) => `
   }).join('')}
 </article>`;
 const blocoCulinarias = (base) => (culinarias.length ? `
-<section class="secao culinarias" aria-labelledby="culinarias-titulo">
+<section class="secao culinarias" id="culinarias" aria-labelledby="culinarias-titulo">
   <div class="largura">
     <h2 id="culinarias-titulo">Conheça nossas culinárias</h2>
     <div class="grade-culinarias">${culinarias.map((c) => cartaoCulinaria(c, base).replace('<a class="culinaria"', `<a class="culinaria" data-cul="${c.slug}"`)).join('')}</div>
