@@ -749,6 +749,12 @@ const cartaoProduto = (i, base, { ancora = false } = {}) => ancora
   </span>
 </a>`;
 
+// Home, "O que pedir" no computador (Maikon 02/11): 4 fotos, cada uma leva para o seu perfil.
+const fotosPedir = (base) => ['primeira-vez', 'fome-grande', 'frango-e-outras-carnes', 'sobremesa'].map((slug) => {
+  const p = perfis.find((x) => x.slug === slug); const i = p && produtosDe(p).find((x) => foto(x.id));
+  return i ? `<a class="pedir-foto" href="${base}para-voce/${slug}/">${imgProduto(i, base, '(min-width: 900px) 240px, 45vw')}<span>${esc(p.nome)}</span></a>` : '';
+}).join('');
+
 const cartaoPerfil = (p, base) => `
 <a class="perfil" href="${base}para-voce/${p.slug}/">
   <span class="perfil-nome">${esc(p.nome)}</span>
@@ -961,9 +967,12 @@ ${blocoCulinarias(base)}
 
 <section class="secao">
   <div class="largura dividido">
-    <div>
+    <div class="pedir-lado">
       <h2>O que pedir</h2>
       <p class="suave">Primeira vez, muita fome, pedido para dividir ou algo mais leve: um atalho para cada situação.</p>
+      <div class="pedir-fotos">${fotosPedir(base)}</div>
+      <p class="pedir-texto">Todo burger da Just leva carne de 150 g no pão brioche. Na dúvida, comece pelo Top Smash, o 1º mais vendido no iFood. Com mais fome, os doubles têm duas carnes; para dividir, o Combo 2 traz dois lanches e batata grande.</p>
+      <a class="botao botao-contorno" href="${base}cardapio/">Ver cardápio completo</a>
     </div>
     <div class="lista-perfis">${perfis.map((p) => cartaoPerfil(p, base)).join('')}</div>
   </div>

@@ -619,3 +619,14 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .rodape-whats-bola b { font-weight: inherit; }
 .bola-whats { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: #25d366; color: #fff; font-style: normal; }
 .bola-whats svg { width: 26px; height: 26px; }
+
+/* Home, "O que pedir": fotos e texto na coluna da esquerda (só no computador) */
+.pedir-fotos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 24px 0 18px; }
+.pedir-foto { position: relative; display: block; border-radius: 14px; overflow: hidden; text-decoration: none; background: #000; }
+.pedir-foto img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .3s; }
+.pedir-foto:hover img { transform: scale(1.04); }
+.pedir-foto span { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 12px 9px; background: linear-gradient(transparent, rgba(0, 0, 0, .88)); color: #fff; font-size: 1rem; font-weight: 900; font-stretch: 75%; line-height: 1.05; text-transform: uppercase; }
+.pedir-foto:hover span { color: var(--laranja); }
+.pedir-texto { margin: 0 0 18px; color: var(--suave); }
+@media (min-width: 900px) { .pedir-lado { position: sticky; top: 100px; align-self: start; } }
+@media (max-width: 899px) { .pedir-fotos, .pedir-texto, .pedir-lado .botao { display: none; } }
