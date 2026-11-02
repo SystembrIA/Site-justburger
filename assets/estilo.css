@@ -56,12 +56,14 @@ h3 { font-size: 1.5rem; line-height: 1.05; font-stretch: 80%; font-weight: 800; 
 
 /* ---------- Topo ---------- */
 .topo { position: sticky; top: 0; z-index: 10; background: rgba(10, 10, 10, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--linha); }
-.topo-linha { display: flex; align-items: center; gap: 20px; min-height: 76px; }
+.topo-linha { display: flex; align-items: center; gap: 18px; min-height: 76px; }
 .marca img { width: 64px; }
 .menu { margin-left: auto; }
-.menu ul { display: flex; flex-wrap: nowrap; gap: 18px; list-style: none; margin: 0; padding: 0; }
+.menu ul { display: flex; flex-wrap: nowrap; gap: 14px; list-style: none; margin: 0; padding: 0; }
 .menu li { white-space: nowrap; }
-.menu a { text-decoration: none; font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--branco); opacity: .82; }
+.largura.topo-linha { width: min(1320px, 100% - 40px); }
+.topo-linha > .marca, .topo-linha > .lema, .botao-topo { flex: none; white-space: nowrap; }
+.menu a { text-decoration: none; font-size: .76rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; color: var(--branco); opacity: .82; }
 .menu a:hover, .menu a[aria-current] { opacity: 1; color: var(--laranja); }
 .botao-topo { min-height: 42px; padding: 0 18px; font-size: .82rem; }
 .menu-celular { display: none; margin-left: auto; }
@@ -258,7 +260,7 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 .rodape-base p { margin: 0; }
 
 /* ---------- Responsivo ---------- */
-@media (max-width: 1179px) { .menu, .botao-topo { display: none; } .menu-celular { display: block; } } /* menu numa linha só precisa de ~1180px */
+@media (max-width: 1279px) { .menu, .botao-topo { display: none; } .menu-celular { display: block; } } /* menu numa linha só precisa de ~1280px */
 @media (max-width: 899px) {
   .menu, .botao-topo { display: none; }
   .menu-celular { display: block; }

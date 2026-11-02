@@ -345,7 +345,7 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
     </a>
     ${site.lemaNoTopo === 'logo' ? `${site.lema ? `<span class="lema">${esc(site.lema)}</span>` : ''}` : ''}
     <nav class="menu" aria-label="Principal">
-      <ul>${nav.filter(([, c]) => c !== 'para-voce/').map(([n, c]) => `<li><a href="${base}${c}"${caminho.startsWith(c) ? ' aria-current="page"' : ''}>${n}</a></li>`).join('')}</ul>
+      <ul>${nav.map(([n, c]) => `<li><a href="${base}${c}"${caminho.startsWith(c) ? ' aria-current="page"' : ''}>${n}</a></li>`).join('')}</ul>
     </nav>
     ${site.lemaNoTopo === 'menu' ? `${site.lema ? `<span class="lema lema-menu">${esc(site.lema)}</span>` : ''}` : ''}
     ${botaoPedido(base, 'botao botao-topo')}
