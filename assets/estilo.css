@@ -285,7 +285,7 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
   .numeros-grade > div:first-child { border-left: 0; padding-left: 0; }
   .grade-produtos, .grade-midia { grid-template-columns: repeat(3, 1fr); }
   .grade-categorias { grid-template-columns: repeat(4, 1fr); }
-  .grade-lojas { grid-template-columns: repeat(4, 1fr); column-gap: 32px; }
+  .grade-lojas { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 24px; }
   .dividido { grid-template-columns: 1fr 1.5fr; gap: 64px; }
   .lista-menu { grid-template-columns: repeat(2, 1fr); column-gap: 48px; }
   .rodape-grade { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; } /* Cardápio e Culinárias antes de Unidades (Maikon 01/11) */
@@ -652,3 +652,9 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
   .cul-voltar:hover { color: var(--laranja); }
 }
 @media (max-width: 899px) { .cul-detalhe { display: none !important; } }
+/* Unidades em 4 colunas no computador: "Faça seu pedido" numa linha inteira, WhatsApp e mapa embaixo (não corta o texto) */
+@media (min-width: 900px) {
+  .grade-lojas .loja-acoes { flex-wrap: wrap !important; }
+  .grade-lojas .loja-reputacao { flex-wrap: wrap !important; justify-content: center; row-gap: 4px; }
+  .grade-lojas .loja-acoes .botao:first-child { flex: 1 0 100%; }
+}
