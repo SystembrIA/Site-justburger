@@ -159,6 +159,7 @@ export const diferenciais = [
 export const lojas = [
   {
     slug: 'zona-leste-vila-buenos-aires',
+    keeta: 'https://url-eu.mykeeta.com/NRIEpnEz',
     nome: 'Just Burger Zona Leste',
     bairro: 'Vila Buenos Aires', // bairro dos Correios (CEP 03627-010, Rua Peixoto)
     // Como a vizinhança chama a mesma região. Oficialmente (Prefeitura/GeoSampa) o ponto fica no
@@ -184,6 +185,7 @@ export const lojas = [
   },
   {
     slug: 'pirituba',
+    keeta: 'https://url-eu.mykeeta.com/9CyqYdkz',
     nome: 'Just Burger Pirituba',
     bairro: 'Pirituba',
     preposicao: 'em',
@@ -204,6 +206,7 @@ export const lojas = [
   },
   {
     slug: 'guarulhos',
+    keeta: 'https://url-eu.mykeeta.com/FkJ8WrQz',
     nome: 'Just Burger Guarulhos',
     bairro: 'Vila Endres',
     preposicao: 'em',
@@ -224,6 +227,7 @@ export const lojas = [
   },
   {
     slug: 'sao-bernardo-do-campo',
+    keeta: 'https://url-eu.mykeeta.com/6QYorSLz',
     nome: 'Just Burger São Bernardo',
     bairro: 'Baeta Neves',
     preposicao: 'em',
@@ -396,19 +400,19 @@ export const faq = [
 // Just Gourmet ZL com quarta, que falta no iFood) de cada operação. Endereço vazio = só a região (sem botão do mapa).
 export const culinarias = [
   { slug: 'just-gourmet', nome: 'Just Gourmet', tipo: 'Comida brasileira', lojas: [
-    { regiao: 'Zona Leste', endereco: 'Rua Peixoto, 156', horarios: [{ dias: ['Mo'], abre: '11:00', fecha: '15:00' }, { dias: ['Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '11:00', fecha: '22:30' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-penha/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb' },
-    { regiao: 'Pirituba', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Mo', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '11:00', fecha: '22:30' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-pirituba/9e482678-bad2-45ee-97ed-8d34a3e7e994' },
+    { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/oroqot4z', endereco: 'Rua Peixoto, 156', horarios: [{ dias: ['Mo'], abre: '11:00', fecha: '15:00' }, { dias: ['Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '11:00', fecha: '22:30' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-penha/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb' },
+    { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/9R12BcVz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Mo', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '11:00', fecha: '22:30' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-pirituba/9e482678-bad2-45ee-97ed-8d34a3e7e994' },
   ] },
   { slug: 'just-forneria', nome: 'Just Forneria', tipo: 'Pizza', lojas: [
-    { regiao: 'Zona Leste', endereco: 'Rua Santa Germana, 80' /* CNPJ 49.576.555/0001-75 (Just Pizza & Japan) */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '17:45', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '17:45', fecha: '00:00' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-forneria-penha/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8' },
-    { regiao: 'Pirituba', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-forneria-pirituba/83d23068-46ec-45b2-b155-b03ec6e2954f' },
+    { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/Xw8RPEWz', endereco: 'Rua Santa Germana, 80' /* CNPJ 49.576.555/0001-75 (Just Pizza & Japan) */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '17:45', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '17:45', fecha: '00:00' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-forneria-penha/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8' },
+    { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/jigI53lz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-forneria-pirituba/83d23068-46ec-45b2-b155-b03ec6e2954f' },
   ] },
   { slug: 'just-sushi', nome: 'Just Sushi', tipo: 'Sushi', lojas: [
-    { regiao: 'Zona Leste', endereco: 'Rua Santa Germana, 80' /* CNPJ 49.576.555/0001-75 (Just Pizza & Japan) */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-sushi-penha/fe4e06bd-2f30-410a-97ef-b21eba59f3e4' },
+    { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/ugCBxdQz', endereco: 'Rua Santa Germana, 80' /* CNPJ 49.576.555/0001-75 (Just Pizza & Japan) */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-sushi-penha/fe4e06bd-2f30-410a-97ef-b21eba59f3e4' },
   ] },
   { slug: 'just-esfiha', nome: 'Just Esfiha', tipo: 'Esfiha', lojas: [
-    { regiao: 'Zona Leste', endereco: 'Rua Santa Germana, 80' /* diretoria, 30/10/2026 */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '17:45', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '17:45', fecha: '00:00' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-esfiha-penha/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a' },
-    { regiao: 'Pirituba', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-esfiha-pirituba/b1331127-d9d1-4754-b23b-b2ff8737e770' },
+    { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/KPbrKsOz', endereco: 'Rua Santa Germana, 80' /* diretoria, 30/10/2026 */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '17:45', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '17:45', fecha: '00:00' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-esfiha-penha/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a' },
+    { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/f2uUM4fz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-esfiha-pirituba/b1331127-d9d1-4754-b23b-b2ff8737e770' },
   ] },
 ];
 

@@ -1717,8 +1717,8 @@ for (const p of paginas) {
     ...culinarias.map((c) => ({ nome: c.nome, tipo: c.tipo, logo: logoMarca(c),
       unidades: (c.lojas || []).map((u) => { const b = lojaDaRegiao(u.regiao); return { nome: u.regiao, ifood: u.ifood || '', keeta: u.keeta || '', lat: b && b.geo && b.geo.lat, lng: b && b.geo && b.geo.lng }; }) })),
   ];
-  // Ícones do iFood e da Keeta (Maikon 01/11). A Keeta ainda não é clicável (só o ícone), mesmo com link.
-  const botoesUnidade = (u) => `${u.ifood ? `<a class="lk-plat" href="${esc(u.ifood)}" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a>` : ''}<span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span>`;
+  // Ícones do iFood e da Keeta (Maikon 01/11). Keeta clicável desde 03/11 (links das 11 lojas); sem link, fica só o ícone.
+  const botoesUnidade = (u) => `${u.ifood ? `<a class="lk-plat" href="${esc(u.ifood)}" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a>` : ''}${u.keeta ? `<a class="lk-plat lk-plat-keeta" href="${esc(u.keeta)}" rel="noopener" aria-label="Pedir na Keeta"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></a>` : `<span class="lk-plat lk-plat-off lk-plat-keeta" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span>`}`;
   const dadosLinks = { raio: geo ? geo.raioKm : 10, marcas };
   const htmlLinks = `<!doctype html>
 <html lang="pt-BR">
@@ -1767,7 +1767,7 @@ body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem
 .lk-plat { flex: 0 0 auto; display: block; min-height: 0; min-width: 0; width: 64px; height: 34px; padding: 0; border: 0; border-radius: 10px; overflow: hidden; background: none; }
 .lk-plat img { width: 64px; height: 34px; display: block; object-fit: cover; }
 .lk-plat[aria-label='Pedir no iFood'] { background: #ea1d2c; }
-.lk-plat-off img { object-position: 50% 70%; }
+.lk-plat-keeta img { object-position: 50% 70%; }
 .lk-plat[aria-label='Pedir no iFood'] img { object-fit: contain; transform: scale(1.35); }
 .lk-plat-off { cursor: default; }
 .lk-plat:hover { border-color: rgba(255,255,255,.35); }
@@ -1901,7 +1901,7 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
   });
 })();
 window.JUST_LINKS = ${JSON.stringify(dadosLinks)};</script>
-<script src="../assets/links.js" defer></script>
+<script src="../assets/links.js?v=${createHash('md5').update(readFileSync(join(RAIZ, 'assets/links.js'))).digest('hex').slice(0, 8)}" defer></script>
 </body>
 </html>
 `;

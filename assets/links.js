@@ -7,9 +7,10 @@
   function km(a, b, c, d) { var r = Math.PI / 180, x = Math.sin((c - a) * r / 2), y = Math.sin((d - b) * r / 2); return 12742 * Math.asin(Math.sqrt(x * x + Math.cos(a * r) * Math.cos(c * r) * y * y)); }
   function pega(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
   function botoes(u) {
-    // A Keeta ainda não é clicável (só o ícone), mesmo com link (Maikon 01/11).
+    // Keeta clicável quando a loja tem link (Maikon 03/11); sem link, só o ícone.
     return (u.ifood ? '<a class="lk-plat" href="' + esc(u.ifood) + '" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a>' : '') +
-      '<span class="lk-plat lk-plat-off" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span>';
+      (u.keeta ? '<a class="lk-plat lk-plat-keeta" href="' + esc(u.keeta) + '" rel="noopener" aria-label="Pedir na Keeta"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></a>'
+        : '<span class="lk-plat lk-plat-off lk-plat-keeta" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span>');
   }
 
   function cartao(m, u, dist) {
