@@ -675,7 +675,7 @@ const cartaoMarca = (c, base) => `
     <p class="marca-regiao">${esc(x.regiao)}</p>
     ${x.endereco ? `<p class="loja-endereco">${esc(x.endereco)}</p>` : ''}
     ${x.horarios ? `<p class="loja-hora">${x.horarios.map((h) => `<span>${esc(textoHorarioCurto(h))}</span>`).join('')}</p>` : ''}
-    <div class="loja-reputacao"><p class="loja-nota">${nota1(x.nota)} <span class="estrela-dourada" aria-hidden="true">★</span> no iFood</p>${x.superIfood ? seloSuper : ''}</div>
+    ${x.ifood ? `<div class="loja-reputacao"><p class="loja-nota">${nota1(x.nota)} <span class="estrela-dourada" aria-hidden="true">★</span> no iFood</p>${x.superIfood ? seloSuper : ''}</div>` : ''}
     <p class="loja-acoes">${acoesLoja(op)}</p>
   </div>`;
   }).join('')}
@@ -718,7 +718,7 @@ const detalheCulinaria = (c, base) => `
     <h4>${esc(x.regiao)}</h4>
     ${x.endereco ? `<p class="loja-endereco">${esc(x.endereco)}</p>` : ''}
     ${x.horarios ? `<p class="loja-hora">${x.horarios.map((h) => `<span>${esc(textoHorarioCurto(h))}</span>`).join('')}</p>` : ''}
-    <div class="loja-reputacao"><p class="loja-nota">${nota1(x.nota)} <span class="estrela-dourada" aria-hidden="true">★</span> no iFood</p>${x.superIfood ? seloSuper : ''}</div>
+    ${x.ifood ? `<div class="loja-reputacao"><p class="loja-nota">${nota1(x.nota)} <span class="estrela-dourada" aria-hidden="true">★</span> no iFood</p>${x.superIfood ? seloSuper : ''}</div>` : ''}
     <p class="loja-acoes">${acoesLoja(op)}</p>
   </article>`;
   }).join('')}</div>
@@ -1668,7 +1668,7 @@ for (const c of culinarias) {
     <div class="grade-2 lojas-centro">${outras.map((o) => cartaoMarca(o, base)).join('')}</div>
   </div>
 </section>`,
-    md: () => `# ${c.nome}\n\n${c.tipo} do grupo Just Burger.\n\n${(c.lojas || []).map((x) => `- ${x.regiao}${x.endereco ? `: ${x.endereco}` : ''} · pedido: ${x.ifood}`).join('\n')}\n`,
+    md: () => `# ${c.nome}\n\n${c.tipo} do grupo Just Burger.\n\n${(c.lojas || []).map((x) => `- ${x.regiao}${x.endereco ? `: ${x.endereco}` : ''} · pedido: ${[x.ifood && `iFood ${x.ifood}`, x.keeta && `Keeta ${x.keeta}`].filter(Boolean).join(' · ')}`).join('\n')}\n`,
   });
 }
 

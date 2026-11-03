@@ -405,14 +405,14 @@ export const culinarias = [
   ] },
   { slug: 'just-forneria', nome: 'Just Forneria', tipo: 'Pizza', lojas: [
     { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/Xw8RPEWz', endereco: 'Rua Santa Germana, 80' /* CNPJ 49.576.555/0001-75 (Just Pizza & Japan) */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '17:45', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '17:45', fecha: '00:00' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-forneria-penha/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8' },
-    { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/jigI53lz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-forneria-pirituba/83d23068-46ec-45b2-b155-b03ec6e2954f' },
+    { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/jigI53lz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: '' /* iFood fechado: só Keeta (Maikon 03/11) */ },
   ] },
   { slug: 'just-sushi', nome: 'Just Sushi', tipo: 'Sushi', lojas: [
     { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/ugCBxdQz', endereco: 'Rua Santa Germana, 80' /* CNPJ 49.576.555/0001-75 (Just Pizza & Japan) */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-sushi-penha/fe4e06bd-2f30-410a-97ef-b21eba59f3e4' },
   ] },
   { slug: 'just-esfiha', nome: 'Just Esfiha', tipo: 'Esfiha', lojas: [
     { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/KPbrKsOz', endereco: 'Rua Santa Germana, 80' /* diretoria, 30/10/2026 */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '17:45', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '17:45', fecha: '00:00' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-esfiha-penha/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a' },
-    { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/f2uUM4fz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-esfiha-pirituba/b1331127-d9d1-4754-b23b-b2ff8737e770' },
+    { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/f2uUM4fz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: '' /* iFood fechado: só Keeta (Maikon 03/11) */ },
   ] },
 ];
 
