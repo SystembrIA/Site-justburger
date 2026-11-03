@@ -1649,7 +1649,7 @@ for (const c of culinarias) {
     caminho: `culinarias/${c.slug}/`,
     profundidade: 2,
     titulo: `${c.nome} | ${c.tipo} do grupo Just Burger: unidades e pedido`,
-    descricao: `${c.nome}: ${c.tipo.toLowerCase()} do grupo Just Burger em ${(c.lojas || []).map((x) => x.regiao).join(' e ')}. Endereço, horário e pedido no iFood.`,
+    descricao: c.meta || `${c.nome}: ${c.tipo.toLowerCase()} do grupo Just Burger. Endereço, horário e pedido pelo iFood ou pela Keeta.`,
     noindex: !c.conteudo,
     schema: [schemaBreadcrumb(trilha)],
     corpo: (base) => `
@@ -1659,7 +1659,7 @@ for (const c of culinarias) {
     <h1 class="so-leitor">${esc(c.nome)}: ${esc(c.tipo.toLowerCase())} do grupo Just Burger</h1>
     <h2 class="so-leitor">Onde pedir</h2>
     <div class="marca-destaque lojas-centro">${cartaoMarca(c, base)}</div>
-    ${c.conteudo ? `<div class="largura estreita">${c.conteudo.map((t) => `<p>${esc(t)}</p>`).join('')}</div>` : ''}
+    ${c.conteudo ? `<div class="largura estreita marca-sobre"><h2>Sobre a ${esc(c.nome)}</h2>${c.conteudo.map((t) => `<p>${esc(t)}</p>`).join('')}<p><a class="botao" href="${base}cardapio/${c.slug}/">Ver o cardápio da ${esc(c.nome)}</a></p></div>` : ''}
   </div>
 </section>
 <section class="secao">

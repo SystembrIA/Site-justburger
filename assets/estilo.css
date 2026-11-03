@@ -658,3 +658,9 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
   .grade-lojas .loja-reputacao { flex-wrap: wrap !important; justify-content: center; row-gap: 4px; }
   .grade-lojas .loja-acoes .botao:first-child { flex: 1 0 100%; }
 }
+
+/* Página de cada culinária: texto sobre a marca */
+.marca-sobre { margin-top: 40px; }
+.marca-sobre h2 { margin-bottom: .5em; }
+.marca-sobre p { color: var(--suave); }
+.marca-sobre .botao { margin-top: 8px; }

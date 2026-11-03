@@ -399,18 +399,34 @@ export const faq = [
 // lojas: nota (ifood_notas do Hub, jul-out/2026), selo Super (avaliação jul-set/2026) e horário (ifood_horarios do Hub;
 // Just Gourmet ZL com quarta, que falta no iFood) de cada operação. Endereço vazio = só a região (sem botão do mapa).
 export const culinarias = [
-  { slug: 'just-gourmet', nome: 'Just Gourmet', tipo: 'Comida brasileira', lojas: [
+  { slug: 'just-gourmet', meta: 'Just Gourmet: comida brasileira do grupo Just Burger na Zona Leste e em Pirituba. Feijoada Especial, strogonoff, parmegiana e mais. Peça pelo iFood ou Keeta.', conteudo: [
+    'A Just Gourmet é a comida brasileira do grupo da Just Burger: prato feito caprichado, do jeito que se come em casa, entregue quente na Zona Leste e em Pirituba.',
+    'O carro-chefe é a Feijoada Especial Just, com arroz branco, carne seca, linguiça defumada, costelinha de porco, bacon, couve, farofa e torresmo, em versões para 1, 2 ou 3 pessoas. No dia a dia saem os queridinhos da casa: strogonoff de frango ou de carne, lagarto ao molho madeira, filé de frango à parmegiana e o Just Baião de Dois.',
+    'Para quem quer algo especial tem filé mignon à parmegiana e salmão ao molho de maracujá ou de alcaparras; para quem quer algo leve, saladas e prato fitness. Também tem massas artesanais (lasanha e conchiglione recheado com 4 queijos), pratos kids e, de sobremesa, pudins e milk-shakes. As duas unidades têm nota 4,9 no iFood e o selo Super Restaurante.',
+  ], nome: 'Just Gourmet', tipo: 'Comida brasileira', lojas: [
     { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/oroqot4z', endereco: 'Rua Peixoto, 156', horarios: [{ dias: ['Mo'], abre: '11:00', fecha: '15:00' }, { dias: ['Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '11:00', fecha: '22:30' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-penha/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb' },
     { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/9R12BcVz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Mo', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '11:00', fecha: '22:30' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-pirituba/9e482678-bad2-45ee-97ed-8d34a3e7e994' },
   ] },
-  { slug: 'just-forneria', nome: 'Just Forneria', tipo: 'Pizza', lojas: [
+  { slug: 'just-forneria', meta: 'Just Forneria (Aham Forneria): pizza de massa napolitana de fermentação lenta na Zona Leste e em Pirituba. Peça pelo iFood ou pela Keeta.', conteudo: [
+    'A Just Forneria é a pizzaria do grupo da Just Burger. No iFood e no Instagram ela ainda aparece como Aham Forneria (@ahamforneriasp).',
+    'A base de tudo é a massa napolitana de fermentação lenta, leve, com molho de tomate. A pizza grande tem 35 cm e aceita até 2 sabores; também tem broto, pizza kids e pizzas doces.',
+    'No cardápio estão as clássicas (muçarela, calabresa, frango com Catupiry, margherita e portuguesa) e as da casa, como a de bacon e ovos e a Gamberetto. A unidade da Zona Leste entrega pelo iFood e pela Keeta, com nota 4,9 no iFood; a de Pirituba entrega pela Keeta.',
+  ], nome: 'Just Forneria', tipo: 'Pizza', lojas: [
     { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/Xw8RPEWz', endereco: 'Rua Santa Germana, 80' /* CNPJ 49.576.555/0001-75 (Just Pizza & Japan) */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '17:45', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '17:45', fecha: '00:00' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-forneria-penha/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8' },
     { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/jigI53lz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: '' /* iFood fechado: só Keeta (Maikon 03/11) */ },
   ] },
-  { slug: 'just-sushi', nome: 'Just Sushi', tipo: 'Sushi', lojas: [
+  { slug: 'just-sushi', meta: 'Just Sushi (Aham Sushi): combinados, hot rolls, temakis e joes trufados na Zona Leste de São Paulo. Peça pelo iFood ou pela Keeta.', conteudo: [
+    'A Just Sushi é a culinária japonesa do grupo da Just Burger, na Zona Leste de São Paulo. No iFood e no Instagram ela ainda aparece como Aham Sushi (@ahamsushisp).',
+    'Para quem quer provar de tudo, os combinados Deguste (21 ou 40 peças) juntam sashimi, hossomaki, uramaki, joe e sushi de salmão. Os combinados Gourmet (20 ou 40 peças) vão além do salmão, com atum, peixe branco, haddock, camarão, polvo e joes trufados.',
+    'O cardápio tem ainda hot rolls, temakis, uramakis, sashimis e niguiris, carpaccio e ceviche, salmão maçaricado (roasted), teppan e yakisoba de carne, frango, legumes ou camarão. A unidade tem nota 4,9 no iFood e também entrega pela Keeta.',
+  ], nome: 'Just Sushi', tipo: 'Sushi', lojas: [
     { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/ugCBxdQz', endereco: 'Rua Santa Germana, 80' /* CNPJ 49.576.555/0001-75 (Just Pizza & Japan) */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-sushi-penha/fe4e06bd-2f30-410a-97ef-b21eba59f3e4' },
   ] },
-  { slug: 'just-esfiha', nome: 'Just Esfiha', tipo: 'Esfiha', lojas: [
+  { slug: 'just-esfiha', meta: 'Just Esfiha (Aham Esfiha): esfihas salgadas e doces e combos de 10 a 50 unidades na Zona Leste e em Pirituba. Peça pelo iFood ou pela Keeta.', conteudo: [
+    'A Just Esfiha é a esfiharia do grupo da Just Burger, na Zona Leste e em Pirituba. No iFood ela ainda aparece como Aham Esfiha.',
+    'Tem as salgadas clássicas, como carne com tomate, cebola e tempero especial, muçarela, calabresa e frango, e as especiais da casa: quatro queijos, carne seca com Catupiry, camarão com cream cheese e a italiana, com tomate cereja, manjericão e alho torrado.',
+    'Nas doces estão Banana Nevada, Kit Kat, Churros, Romeu e Julieta e Negresco, entre outras. Para dividir, há combos de 10, 15, 25 e 50 esfihas com desconto. A unidade da Zona Leste entrega pelo iFood, com nota 4,9 e selo Super Restaurante, e pela Keeta; a de Pirituba entrega pela Keeta.',
+  ], nome: 'Just Esfiha', tipo: 'Esfiha', lojas: [
     { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/KPbrKsOz', endereco: 'Rua Santa Germana, 80' /* diretoria, 30/10/2026 */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '17:45', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '17:45', fecha: '00:00' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-esfiha-penha/1eb0ccfe-ba7e-43ad-9a23-06c4ea7a823a' },
     { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/f2uUM4fz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: '' /* iFood fechado: só Keeta (Maikon 03/11) */ },
   ] },
