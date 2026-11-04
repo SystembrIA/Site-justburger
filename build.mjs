@@ -1733,7 +1733,7 @@ for (const p of paginas) {
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Dancing+Script:wght@700&display=swap">
 <style>
-:root { --preto: #0a0a0a; --carvao: #151412; --linha: rgba(255,255,255,.12); --laranja: #fa7304; --branco: #f7f3ee; --suave: #aaa39a; }
+:root { --preto: #000; --carvao: #151412; --linha: rgba(255,255,255,.12); --laranja: #fa7304; --branco: #f7f3ee; --suave: #aaa39a; }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem/1.5 Archivo, system-ui, sans-serif; }
 .lk { max-width: 480px; margin: 0 auto; padding: 36px 16px 48px; }

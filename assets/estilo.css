@@ -1,6 +1,6 @@
 /* Just Burger — preto, laranja #FA7304 e creme. Títulos em Archivo condensada (como o logo). */
 :root {
-  --preto: #0a0a0a;
+  --preto: #000;
   --carvao: #131210;
   --cartao: #1a1816;
   --linha: rgba(255, 255, 255, .12);
@@ -55,7 +55,7 @@ h3 { font-size: 1.5rem; line-height: 1.05; font-stretch: 80%; font-weight: 800; 
 .acoes { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 2em; }
 
 /* ---------- Topo ---------- */
-.topo { position: sticky; top: 0; z-index: 10; background: rgba(10, 10, 10, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--linha); }
+.topo { position: sticky; top: 0; z-index: 10; background: rgba(0, 0, 0, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--linha); }
 .topo-linha { display: flex; align-items: center; gap: 18px; min-height: 76px; }
 .marca img { width: 64px; }
 .menu { margin-left: auto; }
@@ -81,8 +81,8 @@ h3 { font-size: 1.5rem; line-height: 1.05; font-stretch: 80%; font-weight: 800; 
 /* ---------- Seções ---------- */
 .secao { padding: clamp(56px, 8vw, 104px) 0; }
 main > .secao:first-child { padding-top: clamp(40px, 6vw, 72px); }
-.secao-clara { background: var(--carvao); border-block: 1px solid var(--linha); }
-.secao-destaque { background: var(--carvao); }
+.secao-clara { background: var(--preto); border-block: 1px solid var(--linha); }
+.secao-destaque { background: var(--preto); }
 .titulo-secao { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; margin-bottom: 36px; }
 .titulo-secao h2 { margin: 0; }
 .titulo-secao p { margin: 0; color: var(--suave); }
@@ -106,7 +106,7 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 @keyframes flutua { 50% { transform: translateY(-14px) rotate(-1deg); } }
 
 /* ---------- Números ---------- */
-.numeros { background: var(--carvao); border-block: 1px solid var(--linha); padding: 34px 0; }
+.numeros { background: var(--preto); border-block: 1px solid var(--linha); padding: 34px 0; }
 .numeros-grade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 0; }
 .numeros-grade > div { padding: 0 16px; border-left: 1px solid var(--linha); }
 .numeros-grade > div:nth-child(odd) { border-left: 0; padding-left: 0; }
@@ -140,7 +140,7 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 .categoria span { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 14px 12px; background: linear-gradient(transparent, rgba(0, 0, 0, .85)); font-size: 1.25rem; font-weight: 900; font-stretch: 75%; text-transform: uppercase; line-height: 1; }
 
 /* ---------- Unidades ---------- */
-.secao-unidades { background: var(--carvao); }
+.secao-unidades { background: var(--preto); }
 .grade-lojas, .grade-2 { display: grid; gap: 0; }
 .loja { padding: 24px 0; border-top: 1px solid var(--linha); }
 .loja p { margin: 0 0 .5em; color: var(--suave); font-size: .97rem; }
@@ -191,7 +191,7 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 .faq details p { margin: .8em 0 0; color: var(--suave); max-width: 64ch; }
 
 /* ---------- Cardápio ---------- */
-.categorias { position: sticky; top: 76px; z-index: 5; background: rgba(10, 10, 10, .96); border-block: 1px solid var(--linha); }
+.categorias { position: sticky; top: 76px; z-index: 5; background: rgba(0, 0, 0, .96); border-block: 1px solid var(--linha); }
 .categorias .largura { display: flex; gap: 6px; overflow-x: auto; padding: 10px 0; scrollbar-width: none; }
 .categorias .largura::-webkit-scrollbar { display: none; }
 .categorias a { flex: none; padding: 8px 14px; border-radius: 999px; font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; color: var(--suave); }
@@ -581,7 +581,7 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .grade-acoes { display: grid; gap: 22px; margin-top: 26px; }
 .acao { display: grid; gap: 0; overflow: hidden; border: 1px solid var(--linha); border-radius: 22px; background: var(--carvao); }
 .acao img, .acao-parceiro { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
-.acao-parceiro { display: grid; place-items: center; background: linear-gradient(135deg, #1b1a18, #0a0a0a); font-weight: 900; font-stretch: 80%; font-size: clamp(1.6rem, 6vw, 2.4rem); text-transform: uppercase; letter-spacing: .02em; }
+.acao-parceiro { display: grid; place-items: center; background: linear-gradient(135deg, #1b1a18, #000); font-weight: 900; font-stretch: 80%; font-size: clamp(1.6rem, 6vw, 2.4rem); text-transform: uppercase; letter-spacing: .02em; }
 .acao-parceiro p { margin: 0; text-align: center; }
 .acao-parceiro span { color: var(--laranja); margin: 0 .2em; }
 .acao-texto { padding: 20px 22px 24px; }
