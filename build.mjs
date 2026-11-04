@@ -1565,7 +1565,7 @@ if (site.equipe && site.equipe.publicada) paginas.push({
 </section>
 ${existsSync(join(RAIZ, 'assets/img/equipe-confraternizacao.webp')) ? `<section class="secao secao-confra">
   <div class="largura">
-    <figure class="confra"><img src="${base}assets/img/equipe-confraternizacao.webp" width="1400" height="1025" alt="Equipe do grupo Just Burger reunida na confraternização, à beira da piscina" loading="lazy" decoding="async"><figcaption>Confraternização da equipe: o time que faz a Just acontecer.</figcaption></figure>
+    <figure class="confra"><img src="${base}assets/img/equipe-confraternizacao.webp" width="1400" height="896" alt="Equipe do grupo Just Burger reunida na confraternização, à beira da piscina" loading="lazy" decoding="async"><figcaption>Confraternização da equipe: o time que faz a Just acontecer.</figcaption></figure>
   </div>
 </section>` : ''}
 ${fotosEquipe.length ? `<section class="secao">
