@@ -1517,7 +1517,7 @@ if (site.trabalhe && (site.trabalhe.publicada || site.trabalhe.previa)) {
     ${tb.texto.map((t) => `<p>${esc(t)}</p>`).join('')}
   </div>
 </section>
-${fotosTrabalhe.length ? `<section class="secao"><div class="largura"><h2 class="so-leitor">Nosso dia a dia</h2><div class="grade-equipe">${fotosTrabalhe.map((f) => `<img src="${base}assets/img/trabalhe/${f}" alt="Equipe do grupo Just Burger trabalhando" loading="lazy" decoding="async">`).join('')}</div></div></section>` : ''}
+${fotosTrabalhe.length ? `<section class="secao"><div class="largura"><h2 class="so-leitor">Nosso dia a dia</h2><div class="grade-equipe">${fotosTrabalhe.map((f) => `<img src="${base}assets/img/trabalhe/${f}" width="800" height="1000" alt="Equipe do grupo Just Burger trabalhando" loading="lazy" decoding="async">`).join('')}</div></div></section>` : ''}
 <section class="secao" id="curriculo">
   <div class="largura estreita">
     <h2>Envie seu currículo</h2>
@@ -1566,7 +1566,7 @@ if (site.equipe && site.equipe.publicada) paginas.push({
 ${fotosEquipe.length ? `<section class="secao">
   <div class="largura">
     <h2 class="so-leitor">Fotos da equipe</h2>
-    <div class="grade-equipe">${fotosEquipe.map((f) => `<img src="${base}assets/img/equipe/${f}" alt="Equipe do grupo Just Burger" loading="lazy" decoding="async">`).join('')}</div>
+    <div class="grade-equipe">${fotosEquipe.map((f) => `<img src="${base}assets/img/equipe/${f}" width="800" height="1000" alt="Equipe do grupo Just Burger" loading="lazy" decoding="async">`).join('')}</div>
   </div>
 </section>` : ''}`,
   md: () => `# Nossa equipe\n\n${site.equipe.chamada}\n\n${site.equipe.texto.join('\n\n')}\n`,

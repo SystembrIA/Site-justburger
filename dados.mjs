@@ -65,7 +65,7 @@ export const site = {
     funcoesGerais: ['Ajudante geral', 'Estágio', 'Liderança', 'Administrativo', 'Outra'],
   },
   equipe: {
-    publicada: true, // texto aprovado pelo Maikon em 01/11; fotos chegam depois
+    publicada: true, // texto aprovado pelo Maikon em 01/11; fotos do ensaio de fev/2023 (Drive da Mindbe), 04/11
     chamada: 'Sem eles, nada disso seria possível.',
     texto: [
       'Por trás de cada pedido que sai das nossas cozinhas tem gente que faz tudo com carinho, atenção e muito amor pelo que faz. São mais de 150 pessoas nas cinco cozinhas do grupo, cuidando de cada detalhe para que o seu pedido chegue do jeito certo.',

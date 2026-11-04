@@ -563,8 +563,9 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 @media (max-width: 899px) { .lema { font-size: 1.15rem; } .topo-linha > .lema:not(.lema-menu) { margin-left: -16px; } }
 
 /* ---------- Nossa equipe ---------- */
-.grade-equipe { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
-.grade-equipe img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; }
+.grade-equipe { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.grade-equipe img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; background: #111; }
+@media (max-width: 520px) { .grade-equipe { grid-template-columns: repeat(2, 1fr); gap: 8px; } }
 
 /* ---------- Trabalhe conosco: formulário ---------- */
 .form-curriculo { display: grid; gap: 14px; }
