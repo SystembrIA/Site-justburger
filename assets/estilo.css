@@ -665,3 +665,9 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .marca-sobre h2 { margin-bottom: .5em; }
 .marca-sobre p { color: var(--suave); }
 .marca-sobre .botao { margin-top: 8px; }
+
+/* Nossa equipe: foto grande da confraternização */
+.secao-confra { padding-bottom: 0; }
+.confra { margin: 0; }
+.confra img { display: block; width: 100%; height: auto; border-radius: 18px; }
+.confra figcaption { margin-top: 10px; color: var(--suave); font-size: .9rem; text-align: center; }

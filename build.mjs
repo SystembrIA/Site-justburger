@@ -1563,6 +1563,11 @@ if (site.equipe && site.equipe.publicada) paginas.push({
     ${site.equipe.texto.map((t) => `<p>${esc(t)}</p>`).join('')}
   </div>
 </section>
+${existsSync(join(RAIZ, 'assets/img/equipe-confraternizacao.webp')) ? `<section class="secao secao-confra">
+  <div class="largura">
+    <figure class="confra"><img src="${base}assets/img/equipe-confraternizacao.webp" width="1400" height="1025" alt="Equipe do grupo Just Burger reunida na confraternização, à beira da piscina" loading="lazy" decoding="async"><figcaption>Confraternização da equipe: o time que faz a Just acontecer.</figcaption></figure>
+  </div>
+</section>` : ''}
 ${fotosEquipe.length ? `<section class="secao">
   <div class="largura">
     <h2 class="so-leitor">Fotos da equipe</h2>
