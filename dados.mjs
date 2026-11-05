@@ -65,6 +65,7 @@ export const site = {
     funcoesGerais: ['Ajudante geral', 'Estágio', 'Liderança', 'Administrativo', 'Outra'],
   },
   equipe: {
+    nomes: { '00a.webp': 'Sandro', '00b.webp': 'Rita' }, // nome embaixo da foto (Maikon 05/11); os dois ficam primeiro na galeria
     publicada: true, // texto aprovado pelo Maikon em 01/11; fotos do ensaio de fev/2023 (Drive da Mindbe), 04/11
     chamada: 'Sem eles, nada disso seria possível.',
     texto: [

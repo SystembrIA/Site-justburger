@@ -671,3 +671,7 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .confra { margin: 0; }
 .confra img { display: block; width: 100%; height: auto; border-radius: 18px; }
 .confra figcaption { margin-top: 10px; color: var(--suave); font-size: .9rem; text-align: center; }
+
+/* Nossa equipe: foto com nome */
+.equipe-nome { position: relative; margin: 0; }
+.equipe-nome figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 12px 10px; border-radius: 0 0 14px 14px; background: linear-gradient(transparent, rgba(0, 0, 0, .85)); color: #fff; font-size: 1.1rem; font-weight: 900; font-stretch: 75%; text-transform: uppercase; }

@@ -1571,7 +1571,7 @@ ${existsSync(join(RAIZ, 'assets/img/equipe-confraternizacao.webp')) ? `<section 
 ${fotosEquipe.length ? `<section class="secao">
   <div class="largura">
     <h2 class="so-leitor">Fotos da equipe</h2>
-    <div class="grade-equipe">${fotosEquipe.map((f) => `<img src="${base}assets/img/equipe/${f}" width="800" height="1000" alt="Equipe do grupo Just Burger" loading="lazy" decoding="async">`).join('')}</div>
+    <div class="grade-equipe">${fotosEquipe.map((f) => { const nome = (site.equipe.nomes || {})[f]; const img = `<img src="${base}assets/img/equipe/${f}" width="800" height="1000" alt="${nome ? `${esc(nome)}, da equipe` : 'Equipe'} do grupo Just Burger" loading="lazy" decoding="async">`; return nome ? `<figure class="equipe-nome">${img}<figcaption>${esc(nome)}</figcaption></figure>` : img; }).join('')}</div>
   </div>
 </section>` : ''}`,
   md: () => `# Nossa equipe\n\n${site.equipe.chamada}\n\n${site.equipe.texto.join('\n\n')}\n`,
