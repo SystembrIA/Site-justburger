@@ -65,12 +65,12 @@ export const site = {
     funcoesGerais: ['Ajudante geral', 'Estágio', 'Liderança', 'Administrativo', 'Outra'],
   },
   equipe: {
-    nomes: { '00a.webp': 'Sandro', '00b.webp': 'Rita', '00c.webp': 'André' }, // nome embaixo da foto (Maikon 05/11); os dois ficam primeiro na galeria
+    nomes: { '00a.webp': 'Sandro', '00b.webp': 'Rita', '00c.webp': 'Dinah', '00d.webp': 'André', '00e.webp': 'Edno', '00f.webp': 'Matheus' }, // nome embaixo da foto (Maikon 05/11); quem tem nome vem primeiro na galeria
     publicada: true, // texto aprovado pelo Maikon em 01/11; fotos do ensaio de fev/2023 (Drive da Mindbe), 04/11
     chamada: 'Sem eles, nada disso seria possível.',
     texto: [
       'Por trás de cada pedido que sai das nossas cozinhas tem gente que faz tudo com carinho, atenção e muito amor pelo que faz. São mais de 150 pessoas nas cinco cozinhas do grupo, cuidando de cada detalhe para que o seu pedido chegue do jeito certo.',
-      'Muitos estão com a gente desde antes da Just existir. Vieram da empresa que tínhamos antes e seguiram juntos quando a Just Burger nasceu, em 2018. Hoje temos colaboradores com mais de 8 anos de casa, e alguns estão conosco há mais de 20 anos, como a Diná, o Sandro e a Rita. O André, da Just Gourmet, já passa dos 10 anos.',
+      'Muitos estão com a gente desde antes da Just existir. Vieram da empresa que tínhamos antes e seguiram juntos quando a Just Burger nasceu, em 2018. Hoje temos colaboradores com mais de 8 anos de casa, e alguns estão conosco há mais de 20 anos, como a Dinah, o Sandro e a Rita. O André, da Just Gourmet, já passa dos 10 anos.',
       'É essa turma que recebe quem chega, ensina o jeito Just de fazer e passa adiante toda a experiência de anos de cozinha. A nota 4,9 e o selo de Super Restaurante são, antes de tudo, deles.',
       'A cada um que faz parte dessa história: obrigado.',
     ],
