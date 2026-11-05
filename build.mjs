@@ -1528,7 +1528,7 @@ ${fotosTrabalhe.length ? `<section class="secao"><div class="largura"><h2 class=
       <label>E-mail <small>(opcional)</small><input name="email" type="email" maxlength="120" autocomplete="email"></label>
       <label>Empresa<select name="marca" required><option value="">Escolha</option>${opcoesMarca.map(([m]) => `<option>${esc(m)}</option>`).join('')}<option>Todas as empresas do grupo</option></select></label>
       <label>Unidade<select name="unidade" required><option value="">Escolha a empresa primeiro</option></select></label>
-      <label>Vaga de interesse<select name="funcao" required><option value="">Escolha a empresa primeiro</option></select></label>
+      <label>Vaga pretendida<input name="funcao" required maxlength="60" placeholder="Escreva a vaga que você procura"></label>
       <label>Conte um pouco sobre você <small>(opcional)</small><textarea name="mensagem" rows="4" maxlength="1500"></textarea></label>
       <label>Currículo em PDF <small>(opcional, até 2 MB)</small><input name="arquivo" type="file" accept="application/pdf"></label>
       <label class="form-site" aria-hidden="true">Site<input name="site" tabindex="-1" autocomplete="off"></label>

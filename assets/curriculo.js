@@ -4,15 +4,12 @@
   var form = document.getElementById('form-curriculo'); if (!form) return;
   var U = window.JUST_UNIDADES || {}, status = form.querySelector('.form-status');
   var marca = form.elements.marca, unidade = form.elements.unidade;
-  var F = window.JUST_FUNCOES || { porMarca: {}, gerais: [] }, funcao = form.elements.funcao;
   function opcoes(lista) { return '<option value="">Escolha</option>' + lista.map(function (x) { return '<option>' + x + '</option>'; }).join(''); }
   marca.addEventListener('change', function () {
     var todas = marca.value === 'Todas as empresas do grupo';
     var lista = todas ? ['Qualquer unidade'] : (U[marca.value] || []);
     unidade.innerHTML = opcoes(lista.concat(!todas && lista.length > 1 ? ['Qualquer unidade'] : []));
-    var cargos = todas ? Object.keys(F.porMarca).reduce(function (t, m) { return t.concat(F.porMarca[m]); }, []) : (F.porMarca[marca.value] || []);
-    cargos = cargos.filter(function (c, i) { return cargos.indexOf(c) === i; }).concat(F.gerais || []);
-    funcao.innerHTML = opcoes(cargos);
+    // vaga pretendida: campo livre (Maikon 05/11) — o RH analisa no Recrutamento do Hub
   });
   function ler(arq) {
     return new Promise(function (ok, erro) {
@@ -25,9 +22,9 @@
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var f = form.elements;
-    if (!form.checkValidity()) { status.textContent = 'Preencha nome, WhatsApp, empresa, unidade, vaga e a autorização.'; return; }
+    if (!form.checkValidity()) { status.textContent = 'Preencha nome, WhatsApp, empresa, unidade, vaga pretendida e a autorização.'; return; }
     if (f.site.value) return; // robô
-    var dados = { nome: f.nome.value.trim(), telefone: f.telefone.value.trim(), email: f.email.value.trim(), marca: f.marca.value, unidade: f.unidade.value, funcao: f.funcao.value, mensagem: f.mensagem.value.trim(), consentimento: true };
+    var dados = { nome: f.nome.value.trim(), telefone: f.telefone.value.trim(), email: f.email.value.trim(), marca: f.marca.value, unidade: f.unidade.value, funcao: f.funcao.value.trim(), mensagem: f.mensagem.value.trim(), consentimento: true };
     var envio = form.getAttribute('data-envio');
     if (!envio) {
       var txt = 'Olá! Quero trabalhar no grupo Just Burger.\nNome: ' + dados.nome + '\nWhatsApp: ' + dados.telefone + (dados.email ? '\nE-mail: ' + dados.email : '') + '\nEmpresa: ' + dados.marca + '\nUnidade: ' + dados.unidade + '\nVaga: ' + dados.funcao + (dados.mensagem ? '\nSobre mim: ' + dados.mensagem : '');
