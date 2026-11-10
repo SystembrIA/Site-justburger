@@ -675,3 +675,22 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 /* Nossa equipe: foto com nome */
 .equipe-nome { position: relative; margin: 0; }
 .equipe-nome figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 12px 10px; border-radius: 0 0 14px 14px; background: linear-gradient(transparent, rgba(0, 0, 0, .85)); color: #fff; font-size: 1.1rem; font-weight: 900; font-stretch: 75%; text-transform: uppercase; }
+
+/* Vagas: listas de links por função e unidade */
+.lista-vagas { list-style: none; margin: 0 0 20px; padding: 0; border-top: 1px solid var(--linha); }
+.lista-vagas li { padding: 12px 0; border-bottom: 1px solid var(--linha); }
+.lista-vagas li > a { font-weight: 800; text-decoration: none; }
+.lista-vagas li > a:hover { color: var(--laranja); }
+.lista-vagas li span { display: block; margin-top: 2px; color: var(--suave); font-size: .9rem; }
+.lista-vagas li span a { color: var(--suave); }
+.lista-vagas li span a:hover { color: var(--laranja); }
+.lista-vaga { margin: 0 0 18px; padding-left: 1.2em; color: var(--suave); }
+.lista-vaga li { margin: 4px 0; }
+.vagas-links { padding-top: 0; }
+.vagas-links h2 { font-size: 1.3rem; }
+.vaga-fotos { grid-template-columns: repeat(3, 1fr); }
+.vagas-abrir > summary { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha); font-weight: 800; cursor: pointer; list-style: none; }
+.vagas-abrir > summary::-webkit-details-marker { display: none; }
+.vagas-abrir > summary::after { content: '+'; color: var(--laranja); font-size: 1.4rem; }
+.vagas-abrir[open] > summary::after { content: '–'; }
+.vagas-abrir[open] > summary { border-bottom: 0; }
