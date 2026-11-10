@@ -60,12 +60,12 @@ export const site = {
       'Just Gourmet': ['Cozinheiro(a)', 'Meio oficial de cozinha', 'Auxiliar de cozinha', 'Ajudante de despacho', 'Atendente'],
       'Just Forneria': ['Pizzaiolo', 'Ajudante de pizzaiolo', 'Auxiliar de cozinha', 'Ajudante de despacho', 'Atendente'],
       'Just Esfiha': ['Esfiheiro', 'Auxiliar de cozinha', 'Ajudante de despacho', 'Atendente'],
-      'Just Sushi': ['Sushiman', 'Meio oficial de cozinha', 'Auxiliar de cozinha', 'Atendente'],
+      'Just Sushi': ['Sushiman', 'Auxiliar de sushiman', 'Meio oficial de cozinha', 'Auxiliar de cozinha', 'Atendente'],
     },
     funcoesGerais: ['Ajudante geral', 'Estágio', 'Liderança', 'Administrativo', 'Outra'],
   },
   equipe: {
-    nomes: { '00a.webp': 'Sandro', '00b.webp': 'Rita', '00c.webp': 'Diná', '00d.webp': 'André', '00e.webp': 'Edno', '00f.webp': 'Bruno', '00g.webp': 'Matheus', '00h.webp': 'Anderson', '00i.webp': 'Jotinha' }, // nome embaixo da foto (Maikon 05/11); quem tem nome vem primeiro na galeria
+    nomes: { '00a-sandro-equipe-just-burger-hamburgueria.webp': 'Sandro', '00b-rita-equipe-just-burger-hamburgueria.webp': 'Rita', '00c-dina-equipe-just-burger-hamburgueria.webp': 'Diná', '00d-andre-equipe-just-burger-hamburgueria.webp': 'André', '00e-edno-equipe-just-burger-hamburgueria.webp': 'Edno', '00f-bruno-equipe-just-burger-hamburgueria.webp': 'Bruno', '00g-matheus-equipe-just-burger-hamburgueria.webp': 'Matheus', '00h-anderson-equipe-just-burger-hamburgueria.webp': 'Anderson', '00i-jotinha-equipe-just-burger-hamburgueria.webp': 'Jotinha' }, // nome embaixo da foto (Maikon 05/11); quem tem nome vem primeiro na galeria
     publicada: true, // texto aprovado pelo Maikon em 01/11; fotos do ensaio de fev/2023 (Drive da Mindbe), 04/11
     chamada: 'Sem eles, nada disso seria possível.',
     texto: [
@@ -598,3 +598,91 @@ export const midia = [
     resumo: 'A unidade do ABC no guia de bares e restaurantes da Abrasel São Paulo.',
   },
 ];
+
+// Vagas por função e unidade (Maikon 10/11): uma página por função (/vagas/<funcao>/) e uma por função + unidade
+// (/vagas/<funcao>/<unidade>/), com JobPosting para o Google Vagas. Só funções que o grupo contrata sempre.
+// Para pausar uma vaga, tire a unidade da lista (ou o cargo inteiro): a página sai do site e do sitemap.
+// Unidades: zona-leste, pirituba, guarulhos, sao-bernardo-do-campo. marca: 'grupo' = qualquer cozinha da unidade.
+export const vagas = {
+  publicada: true,
+  desde: '2026-11-10',
+  cargos: [
+    {
+      slug: 'chapeiro-de-hamburgueria', nome: 'Chapeiro de hamburgueria', marca: 'Just Burger', funcao: 'Chapeiro',
+      unidades: ['zona-leste', 'pirituba', 'guarulhos', 'sao-bernardo-do-campo'],
+      resumo: 'O chapeiro é quem faz o coração do burger: a carne de 150 g no ponto certo, todos os dias, no ritmo do delivery.',
+      faz: ['Prepara e grelha os hambúrgueres de 150 g na chapa, no ponto pedido', 'Faz o smash (carne prensada na chapa, com crosta) e derrete os queijos', 'Segue a ficha técnica de cada lanche e o tempo de preparo', 'Mantém a chapa e a praça limpas e organizadas, com higiene e segurança dos alimentos'],
+      perfil: ['Experiência com chapa ou cozinha conta pontos; quem está começando e quer aprender também pode se candidatar', 'Agilidade e atenção nos horários de pico', 'Gostar de trabalhar em equipe e com padrão'],
+    },
+    {
+      slug: 'montador-de-lanches', nome: 'Montador de lanches', marca: 'Just Burger', funcao: 'Montador',
+      unidades: ['zona-leste', 'pirituba', 'guarulhos', 'sao-bernardo-do-campo'],
+      resumo: 'O montador monta cada lanche do jeito da Just: pão brioche, molhos, queijos e acompanhamentos no lugar certo, pronto para a embalagem.',
+      faz: ['Monta os lanches seguindo a ficha técnica e a foto de cada produto', 'Confere o pedido antes de fechar a embalagem', 'Organiza os insumos da praça de montagem', 'Trabalha junto com o chapeiro para o lanche sair quente e rápido'],
+      perfil: ['Atenção aos detalhes e capricho na apresentação', 'Agilidade nos horários de pico', 'Não precisa de experiência: a gente treina'],
+    },
+    {
+      slug: 'pizzaiolo', nome: 'Pizzaiolo', marca: 'Just Forneria', funcao: 'Pizzaiolo',
+      unidades: ['zona-leste', 'pirituba'],
+      resumo: 'Na Just Forneria a pizza é de massa napolitana de fermentação lenta, leve e bem feita. O pizzaiolo cuida dela do começo ao fim.',
+      faz: ['Abre a massa e monta as pizzas grandes (35 cm), broto, kids e doces', 'Controla o forno e o ponto de cada pizza', 'Segue as fichas técnicas dos sabores da casa', 'Mantém a bancada limpa e organizada'],
+      perfil: ['Experiência como pizzaiolo', 'Agilidade e cuidado com o padrão', 'Disponibilidade para o horário da noite e fins de semana'],
+    },
+    {
+      slug: 'ajudante-de-pizzaiolo', nome: 'Ajudante de pizzaiolo', marca: 'Just Forneria', funcao: 'Ajudante de pizzaiolo',
+      unidades: ['zona-leste', 'pirituba'],
+      resumo: 'O ajudante de pizzaiolo prepara tudo para a pizza sair rápida: insumos, massa porcionada e bancada pronta. É a porta de entrada para virar pizzaiolo.',
+      faz: ['Separa e porciona os ingredientes', 'Ajuda a abrir e montar as pizzas', 'Mantém a bancada e a cozinha limpas', 'Ajuda a embalar os pedidos'],
+      perfil: ['Vontade de aprender a profissão', 'Agilidade e organização', 'Não precisa de experiência: a gente treina'],
+    },
+    {
+      slug: 'esfiheiro', nome: 'Esfiheiro', marca: 'Just Esfiha', funcao: 'Esfiheiro',
+      unidades: ['zona-leste', 'pirituba'],
+      resumo: 'Na Just Esfiha saem esfihas salgadas e doces, das clássicas às especiais. O esfiheiro abre, recheia e assa cada uma no padrão da casa.',
+      faz: ['Abre a massa e recheia as esfihas salgadas e doces', 'Controla o forno e o ponto', 'Monta os combos de 10 a 50 unidades', 'Mantém a bancada limpa e organizada'],
+      perfil: ['Experiência com esfiha, pizza ou panificação conta pontos', 'Agilidade e capricho', 'Disponibilidade para o horário da noite e fins de semana'],
+    },
+    {
+      slug: 'sushiman', nome: 'Sushiman', marca: 'Just Sushi', funcao: 'Sushiman',
+      unidades: ['zona-leste'],
+      resumo: 'A Just Sushi faz combinados, hot rolls, temakis, joes trufados e sashimis de salmão, atum, peixe branco e polvo. O sushiman é quem dá o padrão de cada peça.',
+      faz: ['Prepara sushis, sashimis, uramakis, hot rolls, temakis e joes', 'Corta e porciona os peixes com cuidado e higiene', 'Monta os combinados Deguste e Gourmet', 'Orienta o auxiliar de sushiman na praça'],
+      perfil: ['Experiência como sushiman', 'Capricho no corte e na montagem', 'Disponibilidade para o horário da noite e fins de semana'],
+    },
+    {
+      slug: 'auxiliar-de-sushiman', nome: 'Auxiliar de sushiman', marca: 'Just Sushi', funcao: 'Auxiliar de sushiman',
+      unidades: ['zona-leste'],
+      resumo: 'O auxiliar de sushiman deixa a praça pronta e ajuda na montagem das peças. É o caminho para aprender a profissão com quem já faz.',
+      faz: ['Prepara o arroz e os insumos', 'Ajuda a montar hot rolls, temakis e combinados', 'Embala os pedidos', 'Mantém a praça limpa e organizada'],
+      perfil: ['Vontade de aprender culinária japonesa', 'Agilidade e organização', 'Não precisa de experiência: a gente treina'],
+    },
+    {
+      slug: 'cozinheiro', nome: 'Cozinheiro(a)', marca: 'Just Gourmet', funcao: 'Cozinheiro(a)',
+      unidades: ['zona-leste', 'pirituba'],
+      resumo: 'A Just Gourmet faz comida brasileira caprichada: Feijoada Especial Just, strogonoff, parmegiana, lagarto ao molho madeira, filé mignon, salmão e massas artesanais.',
+      faz: ['Prepara os pratos do cardápio seguindo as fichas técnicas', 'Cuida das bases: arroz, feijão, molhos e carnes', 'Monta os pratos para o delivery', 'Mantém a cozinha limpa e organizada'],
+      perfil: ['Experiência em cozinha de restaurante', 'Organização e cuidado com o padrão', 'Disponibilidade para o horário do almoço e da noite'],
+    },
+    {
+      slug: 'auxiliar-de-cozinha', nome: 'Auxiliar de cozinha', marca: 'grupo', funcao: 'Auxiliar de cozinha',
+      unidades: ['zona-leste', 'pirituba', 'guarulhos', 'sao-bernardo-do-campo'],
+      resumo: 'O auxiliar de cozinha ajuda a cozinha inteira a andar: pré-preparo, organização e limpeza. Muitos dos nossos líderes começaram aqui.',
+      faz: ['Faz o pré-preparo dos insumos (cortar, porcionar, separar)', 'Ajuda nas praças da cozinha nos horários de pico', 'Mantém a cozinha, os utensílios e o estoque organizados', 'Segue as regras de higiene e segurança dos alimentos'],
+      perfil: ['Não precisa de experiência: a gente treina', 'Organização e vontade de crescer', 'Gostar de trabalhar em equipe'],
+    },
+    {
+      slug: 'atendente', nome: 'Atendente', marca: 'grupo', funcao: 'Atendente',
+      unidades: ['zona-leste', 'pirituba', 'guarulhos', 'sao-bernardo-do-campo'],
+      resumo: 'O atendente cuida do pedido do começo ao fim: recebe, confere, acompanha no app e resolve o que for preciso para o cliente sair feliz.',
+      faz: ['Acompanha os pedidos no iFood e na Keeta', 'Confere os pedidos antes de sair para a entrega', 'Fala com o cliente pelo chat quando precisa', 'Mantém o balcão de retirada organizado'],
+      perfil: ['Boa comunicação e educação com o cliente', 'Atenção e organização', 'Saber usar celular e computador'],
+    },
+    {
+      slug: 'ajudante-de-despacho', nome: 'Ajudante de despacho', marca: 'grupo', funcao: 'Ajudante de despacho',
+      unidades: ['zona-leste', 'pirituba', 'guarulhos', 'sao-bernardo-do-campo'],
+      resumo: 'O despacho é a última etapa antes do pedido sair: o ajudante confere, embala, lacra e entrega ao entregador na hora certa.',
+      faz: ['Confere cada item do pedido antes de fechar', 'Embala e lacra os pedidos', 'Entrega o pedido ao entregador certo', 'Mantém a área de despacho organizada'],
+      perfil: ['Atenção aos detalhes', 'Agilidade nos horários de pico', 'Não precisa de experiência: a gente treina'],
+    },
+  ],
+};

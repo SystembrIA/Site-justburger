@@ -14,6 +14,11 @@
     cargos = cargos.filter(function (c, i) { return cargos.indexOf(c) === i; }).concat(F.gerais || []);
     funcao.innerHTML = opcoes(cargos);
   });
+  // Vindo de uma página de vaga (/vagas/...): já deixa empresa, unidade e vaga escolhidas.
+  try {
+    var q = new URLSearchParams(location.search), escolhe = function (sel, v) { if (!v) return; if (![].some.call(sel.options, function (o) { return o.value === v; })) sel.insertAdjacentHTML('beforeend', '<option>' + v.replace(/</g, '') + '</option>'); sel.value = v; };
+    if (q.get('marca')) { escolhe(marca, q.get('marca')); marca.dispatchEvent(new Event('change')); escolhe(unidade, q.get('unidade')); escolhe(funcao, q.get('vaga')); }
+  } catch (e) {}
   function ler(arq) {
     return new Promise(function (ok, erro) {
       if (!arq) return ok(null);

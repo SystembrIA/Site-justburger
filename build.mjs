@@ -6,7 +6,7 @@ import { createHash } from 'node:crypto';
 import { mkdirSync, writeFileSync, cpSync, rmSync, existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { site, diferenciais, lojas, cardapio as cardapioDados, perfis, faq, midia, culinarias } from './dados.mjs';
+import { site, diferenciais, lojas, cardapio as cardapioDados, perfis, faq, midia, culinarias, vagas } from './dados.mjs';
 import { receitaDe } from './proteina.mjs';
 
 const RAIZ = dirname(fileURLToPath(import.meta.url));
@@ -1539,7 +1539,8 @@ ${fotosTrabalhe.length ? `<section class="secao"><div class="largura"><h2 class=
   </div>
 </section>
 <script>window.JUST_UNIDADES = ${JSON.stringify(Object.fromEntries(opcoesMarca))}; window.JUST_FUNCOES = ${JSON.stringify({ porMarca: tb.funcoesPorMarca, gerais: tb.funcoesGerais })};</script>
-<script src="${base}assets/curriculo.js" defer></script>`,
+<script src="${base}assets/curriculo.js?v=${createHash('md5').update(readFileSync(join(RAIZ, 'assets/curriculo.js'))).digest('hex').slice(0, 8)}" defer></script>
+${blocoVagas(base)}`,
     md: () => `# Trabalhe conosco\n\n${tb.chamada}\n\n${tb.texto.join('\n\n')}\n\nEnvie seu currículo pelo formulário: ${abs('trabalhe-conosco/')}\n`,
   });
 }
@@ -1563,9 +1564,9 @@ if (site.equipe && site.equipe.publicada) paginas.push({
     ${site.equipe.texto.map((t) => `<p>${esc(t)}</p>`).join('')}
   </div>
 </section>
-${existsSync(join(RAIZ, 'assets/img/equipe-confraternizacao.webp')) ? `<section class="secao secao-confra">
+${existsSync(join(RAIZ, 'assets/img/confraternizacao-equipe-just-burger-hamburgueria.webp')) ? `<section class="secao secao-confra">
   <div class="largura">
-    <figure class="confra"><img src="${base}assets/img/equipe-confraternizacao.webp" width="1400" height="896" alt="Equipe do grupo Just Burger reunida na confraternização, à beira da piscina" loading="lazy" decoding="async"><figcaption>Confraternização da equipe: o time que faz a Just acontecer.</figcaption></figure>
+    <figure class="confra"><img src="${base}assets/img/confraternizacao-equipe-just-burger-hamburgueria.webp" width="1400" height="896" alt="Equipe do grupo Just Burger reunida na confraternização, à beira da piscina" loading="lazy" decoding="async"><figcaption>Confraternização da equipe: o time que faz a Just acontecer.</figcaption></figure>
   </div>
 </section>` : ''}
 ${fotosEquipe.length ? `<section class="secao">
@@ -1702,6 +1703,132 @@ cpSync(join(RAIZ, 'assets'), join(SAIDA, 'assets'), { recursive: true });
     bairros,
   };
   writeFileSync(join(SAIDA, 'assets', 'pedido-dados.js'), `window.JUST_PEDIDO = ${JSON.stringify(dados)};\n`);
+}
+
+// ---------- Vagas por função e unidade (Maikon 10/11) ----------
+// /vagas/ (índice), /vagas/<funcao>/ (a função e as unidades) e /vagas/<funcao>/<unidade>/ (vaga com JobPosting).
+// Cada página tem dados próprios da unidade (endereço, cozinhas, horário, bairros perto) para não ser texto repetido.
+const UNIDADES_VAGA = {
+  'zona-leste': { nome: 'Zona Leste', local: 'na Zona Leste (Penha)', titulo: 'Zona Leste (Penha)', burger: 'zona-leste-vila-buenos-aires', regiao: 'Zona Leste' },
+  pirituba: { nome: 'Pirituba', local: 'em Pirituba', titulo: 'Pirituba', burger: 'pirituba', regiao: 'Pirituba' },
+  guarulhos: { nome: 'Guarulhos', local: 'em Guarulhos', titulo: 'Guarulhos', burger: 'guarulhos', regiao: null },
+  'sao-bernardo-do-campo': { nome: 'São Bernardo do Campo', local: 'em São Bernardo do Campo', titulo: 'São Bernardo do Campo', burger: 'sao-bernardo-do-campo', regiao: null },
+};
+const lojaVaga = (u) => lojas.find((l) => l.slug === UNIDADES_VAGA[u].burger);
+// Cozinhas (marcas) que funcionam na unidade, com endereço e horário de cada uma.
+const cozinhasVaga = (u) => {
+  const U = UNIDADES_VAGA[u], l = lojaVaga(u);
+  return [{ marca: site.nome, tipo: 'Hamburgueria', endereco: l.endereco, bairro: l.bairro, cidade: l.cidade, cep: l.cep, horarios: l.horarios, unidadeForm: l.nome.replace(/^Just Burger\s*/, '') },
+    ...culinarias.flatMap((c) => (c.lojas || []).filter((x) => U.regiao && x.regiao === U.regiao).map((x) => ({ marca: c.nome, tipo: c.tipo, endereco: x.endereco || l.endereco, bairro: x.endereco === l.endereco ? l.bairro : '', cidade: 'São Paulo', cep: x.endereco === l.endereco ? l.cep : '', horarios: x.horarios || [], unidadeForm: x.regiao })))];
+};
+const cozinhasDoCargo = (c, u) => cozinhasVaga(u).filter((k) => c.marca === 'grupo' || k.marca === c.marca);
+const bairrosPerto = (u, n = 12) => bairros.filter((b) => b.loja === UNIDADES_VAGA[u].burger).sort((a, b) => a.distanciaKm - b.distanciaKm).slice(0, n)
+  .map((b) => (b.cidade && b.cidade !== lojaVaga(u).cidade ? `${b.nome} (${b.cidade})` : b.nome));
+const listaE = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')} e ${xs.at(-1)}` : xs[0] || '');
+const linkCurriculo = (base, c, u) => { const k = u ? cozinhasDoCargo(c, u)[0] : null; const q = new URLSearchParams({ marca: c.marca === 'grupo' ? site.nome : c.marca, ...(k ? { unidade: k.unidadeForm } : {}), vaga: c.funcao }); return `${base}trabalhe-conosco/?${q.toString().replace(/&/g, '&amp;')}#curriculo`; };
+const FOTOS_VAGA = existsSync(join(RAIZ, 'assets/img/trabalhe')) ? readdirSync(join(RAIZ, 'assets/img/trabalhe')).filter((f) => f.endsWith('.webp')).sort().map((f) => `trabalhe/${f}`) : [];
+const fotosVaga = (base, n) => (FOTOS_VAGA.length ? `<div class="grade-equipe vaga-fotos">${[0, 1, 2].map((k) => FOTOS_VAGA[(n + k) % FOTOS_VAGA.length]).map((f) => `<img src="${base}assets/img/${f}" width="800" height="1000" alt="Equipe do grupo Just Burger na cozinha" loading="lazy" decoding="async">`).join('')}</div>` : '');
+const cargosAbertos = vagas && vagas.publicada ? vagas.cargos.filter((c) => c.unidades.length) : [];
+const blocoVagas = (base) => (cargosAbertos.length ? `
+<section class="secao vagas-links">
+  <div class="largura estreita">
+    <details class="vagas-abrir"><summary>Vagas por função e unidade</summary>
+    <ul class="lista-vagas">${cargosAbertos.map((c) => `<li><a href="${base}vagas/${c.slug}/">${esc(c.nome)}</a><span>${c.unidades.map((u) => `<a href="${base}vagas/${c.slug}/${u}/">${esc(UNIDADES_VAGA[u].nome)}</a>`).join(' · ')}</span></li>`).join('')}</ul>
+    <p><a class="link" href="${base}vagas/">Ver todas as vagas →</a></p>
+    </details>
+  </div>
+</section>` : '');
+if (cargosAbertos.length) {
+  const fimValidade = new Date(Date.now() + 45 * 864e5).toISOString().slice(0, 10);
+  const listaHtml = (xs) => `<ul class="lista-vaga">${xs.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`;
+  paginas.push({
+    caminho: 'vagas/',
+    profundidade: 1,
+    titulo: `Vagas de emprego em hamburgueria, pizzaria e restaurante | ${site.nome}`,
+    descricao: `Vagas no grupo Just Burger: chapeiro, montador, pizzaiolo, sushiman, cozinheiro, auxiliar de cozinha, atendente e despacho na Zona Leste, Pirituba, Guarulhos e São Bernardo.`,
+    schema: [schemaBreadcrumb([['Início', ''], ['Trabalhe conosco', 'trabalhe-conosco/'], ['Vagas', 'vagas/']])],
+    corpo: (base) => `
+<section class="secao">
+  <div class="largura estreita">
+    ${migalhas(base, [['Início', ''], ['Trabalhe conosco', 'trabalhe-conosco/'], ['Vagas', 'vagas/']])}
+    <h1>Vagas no grupo Just Burger</h1>
+    <p class="lead">Estamos sempre contratando para as nossas cozinhas: hamburgueria, comida brasileira, pizzaria, esfiharia e sushi. Escolha a função e a unidade mais perto de você.</p>
+    <ul class="lista-vagas">${cargosAbertos.map((c) => `<li><a href="${base}vagas/${c.slug}/">${esc(c.nome)}</a><span>${c.unidades.map((u) => `<a href="${base}vagas/${c.slug}/${u}/">${esc(UNIDADES_VAGA[u].nome)}</a>`).join(' · ')}</span></li>`).join('')}</ul>
+    <p><a class="botao" href="${base}trabalhe-conosco/#curriculo">Enviar currículo</a></p>
+  </div>
+</section>
+<section class="secao"><div class="largura">${fotosVaga(base, 0)}</div></section>`,
+    md: () => `# Vagas no grupo Just Burger\n\n${cargosAbertos.map((c) => `- ${c.nome}: ${c.unidades.map((u) => `${UNIDADES_VAGA[u].nome} (${abs(`vagas/${c.slug}/${u}/`)})`).join(', ')}`).join('\n')}\n\nEnvie seu currículo: ${abs('trabalhe-conosco/')}\n`,
+  });
+  cargosAbertos.forEach((c, ic) => {
+    const trilha = [['Início', ''], ['Trabalhe conosco', 'trabalhe-conosco/'], ['Vagas', 'vagas/'], [c.nome, `vagas/${c.slug}/`]];
+    const ondeMarca = c.marca === 'grupo' ? 'nas cozinhas do grupo Just Burger' : `na ${c.marca}`;
+    paginas.push({
+      caminho: `vagas/${c.slug}/`,
+      profundidade: 2,
+      titulo: `Vagas para ${c.nome.toLowerCase()} | ${site.nome}`,
+      descricao: `Vagas para ${c.nome.toLowerCase()} ${ondeMarca}: ${c.unidades.map((u) => UNIDADES_VAGA[u].nome).join(', ')}. ${c.resumo}`.slice(0, 300),
+      schema: [schemaBreadcrumb(trilha)],
+      corpo: (base) => `
+<section class="secao">
+  <div class="largura estreita">
+    ${migalhas(base, trilha)}
+    <h1>Vagas para ${esc(c.nome.toLowerCase())}</h1>
+    <p class="lead">${esc(c.resumo)}</p>
+    <h2>Escolha a unidade</h2>
+    <ul class="lista-vagas">${c.unidades.map((u) => `<li><a href="${base}vagas/${c.slug}/${u}/">Vagas para ${esc(c.nome.toLowerCase())} ${esc(UNIDADES_VAGA[u].local)}</a><span>${esc(listaE(cozinhasDoCargo(c, u).map((k) => k.marca)))} · perto de ${esc(listaE(bairrosPerto(u, 4)))}</span></li>`).join('')}</ul>
+    <h2>O que faz</h2>${listaHtml(c.faz)}
+    <h2>Quem a gente procura</h2>${listaHtml(c.perfil)}
+    <p><a class="botao" href="${linkCurriculo(base, c)}">Enviar currículo</a></p>
+  </div>
+</section>
+<section class="secao"><div class="largura">${fotosVaga(base, ic)}</div></section>`,
+      md: () => `# Vagas para ${c.nome.toLowerCase()}\n\n${c.resumo}\n\n${c.unidades.map((u) => `- ${UNIDADES_VAGA[u].titulo}: ${abs(`vagas/${c.slug}/${u}/`)}`).join('\n')}\n`,
+    });
+    c.unidades.forEach((u, iu) => {
+      const U = UNIDADES_VAGA[u], ks = cozinhasDoCargo(c, u), perto = bairrosPerto(u);
+      const caminho = `vagas/${c.slug}/${u}/`;
+      const tr = [...trilha, [U.titulo, caminho]];
+      const titulo = `Vaga de ${c.nome.toLowerCase()} ${U.local}`;
+      const desc = `<p>${esc(c.resumo)}</p><p>O que faz:</p><ul>${c.faz.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><p>Quem a gente procura:</p><ul>${c.perfil.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><p>Local: ${esc(ks.map((k) => `${k.marca}, ${k.endereco}${k.bairro ? `, ${k.bairro}` : ''}, ${k.cidade}`).join('; '))}.</p>`;
+      const vaga = {
+        '@type': 'JobPosting', '@id': abs(`${caminho}#vaga`), title: `${c.nome} – ${U.titulo}`, description: desc, datePosted: vagas.desde, validThrough: `${fimValidade}T23:59`,
+        hiringOrganization: { '@type': 'Organization', name: c.marca === 'grupo' ? site.nome : c.marca, sameAs: site.url, logo: abs('assets/img/logo-640.webp') },
+        jobLocation: ks.map((k) => ({ '@type': 'Place', address: { '@type': 'PostalAddress', streetAddress: k.endereco, ...(k.bairro ? { addressLocality: k.cidade } : { addressLocality: k.cidade }), addressRegion: 'SP', ...(k.cep ? { postalCode: k.cep } : {}), addressCountry: 'BR' } })),
+        directApply: true, url: abs(caminho),
+      };
+      const outrasUnid = c.unidades.filter((x) => x !== u);
+      const outrosCargos = cargosAbertos.filter((o) => o !== c && o.unidades.includes(u)).slice(0, 8);
+      paginas.push({
+        caminho,
+        profundidade: 3,
+        titulo: `${titulo} | ${site.nome}`,
+        descricao: `${titulo}: ${ks.map((k) => `${k.marca}, ${k.endereco}`).join('; ')}. Perto de ${listaE(perto.slice(0, 4))}. Envie seu currículo pelo site.`.slice(0, 300),
+        schema: [vaga, schemaBreadcrumb(tr)],
+        corpo: (base) => `
+<section class="secao">
+  <div class="largura estreita">
+    ${migalhas(base, tr)}
+    <h1>Vagas para ${esc(c.nome.toLowerCase())} ${esc(U.local)}</h1>
+    <p class="lead">${esc(c.resumo)}</p>
+    <p><a class="botao" href="${linkCurriculo(base, c, u)}">Enviar currículo para esta vaga</a></p>
+    <h2>Onde é o trabalho</h2>
+    ${ks.map((k) => `<p><strong>${esc(k.marca)}</strong> (${esc(k.tipo.toLowerCase())}): ${esc(k.endereco)}${k.bairro ? `, ${esc(k.bairro)}` : ''}, ${esc(k.cidade)}.${k.horarios.length ? ` Funciona ${esc(k.horarios.map(textoHorarioCurto).join('; ').toLowerCase())}.` : ''}</p>`).join('')}
+    ${perto.length ? `<p>Fica perto de quem mora em ${esc(listaE(perto))}.</p>` : ''}
+    <h2>O que faz</h2>${listaHtml(c.faz)}
+    <h2>Quem a gente procura</h2>${listaHtml(c.perfil)}
+    <h2>Por que trabalhar com a gente</h2>
+    <p>O grupo Just Burger nasceu em 2018 e hoje tem mais de 150 pessoas nas cozinhas de São Paulo, Guarulhos e São Bernardo. Temos colaboradores com mais de 8 anos de casa, e muitos começaram na cozinha e hoje lideram equipes. Você aprende com gente experiente e recebe treinamento.</p>
+    <p><a class="botao" href="${linkCurriculo(base, c, u)}">Enviar currículo</a></p>
+    ${outrasUnid.length ? `<h2>Mesma vaga em outras unidades</h2><ul class="lista-vagas">${outrasUnid.map((x) => `<li><a href="${base}vagas/${c.slug}/${x}/">${esc(c.nome)} ${esc(UNIDADES_VAGA[x].local)}</a></li>`).join('')}</ul>` : ''}
+    ${outrosCargos.length ? `<h2>Outras vagas ${esc(U.local)}</h2><ul class="lista-vagas">${outrosCargos.map((o) => `<li><a href="${base}vagas/${o.slug}/${u}/">${esc(o.nome)}</a></li>`).join('')}</ul>` : ''}
+  </div>
+</section>
+<section class="secao"><div class="largura">${fotosVaga(base, ic + iu)}</div></section>`,
+        md: () => `# ${titulo}\n\n${c.resumo}\n\nOnde: ${ks.map((k) => `${k.marca}, ${k.endereco}${k.bairro ? `, ${k.bairro}` : ''}, ${k.cidade}`).join('; ')}\n\nPerto de: ${listaE(perto)}\n\nO que faz:\n${c.faz.map((x) => `- ${x}`).join('\n')}\n\nQuem a gente procura:\n${c.perfil.map((x) => `- ${x}`).join('\n')}\n\nEnvie seu currículo: ${abs('trabalhe-conosco/')}\n`,
+      });
+    });
+  });
 }
 
 for (const p of paginas) {
