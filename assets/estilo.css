@@ -59,7 +59,7 @@ h3 { font-size: 1.5rem; line-height: 1.05; font-stretch: 80%; font-weight: 800; 
 .topo-linha { display: flex; align-items: center; gap: 18px; min-height: 76px; }
 .marca img { width: 64px; }
 .menu { margin-left: auto; }
-.menu ul { display: flex; flex-wrap: nowrap; gap: 14px; list-style: none; margin: 0; padding: 0; }
+.menu ul { display: flex; flex-wrap: nowrap; gap: 13px; list-style: none; margin: 0; padding: 0; }
 .menu li { white-space: nowrap; }
 .largura.topo-linha { width: min(1320px, 100% - 40px); }
 .topo-linha > .marca, .topo-linha > .lema, .botao-topo { flex: none; white-space: nowrap; }
@@ -553,14 +553,14 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 
 /* ---------- Lema "Ore, espere, confie" (fixo no topo e no rodapé) ---------- */
 .lema { font-family: 'Dancing Script', cursive; font-weight: 700; color: #fff; font-size: 1.35rem; line-height: 1; white-space: nowrap; }
-.topo-linha > .lema:not(.lema-menu) { margin-left: -14px; }
+.topo-linha > .lema:not(.lema-menu) { margin-left: -6px; }
 .lema-menu { margin-left: auto; }
 .lema-menu ~ .menu-celular { margin-left: 4px; }
 @media (min-width: 900px) { .menu + .lema-menu { margin-left: 0; } }
 .rodape-logo-lema { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; max-width: 100% !important; margin: 0 0 16px; } /* a frase desce para baixo do logo quando não cabe (não invade a coluna ao lado) */
 .rodape-logo-lema img { margin-bottom: 0 !important; }
 .rodape-logo-lema .lema { font-size: 1.6rem; }
-@media (max-width: 899px) { .lema { font-size: 1.15rem; } .topo-linha > .lema:not(.lema-menu) { margin-left: -16px; } }
+@media (max-width: 899px) { .lema { font-size: 1.15rem; } .topo-linha > .lema:not(.lema-menu) { margin-left: -8px; } }
 
 /* ---------- Nossa equipe ---------- */
 .grade-equipe { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
