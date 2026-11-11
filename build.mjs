@@ -2130,6 +2130,9 @@ ${midiaOrdenada.map((m) => `- [${m.titulo}](${m.url}) — ${m.veiculo}${m.data ?
 - [Conteúdo completo em um arquivo](${abs('llms-full.txt')})
 `;
 writeFileSync(join(SAIDA, 'llms.txt'), llms);
+// IndexNow (Bing, que alimenta o ChatGPT, e outros buscadores): chave pública na raiz; o workflow avisa as páginas novas.
+const INDEXNOW = '391da1ef68624950f4886cb22a3fc978';
+writeFileSync(join(SAIDA, `${INDEXNOW}.txt`), INDEXNOW);
 writeFileSync(join(SAIDA, 'llms-full.txt'), paginas.map((p) => `<!-- ${abs(p.caminho)} -->\n${p.md()}`).join('\n---\n\n'));
 
 // dados.json: o mesmo conteúdo em formato de dados para agentes (ex.: "qual unidade entrega no meu bairro?").
