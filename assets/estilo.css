@@ -696,3 +696,29 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .vagas-abrir[open] > summary { border-bottom: 0; }
 .vagas-tipos { margin: 0 0 14px; line-height: 2; }
 .vagas-tipos a { font-weight: 800; color: var(--laranja); text-decoration: none; }
+
+/* Avaliações do iFood (home, unidades, culinárias, /avaliacoes/) */
+.aval-geral { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin: 0 0 18px; font-size: 1.05rem; }
+.aval-geral-nota { font-size: 2.6rem; font-weight: 900; font-stretch: 75%; line-height: 1; }
+.aval-lojas { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; list-style: none; margin: 0 0 22px; padding: 0; }
+.aval-lojas li > a, .aval-lojas li > span { display: flex; align-items: center; gap: 12px; height: 100%; padding: 12px 14px; border: 1px solid var(--linha); border-radius: 14px; text-decoration: none; color: inherit; }
+.aval-lojas li > a:hover { border-color: var(--laranja); }
+.aval-lojas img { width: 40px; height: 40px; flex: none; object-fit: contain; border-radius: 10px; background: #000; }
+.aval-lojas strong { display: block; font-size: .95rem; line-height: 1.2; }
+.aval-linha { display: block; margin-top: 2px; }
+.aval-lojas li > a > span, .aval-lojas li > span { min-width: 0; }
+.aval-lojas-poucas li > span { display: block; }
+.aval-nota { font-weight: 900; }
+.aval-qtd { color: var(--suave); font-size: .88rem; }
+.aval-lojas-poucas { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.grade-aval { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.aval { margin: 0; padding: 16px 18px; border: 1px solid var(--linha); border-radius: 14px; }
+.aval-estrelas { margin: 0 0 6px; color: #f5b301; letter-spacing: .1em; }
+.aval-texto { margin: 0 0 10px; font-size: 1rem; }
+.aval footer { color: var(--suave); font-size: .8rem; }
+.aval-mais { margin-top: 12px; }
+.aval-mais > summary { display: inline-block; margin-bottom: 12px; padding: 10px 18px; border: 1px solid var(--linha); border-radius: 999px; font-weight: 800; cursor: pointer; list-style: none; }
+.aval-mais > summary::-webkit-details-marker { display: none; }
+.aval-mais > summary:hover { border-color: var(--laranja); }
+.aval-fonte { margin-top: 14px; font-size: .82rem; }
+.aval-secao-loja { padding-top: 12px; }

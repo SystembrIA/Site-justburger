@@ -132,6 +132,17 @@ const cardapio = semRefri(doIfood ? cardapioDoIfood(doIfood) : cardapioDados);
 // Bairros dentro do raio de entrega (bairros.json, gerado a partir do OpenStreetMap e do GeoSampa).
 const ARQ_BAIRROS = join(RAIZ, 'bairros.json');
 const geo = existsSync(ARQ_BAIRROS) ? JSON.parse(readFileSync(ARQ_BAIRROS, 'utf8')) : null;
+// Avaliações do iFood das 11 lojas (JSON diário do JARVIS/robô do Hub): entram no HTML na hora de gerar o site,
+// para o Google e as IAs lerem. Sem rede, usa a última cópia (avaliacoes-ifood.json).
+const ARQ_AVAL = join(RAIZ, 'avaliacoes-ifood.json');
+let AVAL = null;
+try {
+  const r = await fetch(site.avaliacoes.url, { signal: AbortSignal.timeout(15000) });
+  if (r.ok) { const j = await r.json(); if (j && j.geral && Array.isArray(j.lojas) && j.lojas.length) { AVAL = j; writeFileSync(ARQ_AVAL, JSON.stringify(j, null, 1)); } }
+} catch {}
+if (!AVAL && existsSync(ARQ_AVAL)) AVAL = JSON.parse(readFileSync(ARQ_AVAL, 'utf8'));
+const avalLoja = (nome) => (AVAL ? AVAL.lojas.find((x) => x.loja === nome) : null);
+const milBR = (n) => Number(n).toLocaleString('pt-BR');
 const bairros = geo ? geo.bairros : [];
 const bairroPorSlug = new Map(bairros.map((b) => [b.slug, b]));
 const bairrosDaLoja = (l) => bairros.filter((b) => b.loja === l.slug);
@@ -505,7 +516,7 @@ const blocoContador = () => {
     <div class="placar-linha">${placarHtml(c.basePedidos, c.rotuloPedidos)}<p class="numero-rotulo">${esc(c.rotuloPedidos)}</p></div>
     <div class="placar-linha">${placarHtml(c.basePedidos * c.lanchesPorPedido, c.rotuloLanches)}<p class="numero-rotulo">${esc(c.rotuloLanches)}</p></div>
     <div class="numeros-extra">
-      ${n ? `<p><span class="numero"><span data-geral-nota>${nota1(n)}</span><span class="estrela" aria-hidden="true">★</span></span><span class="numero-rotulo">no iFood</span></p>${site.avaliacoes.avaliacoesInformadas ? `<p class="numeros-avaliacoes" data-geral-texto>mais de ${Math.floor(site.avaliacoes.avaliacoesInformadas / 1000)} mil avaliações em todas as lojas</p>` : ''}` : ''}
+      ${n ? `<p><span class="numero"><span data-geral-nota>${nota1(AVAL ? AVAL.geral.nota : n)}</span><span class="estrela" aria-hidden="true">★</span></span><span class="numero-rotulo">no iFood</span></p>${AVAL ? `<p class="numeros-avaliacoes" data-geral-texto>${milBR(AVAL.geral.avaliacoes)} avaliações no iFood</p>` : site.avaliacoes.avaliacoesInformadas ? `<p class="numeros-avaliacoes" data-geral-texto>mais de ${Math.floor(site.avaliacoes.avaliacoesInformadas / 1000)} mil avaliações em todas as lojas</p>` : ''}` : ''}
       <p><span class="numero">${lojas.length}</span><span class="numero-rotulo">unidades na Grande São Paulo</span></p>
     </div>
   </div>
@@ -655,6 +666,43 @@ const blocoAvaliacoes = () => `
   }).catch(function () {});
 })();
 </script>`;
+
+// Avaliações à vista (Maikon 11/11): nota e quantidade por loja e comentários de nota 5 (só o texto, sem nome).
+const dataBR = (d) => (d ? `${d.slice(8, 10)}/${d.slice(5, 7)}/${d.slice(0, 4)}` : '');
+const lojasAval = () => (AVAL ? AVAL.lojas.map((a) => {
+  const l = lojas.find((x) => x.nome === a.loja);
+  const c = culinarias.find((x) => x.nome === a.marca);
+  return { ...a, pagina: l ? `unidades/${l.slug}/` : c ? `culinarias/${c.slug}/` : 'unidades/', logo: c ? logoMarca(c) : 'assets/img/logo-320.webp' };
+}) : []);
+const cartaoComentario = (c, loja) => `<blockquote class="aval"><p class="aval-estrelas" aria-label="Nota ${c.nota} de 5">${'★'.repeat(c.nota || 5)}</p><p class="aval-texto">${esc(c.texto)}</p><footer>Cliente da ${esc(loja)}${c.data ? ` · ${dataBR(c.data)}` : ''} · iFood</footer></blockquote>`;
+// Comentários misturando as lojas (um de cada por vez), do mais novo para o mais antigo dentro de cada loja.
+const comentariosMisturados = (ls) => { const filas = ls.map((a) => (a.comentarios || []).map((c) => [c, a.loja])); const out = []; for (let i = 0; filas.some((f) => f[i]); i++) filas.forEach((f) => f[i] && out.push(f[i])); return out; };
+const blocoComentarios = (lista, visiveis) => (lista.length ? `<div class="grade-aval">${lista.slice(0, visiveis).map(([c, l]) => cartaoComentario(c, l)).join('')}</div>${lista.length > visiveis ? `<details class="aval-mais"><summary>Ver mais ${lista.length - visiveis} avaliações</summary><div class="grade-aval">${lista.slice(visiveis).map(([c, l]) => cartaoComentario(c, l)).join('')}</div></details>` : ''}` : '');
+const resumoLojaAval = (a) => `<span class="aval-linha"><span class="aval-nota">${nota1(a.nota)} <span class="estrela-dourada" aria-hidden="true">★</span></span> <span class="aval-qtd">· ${milBR(a.avaliacoes)} avaliações</span></span>`;
+const secaoAvaliacoesHome = (base) => (AVAL ? `
+<section class="secao" id="avaliacoes" aria-labelledby="aval-titulo">
+  <div class="largura">
+    <div class="titulo-secao"><h2 id="aval-titulo">Quem pede, avalia</h2><a class="link" href="${base}avaliacoes/">Todas as avaliações</a></div>
+    <p class="aval-geral"><span class="aval-geral-nota">${nota1(AVAL.geral.nota)} <span class="estrela-dourada" aria-hidden="true">★</span></span> <span>${milBR(AVAL.geral.avaliacoes)} avaliações no iFood nas ${AVAL.lojas.length} lojas do grupo</span></p>
+    <ul class="aval-lojas">${lojasAval().map((a) => `<li><a href="${base}${a.pagina}">${a.logo ? `<img src="${base}${a.logo}" width="40" height="40" alt="" loading="lazy">` : ''}<span><strong>${esc(a.loja)}</strong>${resumoLojaAval(a)}</span></a></li>`).join('')}</ul>
+    ${blocoComentarios(comentariosMisturados(AVAL.lojas).slice(0, 30), 6)}
+    <p class="suave aval-fonte">Notas e comentários do iFood, atualizados todo dia (${dataBR(AVAL.atualizadoEm)}).</p>
+  </div>
+</section>` : '');
+const secaoAvaliacoesLoja = (nomes) => {
+  const ls = nomes.map(avalLoja).filter(Boolean); if (!ls.length) return '';
+  return `
+<section class="secao" aria-label="Avaliações">
+  <div class="largura">
+    <h2>Avaliações no iFood</h2>
+    <ul class="aval-lojas aval-lojas-poucas">${ls.map((a) => `<li><span><strong>${esc(a.loja)}</strong>${resumoLojaAval(a)}</span></li>`).join('')}</ul>
+    ${blocoComentarios(comentariosMisturados(ls), 3)}
+    <p class="suave aval-fonte">Comentários de clientes no iFood (${dataBR(AVAL.atualizadoEm)}).</p>
+  </div>
+</section>`;
+};
+// Frase da nota para as perguntas frequentes: com a quantidade de avaliações da loja quando houver.
+const fraseNota = (nome, superIfood) => { const a = avalLoja(nome); return a ? `Sim: nota ${nota1(a.nota)} no iFood, com ${milBR(a.avaliacoes)} avaliações${superIfood ? ' e o selo Super Restaurante (nível 5 de 5 do iFood)' : ''}.` : null; };
 
 // Outras marcas do grupo (dados.mjs → culinarias). Logo em assets/img/marcas/<slug>.webp quando houver;
 // sem logo, o nome escrito. Página de cada marca: em breve (material da diretoria).
@@ -978,6 +1026,7 @@ ${site.contador ? blocoContador() : ''}
     <div class="grade-produtos">${maisPedidos().map((i) => cartaoProduto(i, base)).join('')}</div>
   </div>
 </section>
+${secaoAvaliacoesHome(base)}
 
 <section class="secao secao-clara">
   <div class="largura">
@@ -1255,7 +1304,7 @@ for (const l of lojas) {
     { p: `Qual o horário da Just Burger ${termo}?`, r: l.horarios.map(textoHorario).join('; ') + '.' },
     { p: `A Just Burger ${termo} entrega em quais bairros?`, r: `Entregamos pelo iFood em ${juntar(l.bairrosAtendidos)} e região. Confirme digitando seu endereço no iFood.` },
     { p: `A Just Burger ${termo} faz delivery?`, r: `Sim. A Just nasceu no delivery: você pede pelo iFood${l.keeta ? ' ou pela Keeta' : ''} e recebe o hambúrguer artesanal (carne de 150 g no pão brioche) em casa (${l.horarios.map(textoHorarioCurto).join('; ').toLowerCase()}).` },
-    ...(site.avaliacoes && site.avaliacoes.notaInformada ? [{ p: `A Just Burger ${termo} é bem avaliada?`, r: `Sim: nota ${nota1(site.avaliacoes.notaInformada)} no iFood${l.superIfood ? ', com o selo Super Restaurante (nível 5 de 5 do iFood)' : ''}. As lojas Just Burger somam mais de ${Math.floor((site.avaliacoes.avaliacoesInformadas || 0) / 1000)} mil avaliações no iFood.` }] : []),
+    ...(site.avaliacoes && site.avaliacoes.notaInformada ? [{ p: `A Just Burger ${termo} é bem avaliada?`, r: fraseNota(l.nome, l.superIfood) || `Sim: nota ${nota1(site.avaliacoes.notaInformada)} no iFood${l.superIfood ? ', com o selo Super Restaurante (nível 5 de 5 do iFood)' : ''}.` }] : []),
   ];
   paginas.push({
     caminho,
@@ -1291,6 +1340,7 @@ for (const l of lojas) {
     </article>
   </div>
 </section>
+${secaoAvaliacoesLoja([l.nome])}
 <section class="secao">
   <div class="largura">
     <h2>O que pedir</h2>
@@ -1547,6 +1597,33 @@ ${blocoVagas(base)}`,
   });
 }
 
+// Todas as avaliações (Maikon 11/11): resumo de cada loja e os comentários de nota 5 do iFood.
+if (AVAL) paginas.push({
+  caminho: 'avaliacoes/',
+  profundidade: 1,
+  titulo: `Avaliações da Just Burger e do grupo no iFood | ${milBR(AVAL.geral.avaliacoes)} avaliações`,
+  descricao: `Nota ${nota1(AVAL.geral.nota)} no iFood com ${milBR(AVAL.geral.avaliacoes)} avaliações nas ${AVAL.lojas.length} lojas do grupo Just Burger: Just Burger, Just Gourmet, Just Forneria, Just Esfiha e Just Sushi.`,
+  schema: [schemaBreadcrumb([['Início', ''], ['Avaliações', 'avaliacoes/']])],
+  corpo: (base) => `
+<section class="secao">
+  <div class="largura">
+    ${migalhas(base, [['Início', ''], ['Avaliações', 'avaliacoes/']])}
+    <h1>Avaliações</h1>
+    <p class="aval-geral"><span class="aval-geral-nota">${nota1(AVAL.geral.nota)} <span class="estrela-dourada" aria-hidden="true">★</span></span> <span>${milBR(AVAL.geral.avaliacoes)} avaliações no iFood nas ${AVAL.lojas.length} lojas do grupo</span></p>
+    <ul class="aval-lojas">${lojasAval().map((a) => `<li><a href="${base}${a.pagina}">${a.logo ? `<img src="${base}${a.logo}" width="40" height="40" alt="" loading="lazy">` : ''}<span><strong>${esc(a.loja)}</strong>${resumoLojaAval(a)}</span></a></li>`).join('')}</ul>
+  </div>
+</section>
+${lojasAval().map((a) => `<section class="secao aval-secao-loja" id="${slug(a.loja)}">
+  <div class="largura">
+    <h2>${esc(a.loja)}</h2>
+    <p>${resumoLojaAval(a)}</p>
+    ${blocoComentarios((a.comentarios || []).map((c) => [c, a.loja]), 4)}
+  </div>
+</section>`).join('\n')}
+<section class="secao"><div class="largura"><p class="suave aval-fonte">Notas e comentários do iFood, atualizados todo dia (${dataBR(AVAL.atualizadoEm)}). Mostramos só o texto do comentário, sem o nome do cliente.</p></div></section>`,
+  md: () => `# Avaliações do grupo Just Burger no iFood\n\nNota ${nota1(AVAL.geral.nota)} com ${milBR(AVAL.geral.avaliacoes)} avaliações (atualizado em ${dataBR(AVAL.atualizadoEm)}).\n\n${AVAL.lojas.map((a) => `## ${a.loja}\n\nNota ${nota1(a.nota)} · ${milBR(a.avaliacoes)} avaliações\n\n${(a.comentarios || []).map((c) => `- "${c.texto}" (${dataBR(c.data)})`).join('\n')}`).join('\n\n')}\n`,
+});
+
 // Nossa equipe (Maikon 01/11): texto em dados.mjs (site.equipe) e fotos em assets/img/equipe/*.webp.
 // Só entra no site e no menu quando site.equipe.publicada = true (texto aprovado pela diretoria).
 const PASTA_EQUIPE = join(RAIZ, 'assets/img/equipe');
@@ -1650,16 +1727,30 @@ paginas.push({
 </section>`,
   md: () => `# Nossas culinárias\n\n${culinarias.map((c) => `- ${c.nome}: ${c.tipo}`).join('\n')}\n`,
 });
+const CATEGORIA_SEO = { 'Comida brasileira': 'Comida brasileira delivery', Pizza: 'Pizzaria delivery', Sushi: 'Sushi delivery', Esfiha: 'Esfiharia delivery' };
 for (const c of culinarias) {
   const trilha = [['Início', ''], ['Culinárias', 'culinarias/'], [c.nome, `culinarias/${c.slug}/`]];
   const outras = culinarias.filter((o) => o !== c);
+  const regioes = (c.lojas || []).map((x) => x.regiao);
+  const ondeTxt = regioes.map((r, i) => `${r === 'Zona Leste' ? 'na' : 'em'} ${r}`).join(' e ');
+  const faqMarca = [
+    { p: `A ${c.nome} faz delivery?`, r: `Sim. A ${c.nome} é do grupo Just Burger e entrega ${ondeTxt}${(c.lojas || []).some((x) => x.ifood) ? ' pelo iFood' : ''}${(c.lojas || []).some((x) => x.keeta) ? ' e pela Keeta' : ''}.${(c.lojas || []).filter((x) => !x.ifood).map((x) => ` A unidade de ${x.regiao} entrega só pela Keeta.`).join('')}` },
+    { p: `Onde fica a ${c.nome}?`, r: (c.lojas || []).map((x) => `${x.regiao}: ${x.endereco || 'endereço no app'}${x.endereco ? ', São Paulo' : ''}`).join('; ') + '.' },
+    ...(c.lojas || []).map((x) => { const r = fraseNota(`${c.nome} ${x.regiao}`, x.superIfood); return r ? { p: `A ${c.nome} ${x.regiao} é bem avaliada?`, r } : null; }).filter(Boolean),
+  ];
+  const schemaMarca = (c.lojas || []).filter((x) => x.endereco).map((x) => ({
+    '@type': 'Restaurant', '@id': abs(`culinarias/${c.slug}/#${slug(x.regiao)}`), name: `${c.nome} ${x.regiao}`, servesCuisine: c.tipo,
+    url: abs(`culinarias/${c.slug}/`), hasMenu: abs(`cardapio/${c.slug}/`), parentOrganization: { '@type': 'Organization', name: site.nome, url: abs('') },
+    address: { '@type': 'PostalAddress', streetAddress: x.endereco, addressLocality: 'São Paulo', addressRegion: 'SP', addressCountry: 'BR' },
+    ...(x.horarios ? { openingHours: x.horarios.map((h) => `${h.dias.join(',')} ${h.abre}-${h.fecha}`) } : {}),
+  }));
   paginas.push({
     caminho: `culinarias/${c.slug}/`,
     profundidade: 2,
-    titulo: `${c.nome} | ${c.tipo} do grupo Just Burger: unidades e pedido`,
+    titulo: `${c.nome} | ${CATEGORIA_SEO[c.tipo] || c.tipo} ${ondeTxt}`,
     descricao: c.meta || `${c.nome}: ${c.tipo.toLowerCase()} do grupo Just Burger. Endereço, horário e pedido pelo iFood ou pela Keeta.`,
     noindex: !c.conteudo,
-    schema: [schemaBreadcrumb(trilha)],
+    schema: [...schemaMarca, schemaFaq(faqMarca), schemaBreadcrumb(trilha)],
     corpo: (base) => `
 <section class="secao">
   <div class="largura">
@@ -1668,6 +1759,13 @@ for (const c of culinarias) {
     <h2 class="so-leitor">Onde pedir</h2>
     <div class="marca-destaque lojas-centro">${cartaoMarca(c, base)}</div>
     ${c.conteudo ? `<div class="largura estreita marca-sobre"><h2>Sobre a ${esc(c.nome)}</h2>${c.conteudo.map((t) => `<p>${esc(t)}</p>`).join('')}<p><a class="botao" href="${base}cardapio/${c.slug}/">Ver o cardápio da ${esc(c.nome)}</a></p></div>` : ''}
+  </div>
+</section>
+${secaoAvaliacoesLoja((c.lojas || []).map((x) => `${c.nome} ${x.regiao}`))}
+<section class="secao">
+  <div class="largura estreita">
+    <h2>Perguntas sobre a ${esc(c.nome)}</h2>
+    ${blocoFaq(faqMarca)}
   </div>
 </section>
 <section class="secao">
@@ -2106,10 +2204,10 @@ writeFileSync(
 // llms.txt (padrão llmstxt.org): resumo + mapa do site em Markdown para assistentes de IA.
 const llms = `# ${site.nome}
 
-> ${site.descricaoCurta}. Especialidade: hambúrguer de 150 g no pão brioche com Molho Just; mais vendidos Top Smash, Just House e Dolce Gabana. Pedidos somente pelo iFood, na loja "${site.nomeIfood}" da unidade mais próxima.
+> ${site.descricaoCurta}. Especialidade: hambúrguer de 150 g no pão brioche com Molho Just; mais vendidos Top Smash, Just House e Dolce Gabana. Pedidos pelo iFood (loja "${site.nomeIfood}") e pela Keeta, na unidade mais próxima.
 
 Fatos principais:
-${site.avaliacoes && site.avaliacoes.notaInformada ? `- Nota ${nota1(site.avaliacoes.notaInformada)} no iFood nas quatro lojas.\n` : ''}${site.contador ? `- Mais de ${fmtInt(site.contador.basePedidos)} pedidos e ${fmtInt(site.contador.basePedidos * site.contador.lanchesPorPedido)} itens vendidos desde a abertura (total ao vivo na home).\n` : ''}- Quatro unidades: ${juntar(lojas.map((l) => `${l.bairro} (${l.cidade}, ${l.regiao})`))}.
+${AVAL ? `- Nota ${nota1(AVAL.geral.nota)} no iFood com ${milBR(AVAL.geral.avaliacoes)} avaliações nas ${AVAL.lojas.length} lojas do grupo (${dataBR(AVAL.atualizadoEm)}): ${AVAL.lojas.map((a) => `${a.loja} ${nota1(a.nota)} (${milBR(a.avaliacoes)})`).join('; ')}. Detalhes: ${abs('avaliacoes/')}\n` : site.avaliacoes && site.avaliacoes.notaInformada ? `- Nota ${nota1(site.avaliacoes.notaInformada)} no iFood nas quatro lojas.\n` : ''}${site.contador ? `- Mais de ${fmtInt(site.contador.basePedidos)} pedidos e ${fmtInt(site.contador.basePedidos * site.contador.lanchesPorPedido)} itens vendidos desde a abertura (total ao vivo na home).\n` : ''}- Quatro unidades: ${juntar(lojas.map((l) => `${l.bairro} (${l.cidade}, ${l.regiao})`))}.
 - Horário de cada unidade: ${lojas.map((l) => `${l.nome}: ${horarioLoja(l)}`).join(' | ')}.
 - Pedido mínimo no iFood: R$ ${site.pedidoMinimo}.
 - Instagram: ${site.instagram}
