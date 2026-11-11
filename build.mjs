@@ -1254,11 +1254,13 @@ for (const l of lojas) {
     { p: `Onde fica a Just Burger ${termo}?`, r: pendente(l.endereco) ? `No bairro ${l.bairro}, em ${l.cidade}. PREENCHER endereço completo.` : `${l.endereco}, ${local} — SP${pendente(l.cep) ? '' : `, CEP ${l.cep}`}.` },
     { p: `Qual o horário da Just Burger ${termo}?`, r: l.horarios.map(textoHorario).join('; ') + '.' },
     { p: `A Just Burger ${termo} entrega em quais bairros?`, r: `Entregamos pelo iFood em ${juntar(l.bairrosAtendidos)} e região. Confirme digitando seu endereço no iFood.` },
+    { p: `A Just Burger ${termo} faz delivery?`, r: `Sim. A Just nasceu no delivery: você pede pelo iFood${l.keeta ? ' ou pela Keeta' : ''} e recebe o hambúrguer artesanal (carne de 150 g no pão brioche) em casa (${l.horarios.map(textoHorarioCurto).join('; ').toLowerCase()}).` },
+    ...(site.avaliacoes && site.avaliacoes.notaInformada ? [{ p: `A Just Burger ${termo} é bem avaliada?`, r: `Sim: nota ${nota1(site.avaliacoes.notaInformada)} no iFood${l.superIfood ? ', com o selo Super Restaurante (nível 5 de 5 do iFood)' : ''}. As lojas Just Burger somam mais de ${Math.floor((site.avaliacoes.avaliacoesInformadas || 0) / 1000)} mil avaliações no iFood.` }] : []),
   ];
   paginas.push({
     caminho,
     profundidade: 2,
-    titulo: cabe(60, `Hamburgueria ${termo} | ${site.nome} ${l.bairro}`, `Hamburgueria ${termo} | ${site.nome}`),
+    titulo: cabe(60, `Hamburgueria delivery ${termo} | ${site.nome}`, `Hamburgueria ${termo} | ${site.nome}`),
     descricao: `${l.nome}: hamburgueria ${termo}${termo.includes(l.bairro) ? '' : ` (${l.bairro})`}. Endereço, horário, bairros de entrega e link direto para pedir no iFood.`,
     schema: [schemaLoja(l), schemaFaq(faqLoja), schemaBreadcrumb(trilha)],
     corpo: (base) => `
