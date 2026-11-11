@@ -694,3 +694,5 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .vagas-abrir > summary::after { content: '+'; color: var(--laranja); font-size: 1.4rem; }
 .vagas-abrir[open] > summary::after { content: '–'; }
 .vagas-abrir[open] > summary { border-bottom: 0; }
+.vagas-tipos { margin: 0 0 14px; line-height: 2; }
+.vagas-tipos a { font-weight: 800; color: var(--laranja); text-decoration: none; }

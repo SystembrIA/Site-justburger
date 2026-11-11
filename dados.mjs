@@ -606,6 +606,19 @@ export const midia = [
 export const vagas = {
   publicada: true,
   desde: '2026-11-10',
+  // Páginas por tipo de cozinha (Maikon 11/11): /vagas/<slug>/, com todas as funções e unidades daquela cozinha.
+  segmentos: [
+    { slug: 'hamburgueria', nome: 'Hamburgueria', titulo: 'Vagas em hamburgueria', marca: 'Just Burger', tambem: 'ajudante de hamburgueria e auxiliar de hamburgueria',
+      texto: 'A Just Burger é a hamburgueria do grupo: burgers de 150 g no pão brioche, smash, combos, frango e milk-shakes, com nota 4,9 no iFood. Contratamos para a chapa, a montagem, a cozinha, o atendimento e o despacho.' },
+    { slug: 'restaurante', nome: 'Restaurante', titulo: 'Vagas em restaurante', marca: 'Just Gourmet', tambem: 'ajudante de cozinha e cozinheiro de restaurante',
+      texto: 'A Just Gourmet é o restaurante de comida brasileira do grupo: Feijoada Especial Just, strogonoff, parmegiana, filé mignon, salmão e massas artesanais. Contratamos para a cozinha, o atendimento e o despacho.' },
+    { slug: 'pizzaria', nome: 'Pizzaria', titulo: 'Vagas em pizzaria', marca: 'Just Forneria', tambem: 'ajudante de pizzaiolo e auxiliar de pizzaria',
+      texto: 'A Just Forneria é a pizzaria do grupo, com massa napolitana de fermentação lenta e pizza grande de 35 cm. Contratamos pizzaiolo, ajudante de pizzaiolo e equipe de cozinha, atendimento e despacho.' },
+    { slug: 'restaurante-japones', nome: 'Restaurante japonês', titulo: 'Vagas em restaurante japonês', marca: 'Just Sushi', tambem: 'sushiman, auxiliar de sushiman e ajudante de cozinha japonesa',
+      texto: 'A Just Sushi é a culinária japonesa do grupo: combinados, hot rolls, temakis, joes trufados e sashimis. Contratamos sushiman, auxiliar de sushiman e equipe de cozinha e atendimento.' },
+    { slug: 'esfiharia', nome: 'Esfiharia', titulo: 'Vagas em esfiharia', marca: 'Just Esfiha', tambem: 'esfiheiro e ajudante de esfiharia',
+      texto: 'A Just Esfiha é a esfiharia do grupo, com esfihas salgadas e doces e combos de 10 a 50 unidades. Contratamos esfiheiro e equipe de cozinha, atendimento e despacho.' },
+  ],
   cargos: [
     {
       slug: 'chapeiro-de-hamburgueria', nome: 'Chapeiro de hamburgueria', marca: 'Just Burger', funcao: 'Chapeiro',

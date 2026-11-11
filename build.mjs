@@ -1729,9 +1729,15 @@ const linkCurriculo = (base, c, u) => { const k = u ? cozinhasDoCargo(c, u)[0] :
 const FOTOS_VAGA = existsSync(join(RAIZ, 'assets/img/trabalhe')) ? readdirSync(join(RAIZ, 'assets/img/trabalhe')).filter((f) => f.endsWith('.webp')).sort().map((f) => `trabalhe/${f}`) : [];
 const fotosVaga = (base, n) => (FOTOS_VAGA.length ? `<div class="grade-equipe vaga-fotos">${[0, 1, 2].map((k) => FOTOS_VAGA[(n + k) % FOTOS_VAGA.length]).map((f) => `<img src="${base}assets/img/${f}" width="800" height="1000" alt="Equipe do grupo Just Burger na cozinha" loading="lazy" decoding="async">`).join('')}</div>` : '');
 const cargosAbertos = vagas && vagas.publicada ? vagas.cargos.filter((c) => c.unidades.length) : [];
+const segmentosVaga = cargosAbertos.length ? (vagas.segmentos || []) : [];
+// Funções de uma cozinha: as da própria marca e as gerais (auxiliar, atendente, despacho) nas unidades onde ela existe.
+const unidadesDoSegmento = (sg) => Object.keys(UNIDADES_VAGA).filter((u) => cozinhasVaga(u).some((k) => k.marca === sg.marca));
+const cargosDoSegmento = (sg) => cargosAbertos.filter((c) => (c.marca === sg.marca || c.marca === 'grupo') && c.unidades.some((u) => unidadesDoSegmento(sg).includes(u)))
+  .filter((c) => !(sg.marca === 'Just Sushi' && c.slug === 'ajudante-de-despacho'));
 const blocoVagas = (base) => (cargosAbertos.length ? `
 <section class="secao vagas-links">
   <div class="largura estreita">
+    <p class="vagas-tipos">${segmentosVaga.map((sg) => `<a href="${base}vagas/${sg.slug}/">${esc(sg.titulo)}</a>`).join(' · ')}</p>
     <details class="vagas-abrir"><summary>Vagas por função e unidade</summary>
     <ul class="lista-vagas">${cargosAbertos.map((c) => `<li><a href="${base}vagas/${c.slug}/">${esc(c.nome)}</a><span>${c.unidades.map((u) => `<a href="${base}vagas/${c.slug}/${u}/">${esc(UNIDADES_VAGA[u].nome)}</a>`).join(' · ')}</span></li>`).join('')}</ul>
     <p><a class="link" href="${base}vagas/">Ver todas as vagas →</a></p>
@@ -1753,12 +1759,47 @@ if (cargosAbertos.length) {
     ${migalhas(base, [['Início', ''], ['Trabalhe conosco', 'trabalhe-conosco/'], ['Vagas', 'vagas/']])}
     <h1>Vagas no grupo Just Burger</h1>
     <p class="lead">Estamos sempre contratando para as nossas cozinhas: hamburgueria, comida brasileira, pizzaria, esfiharia e sushi. Escolha a função e a unidade mais perto de você.</p>
+    <h2>Por tipo de cozinha</h2>
+    <ul class="lista-vagas">${segmentosVaga.map((sg) => `<li><a href="${base}vagas/${sg.slug}/">${esc(sg.titulo)}</a><span>${esc(sg.marca)} · ${esc(listaE(unidadesDoSegmento(sg).map((u) => UNIDADES_VAGA[u].nome)))}</span></li>`).join('')}</ul>
+    <h2>Por função</h2>
     <ul class="lista-vagas">${cargosAbertos.map((c) => `<li><a href="${base}vagas/${c.slug}/">${esc(c.nome)}</a><span>${c.unidades.map((u) => `<a href="${base}vagas/${c.slug}/${u}/">${esc(UNIDADES_VAGA[u].nome)}</a>`).join(' · ')}</span></li>`).join('')}</ul>
     <p><a class="botao" href="${base}trabalhe-conosco/#curriculo">Enviar currículo</a></p>
   </div>
 </section>
 <section class="secao"><div class="largura">${fotosVaga(base, 0)}</div></section>`,
     md: () => `# Vagas no grupo Just Burger\n\n${cargosAbertos.map((c) => `- ${c.nome}: ${c.unidades.map((u) => `${UNIDADES_VAGA[u].nome} (${abs(`vagas/${c.slug}/${u}/`)})`).join(', ')}`).join('\n')}\n\nEnvie seu currículo: ${abs('trabalhe-conosco/')}\n`,
+  });
+  // Uma página por tipo de cozinha: as funções e, por unidade, endereço, horário, bairros perto e vagas abertas.
+  segmentosVaga.forEach((sg, is) => {
+    const cs = cargosDoSegmento(sg), us = unidadesDoSegmento(sg);
+    const trilha = [['Início', ''], ['Trabalhe conosco', 'trabalhe-conosco/'], ['Vagas', 'vagas/'], [sg.nome, `vagas/${sg.slug}/`]];
+    const fakeCargo = { marca: sg.marca, funcao: '' };
+    paginas.push({
+      caminho: `vagas/${sg.slug}/`,
+      profundidade: 2,
+      titulo: `${sg.titulo} ${us[0] === 'zona-leste' ? 'na' : 'em'} ${listaE(us.map((u) => UNIDADES_VAGA[u].nome))} | ${sg.marca}`,
+      descricao: `${sg.titulo} na ${sg.marca}: ${listaE(cs.map((c) => c.nome.toLowerCase()))}. Unidades: ${listaE(us.map((u) => UNIDADES_VAGA[u].nome))}. Envie seu currículo.`.slice(0, 300),
+      schema: [schemaBreadcrumb(trilha)],
+      corpo: (base) => `
+<section class="secao">
+  <div class="largura estreita">
+    ${migalhas(base, trilha)}
+    <h1>${esc(sg.titulo)}</h1>
+    <p class="lead">${esc(sg.texto)}</p>
+    <p class="suave">Também chamadas de vagas de ${esc(sg.tambem)}.</p>
+    <h2>Funções</h2>
+    <ul class="lista-vagas">${cs.map((c) => `<li><a href="${base}vagas/${c.slug}/">${esc(c.nome)}</a><span>${esc(c.resumo)}</span></li>`).join('')}</ul>
+    ${us.map((u) => { const k = cozinhasVaga(u).find((x) => x.marca === sg.marca); return `<h2>${esc(sg.titulo)} ${esc(UNIDADES_VAGA[u].local)}</h2>
+    <p><strong>${esc(sg.marca)}</strong>: ${esc(k.endereco)}${k.bairro ? `, ${esc(k.bairro)}` : ''}, ${esc(k.cidade)}.${k.horarios.length ? ` Funciona ${esc(k.horarios.map(textoHorarioCurto).join('; ').toLowerCase())}.` : ''} Perto de ${esc(listaE(bairrosPerto(u, 6)))}.</p>
+    <ul class="lista-vagas">${cs.filter((c) => c.unidades.includes(u)).map((c) => `<li><a href="${base}vagas/${c.slug}/${u}/">${esc(c.nome)} ${esc(UNIDADES_VAGA[u].local)}</a></li>`).join('')}</ul>
+    <p><a class="botao" href="${linkCurriculo(base, fakeCargo, u)}">Enviar currículo ${esc(UNIDADES_VAGA[u].local)}</a></p>`; }).join('\n')}
+    <h2>Outras cozinhas do grupo</h2>
+    <ul class="lista-vagas">${segmentosVaga.filter((o) => o !== sg).map((o) => `<li><a href="${base}vagas/${o.slug}/">${esc(o.titulo)}</a></li>`).join('')}</ul>
+  </div>
+</section>
+<section class="secao"><div class="largura">${fotosVaga(base, is)}</div></section>`,
+      md: () => `# ${sg.titulo}\n\n${sg.texto}\n\n${cs.map((c) => `- ${c.nome}: ${c.unidades.filter((u) => us.includes(u)).map((u) => `${UNIDADES_VAGA[u].nome} (${abs(`vagas/${c.slug}/${u}/`)})`).join(', ')}`).join('\n')}\n`,
+    });
   });
   cargosAbertos.forEach((c, ic) => {
     const trilha = [['Início', ''], ['Trabalhe conosco', 'trabalhe-conosco/'], ['Vagas', 'vagas/'], [c.nome, `vagas/${c.slug}/`]];
