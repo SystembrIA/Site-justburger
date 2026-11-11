@@ -64,6 +64,14 @@ export const site = {
     },
     funcoesGerais: ['Ajudante geral', 'Estágio', 'Liderança', 'Administrativo', 'Outra'],
   },
+  // Fale com a gente (Maikon 11/11): formulário em /contato/ → função contatoSite (JARVIS) → e-mail controle@.
+  // Enquanto a função não estiver no ar, o botão abre o e-mail do cliente já preenchido.
+  contato: {
+    publicada: true,
+    envio: 'https://us-central1-justburger-producao-e9b27.cloudfunctions.net/contatoSite',
+    email: 'controle@justburger.com.br',
+    assuntos: ['Elogio', 'Sugestão', 'Reclamação', 'Dúvida', 'Outro'],
+  },
   equipe: {
     nomes: { '00a-sandro-equipe-just-burger-hamburgueria.webp': 'Sandro', '00b-rita-equipe-just-burger-hamburgueria.webp': 'Rita', '00c-dina-equipe-just-burger-hamburgueria.webp': 'Diná', '00d-andre-equipe-just-burger-hamburgueria.webp': 'André', '00e-edno-equipe-just-burger-hamburgueria.webp': 'Edno', '00f-bruno-equipe-just-burger-hamburgueria.webp': 'Bruno', '00g-matheus-equipe-just-burger-hamburgueria.webp': 'Matheus', '00h-anderson-equipe-just-burger-hamburgueria.webp': 'Anderson', '00i-jotinha-equipe-just-burger-hamburgueria.webp': 'Jotinha' }, // nome embaixo da foto (Maikon 05/11); quem tem nome vem primeiro na galeria
     publicada: true, // texto aprovado pelo Maikon em 01/11; fotos do ensaio de fev/2023 (Drive da Mindbe), 04/11

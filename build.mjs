@@ -405,6 +405,7 @@ ${corpo(base)}
         ${geo ? `<li><a href="${base}entrega/">Onde entregamos</a></li>` : ''}
         <li><a href="${base}links/">Faça seu pedido</a></li>
         <li><a href="${base}culinarias/">Nossas culinárias</a></li>
+        ${site.contato && site.contato.publicada ? `<li><a href="${base}contato/">Fale com a gente</a></li>` : ''}
       </ul>
     </div>
   </div>
@@ -1594,6 +1595,51 @@ ${fotosTrabalhe.length ? `<section class="secao"><div class="largura"><h2 class=
 <script src="${base}assets/curriculo.js?v=${createHash('md5').update(readFileSync(join(RAIZ, 'assets/curriculo.js'))).digest('hex').slice(0, 8)}" defer></script>
 ${blocoVagas(base)}`,
     md: () => `# Trabalhe conosco\n\n${tb.chamada}\n\n${tb.texto.join('\n\n')}\n\nEnvie seu currículo pelo formulário: ${abs('trabalhe-conosco/')}\n`,
+  });
+}
+
+// Fale com a gente (Maikon 11/11): foto da equipe e texto à esquerda, formulário à direita.
+if (site.contato && site.contato.publicada) {
+  const ct = site.contato;
+  const nomesLojas = [...lojas.map((l) => l.nome), ...culinarias.flatMap((c) => (c.lojas || []).map((x) => `${c.nome} ${x.regiao}`))];
+  const fotoContato = existsSync(join(RAIZ, 'assets/img/confraternizacao-equipe-just-burger-hamburgueria.webp')) ? 'assets/img/confraternizacao-equipe-just-burger-hamburgueria.webp' : '';
+  paginas.push({
+    caminho: 'contato/',
+    profundidade: 1,
+    titulo: `Fale com a gente | ${site.nome}`,
+    descricao: 'Elogio, sugestão, reclamação ou dúvida sobre a Just Burger, Just Gourmet, Just Forneria, Just Esfiha ou Just Sushi: mande sua mensagem para a nossa equipe.',
+    schema: [schemaBreadcrumb([['Início', ''], ['Fale com a gente', 'contato/']]), { '@type': 'ContactPage', name: 'Fale com a gente', url: abs('contato/') }],
+    corpo: (base) => `
+<section class="secao">
+  <div class="largura">
+    ${migalhas(base, [['Início', ''], ['Fale com a gente', 'contato/']])}
+    <h1>Fale com a gente</h1>
+    <div class="contato-grade">
+      <div class="contato-lado">
+        ${fotoContato ? `<img class="contato-foto" src="${base}${fotoContato}" width="1400" height="896" alt="Equipe do grupo Just Burger reunida" loading="lazy" decoding="async">` : ''}
+        <h2>Nossa equipe está esperando a sua mensagem</h2>
+        <p>Do outro lado deste formulário tem gente de verdade: a mesma equipe que prepara o seu pedido todos os dias. Cada mensagem é lida por nós, e é assim que a gente melhora.</p>
+        <p>Gostou? Conte para a gente: o elogio chega a quem fez o seu lanche. Algo deu errado? Diga a loja e, se tiver, o número do pedido, que a gente resolve mais rápido. Sugestões e dúvidas também são muito bem-vindas.</p>
+        <p class="suave">A gente responde pelo WhatsApp ou pelo e-mail que você deixar.</p>
+      </div>
+      <form class="form-curriculo form-contato" id="form-contato" data-envio="${esc(ct.envio || '')}" data-email="${esc(ct.email)}" novalidate>
+        <label>Nome<input name="nome" required maxlength="120" autocomplete="name"></label>
+        <label>WhatsApp<input name="telefone" required inputmode="tel" maxlength="20" autocomplete="tel" placeholder="(11) 90000-0000"></label>
+        <label>E-mail <small>(opcional)</small><input name="email" type="email" maxlength="120" autocomplete="email"></label>
+        <label>Assunto<select name="assunto" required><option value="">Escolha</option>${ct.assuntos.map((a) => `<option>${esc(a)}</option>`).join('')}</select></label>
+        <label>Loja <small>(opcional)</small><select name="loja"><option value="">Escolha, se for sobre uma loja</option>${nomesLojas.map((n) => `<option>${esc(n)}</option>`).join('')}</select></label>
+        <label>Número do pedido <small>(opcional)</small><input name="pedido" maxlength="30" inputmode="numeric"></label>
+        <label>Mensagem<textarea name="mensagem" required rows="6" maxlength="2000"></textarea></label>
+        <label class="form-site" aria-hidden="true">Site<input name="site" tabindex="-1" autocomplete="off"></label>
+        <label class="form-check"><input name="consentimento" type="checkbox" required> Autorizo o grupo Just Burger a guardar meus dados para responder esta mensagem por até 12 meses.</label>
+        <button class="botao" type="submit">Enviar mensagem</button>
+        <p class="form-status" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+<script src="${base}assets/contato.js?v=${createHash('md5').update(readFileSync(join(RAIZ, 'assets/contato.js'))).digest('hex').slice(0, 8)}" defer></script>`,
+    md: () => `# Fale com a gente\n\nElogio, sugestão, reclamação ou dúvida: mande pelo formulário em ${abs('contato/')} ou pelo e-mail ${ct.email}.\n`,
   });
 }
 

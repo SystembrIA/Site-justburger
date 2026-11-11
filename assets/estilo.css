@@ -722,3 +722,10 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .aval-mais > summary:hover { border-color: var(--laranja); }
 .aval-fonte { margin-top: 14px; font-size: .82rem; }
 .aval-secao-loja { padding-top: 12px; }
+/* Fale com a gente: foto e texto à esquerda, formulário à direita (no celular, um embaixo do outro) */
+.contato-grade { display: grid; gap: 32px; margin-top: 10px; }
+@media (min-width: 900px) { .contato-grade { grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; } }
+.contato-foto { display: block; width: 100%; height: auto; border-radius: 18px; margin-bottom: 18px; }
+.contato-lado h2 { font-size: 1.6rem; margin: 0 0 .5em; }
+.contato-lado p { color: var(--suave); }
+.form-contato { margin: 0; }
