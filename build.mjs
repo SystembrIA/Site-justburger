@@ -14,6 +14,21 @@ const VERSAO_CSS = createHash('md5').update(readFileSync(new URL('./assets/estil
 const SAIDA = join(RAIZ, 'publico');
 const HOJE = new Date().toISOString().slice(0, 10);
 
+// Cliques do site (ST-2): link do iFood/Keeta (sem ?…) → id da loja no Hub. Vai junto com assets/cliques.js.
+const CLIQUES_JS = (() => {
+  const c = site.cliques; if (!c || !c.url) return '';
+  const links = {};
+  const poe = (u, id) => { if (!u || !id) return; try { const x = new URL(u); links[x.origin + x.pathname] = id; } catch (e) {} };
+  for (const l of lojas) { const id = c.burger[l.slug]; poe(l.ifood, id); poe(l.keeta, id); }
+  for (const m of culinarias) for (const u of m.lojas || []) {
+    const id = c.marcas[m.slug] && c.regioes[u.regiao] ? `${c.marcas[m.slug]}-${c.regioes[u.regiao]}` : '';
+    poe(u.ifood, id); poe(u.keeta, id);
+  }
+  return `window.JUST_CLIQUES = ${JSON.stringify({ url: c.url, links })};\n` + readFileSync(join(RAIZ, 'assets/cliques.js'), 'utf8');
+})();
+const VERSAO_CLIQUES = createHash('md5').update(CLIQUES_JS).digest('hex').slice(0, 8);
+const scriptCliques = (base) => (CLIQUES_JS ? `<script src="${base}assets/cliques.js?v=${VERSAO_CLIQUES}" defer></script>` : '');
+
 const DIAS = { Mo: 'Segunda', Tu: 'Terça', We: 'Quarta', Th: 'Quinta', Fr: 'Sexta', Sa: 'Sábado', Su: 'Domingo' };
 const DIAS_SCHEMA = { Mo: 'Monday', Tu: 'Tuesday', We: 'Wednesday', Th: 'Thursday', Fr: 'Friday', Sa: 'Saturday', Su: 'Sunday' };
 
@@ -419,6 +434,7 @@ ${janelaPedido(base)}
 <a class="pedir-flutuante" href="${base}links/" aria-label="Peça aqui: escolha a loja e peça pelo iFood ou Keeta">Peça<br>aqui</a>
 <script src="${base}assets/pedido-dados.js" defer></script>
 <script src="${base}assets/pedido.js" defer></script>
+${scriptCliques(base)}
 </body>
 </html>
 `;
@@ -1828,6 +1844,7 @@ ${secaoAvaliacoesLoja((c.lojas || []).map((x) => `${c.nome} ${x.regiao}`))}
 rmSync(SAIDA, { recursive: true, force: true });
 mkdirSync(SAIDA, { recursive: true });
 cpSync(join(RAIZ, 'assets'), join(SAIDA, 'assets'), { recursive: true });
+if (CLIQUES_JS) writeFileSync(join(SAIDA, 'assets', 'cliques.js'), CLIQUES_JS); else rmSync(join(SAIDA, 'assets', 'cliques.js'), { force: true });
 {
   // Busca por CEP (assets/pedido.js): lojas com coordenadas e, de reserva, bairro -> loja (bairros.json).
   const normB = (t) => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
@@ -2220,6 +2237,7 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
 })();
 window.JUST_LINKS = ${JSON.stringify(dadosLinks)};</script>
 <script src="../assets/links.js?v=${createHash('md5').update(readFileSync(join(RAIZ, 'assets/links.js'))).digest('hex').slice(0, 8)}" defer></script>
+${scriptCliques('../')}
 </body>
 </html>
 `;
