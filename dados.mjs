@@ -72,6 +72,15 @@ export const site = {
     email: 'controle@justburger.com.br',
     assuntos: ['Elogio', 'Sugestão', 'Reclamação', 'Dúvida', 'Outro'],
   },
+  // Cliques do site (ST-2, Maikon 12/11): cada toque em iFood/Keeta soma 1 por loja e aplicativo (assets/cliques.js →
+  // função cliqueSite do Hub → Dashboard "Cliques do site"). Sem cookie e sem dado pessoal. url vazia = não conta.
+  // id da loja = o do Hub (catalogo_ifood/copia/<loja>): pela unidade (Burger) ou pela marca + região (culinárias).
+  cliques: {
+    url: 'https://us-central1-justburger-producao-e9b27.cloudfunctions.net/cliqueSite',
+    burger: { 'zona-leste-vila-buenos-aires': 'burger-penha', pirituba: 'burger-pirituba', guarulhos: 'burger-gru', 'sao-bernardo-do-campo': 'burger-sbc' },
+    marcas: { 'just-gourmet': 'gourmet', 'just-forneria': 'forneria', 'just-sushi': 'sushi', 'just-esfiha': 'esfiha' },
+    regioes: { 'Zona Leste': 'penha', Pirituba: 'pirituba' },
+  },
   equipe: {
     nomes: { '00a-sandro-equipe-just-burger-hamburgueria.webp': 'Sandro', '00b-rita-equipe-just-burger-hamburgueria.webp': 'Rita', '00c-dina-equipe-just-burger-hamburgueria.webp': 'Diná', '00d-andre-equipe-just-burger-hamburgueria.webp': 'André', '00e-edno-equipe-just-burger-hamburgueria.webp': 'Edno', '00f-bruno-equipe-just-burger-hamburgueria.webp': 'Bruno', '00g-matheus-equipe-just-burger-hamburgueria.webp': 'Matheus', '00h-anderson-equipe-just-burger-hamburgueria.webp': 'Anderson', '00i-jotinha-equipe-just-burger-hamburgueria.webp': 'Jotinha' }, // nome embaixo da foto (Maikon 05/11); quem tem nome vem primeiro na galeria
     publicada: true, // texto aprovado pelo Maikon em 01/11; fotos do ensaio de fev/2023 (Drive da Mindbe), 04/11
