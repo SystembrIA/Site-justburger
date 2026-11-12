@@ -56,7 +56,7 @@ h3 { font-size: 1.5rem; line-height: 1.05; font-stretch: 80%; font-weight: 800; 
 
 /* ---------- Topo ---------- */
 .topo { position: sticky; top: 0; z-index: 10; background: rgba(0, 0, 0, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--linha); }
-.topo-linha { display: flex; align-items: center; gap: 18px; min-height: 76px; }
+.topo-linha { display: flex; align-items: center; gap: 16px; min-height: 76px; }
 .marca img { width: 64px; }
 .menu { margin-left: auto; }
 .menu ul { display: flex; flex-wrap: nowrap; gap: 13px; list-style: none; margin: 0; padding: 0; }
@@ -729,3 +729,7 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .contato-lado h2 { font-size: 1.6rem; margin: 0 0 .5em; }
 .contato-lado p { color: var(--suave); }
 .form-contato { margin: 0; }
+/* "Ore, espere, confie" centralizado entre o logo e o menu (Maikon 12/11); no celular, entre o logo e o ☰ */
+.topo-linha > .lema:not(.lema-menu) { flex: 1 1 auto; margin-left: 0; text-align: center; }
+.topo-linha > .lema:not(.lema-menu) ~ .menu, .topo-linha > .lema:not(.lema-menu) ~ .menu-celular { margin-left: 0; }
+@media (max-width: 899px) { .topo-linha > .lema:not(.lema-menu) { margin-left: 0; } }
