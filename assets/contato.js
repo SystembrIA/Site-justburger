@@ -5,7 +5,7 @@
   var form = document.getElementById('form-contato'); if (!form) return;
   var status = form.querySelector('.form-status'), botao = form.querySelector('button');
   function porEmail(d) {
-    var corpo = d.assunto + ' pelo site\n\nNome: ' + d.nome + '\nWhatsApp: ' + d.telefone + (d.email ? '\nE-mail: ' + d.email : '') + (d.loja ? '\nLoja: ' + d.loja : '') + (d.pedido ? '\nPedido: ' + d.pedido : '') + '\n\n' + d.mensagem;
+    var corpo = d.assunto + ' pelo site\n\nNome: ' + d.nome + '\nWhatsApp: ' + d.telefone + (d.email ? '\nE-mail: ' + d.email : '') + (d.loja ? '\nLoja: ' + d.loja : '') + '\n\n' + d.mensagem;
     location.href = 'mailto:' + form.getAttribute('data-email') + '?subject=' + encodeURIComponent(d.assunto + ' pelo site: ' + d.nome) + '&body=' + encodeURIComponent(corpo);
     status.textContent = 'Abrimos o seu e-mail com a mensagem pronta: é só enviar.';
   }
@@ -14,7 +14,7 @@
     var f = form.elements;
     if (!form.checkValidity()) { status.textContent = 'Preencha nome, WhatsApp, assunto, mensagem e a autorização.'; return; }
     if (f.site.value) return; // robô
-    var d = { nome: f.nome.value.trim(), telefone: f.telefone.value.trim(), email: f.email.value.trim(), assunto: f.assunto.value, loja: f.loja.value, pedido: f.pedido.value.trim(), mensagem: f.mensagem.value.trim(), consentimento: true };
+    var d = { nome: f.nome.value.trim(), telefone: f.telefone.value.trim(), email: f.email.value.trim(), assunto: f.assunto.value, loja: f.loja.value, mensagem: f.mensagem.value.trim(), consentimento: true };
     var envio = form.getAttribute('data-envio');
     if (!envio) return porEmail(d);
     status.textContent = 'Enviando…'; botao.disabled = true;

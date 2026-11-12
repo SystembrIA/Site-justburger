@@ -1619,7 +1619,7 @@ if (site.contato && site.contato.publicada) {
         ${fotoContato ? `<img class="contato-foto" src="${base}${fotoContato}" width="1400" height="896" alt="Equipe do grupo Just Burger reunida" loading="lazy" decoding="async">` : ''}
         <h2>Nossa equipe está esperando a sua mensagem</h2>
         <p>Do outro lado deste formulário tem gente de verdade: a mesma equipe que prepara o seu pedido todos os dias. Cada mensagem é lida por nós, e é assim que a gente melhora.</p>
-        <p>Gostou? Conte para a gente: o elogio chega a quem fez o seu lanche. Algo deu errado? Diga a loja e, se tiver, o número do pedido, que a gente resolve mais rápido. Sugestões e dúvidas também são muito bem-vindas.</p>
+        <p>Gostou? Conte para a gente: o elogio chega a quem fez o seu lanche. Algo deu errado? Diga qual foi a loja, que a gente resolve mais rápido. Sugestões e dúvidas também são muito bem-vindas.</p>
         <p class="suave">A gente responde pelo WhatsApp ou pelo e-mail que você deixar.</p>
       </div>
       <form class="form-curriculo form-contato" id="form-contato" data-envio="${esc(ct.envio || '')}" data-email="${esc(ct.email)}" novalidate>
@@ -1628,7 +1628,6 @@ if (site.contato && site.contato.publicada) {
         <label>E-mail <small>(opcional)</small><input name="email" type="email" maxlength="120" autocomplete="email"></label>
         <label>Assunto<select name="assunto" required><option value="">Escolha</option>${ct.assuntos.map((a) => `<option>${esc(a)}</option>`).join('')}</select></label>
         <label>Loja <small>(opcional)</small><select name="loja"><option value="">Escolha, se for sobre uma loja</option>${nomesLojas.map((n) => `<option>${esc(n)}</option>`).join('')}</select></label>
-        <label>Número do pedido <small>(opcional)</small><input name="pedido" maxlength="30" inputmode="numeric"></label>
         <label>Mensagem<textarea name="mensagem" required rows="6" maxlength="2000"></textarea></label>
         <label class="form-site" aria-hidden="true">Site<input name="site" tabindex="-1" autocomplete="off"></label>
         <label class="form-check"><input name="consentimento" type="checkbox" required> Autorizo o grupo Just Burger a guardar meus dados para responder esta mensagem por até 12 meses.</label>
