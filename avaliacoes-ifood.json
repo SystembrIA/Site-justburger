@@ -1,14 +1,32 @@
 {
- "atualizadoEm": "2026-11-15",
+ "atualizadoEm": "2026-11-16",
  "geral": {
-  "avaliacoes": 281900,
-  "elogios": 1135,
+  "avaliacoes": 281941,
+  "avaliacoes90d": 14355,
+  "elogios": 1148,
   "nota": 4.9
  },
  "lojas": [
   {
    "avaliacoes": 123274,
+   "avaliacoes90d": 3414,
+   "avaliacoesValidas": 3189,
    "comentarios": [
+    {
+     "data": "2026-11-14",
+     "nota": 5,
+     "texto": "O lanche estava uma delicia, o molho é muito saboroso."
+    },
+    {
+     "data": "2026-11-14",
+     "nota": 5,
+     "texto": "Adoramos a embalagem, a sacolinha térmica que trouxe os nossos pedidos. Sem contar que chegou muito antes do esperado. Parabéns."
+    },
+    {
+     "data": "2026-11-13",
+     "nota": 5,
+     "texto": "Quando eu acho que o Just não pode mais me surpreender, eles chegam com uma embalagem linda, em formato de sacola e ainda por cima, TÉRMICA 💕"
+    },
     {
      "data": "2026-11-10",
      "nota": 5,
@@ -783,21 +801,23 @@
    "loja": "Just Burger Zona Leste",
    "marca": "Just Burger",
    "nota": 4.9,
-   "totalElogios": 154,
+   "totalElogios": 157,
    "unidade": "Zona Leste"
   },
   {
    "avaliacoes": 42606,
+   "avaliacoes90d": 630,
+   "avaliacoesValidas": 583,
    "comentarios": [
     {
      "data": "2026-11-13",
      "nota": 5,
-     "texto": "O ponto da carne vem sempre correto e os ingredientes são muito bons. Bem embalado, bem montado, apetitoso. Dá vontade de repetir sempre."
+     "texto": "O MELHOOOOOR hambúrguer que já comi na vida! Parabéns aos envolvidos! Desde a embalagem a apresentação dos lanches, tudo IMPECÁVEL!"
     },
     {
      "data": "2026-11-13",
      "nota": 5,
-     "texto": "O MELHOOOOOR hambúrguer que já comi na vida! Parabéns aos envolvidos! Desde a embalagem a apresentação dos lanches, tudo IMPECÁVEL!"
+     "texto": "O ponto da carne vem sempre correto e os ingredientes são muito bons. Bem embalado, bem montado, apetitoso. Dá vontade de repetir sempre."
     },
     {
      "data": "2026-11-09",
@@ -938,6 +958,8 @@
   },
   {
    "avaliacoes": 20325,
+   "avaliacoes90d": 504,
+   "avaliacoesValidas": 473,
    "comentarios": [
     {
      "data": "2026-11-13",
@@ -1128,7 +1150,19 @@
   },
   {
    "avaliacoes": 2609,
+   "avaliacoes90d": 1231,
+   "avaliacoesValidas": 1207,
    "comentarios": [
+    {
+     "data": "2026-11-14",
+     "nota": 5,
+     "texto": "Elevaram o nivel de hamburgueria aqui de pirituba. Pra outras chegarem no nivel deles, vão precisar se esforçar mt. É FANTASTICO. Tudo bom, desde a experiencia (embalagem, criatividade no cardapio) ao lanche de fato."
+    },
+    {
+     "data": "2026-11-14",
+     "nota": 5,
+     "texto": "Tudo maravilhoso!! Embalagem impecavel, entrega rapida, chegou quentinho, carne no ponto certo, ingrdientes bons, lanche muito saboroso! Amamos aqui"
+    },
     {
      "data": "2026-11-13",
      "nota": 5,
@@ -2118,27 +2152,24 @@
      "data": "2026-08-18",
      "nota": 5,
      "texto": "Me surpreendi com a embalagem, um cuidado no transporte e estética muito legal na imagem da marca!! Com certeza voltarei a pedir."
-    },
-    {
-     "data": "2026-08-17",
-     "nota": 5,
-     "texto": "Me surpreendi com a embalagem a coisa mais charmosa😍embalagem térmica,vcs estão muito mas muitooooo mesmo de parabéns 👏🏼👏🏼👏🏼sanduíche divino nota milllllll...continuem assim!!!"
-    },
-    {
-     "data": "2026-08-17",
-     "nota": 5,
-     "texto": "Veio bem embalado e inclusive a embalgem é um espetaculo,muito saboroso bem caprichado."
     }
    ],
    "loja": "Just Burger Pirituba",
    "marca": "Just Burger",
    "nota": 5,
-   "totalElogios": 243,
+   "totalElogios": 245,
    "unidade": "Pirituba"
   },
   {
    "avaliacoes": 59155,
+   "avaliacoes90d": 3712,
+   "avaliacoesValidas": 3468,
    "comentarios": [
+    {
+     "data": "2026-11-14",
+     "nota": 5,
+     "texto": "Feijoada maravilhosa!!! Superou as expectativas. Super levinha e extremamente saborosa. Estão de parabéns!"
+    },
     {
      "data": "2026-11-12",
      "nota": 5,
@@ -2808,12 +2839,29 @@
    "loja": "Just Gourmet Zona Leste",
    "marca": "Just Gourmet",
    "nota": 4.9,
-   "totalElogios": 133,
+   "totalElogios": 134,
    "unidade": "Zona Leste"
   },
   {
    "avaliacoes": 2775,
+   "avaliacoes90d": 1794,
+   "avaliacoesValidas": 1717,
    "comentarios": [
+    {
+     "data": "2026-11-14",
+     "nota": 5,
+     "texto": "Comida sensacional. Bem temperada, veio certinho, a tilapia sem dúvidas uma das melhores que já comi. Parabéns ao restaurante"
+    },
+    {
+     "data": "2026-11-14",
+     "nota": 5,
+     "texto": "Estou viciada nessa comida! Maravilhosa!"
+    },
+    {
+     "data": "2026-11-13",
+     "nota": 5,
+     "texto": "Pra ficar mais perfeito esse prato, vcs podiam dar a possibilidade de escolher entre a cebola roxa e beterraba. Eu amo pedir com vcs, estou sempre satisfeitíssima."
+    },
     {
      "data": "2026-11-13",
      "nota": 5,
@@ -2823,11 +2871,6 @@
      "data": "2026-11-13",
      "nota": 5,
      "texto": "Comida maravilhosa, perfeita, saborosa! É a comida mais gostosa que já comi pelo Ifood"
-    },
-    {
-     "data": "2026-11-13",
-     "nota": 5,
-     "texto": "Pra ficar mais perfeito esse prato, vcs podiam dar a possibilidade de escolher entre a cebola roxa e beterraba. Eu amo pedir com vcs, estou sempre satisfeitíssima."
     },
     {
      "data": "2026-11-11",
@@ -3803,27 +3846,39 @@
      "data": "2026-08-13",
      "nota": 5,
      "texto": "Pedi um item, não tinha, substituíram por item similar / melhor ainda. Obrigado e parabéns pelo excelente atendimento"
-    },
-    {
-     "data": "2026-08-13",
-     "nota": 5,
-     "texto": "Excelente restaurante, recomendo!"
-    },
-    {
-     "data": "2026-08-13",
-     "nota": 5,
-     "texto": "Fazia tempo que eu não comia uma parmegiana de frango tão saborosa. Com toda certeza pedirei mais vezes."
     }
    ],
    "loja": "Just Gourmet Pirituba",
    "marca": "Just Gourmet",
    "nota": 4.9,
-   "totalElogios": 204,
+   "totalElogios": 206,
    "unidade": "Pirituba"
   },
   {
-   "avaliacoes": 19376,
+   "avaliacoes": 19414,
+   "avaliacoes90d": 1421,
+   "avaliacoesValidas": 1288,
    "comentarios": [
+    {
+     "data": "2026-11-14",
+     "nota": 5,
+     "texto": "MEU DEUS A MELHOR PIZZA QUE JÁ COMI NA VIDA. (SIM, ESTOU GRITANDO DE EMOÇÃO)"
+    },
+    {
+     "data": "2026-11-14",
+     "nota": 5,
+     "texto": "Excepcionalmente incrível ! Muito capricho."
+    },
+    {
+     "data": "2026-11-14",
+     "nota": 5,
+     "texto": "Cuidado e muito em forma de pizza , de longe a melhor da Z/L"
+    },
+    {
+     "data": "2026-11-14",
+     "nota": 5,
+     "texto": "Excelente! Além da qualidade dos produtos que é sensacional, a pizza é maravilhosa, o atendimento é mto gentil, o azeite e o doce de leite são mimos incríveis. Parabéns!"
+    },
     {
      "data": "2026-11-11",
      "nota": 5,
@@ -4448,11 +4503,13 @@
    "loja": "Just Forneria Zona Leste",
    "marca": "Just Forneria",
    "nota": 4.9,
-   "totalElogios": 124,
+   "totalElogios": 128,
    "unidade": "Zona Leste"
   },
   {
    "avaliacoes": 137,
+   "avaliacoes90d": 120,
+   "avaliacoesValidas": 124,
    "comentarios": [
     {
      "data": "2026-10-29",
@@ -4642,7 +4699,9 @@
    "unidade": "Pirituba"
   },
   {
-   "avaliacoes": 5403,
+   "avaliacoes": 5406,
+   "avaliacoes90d": 536,
+   "avaliacoesValidas": 510,
    "comentarios": [
     {
      "data": "2026-11-12",
@@ -4798,6 +4857,8 @@
   },
   {
    "avaliacoes": 146,
+   "avaliacoes90d": 149,
+   "avaliacoesValidas": 144,
    "comentarios": [
     {
      "data": "2026-10-24",
@@ -4948,7 +5009,14 @@
   },
   {
    "avaliacoes": 6094,
+   "avaliacoes90d": 844,
+   "avaliacoesValidas": 774,
    "comentarios": [
+    {
+     "data": "2026-11-14",
+     "nota": 5,
+     "texto": "Quero deixar meus parabéns pelo trabalho de vocês. Embalagem impecável, tem wasabi, gengibre, shoyu e tare, em embalagens perfeitas, além do hashi. A comida perfeita! Chegou quente, tudo fresco. Surpreendente! Sou fã de vocês desde a hamburgueria e a pizzaria. Parabéns!!!"
+    },
     {
      "data": "2026-11-12",
      "nota": 5,
@@ -5553,7 +5621,7 @@
    "loja": "Just Sushi Zona Leste",
    "marca": "Just Sushi",
    "nota": 4.8,
-   "totalElogios": 120,
+   "totalElogios": 121,
    "unidade": "Zona Leste"
   }
  ]

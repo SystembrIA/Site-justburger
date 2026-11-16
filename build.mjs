@@ -446,7 +446,7 @@ ${janelaPedido(base)}
 
 // ---------- Blocos reutilizados ----------
 
-// "Faça seu pedido": abre a janela da busca por CEP (assets/pedido.js). Sem JavaScript, vai para /pedir/.
+// "Faça seu pedido": abre a janela da busca por CEP (assets/pedido.js). Sem JavaScript, vai para /links/ (/pedir/ redireciona para lá).
 const RAIO_KM = 10;
 const iconePin = '<svg viewBox="0 0 100 94" width="26" height="24" aria-hidden="true"><defs><clipPath id="mapa-dobra"><path d="M6 48L32 38L52 48L72 38L94 46L94 88L72 80L52 90L32 80L6 90Z"/></clipPath></defs><g clip-path="url(#mapa-dobra)"><path d="M6 48L32 38L32 80L6 90Z" fill="#4cd964"/><path d="M32 38L52 48L52 90L32 80Z" fill="#1da1f2"/><path d="M52 48L72 38L72 80L52 90Z" fill="#4cd964"/><path d="M72 38L94 46L94 88L72 80Z" fill="#1da1f2"/><path d="M6 90L6 70L32 60L32 80Z" fill="#8ee6ff"/><path d="M0 64L32 52L52 64L72 54L100 64" fill="none" stroke="#ffc83d" stroke-width="7"/><path d="M38 36L64 96" fill="none" stroke="#ffc83d" stroke-width="7"/></g><path d="M50 66C50 66 25 42 25 27A25 25 0 0 1 75 27C75 42 50 66 50 66Z" fill="#ff4b4b"/><path d="M50 2A25 25 0 0 1 75 27C75 42 50 66 50 66C58 50 66 38 66 27A25 25 0 0 0 50 2Z" fill="#e2363b"/><circle cx="50" cy="27" r="10" fill="#fff"/></svg>';
 const iconeInstagram = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><defs><radialGradient id="ig-cor" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#fdf497"/><stop offset=".05" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset=".9" stop-color="#285aeb"/></radialGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#ig-cor)"/><rect x="5.2" y="5.2" width="13.6" height="13.6" rx="4.2" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.3" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1.05" fill="#fff"/></svg>';
@@ -1772,42 +1772,7 @@ const faqPedir = [
   { p: 'Meu bairro não aparece. E agora?', r: `Cada loja entrega num raio de cerca de ${geo ? geo.raioKm : 10} km. Se o seu CEP ficar fora, fale com a gente pelo WhatsApp ${site.telefoneCentral || ''} que indicamos a opção mais perto.` },
   { p: 'Tive um problema com o pedido. O que faço?', r: 'Fale com a loja pelo chat do iFood ou da Keeta, que é o jeito mais rápido. Se preferir, mande sua mensagem pela página Fale com a gente.' },
 ];
-paginas.push({
-  caminho: 'pedir/',
-  profundidade: 1,
-  titulo: `Faça seu pedido | ${site.nome} delivery perto de você`,
-  descricao: 'Digite seu CEP e veja qual unidade da Just Burger atende você, com o link direto para pedir.',
-  schema: [schemaFaq(faqPedir), schemaBreadcrumb([['Início', ''], ['Faça seu pedido', 'pedir/']])],
-  corpo: (base) => `
-<section class="secao">
-  <div class="largura estreita">
-    ${migalhas(base, [['Início', ''], ['Faça seu pedido', 'pedir/']])}
-    <h1>Faça seu pedido</h1>
-    <p class="lead">Digite seu CEP: mostramos a unidade mais perto, com o link direto para pedir.</p>
-    ${buscaCep('cep-pagina')}
-    ${outrasOpcoes()}
-  </div>
-</section>
-<section class="secao">
-  <div class="largura">
-    <h2>Ou escolha a unidade</h2>
-    <div class="grade-lojas lojas-centro">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
-  </div>
-</section>
-<section class="secao">
-  <div class="largura">
-    <div class="titulo-secao"><h2>Os mais pedidos</h2><a class="link" href="${base}cardapio/">Cardápio completo</a></div>
-    <div class="grade-produtos">${maisPedidos().map((i) => cartaoProduto(i, base)).join('')}</div>
-  </div>
-</section>
-<section class="secao">
-  <div class="largura estreita">
-    <h2>Como pedir</h2>
-    ${blocoFaq(faqPedir)}
-  </div>
-</section>`,
-  md: () => `# Faça seu pedido na ${site.nome}\n\n${lojas.map((l) => `- ${l.nome} (${l.endereco}, ${l.bairro}, ${l.cidade}): ${l.ifood}`).join('\n')}\n${site.telefoneCentral ? `\nWhatsApp e telefone: ${site.telefoneCentral}\n` : ''}`,
-});
+// /pedir/ foi unida à página de links (Maikon 16/11): vira só um redirecionamento (escrito junto com a página de links).
 
 // Culinárias do grupo: índice e uma página por marca. Sem conteúdo ainda (culinarias[].conteudo),
 // a página sai com noindex e fora do sitemap.
@@ -2132,13 +2097,14 @@ for (const p of paginas) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Just Burger | Links e pedidos</title>
+<title>Peça Just Burger e culinárias | iFood e Keeta</title>
 <meta property="og:title" content="Just Burger | Peça aqui">
 <meta property="og:description" content="Escolha a loja mais perto e peça pelo iFood ou pela Keeta.">
 <meta property="og:image" content="${abs('assets/img/og-just-burger.jpg')}">
 <meta name="description" content="Peça Just Burger, Just Gourmet, Just Forneria, Just Esfiha e Just Sushi pelo iFood ou pela Keeta. Digite seu CEP e veja a loja que atende você.">
-<meta name="robots" content="noindex, follow">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="${abs('links/')}">
+<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': [schemaFaq(faqPedir)] })}</script>
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Dancing+Script:wght@700&display=swap">
@@ -2228,6 +2194,25 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
 .lk-insta > summary svg { width: 20px; height: 20px; }
 .lk-insta-lista small { display: block; color: var(--branco); opacity: .85; font-size: .8rem; }
 .lk-rodape { margin-top: 26px; text-align: center; color: var(--suave); font-size: .8rem; }
+.lk-mais-conteudo { margin-top: 34px; }
+.lk-mais-conteudo .lk-titulo { margin: 28px 0 12px; }
+.lk-pratos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.lk-prato { display: block; color: var(--branco); text-decoration: none; }
+.lk-prato .produto-foto { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; background: #000; }
+.lk-prato span { display: block; margin-top: 5px; font-size: .8rem; font-weight: 700; line-height: 1.2; }
+.lk-nota { margin: 0 0 10px; color: var(--suave); }
+.lk-nota strong { color: var(--branco); font-size: 1.3rem; }
+.lk-aval { margin: 0 0 8px; padding: 12px 14px; border: 1px solid var(--linha); border-radius: 14px; }
+.lk-aval p { margin: 0 0 6px; }
+.lk-aval footer { color: var(--suave); font-size: .75rem; }
+.lk-link { color: var(--laranja); font-weight: 700; text-decoration: none; }
+.lk-unidades { list-style: none; margin: 0; padding: 0; }
+.lk-unidades li { padding: 10px 0; border-top: 1px solid var(--linha); }
+.lk-unidades a { color: var(--branco); text-decoration: none; }
+.lk-unidades span { display: block; color: var(--suave); font-size: .82rem; }
+.lk-faq details { border-top: 1px solid var(--linha); }
+.lk-faq summary { padding: 12px 0; font-weight: 700; cursor: pointer; }
+.lk-faq p { margin: 0 0 12px; color: var(--suave); font-size: .92rem; }
 .lk-rodape a { color: var(--suave); }
 .lk-todas-titulo { display: none; }
 /* ---------- Computador (a partir de 1000px; Maikon 02/11): cartão largo, CEP largo, logos das 5 culinárias
@@ -2290,6 +2275,19 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
   ${linkWhats ? `<a class="lk-bt" href="${linkWhats}" rel="noopener">${iconeWhats} WhatsApp</a>` : ''}
   </nav>
 
+  <section class="lk-mais-conteudo">
+    <h2 class="lk-titulo">Os mais pedidos</h2>
+    <div class="lk-pratos">${maisPedidos().map((i) => `<a class="lk-prato" href="../cardapio/#${i.id}">${imgProduto(i, '../', '(min-width: 1000px) 260px, 45vw')}<span>${esc(i.nome)}</span></a>`).join('')}</div>
+    ${AVAL ? `<h2 class="lk-titulo">Quem pede, avalia</h2>
+    <p class="lk-nota"><strong>${nota1(AVAL.geral.nota)} ★</strong> nota média no iFood nas ${AVAL.lojas.length} lojas do grupo</p>
+    ${comentariosMisturados(AVAL.lojas).slice(0, 3).map(([c, l]) => `<blockquote class="lk-aval"><p>${esc(c.texto)}</p><footer>Cliente da ${esc(l)} · iFood</footer></blockquote>`).join('')}
+    <p><a class="lk-link" href="../avaliacoes/">Ver todas as avaliações →</a></p>` : ''}
+    <h2 class="lk-titulo">Nossas unidades</h2>
+    <ul class="lk-unidades">${lojas.map((l) => `<li><a href="../unidades/${l.slug}/"><strong>${esc(l.nome)}</strong></a><span>${esc(l.endereco)} · ${esc(l.bairro)}, ${esc(l.cidade)}</span><span>${esc(horarioLoja(l))}</span></li>`).join('')}${culinarias.map((c) => `<li><a href="../culinarias/${c.slug}/"><strong>${esc(c.nome)}</strong></a><span>${esc(c.tipo)} · ${esc((c.lojas || []).map((x) => x.regiao).join(' e '))}</span></li>`).join('')}</ul>
+    <h2 class="lk-titulo">Perguntas</h2>
+    <div class="lk-faq">${faqPedir.map((f) => `<details><summary>${esc(f.p)}</summary><p>${esc(f.r)}</p></details>`).join('')}</div>
+  </section>
+
   <p class="lk-rodape">Grupo Just Burger · <a href="../">justburger.com.br</a></p>
 </main>
 <script>
@@ -2319,6 +2317,8 @@ window.JUST_LINKS = ${JSON.stringify(dadosLinks)};</script>
 `;
   mkdirSync(join(SAIDA, 'links'), { recursive: true });
   writeFileSync(join(SAIDA, 'links', 'index.html'), htmlLinks);
+  mkdirSync(join(SAIDA, 'pedir'), { recursive: true });
+  writeFileSync(join(SAIDA, 'pedir', 'index.html'), `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Faça seu pedido | ${site.nome}</title><link rel="canonical" href="${abs('links/')}"><meta name="robots" content="noindex, follow"><meta http-equiv="refresh" content="0; url=../links/"></head><body><p><a href="../links/">Faça seu pedido</a></p></body></html>`);
 }
 
 writeFileSync(
@@ -2404,6 +2404,7 @@ writeFileSync(
   `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${paginas.filter((p) => !p.noindex).map((p) => `  <url><loc>${abs(p.caminho)}</loc><lastmod>${HOJE}</lastmod></url>`).join('\n')}
+  <url><loc>${abs('links/')}</loc><lastmod>${HOJE}</lastmod></url>
 </urlset>
 `,
 );
