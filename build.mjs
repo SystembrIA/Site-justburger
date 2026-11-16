@@ -232,8 +232,9 @@ function schemaLoja(l) {
     ...(l.geo && { geo: { '@type': 'GeoCoordinates', latitude: l.geo.lat, longitude: l.geo.lng } }),
     ...(l.telefone && { telephone: l.telefone }),
     ...(!pendente(l.googleMaps) && { hasMap: l.googleMaps }),
+    // perfis da loja em outros sites (Google, iFood, Keeta, Instagram): ajudam Google, Bing e IAs a ligar tudo à mesma loja (16/11)
+    sameAs: [l.ifood, l.keeta, l.googleMaps, site.instagram].filter((x) => x && !pendente(x)),
     ...(!pendente(l.ifood) && {
-      sameAs: [l.ifood],
       potentialAction: {
         '@type': 'OrderAction',
         target: { '@type': 'EntryPoint', urlTemplate: l.ifood, actionPlatform: ['http://schema.org/DesktopWebPlatform', 'http://schema.org/MobileWebPlatform'] },
@@ -1788,6 +1789,10 @@ for (const c of culinarias) {
     url: abs(`culinarias/${c.slug}/`), hasMenu: abs(`cardapio/${c.slug}/`), parentOrganization: { '@type': 'Organization', name: site.nome, url: abs('') },
     address: { '@type': 'PostalAddress', streetAddress: x.endereco, addressLocality: 'São Paulo', addressRegion: 'SP', addressCountry: 'BR' },
     ...(x.horarios ? { openingHours: x.horarios.map((h) => `${h.dias.join(',')} ${h.abre}-${h.fecha}`) } : {}),
+    ...(site.telefoneCentral && { telephone: site.telefoneCentral }),
+    ...(x.googleMaps && { hasMap: x.googleMaps }),
+    sameAs: [x.ifood, x.keeta, x.googleMaps].filter(Boolean),
+    ...((x.ifood || x.keeta) && { potentialAction: { '@type': 'OrderAction', target: { '@type': 'EntryPoint', urlTemplate: x.ifood || x.keeta, actionPlatform: ['http://schema.org/DesktopWebPlatform', 'http://schema.org/MobileWebPlatform'] } } }),
   }));
   paginas.push({
     caminho: `culinarias/${c.slug}/`,

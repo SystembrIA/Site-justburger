@@ -186,7 +186,7 @@ export const lojas = [
     telefone: '(11) 2622-8800', // central (telefone e WhatsApp)
     geo: { lat: -23.5114779, lng: -46.5052967 }, // Rua Peixoto (OpenStreetMap); conferir o pino exato no Google Maps
     ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-hamburgueria-lanches--dog-vila-buenos-aires/8f8983b5-89d1-4a88-9e3a-88dc8c8d76de',
-    googleMaps: 'https://maps.google.com/?q=Just+Burger+Hamburgueria+Vila+Buenos+Aires+São+Paulo',
+    googleMaps: 'https://maps.google.com/maps?cid=1980458664197518915' /* perfil verificado no Google (16/11) */,
     horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '11:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '11:00', fecha: '00:00' }], // por loja, como no iFood (ifood_horarios do Hub, 30/10/2026); 00:00 = meia-noite
     bairrosAtendidos: ['Vila Buenos Aires', 'Penha', 'Cangaíba', 'Vila Matilde', 'Ermelino Matarazzo'], // raio de 10 km (lista completa em bairros.json)
     intro:
@@ -207,7 +207,7 @@ export const lojas = [
     telefone: '(11) 2622-8800',
     geo: { lat: -23.4940394, lng: -46.7310058 }, // OpenStreetMap (avenida no CEP); conferir o pino no Google Maps
     ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-burger-pirituba-jardim-iris/b1f195b5-8ec5-4b9a-ae71-cd55d969a4df', // merchant do iFood (Hub)
-    googleMaps: 'https://maps.google.com/?q=Just+Burger+Pirituba',
+    googleMaps: 'https://maps.google.com/maps?cid=9871662487231340785',
     horarios: [{ dias: ['Tu', 'We', 'Th'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }, { dias: ['Su'], abre: '17:30', fecha: '23:00' }], // por loja, como no iFood (ifood_horarios do Hub, 30/10/2026); 00:00 = meia-noite
     bairrosAtendidos: ['Pirituba', 'Jaraguá', 'São Domingos', 'Vila Mangalot', 'Parque São Domingos'],
     intro:
@@ -228,7 +228,7 @@ export const lojas = [
     telefone: '(11) 2622-8800',
     geo: { lat: -23.4833176, lng: -46.5482269 }, // OpenStreetMap (rua); conferir o pino no Google Maps
     ifood: 'https://www.ifood.com.br/delivery/guarulhos-sp/just-burger-hamburgueria-lanches--dog-vila-endres/8432b620-27ea-48fb-bf3b-a0b76bbf3516',
-    googleMaps: 'https://maps.google.com/?q=Just+Burger+Hamburgueria+Vila+Endres+Guarulhos',
+    googleMaps: 'https://maps.google.com/maps?cid=3480136763448192953',
     horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '17:00', fecha: '23:00' }], // por loja, como no iFood (ifood_horarios do Hub, 30/10/2026); 00:00 = meia-noite
     bairrosAtendidos: ['Vila Endres', 'Itapegica', 'Vila Augusta', 'Ponte Grande', 'Porto da Igreja', 'Tranquilidade'],
     intro:
@@ -249,7 +249,7 @@ export const lojas = [
     telefone: '(11) 2622-8800',
     geo: { lat: -23.6857582, lng: -46.5448592 }, // OpenStreetMap (avenida); conferir o pino no Google Maps
     ifood: 'https://www.ifood.com.br/delivery/sao-bernardo-do-campo-sp/just-burger-hamburgueria-lanches--dog-baeta-neves/aa6576e8-574e-42c5-8d38-0d7df31f3fcc',
-    googleMaps: 'https://maps.google.com/?q=Just+Burger+Hamburgueria+Baeta+Neves+São+Bernardo+do+Campo',
+    googleMaps: 'https://maps.google.com/maps?cid=11327729757957640639',
     horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '17:00', fecha: '23:00' }], // por loja, como no iFood (ifood_horarios do Hub, 30/10/2026); 00:00 = meia-noite
     bairrosAtendidos: ['Baeta Neves', 'Centro de São Bernardo', 'Nova Petrópolis', 'Anchieta', 'Jardim Stella (Santo André)', 'Jardim Las Vegas (Santo André)'], // o iFood mostra a mesma loja atendendo parte de Santo André
     intro:
@@ -413,16 +413,16 @@ export const culinarias = [
     'O carro-chefe é a Feijoada Especial Just, com arroz branco, carne seca, linguiça defumada, costelinha de porco, bacon, couve, farofa e torresmo, em versões para 1, 2 ou 3 pessoas. No dia a dia saem os queridinhos da casa: strogonoff de frango ou de carne, lagarto ao molho madeira, filé de frango à parmegiana e o Just Baião de Dois.',
     'Para quem quer algo especial tem filé mignon à parmegiana e salmão ao molho de maracujá ou de alcaparras; para quem quer algo leve, saladas e prato fitness. Também tem massas artesanais (lasanha e conchiglione recheado com 4 queijos), pratos kids e, de sobremesa, pudins e milk-shakes. As duas unidades têm nota 4,9 no iFood e o selo Super Restaurante.',
   ], nome: 'Just Gourmet', tipo: 'Comida brasileira', lojas: [
-    { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/oroqot4z', endereco: 'Rua Peixoto, 156', horarios: [{ dias: ['Mo'], abre: '11:00', fecha: '15:00' }, { dias: ['Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '11:00', fecha: '22:30' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-penha/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb' },
-    { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/9R12BcVz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Mo', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '11:00', fecha: '22:30' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-pirituba/9e482678-bad2-45ee-97ed-8d34a3e7e994' },
+    { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/oroqot4z', endereco: 'Rua Peixoto, 156', googleMaps: 'https://maps.google.com/maps?cid=15225564991114666996', horarios: [{ dias: ['Mo'], abre: '11:00', fecha: '15:00' }, { dias: ['Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '11:00', fecha: '22:30' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-penha/b7ef408a-49bd-46a6-aa5a-e091dfe64fdb' },
+    { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/9R12BcVz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', googleMaps: 'https://maps.google.com/maps?cid=13265608159911047824', horarios: [{ dias: ['Mo', 'We', 'Th', 'Fr', 'Sa', 'Su'], abre: '11:00', fecha: '22:30' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/just-gourmet-comida-brasileira-feijoada-pirituba/9e482678-bad2-45ee-97ed-8d34a3e7e994' },
   ] },
   { slug: 'just-forneria', meta: 'Just Forneria (Aham Forneria): pizza de massa napolitana de fermentação lenta na Zona Leste e em Pirituba. Peça pelo iFood ou pela Keeta.', conteudo: [
     'A Just Forneria é a pizzaria do grupo da Just Burger. No iFood e no Instagram ela ainda aparece como Aham Forneria (@ahamforneriasp).',
     'A base de tudo é a massa napolitana de fermentação lenta, leve, com molho de tomate. A pizza grande tem 35 cm e aceita até 2 sabores; também tem broto, pizza kids e pizzas doces.',
     'No cardápio estão as clássicas (muçarela, calabresa, frango com Catupiry, margherita e portuguesa) e as da casa, como a de bacon e ovos e a Gamberetto. A unidade da Zona Leste entrega pelo iFood e pela Keeta, com nota 4,9 no iFood; a de Pirituba entrega pela Keeta.',
   ], nome: 'Just Forneria', tipo: 'Pizza', lojas: [
-    { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/Xw8RPEWz', endereco: 'Rua Santa Germana, 80' /* CNPJ 49.576.555/0001-75 (Just Pizza & Japan) */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '17:45', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '17:45', fecha: '00:00' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-forneria-penha/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8' },
-    { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/jigI53lz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', horarios: [{ dias: ['Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: '' /* iFood fechado: só Keeta (Maikon 03/11) */ },
+    { regiao: 'Zona Leste', keeta: 'https://url-eu.mykeeta.com/Xw8RPEWz', googleMaps: 'https://maps.google.com/maps?cid=2178013308123919617', endereco: 'Rua Santa Germana, 80' /* CNPJ 49.576.555/0001-75 (Just Pizza & Japan) */, horarios: [{ dias: ['Mo', 'Tu', 'We', 'Th', 'Su'], abre: '17:45', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '17:45', fecha: '00:00' }], nota: 4.9, superIfood: true, ifood: 'https://www.ifood.com.br/delivery/sao-paulo-sp/aham-forneria-penha/510cb9b9-a4dc-4962-a70f-cc01b0e4bdc8' },
+    { regiao: 'Pirituba', keeta: 'https://url-eu.mykeeta.com/jigI53lz', endereco: 'Av. Raimundo Pereira de Magalhães, 3850', googleMaps: 'https://maps.google.com/maps?cid=6132101387416836421', horarios: [{ dias: ['Tu', 'We', 'Th', 'Su'], abre: '18:00', fecha: '23:00' }, { dias: ['Fr', 'Sa'], abre: '18:00', fecha: '00:00' }], nota: 4.9, superIfood: false, ifood: '' /* iFood fechado: só Keeta (Maikon 03/11) */ },
   ] },
   { slug: 'just-sushi', meta: 'Just Sushi (Aham Sushi): combinados, hot rolls, temakis e joes trufados na Zona Leste de São Paulo. Peça pelo iFood ou pela Keeta.', conteudo: [
     'A Just Sushi é a culinária japonesa do grupo da Just Burger, na Zona Leste de São Paulo. No iFood e no Instagram ela ainda aparece como Aham Sushi (@ahamsushisp).',
