@@ -1223,7 +1223,14 @@ paginas.push({
     ${migalhas(base, [['Início', ''], ['Para você', 'para-voce/']])}
     <h1>O que pedir na Just Burger</h1>
     <p class="lead">Cada pessoa chega com uma fome diferente. Escolha o perfil mais parecido com o seu.</p>
-    <div class="grade-perfis">${perfis.map((p) => cartaoPerfil(p, base)).join('')}</div>
+    <p>Todo burger da Just leva carne de 150 g no pão brioche com o Molho Just. Na dúvida, comece pelo Top Smash, o 1º mais vendido no iFood. Abaixo, um atalho para cada situação: primeira vez, muita fome, pedido para dividir, gastar pouco, fã de smash, quem prefere frango, quem quer algo mais leve e a sobremesa.</p>
+    <div class="grade-perfis-fotos">${perfis.map((p) => { const i = produtosDe(p).find((x) => foto(x.id)); return `<a class="perfil-foto" href="${base}para-voce/${p.slug}/">${i ? imgProduto(i, base, '(min-width: 900px) 280px, 46vw') : ''}<span class="perfil-foto-texto"><strong>${esc(p.nome)}</strong><span>${esc(p.chamada)}</span></span></a>`; }).join('')}</div>
+  </div>
+</section>
+<section class="secao">
+  <div class="largura estreita">
+    <h2>Resumo de cada perfil</h2>
+    ${perfis.map((p) => `<h3><a href="${base}para-voce/${p.slug}/">${esc(p.nome)}</a></h3><p>${esc(p.resposta)}</p>`).join('')}
   </div>
 </section>`,
   md: () => `# O que pedir na ${site.nome}
@@ -1619,13 +1626,19 @@ ${blocoVagas(base)}`,
 if (site.contato && site.contato.publicada) {
   const ct = site.contato;
   const nomesLojas = [...lojas.map((l) => l.nome), ...culinarias.flatMap((c) => (c.lojas || []).map((x) => `${c.nome} ${x.regiao}`))];
+  const faqContato = [
+    { p: 'Tive um problema com o meu pedido. Qual o jeito mais rápido?', r: 'Falar com a loja pelo chat do iFood ou da Keeta, enquanto o pedido está aberto. Depois disso, mande pelo formulário com o nome da loja.' },
+    ...(site.telefoneCentral ? [{ p: 'Qual o telefone e o WhatsApp da Just Burger?', r: `${site.telefoneCentral}, telefone e WhatsApp da central do grupo.` }] : []),
+    { p: 'Quero trabalhar na Just. Onde mando o currículo?', r: 'Na página Trabalhe conosco, com as vagas por função e unidade.' },
+    { p: 'Quero propor uma parceria ou falar com a diretoria.', r: 'Use este formulário com o assunto "Outro": a mensagem chega direto para a nossa equipe.' },
+  ];
   const fotoContato = existsSync(join(RAIZ, 'assets/img/confraternizacao-equipe-just-burger-hamburgueria.webp')) ? 'assets/img/confraternizacao-equipe-just-burger-hamburgueria.webp' : '';
   paginas.push({
     caminho: 'contato/',
     profundidade: 1,
     titulo: `Fale com a gente | ${site.nome}`,
     descricao: 'Elogio, sugestão, reclamação ou dúvida sobre a Just Burger, Just Gourmet, Just Forneria, Just Esfiha ou Just Sushi: mande sua mensagem para a nossa equipe.',
-    schema: [schemaBreadcrumb([['Início', ''], ['Fale com a gente', 'contato/']]), { '@type': 'ContactPage', name: 'Fale com a gente', url: abs('contato/') }],
+    schema: [schemaBreadcrumb([['Início', ''], ['Fale com a gente', 'contato/']]), { '@type': 'ContactPage', name: 'Fale com a gente', url: abs('contato/') }, schemaFaq(faqContato)],
     corpo: (base) => `
 <section class="secao">
   <div class="largura">
@@ -1638,6 +1651,8 @@ if (site.contato && site.contato.publicada) {
         <p>Do outro lado deste formulário tem gente de verdade: a mesma equipe que prepara o seu pedido todos os dias. Cada mensagem é lida por nós, e é assim que a gente melhora.</p>
         <p>Gostou? Conte para a gente: o elogio chega a quem fez o seu lanche. Algo deu errado? Diga qual foi a loja, que a gente resolve mais rápido. Sugestões e dúvidas também são muito bem-vindas.</p>
         <p class="suave">A gente responde pelo WhatsApp ou pelo e-mail que você deixar.</p>
+        <h2>Outras formas de falar com a gente</h2>
+        ${blocoFaq(faqContato)}
       </div>
       <form class="form-curriculo form-contato" id="form-contato" data-envio="${esc(ct.envio || '')}" data-email="${esc(ct.email)}" novalidate>
         <label>Nome<input name="nome" required maxlength="120" autocomplete="name"></label>
@@ -1743,12 +1758,19 @@ ${videosHistoria().length ? `<section class="secao">
   md: () => `# Sobre a ${site.nome}\n\nA Just começou em ${site.fundacao} na Zona Leste de São Paulo, no delivery. Hoje são 4 unidades da Just Burger (hamburgueria), 2 da Just Gourmet (comida brasileira), 2 da Just Forneria (pizzaria), 2 da Just Esfiha e 1 da Just Sushi: o grupo conta com 11 lojas nos aplicativos e plataformas de delivery.\n\n${historia.join('\n\n')}\n\n${videosHistoria().map((m) => `- ${m.titulo}: ${m.url}`).join('\n')}\n`,
 });
 
+const faqPedir = [
+  { p: 'Onde peço a Just Burger?', r: `Pelo iFood ou pela Keeta, na unidade mais perto de você: ${juntar(lojas.map((l) => `${l.bairro} (${l.cidade})`))}. Digite seu CEP acima para ver a loja certa.` },
+  { p: 'Qual o pedido mínimo?', r: `R$ ${site.pedidoMinimo} no iFood. A taxa de entrega aparece no app, de acordo com o seu endereço.` },
+  { p: 'Qual o horário de entrega?', r: lojas.map((l) => `${l.nome}: ${horarioLoja(l).toLowerCase()}`).join('. ') + '.' },
+  { p: 'Meu bairro não aparece. E agora?', r: `Cada loja entrega num raio de cerca de ${geo ? geo.raioKm : 10} km. Se o seu CEP ficar fora, fale com a gente pelo WhatsApp ${site.telefoneCentral || ''} que indicamos a opção mais perto.` },
+  { p: 'Tive um problema com o pedido. O que faço?', r: 'Fale com a loja pelo chat do iFood ou da Keeta, que é o jeito mais rápido. Se preferir, mande sua mensagem pela página Fale com a gente.' },
+];
 paginas.push({
   caminho: 'pedir/',
   profundidade: 1,
-  titulo: `Faça seu pedido | ${site.nome}`,
+  titulo: `Faça seu pedido | ${site.nome} delivery perto de você`,
   descricao: 'Digite seu CEP e veja qual unidade da Just Burger atende você, com o link direto para pedir.',
-  schema: [schemaBreadcrumb([['Início', ''], ['Faça seu pedido', 'pedir/']])],
+  schema: [schemaFaq(faqPedir), schemaBreadcrumb([['Início', ''], ['Faça seu pedido', 'pedir/']])],
   corpo: (base) => `
 <section class="secao">
   <div class="largura estreita">
@@ -1763,6 +1785,18 @@ paginas.push({
   <div class="largura">
     <h2>Ou escolha a unidade</h2>
     <div class="grade-lojas lojas-centro">${lojas.map((l) => cartaoLoja(l, base)).join('')}</div>
+  </div>
+</section>
+<section class="secao">
+  <div class="largura">
+    <div class="titulo-secao"><h2>Os mais pedidos</h2><a class="link" href="${base}cardapio/">Cardápio completo</a></div>
+    <div class="grade-produtos">${maisPedidos().map((i) => cartaoProduto(i, base)).join('')}</div>
+  </div>
+</section>
+<section class="secao">
+  <div class="largura estreita">
+    <h2>Como pedir</h2>
+    ${blocoFaq(faqPedir)}
   </div>
 </section>`,
   md: () => `# Faça seu pedido na ${site.nome}\n\n${lojas.map((l) => `- ${l.nome} (${l.endereco}, ${l.bairro}, ${l.cidade}): ${l.ifood}`).join('\n')}\n${site.telefoneCentral ? `\nWhatsApp e telefone: ${site.telefoneCentral}\n` : ''}`,
@@ -1895,6 +1929,22 @@ const linkCurriculo = (base, c, u) => { const k = u ? cozinhasDoCargo(c, u)[0] :
 const FOTOS_VAGA = existsSync(join(RAIZ, 'assets/img/trabalhe')) ? readdirSync(join(RAIZ, 'assets/img/trabalhe')).filter((f) => f.endsWith('.webp')).sort().map((f) => `trabalhe/${f}`) : [];
 const fotosVaga = (base, n) => (FOTOS_VAGA.length ? `<div class="grade-equipe vaga-fotos">${[0, 1, 2].map((k) => FOTOS_VAGA[(n + k) % FOTOS_VAGA.length]).map((f) => `<img src="${base}assets/img/${f}" width="800" height="1000" alt="Equipe do grupo Just Burger na cozinha" loading="lazy" decoding="async">`).join('')}</div>` : '');
 const cargosAbertos = vagas && vagas.publicada ? vagas.cargos.filter((c) => c.unidades.length) : [];
+// Fotos de pratos da cozinha da vaga (uma por categoria), para a pessoa ver o que vai preparar.
+const temFotoMarca = (i) => i.fotoPasta && existsSync(join(RAIZ, `${i.fotoPasta}/${i.id}.webp`));
+const RUIM_FOTO = /coca|refri|combo|\+|%|gr[aá]tis|off\b|escolha|lemonade|suco|[áa]gua|bebida|cerveja|lata/i;
+const pratosDaMarca = (marca, n = 4) => {
+  const cul = culinarias.find((x) => x.nome === marca);
+  if (!cul || !cardapiosMarcas[cul.slug]) return maisPedidos().concat(categoriasHome().map((x) => x.item)).filter((i, k, a) => a.findIndex((y) => y.id === i.id) === k && !RUIM_FOTO.test(i.nome)).slice(0, n).map((i) => ({ i, link: 'cardapio/' }));
+  const bom = (i) => temFotoMarca(i) && !RUIM_FOTO.test(i.nome);
+  return cardapiosMarcas[cul.slug].map((cat) => cat.itens.find(bom)).filter(Boolean).slice(0, n).map((i) => ({ i, link: `cardapio/${cul.slug}/` }));
+};
+const blocoPratos = (base, marca, titulo) => { const ps = pratosDaMarca(marca); return ps.length ? `<h2>${esc(titulo)}</h2><div class="pratos-vaga">${ps.map(({ i, link }) => `<a class="prato-vaga" href="${base}${link}">${imgProduto(i, base, '(min-width: 900px) 220px, 45vw')}<span>${esc(i.nome)}</span></a>`).join('')}</div>` : ''; };
+const faqCargo = (c) => [
+  { p: `Precisa de experiência para trabalhar como ${c.nome.toLowerCase()}?`, r: c.perfil[0].replace(/\.$/, '') + '.' },
+  { p: `Em quais unidades tem vaga de ${c.nome.toLowerCase()}?`, r: c.unidades.map((u) => `${UNIDADES_VAGA[u].titulo} (perto de ${listaE(bairrosPerto(u, 3))})`).join('; ') + '.' },
+  { p: `Como me candidato para ${c.nome.toLowerCase()}?`, r: `Envie seu currículo pelo formulário do site, na página Trabalhe conosco: o nome da vaga já vem preenchido. O RH (Recrutamento e Seleção) analisa e chama pelo WhatsApp.${site.trabalhe && site.trabalhe.whatsappRH ? ' Dúvidas também pelo WhatsApp do RH, de segunda a sexta, das 8h15 às 18h.' : ''}` },
+  { p: `Qual o horário de trabalho de ${c.nome.toLowerCase()}?`, r: `Depende da unidade e da escala; a cozinha funciona no horário da loja: ${c.unidades.map((u) => { const k = cozinhasDoCargo(c, u)[0]; return k && k.horarios.length ? `${UNIDADES_VAGA[u].nome}, ${k.horarios.map(textoHorarioCurto).join('; ').toLowerCase()}` : UNIDADES_VAGA[u].nome; }).join(' | ')}.` },
+];
 const segmentosVaga = cargosAbertos.length ? (vagas.segmentos || []) : [];
 // Funções de uma cozinha: as da própria marca e as gerais (auxiliar, atendente, despacho) nas unidades onde ela existe.
 const unidadesDoSegmento = (sg) => Object.keys(UNIDADES_VAGA).filter((u) => cozinhasVaga(u).some((k) => k.marca === sg.marca));
@@ -1975,7 +2025,7 @@ if (cargosAbertos.length) {
       profundidade: 2,
       titulo: `Vagas para ${c.nome.toLowerCase()} | ${site.nome}`,
       descricao: `Vagas para ${c.nome.toLowerCase()} ${ondeMarca}: ${c.unidades.map((u) => UNIDADES_VAGA[u].nome).join(', ')}. ${c.resumo}`.slice(0, 300),
-      schema: [schemaBreadcrumb(trilha)],
+      schema: [schemaFaq(faqCargo(c)), schemaBreadcrumb(trilha)],
       corpo: (base) => `
 <section class="secao">
   <div class="largura estreita">
@@ -1987,6 +2037,9 @@ if (cargosAbertos.length) {
     <h2>O que faz</h2>${listaHtml(c.faz)}
     <h2>Quem a gente procura</h2>${listaHtml(c.perfil)}
     <p><a class="botao" href="${linkCurriculo(base, c)}">Enviar currículo</a></p>
+    ${blocoPratos(base, c.marca === 'grupo' ? site.nome : c.marca, c.marca === 'grupo' ? 'O que sai das nossas cozinhas' : `O que sai da cozinha da ${c.marca}`)}
+    <h2>Perguntas sobre a vaga</h2>
+    ${blocoFaq(faqCargo(c))}
   </div>
 </section>
 <section class="secao"><div class="largura">${fotosVaga(base, ic)}</div></section>`,
@@ -2027,6 +2080,7 @@ if (cargosAbertos.length) {
     <h2>Por que trabalhar com a gente</h2>
     <p>O grupo Just Burger nasceu em 2018 e hoje tem mais de 150 pessoas nas cozinhas de São Paulo, Guarulhos e São Bernardo. Temos colaboradores com mais de 8 anos de casa, e muitos começaram na cozinha e hoje lideram equipes. Você aprende com gente experiente e recebe treinamento.</p>
     <p><a class="botao" href="${linkCurriculo(base, c, u)}">Enviar currículo</a></p>
+    ${blocoPratos(base, c.marca === 'grupo' ? (ks[0] ? ks[0].marca : site.nome) : c.marca, 'O que você vai preparar')}
     ${outrasUnid.length ? `<h2>Mesma vaga em outras unidades</h2><ul class="lista-vagas">${outrasUnid.map((x) => `<li><a href="${base}vagas/${c.slug}/${x}/">${esc(c.nome)} ${esc(UNIDADES_VAGA[x].local)}</a></li>`).join('')}</ul>` : ''}
     ${outrosCargos.length ? `<h2>Outras vagas ${esc(U.local)}</h2><ul class="lista-vagas">${outrosCargos.map((o) => `<li><a href="${base}vagas/${o.slug}/${u}/">${esc(o.nome)}</a></li>`).join('')}</ul>` : ''}
   </div>

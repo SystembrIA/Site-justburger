@@ -734,3 +734,19 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .topo-linha > .lema:not(.lema-menu) ~ .menu, .topo-linha > .lema:not(.lema-menu) ~ .menu-celular { margin-left: 0; }
 @media (max-width: 899px) { .topo-linha > .lema:not(.lema-menu) { margin-left: 0; } }
 .em-breve { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font-size: .62rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; vertical-align: middle; }
+
+/* Pratos nas páginas de vagas e perfis com foto em "O que pedir" (auditoria 16/11) */
+.pratos-vaga { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 0 0 24px; }
+@media (min-width: 700px) { .pratos-vaga { grid-template-columns: repeat(4, 1fr); } }
+.prato-vaga { display: block; text-decoration: none; color: inherit; }
+.prato-vaga .produto-foto { border-radius: 12px; }
+.prato-vaga span { display: block; margin-top: 6px; font-size: .85rem; font-weight: 700; line-height: 1.2; }
+.grade-perfis-fotos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; }
+@media (min-width: 900px) { .grade-perfis-fotos { grid-template-columns: repeat(4, 1fr); } }
+.perfil-foto { position: relative; display: block; overflow: hidden; border-radius: 14px; text-decoration: none; background: #000; }
+.perfil-foto .produto-foto { border-radius: 0; transition: transform .3s; }
+.perfil-foto:hover .produto-foto { transform: scale(1.04); }
+.perfil-foto-texto { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 12px 10px; background: linear-gradient(transparent, rgba(0, 0, 0, .9)); }
+.perfil-foto-texto strong { display: block; font-size: 1.05rem; font-weight: 900; font-stretch: 75%; text-transform: uppercase; line-height: 1.05; color: #fff; }
+.perfil-foto-texto span { display: block; margin-top: 2px; font-size: .78rem; color: var(--suave); }
+.perfil-foto:hover strong { color: var(--laranja); }
