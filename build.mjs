@@ -322,7 +322,7 @@ function pagina({ caminho, titulo, descricao, corpo, schema = [], profundidade, 
     ['O que pedir', 'para-voce/'],
     ...(site.equipe && site.equipe.publicada ? [['Nossa equipe', 'equipe/']] : []),
     ['Na mídia', 'na-midia/'],
-    ...(site.acoes && site.acoes.publicada ? [['Ações com parceiros', 'acoes/']] : []),
+    ...(site.acoes && (site.acoes.publicada || site.acoes.previa) ? [['Ações com parceiros', 'acoes/']] : []),
     ...(site.trabalhe && site.trabalhe.publicada ? [['Trabalhe conosco', 'trabalhe-conosco/']] : []),
   ];
   return `<!doctype html>
@@ -369,14 +369,14 @@ ${site.googleSiteVerification ? `<meta name="google-site-verification" content="
     </a>
     ${site.lemaNoTopo === 'logo' ? `${site.lema ? `<span class="lema">${esc(site.lema)}</span>` : ''}` : ''}
     <nav class="menu" aria-label="Principal">
-      <ul>${nav.map(([n, c]) => `<li><a href="${base}${c === 'culinarias/' ? '#culinarias' : c}"${caminho.startsWith(c) ? ' aria-current="page"' : ''}>${n}</a></li>`).join('')}</ul>
+      <ul>${nav.filter(([, c]) => c !== 'acoes/' || site.acoes.publicada).map(([n, c]) => `<li><a href="${base}${c === 'culinarias/' ? '#culinarias' : c}"${caminho.startsWith(c) ? ' aria-current="page"' : ''}>${n}</a></li>`).join('')}</ul>
     </nav>
     ${site.lemaNoTopo === 'menu' ? `${site.lema ? `<span class="lema lema-menu">${esc(site.lema)}</span>` : ''}` : ''}
     ${botaoPedido(base, 'botao botao-topo')}
     <details class="menu-celular">
       <summary aria-label="Abrir menu"><span></span><span></span><span></span></summary>
       <nav aria-label="Menu">
-        <ul><li><a href="${base}">Home</a></li>${nav.map(([n, c]) => (c === 'culinarias/' ? (culinarias.length ? `<li><details class="submenu"><summary><strong class="submenu-titulo">Nossas<br>culinárias</strong><i class="submenu-logos">${culinarias.map((c) => logoMarca(c)).filter(Boolean).map((l) => `<img src="${base}${l}" alt="" width="30" height="30">`).join('')}</i></summary><ul>${culinarias.map((c) => { const logo = logoMarca(c); return `<li><a href="${base}culinarias/${c.slug}/">${logo ? `<img src="${base}${logo}" width="36" height="36" alt="">` : `<span class="submenu-marca" aria-hidden="true">${esc(c.nome.split(' ').pop()[0])}</span>`}${esc(c.nome)}</a></li>`; }).join('')}</ul></details></li>` : '') : `<li><a href="${base}${c}">${n}</a></li>`)).join('')}<li><a href="${base}entrega/">Onde entregamos</a></li></ul>
+        <ul><li><a href="${base}">Home</a></li>${nav.map(([n, c]) => (c === 'culinarias/' ? (culinarias.length ? `<li><details class="submenu"><summary><strong class="submenu-titulo">Nossas<br>culinárias</strong><i class="submenu-logos">${culinarias.map((c) => logoMarca(c)).filter(Boolean).map((l) => `<img src="${base}${l}" alt="" width="30" height="30">`).join('')}</i></summary><ul>${culinarias.map((c) => { const logo = logoMarca(c); return `<li><a href="${base}culinarias/${c.slug}/">${logo ? `<img src="${base}${logo}" width="36" height="36" alt="">` : `<span class="submenu-marca" aria-hidden="true">${esc(c.nome.split(' ').pop()[0])}</span>`}${esc(c.nome)}</a></li>`; }).join('')}</ul></details></li>` : '') : `<li><a href="${base}${c}">${n}${c === 'acoes/' && !site.acoes.publicada ? ' <small class="em-breve">em breve</small>' : ''}</a></li>`)).join('')}<li><a href="${base}entrega/">Onde entregamos</a></li></ul>
         ${botaoPedido(base)}
       </nav>
     </details>
@@ -418,6 +418,7 @@ ${corpo(base)}
         ${geo ? `<li><a href="${base}entrega/">Onde entregamos</a></li>` : ''}
         <li><a href="${base}links/">Faça seu pedido</a></li>
         <li><a href="${base}culinarias/">Nossas culinárias</a></li>
+        ${site.acoes && (site.acoes.publicada || site.acoes.previa) ? `<li><a href="${base}acoes/">Ações com parceiros${site.acoes.publicada ? '' : ' <small class="em-breve">em breve</small>'}</a></li>` : ''}
         ${site.contato && site.contato.publicada ? `<li><a href="${base}contato/">Fale com a gente</a></li>` : ''}
       </ul>
     </div>
@@ -1544,7 +1545,10 @@ if (site.acoes && (site.acoes.publicada || site.acoes.previa)) {
   <div class="largura">
     ${migalhas(base, [['Início', ''], ['Ações com parceiros', 'acoes/']])}
     <h1>Ações com parceiros</h1>
-    <p class="lead">${esc(ac.chamada)}</p>
+    ${!ac.publicada ? `<p class="lead">Em breve, novidades.</p>
+    <p>Estamos preparando esta página com as ações da Just com grandes marcas. Enquanto isso, veja o que já falaram da gente em <a class="link" href="${base}na-midia/">Na mídia</a>.</p>
+  </div>
+</section>` : `<p class="lead">${esc(ac.chamada)}</p>
     <div class="grade-acoes">${ac.itens.map((i) => `<article class="acao">
       ${i.foto ? `<img src="${base}${i.foto}" alt="${esc(i.titulo)}" decoding="async">` : `<div class="acao-parceiro"><p>Just Burger <span>×</span> ${esc(i.parceiro)}</p></div>`}
       <div class="acao-texto">
@@ -1555,8 +1559,8 @@ if (site.acoes && (site.acoes.publicada || site.acoes.previa)) {
       </div>
     </article>`).join('')}</div>
   </div>
-</section>`,
-    md: () => `# Ações com parceiros\n\n${ac.chamada}\n\n${ac.itens.map((i) => `## ${i.parceiro}: ${i.titulo}\n\n${i.quando}. ${i.texto}\n\n${(i.links || []).map(([r, u]) => `- ${r}: ${/^https?:/.test(u) ? u : abs(u)}`).join('\n')}`).join('\n\n')}\n`,
+</section>`}`,
+    md: () => !ac.publicada ? `# Ações com parceiros\n\nEm breve, novidades.\n` : `# Ações com parceiros\n\n${ac.chamada}\n\n${ac.itens.map((i) => `## ${i.parceiro}: ${i.titulo}\n\n${i.quando}. ${i.texto}\n\n${(i.links || []).map(([r, u]) => `- ${r}: ${/^https?:/.test(u) ? u : abs(u)}`).join('\n')}`).join('\n\n')}\n`,
   });
 }
 

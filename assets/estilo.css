@@ -733,3 +733,4 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .topo-linha > .lema:not(.lema-menu) { flex: 1 1 auto; margin-left: 0; text-align: center; }
 .topo-linha > .lema:not(.lema-menu) ~ .menu, .topo-linha > .lema:not(.lema-menu) ~ .menu-celular { margin-left: 0; }
 @media (max-width: 899px) { .topo-linha > .lema:not(.lema-menu) { margin-left: 0; } }
+.em-breve { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: var(--laranja); color: #0b0b0b; font-size: .62rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; vertical-align: middle; }
