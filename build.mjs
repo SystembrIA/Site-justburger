@@ -159,6 +159,9 @@ const QTD = !!(site.avaliacoes && site.avaliacoes.quantidadeConfirmada);
 const bairros = geo ? geo.bairros : [];
 const bairroPorSlug = new Map(bairros.map((b) => [b.slug, b]));
 const bairrosDaLoja = (l) => bairros.filter((b) => b.loja === l.slug);
+// Bairros pequenos (um ponto só no mapa, sem outros nomes): sem página própria, para não repetir texto (Maikon 16/11).
+// Continuam listados em "Onde entregamos" e na busca por CEP.
+const temPaginaBairro = (b) => !!site.indexarBairrosPequenos || !(b.pontos === 1 && !(b.variacoes || []).length);
 // Link do Google Maps pelo endereço da loja (o mesmo do CNPJ e do site).
 for (const l of lojas) if (!pendente(l.endereco)) l.googleMaps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Just Burger, ${l.endereco}, ${l.cidade} - SP`)}`;
 if (geo) for (const l of lojas) l.bairrosAtendidos = bairrosDaLoja(l).slice(0, 8).map((b) => b.nome);
@@ -260,7 +263,7 @@ function schemaLoja(l) {
       closes: h.fecha === '00:00' ? '23:59' : h.fecha,
     })),
     areaServed: geo
-      ? bairrosDaLoja(l).map((b) => ({ '@type': 'Place', name: b.tipo === 'cidade' ? b.cidade : `${b.nome}, ${b.cidade}`, url: abs(`entrega/${b.slug}/`) }))
+      ? bairrosDaLoja(l).map((b) => ({ '@type': 'Place', name: b.tipo === 'cidade' ? b.cidade : `${b.nome}, ${b.cidade}`, ...(temPaginaBairro(b) ? { url: abs(`entrega/${b.slug}/`) } : {}) }))
       : l.bairrosAtendidos.filter((b) => !pendente(b)).map((b) => ({ '@type': 'Place', name: `${b}, ${l.cidade}` })),
   };
 }
@@ -1403,24 +1406,25 @@ if (geo) {
       <summary><span class="bloco-loja-nome">${esc(l.nome)}</span> <span class="suave pequeno">${bairrosDaLoja(l).length} bairros</span></summary>
       ${faixas.map(([de, ate, rot]) => {
         const lista = bairrosDaLoja(l).filter((b) => b.distanciaKm >= de && b.distanciaKm < ate);
-        return lista.length ? `<h3 class="faixa">${rot}</h3><p class="chips">${lista.map((b) => `<a href="${base}entrega/${b.slug}/">${esc(rotuloBairro(b))}</a>`).join('')}</p>` : '';
+        return lista.length ? `<h2 class="faixa">${rot}</h2><p class="chips">${lista.map((b) => (temPaginaBairro(b) ? `<a href="${base}entrega/${b.slug}/">${esc(rotuloBairro(b))}</a>` : `<span>${esc(rotuloBairro(b))}</span>`)).join('')}</p>` : '';
       }).join('')}
     </details>`).join('')}
     <script>(function () { var d = location.hash && document.getElementById(location.hash.slice(1)); if (d && d.tagName === 'DETAILS') d.open = true; })();</script>
     <p class="suave pequeno">Bairros e distâncias calculados a partir do OpenStreetMap e dos distritos oficiais da Prefeitura de São Paulo (GeoSampa), em ${dataMidia(geo.geradoEm)}.</p>
   </div>
 </section>`,
-    md: () => `# Onde a ${site.nome} entrega\n\nRaio de ${geo.raioKm} km de cada unidade. Confirme o endereço no iFood.\n\n${lojas.map((l) => `## ${l.nome}\n\n${bairrosDaLoja(l).map((b) => `- [${rotuloBairro(b)}](${abs(`entrega/${b.slug}/`)}) — ${kmTxt(b.distanciaKm)} km${b.variacoes.length ? ` (inclui ${b.variacoes.slice(0, 6).join(', ')})` : ''}`).join('\n')}`).join('\n\n')}\n`,
+    md: () => `# Onde a ${site.nome} entrega\n\nRaio de ${geo.raioKm} km de cada unidade. Confirme o endereço no iFood.\n\n${lojas.map((l) => `## ${l.nome}\n\n${bairrosDaLoja(l).map((b) => `- ${temPaginaBairro(b) ? `[${rotuloBairro(b)}](${abs(`entrega/${b.slug}/`)})` : rotuloBairro(b)} — ${kmTxt(b.distanciaKm)} km${b.variacoes.length ? ` (inclui ${b.variacoes.slice(0, 6).join(', ')})` : ''}`).join('\n')}`).join('\n\n')}\n`,
   });
 
   for (const b of bairros) {
+    if (!temPaginaBairro(b)) continue;
     const l = lojaPorSlug(b.loja);
     const caminho = `entrega/${b.slug}/`;
     const onde = `${prep(b.nome)} ${b.nome}`;
     const deOnde = `${prepDe(b.nome)} ${b.nome}`;
     const regiao = localBairro(b);
     const nomeCompleto = b.tipo === 'cidade' ? b.nome : `${b.nome}, ${regiao}`;
-    const vizinhos = b.vizinhos.map((v) => bairroPorSlug.get(v)).filter(Boolean);
+    const vizinhos = b.vizinhos.map((v) => bairroPorSlug.get(v)).filter((v) => v && temPaginaBairro(v));
     const outras = b.outrasLojas.map((o) => ({ ...o, l: lojaPorSlug(o.loja) }));
     const trilha = [['Início', ''], ['Onde entregamos', 'entrega/'], [b.nome, caminho]];
     const casa = l.distritoOficial === b.nome; // distrito onde a própria loja fica
@@ -2385,7 +2389,7 @@ writeFileSync(
         categoria: c.categoria,
         itens: c.itens.map((i) => ({ id: i.id, nome: i.nome, descricao: i.descricao, ...(i.preco && { precoReferencia: `R$ ${i.preco}` }), url: abs(`cardapio/#${i.id}`) })),
       })),
-      entrega: geo && { raioKm: geo.raioKm, bairros: bairros.map((b) => ({ nome: b.nome, cidade: b.cidade, regiao: localBairro(b), unidade: lojaPorSlug(b.loja).nome, distanciaKm: b.distanciaKm, inclui: b.variacoes, pagina: abs(`entrega/${b.slug}/`) })) },
+      entrega: geo && { raioKm: geo.raioKm, bairros: bairros.map((b) => ({ nome: b.nome, cidade: b.cidade, regiao: localBairro(b), unidade: lojaPorSlug(b.loja).nome, distanciaKm: b.distanciaKm, inclui: b.variacoes, ...(temPaginaBairro(b) ? { pagina: abs(`entrega/${b.slug}/`) } : {}) })) },
       naMidia: midiaOrdenada.map(({ tipo, veiculo, titulo, data, url }) => ({ tipo, veiculo, titulo, data, url })),
       observacaoPrecos: 'Preços de referência; o valor vigente e as promoções do dia estão no iFood.',
       perfis: perfis.map((p) => ({ perfil: p.nome, recomendacao: p.resposta, produtos: produtosDe(p).map((i) => i.id), pagina: abs(`para-voce/${p.slug}/`) })),
