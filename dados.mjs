@@ -191,7 +191,8 @@ export const lojas = [
     termoBusca: 'na Zona Leste', // como a página se apresenta no título
     // SEO (16/11, Search Console): como as pessoas buscam a loja ("just burger penha", "rua peixoto 156"); marca primeiro, até 60 caracteres.
     nomeBusca: 'Just Burger Penha',
-    tituloSeo: 'Just Burger Penha – Rua Peixoto, 156 · Delivery Zona Leste',
+    tituloSeo: 'Just Burger Penha – Rua Peixoto, 156 · Delivery e retirada',
+    retiradaBalcao: true, // Maikon 16/11: a Rua Peixoto tem retirada no balcão
     superIfood: true, // Super Restaurante iFood (nível 5 de 5, jul-set/2026, painel do Hub)
     cidade: 'São Paulo',
     regiao: 'Zona Leste',

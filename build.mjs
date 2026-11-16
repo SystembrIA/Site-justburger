@@ -1355,6 +1355,7 @@ for (const l of lojas) {
     { p: `Qual o horário da Just Burger ${termo}?`, r: l.horarios.map(textoHorario).join('; ') + '.' },
     { p: `A Just Burger ${termo} entrega em quais bairros?`, r: `Entregamos pelo iFood em ${juntar(l.bairrosAtendidos)} e região. Confirme digitando seu endereço no iFood.` },
     { p: `A Just Burger ${termo} faz delivery?`, r: `Sim. A Just nasceu no delivery: você pede pelo iFood${l.keeta ? ' ou pela Keeta' : ''} e recebe o hambúrguer artesanal (carne de 150 g no pão brioche) em casa (${l.horarios.map(textoHorarioCurto).join('; ').toLowerCase()}).` },
+    ...(l.retiradaBalcao ? [{ p: `Dá para retirar o pedido no balcão da Just Burger ${termo}?`, r: `Sim. A unidade da ${l.endereco} tem retirada no balcão, no horário de funcionamento (${l.horarios.map(textoHorarioCurto).join('; ').toLowerCase()}).` }] : []),
     ...(site.avaliacoes && site.avaliacoes.notaInformada ? [{ p: `A Just Burger ${termo} é bem avaliada?`, r: fraseNota(l.nome, l.superIfood) || `Sim: nota ${nota1(site.avaliacoes.notaInformada)} no iFood${l.superIfood ? ', com o selo Super Restaurante (nível 5 de 5 do iFood)' : ''}.` }] : []),
   ];
   // SEO (16/11, Search Console): título com o nome que as pessoas buscam ("just burger penha", "rua peixoto 156",
