@@ -1633,7 +1633,7 @@ if (site.contato && site.contato.publicada) {
     <h1>Fale com a gente</h1>
     <div class="contato-grade">
       <div class="contato-lado">
-        ${fotoContato ? `<img class="contato-foto" src="${base}${fotoContato}" width="1400" height="896" alt="Equipe do grupo Just Burger reunida" loading="lazy" decoding="async">` : ''}
+        ${fotoContato ? `<img class="contato-foto" src="${base}${fotoContato}" width="1200" height="768" alt="Equipe do grupo Just Burger reunida" loading="lazy" decoding="async">` : ''}
         <h2>Nossa equipe está esperando a sua mensagem</h2>
         <p>Do outro lado deste formulário tem gente de verdade: a mesma equipe que prepara o seu pedido todos os dias. Cada mensagem é lida por nós, e é assim que a gente melhora.</p>
         <p>Gostou? Conte para a gente: o elogio chega a quem fez o seu lanche. Algo deu errado? Diga qual foi a loja, que a gente resolve mais rápido. Sugestões e dúvidas também são muito bem-vindas.</p>
@@ -1707,7 +1707,7 @@ if (site.equipe && site.equipe.publicada) paginas.push({
 </section>
 ${existsSync(join(RAIZ, 'assets/img/confraternizacao-equipe-just-burger-hamburgueria.webp')) ? `<section class="secao secao-confra">
   <div class="largura">
-    <figure class="confra"><img src="${base}assets/img/confraternizacao-equipe-just-burger-hamburgueria.webp" width="1400" height="896" alt="Equipe do grupo Just Burger reunida na confraternização, à beira da piscina" loading="lazy" decoding="async"><figcaption>Confraternização da equipe: o time que faz a Just acontecer.</figcaption></figure>
+    <figure class="confra"><img src="${base}assets/img/confraternizacao-equipe-just-burger-hamburgueria.webp" width="1200" height="768" alt="Equipe do grupo Just Burger reunida na confraternização, à beira da piscina" loading="lazy" decoding="async"><figcaption>Confraternização da equipe: o time que faz a Just acontecer.</figcaption></figure>
   </div>
 </section>` : ''}
 ${fotosEquipe.length ? `<section class="secao">
@@ -2038,10 +2038,17 @@ if (cargosAbertos.length) {
   });
 }
 
+// Auditoria SEO (16/11): a primeira imagem do conteúdo (<main>) carrega na hora, sem lazy load.
+const primeiraImagemSemLazy = (html) => {
+  const ini = html.indexOf('<main'); if (ini < 0) return html;
+  const img = html.slice(ini).search(/<img\b[^>]*\sloading="lazy"/); if (img < 0) return html;
+  const pos = ini + img, fim = html.indexOf('>', pos);
+  return html.slice(0, pos) + html.slice(pos, fim).replace(/\sloading="lazy"/, '') + html.slice(fim);
+};
 for (const p of paginas) {
   const pasta = join(SAIDA, p.caminho);
   mkdirSync(pasta, { recursive: true });
-  writeFileSync(join(pasta, 'index.html'), pagina(p));
+  writeFileSync(join(pasta, 'index.html'), primeiraImagemSemLazy(pagina(p)));
   writeFileSync(join(pasta, 'index.md'), p.md());
 }
 
