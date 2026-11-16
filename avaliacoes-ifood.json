@@ -1,14 +1,24 @@
 {
- "atualizadoEm": "2026-11-11",
+ "atualizadoEm": "2026-11-15",
  "geral": {
-  "avaliacoes": 281550,
-  "elogios": 1110,
+  "avaliacoes": 281900,
+  "elogios": 1135,
   "nota": 4.9
  },
  "lojas": [
   {
-   "avaliacoes": 123192,
+   "avaliacoes": 123274,
    "comentarios": [
+    {
+     "data": "2026-11-10",
+     "nota": 5,
+     "texto": "Maravilhoso amei tudo conserteza pedirei mais vezes"
+    },
+    {
+     "data": "2026-11-10",
+     "nota": 5,
+     "texto": "Surpreendente no sabor, com certeza pedirei mais vezes."
+    },
     {
      "data": "2026-11-08",
      "nota": 5,
@@ -773,12 +783,22 @@
    "loja": "Just Burger Zona Leste",
    "marca": "Just Burger",
    "nota": 4.9,
-   "totalElogios": 152,
+   "totalElogios": 154,
    "unidade": "Zona Leste"
   },
   {
-   "avaliacoes": 42590,
+   "avaliacoes": 42606,
    "comentarios": [
+    {
+     "data": "2026-11-13",
+     "nota": 5,
+     "texto": "O ponto da carne vem sempre correto e os ingredientes são muito bons. Bem embalado, bem montado, apetitoso. Dá vontade de repetir sempre."
+    },
+    {
+     "data": "2026-11-13",
+     "nota": 5,
+     "texto": "O MELHOOOOOR hambúrguer que já comi na vida! Parabéns aos envolvidos! Desde a embalagem a apresentação dos lanches, tudo IMPECÁVEL!"
+    },
     {
      "data": "2026-11-09",
      "nota": 5,
@@ -913,12 +933,22 @@
    "loja": "Just Burger São Bernardo",
    "marca": "Just Burger",
    "nota": 4.9,
-   "totalElogios": 26,
+   "totalElogios": 28,
    "unidade": "São Bernardo"
   },
   {
-   "avaliacoes": 20310,
+   "avaliacoes": 20325,
    "comentarios": [
+    {
+     "data": "2026-11-13",
+     "nota": 5,
+     "texto": "Que lanche gostoso! Quentinho, saboroso e esse molho de alho é top dmais"
+    },
+    {
+     "data": "2026-11-10",
+     "nota": 5,
+     "texto": "Grande pra caramba, e muito bomm... Matou a fome"
+    },
     {
      "data": "2026-11-05",
      "nota": 5,
@@ -1093,12 +1123,22 @@
    "loja": "Just Burger Guarulhos",
    "marca": "Just Burger",
    "nota": 4.9,
-   "totalElogios": 34,
+   "totalElogios": 36,
    "unidade": "Guarulhos"
   },
   {
-   "avaliacoes": 2590,
+   "avaliacoes": 2609,
    "comentarios": [
+    {
+     "data": "2026-11-13",
+     "nota": 5,
+     "texto": "A melhor.. custp benefício e rapida"
+    },
+    {
+     "data": "2026-11-13",
+     "nota": 5,
+     "texto": "Que lanche maravilhoso. Gostei muito. Melhor lanche que já comi em aplicativo. A batata tava crocante no ponto, a maionese era uma delícia. O hambúrguer era um espetáculo de sabor. Isso sem contar a velocidade, chegou tão rápido que até me assustou. A embalagem era linda, virou minha nova bolsa term"
+    },
     {
      "data": "2026-11-08",
      "nota": 5,
@@ -2088,27 +2128,37 @@
      "data": "2026-08-17",
      "nota": 5,
      "texto": "Veio bem embalado e inclusive a embalgem é um espetaculo,muito saboroso bem caprichado."
-    },
-    {
-     "data": "2026-08-16",
-     "nota": 5,
-     "texto": "Lanche maravilhoso, chegou rapidinho, embalagem impecável."
-    },
-    {
-     "data": "2026-08-16",
-     "nota": 5,
-     "texto": "O lanche é muito bom, saboroso, bem embalado, a loja muito cuidadosa, superou nossas expectativas ! Eles não tinham um item do pedido, mas fizeram a substituição imediatamente, e ainda enviaram nuggets de brinde! Indico de olhos fechados! Comida boa e com o cuidado e carinho que sentimos nos itens."
     }
    ],
    "loja": "Just Burger Pirituba",
    "marca": "Just Burger",
    "nota": 5,
-   "totalElogios": 241,
+   "totalElogios": 243,
    "unidade": "Pirituba"
   },
   {
-   "avaliacoes": 59032,
+   "avaliacoes": 59155,
    "comentarios": [
+    {
+     "data": "2026-11-12",
+     "nota": 5,
+     "texto": "Comida maravilhosa,o melhor purê q já comi"
+    },
+    {
+     "data": "2026-11-10",
+     "nota": 5,
+     "texto": "Como sempre a comida é maravilhosa"
+    },
+    {
+     "data": "2026-11-10",
+     "nota": 5,
+     "texto": "A comida estava tão saborosa que relevei a troca da proteína, pedi peixe e veio frango. Primeira vez que como uma farofa de verdade em SP, porque nos outros lugares é farelo de milho kkkkkk A milanesa é fora do comum, crocantissima, a melhor."
+    },
+    {
+     "data": "2026-11-09",
+     "nota": 5,
+     "texto": "Gostosa, só não gostei do feijão..o restante estava bom."
+    },
     {
      "data": "2026-11-09",
      "nota": 5,
@@ -2758,12 +2808,37 @@
    "loja": "Just Gourmet Zona Leste",
    "marca": "Just Gourmet",
    "nota": 4.9,
-   "totalElogios": 129,
+   "totalElogios": 133,
    "unidade": "Zona Leste"
   },
   {
-   "avaliacoes": 2741,
+   "avaliacoes": 2775,
    "comentarios": [
+    {
+     "data": "2026-11-13",
+     "nota": 5,
+     "texto": "Simplesmente maravilhoso macarrão 😍🍝"
+    },
+    {
+     "data": "2026-11-13",
+     "nota": 5,
+     "texto": "Comida maravilhosa, perfeita, saborosa! É a comida mais gostosa que já comi pelo Ifood"
+    },
+    {
+     "data": "2026-11-13",
+     "nota": 5,
+     "texto": "Pra ficar mais perfeito esse prato, vcs podiam dar a possibilidade de escolher entre a cebola roxa e beterraba. Eu amo pedir com vcs, estou sempre satisfeitíssima."
+    },
+    {
+     "data": "2026-11-11",
+     "nota": 5,
+     "texto": "Excelente feijoada! Ingredientes bons e boa quantidade. Estão de parabéns!"
+    },
+    {
+     "data": "2026-11-10",
+     "nota": 5,
+     "texto": "Maravilhoso o bife, embalagem, farofa. Nota 10 de 10!!! Primeira vez que peço! E chegou quentinho!!!"
+    },
     {
      "data": "2026-11-08",
      "nota": 5,
@@ -2817,12 +2892,12 @@
     {
      "data": "2026-10-13",
      "nota": 5,
-     "texto": "O melhor strogonoff que eu já comi…"
+     "texto": "Meu bife a milanesa estava perfeito 🌟🌟🌟🌟🌟"
     },
     {
      "data": "2026-10-13",
      "nota": 5,
-     "texto": "Meu bife a milanesa estava perfeito 🌟🌟🌟🌟🌟"
+     "texto": "O melhor strogonoff que eu já comi…"
     },
     {
      "data": "2026-10-12",
@@ -2842,7 +2917,7 @@
     {
      "data": "2026-10-11",
      "nota": 5,
-     "texto": "Comida maravilhosa, um sabor incrível 😍"
+     "texto": "Gente que delícia, meus parabéns. Quantidade muito boa pra um pessoa só,comida bem temperadinha"
     },
     {
      "data": "2026-10-11",
@@ -2852,12 +2927,12 @@
     {
      "data": "2026-10-11",
      "nota": 5,
-     "texto": "Comida muito saborosa, em ótima quantidade e na temperatura ideal"
+     "texto": "Comida maravilhosa, um sabor incrível 😍"
     },
     {
      "data": "2026-10-11",
      "nota": 5,
-     "texto": "Gente que delícia, meus parabéns. Quantidade muito boa pra um pessoa só,comida bem temperadinha"
+     "texto": "Comida muito saborosa, em ótima quantidade e na temperatura ideal"
     },
     {
      "data": "2026-10-10",
@@ -2887,17 +2962,17 @@
     {
      "data": "2026-10-04",
      "nota": 5,
-     "texto": "Uma delícia!!! Vou pedir mais vezes !!!"
-    },
-    {
-     "data": "2026-10-04",
-     "nota": 5,
      "texto": "Obrigado Deus por ter Just perto no novo endereço"
     },
     {
      "data": "2026-10-04",
      "nota": 5,
      "texto": "Uaaaaauuuuu !!!! Nosso primeiro pedido e superou as expectativas. Excelente !!! Equipe toda está de Parabéns. Esse foi um pedido de almoço e a noite vamos pedir hambúrguer para experimentar. Agradeço 😊"
+    },
+    {
+     "data": "2026-10-04",
+     "nota": 5,
+     "texto": "Uma delícia!!! Vou pedir mais vezes !!!"
     },
     {
      "data": "2026-10-02",
@@ -2917,12 +2992,12 @@
     {
      "data": "2026-09-30",
      "nota": 5,
-     "texto": "Vocês são os melhores! CARNE MACIAAAA! Doida pra experimentar todos os pratos! 🥰"
+     "texto": "Feijoada maravilhosa , apenas uma sugestão a farofa poderia enviar a parte."
     },
     {
      "data": "2026-09-30",
      "nota": 5,
-     "texto": "Feijoada maravilhosa , apenas uma sugestão a farofa poderia enviar a parte."
+     "texto": "Vocês são os melhores! CARNE MACIAAAA! Doida pra experimentar todos os pratos! 🥰"
     },
     {
      "data": "2026-09-30",
@@ -2942,12 +3017,12 @@
     {
      "data": "2026-09-27",
      "nota": 5,
-     "texto": "Comida perfeita! Bem quentinha, frango e o bife estavam molhinhos. Parabéns, tempero excelente. Compraria mais vezes"
+     "texto": "Comida deliciosa, não tem tanto tempero e o sal é na medida certa adoreiiiiiiii"
     },
     {
      "data": "2026-09-27",
      "nota": 5,
-     "texto": "Comida deliciosa, não tem tanto tempero e o sal é na medida certa adoreiiiiiiii"
+     "texto": "Comida perfeita! Bem quentinha, frango e o bife estavam molhinhos. Parabéns, tempero excelente. Compraria mais vezes"
     },
     {
      "data": "2026-09-26",
@@ -2967,12 +3042,12 @@
     {
      "data": "2026-09-25",
      "nota": 5,
-     "texto": "Comida maravilhosa, bem quentinha e grande quantidade, me surpreendi."
+     "texto": "Melhor restaurante que encontrei para pedir minha janta!!! comida bem apresentavel com bastante comida , umas marmita da pra duas pessoas tranquilo!!"
     },
     {
      "data": "2026-09-25",
      "nota": 5,
-     "texto": "Melhor restaurante que encontrei para pedir minha janta!!! comida bem apresentavel com bastante comida , umas marmita da pra duas pessoas tranquilo!!"
+     "texto": "Comida maravilhosa, bem quentinha e grande quantidade, me surpreendi."
     },
     {
      "data": "2026-09-23",
@@ -2982,17 +3057,12 @@
     {
      "data": "2026-09-23",
      "nota": 5,
-     "texto": "Comida maravilhosa demais, já quero experimentar outros pratos!"
+     "texto": "Comida maravilhosa sempre peço"
     },
     {
      "data": "2026-09-23",
      "nota": 5,
-     "texto": "Comida maravilhosa sempre peço"
-    },
-    {
-     "data": "2026-09-22",
-     "nota": 5,
-     "texto": "Simplesmente apaixonada por este restaurante . Comida excelente!!!! Recomendo tudo , mas a feijoada e o baião de dois são incríveis!!!! Faz tempo que não encontrava aqui um restaurante tão bom com um custo - benefício! Virei fã!!!"
+     "texto": "Comida maravilhosa demais, já quero experimentar outros pratos!"
     },
     {
      "data": "2026-09-22",
@@ -3000,29 +3070,14 @@
      "texto": "Perfeito! Desde a embalagem quanto a comida em si"
     },
     {
+     "data": "2026-09-22",
+     "nota": 5,
+     "texto": "Simplesmente apaixonada por este restaurante . Comida excelente!!!! Recomendo tudo , mas a feijoada e o baião de dois são incríveis!!!! Faz tempo que não encontrava aqui um restaurante tão bom com um custo - benefício! Virei fã!!!"
+    },
+    {
      "data": "2026-09-20",
      "nota": 5,
      "texto": "Que delícia de comida! Feita com capricho e vem bem servida. Chegou muito rápido e quentinha. Nota mil."
-    },
-    {
-     "data": "2026-09-19",
-     "nota": 5,
-     "texto": "Veio tudo perfeito e ainda super rápido, com certeza pediremos mais vezes"
-    },
-    {
-     "data": "2026-09-19",
-     "nota": 5,
-     "texto": "Comida bem servida e maravilhosa!!!"
-    },
-    {
-     "data": "2026-09-19",
-     "nota": 5,
-     "texto": "Olha estão de parabéns na qualidade e rapidez amei virei cliente"
-    },
-    {
-     "data": "2026-09-19",
-     "nota": 5,
-     "texto": "Comida maravilhosa, molho de tomate saborosíssimo, espero que essa qualidade permaneça!!!"
     },
     {
      "data": "2026-09-19",
@@ -3037,7 +3092,27 @@
     {
      "data": "2026-09-19",
      "nota": 5,
+     "texto": "Veio tudo perfeito e ainda super rápido, com certeza pediremos mais vezes"
+    },
+    {
+     "data": "2026-09-19",
+     "nota": 5,
+     "texto": "Comida maravilhosa, molho de tomate saborosíssimo, espero que essa qualidade permaneça!!!"
+    },
+    {
+     "data": "2026-09-19",
+     "nota": 5,
+     "texto": "Olha estão de parabéns na qualidade e rapidez amei virei cliente"
+    },
+    {
+     "data": "2026-09-19",
+     "nota": 5,
      "texto": "Amoooo a comida de vocês, vale muito a pena"
+    },
+    {
+     "data": "2026-09-19",
+     "nota": 5,
+     "texto": "Comida bem servida e maravilhosa!!!"
     },
     {
      "data": "2026-09-18",
@@ -3052,17 +3127,17 @@
     {
      "data": "2026-09-18",
      "nota": 5,
+     "texto": "Super indico , comida maravilhosa"
+    },
+    {
+     "data": "2026-09-18",
+     "nota": 5,
      "texto": "O strogonoff de carne veio bem servido, batata palha em embalagem separada e estava bem gostoso. O feijão, que pedi a parte, também estava ótimo."
     },
     {
      "data": "2026-09-18",
      "nota": 5,
      "texto": "Boa quantidade é muito gostosa parabéns"
-    },
-    {
-     "data": "2026-09-18",
-     "nota": 5,
-     "texto": "Super indico , comida maravilhosa"
     },
     {
      "data": "2026-09-17",
@@ -3082,11 +3157,6 @@
     {
      "data": "2026-09-16",
      "nota": 5,
-     "texto": "Fiz questão de vir avaliar porque foi o melhor pedido que já fiz por app! Embalagem impecável, comida saborosa e super apresentável, tudo separadinho, quentinho e bem apresentável. Ganhou uma cliente!"
-    },
-    {
-     "data": "2026-09-16",
-     "nota": 5,
      "texto": "A feijoada é muito boa, vem uma boa quantidade, vem numa temperatura excelente e o tempero é muito gostoso. Normalmente nao avalio aqui no ifood, mas esse restaurante merece!"
     },
     {
@@ -3095,9 +3165,9 @@
      "texto": "Comida muito boa superou a expectativa"
     },
     {
-     "data": "2026-09-13",
+     "data": "2026-09-16",
      "nota": 5,
-     "texto": "Sempre Divino! O único restaurante que me faz vir elogiar"
+     "texto": "Fiz questão de vir avaliar porque foi o melhor pedido que já fiz por app! Embalagem impecável, comida saborosa e super apresentável, tudo separadinho, quentinho e bem apresentável. Ganhou uma cliente!"
     },
     {
      "data": "2026-09-13",
@@ -3110,6 +3180,11 @@
      "texto": "Comida muito boa, bem temperada, chegou no prazo correto e tempo de preparo rápido."
     },
     {
+     "data": "2026-09-13",
+     "nota": 5,
+     "texto": "Sempre Divino! O único restaurante que me faz vir elogiar"
+    },
+    {
      "data": "2026-09-12",
      "nota": 5,
      "texto": "Comida boa e ingredientes de qualidade."
@@ -3117,12 +3192,12 @@
     {
      "data": "2026-09-11",
      "nota": 5,
-     "texto": "Achei maravilhosa, só acrescentaria banana milanesa e um molhinho de pimenta. Só agregar, mas a feijoada é maravilhosa, me surpreendeu"
+     "texto": "comida muito saborosa, eu amo demais esse restaurante. ótimas embalagens e muitooo capricho, estão de parabens. recomendo muitoooo"
     },
     {
      "data": "2026-09-11",
      "nota": 5,
-     "texto": "comida muito saborosa, eu amo demais esse restaurante. ótimas embalagens e muitooo capricho, estão de parabens. recomendo muitoooo"
+     "texto": "Achei maravilhosa, só acrescentaria banana milanesa e um molhinho de pimenta. Só agregar, mas a feijoada é maravilhosa, me surpreendeu"
     },
     {
      "data": "2026-09-09",
@@ -3142,12 +3217,12 @@
     {
      "data": "2026-09-07",
      "nota": 5,
-     "texto": "Comida maravilhosa, superou as expectativas, comprei 4 marmitas todas saborosas e destaque para a embalagem."
+     "texto": "Que prazer em fazer um pedido e receber algo maravilhoso! Comida deliciosa, muito bem temperada e quentinha. Embalagens excelentes e tudo separadinho. Não conhecia, e com toda certeza voltarei a comprar com vocês! Estão de parabéns 👏🏻"
     },
     {
      "data": "2026-09-07",
      "nota": 5,
-     "texto": "Que prazer em fazer um pedido e receber algo maravilhoso! Comida deliciosa, muito bem temperada e quentinha. Embalagens excelentes e tudo separadinho. Não conhecia, e com toda certeza voltarei a comprar com vocês! Estão de parabéns 👏🏻"
+     "texto": "Comida maravilhosa, superou as expectativas, comprei 4 marmitas todas saborosas e destaque para a embalagem."
     },
     {
      "data": "2026-09-07",
@@ -3162,7 +3237,7 @@
     {
      "data": "2026-09-05",
      "nota": 5,
-     "texto": "Bem embalado, comida saborosa, boa quantidade... Única coisa é que eu pedi mal passada e veio ao ponto pra bem passada... De resto é nota 10!! Salvou a janta de sábado a noite kkkkk"
+     "texto": "Comida simplesmente maravilhosa."
     },
     {
      "data": "2026-09-05",
@@ -3172,22 +3247,17 @@
     {
      "data": "2026-09-05",
      "nota": 5,
+     "texto": "Meu pai simplesmente amou! Disse que a quantidade foi excelente e muuuuuito saborosa"
+    },
+    {
+     "data": "2026-09-05",
+     "nota": 5,
      "texto": "embalagem bonita e bem embalada😀"
     },
     {
      "data": "2026-09-05",
      "nota": 5,
-     "texto": "Comida simplesmente maravilhosa."
-    },
-    {
-     "data": "2026-09-05",
-     "nota": 5,
-     "texto": "Comida maravilhosa!!!!! Sempre !"
-    },
-    {
-     "data": "2026-09-05",
-     "nota": 5,
-     "texto": "SURREAL !!! De verdade, uma delícia, muito bem embalado, diferente de qualquer um do ifood!! Ganharam um cliente !"
+     "texto": "Bem embalado, comida saborosa, boa quantidade... Única coisa é que eu pedi mal passada e veio ao ponto pra bem passada... De resto é nota 10!! Salvou a janta de sábado a noite kkkkk"
     },
     {
      "data": "2026-09-05",
@@ -3202,22 +3272,22 @@
     {
      "data": "2026-09-05",
      "nota": 5,
-     "texto": "Muito bem embalado e bastante comida"
-    },
-    {
-     "data": "2026-09-05",
-     "nota": 5,
      "texto": "Que delícia de feijoada estão de parabéns"
     },
     {
      "data": "2026-09-05",
      "nota": 5,
-     "texto": "Meu pai simplesmente amou! Disse que a quantidade foi excelente e muuuuuito saborosa"
+     "texto": "Muito bem embalado e bastante comida"
     },
     {
-     "data": "2026-09-04",
+     "data": "2026-09-05",
      "nota": 5,
-     "texto": "Muito gostosa parece comida caseira"
+     "texto": "SURREAL !!! De verdade, uma delícia, muito bem embalado, diferente de qualquer um do ifood!! Ganharam um cliente !"
+    },
+    {
+     "data": "2026-09-05",
+     "nota": 5,
+     "texto": "Comida maravilhosa!!!!! Sempre !"
     },
     {
      "data": "2026-09-04",
@@ -3225,9 +3295,9 @@
      "texto": "Muito bom. Comida bem temperada. Bife a milanesa bem crocante e saquinho. Creme de milho maravilhoso."
     },
     {
-     "data": "2026-09-03",
+     "data": "2026-09-04",
      "nota": 5,
-     "texto": "Feijoada maravilhosa!! Até preferia que a farofa e a couve viessem separada do arroz. Mas o sabor de tudo superou minha expectativa!! Vou comprar mais vezes!!! E recomendo!!"
+     "texto": "Muito gostosa parece comida caseira"
     },
     {
      "data": "2026-09-03",
@@ -3237,7 +3307,17 @@
     {
      "data": "2026-09-03",
      "nota": 5,
+     "texto": "Feijoada maravilhosa!! Até preferia que a farofa e a couve viessem separada do arroz. Mas o sabor de tudo superou minha expectativa!! Vou comprar mais vezes!!! E recomendo!!"
+    },
+    {
+     "data": "2026-09-03",
+     "nota": 5,
      "texto": "Amei. Primeira vez que pedi e vou pedir mais vezes. Amei."
+    },
+    {
+     "data": "2026-09-02",
+     "nota": 5,
+     "texto": "meu deus do CÉU!! que feijoada maravilhosa !!! por favor mantenham essa qualidade, irei virar cliente nato. quantidade muito boa tudo quentinho"
     },
     {
      "data": "2026-09-02",
@@ -3250,11 +3330,6 @@
      "texto": "Comida Maravilhosa ganhou mas um cliente"
     },
     {
-     "data": "2026-09-02",
-     "nota": 5,
-     "texto": "meu deus do CÉU!! que feijoada maravilhosa !!! por favor mantenham essa qualidade, irei virar cliente nato. quantidade muito boa tudo quentinho"
-    },
-    {
      "data": "2026-08-30",
      "nota": 5,
      "texto": "A comida estava muito gostosa! A quantidade era generosa e o sabor maravilhoso!"
@@ -3262,7 +3337,7 @@
     {
      "data": "2026-08-30",
      "nota": 5,
-     "texto": "Fazia muito tempo que não comia um PF tão bom! Arroz e feijão muito bem temperado, simples mas muito bem feito!"
+     "texto": "Muito boa a comida 10/10 recomendo me surpreendi fiquei satisfeita"
     },
     {
      "data": "2026-08-30",
@@ -3272,22 +3347,7 @@
     {
      "data": "2026-08-30",
      "nota": 5,
-     "texto": "Muito boa a comida 10/10 recomendo me surpreendi fiquei satisfeita"
-    },
-    {
-     "data": "2026-08-29",
-     "nota": 5,
-     "texto": "Já o meu favorito, parabéns pelo Capricho, a comida é extremamente saborosa, embalagem impecável, muito bom."
-    },
-    {
-     "data": "2026-08-29",
-     "nota": 5,
-     "texto": "Pedi uma vez pra conhecer e agora só peço comida aqui! Delícia!!!! Embalagem a apresentação! O sabor a qualidade!!!! Impecável!!!"
-    },
-    {
-     "data": "2026-08-29",
-     "nota": 5,
-     "texto": "A carne estava do jeitinho que eu gosto. Pena que não consegui pedir a feijoada. Salada perfeita."
+     "texto": "Fazia muito tempo que não comia um PF tão bom! Arroz e feijão muito bem temperado, simples mas muito bem feito!"
     },
     {
      "data": "2026-08-29",
@@ -3307,37 +3367,27 @@
     {
      "data": "2026-08-29",
      "nota": 5,
+     "texto": "Comida EXCELENTE, a embalagem é ótima, realmente um serviço premium. Comida bem servida e bem temperada. É como comida feita em casa."
+    },
+    {
+     "data": "2026-08-29",
+     "nota": 5,
+     "texto": "Pedi uma vez pra conhecer e agora só peço comida aqui! Delícia!!!! Embalagem a apresentação! O sabor a qualidade!!!! Impecável!!!"
+    },
+    {
+     "data": "2026-08-29",
+     "nota": 5,
      "texto": "Feijoada muito boa e com boa quantidade 🥰"
     },
     {
      "data": "2026-08-29",
      "nota": 5,
-     "texto": "Comida EXCELENTE, a embalagem é ótima, realmente um serviço premium. Comida bem servida e bem temperada. É como comida feita em casa."
+     "texto": "A carne estava do jeitinho que eu gosto. Pena que não consegui pedir a feijoada. Salada perfeita."
     },
     {
-     "data": "2026-08-28",
+     "data": "2026-08-29",
      "nota": 5,
-     "texto": "Maravilhosa a comida parabéns , só tive o problema no chat mas isso deve ser erro sistêmico do iFood , mas irei pedir novamente ❤️"
-    },
-    {
-     "data": "2026-08-28",
-     "nota": 5,
-     "texto": "Meu Deus que comida maravilhosa, tudo muito caprichado tudo bem servido, a comida extremamente saborosa, o cuidado nas embalagens tudo impecável voltarei a pedir com toda certeza"
-    },
-    {
-     "data": "2026-08-28",
-     "nota": 5,
-     "texto": "Maravilhosa é a primeira vez que compro, comprei pela avaliação e é deliciosa a comida , parabéns a cozinheira(o)"
-    },
-    {
-     "data": "2026-08-28",
-     "nota": 5,
-     "texto": "Muito bom eu recomendo, comida saborosa e muito bem embalado eu recomendo!"
-    },
-    {
-     "data": "2026-08-28",
-     "nota": 5,
-     "texto": "Me surpreendeu a como o bife a milanesa era crocante, tudo muito saboroso e uma ótima embalagem de envio. Vou pedir mais vezes"
+     "texto": "Já o meu favorito, parabéns pelo Capricho, a comida é extremamente saborosa, embalagem impecável, muito bom."
     },
     {
      "data": "2026-08-28",
@@ -3352,7 +3402,17 @@
     {
      "data": "2026-08-28",
      "nota": 5,
-     "texto": "Comida muito saborosa e capricho na embalagem. Nós amamos!"
+     "texto": "Maravilhosa é a primeira vez que compro, comprei pela avaliação e é deliciosa a comida , parabéns a cozinheira(o)"
+    },
+    {
+     "data": "2026-08-28",
+     "nota": 5,
+     "texto": "Meu Deus que comida maravilhosa, tudo muito caprichado tudo bem servido, a comida extremamente saborosa, o cuidado nas embalagens tudo impecável voltarei a pedir com toda certeza"
+    },
+    {
+     "data": "2026-08-28",
+     "nota": 5,
+     "texto": "Me surpreendeu a como o bife a milanesa era crocante, tudo muito saboroso e uma ótima embalagem de envio. Vou pedir mais vezes"
     },
     {
      "data": "2026-08-28",
@@ -3360,14 +3420,24 @@
      "texto": "A melhor que ja pedi na região, fiquei completamente impressionado! Comprarei sempre."
     },
     {
-     "data": "2026-08-27",
+     "data": "2026-08-28",
      "nota": 5,
-     "texto": "Que comida saborosa, bem embalada, ganhou uma cliente fiel."
+     "texto": "Comida muito saborosa e capricho na embalagem. Nós amamos!"
+    },
+    {
+     "data": "2026-08-28",
+     "nota": 5,
+     "texto": "Muito bom eu recomendo, comida saborosa e muito bem embalado eu recomendo!"
+    },
+    {
+     "data": "2026-08-28",
+     "nota": 5,
+     "texto": "Maravilhosa a comida parabéns , só tive o problema no chat mas isso deve ser erro sistêmico do iFood , mas irei pedir novamente ❤️"
     },
     {
      "data": "2026-08-27",
      "nota": 5,
-     "texto": "Pro meu paladar poderia ter mais 🌶️ achei o molho doce"
+     "texto": "Pode pedir sem medo, pedi um frango a milanesa, veio bem crocante. Arroz gostoso. Pedi tbm um parmegiana e com ctz o melhor que já pedi de delivery disparado. Chegou rapido e quente, apesar de ser bem longe de casa"
     },
     {
      "data": "2026-08-27",
@@ -3377,22 +3447,17 @@
     {
      "data": "2026-08-27",
      "nota": 5,
+     "texto": "Que comida saborosa, bem embalada, ganhou uma cliente fiel."
+    },
+    {
+     "data": "2026-08-27",
+     "nota": 5,
      "texto": "Me surpreendeu demais! A embalagem é linda e de muita qualidade, daquelas que só de olhar já deixam a gente com ainda mais vontade de comer! E o sabor? Simplesmente maravilhoso! Ganharam uma cliente e , com certeza, vou recomendar muitoooo! 👏🏻✨"
     },
     {
      "data": "2026-08-27",
      "nota": 5,
-     "texto": "Pode pedir sem medo, pedi um frango a milanesa, veio bem crocante. Arroz gostoso. Pedi tbm um parmegiana e com ctz o melhor que já pedi de delivery disparado. Chegou rapido e quente, apesar de ser bem longe de casa"
-    },
-    {
-     "data": "2026-08-26",
-     "nota": 5,
-     "texto": "Sensacional a Feijoada!!!! Muito bem temperada (temperada e nao salgada) PARABÉNS e obrigado!!!"
-    },
-    {
-     "data": "2026-08-26",
-     "nota": 5,
-     "texto": "Restaurante com excelente opções de pratos, tanto os comuns quanto os gourmets. Primeira vez que peço e já virei cliente assíduo. Recomendo a todos."
+     "texto": "Pro meu paladar poderia ter mais 🌶️ achei o molho doce"
     },
     {
      "data": "2026-08-26",
@@ -3407,7 +3472,17 @@
     {
      "data": "2026-08-26",
      "nota": 5,
+     "texto": "Restaurante com excelente opções de pratos, tanto os comuns quanto os gourmets. Primeira vez que peço e já virei cliente assíduo. Recomendo a todos."
+    },
+    {
+     "data": "2026-08-26",
+     "nota": 5,
      "texto": "Desta vez pedi um outro prato e a qualidade impecável. Saborosa, bem servida."
+    },
+    {
+     "data": "2026-08-26",
+     "nota": 5,
+     "texto": "Sensacional a Feijoada!!!! Muito bem temperada (temperada e nao salgada) PARABÉNS e obrigado!!!"
     },
     {
      "data": "2026-08-25",
@@ -3422,12 +3497,12 @@
     {
      "data": "2026-08-24",
      "nota": 5,
-     "texto": "2 pessoas comeriam tranquilamente, comida com gosto de casa e muito bem servida!"
+     "texto": "A comida é muito boa e com sabor de caseira."
     },
     {
      "data": "2026-08-24",
      "nota": 5,
-     "texto": "A comida é muito boa e com sabor de caseira."
+     "texto": "2 pessoas comeriam tranquilamente, comida com gosto de casa e muito bem servida!"
     },
     {
      "data": "2026-08-24",
@@ -3442,16 +3517,6 @@
     {
      "data": "2026-08-23",
      "nota": 5,
-     "texto": "Muito gostosa! Ótima aparência amei"
-    },
-    {
-     "data": "2026-08-23",
-     "nota": 5,
-     "texto": "Perfeito, voltarei a comprar com certeza, muito saborosa e achei a quantidade muito boa, deu até pra dividir com meu marido!"
-    },
-    {
-     "data": "2026-08-23",
-     "nota": 5,
      "texto": "Comida maravilhosa, bem feita e saborosa. Marmita excelente!"
     },
     {
@@ -3462,12 +3527,17 @@
     {
      "data": "2026-08-23",
      "nota": 5,
-     "texto": "Comprei 2 doces excelentes, doces saborosos e sem exagero de açúcar, recomendo demais, um dos poucos doces que são deliciosos de comer."
+     "texto": "Muito gostosa! Ótima aparência amei"
     },
     {
-     "data": "2026-08-22",
+     "data": "2026-08-23",
      "nota": 5,
-     "texto": "Pedimos feijoada, estrogonofe de carne e contrafilé com batata frita e purê. Estava tudo simplesmente delicioso! Comida muito bem servida, caprichada e com um tempero sem igual. Sabor de comida feita com carinho, daquelas que dão vontade de pedir de novo. Maravilhoso, recomendamos demais! ❤️"
+     "texto": "Perfeito, voltarei a comprar com certeza, muito saborosa e achei a quantidade muito boa, deu até pra dividir com meu marido!"
+    },
+    {
+     "data": "2026-08-23",
+     "nota": 5,
+     "texto": "Comprei 2 doces excelentes, doces saborosos e sem exagero de açúcar, recomendo demais, um dos poucos doces que são deliciosos de comer."
     },
     {
      "data": "2026-08-22",
@@ -3477,17 +3547,7 @@
     {
      "data": "2026-08-22",
      "nota": 5,
-     "texto": "Que strogonoff gostoso!! Quando vc pede um prato desse é exatamente dessa forma que esperamos receber. Muito saboroso, quantidade generosa, embalagem ótima, bom demais"
-    },
-    {
-     "data": "2026-08-22",
-     "nota": 5,
      "texto": "Feijoada deliciosa e muito bem servida, a de uma serve facilmente duas pessoas"
-    },
-    {
-     "data": "2026-08-22",
-     "nota": 5,
-     "texto": "Maravilhosos!!! Pedi para fazer um bilhetinho e foi a única loja do Ifood que atendeu a isso, a maioria nem liga. 10/10 obrigada pelo atendimento<3"
     },
     {
      "data": "2026-08-22",
@@ -3495,19 +3555,19 @@
      "texto": "Simplesmente perfeito. Valeu cada centavo. Comprarei sempre. Comida saborosa e porção super generosa."
     },
     {
-     "data": "2026-08-21",
+     "data": "2026-08-22",
      "nota": 5,
-     "texto": "Primeira vez que fiz o pedido com vocês e amei! Comida excelente e sem contar o capricho na embalagem, separação da comida, o recado de boa vindas! Parabéns"
+     "texto": "Que strogonoff gostoso!! Quando vc pede um prato desse é exatamente dessa forma que esperamos receber. Muito saboroso, quantidade generosa, embalagem ótima, bom demais"
     },
     {
-     "data": "2026-08-21",
+     "data": "2026-08-22",
      "nota": 5,
-     "texto": "Pudim de chocolate uma delícia"
+     "texto": "Pedimos feijoada, estrogonofe de carne e contrafilé com batata frita e purê. Estava tudo simplesmente delicioso! Comida muito bem servida, caprichada e com um tempero sem igual. Sabor de comida feita com carinho, daquelas que dão vontade de pedir de novo. Maravilhoso, recomendamos demais! ❤️"
     },
     {
-     "data": "2026-08-21",
+     "data": "2026-08-22",
      "nota": 5,
-     "texto": "Digo e repito: Melhor comida de Pirituba e região! ❤️❤️❤️❤️❤️"
+     "texto": "Maravilhosos!!! Pedi para fazer um bilhetinho e foi a única loja do Ifood que atendeu a isso, a maioria nem liga. 10/10 obrigada pelo atendimento<3"
     },
     {
      "data": "2026-08-21",
@@ -3517,12 +3577,7 @@
     {
      "data": "2026-08-21",
      "nota": 5,
-     "texto": "Comprei a Lasanha estava perfeita tudo no ponto, e ainda veio um queijinho a parte."
-    },
-    {
-     "data": "2026-08-21",
-     "nota": 5,
-     "texto": "Muito bonito e muito gostoso, mandaram brindes, achei muito bom! Podem comprar que é sucesso"
+     "texto": "Primeira vez que fiz o pedido com vocês e amei! Comida excelente e sem contar o capricho na embalagem, separação da comida, o recado de boa vindas! Parabéns"
     },
     {
      "data": "2026-08-21",
@@ -3530,14 +3585,24 @@
      "texto": "Perfeita! O feijão separado ganhou meu coração. A entrega foi super rápida e da para 2 pessoas tranquilamente. Está de parabéns"
     },
     {
-     "data": "2026-08-20",
+     "data": "2026-08-21",
      "nota": 5,
-     "texto": "Gostamos muito, comida farta, muito saborosa"
+     "texto": "Digo e repito: Melhor comida de Pirituba e região! ❤️❤️❤️❤️❤️"
     },
     {
-     "data": "2026-08-20",
+     "data": "2026-08-21",
      "nota": 5,
-     "texto": "Comida muito saborosa, vem em quantidade boa e entrega rápida. vale muito a pena."
+     "texto": "Comprei a Lasanha estava perfeita tudo no ponto, e ainda veio um queijinho a parte."
+    },
+    {
+     "data": "2026-08-21",
+     "nota": 5,
+     "texto": "Pudim de chocolate uma delícia"
+    },
+    {
+     "data": "2026-08-21",
+     "nota": 5,
+     "texto": "Muito bonito e muito gostoso, mandaram brindes, achei muito bom! Podem comprar que é sucesso"
     },
     {
      "data": "2026-08-20",
@@ -3555,9 +3620,14 @@
      "texto": "Simplesmente maravilhoso, embalagem impecável, comida deliciosa sem contar na entrega pontual, recomendo muito!!"
     },
     {
-     "data": "2026-08-19",
+     "data": "2026-08-20",
      "nota": 5,
-     "texto": "Que comida deliciosa e bem servida, pedi bife grelhado e me surpreendeu pois veio 2 bifes, a quantidade de comida da para 2 pessoas que não comem tanto, ou se voce come bastante pode pedir sem medo, simplesmente perfeito parabéns!."
+     "texto": "Comida muito saborosa, vem em quantidade boa e entrega rápida. vale muito a pena."
+    },
+    {
+     "data": "2026-08-20",
+     "nota": 5,
+     "texto": "Gostamos muito, comida farta, muito saborosa"
     },
     {
      "data": "2026-08-19",
@@ -3567,7 +3637,7 @@
     {
      "data": "2026-08-19",
      "nota": 5,
-     "texto": "Comida maravilhosa, estava impecável super amei 😍"
+     "texto": "Que comida deliciosa e bem servida, pedi bife grelhado e me surpreendeu pois veio 2 bifes, a quantidade de comida da para 2 pessoas que não comem tanto, ou se voce come bastante pode pedir sem medo, simplesmente perfeito parabéns!."
     },
     {
      "data": "2026-08-19",
@@ -3582,17 +3652,17 @@
     {
      "data": "2026-08-19",
      "nota": 5,
+     "texto": "Comida maravilhosa, estava impecável super amei 😍"
+    },
+    {
+     "data": "2026-08-19",
+     "nota": 5,
      "texto": "vocês sempre foram meu restaurante preferido na ZL! e agora nem acredito estão aqui pertinho! EXCEPCIONAIS"
     },
     {
      "data": "2026-08-18",
      "nota": 5,
-     "texto": "Tempero excelente, comida saborosa e muito bem embalado."
-    },
-    {
-     "data": "2026-08-18",
-     "nota": 5,
-     "texto": "Muito saborosa, um capricho as embalagens!"
+     "texto": "Estava tudo muito gostoso, espero que mantenham esse padrão de qualidade."
     },
     {
      "data": "2026-08-18",
@@ -3602,7 +3672,12 @@
     {
      "data": "2026-08-18",
      "nota": 5,
-     "texto": "Estava tudo muito gostoso, espero que mantenham esse padrão de qualidade."
+     "texto": "Muito saborosa, um capricho as embalagens!"
+    },
+    {
+     "data": "2026-08-18",
+     "nota": 5,
+     "texto": "Tempero excelente, comida saborosa e muito bem embalado."
     },
     {
      "data": "2026-08-17",
@@ -3617,17 +3692,7 @@
     {
      "data": "2026-08-16",
      "nota": 5,
-     "texto": "Comida realmente muito saborosa. Tudo fresquinho e embalagem top . Parabéns"
-    },
-    {
-     "data": "2026-08-16",
-     "nota": 5,
      "texto": "Excelente!!! Comida saborosa e bem feita!!! O pudim realmente é sensacional!! Parabéns a toda Equipe!!!"
-    },
-    {
-     "data": "2026-08-16",
-     "nota": 5,
-     "texto": "Simplesmente a comida mais deliciosa que eu já pedi de qualquer restaurante no Ifood"
     },
     {
      "data": "2026-08-16",
@@ -3637,12 +3702,17 @@
     {
      "data": "2026-08-16",
      "nota": 5,
-     "texto": "Embalagem muito boa, o tempero é sensacional."
+     "texto": "Comida realmente muito saborosa. Tudo fresquinho e embalagem top . Parabéns"
     },
     {
-     "data": "2026-08-15",
+     "data": "2026-08-16",
      "nota": 5,
-     "texto": "Superou todas as expectativas, tudo muito gostoso e organizado! Ganhou uma cliente fiel."
+     "texto": "Simplesmente a comida mais deliciosa que eu já pedi de qualquer restaurante no Ifood"
+    },
+    {
+     "data": "2026-08-16",
+     "nota": 5,
+     "texto": "Embalagem muito boa, o tempero é sensacional."
     },
     {
      "data": "2026-08-15",
@@ -3652,7 +3722,7 @@
     {
      "data": "2026-08-15",
      "nota": 5,
-     "texto": "Podem pedir sem receio.. que ranguinho top!"
+     "texto": "Que comida maravilhosa. Pedi uma feijoada e estava muito boa!!!!"
     },
     {
      "data": "2026-08-15",
@@ -3662,7 +3732,12 @@
     {
      "data": "2026-08-15",
      "nota": 5,
-     "texto": "Que comida maravilhosa. Pedi uma feijoada e estava muito boa!!!!"
+     "texto": "Podem pedir sem receio.. que ranguinho top!"
+    },
+    {
+     "data": "2026-08-15",
+     "nota": 5,
+     "texto": "Superou todas as expectativas, tudo muito gostoso e organizado! Ganhou uma cliente fiel."
     },
     {
      "data": "2026-08-15",
@@ -3672,27 +3747,7 @@
     {
      "data": "2026-08-14",
      "nota": 5,
-     "texto": "Super recomendo. Com certeza um dos melhores do ifood."
-    },
-    {
-     "data": "2026-08-14",
-     "nota": 5,
-     "texto": "Muito gostoso superou minhas expectativas, vou pedir novamente"
-    },
-    {
-     "data": "2026-08-14",
-     "nota": 5,
      "texto": "Comida caseira, que sabor!! Delicia delicia, já é meu restaurante favorito 《3"
-    },
-    {
-     "data": "2026-08-14",
-     "nota": 5,
-     "texto": "Comida maravilhosa!!!! A melhor marmita que já comi na minha vida."
-    },
-    {
-     "data": "2026-08-14",
-     "nota": 5,
-     "texto": "Gostei muito da comida, bem temperada, ótima embalagem e na temperatura certa."
     },
     {
      "data": "2026-08-14",
@@ -3705,9 +3760,49 @@
      "texto": "Maravilhosa, bem embalada comida excelente"
     },
     {
+     "data": "2026-08-14",
+     "nota": 5,
+     "texto": "Muito gostoso superou minhas expectativas, vou pedir novamente"
+    },
+    {
+     "data": "2026-08-14",
+     "nota": 5,
+     "texto": "Super recomendo. Com certeza um dos melhores do ifood."
+    },
+    {
+     "data": "2026-08-14",
+     "nota": 5,
+     "texto": "Gostei muito da comida, bem temperada, ótima embalagem e na temperatura certa."
+    },
+    {
+     "data": "2026-08-14",
+     "nota": 5,
+     "texto": "Comida maravilhosa!!!! A melhor marmita que já comi na minha vida."
+    },
+    {
      "data": "2026-08-13",
      "nota": 5,
-     "texto": "Melhor comida que já pedi no iFood, parabéns!!!"
+     "texto": "Maravilhosa, arroz soltinho, feijão delicioso"
+    },
+    {
+     "data": "2026-08-13",
+     "nota": 5,
+     "texto": "Comida maravilhosa!!!! Deus abençoe q continue/consigam manter a qualidade, fazia tempo q não achava uma comida tão boa no Ifood, conheci vcs na promoção e olha vcs estão de parabéns!!!!"
+    },
+    {
+     "data": "2026-08-13",
+     "nota": 5,
+     "texto": "Rapaz, restaurante nota mil sinceramente, difícil achar essa qualidade com esse preço no ifood, se eles manterem esses preços com a mesma qualidade vou ser cliente por um bom tempo. Parabéns"
+    },
+    {
+     "data": "2026-08-13",
+     "nota": 5,
+     "texto": "Muito bom. Vale a pena, embalagem maravilhosa, o strogonoff muito bom."
+    },
+    {
+     "data": "2026-08-13",
+     "nota": 5,
+     "texto": "Pedi um item, não tinha, substituíram por item similar / melhor ainda. Obrigado e parabéns pelo excelente atendimento"
     },
     {
      "data": "2026-08-13",
@@ -3718,57 +3813,22 @@
      "data": "2026-08-13",
      "nota": 5,
      "texto": "Fazia tempo que eu não comia uma parmegiana de frango tão saborosa. Com toda certeza pedirei mais vezes."
-    },
-    {
-     "data": "2026-08-13",
-     "nota": 5,
-     "texto": "Pedi um item, não tinha, substituíram por item similar / melhor ainda. Obrigado e parabéns pelo excelente atendimento"
-    },
-    {
-     "data": "2026-08-13",
-     "nota": 5,
-     "texto": "Muito bom. Vale a pena, embalagem maravilhosa, o strogonoff muito bom."
-    },
-    {
-     "data": "2026-08-13",
-     "nota": 5,
-     "texto": "Perfeito. Comida muito saborosa e bem cozida. Virei cliente."
-    },
-    {
-     "data": "2026-08-13",
-     "nota": 5,
-     "texto": "Comida maravilhosa!!!! Deus abençoe q continue/consigam manter a qualidade, fazia tempo q não achava uma comida tão boa no Ifood, conheci vcs na promoção e olha vcs estão de parabéns!!!!"
-    },
-    {
-     "data": "2026-08-13",
-     "nota": 5,
-     "texto": "Comida deliciosa, muito capricho em tudo, restaurante está de parabéns!"
-    },
-    {
-     "data": "2026-08-13",
-     "nota": 5,
-     "texto": "Maravilhosa, arroz soltinho, feijão delicioso"
-    },
-    {
-     "data": "2026-08-13",
-     "nota": 5,
-     "texto": "Superou todas as expectativas na qualidade, muito bom mesmo, recomendo, eu super irei comprar novamente."
-    },
-    {
-     "data": "2026-08-13",
-     "nota": 5,
-     "texto": "Rapaz, restaurante nota mil sinceramente, difícil achar essa qualidade com esse preço no ifood, se eles manterem esses preços com a mesma qualidade vou ser cliente por um bom tempo. Parabéns"
     }
    ],
    "loja": "Just Gourmet Pirituba",
    "marca": "Just Gourmet",
    "nota": 4.9,
-   "totalElogios": 199,
+   "totalElogios": 204,
    "unidade": "Pirituba"
   },
   {
-   "avaliacoes": 19342,
+   "avaliacoes": 19376,
    "comentarios": [
+    {
+     "data": "2026-11-11",
+     "nota": 5,
+     "texto": "Aqui em casa amamos! Uma delícia e muito caprichosa a embalagem"
+    },
     {
      "data": "2026-11-08",
      "nota": 5,
@@ -3778,6 +3838,11 @@
      "data": "2026-11-08",
      "nota": 5,
      "texto": "Uma delícia, qualidade excepcional. E ainda mandaram um azeite, adorei a experiência mesmo sendo delivery."
+    },
+    {
+     "data": "2026-11-08",
+     "nota": 5,
+     "texto": "Pedi duas pizzas e veio somente 1"
     },
     {
      "data": "2026-11-07",
@@ -4383,7 +4448,7 @@
    "loja": "Just Forneria Zona Leste",
    "marca": "Just Forneria",
    "nota": 4.9,
-   "totalElogios": 122,
+   "totalElogios": 124,
    "unidade": "Zona Leste"
   },
   {
@@ -4577,8 +4642,23 @@
    "unidade": "Pirituba"
   },
   {
-   "avaliacoes": 5386,
+   "avaliacoes": 5403,
    "comentarios": [
+    {
+     "data": "2026-11-12",
+     "nota": 5,
+     "texto": "As pizzas, esfihas, comida japonesa, tudo de vocês é maravilhoso. Hoje experimentei a esfiha pela primeira vez, nota 1.000"
+    },
+    {
+     "data": "2026-11-12",
+     "nota": 5,
+     "texto": "A melhor esfiha da região! Amoooo"
+    },
+    {
+     "data": "2026-11-11",
+     "nota": 5,
+     "texto": "Produto não condiz com o preço, pelo preço poderia melhorar a qualidade!"
+    },
     {
      "data": "2026-11-08",
      "nota": 5,
@@ -4713,7 +4793,7 @@
    "loja": "Just Esfiha Zona Leste",
    "marca": "Just Esfiha",
    "nota": 4.9,
-   "totalElogios": 26,
+   "totalElogios": 29,
    "unidade": "Zona Leste"
   },
   {
@@ -4867,8 +4947,23 @@
    "unidade": "Pirituba"
   },
   {
-   "avaliacoes": 6084,
+   "avaliacoes": 6094,
    "comentarios": [
+    {
+     "data": "2026-11-12",
+     "nota": 5,
+     "texto": "Não tem como não amar, tudo fresquinho e bem embalado. Sempre que peço é uma experiência maravilhosa! Amoooo, parabéns a toda equipe ✨✨✨"
+    },
+    {
+     "data": "2026-11-12",
+     "nota": 5,
+     "texto": "Sempre deliciosa e a equipe de atendimento sempre prestativa! Parabéns a todos"
+    },
+    {
+     "data": "2026-11-12",
+     "nota": 5,
+     "texto": "Top sempre, generosos… Equipe e comida de primeira…"
+    },
     {
      "data": "2026-11-08",
      "nota": 5,
@@ -5458,7 +5553,7 @@
    "loja": "Just Sushi Zona Leste",
    "marca": "Just Sushi",
    "nota": 4.8,
-   "totalElogios": 117,
+   "totalElogios": 120,
    "unidade": "Zona Leste"
   }
  ]

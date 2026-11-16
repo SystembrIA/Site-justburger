@@ -8,13 +8,13 @@
   function pega(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
   function botoes(u) {
     // Keeta clicável quando a loja tem link (Maikon 03/11); sem link, só o ícone.
-    return (u.ifood ? '<a class="lk-plat" href="' + esc(u.ifood) + '" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a>' : '') +
-      (u.keeta ? '<a class="lk-plat lk-plat-keeta" href="' + esc(u.keeta) + '" rel="noopener" aria-label="Pedir na Keeta"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></a>'
-        : '<span class="lk-plat lk-plat-off lk-plat-keeta" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span>');
+    return (u.ifood ? '<a class="lk-plat" href="' + esc(u.ifood) + '" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" width="64" height="34" alt="iFood"></a>' : '') +
+      (u.keeta ? '<a class="lk-plat lk-plat-keeta" href="' + esc(u.keeta) + '" rel="noopener" aria-label="Pedir na Keeta"><img src="../assets/img/plataformas/keeta.webp" width="64" height="34" alt="Keeta"></a>'
+        : '<span class="lk-plat lk-plat-off lk-plat-keeta" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" width="64" height="34" alt="Keeta"></span>');
   }
 
   function cartao(m, u, dist) {
-    return '<div class="lk-marca">' + (m.logo ? '<img src="../' + esc(m.logo) + '" alt="">' : '<span></span>') +
+    return '<div class="lk-marca">' + (m.logo ? '<img src="../' + esc(m.logo) + '" width="40" height="40" alt="">' : '<span></span>') +
       '<span><strong>' + esc(m.nome) + '</strong></span>' +
       '<div class="lk-plats">' + botoes(u) + '</div></div>';
   }

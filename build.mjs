@@ -26,6 +26,16 @@ const ROBOS_IA = [
 const esc = (s = '') =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const abs = (caminho) => site.url + '/' + caminho;
+// Título longo: tira o " | Marca" do fim se ainda sobrar um título razoável.
+const cabeTitulo = (t) => { if (t.length <= 60) return t; const i = t.lastIndexOf(' | '); return i >= 30 ? t.slice(0, i) : t; };
+// Descrição longa: corta no fim de uma frase; sem frase que caiba, numa palavra, com reticências.
+const cabeDescricao = (d) => {
+  if (!d || d.length <= 158) return d;
+  const frase = d.slice(0, 158).lastIndexOf('. ');
+  if (frase >= 90) return d.slice(0, frase + 1);
+  const esp = d.slice(0, 155).lastIndexOf(' ');
+  return d.slice(0, esp).replace(/[,;:·-]+$/, '') + '…';
+};
 const pendente = (v) => !v || String(v).includes('PREENCHER');
 const listaCidades = 'São Paulo, Guarulhos e São Bernardo do Campo';
 const juntar = (lista) => (lista.length > 1 ? `${lista.slice(0, -1).join(', ')} e ${lista.at(-1)}` : lista.join(''));
@@ -298,6 +308,8 @@ const schemaPerfil = (p) => ({
 // ---------- Layout ----------
 
 function pagina({ caminho, titulo, descricao, corpo, schema = [], profundidade, base = profundidade === 0 ? './' : '../'.repeat(profundidade), markdown = true, noindex = false }) {
+  // Auditoria SEO (16/11): título até ~60 e descrição até ~158 caracteres, para não cortar no Google.
+  titulo = cabeTitulo(titulo); descricao = cabeDescricao(descricao);
   const canonical = abs(caminho);
   const grafo = { '@context': 'https://schema.org', '@graph': [schemaOrganizacao(), ...schema] };
   // Ordem dos menus (Maikon 01/11): Home, Nossa história, Cardápio, Nossas culinárias, Unidades, O que pedir,
@@ -1171,7 +1183,7 @@ for (const c of culinarias) {
   paginas.push({
     caminho,
     profundidade: 2,
-    titulo: `Cardápio ${c.nome} | ${c.tipo}`,
+    titulo: `Cardápio ${c.nome} | ${({ 'Comida brasileira': 'Comida brasileira delivery', Pizza: 'Pizzaria delivery', Sushi: 'Sushi delivery', Esfiha: 'Esfiharia delivery' })[c.tipo] || c.tipo} ${(c.lojas || []).length > 1 ? 'em SP' : `na ${(c.lojas || [])[0] ? c.lojas[0].regiao : 'Zona Leste'}`}`,
     descricao: `Cardápio da ${c.nome} (${c.tipo.toLowerCase()}), do grupo Just Burger: ${cats.slice(0, 4).map((x) => x.categoria.toLowerCase()).join(', ')}. Peça pelo iFood ou pela Keeta.`,
     schema: [schemaBreadcrumb([['Início', ''], ['Cardápio', 'cardapio/'], [c.nome, caminho]])],
     corpo: (base) => `
@@ -1677,7 +1689,7 @@ const fotosEquipe = existsSync(PASTA_EQUIPE) ? readdirSync(PASTA_EQUIPE).filter(
 if (site.equipe && site.equipe.publicada) paginas.push({
   caminho: 'equipe/',
   profundidade: 1,
-  titulo: `Nossa equipe | ${site.nome}`,
+  titulo: `Nossa equipe | ${site.nome} Hamburgueria e culinárias`,
   descricao: 'Sem eles, nada disso seria possível: conheça a equipe da Just Burger e do grupo, com gente que está com a gente há mais de 20 anos.',
   schema: [schemaBreadcrumb([['Início', ''], ['Nossa equipe', 'equipe/']])],
   corpo: (base) => `
@@ -2041,7 +2053,7 @@ for (const p of paginas) {
       unidades: (c.lojas || []).map((u) => { const b = lojaDaRegiao(u.regiao); return { nome: u.regiao, ifood: u.ifood || '', keeta: u.keeta || '', lat: b && b.geo && b.geo.lat, lng: b && b.geo && b.geo.lng }; }) })),
   ];
   // Ícones do iFood e da Keeta (Maikon 01/11). Keeta clicável desde 03/11 (links das 11 lojas); sem link, fica só o ícone.
-  const botoesUnidade = (u) => `${u.ifood ? `<a class="lk-plat" href="${esc(u.ifood)}" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" alt="iFood"></a>` : ''}${u.keeta ? `<a class="lk-plat lk-plat-keeta" href="${esc(u.keeta)}" rel="noopener" aria-label="Pedir na Keeta"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></a>` : `<span class="lk-plat lk-plat-off lk-plat-keeta" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" alt="Keeta"></span>`}`;
+  const botoesUnidade = (u) => `${u.ifood ? `<a class="lk-plat" href="${esc(u.ifood)}" rel="noopener" aria-label="Pedir no iFood"><img src="../assets/img/plataformas/ifood-icone.svg" width="64" height="34" alt="iFood"></a>` : ''}${u.keeta ? `<a class="lk-plat lk-plat-keeta" href="${esc(u.keeta)}" rel="noopener" aria-label="Pedir na Keeta"><img src="../assets/img/plataformas/keeta.webp" width="64" height="34" alt="Keeta"></a>` : `<span class="lk-plat lk-plat-off lk-plat-keeta" title="Keeta em breve" aria-label="Keeta em breve"><img src="../assets/img/plataformas/keeta.webp" width="64" height="34" alt="Keeta"></span>`}`;
   const dadosLinks = { raio: geo ? geo.raioKm : 10, marcas };
   const htmlLinks = `<!doctype html>
 <html lang="pt-BR">
@@ -2049,6 +2061,9 @@ for (const p of paginas) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Just Burger | Links e pedidos</title>
+<meta property="og:title" content="Just Burger | Peça aqui">
+<meta property="og:description" content="Escolha a loja mais perto e peça pelo iFood ou pela Keeta.">
+<meta property="og:image" content="${abs('assets/img/og-just-burger.jpg')}">
 <meta name="description" content="Peça Just Burger, Just Gourmet, Just Forneria, Just Esfiha e Just Sushi pelo iFood ou pela Keeta. Digite seu CEP e veja a loja que atende você.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="${abs('links/')}">
@@ -2059,6 +2074,7 @@ for (const p of paginas) {
 :root { --preto: #000; --carvao: #151412; --linha: rgba(255,255,255,.12); --laranja: #fa7304; --branco: #f7f3ee; --suave: #aaa39a; }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--preto); color: var(--branco); font: 400 1rem/1.5 Archivo, system-ui, sans-serif; }
+.so-leitor { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .lk { max-width: 480px; margin: 0 auto; padding: 36px 16px 48px; }
 .lk-topo { text-align: center; margin-bottom: 20px; }
 .lk-topo img { width: 112px; height: auto; }
@@ -2171,6 +2187,7 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
 </head>
 <body>
 <main class="lk">
+  <h1 class="so-leitor">Just Burger: escolha a loja e peça pelo iFood ou pela Keeta</h1>
   <header class="lk-topo">
     <img src="../assets/img/logo-320.webp" width="320" height="268" alt="Just Burger Hamburgueria">
     ${site.lema ? `<p class="lk-lema">${esc(site.lema)}</p>` : ''}
@@ -2183,10 +2200,10 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
   </section>
 
   <details class="lk-caixa lk-todas">
-    <summary><span class="lk-todas-texto lk-todas-botao">${esc(site.textoPedirLinks || 'Faça pedido').replace(' ', '<br>')}</span><span class="lk-logos">${marcas.filter((m) => m.logo).map((m) => `<img src="../${m.logo}" alt="">`).join('')}</span></summary>
+    <summary><span class="lk-todas-texto lk-todas-botao">${esc(site.textoPedirLinks || 'Faça pedido').replace(' ', '<br>')}</span><span class="lk-logos">${marcas.filter((m) => m.logo).map((m) => `<img src="../${m.logo}" width="36" height="36" alt="">`).join('')}</span></summary>
     <h2 class="lk-todas-titulo">Escolha a culinária</h2>
     <div class="lk-grade">
-    ${marcas.map((m) => `<details class="lk-cul"><summary>${m.logo ? `<img src="../${m.logo}" alt="" loading="lazy">` : ''}<span><strong>${esc(m.nome)}</strong><small class="suave"> ${esc(m.tipo)}</small></span></summary>
+    ${marcas.map((m) => `<details class="lk-cul"><summary>${m.logo ? `<img src="../${m.logo}" width="44" height="44" alt="" loading="lazy">` : ''}<span><strong>${esc(m.nome)}</strong><small class="suave"> ${esc(m.tipo)}</small></span></summary>
       ${m.unidades.map((u) => `<div class="lk-uni"><p>${esc(u.nome)}</p><div class="lk-plats">${botoesUnidade(u)}</div></div>`).join('')}
     </details>`).join('\n    ')}
     </div>
@@ -2197,7 +2214,7 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
   <a class="lk-bt" href="../cardapio/">Cardápio</a>
   <a class="lk-bt" href="../">Conheça nosso site</a>
   ${site.trabalhe && site.trabalhe.publicada ? `<a class="lk-bt" href="../trabalhe-conosco/">Trabalhe conosco</a>` : ''}
-  ${(site.instagrams || []).length ? `<details class="lk-insta"><summary class="lk-bt">${iconeInstagram} Nossos Instagrams</summary><div class="lk-insta-lista">${site.instagrams.map(([arroba, url, marca, tipo, logo]) => `<a href="${esc(url)}" rel="noopener">${logo ? `<img class="lk-insta-logo" src="../${esc(logo)}" alt="">` : ''}<span class="lk-insta-nome"><strong>${esc(marca)}</strong><small>${esc(tipo || arroba)}</small></span><span class="lk-insta-ig" aria-label="${esc(arroba)} no Instagram">${iconeInstagram}</span></a>`).join('')}</div></details>` : site.instagram ? `<a class="lk-bt" href="${esc(site.instagram)}" rel="noopener">Instagram</a>` : ''}
+  ${(site.instagrams || []).length ? `<details class="lk-insta"><summary class="lk-bt">${iconeInstagram} Nossos Instagrams</summary><div class="lk-insta-lista">${site.instagrams.map(([arroba, url, marca, tipo, logo]) => `<a href="${esc(url)}" rel="noopener">${logo ? `<img class="lk-insta-logo" src="../${esc(logo)}" width="40" height="40" alt="">` : ''}<span class="lk-insta-nome"><strong>${esc(marca)}</strong><small>${esc(tipo || arroba)}</small></span><span class="lk-insta-ig" aria-label="${esc(arroba)} no Instagram">${iconeInstagram}</span></a>`).join('')}</div></details>` : site.instagram ? `<a class="lk-bt" href="${esc(site.instagram)}" rel="noopener">Instagram</a>` : ''}
   ${linkWhats ? `<a class="lk-bt" href="${linkWhats}" rel="noopener">${iconeWhats} WhatsApp</a>` : ''}
   </nav>
 
