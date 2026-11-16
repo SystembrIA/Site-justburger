@@ -27,7 +27,9 @@ const CLIQUES_JS = (() => {
   return `window.JUST_CLIQUES = ${JSON.stringify({ url: c.url, links })};\n` + readFileSync(join(RAIZ, 'assets/cliques.js'), 'utf8');
 })();
 const VERSAO_CLIQUES = createHash('md5').update(CLIQUES_JS).digest('hex').slice(0, 8);
-const scriptCliques = (base) => (CLIQUES_JS ? `<script src="${base}assets/cliques.js?v=${VERSAO_CLIQUES}" defer></script>` : '');
+const scriptCliques = (base) => (CLIQUES_JS ? `<script src="${base}assets/cliques.js?v=${VERSAO_CLIQUES}" defer></script>` : '') + scriptPixel(base);
+// Pixel da Meta (marketing, 16/11): só carrega depois do "Aceitar" no aviso de cookies (assets/consentimento.js).
+const scriptPixel = (base) => (site.metaPixel ? `<script src="${base}assets/consentimento.js?v=${createHash('md5').update(readFileSync(join(RAIZ, 'assets/consentimento.js'))).digest('hex').slice(0, 8)}" data-pixel="${site.metaPixel}" data-privacidade="${base}privacidade/" defer></script>` : '');
 
 const DIAS = { Mo: 'Segunda', Tu: 'Terça', We: 'Quarta', Th: 'Quinta', Fr: 'Sexta', Sa: 'Sábado', Su: 'Domingo' };
 const DIAS_SCHEMA = { Mo: 'Monday', Tu: 'Tuesday', We: 'Wednesday', Th: 'Thursday', Fr: 'Friday', Sa: 'Saturday', Su: 'Sunday' };
@@ -448,7 +450,7 @@ ${corpo(base)}
   </div>
   ${blocoInsta()}
   <div class="largura rodape-base">
-    <p>© ${new Date().getFullYear()} Just Burger Hamburgueria Ltda · CNPJ 31.394.735/0001-70</p>
+    <p>© ${new Date().getFullYear()} Just Burger Hamburgueria Ltda · CNPJ 31.394.735/0001-70 · <a href="${base}privacidade/">Privacidade</a></p>
     <p>Imagens meramente ilustrativas. Preços e disponibilidade no iFood.</p>
   </div>
 </footer>
@@ -1755,6 +1757,36 @@ ${lojasAval().map((a) => `<section class="secao aval-secao-loja" id="${slug(a.lo
   md: () => `# Avaliações do grupo Just Burger no iFood\n\nNota ${nota1(AVAL.geral.nota)}${QTD ? ` com ${milBR(AVAL.geral.avaliacoes)} avaliações` : ''} (atualizado em ${dataBR(AVAL.atualizadoEm)}).\n\n${AVAL.lojas.map((a) => `## ${a.loja}\n\nNota ${nota1(a.nota)}${QTD ? ` · ${milBR(a.avaliacoes)} avaliações` : ''}\n\n${(a.comentarios || []).map((c) => `- "${c.texto}" (${dataBR(c.data)})`).join('\n')}`).join('\n\n')}\n`,
 });
 
+// Política de privacidade (16/11): o que o site coleta (formulários e Pixel da Meta) e como pedir a exclusão.
+paginas.push({
+  caminho: 'privacidade/',
+  profundidade: 1,
+  titulo: `Política de privacidade | ${site.nome}`,
+  descricao: 'Como o site da Just Burger usa cookies, o Pixel da Meta e os dados enviados nos formulários de contato e de currículo.',
+  schema: [schemaBreadcrumb([['Início', ''], ['Privacidade', 'privacidade/']])],
+  corpo: (base) => `
+<section class="secao">
+  <div class="largura estreita texto-legal">
+    ${migalhas(base, [['Início', ''], ['Privacidade', 'privacidade/']])}
+    <h1>Política de privacidade</h1>
+    <p class="lead">Este site é do grupo Just Burger (Just Burger Hamburgueria Ltda, CNPJ 31.394.735/0001-70). Aqui explicamos, de forma simples, quais dados ele usa e para quê.</p>
+    <h2>Pedidos</h2>
+    <p>O site não recebe pedidos nem pagamentos: eles são feitos no iFood e na Keeta, que seguem as políticas de privacidade deles.</p>
+    <h2>Cookies e Pixel da Meta</h2>
+    <p>Com a sua autorização (botão "Aceitar" no aviso de cookies), usamos o Pixel da Meta (Facebook e Instagram) para medir as visitas e mostrar anúncios da Just para quem já conhece a gente. Ele registra as páginas visitadas e os toques nos botões de pedir e de WhatsApp. Se você tocar em "Recusar", o Pixel não é carregado. Para mudar a escolha, limpe os dados do site no seu navegador.</p>
+    <p>Também contamos, sem cookie e sem identificar ninguém, quantas vezes os botões de pedir de cada loja são tocados.</p>
+    <h2>Formulários</h2>
+    <p><strong>Fale com a gente:</strong> nome, WhatsApp, e-mail (opcional) e a mensagem, usados só para responder você e melhorar o atendimento. Guardamos por até 12 meses.</p>
+    <p><strong>Trabalhe conosco:</strong> os dados e o currículo, usados só nos processos seletivos do grupo. Guardamos por até 12 meses.</p>
+    <p>Esses dados não são vendidos nem passados para outras empresas.</p>
+    <h2>Seus direitos</h2>
+    <p>Você pode pedir para ver, corrigir ou apagar os seus dados a qualquer momento pela página <a class="link" href="${base}contato/">Fale com a gente</a>${site.contato && site.contato.email ? ` ou pelo e-mail ${esc(site.contato.email)}` : ''}.</p>
+    <p class="suave">Atualizada em novembro de 2026.</p>
+  </div>
+</section>`,
+  md: () => `# Política de privacidade\n\nO site não recebe pedidos (iFood e Keeta). Pixel da Meta só com autorização no aviso de cookies. Formulários de contato e currículo: dados guardados por até 12 meses, sem venda ou repasse. Pedidos sobre seus dados: ${abs('contato/')}.\n`,
+});
+
 // Nossa equipe (Maikon 01/11): texto em dados.mjs (site.equipe) e fotos em assets/img/equipe/*.webp.
 // Só entra no site e no menu quando site.equipe.publicada = true (texto aprovado pela diretoria).
 const PASTA_EQUIPE = join(RAIZ, 'assets/img/equipe');
@@ -2242,6 +2274,12 @@ details.lk-cul summary small { display: block; font-size: .8rem; }
 .lk-insta > summary svg { width: 20px; height: 20px; }
 .lk-insta-lista small { display: block; color: var(--branco); opacity: .85; font-size: .8rem; }
 .lk-rodape { margin-top: 26px; text-align: center; color: var(--suave); font-size: .8rem; }
+.aviso-cookies { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 100; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; max-width: 760px; margin: 0 auto; padding: 14px 16px; border: 1px solid var(--linha); border-radius: 16px; background: #111; color: var(--branco); box-shadow: 0 10px 30px rgba(0, 0, 0, .6); font-size: .9rem; }
+.aviso-cookies p { margin: 0; flex: 1 1 260px; }
+.aviso-cookies a { color: var(--laranja); }
+.aviso-cookies div { display: flex; gap: 8px; }
+.aviso-cookies button { min-height: 40px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--linha); background: transparent; color: var(--branco); font: inherit; font-weight: 800; cursor: pointer; }
+.aviso-cookies button[data-c="sim"] { background: var(--laranja); border-color: var(--laranja); color: #0b0b0b; }
 .lk-mais-conteudo { margin-top: 34px; }
 .lk-mais-conteudo .lk-titulo { margin: 28px 0 12px; }
 .lk-pratos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }

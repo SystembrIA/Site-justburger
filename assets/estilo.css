@@ -754,3 +754,10 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .perfil-foto-texto strong { display: block; font-size: 1.05rem; font-weight: 900; font-stretch: 75%; text-transform: uppercase; line-height: 1.05; color: #fff; }
 .perfil-foto-texto span { display: block; margin-top: 2px; font-size: .78rem; color: var(--suave); }
 .perfil-foto:hover strong { color: var(--laranja); }
+/* Aviso de cookies (Pixel da Meta só depois do Aceitar) */
+.aviso-cookies { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 100; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; max-width: 760px; margin: 0 auto; padding: 14px 16px; border: 1px solid var(--linha); border-radius: 16px; background: #111; color: var(--branco); box-shadow: 0 10px 30px rgba(0, 0, 0, .6); font-size: .9rem; }
+.aviso-cookies p { margin: 0; flex: 1 1 260px; }
+.aviso-cookies a { color: var(--laranja); }
+.aviso-cookies div { display: flex; gap: 8px; }
+.aviso-cookies button { min-height: 40px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--linha); background: transparent; color: var(--branco); font: inherit; font-weight: 800; cursor: pointer; }
+.aviso-cookies button[data-c="sim"] { background: var(--laranja); border-color: var(--laranja); color: #0b0b0b; }

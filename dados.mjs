@@ -64,6 +64,7 @@ export const site = {
     },
     funcoesGerais: ['Ajudante geral', 'Estágio', 'Liderança', 'Administrativo', 'Outra'],
   },
+  metaPixel: '2078905152480476', // Pixel da Meta (João, marketing, 16/11); carrega só depois do "Aceitar" no aviso de cookies
   // Fale com a gente (Maikon 11/11): formulário em /contato/ → função contatoSite (JARVIS) → e-mail controle@.
   // Enquanto a função não estiver no ar, o botão abre o e-mail do cliente já preenchido.
   contato: {
