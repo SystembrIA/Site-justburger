@@ -1765,7 +1765,7 @@ paginas.push({
   caminho: 'privacidade/',
   profundidade: 1,
   titulo: `Política de privacidade | ${site.nome}`,
-  descricao: 'Como o site da Just Burger usa cookies, o Pixel da Meta e os dados enviados nos formulários de contato e de currículo.',
+  descricao: 'Como a Just Burger usa cookies, o Pixel da Meta, os formulários e as mensagens do Instagram e do WhatsApp, e como apagar os seus dados.',
   schema: [schemaBreadcrumb([['Início', ''], ['Privacidade', 'privacidade/']])],
   corpo: (base) => `
 <section class="secao">
@@ -1782,6 +1782,11 @@ paginas.push({
     <p><strong>Fale com a gente:</strong> nome, WhatsApp, e-mail (opcional) e a mensagem, usados só para responder você e melhorar o atendimento. Guardamos por até 12 meses.</p>
     <p><strong>Trabalhe conosco:</strong> os dados e o currículo, usados só nos processos seletivos do grupo. Guardamos por até 12 meses.</p>
     <p>Esses dados não são vendidos nem passados para outras empresas.</p>
+    <h2>Atendimento pelo Instagram e pelo WhatsApp</h2>
+    <p>Quando você manda mensagem ou comenta nos nossos perfis do Instagram (@justburgersp, @justgourmetsp, @ahamforneriasp e @ahamsushisp) ou chama no nosso WhatsApp, um assistente automático do grupo lê a mensagem para responder você: agradece, manda os links de pedido, passa o WhatsApp da loja e, se houver reclamação ou problema com um pedido, avisa a loja e a nossa equipe de atendimento para entrarem em contato.</p>
+    <p>Usamos só o seu nome de perfil, o seu usuário e o que você escreveu, apenas para esse atendimento. As conversas ficam guardadas por até 12 meses e não são vendidas nem passadas para outras empresas.</p>
+    <h2 id="apagar">Como apagar os seus dados</h2>
+    <p>Para apagar as suas conversas e os seus dados, mande "apagar meus dados" pelo Direct do Instagram, pelo WhatsApp ou pela página <a class="link" href="${base}contato/">Fale com a gente</a>. Apagamos em até 15 dias e confirmamos para você.</p>
     <h2>Seus direitos</h2>
     <p>Você pode pedir para ver, corrigir ou apagar os seus dados a qualquer momento pela página <a class="link" href="${base}contato/">Fale com a gente</a>${site.contato && site.contato.email ? ` ou pelo e-mail ${esc(site.contato.email)}` : ''}.</p>
     <p class="suave">Atualizada em novembro de 2026.</p>
