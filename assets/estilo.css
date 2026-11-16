@@ -761,3 +761,10 @@ a.culinaria:hover { border-color: var(--laranja); transform: translateY(-2px); }
 .aviso-cookies div { display: flex; gap: 8px; }
 .aviso-cookies button { min-height: 40px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--linha); background: transparent; color: var(--branco); font: inherit; font-weight: 800; cursor: pointer; }
 .aviso-cookies button[data-c="sim"] { background: var(--laranja); border-color: var(--laranja); color: #0b0b0b; }
+/* Confirmação do formulário de contato */
+.janela-enviado { width: min(440px, 100% - 32px); text-align: center; }
+.janela-enviado .janela-texto { padding: 30px 26px 26px; }
+.janela-enviado h2 { font-size: 1.8rem; margin: .2em 0 .4em; }
+.janela-enviado p { color: var(--suave); }
+.enviado-icone { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto; border-radius: 50%; background: #25d366; color: #0b0b0b !important; font-size: 2rem; font-weight: 900; }
+.janela-enviado .botao { margin-top: 10px; min-width: 160px; }

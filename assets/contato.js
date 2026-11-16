@@ -9,6 +9,17 @@
     location.href = 'mailto:' + form.getAttribute('data-email') + '?subject=' + encodeURIComponent(d.assunto + ' pelo site: ' + d.nome) + '&body=' + encodeURIComponent(corpo);
     status.textContent = 'Abrimos o seu e-mail com a mensagem pronta: é só enviar.';
   }
+  // Caixinha de confirmação quando a mensagem chega (Maikon 16/11).
+  function avisoEnviado() {
+    var d = document.createElement('dialog');
+    d.className = 'janela janela-enviado';
+    d.innerHTML = '<div class="janela-texto"><p class="enviado-icone" aria-hidden="true">✓</p><h2>Mensagem enviada com sucesso!</h2><p>Obrigado por falar com a gente. A nossa equipe vai ler e responder pelo WhatsApp ou e-mail que você deixou.</p><button type="button" class="botao">Fechar</button></div>';
+    document.body.appendChild(d);
+    var fecha = function () { d.close(); d.remove(); };
+    d.querySelector('button').addEventListener('click', fecha);
+    d.addEventListener('click', function (e) { if (e.target === d) fecha(); });
+    if (d.showModal) d.showModal(); else alert('Mensagem enviada com sucesso!');
+  }
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var f = form.elements;
@@ -22,7 +33,7 @@
       .then(function (r) { return r.json().catch(function () { return { ok: false }; }).then(function (j) { return { r: r, j: j }; }); })
       .then(function (x) {
         botao.disabled = false;
-        if (x.r.ok && x.j.ok) { form.reset(); status.textContent = 'Mensagem enviada! Obrigado: a nossa equipe vai ler e responder.'; return; }
+        if (x.r.ok && x.j.ok) { form.reset(); status.textContent = 'Mensagem enviada! Obrigado: a nossa equipe vai ler e responder.'; avisoEnviado(); return; }
         if (x.r.status === 400 || x.r.status === 429) { status.textContent = x.j.erro || 'Confira os campos.'; return; }
         porEmail(d);
       })
