@@ -132,6 +132,7 @@ export const site = {
   avaliacoes: {
     url: 'https://systembria.github.io/just-burger-producao/site-dados/avaliacoes-just-burger.json',
     notaInformada: 4.9,
+    quantidadeConfirmada: false, // Maikon 16/11: 281.550 do JARVIS sem confirmação do período; true volta a mostrar as quantidades por loja
     avaliacoesInformadas: 15422, // total nas lojas Burger, informado pela diretoria em 30/10/2026 // nota no iFood das 4 lojas, informada pela diretoria em 30/10/2026
   },
   // Burger flutuando no topo da home: recorte (sem fundo) do produto com este nome, gerado pelo robô
