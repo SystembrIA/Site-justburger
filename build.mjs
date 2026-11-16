@@ -1823,7 +1823,7 @@ paginas.push({
 </section>`,
   md: () => `# Nossas culinárias\n\n${culinarias.map((c) => `- ${c.nome}: ${c.tipo}`).join('\n')}\n`,
 });
-const CATEGORIA_SEO = { 'Comida brasileira': 'Comida brasileira delivery', Pizza: 'Pizzaria delivery', Sushi: 'Sushi delivery', Esfiha: 'Esfiharia delivery' };
+const CATEGORIA_SEO = { 'Comida brasileira': 'Comida brasileira', Pizza: 'Pizzaria delivery', Sushi: 'Sushi delivery', Esfiha: 'Esfiharia delivery' };
 for (const c of culinarias) {
   const trilha = [['Início', ''], ['Culinárias', 'culinarias/'], [c.nome, `culinarias/${c.slug}/`]];
   const outras = culinarias.filter((o) => o !== c);
@@ -1847,7 +1847,7 @@ for (const c of culinarias) {
   paginas.push({
     caminho: `culinarias/${c.slug}/`,
     profundidade: 2,
-    titulo: `${c.nome} | ${CATEGORIA_SEO[c.tipo] || c.tipo} ${ondeTxt}`,
+    titulo: `${c.nome} | ${CATEGORIA_SEO[c.tipo] || c.tipo} ${regioes.map((r, i) => (i ? r : `${r === 'Zona Leste' ? 'na' : 'em'} ${r}`)).join(' e ')}`,
     descricao: c.meta || `${c.nome}: ${c.tipo.toLowerCase()} do grupo Just Burger. Endereço, horário e pedido pelo iFood ou pela Keeta.`,
     noindex: !c.conteudo,
     schema: [...schemaMarca, schemaFaq(faqMarca), schemaBreadcrumb(trilha)],
@@ -1993,7 +1993,7 @@ if (cargosAbertos.length) {
     paginas.push({
       caminho: `vagas/${sg.slug}/`,
       profundidade: 2,
-      titulo: `${sg.titulo} ${us[0] === 'zona-leste' ? 'na' : 'em'} ${listaE(us.map((u) => UNIDADES_VAGA[u].nome))} | ${sg.marca}`,
+      titulo: `${sg.titulo}: ${listaE(us.map((u) => (u === 'sao-bernardo-do-campo' ? 'ABC' : UNIDADES_VAGA[u].nome)))} | ${sg.marca}`,
       descricao: `${sg.titulo} na ${sg.marca}: ${listaE(cs.map((c) => c.nome.toLowerCase()))}. Unidades: ${listaE(us.map((u) => UNIDADES_VAGA[u].nome))}. Envie seu currículo.`.slice(0, 300),
       schema: [schemaBreadcrumb(trilha)],
       corpo: (base) => `
