@@ -178,6 +178,8 @@ const bairrosDaLoja = (l) => bairros.filter((b) => b.loja === l.slug);
 // Continuam listados em "Onde entregamos" e na busca por CEP.
 const temPaginaBairro = (b) => !!site.indexarBairrosPequenos || !(b.pontos === 1 && !(b.variacoes || []).length);
 // Link do Google Maps pelo endereço da loja (o mesmo do CNPJ e do site).
+// O perfil verificado no Google (cid, dados.mjs) fica guardado para os dados estruturados (sameAs/hasMap).
+for (const l of lojas) l.perfilGoogle = !pendente(l.googleMaps) && /cid=/.test(l.googleMaps || '') ? l.googleMaps : '';
 for (const l of lojas) if (!pendente(l.endereco)) l.googleMaps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Just Burger, ${l.endereco}, ${l.cidade} - SP`)}`;
 if (geo) for (const l of lojas) l.bairrosAtendidos = bairrosDaLoja(l).slice(0, 8).map((b) => b.nome);
 // Nomes que a vizinhança usa para o bairro da loja entram na página do distrito oficial dela.
@@ -232,7 +234,7 @@ function schemaOrganizacao() {
     url: abs(''),
     logo: abs('assets/img/icon-512.png'),
     ...((site.fundacaoData || site.fundacao) && { foundingDate: site.fundacaoData || site.fundacao }),
-    ...(!pendente(site.instagram) && { sameAs: [site.instagram] }),
+    ...([site.instagram, site.facebook, site.tiktok].some((u) => u && !pendente(u)) && { sameAs: [site.instagram, site.facebook, site.tiktok].filter((u) => u && !pendente(u)) }),
     ...(site.emailContato && { email: site.emailContato }),
     ...(site.telefoneCentral && { telephone: site.telefoneCentral }),
   };
@@ -262,9 +264,9 @@ function schemaLoja(l) {
     },
     ...(l.geo && { geo: { '@type': 'GeoCoordinates', latitude: l.geo.lat, longitude: l.geo.lng } }),
     ...(l.telefone && { telephone: l.telefone }),
-    ...(!pendente(l.googleMaps) && { hasMap: l.googleMaps }),
+    ...((l.perfilGoogle || !pendente(l.googleMaps)) && { hasMap: l.perfilGoogle || l.googleMaps }),
     // perfis da loja em outros sites (Google, iFood, Keeta, Instagram): ajudam Google, Bing e IAs a ligar tudo à mesma loja (16/11)
-    sameAs: [l.ifood, l.keeta, l.googleMaps, site.instagram].filter((x) => x && !pendente(x)),
+    sameAs: [l.ifood, l.keeta, l.perfilGoogle || l.googleMaps, site.instagram].filter((x) => x && !pendente(x)),
     ...(!pendente(l.ifood) && {
       potentialAction: {
         '@type': 'OrderAction',
@@ -1028,10 +1030,11 @@ const paginas = [];
 paginas.push({
   caminho: '',
   profundidade: 0,
-  titulo: `${site.nome} | Hamburgueria em São Paulo, Guarulhos e ABC`,
-  descricao: `Hamburgueria Just Burger: hambúrguer de 150 g no pão brioche, nota 4,9 no iFood. Delivery na Zona Leste, Pirituba, Guarulhos e São Bernardo do Campo.`,
+  // SEO (16/11, Search Console): marca primeiro no título e as quatro regiões que as pessoas buscam na descrição.
+  titulo: `${site.nome} – Hamburgueria Delivery em SP, Guarulhos e ABC`,
+  descricao: `${site.nome}, hamburgueria delivery desde ${site.fundacao}: burger de 150 g no brioche, nota 4,9 no iFood. Unidades na Penha (Zona Leste), Pirituba, Guarulhos e ABC.`,
   schema: [
-    { '@type': 'WebSite', '@id': abs('#site'), name: site.nome, url: abs(''), inLanguage: 'pt-BR', publisher: { '@id': orgId } },
+    { '@type': 'WebSite', '@id': abs('#site'), name: site.nome, alternateName: [`${site.nome} Hamburgueria`, site.nome.replace(' ', '')], url: abs(''), inLanguage: 'pt-BR', publisher: { '@id': orgId } },
     ...lojas.map(schemaLoja),
     schemaFaq(faq),
   ],
@@ -1350,17 +1353,31 @@ for (const l of lojas) {
     { p: `A Just Burger ${termo} faz delivery?`, r: `Sim. A Just nasceu no delivery: você pede pelo iFood${l.keeta ? ' ou pela Keeta' : ''} e recebe o hambúrguer artesanal (carne de 150 g no pão brioche) em casa (${l.horarios.map(textoHorarioCurto).join('; ').toLowerCase()}).` },
     ...(site.avaliacoes && site.avaliacoes.notaInformada ? [{ p: `A Just Burger ${termo} é bem avaliada?`, r: fraseNota(l.nome, l.superIfood) || `Sim: nota ${nota1(site.avaliacoes.notaInformada)} no iFood${l.superIfood ? ', com o selo Super Restaurante (nível 5 de 5 do iFood)' : ''}.` }] : []),
   ];
+  // SEO (16/11, Search Console): título com o nome que as pessoas buscam ("just burger penha", "rua peixoto 156",
+  // "just burger abc") e o endereço; descrição com endereço, horário e onde pedir.
+  const marcaBusca = l.nomeBusca || l.nome;
+  const endBusca = `${l.endereco}, ${l.bairroEndereco || l.bairro} – ${l.cidade}`;
+  const canais = `iFood${l.keeta ? ' e Keeta' : ''}`;
+  const notaL = (avalLoja(l.nome) || {}).nota || (site.avaliacoes && site.avaliacoes.notaInformada);
+  // Bairros da loja com página própria (/entrega/<bairro>/), do mais perto ao mais longe: links internos unidade → bairro.
+  const bairrosPagina = bairrosDaLoja(l).filter(temPaginaBairro).sort((a, b) => a.distanciaKm - b.distanciaKm);
+  const linkBairro = (nome, base) => { const b = bairrosPagina.find((x) => x.nome === nome); return b ? `<a href="${base}entrega/${b.slug}/">${esc(nome)}</a>` : esc(nome); };
+  // Outras culinárias do grupo com operação na mesma região da unidade (dados.mjs → culinarias[].lojas[].regiao).
+  const culinariasAqui = culinarias.filter((c) => (c.lojas || []).some((x) => x.regiao === l.regiao || x.regiao === l.bairro));
   paginas.push({
     caminho,
     profundidade: 2,
-    titulo: cabe(60, `Hamburgueria delivery ${termo} | ${site.nome}`, `Hamburgueria ${termo} | ${site.nome}`),
-    descricao: `${l.nome}: hamburgueria ${termo}${termo.includes(l.bairro) ? '' : ` (${l.bairro})`}. Endereço, horário, bairros de entrega e link direto para pedir no iFood.`,
+    titulo: cabe(60, l.tituloSeo || '', `${marcaBusca} – ${l.endereco} · Delivery`, `Hamburgueria delivery ${termo} | ${site.nome}`, `Hamburgueria ${termo} | ${site.nome}`),
+    descricao: cabe(158,
+      `${marcaBusca}: ${endBusca}. ${horarioLoja(l)}. Hambúrguer de 150 g, delivery pelo ${canais}.`,
+      `${marcaBusca}: ${endBusca}. Hambúrguer de 150 g no brioche${notaL ? `, nota ${nota1(notaL)} no iFood` : ''}. Peça pelo ${canais.replace(" e ", " ou ")}.`,
+      `${marcaBusca}: ${endBusca}. Hambúrguer de 150 g, delivery pelo ${canais}.`),
     schema: [schemaLoja(l), schemaFaq(faqLoja), schemaBreadcrumb(trilha)],
     corpo: (base) => `
 <section class="secao">
   <div class="largura">
     ${migalhas(base, trilha)}
-    <p class="sobretitulo">Hamburgueria ${esc(termo)}</p>
+    <p class="sobretitulo">Hamburgueria ${esc(termo)}${l.regiaoConhecida ? ` · ${esc(l.regiaoConhecida)}` : ''}</p>
     <h1>${esc(l.nome)}</h1>
     <p class="lead resumo">${esc(l.intro)}</p>
     <div class="acoes acoes-loja">${acoesLoja(l)}</div>
@@ -1370,7 +1387,7 @@ for (const l of lojas) {
   <div class="largura grade-3">
     <article class="cartao">
       <h2>Endereço</h2>
-      <address>${esc(l.endereco)}<br>${esc(local)} — SP<br>${pendente(l.cep) ? '' : 'CEP ' + esc(l.cep)}</address>
+      <address>${esc(l.endereco)}${l.bairroEndereco ? ` – ${esc(l.bairroEndereco)}` : ''}<br>${esc(local)} — SP<br>${pendente(l.cep) ? '' : 'CEP ' + esc(l.cep)}</address>
       ${l.telefone ? `<p><a href="tel:${l.telefone.replace(/\D/g, '')}">${esc(l.telefone)}</a></p>` : ''}
     </article>
     <article class="cartao">
@@ -1379,12 +1396,26 @@ for (const l of lojas) {
     </article>
     <article class="cartao">
       <h2>Bairros atendidos</h2>
-      <p>${l.bairrosAtendidos.map(esc).join(' · ')}${geo ? ' e região' : ''}.</p>
-      ${geo ? `<p><a class="link" href="${base}entrega/#${l.slug}">Ver os ${bairrosDaLoja(l).length} bairros no raio de ${geo.raioKm} km →</a></p>` : ''}
+      <p>${l.bairrosAtendidos.map((n) => linkBairro(n, base)).join(' · ')}${geo ? ' e região' : ''}.</p>
+      ${geo ? `<p><a class="link" href="#bairros">Ver os ${bairrosDaLoja(l).length} bairros no raio de ${geo.raioKm} km →</a></p>` : ''}
     </article>
   </div>
 </section>
 ${secaoAvaliacoesLoja([l.nome])}
+${bairrosPagina.length ? `<section class="secao" id="bairros">
+  <div class="largura">
+    <h2>Bairros onde a ${esc(l.nome)} entrega</h2>
+    <p class="suave">Do mais perto ao mais longe da cozinha, no raio de ${geo.raioKm} km. Toque no seu bairro para ver a distância e as vilas atendidas; a entrega final é confirmada no ${esc(canais)} pelo seu endereço.</p>
+    <p class="chips">${bairrosPagina.map((b) => `<a href="${base}entrega/${b.slug}/">${esc(b.nome)}${b.tipo === 'bairro' && b.cidade !== l.cidade ? ` (${esc(b.cidade)})` : ''}</a>`).join('')}</p>
+    <p><a class="link" href="${base}entrega/#${l.slug}">Ver a lista completa da unidade →</a></p>
+  </div>
+</section>` : ''}
+${culinariasAqui.length ? `<section class="secao">
+  <div class="largura">
+    <h2>Também do grupo Just ${esc(termo)}</h2>
+    <div class="grade-culinarias cul-${culinariasAqui.length}">${culinariasAqui.map((c) => cartaoCulinaria(c, base)).join('')}</div>
+  </div>
+</section>` : ''}
 <section class="secao">
   <div class="largura">
     <h2>O que pedir</h2>
@@ -1449,8 +1480,8 @@ if (geo) {
       : `A Just Burger entrega ${onde} (${regiao}) pela unidade ${l.nome}, a cerca de ${kmTxt(b.distanciaKm)} km. O pedido é feito pelo iFood (${horarioLoja(l)}).`;
     const borda = b.inteiroNoRaio ? '' : ` Parte ${esc(deOnde)} passa do raio: nas ruas mais afastadas, a entrega depende da área do iFood.`;
     const paragrafoDistancia = casa
-      ? `A ${esc(l.nome)} fica ${esc(onde)}, então o bairro inteiro está perto da cozinha.`
-      : `${b.tipo === 'cidade' ? `A parte de ${esc(b.nome)} dentro do raio fica` : `${esc(b.nome)} fica`} a cerca de ${kmTxt(b.distanciaKm)} km ${rumo(b.direcao)} da ${esc(l.nome)} (${esc(l.bairro)}, ${esc(l.cidade)}), dentro do raio de entrega de ${geo.raioKm} km.${borda}`;
+      ? `A <a href="../../unidades/${l.slug}/">${esc(l.nome)}</a> (${esc(l.endereco)}) fica ${esc(onde)}, então o bairro inteiro está perto da cozinha.`
+      : `${b.tipo === 'cidade' ? `A parte de ${esc(b.nome)} dentro do raio fica` : `${esc(b.nome)} fica`} a cerca de ${kmTxt(b.distanciaKm)} km ${rumo(b.direcao)} da <a href="../../unidades/${l.slug}/">${esc(l.nome)}</a> (${esc(l.endereco)}, ${esc(l.bairro)}, ${esc(l.cidade)}), dentro do raio de entrega de ${geo.raioKm} km.${borda}`;
     const perguntas = [
       { p: `A Just Burger entrega ${onde}?`, r: b.tipo === 'cidade'
         ? `Em parte. A região de ${b.nome} mais perto da ${l.nome} está dentro do raio de ${geo.raioKm} km. Digite seu endereço no iFood para saber se a sua rua é atendida.`
@@ -1490,7 +1521,7 @@ if (geo) {
     <p class="sobretitulo">${esc(regiao)} · ${kmTxt(b.distanciaKm)} km da unidade ${esc(l.bairro)}</p>
     <h1>Hamburgueria ${esc(onde)}</h1>
     ${respostaRapida(resumo)}
-    <div class="acoes">
+    <div class="acoes acoes-bairro">
       <a class="botao" href="/links/">Fazer pedido</a>
       <a class="botao botao-contorno" href="${base}unidades/${l.slug}/">Ver a unidade ${esc(l.bairro)}</a>
     </div>

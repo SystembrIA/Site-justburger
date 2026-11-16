@@ -188,6 +188,9 @@ export const lojas = [
     distritoOficial: 'Ponte Rasa', // GeoSampa; a página /entrega/ponte-rasa/ ganha os nomes acima
     preposicao: 'na',
     termoBusca: 'na Zona Leste', // como a página se apresenta no título
+    // SEO (16/11, Search Console): como as pessoas buscam a loja ("just burger penha", "rua peixoto 156"); marca primeiro, até 60 caracteres.
+    nomeBusca: 'Just Burger Penha',
+    tituloSeo: 'Just Burger Penha – Rua Peixoto, 156 · Delivery Zona Leste',
     superIfood: true, // Super Restaurante iFood (nível 5 de 5, jul-set/2026, painel do Hub)
     cidade: 'São Paulo',
     regiao: 'Zona Leste',
@@ -209,6 +212,9 @@ export const lojas = [
     bairro: 'Pirituba',
     preposicao: 'em',
     termoBusca: 'em Pirituba',
+    nomeBusca: 'Just Burger Pirituba',
+    bairroEndereco: 'Jardim Íris', // bairro do endereço (CNPJ e iFood)
+    tituloSeo: 'Just Burger Pirituba – Hamburgueria delivery · Jardim Íris',
     superIfood: true, // Super Restaurante iFood (nível 5 de 5, jul-set/2026, painel do Hub)
     cidade: 'São Paulo',
     regiao: 'Zona Norte', // Prefeitura de SP (GeoSampa): distrito Pirituba, região Norte 2
@@ -230,6 +236,8 @@ export const lojas = [
     bairro: 'Vila Endres',
     preposicao: 'em',
     termoBusca: 'em Guarulhos',
+    nomeBusca: 'Just Burger Guarulhos',
+    tituloSeo: 'Just Burger Guarulhos – Rua Espanhola, 470 · Vila Endres',
     superIfood: true, // Super Restaurante iFood (nível 5 de 5, jul-set/2026, painel do Hub)
     cidade: 'Guarulhos',
     regiao: 'Grande São Paulo',
@@ -251,6 +259,8 @@ export const lojas = [
     bairro: 'Baeta Neves',
     preposicao: 'em',
     termoBusca: 'em São Bernardo do Campo',
+    nomeBusca: 'Just Burger ABC (São Bernardo)', // buscas: "just burger abc", "just burger sbc"
+    tituloSeo: 'Just Burger ABC – São Bernardo · Av. Getúlio Vargas, 600',
     superIfood: true, // Super Restaurante iFood (nível 5 de 5, jul-set/2026, painel do Hub)
     cidade: 'São Bernardo do Campo',
     regiao: 'ABC Paulista',

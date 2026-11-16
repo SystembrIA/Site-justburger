@@ -347,6 +347,8 @@ main > .secao:first-child h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); }
 .acoes { flex-wrap: nowrap; }
 .acoes .botao { flex: 0 1 auto; white-space: nowrap; }
 @media (max-width: 520px) { .acoes .botao { padding-inline: 16px; font-size: .78rem; min-height: 46px; } }
+/* Página de bairro no celular: "Fazer pedido" e "Ver a unidade …" um embaixo do outro, mesma largura (não passa da tela). */
+@media (max-width: 520px) { .acoes.acoes-bairro { flex-wrap: wrap; } .acoes-bairro .botao { flex: 1 1 100%; justify-content: center; text-align: center; } }
 
 /* ---------- Placar de aeroporto (contador) ---------- */
 .numeros { padding: 40px 0 36px; }
@@ -436,6 +438,8 @@ a.heroi-burger-caixa { display: block; }
 /* Culinárias do grupo */
 .grade-culinarias { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
 @media (min-width: 760px) { .grade-culinarias { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+/* Página da unidade: só as culinárias da região, colunas iguais ao número de cartões (sem buraco). */
+@media (min-width: 760px) { .grade-culinarias.cul-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } .grade-culinarias.cul-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 520px; } .grade-culinarias.cul-1 { grid-template-columns: minmax(0, 260px); } }
 .culinaria { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 150px; padding: 18px 12px; border: 1px solid var(--linha); border-radius: 14px; text-align: center; background: rgba(255, 255, 255, .02); }
 .culinaria img { width: 110px; height: 110px; object-fit: contain; }
 .culinaria-nome { margin: 0; font-stretch: 75%; font-weight: 900; font-size: 1.5rem; text-transform: uppercase; line-height: 1; }
