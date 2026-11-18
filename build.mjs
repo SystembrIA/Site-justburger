@@ -478,9 +478,12 @@ const iconeFacebook = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidd
 const iconeTiktok = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.8a5.7 5.7 0 1 0 4.9 5.6V9.1a7.3 7.3 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6z"/></svg>';
 // Redes oficiais (site.instagram / facebook / tiktok): só aparecem as preenchidas.
 const redes = () => [['Instagram', site.instagram, iconeInstagram], ['Facebook', site.facebook, iconeFacebook], ['TikTok', site.tiktok, iconeTiktok]].filter(([, u]) => u && !pendente(u));
+// Últimas postagens do Instagram: só pede o arquivo no navegador se o robô já publicou (evita erro 404 no console).
+let INSTA_OK = false;
+try { if (site.instagramPosts) { const r = await fetch(site.instagramPosts, { method: 'HEAD', signal: AbortSignal.timeout(10000) }); INSTA_OK = r.ok; } } catch {}
 const blocoInsta = () => `
 <div class="largura insta-grade" data-insta hidden></div>
-${site.instagramPosts ? `<script>
+${site.instagramPosts && INSTA_OK ? `<script>
 (function () {
   var g = document.querySelector('[data-insta]'); if (!g || !window.fetch) return;
   var url = ${JSON.stringify(site.instagramPosts)}, base = url.replace(/[^/]*$/, '');
@@ -751,10 +754,13 @@ const fraseNota = (nome, superIfood) => { const a = avalLoja(nome); return a ? `
 
 // Outras marcas do grupo (dados.mjs → culinarias). Logo em assets/img/marcas/<slug>.webp quando houver;
 // sem logo, o nome escrito. Página de cada marca: em breve (material da diretoria).
+// Tamanho real do logo (cabeçalho VP8X do WebP), para width/height com a proporção certa (auditoria Lighthouse 18/11).
+const dimLogo = (arq) => { try { const b = readFileSync(join(RAIZ, arq)); if (b.toString('ascii', 12, 16) === 'VP8X') return [1 + b.readUIntLE(24, 3), 1 + b.readUIntLE(27, 3)]; } catch {} return [320, 320]; };
+const attrLogo = (arq) => { const [w, h] = dimLogo(arq); return `width="${w}" height="${h}"`; };
 const logoMarca = (c) => (existsSync(join(RAIZ, 'assets/img/marcas', `${c.slug}.webp`)) ? `assets/img/marcas/${c.slug}.webp` : null);
 const cartaoCulinaria = (c, base) => {
   const logo = logoMarca(c);
-  return `<a class="culinaria" href="${base}culinarias/${c.slug}/">${logo ? `<img src="${base}${logo}" width="320" height="320" loading="lazy" alt="${esc(c.nome)}">` : `<p class="culinaria-nome">${esc(c.nome)}</p>`}<p class="culinaria-tipo">${esc(c.tipo)}</p></a>`;
+  return `<a class="culinaria" href="${base}culinarias/${c.slug}/">${logo ? `<img src="${base}${logo}" ${attrLogo(logo)} loading="lazy" alt="${esc(c.nome)}">` : `<p class="culinaria-nome">${esc(c.nome)}</p>`}<p class="culinaria-tipo">${esc(c.tipo)}</p></a>`;
 };
 // Cartão de uma culinária na página Unidades: mesmo padrão das lojas Burger, uma linha por operação.
 const cartaoMarca = (c, base) => `
@@ -801,7 +807,7 @@ const blocoCulinarias = (base) => (culinarias.length ? `
 const detalheCulinaria = (c, base) => `
 <div class="cul-detalhe" data-cul="${c.slug}" hidden>
   <div class="cul-detalhe-topo">
-    ${logoMarca(c) ? `<img src="${base}${logoMarca(c)}" width="320" height="320" loading="lazy" alt="${esc(c.nome)}">` : ''}
+    ${logoMarca(c) ? `<img src="${base}${logoMarca(c)}" ${attrLogo(logoMarca(c))} loading="lazy" alt="${esc(c.nome)}">` : ''}
     <div><h3>${esc(c.nome)}</h3><p class="suave">${esc(c.tipo)}</p>
     <p><a class="link" href="${base}cardapio/${c.slug}/">Ver cardápio →</a> &nbsp; <a class="link" href="${base}culinarias/${c.slug}/">Conhecer a ${esc(c.nome)} →</a></p></div>
   </div>
