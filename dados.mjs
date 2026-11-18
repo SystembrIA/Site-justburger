@@ -115,7 +115,6 @@ export const site = {
   // Vídeo que aparece tocável em "Na mídia" na home (os outros ficam como links).
   videoMidia: 'a742uPTdHss', // Hambúrguer Perfeito: "Invadimos o Just Burger"
   instagramPosts: 'https://systembria.github.io/just-burger-producao/site-dados/instagram-just-burger.json',
-  pedidoMinimo: '20,00', // conferir: valor mostrado no iFood
   // Preço em site é oferta (CDC art. 30) e envelhece rápido. Com false, o site mostra
   // "ver preço no iFood"; os preços continuam só nos dados para robôs (dados.json).
   mostrarPrecos: false,
@@ -142,7 +141,7 @@ export const site = {
   avaliacoes: {
     url: 'https://systembria.github.io/just-burger-producao/site-dados/avaliacoes-just-burger.json',
     notaInformada: 4.9,
-    quantidadeConfirmada: false, // Maikon 16/11: 281.550 do JARVIS sem confirmação do período; true volta a mostrar as quantidades por loja
+    quantidadeConfirmada: true, // Maikon 18/11: o total do JARVIS é desde a abertura das lojas ("mais de 280 mil avaliações desde a abertura")
     avaliacoesInformadas: 15422, // total nas lojas Burger, informado pela diretoria em 30/10/2026 // nota no iFood das 4 lojas, informada pela diretoria em 30/10/2026
   },
   // Burger flutuando no topo da home: recorte (sem fundo) do produto com este nome, gerado pelo robô
@@ -344,12 +343,12 @@ export const perfis = [
     nome: 'Quer gastar pouco',
     chamada: 'O melhor pedido pelo menor valor.',
     resposta:
-      'Para gastar pouco, o Just Burger é o lanche de entrada da casa (150 g no pão brioche) e o Combo Just Burger leva lanche, batata e refrigerante num pedido só. Pedido mínimo no iFood: R$ 20,00.',
+      'Para gastar pouco, o Just Burger é o lanche de entrada da casa (150 g no pão brioche) e o Combo Just Burger leva lanche, batata e refrigerante num pedido só.',
     texto: [
       'Combo quase sempre sai mais barato do que os itens separados. Vale olhar as promoções da loja no iFood antes de fechar o pedido: a Just costuma ter itens com preço promocional.',
     ],
     produtos: ['just-burger-hamburguer-de-150-g', 'combo-just-burger-burguer-batata-refri', '2-just-passado'],
-    perguntas: [{ p: 'Qual o pedido mínimo da Just Burger?', r: 'O pedido mínimo no iFood é de R$ 20,00 (pode variar por unidade).' }],
+    perguntas: [{ p: 'Qual o lanche mais em conta da Just Burger?', r: 'O Just Burger: hambúrguer de 150 g no pão brioche com queijo, cebola, mayo e Molho Just. O preço do dia está no iFood e na Keeta.' }],
   },
   {
     slug: 'fa-de-smash',

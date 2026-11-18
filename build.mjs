@@ -175,6 +175,8 @@ const milBR = (n) => Number(n).toLocaleString('pt-BR');
 const QTD = !!(site.avaliacoes && site.avaliacoes.quantidadeConfirmada);
 // Últimos 90 dias (campo avaliacoes90d do JARVIS, 16/11): período claro, é o que aparece enquanto o total histórico não é confirmado.
 const N90 = (a) => (a && a.avaliacoes90d ? milBR(a.avaliacoes90d) : null);
+// Total histórico (confirmado pelo Maikon 18/11): "mais de 280 mil avaliações desde a abertura das lojas".
+const MAIS_DE = (n) => `mais de ${Math.floor(n / 10000) * 10} mil`;
 const bairros = geo ? geo.bairros : [];
 const bairroPorSlug = new Map(bairros.map((b) => [b.slug, b]));
 const bairrosDaLoja = (l) => bairros.filter((b) => b.loja === l.slug);
@@ -559,7 +561,7 @@ const blocoContador = () => {
     <div class="placar-linha">${placarHtml(c.basePedidos, c.rotuloPedidos)}<p class="numero-rotulo">${esc(c.rotuloPedidos)}</p></div>
     <div class="placar-linha">${placarHtml(c.basePedidos * c.lanchesPorPedido, c.rotuloLanches)}<p class="numero-rotulo">${esc(c.rotuloLanches)}</p></div>
     <div class="numeros-extra">
-      ${n ? `<p><span class="numero"><span data-geral-nota>${nota1(AVAL ? AVAL.geral.nota : n)}</span><span class="estrela" aria-hidden="true">★</span></span><span class="numero-rotulo">no iFood</span></p>${AVAL && QTD ? `<p class="numeros-avaliacoes" data-geral-texto>${milBR(AVAL.geral.avaliacoes)} avaliações no iFood</p>` : AVAL && N90(AVAL.geral) ? `<p class="numeros-avaliacoes" data-geral-texto>${N90(AVAL.geral)} avaliações nos últimos 90 dias</p>` : site.avaliacoes.avaliacoesInformadas ? `<p class="numeros-avaliacoes" data-geral-texto>mais de ${Math.floor(site.avaliacoes.avaliacoesInformadas / 1000)} mil avaliações nos últimos 90 dias nas lojas Just Burger</p>` : ''}` : ''}
+      ${n ? `<p><span class="numero"><span data-geral-nota>${nota1(AVAL ? AVAL.geral.nota : n)}</span><span class="estrela" aria-hidden="true">★</span></span><span class="numero-rotulo">no iFood</span></p>${AVAL && QTD ? `<p class="numeros-avaliacoes" data-geral-texto>${MAIS_DE(AVAL.geral.avaliacoes)} avaliações no iFood desde a abertura das lojas</p>` : AVAL && N90(AVAL.geral) ? `<p class="numeros-avaliacoes" data-geral-texto>${N90(AVAL.geral)} avaliações nos últimos 90 dias</p>` : site.avaliacoes.avaliacoesInformadas ? `<p class="numeros-avaliacoes" data-geral-texto>mais de ${Math.floor(site.avaliacoes.avaliacoesInformadas / 1000)} mil avaliações nos últimos 90 dias nas lojas Just Burger</p>` : ''}` : ''}
       <p><span class="numero">${lojas.length}</span><span class="numero-rotulo">unidades na Grande São Paulo</span></p>
     </div>
   </div>
@@ -721,12 +723,12 @@ const cartaoComentario = (c, loja) => `<blockquote class="aval"><p class="aval-e
 // Comentários misturando as lojas (um de cada por vez), do mais novo para o mais antigo dentro de cada loja.
 const comentariosMisturados = (ls) => { const filas = ls.map((a) => (a.comentarios || []).map((c) => [c, a.loja])); const out = []; for (let i = 0; filas.some((f) => f[i]); i++) filas.forEach((f) => f[i] && out.push(f[i])); return out; };
 const blocoComentarios = (lista, visiveis) => (lista.length ? `<div class="grade-aval">${lista.slice(0, visiveis).map(([c, l]) => cartaoComentario(c, l)).join('')}</div>${lista.length > visiveis ? `<details class="aval-mais"><summary>Ver mais ${lista.length - visiveis} avaliações</summary><div class="grade-aval">${lista.slice(visiveis).map(([c, l]) => cartaoComentario(c, l)).join('')}</div></details>` : ''}` : '');
-const resumoLojaAval = (a) => `<span class="aval-linha"><span class="aval-nota">${nota1(a.nota)} <span class="estrela-dourada" aria-hidden="true">★</span></span> ${QTD ? `<span class="aval-qtd">· ${milBR(a.avaliacoes)} avaliações</span>` : N90(a) ? `<span class="aval-qtd">· ${N90(a)} avaliações em 90 dias</span>` : '<span class="aval-qtd">no iFood</span>'}</span>`;
+const resumoLojaAval = (a) => `<span class="aval-linha"><span class="aval-nota">${nota1(a.nota)} <span class="estrela-dourada" aria-hidden="true">★</span></span> ${QTD ? `<span class="aval-qtd">· ${milBR(a.avaliacoes)} avaliações desde a abertura</span>` : N90(a) ? `<span class="aval-qtd">· ${N90(a)} avaliações em 90 dias</span>` : '<span class="aval-qtd">no iFood</span>'}</span>`;
 const secaoAvaliacoesHome = (base) => (AVAL ? `
 <section class="secao" id="avaliacoes" aria-labelledby="aval-titulo">
   <div class="largura">
     <div class="titulo-secao"><h2 id="aval-titulo">Quem pede, avalia</h2><a class="link" href="${base}avaliacoes/">Todas as avaliações</a></div>
-    <p class="aval-geral"><span class="aval-geral-nota">${nota1(AVAL.geral.nota)} <span class="estrela-dourada" aria-hidden="true">★</span></span> <span>${QTD ? `${milBR(AVAL.geral.avaliacoes)} avaliações no iFood nas ${AVAL.lojas.length} lojas do grupo` : (N90(AVAL.geral) ? `${N90(AVAL.geral)} avaliações no iFood nos últimos 90 dias nas ${AVAL.lojas.length} lojas do grupo` : `nota média no iFood nas ${AVAL.lojas.length} lojas do grupo`)}</span></p>
+    <p class="aval-geral"><span class="aval-geral-nota">${nota1(AVAL.geral.nota)} <span class="estrela-dourada" aria-hidden="true">★</span></span> <span>${QTD ? `${MAIS_DE(AVAL.geral.avaliacoes)} avaliações no iFood desde a abertura das lojas${N90(AVAL.geral) ? ` · ${N90(AVAL.geral)} nos últimos 90 dias` : ''}` : (N90(AVAL.geral) ? `${N90(AVAL.geral)} avaliações no iFood nos últimos 90 dias nas ${AVAL.lojas.length} lojas do grupo` : `nota média no iFood nas ${AVAL.lojas.length} lojas do grupo`)}</span></p>
     <ul class="aval-lojas">${lojasAval().map((a) => `<li><a href="${base}${a.pagina}">${a.logo ? `<img src="${base}${a.logo}" width="40" height="40" alt="" loading="lazy">` : ''}<span><strong>${esc(a.loja)}</strong>${resumoLojaAval(a)}</span></a></li>`).join('')}</ul>
     ${blocoComentarios(comentariosMisturados(AVAL.lojas).slice(0, 30), 6)}
     <p class="suave aval-fonte">Notas e comentários do iFood, atualizados todo dia (${dataBR(AVAL.atualizadoEm)}).</p>
@@ -745,7 +747,7 @@ const secaoAvaliacoesLoja = (nomes) => {
 </section>`;
 };
 // Frase da nota para as perguntas frequentes: com a quantidade de avaliações da loja quando houver.
-const fraseNota = (nome, superIfood) => { const a = avalLoja(nome); return a ? `Sim: nota ${nota1(a.nota)} no iFood${QTD ? `, com ${milBR(a.avaliacoes)} avaliações` : N90(a) ? `, com ${N90(a)} avaliações nos últimos 90 dias` : ''}${superIfood ? ' e o selo Super Restaurante (nível 5 de 5 do iFood)' : ''}.` : null; };
+const fraseNota = (nome, superIfood) => { const a = avalLoja(nome); return a ? `Sim: nota ${nota1(a.nota)} no iFood${QTD ? `, com ${milBR(a.avaliacoes)} avaliações desde a abertura da loja` : N90(a) ? `, com ${N90(a)} avaliações nos últimos 90 dias` : ''}${superIfood ? ' e o selo Super Restaurante (nível 5 de 5 do iFood)' : ''}.` : null; };
 
 // Outras marcas do grupo (dados.mjs → culinarias). Logo em assets/img/marcas/<slug>.webp quando houver;
 // sem logo, o nome escrito. Página de cada marca: em breve (material da diretoria).
@@ -1130,7 +1132,7 @@ ${blocoCulinarias(base)}
     ${blocoFaq(faq)}
   </div>
 </section>
-${site.avaliacoes && QTD ? blocoAvaliacoes() : ''}`,
+`,
   md: () => `# ${site.nome}
 
 > ${site.descricaoCurta}. Pedidos pelo iFood (${site.nomeIfood}).
@@ -1492,7 +1494,7 @@ if (geo) {
         ? `Em parte. A região de ${b.nome} mais perto da ${l.nome} está dentro do raio de ${geo.raioKm} km. Digite seu endereço no iFood para saber se a sua rua é atendida.`
         : `Sim. ${b.nome} está dentro do raio de ${geo.raioKm} km da ${l.nome}${b.inteiroNoRaio ? '' : ' (nas ruas mais afastadas, confirme no iFood)'}. Digite seu endereço no iFood para ver a taxa e o tempo de entrega.` },
       { p: `Qual a Just Burger mais perto ${deOnde}?`, r: `A ${l.nome}, a cerca de ${kmTxt(b.distanciaKm)} km${outras.length ? `. Também fica no raio da ${juntar(outras.map((o) => `${o.l.nome} (${kmTxt(o.distanciaKm)} km)`))}` : ''}.` },
-      { p: `Como pedir hambúrguer ${onde}?`, r: `Abra a loja ${l.nome} no iFood (${site.nomeIfood}), escolha o lanche e informe seu endereço ${onde}. Pedido mínimo de R$ ${site.pedidoMinimo}.` },
+      { p: `Como pedir hambúrguer ${onde}?`, r: `Abra a loja ${l.nome} no iFood (${site.nomeIfood}), escolha o lanche e informe seu endereço ${onde}.` },
     ];
     if (b.variacoes.length) perguntas.push({ p: `Quais bairros ${deOnde} a Just Burger atende?`, r: `Entre outros: ${juntar(b.variacoes.slice(0, 12))}.` });
     paginas.push({
@@ -1737,15 +1739,15 @@ if (site.contato && site.contato.publicada) {
 if (AVAL) paginas.push({
   caminho: 'avaliacoes/',
   profundidade: 1,
-  titulo: `Avaliações da Just Burger e do grupo no iFood${QTD ? ` | ${milBR(AVAL.geral.avaliacoes)} avaliações` : ''}`,
-  descricao: `Nota ${nota1(AVAL.geral.nota)} no iFood${QTD ? ` com ${milBR(AVAL.geral.avaliacoes)} avaliações` : ''} nas ${AVAL.lojas.length} lojas do grupo Just Burger: Just Burger, Just Gourmet, Just Forneria, Just Esfiha e Just Sushi.`,
+  titulo: `Avaliações da Just Burger e do grupo no iFood${QTD ? ` | ${MAIS_DE(AVAL.geral.avaliacoes)}` : ''}`,
+  descricao: `Nota ${nota1(AVAL.geral.nota)} no iFood${QTD ? ` com ${MAIS_DE(AVAL.geral.avaliacoes)} avaliações desde a abertura` : ''} nas ${AVAL.lojas.length} lojas do grupo Just Burger: Just Burger, Just Gourmet, Just Forneria, Just Esfiha e Just Sushi.`,
   schema: [schemaBreadcrumb([['Início', ''], ['Avaliações', 'avaliacoes/']])],
   corpo: (base) => `
 <section class="secao">
   <div class="largura">
     ${migalhas(base, [['Início', ''], ['Avaliações', 'avaliacoes/']])}
     <h1>Avaliações</h1>
-    <p class="aval-geral"><span class="aval-geral-nota">${nota1(AVAL.geral.nota)} <span class="estrela-dourada" aria-hidden="true">★</span></span> <span>${QTD ? `${milBR(AVAL.geral.avaliacoes)} avaliações no iFood nas ${AVAL.lojas.length} lojas do grupo` : (N90(AVAL.geral) ? `${N90(AVAL.geral)} avaliações no iFood nos últimos 90 dias nas ${AVAL.lojas.length} lojas do grupo` : `nota média no iFood nas ${AVAL.lojas.length} lojas do grupo`)}</span></p>
+    <p class="aval-geral"><span class="aval-geral-nota">${nota1(AVAL.geral.nota)} <span class="estrela-dourada" aria-hidden="true">★</span></span> <span>${QTD ? `${MAIS_DE(AVAL.geral.avaliacoes)} avaliações no iFood desde a abertura das lojas${N90(AVAL.geral) ? ` · ${N90(AVAL.geral)} nos últimos 90 dias` : ''}` : (N90(AVAL.geral) ? `${N90(AVAL.geral)} avaliações no iFood nos últimos 90 dias nas ${AVAL.lojas.length} lojas do grupo` : `nota média no iFood nas ${AVAL.lojas.length} lojas do grupo`)}</span></p>
     <ul class="aval-lojas">${lojasAval().map((a) => `<li><a href="${base}${a.pagina}">${a.logo ? `<img src="${base}${a.logo}" width="40" height="40" alt="" loading="lazy">` : ''}<span><strong>${esc(a.loja)}</strong>${resumoLojaAval(a)}</span></a></li>`).join('')}</ul>
   </div>
 </section>
@@ -1854,7 +1856,6 @@ ${videosHistoria().length ? `<section class="secao">
 
 const faqPedir = [
   { p: 'Onde peço a Just Burger?', r: `Pelo iFood ou pela Keeta, na unidade mais perto de você: ${juntar(lojas.map((l) => `${l.bairro} (${l.cidade})`))}. Digite seu CEP acima para ver a loja certa.` },
-  { p: 'Qual o pedido mínimo?', r: `R$ ${site.pedidoMinimo} no iFood. A taxa de entrega aparece no app, de acordo com o seu endereço.` },
   { p: 'Qual o horário de entrega?', r: lojas.map((l) => `${l.nome}: ${horarioLoja(l).toLowerCase()}`).join('. ') + '.' },
   { p: 'Meu bairro não aparece. E agora?', r: `Cada loja entrega num raio de cerca de ${geo ? geo.raioKm : 10} km. Se o seu CEP ficar fora, fale com a gente pelo WhatsApp ${site.telefoneCentral || ''} que indicamos a opção mais perto.` },
   { p: 'Tive um problema com o pedido. O que faço?', r: 'Fale com a loja pelo chat do iFood ou da Keeta, que é o jeito mais rápido. Se preferir, mande sua mensagem pela página Fale com a gente.' },
@@ -2441,9 +2442,8 @@ const llms = `# ${site.nome}
 > ${site.descricaoCurta}. Especialidade: hambúrguer de 150 g no pão brioche com Molho Just; mais vendidos Top Smash, Just House e Dolce Gabana. Pedidos pelo iFood (loja "${site.nomeIfood}") e pela Keeta, na unidade mais próxima.
 
 Fatos principais:
-${AVAL ? `- Nota ${nota1(AVAL.geral.nota)} no iFood${QTD ? ` com ${milBR(AVAL.geral.avaliacoes)} avaliações` : N90(AVAL.geral) ? ` com ${N90(AVAL.geral)} avaliações nos últimos 90 dias` : ''} nas ${AVAL.lojas.length} lojas do grupo (${dataBR(AVAL.atualizadoEm)}): ${AVAL.lojas.map((a) => `${a.loja} ${nota1(a.nota)}${QTD ? ` (${milBR(a.avaliacoes)})` : ''}`).join('; ')}. Detalhes: ${abs('avaliacoes/')}\n` : site.avaliacoes && site.avaliacoes.notaInformada ? `- Nota ${nota1(site.avaliacoes.notaInformada)} no iFood nas quatro lojas.\n` : ''}${site.contador ? `- Mais de ${fmtInt(site.contador.basePedidos)} pedidos e ${fmtInt(site.contador.basePedidos * site.contador.lanchesPorPedido)} itens vendidos desde a abertura (total ao vivo na home).\n` : ''}- Quatro unidades: ${juntar(lojas.map((l) => `${l.bairro} (${l.cidade}, ${l.regiao})`))}.
+${AVAL ? `- Nota ${nota1(AVAL.geral.nota)} no iFood${QTD ? ` com ${milBR(AVAL.geral.avaliacoes)} avaliações desde a abertura das lojas${N90(AVAL.geral) ? ` (${N90(AVAL.geral)} nos últimos 90 dias)` : ''}` : N90(AVAL.geral) ? ` com ${N90(AVAL.geral)} avaliações nos últimos 90 dias` : ''} nas ${AVAL.lojas.length} lojas do grupo (${dataBR(AVAL.atualizadoEm)}): ${AVAL.lojas.map((a) => `${a.loja} ${nota1(a.nota)}${QTD ? ` (${milBR(a.avaliacoes)})` : ''}`).join('; ')}. Detalhes: ${abs('avaliacoes/')}\n` : site.avaliacoes && site.avaliacoes.notaInformada ? `- Nota ${nota1(site.avaliacoes.notaInformada)} no iFood nas quatro lojas.\n` : ''}${site.contador ? `- Mais de ${fmtInt(site.contador.basePedidos)} pedidos e ${fmtInt(site.contador.basePedidos * site.contador.lanchesPorPedido)} itens vendidos desde a abertura (total ao vivo na home).\n` : ''}- Quatro unidades: ${juntar(lojas.map((l) => `${l.bairro} (${l.cidade}, ${l.regiao})`))}.
 - Horário de cada unidade: ${lojas.map((l) => `${l.nome}: ${horarioLoja(l)}`).join(' | ')}.
-- Pedido mínimo no iFood: R$ ${site.pedidoMinimo}.
 - Instagram: ${site.instagram}
 - Dados estruturados (unidades, cardápio, links de pedido): ${abs('dados.json')}
 
@@ -2475,7 +2475,7 @@ writeFileSync(
   JSON.stringify(
     {
       atualizado: HOJE,
-      marca: { nome: site.nome, nomeNoIfood: site.nomeIfood, site: abs(''), instagram: site.instagram, pedidoMinimo: `R$ ${site.pedidoMinimo}`, comoPedir: 'Somente pelo iFood, pelo link da unidade.' },
+      marca: { nome: site.nome, nomeNoIfood: site.nomeIfood, site: abs(''), instagram: site.instagram, comoPedir: 'Somente pelo iFood, pelo link da unidade.' },
       unidades: lojas.map((l) => ({
         nome: l.nome, bairro: l.bairro, cidade: l.cidade, regiao: l.regiao, endereco: l.endereco, cep: l.cep,
         horarios: l.horarios.map(textoHorario), bairrosAtendidos: l.bairrosAtendidos, pedirNoIfood: l.ifood, pagina: abs(`unidades/${l.slug}/`),
