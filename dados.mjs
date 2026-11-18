@@ -20,7 +20,7 @@ export const site = {
   // Ações com parceiros (Maikon 01/11): prévia fora do Google e do menu até a diretoria aprovar e mandar as fotos.
   // Fotos próprias em assets/img/acoes/<foto>.webp. Sem foto, o cartão mostra o nome do parceiro.
   acoes: {
-    publicada: false,
+    publicada: true, // Maikon 18/11: textos ok; fotos entram depois (sem foto, o cartão mostra o nome do parceiro)
     previa: true,
     chamada: 'Grandes marcas confiam na Just. Juntos, a gente faz o delivery ir além do pedido.',
     itens: [
